@@ -1,0 +1,82 @@
+# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: va.mhv.phr.example
+canonical: https://johnmoehrke.github.io/MHV-PHR
+name: MHVPHR
+title: "MyHealtheVet PHR FHIR API"
+description: "MyHealtheVet exposing PHR using FHIR and Testing Plan."
+status: active
+version: 0.1.0-beta
+fhirVersion: 4.0.1
+copyrightyear: '2022+'
+#date: 2022-04-14
+releaselabel: ci-build
+#releaselabel: ballot
+#releaselabel: Trial-Implementation
+publisher:
+  name: John Moehrke (himself)
+  url: http://healthcaresecprivacy.blogspot.com
+  email: JohnMoehrke@gmail.com
+contact:
+  - name: John Moehrke (himself)
+    telecom:
+      - system: email
+        value: JohnMoehrke@gmail.com
+license: CC-BY-4.0
+#jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
+jurisdiction: urn:iso:std:iso:3166#US
+extension: 
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 0
+dependencies:
+  hl7.fhir.us.core: 5.0.1
+
+parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
+  path-resource:
+    - fsh-generated/resources
+    - input/examples
+    - input/resources
+#  path-pages:
+#    - input/pagecontent
+#    - fsh-generated/includes
+  show-inherited-invariants: 'false'
+  usage-stats-opt-out: 'false'
+  logging: progress
+  shownav: 'true'
+  active-tables: 'false'
+  apply-contact: 'true'
+  apply-jurisdiction: 'true'
+  apply-publisher: 'true'
+  apply-version: 'true'
+  autoload-resources: 'true'
+  path-output: docs
+ # fmm-definition: other.html#maturity-levels
+
+
+
+pages:
+  index.md:
+    title: Home Page
+    generation: markdown
+  background.md:
+    title: Background
+    generation: markdown
+  testplan.md:
+    title: Test Plan
+    generation: markdown
+  downloads.md:
+    title: Downloads
+    generation: markdown
+
+
+
+menu:
+  Home: index.html
+  Background: background.html
+  Test Plan: testplan.html
+  Artifacts: artifacts.html
+  Downloads: downloads.html
