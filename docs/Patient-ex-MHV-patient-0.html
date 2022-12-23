@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>VA.MHV.PHR.EXAMPLE\Example MHVLISAONE from PatientTO - FHIR v4.0.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/vha-ig-template.css" rel="stylesheet"/>
+<!-- Global site tag (gtag.js) - Google Analytics - Moehrke-Research-IGs -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLTM76GD7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GTLTM76GD7');
+</script>
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"5.13"}
+    h3,h4,h5,h6{--heading-prefix:"5.13"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+<div id="jfm-nav"> 
+     <a id="jfm-logo" no-external="true" href="https://johnmoehrke.github.io">
+     <img height="50" alt="VA Organization" src="assets/images/va-header-logo.png"/>
+     </a>
+	 </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">0.1.0-beta - ci-build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="background.html">Background</a>
+  </li>
+  <li>
+    <a href="testplan.html">Test Plan</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Example MHVLISAONE from PatientTO</b></li>
+
+          <span style="float:right;">
+
+            <a href="DocumentReference-ex-MHV-note-0.ttl.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="Patient-ex-MHV-patient-0.xml.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.0-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="Patient-ex-MHV-patient-0.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Patient-ex-MHV-patient-0.json.html">JSON</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="Patient-ex-MHV-patient-0.ttl.html">TTL</a>
+    </li>
+  
+
+
+
+</ul>
+
+
+  <a name="root"> </a>
+
+
+  <h2 id="root">Example Patient: Example MHVLISAONE from PatientTO</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+
+  <!-- insert intro if present -->
+  
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>Example from a mock PatientTO</p>
+
+<p>Notes</p>
+<ul>
+  <li>some elements could be converted into <code class="language-plaintext highlighter-rouge">codes</code> but doing minimal translation.</li>
+  <li>dropping age as not useful in persisted data, prefer dob</li>
+  <li>dropping occupation - could be recorded as SDOH Observation</li>
+  <li>dropping confidentiality flag - not sure the meaning - could be .meta.security</li>
+  <li>dropping patientFlags - not sure the meaning</li>
+  <li>dropping activeInsurance - could go into Account resource - could go in extension as text blob</li>
+  <li>dropping currentMeansStatus</li>
+  <li>dropping elegibilityCode</li>
+</ul>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;patientTO&gt;</span>
+    <span class="nt">&lt;religion&gt;</span>PROTESTANT, NO DENOMINATION<span class="nt">&lt;/religion&gt;</span>
+    <span class="nt">&lt;name&gt;</span>MHVLISAONE,ROBERT M<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;ssn&gt;</span>666114838<span class="nt">&lt;/ssn&gt;</span>
+    <span class="nt">&lt;gender&gt;</span>M<span class="nt">&lt;/gender&gt;</span>
+    <span class="nt">&lt;dob&gt;</span>19620809<span class="nt">&lt;/dob&gt;</span>
+    <span class="nt">&lt;ethnicity&gt;</span>WHITE, NOT OF HISPANIC ORIGIN<span class="nt">&lt;/ethnicity&gt;</span>
+    <span class="nt">&lt;age&gt;</span>60<span class="nt">&lt;/age&gt;</span>
+    <span class="nt">&lt;maritalStatus&gt;</span>MARRIED<span class="nt">&lt;/maritalStatus&gt;</span>
+    <span class="nt">&lt;demographics&gt;</span>
+        <span class="nt">&lt;demographicSetTO&gt;</span>
+            <span class="nt">&lt;tag&gt;</span>989<span class="nt">&lt;/tag&gt;</span>
+            <span class="nt">&lt;addresses&gt;</span>
+            <span class="nt">&lt;addressTO&gt;</span>
+                <span class="nt">&lt;streetAddress1&gt;</span>55 NORTH MCDONALD DRIVE<span class="nt">&lt;/streetAddress1&gt;</span>
+                <span class="nt">&lt;city&gt;</span>WINCHESTER<span class="nt">&lt;/city&gt;</span>
+                <span class="nt">&lt;county&gt;</span>135<span class="nt">&lt;/county&gt;</span>
+                <span class="nt">&lt;state&gt;</span>INDIANA<span class="nt">&lt;/state&gt;</span>
+                <span class="nt">&lt;zipcode&gt;</span>47394<span class="nt">&lt;/zipcode&gt;</span>
+                <span class="nt">&lt;country&gt;</span>USA<span class="nt">&lt;/country&gt;</span>
+                <span class="nt">&lt;description&gt;</span>Home<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;/addressTO&gt;</span>
+            <span class="nt">&lt;addressTO&gt;</span>
+                <span class="nt">&lt;city&gt;</span>BOONE COUNTY<span class="nt">&lt;/city&gt;</span>
+                <span class="nt">&lt;state&gt;</span>KENTUCKY<span class="nt">&lt;/state&gt;</span>
+                <span class="nt">&lt;description&gt;</span>Place of Birth<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;/addressTO&gt;</span>
+            <span class="nt">&lt;addressTO&gt;</span>
+                <span class="nt">&lt;description&gt;</span>Temp<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;/addressTO&gt;</span>
+            <span class="nt">&lt;/addresses&gt;</span>
+            <span class="nt">&lt;phones&gt;</span>
+            <span class="nt">&lt;phoneNumTO&gt;</span>
+                <span class="nt">&lt;areaCode&gt;</span>765<span class="nt">&lt;/areaCode&gt;</span>
+                <span class="nt">&lt;exchange&gt;</span>555<span class="nt">&lt;/exchange&gt;</span>
+                <span class="nt">&lt;number&gt;</span>6688<span class="nt">&lt;/number&gt;</span>
+                <span class="nt">&lt;description&gt;</span>Home<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;/phoneNumTO&gt;</span>
+            <span class="nt">&lt;/phones&gt;</span>
+        <span class="nt">&lt;/demographicSetTO&gt;</span>
+    <span class="nt">&lt;/demographics&gt;</span>
+    <span class="nt">&lt;occupation&gt;</span>SHIPPING/RECEIVING<span class="nt">&lt;/occupation&gt;</span>
+    <span class="nt">&lt;employmentStatus&gt;</span>RETIRED<span class="nt">&lt;/employmentStatus&gt;</span>
+    <span class="nt">&lt;relationships&gt;</span>
+        <span class="nt">&lt;count&gt;</span>5<span class="nt">&lt;/count&gt;</span>
+        <span class="nt">&lt;persons&gt;</span>
+            <span class="nt">&lt;personTO&gt;</span>
+            <span class="nt">&lt;name&gt;</span>ANTRAS,BETTY J<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;demographics&gt;</span>
+                <span class="nt">&lt;demographicSetTO&gt;</span>
+                    <span class="nt">&lt;tag&gt;</span>NOK<span class="nt">&lt;/tag&gt;</span>
+                    <span class="nt">&lt;addresses&gt;</span>
+                        <span class="nt">&lt;addressTO&gt;</span>
+                        <span class="nt">&lt;streetAddress1&gt;</span>55 NORTH MCDONALD DRIVE<span class="nt">&lt;/streetAddress1&gt;</span>
+                        <span class="nt">&lt;city&gt;</span>WINCHESTER<span class="nt">&lt;/city&gt;</span>
+                        <span class="nt">&lt;state&gt;</span>INDIANA<span class="nt">&lt;/state&gt;</span>
+                        <span class="nt">&lt;zipcode&gt;</span>47394<span class="nt">&lt;/zipcode&gt;</span>
+                        <span class="nt">&lt;/addressTO&gt;</span>
+                    <span class="nt">&lt;/addresses&gt;</span>
+                    <span class="nt">&lt;phones&gt;</span>
+                        <span class="nt">&lt;phoneNumTO&gt;</span>
+                        <span class="nt">&lt;areaCode&gt;</span>765<span class="nt">&lt;/areaCode&gt;</span>
+                        <span class="nt">&lt;exchange&gt;</span>555<span class="nt">&lt;/exchange&gt;</span>
+                        <span class="nt">&lt;number&gt;</span>6688<span class="nt">&lt;/number&gt;</span>
+                        <span class="nt">&lt;description&gt;</span>Home<span class="nt">&lt;/description&gt;</span>
+                        <span class="nt">&lt;/phoneNumTO&gt;</span>
+                    <span class="nt">&lt;/phones&gt;</span>
+                <span class="nt">&lt;/demographicSetTO&gt;</span>
+            <span class="nt">&lt;/demographics&gt;</span>
+            <span class="nt">&lt;description&gt;</span>NOK (WIFE)<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;/personTO&gt;</span>
+            <span class="nt">&lt;personTO&gt;</span>
+            <span class="nt">&lt;name&gt;</span>ANTRAS,BETTY J<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;demographics&gt;</span>
+                <span class="nt">&lt;demographicSetTO&gt;</span>
+                    <span class="nt">&lt;tag&gt;</span>Emergency Contact<span class="nt">&lt;/tag&gt;</span>
+                    <span class="nt">&lt;addresses&gt;</span>
+                        <span class="nt">&lt;addressTO&gt;</span>
+                        <span class="nt">&lt;streetAddress1&gt;</span>55 NORTH MCDONALD DRIVE<span class="nt">&lt;/streetAddress1&gt;</span>
+                        <span class="nt">&lt;city&gt;</span>WINCHESTER<span class="nt">&lt;/city&gt;</span>
+                        <span class="nt">&lt;state&gt;</span>INDIANA<span class="nt">&lt;/state&gt;</span>
+                        <span class="nt">&lt;zipcode&gt;</span>47394<span class="nt">&lt;/zipcode&gt;</span>
+                        <span class="nt">&lt;/addressTO&gt;</span>
+                    <span class="nt">&lt;/addresses&gt;</span>
+                    <span class="nt">&lt;phones&gt;</span>
+                        <span class="nt">&lt;phoneNumTO&gt;</span>
+                        <span class="nt">&lt;areaCode&gt;</span>765<span class="nt">&lt;/areaCode&gt;</span>
+                        <span class="nt">&lt;exchange&gt;</span>584<span class="nt">&lt;/exchange&gt;</span>
+                        <span class="nt">&lt;number&gt;</span>6688<span class="nt">&lt;/number&gt;</span>
+                        <span class="nt">&lt;description&gt;</span>Home<span class="nt">&lt;/description&gt;</span>
+                        <span class="nt">&lt;/phoneNumTO&gt;</span>
+                    <span class="nt">&lt;/phones&gt;</span>
+                <span class="nt">&lt;/demographicSetTO&gt;</span>
+            <span class="nt">&lt;/demographics&gt;</span>
+            <span class="nt">&lt;description&gt;</span>Emergency Contact (WIFE)<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;/personTO&gt;</span>
+            <span class="nt">&lt;personTO&gt;</span>
+            <span class="nt">&lt;demographics&gt;</span>
+                <span class="nt">&lt;demographicSetTO&gt;</span>
+                    <span class="nt">&lt;tag&gt;</span>VA Guardian<span class="nt">&lt;/tag&gt;</span>
+                    <span class="nt">&lt;addresses&gt;</span>
+                        <span class="nt">&lt;addressTO/&gt;</span>
+                    <span class="nt">&lt;/addresses&gt;</span>
+                <span class="nt">&lt;/demographicSetTO&gt;</span>
+            <span class="nt">&lt;/demographics&gt;</span>
+            <span class="nt">&lt;description&gt;</span>VA Guardian<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;/personTO&gt;</span>
+            <span class="nt">&lt;personTO&gt;</span>
+            <span class="nt">&lt;demographics&gt;</span>
+                <span class="nt">&lt;demographicSetTO&gt;</span>
+                    <span class="nt">&lt;tag&gt;</span>Civil Guardian<span class="nt">&lt;/tag&gt;</span>
+                    <span class="nt">&lt;addresses&gt;</span>
+                        <span class="nt">&lt;addressTO/&gt;</span>
+                    <span class="nt">&lt;/addresses&gt;</span>
+                <span class="nt">&lt;/demographicSetTO&gt;</span>
+            <span class="nt">&lt;/demographics&gt;</span>
+            <span class="nt">&lt;description&gt;</span>Civil Guardian<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;/personTO&gt;</span>
+            <span class="nt">&lt;personTO&gt;</span>
+            <span class="nt">&lt;name&gt;</span>UNION CITY MOLD<span class="nt">&lt;/name&gt;</span>
+            <span class="nt">&lt;description&gt;</span>Employer<span class="nt">&lt;/description&gt;</span>
+            <span class="nt">&lt;/personTO&gt;</span>
+        <span class="nt">&lt;/persons&gt;</span>
+    <span class="nt">&lt;/relationships&gt;</span>
+    <span class="nt">&lt;patientName&gt;</span>MHVLISAONE,ROBERT M<span class="nt">&lt;/patientName&gt;</span>
+    <span class="nt">&lt;mpiPid&gt;</span>1013025697<span class="nt">&lt;/mpiPid&gt;</span>
+    <span class="nt">&lt;mpiChecksum&gt;</span>197920<span class="nt">&lt;/mpiChecksum&gt;</span>
+    <span class="nt">&lt;localPid&gt;</span>49906<span class="nt">&lt;/localPid&gt;</span>
+    <span class="nt">&lt;confidentiality&gt;</span>
+        <span class="nt">&lt;tag&gt;</span>0<span class="nt">&lt;/tag&gt;</span>
+    <span class="nt">&lt;/confidentiality&gt;</span>
+    <span class="nt">&lt;patientFlags&gt;</span>
+        <span class="nt">&lt;count&gt;</span>0<span class="nt">&lt;/count&gt;</span>
+    <span class="nt">&lt;/patientFlags&gt;</span>
+    <span class="nt">&lt;activeInsurance&gt;</span>Pt Insur^Patient has active Insurance^
+Company ID:                   1228
+Company Name:                 MEDICARE (WNR)
+Company Address:              WILL NOT REIMBURSE
+                              BALTIMORE, MARYLAND 21207
+Phone Number:                 1-800-784-2335
+Coordination of Benefits:     PRIMARY insurer
+Policy Name:                  448 - MEDICARE
+Policy Reimbursable:          NO
+Effective Date:               Feb 01, 1994
+Expiration Date:              
+Subscriber Relationship to Patient:     PATIENT
+Subscriber Name:                        ANTRAS,JAMES R
+Subscriber ID:                          722186267A
+Pharmacy Coverage:            NO
+Outpatient Coverage:          NO
+Inpatient Coverage:           NO
+Group Number:                 PART A
+Patient Relationship to Subscriber:     PATIENT
+Company ID:                   1228
+Company Name:                 MEDICARE (WNR)
+Company Address:              WILL NOT REIMBURSE
+                              BALTIMORE, MARYLAND 21207
+Phone Number:                 1-800-784-2335
+Coordination of Benefits:     PRIMARY insurer
+Policy Name:                  16076 - MEDICARE
+Policy Reimbursable:          NO
+Effective Date:               Feb 01, 1994
+Expiration Date:              
+Subscriber Relationship to Patient:     PATIENT
+Subscriber Name:                        ANTRAS,JAMES R
+Subscriber ID:                          722186267A
+Pharmacy Coverage:            YES
+Outpatient Coverage:          YES
+Inpatient Coverage:           YES
+Group Number:                 PART B
+Patient Relationship to Subscriber:     PATIENT<span class="nt">&lt;/activeInsurance&gt;</span>
+    <span class="nt">&lt;currentMeansStatus&gt;</span>REQUIRED<span class="nt">&lt;/currentMeansStatus&gt;</span>
+    <span class="nt">&lt;eligibilityCode&gt;</span>NSC<span class="nt">&lt;/eligibilityCode&gt;</span>
+<span class="nt">&lt;/patientTO&gt;</span>
+</code></pre></div></div>
+
+
+</div>
+
+
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;"><b>ROBERT M MHVLISAONE </b> male, DoB: 1962-08-09 ( mpiPID: 1013025697 (use: OFFICIAL))</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Known Marital status of Patient">Marital Status:</td><td colspan="3"><span title="Codes: ">MARRIED</span></td></tr><tr><td style="background-color: #f3f5da" title="Other Ids (see the one above)">Other Ids:</td><td colspan="3"><ul><li>Social Security number: 666114838 (use: SECONDARY)</li><li>localPID: 49906 (use: SECONDARY)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Details:</td><td colspan="3"><ul><li>ph: 765-555-6688(HOME)</li><li>55 NORTH MCDONALD DRIVE WINCHESTER INDIANA 47394 USA (HOME)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Nominated Contact: Next-of-Kin">Next-of-Kin:</td><td colspan="3"><ul><li>BETTY J ANTRAS </li><li>55 NORTH MCDONALD DRIVE WINCHESTER INDIANA 47394 </li><li>ph: 765-555-6688(HOME)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Nominated Contact: Emergency Contact">Emergency Contact:</td><td colspan="3"><ul><li>BETTY J ANTRAS </li><li>55 NORTH MCDONALD DRIVE WINCHESTER INDIANA 47394 </li><li>ph: 765-555-6688(HOME)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Concepts classifying the person into a named category of humans sharing common history, traits, geographical origin or nationality.  The ethnicity codes used to represent these concepts are based upon the [CDC ethnicity and Ethnicity Code Set Version 1.0](http://www.cdc.gov/phin/resources/vocabulary/index.html) which includes over 900 concepts for representing race and ethnicity of which 43 reference ethnicity.  The ethnicity concepts are grouped by and pre-mapped to the 2 OMB ethnicity categories: - Hispanic or Latino - Not Hispanic or Latino.">US Core Ethnicity Extension:</td><td colspan="3"><ul><li>text: WHITE, NOT OF HISPANIC ORIGIN</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="The registered place of birth of the patient. A sytem may use the address.text if they don't store the birthPlace address in discrete elements."><a href="http://hl7.org/fhir/R4/extension-patient-birthplace.html">Birth Place:</a></td><td colspan="3"><ul><li>BOONE COUNTY KENTUCKY </li></ul></td></tr><tr><td style="background-color: #f3f5da" title="The patient's professed religious affiliations."><a href="http://hl7.org/fhir/R4/extension-patient-religion.html">religion:</a></td><td colspan="3"><ul><li><span title="Codes: ">PROTESTANT, NO DENOMINATION</span></li></ul></td></tr></table></div>
+
+  
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="DocumentReference-ex-MHV-note-0.ttl.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="Patient-ex-MHV-patient-0.xml.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 23, 2022 15:55-0600">2022-12-23</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/MHV-PHR/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/MHV-PHR/issues">Issues</a>
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

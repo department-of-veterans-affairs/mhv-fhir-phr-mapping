@@ -1,0 +1,192 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-0> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ex-MHV-patient-0"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient";
+       fhir:index 0;
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>ROBERT M MHVLISAONE </b> male, DoB: 1962-08-09 ( mpiPID: 1013025697 (use: OFFICIAL))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Known Marital status of Patient\">Marital Status:</td><td colspan=\"3\"><span title=\"Codes: \">MARRIED</span></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Ids:</td><td colspan=\"3\"><ul><li>Social Security number: 666114838 (use: SECONDARY)</li><li>localPID: 49906 (use: SECONDARY)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Ways to contact the Patient\">Contact Details:</td><td colspan=\"3\"><ul><li>ph: 765-555-6688(HOME)</li><li>55 NORTH MCDONALD DRIVE WINCHESTER INDIANA 47394 USA (HOME)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Nominated Contact: Next-of-Kin\">Next-of-Kin:</td><td colspan=\"3\"><ul><li>BETTY J ANTRAS </li><li>55 NORTH MCDONALD DRIVE WINCHESTER INDIANA 47394 </li><li>ph: 765-555-6688(HOME)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Nominated Contact: Emergency Contact\">Emergency Contact:</td><td colspan=\"3\"><ul><li>BETTY J ANTRAS </li><li>55 NORTH MCDONALD DRIVE WINCHESTER INDIANA 47394 </li><li>ph: 765-555-6688(HOME)</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"Concepts classifying the person into a named category of humans sharing common history, traits, geographical origin or nationality.  The ethnicity codes used to represent these concepts are based upon the [CDC ethnicity and Ethnicity Code Set Version 1.0](http://www.cdc.gov/phin/resources/vocabulary/index.html) which includes over 900 concepts for representing race and ethnicity of which 43 reference ethnicity.  The ethnicity concepts are grouped by and pre-mapped to the 2 OMB ethnicity categories: - Hispanic or Latino - Not Hispanic or Latino.\">US Core Ethnicity Extension:</td><td colspan=\"3\"><ul><li>text: WHITE, NOT OF HISPANIC ORIGIN</li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The registered place of birth of the patient. A sytem may use the address.text if they don't store the birthPlace address in discrete elements.\"><a href=\"http://hl7.org/fhir/R4/extension-patient-birthplace.html\">Birth Place:</a></td><td colspan=\"3\"><ul><li>BOONE COUNTY KENTUCKY </li></ul></td></tr><tr><td style=\"background-color: #f3f5da\" title=\"The patient's professed religious affiliations.\"><a href=\"http://hl7.org/fhir/R4/extension-patient-religion.html\">religion:</a></td><td colspan=\"3\"><ul><li><span title=\"Codes: \">PROTESTANT, NO DENOMINATION</span></li></ul></td></tr></table></div>"
+  ]; # 
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/patient-religion" ];
+     fhir:Extension.valueCodeableConcept [
+       fhir:CodeableConcept.text [ fhir:value "PROTESTANT, NO DENOMINATION" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Element.extension [
+       fhir:index 0;
+       fhir:Extension.url [ fhir:value "text" ];
+       fhir:Extension.valueString [ fhir:value "WHITE, NOT OF HISPANIC ORIGIN" ]
+     ];
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity" ]
+  ], [
+     fhir:index 2;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/patient-birthPlace" ];
+     fhir:Extension.valueAddress [
+       fhir:Address.city [ fhir:value "BOONE COUNTY" ];
+       fhir:Address.state [ fhir:value "KENTUCKY" ]
+     ]
+  ]; # 
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "secondary" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0203" ];
+         fhir:Coding.code [ fhir:value "SS" ];
+         fhir:Coding.display [ fhir:value "Social Security number" ]
+       ]
+     ];
+     fhir:Identifier.system [ fhir:value "urn:oid:2.16.840.1.113883.4.1" ];
+     fhir:Identifier.value [ fhir:value "666114838" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.text [ fhir:value "mpiPID" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://example.org/mpiPID" ];
+     fhir:Identifier.value [ fhir:value "1013025697" ]
+  ], [
+     fhir:index 2;
+     fhir:Identifier.use [ fhir:value "secondary" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.text [ fhir:value "localPID" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://example.org/localPID" ];
+     fhir:Identifier.value [ fhir:value "49906" ]
+  ]; # 
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "usual" ];
+     fhir:HumanName.family [ fhir:value "MHVLISAONE" ];
+     fhir:HumanName.given [
+       fhir:value "ROBERT";
+       fhir:index 0
+     ], [
+       fhir:value "M";
+       fhir:index 1
+     ]
+  ]; # 
+  fhir:Patient.telecom [
+     fhir:index 0;
+     fhir:ContactPoint.system [ fhir:value "phone" ];
+     fhir:ContactPoint.value [ fhir:value "765-555-6688" ];
+     fhir:ContactPoint.use [ fhir:value "home" ]
+  ]; # 
+  fhir:Patient.gender [ fhir:value "male"]; # 
+  fhir:Patient.birthDate [ fhir:value "1962-08-09"^^xsd:date]; # 
+  fhir:Patient.address [
+     fhir:index 0;
+     fhir:Address.use [ fhir:value "home" ];
+     fhir:Address.line [
+       fhir:value "55 NORTH MCDONALD DRIVE";
+       fhir:index 0
+     ];
+     fhir:Address.city [ fhir:value "WINCHESTER" ];
+     fhir:Address.district [ fhir:value "135" ];
+     fhir:Address.state [ fhir:value "INDIANA" ];
+     fhir:Address.postalCode [ fhir:value "47394" ];
+     fhir:Address.country [ fhir:value "USA" ]
+  ]; # 
+  fhir:Patient.maritalStatus [
+     fhir:CodeableConcept.text [ fhir:value "MARRIED" ]
+  ]; # 
+  fhir:Patient.contact [
+     fhir:index 0;
+     fhir:Patient.contact.relationship [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0131" ];
+         fhir:Coding.code [ fhir:value "N" ];
+         fhir:Coding.display [ fhir:value "Next-of-Kin" ]
+       ]
+     ];
+     fhir:Patient.contact.name [
+       fhir:HumanName.family [ fhir:value "ANTRAS" ];
+       fhir:HumanName.given [
+         fhir:value "BETTY";
+         fhir:index 0
+       ], [
+         fhir:value "J";
+         fhir:index 1
+       ]
+     ];
+     fhir:Patient.contact.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "765-555-6688" ];
+       fhir:ContactPoint.use [ fhir:value "home" ]
+     ];
+     fhir:Patient.contact.address [
+       fhir:Address.line [
+         fhir:value "55 NORTH MCDONALD DRIVE";
+         fhir:index 0
+       ];
+       fhir:Address.city [ fhir:value "WINCHESTER" ];
+       fhir:Address.district [ fhir:value "135" ];
+       fhir:Address.state [ fhir:value "INDIANA" ];
+       fhir:Address.postalCode [ fhir:value "47394" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:Patient.contact.relationship [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0131" ];
+         fhir:Coding.code [ fhir:value "C" ];
+         fhir:Coding.display [ fhir:value "Emergency Contact" ]
+       ]
+     ];
+     fhir:Patient.contact.name [
+       fhir:HumanName.family [ fhir:value "ANTRAS" ];
+       fhir:HumanName.given [
+         fhir:value "BETTY";
+         fhir:index 0
+       ], [
+         fhir:value "J";
+         fhir:index 1
+       ]
+     ];
+     fhir:Patient.contact.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "phone" ];
+       fhir:ContactPoint.value [ fhir:value "765-555-6688" ];
+       fhir:ContactPoint.use [ fhir:value "home" ]
+     ];
+     fhir:Patient.contact.address [
+       fhir:Address.line [
+         fhir:value "55 NORTH MCDONALD DRIVE";
+         fhir:index 0
+       ];
+       fhir:Address.city [ fhir:value "WINCHESTER" ];
+       fhir:Address.district [ fhir:value "135" ];
+       fhir:Address.state [ fhir:value "INDIANA" ];
+       fhir:Address.postalCode [ fhir:value "47394" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-0.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

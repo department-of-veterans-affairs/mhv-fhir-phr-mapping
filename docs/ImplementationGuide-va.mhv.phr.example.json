@@ -18,7 +18,7 @@
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2022-12-23T08:33:50-06:00",
+  "date" : "2022-12-23T15:55:29-06:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -711,10 +711,46 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.location"
+      },
+      "name" : "VA MHV PHR Location",
+      "description" : "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n- hospitalLocationTO, SiteTO",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/VA.MHV.PHR.note"
       },
       "name" : "VA MHV PHR Notes",
       "description" : "A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.\n\n- based on US-Core for Clinical Notes",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.patient"
+      },
+      "name" : "VA MHV PHR Patient",
+      "description" : "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- record the ICN value into the Patient.identifier",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.practitioner"
+      },
+      "name" : "VA MHV PHR Practitioner",
+      "description" : "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- based on US-Core for Practitioner\n- used for UserTO, and AuthorTO\n- might be used for PersonTO or is that RelatedPerson?",
       "exampleBoolean" : false
     },
     {
@@ -768,6 +804,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      }],
+      "reference" : {
+        "reference" : "Location/ex-MHV-location-0"
+      },
+      "name" : "Location DAYTSHR TEST Lab",
+      "description" : "This example derived off of a mock HospitalLocationTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "DocumentReference"
       }],
       "reference" : {
@@ -783,11 +831,11 @@
         "valueString" : "Patient"
       }],
       "reference" : {
-        "reference" : "Patient/ex-patient"
+        "reference" : "Patient/ex-MHV-patient-0"
       },
-      "name" : "Dummy Patient example",
-      "description" : "Dummy patient example for completeness sake. No actual use of this resource other than an example target",
-      "exampleBoolean" : true
+      "name" : "Example MHVLISAONE from PatientTO",
+      "description" : "This example is derived off of a mock PatientTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"
     },
     {
       "extension" : [{
@@ -795,11 +843,11 @@
         "valueString" : "Patient"
       }],
       "reference" : {
-        "reference" : "Patient/ex-patient-1"
+        "reference" : "Patient/ex-MHV-patient-1"
       },
-      "name" : "Example from PatientTO",
-      "description" : "This example is derived off of a sample PatientTO",
-      "exampleBoolean" : true
+      "name" : "Example DAYSHR from PatientTO",
+      "description" : "This example is derived off of a mock PatientTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"
     },
     {
       "extension" : [{
@@ -811,7 +859,7 @@
       },
       "name" : "Example Practitioner",
       "description" : "holding typical values",
-      "exampleBoolean" : true
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
     }],
     "page" : {
       "extension" : [{

@@ -1,0 +1,84 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <ns2:getDataResponse xmlns:ns2="http://service.via.med.va.gov/">
+         <ns2:PatientMedicalRecordTO>
+            <immunizations>
+               <count>1</count>
+               <arrays>
+                  <taggedImmunizationArray>
+                     <count>2</count>
+                     <tag>984</tag>
+                     <immunizations>
+                        <immunizationTO>
+                           <administeredDate>3220808.111528</administeredDate>
+                           <comments>test</comments>
+                           <contraindicated>0</contraindicated>
+                           <encounter>
+                              <location>
+                                 <name>23 HOUR OBSERVATION</name>
+                              </location>
+                              <visitId>6433274</visitId>
+                              <facility>
+                                 <sitecode>552</sitecode>
+                                 <name>DAYTON</name>
+                              </facility>
+                           </encounter>
+                           <id>124684</id>
+                           <name>COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE</name>
+                           <series>COMPLETE</series>
+                        </immunizationTO>
+                        <immunizationTO>
+                           <administeredDate>3220805.165638</administeredDate>
+                           <comments>test comment</comments>
+                           <contraindicated>0</contraindicated>
+                           <cptCode>
+                              <id>90688</id>
+                              <name>IIV4 VACCINE SPLT 0.5 ML IM</name>
+                           </cptCode>
+                           <encounter>
+                              <location>
+                                 <name>ADTP BURNETT</name>
+                              </location>
+                              <visitId>6433261</visitId>
+                              <facility>
+                                 <sitecode>552</sitecode>
+                                 <name>DAYTON</name>
+                              </facility>
+                           </encounter>
+                           <id>124685</id>
+                           <name>INFLUENZA, INJECTABLE, QUADRIVALENT</name>
+                           <reaction>FEVER</reaction>
+                           <series>COMPLETE</series>
+                        </immunizationTO>
+                     </immunizations>
+                  </taggedImmunizationArray>
+               </arrays>
+            </immunizations>
+            <patient>
+               <count>1</count>
+               <arrays>
+                  <taggedPatientArray>
+                     <count>1</count>
+                     <tag>984</tag>
+                     <patients>
+                        <patientTO>
+                           <name>MTPZEROTWO,DAYTSHR</name>
+                           <patientName>MTPZEROTWO,DAYTSHR</patientName>
+                           <mpiPid>1013699147</mpiPid>
+                           <mpiChecksum>368567</mpiChecksum>
+                           <localPid>552164786</localPid>
+                           <confidentiality>
+                              <tag>0</tag>
+                           </confidentiality>
+                           <patientFlags>
+                              <count>0</count>
+                           </patientFlags>
+                        </patientTO>
+                     </patients>
+                  </taggedPatientArray>
+               </arrays>
+            </patient>
+         </ns2:PatientMedicalRecordTO>
+      </ns2:getDataResponse>
+   </soap:Body>
+</soap:Envelope>

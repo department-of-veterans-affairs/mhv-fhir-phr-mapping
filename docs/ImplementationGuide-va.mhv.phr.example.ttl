@@ -26,7 +26,7 @@
   fhir:ImplementationGuide.name [ fhir:value "MHVPHR"]; # 
   fhir:ImplementationGuide.title [ fhir:value "MyHealtheVet PHR FHIR API"]; # 
   fhir:ImplementationGuide.status [ fhir:value "active"]; # 
-  fhir:ImplementationGuide.date [ fhir:value "2022-12-23T08:33:50-06:00"^^xsd:dateTime]; # 
+  fhir:ImplementationGuide.date [ fhir:value "2022-12-23T15:55:29-06:00"^^xsd:dateTime]; # 
   fhir:ImplementationGuide.publisher [ fhir:value "John Moehrke (himself)"]; # 
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -798,6 +798,20 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/VA.MHV.PHR.location" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "VA MHV PHR Location" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n- hospitalLocationTO, SiteTO" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 3;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note>;
          fhir:Reference.reference [ fhir:value "StructureDefinition/VA.MHV.PHR.note" ]
        ];
@@ -805,7 +819,35 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.\n\n- based on US-Core for Clinical Notes" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 3;
+       fhir:index 4;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/VA.MHV.PHR.patient" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "VA MHV PHR Patient" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- record the ICN value into the Patient.identifier" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 5;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/VA.MHV.PHR.practitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "VA MHV PHR Practitioner" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- based on US-Core for Practitioner\n- used for UserTO, and AuthorTO\n- might be used for PersonTO or is that RelatedPerson?" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 6;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -819,7 +861,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 4;
+       fhir:index 7;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -836,7 +878,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization>
        ]
      ], [
-       fhir:index 5;
+       fhir:index 8;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -853,7 +895,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization>
        ]
      ], [
-       fhir:index 6;
+       fhir:index 9;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -870,7 +912,24 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.lab>
        ]
      ], [
-       fhir:index 7;
+       fhir:index 10;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Location" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Location/ex-MHV-location-0>;
+         fhir:Reference.reference [ fhir:value "Location/ex-MHV-location-0" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Location DAYTSHR TEST Lab" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This example derived off of a mock HospitalLocationTO" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location";
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location>
+       ]
+     ], [
+       fhir:index 11;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -887,35 +946,41 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note>
        ]
      ], [
-       fhir:index 8;
+       fhir:index 12;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Patient" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-patient>;
-         fhir:Reference.reference [ fhir:value "Patient/ex-patient" ]
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-0>;
+         fhir:Reference.reference [ fhir:value "Patient/ex-MHV-patient-0" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Dummy Patient example" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Dummy patient example for completeness sake. No actual use of this resource other than an example target" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example MHVLISAONE from PatientTO" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This example is derived off of a mock PatientTO" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient";
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
+       ]
      ], [
-       fhir:index 9;
+       fhir:index 13;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
          fhir:Extension.valueString [ fhir:value "Patient" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-patient-1>;
-         fhir:Reference.reference [ fhir:value "Patient/ex-patient-1" ]
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1>;
+         fhir:Reference.reference [ fhir:value "Patient/ex-MHV-patient-1" ]
        ];
-       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example from PatientTO" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This example is derived off of a sample PatientTO" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example DAYSHR from PatientTO" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This example is derived off of a mock PatientTO" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient";
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
+       ]
      ], [
-       fhir:index 10;
+       fhir:index 14;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -927,7 +992,10 @@
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example Practitioner" ];
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "holding typical values" ];
-       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner";
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
+       ]
      ];
      fhir:ImplementationGuide.definition.page [
        fhir:Element.extension [

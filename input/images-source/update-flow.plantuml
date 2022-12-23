@@ -1,0 +1,18 @@
+@startuml
+title Update MHV-PHR
+
+start
+: read data VDIF;
+
+repeat
+  : lookup id for match;
+  if (found?) then (yes)
+    : update if needed;
+  else (no)
+    : create new;
+  endif 
+repeat while (more data?) is (yes)
+->no;
+stop
+
+@enduml

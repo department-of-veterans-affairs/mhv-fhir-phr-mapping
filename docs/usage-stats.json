@@ -17,10 +17,28 @@
         "title": "VA MHV PHR lab"
       }
     ],
+    "Location": [
+      {
+        "url": "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location",
+        "title": "VA MHV PHR Location"
+      }
+    ],
     "DocumentReference": [
       {
         "url": "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note",
         "title": "VA MHV PHR Notes"
+      }
+    ],
+    "Patient": [
+      {
+        "url": "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient",
+        "title": "VA MHV PHR Patient"
+      }
+    ],
+    "Practitioner": [
+      {
+        "url": "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner",
+        "title": "VA MHV PHR Practitioner"
       }
     ]
   },
@@ -51,7 +69,16 @@
       "StructureDefinition.snapshot.element.type",
       "StructureDefinition.snapshot.element.type.targetProfile"
     ],
+    "http://hl7.org/fhir/StructureDefinition/patient-birthPlace": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/patient-religion": [
+      "Patient"
+    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
+      "StructureDefinition.snapshot.element"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name": [
       "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
@@ -61,6 +88,9 @@
       "CapabilityStatement",
       "ImplementationGuide",
       "StructureDefinition"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy": [
+      "StructureDefinition.snapshot.element.type"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
       "CapabilityStatement",
@@ -82,6 +112,18 @@
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity": [
+      "Patient"
+    ],
+    "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race": [
+      "Patient"
     ]
   }
 }

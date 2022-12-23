@@ -261,6 +261,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                 </tr>
                 <tr>
                     <td style="column-width:30%">
+                        <a href="StructureDefinition-VA.MHV.PHR.location.html" title="StructureDefinition/VA.MHV.PHR.location">VA MHV PHR Location</a>
+                    </td>
+                    <td>
+<p>A profile on the Location resource for MHV PHR exposing Location using FHIR API.</p>
+
+<ul>
+  <li>based on US-Core for Location</li>
+  <li>hospitalLocationTO, SiteTO</li>
+</ul>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
                         <a href="StructureDefinition-VA.MHV.PHR.note.html" title="StructureDefinition/VA.MHV.PHR.note">VA MHV PHR Notes</a>
                     </td>
                     <td>
@@ -268,6 +281,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>based on US-Core for Clinical Notes</li>
+</ul>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="StructureDefinition-VA.MHV.PHR.patient.html" title="StructureDefinition/VA.MHV.PHR.patient">VA MHV PHR Patient</a>
+                    </td>
+                    <td>
+<p>A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.</p>
+
+<ul>
+  <li>based on US-Core for Patient</li>
+  <li>record the ICN value into the Patient.identifier</li>
+</ul>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="StructureDefinition-VA.MHV.PHR.practitioner.html" title="StructureDefinition/VA.MHV.PHR.practitioner">VA MHV PHR Practitioner</a>
+                    </td>
+                    <td>
+<p>A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.</p>
+
+<ul>
+  <li>based on US-Core for Practitioner</li>
+  <li>used for UserTO, and AuthorTO</li>
+  <li>might be used for PersonTO or is that RelatedPerson?</li>
 </ul>
 </td>
                 </tr>
@@ -309,6 +349,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                 </tr>
                 <tr>
                     <td style="column-width:30%">
+                        <a href="Location-ex-MHV-location-0.html" title="Location/ex-MHV-location-0">Location DAYTSHR TEST Lab</a>
+                    </td>
+                    <td>
+<p>This example derived off of a mock HospitalLocationTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
                         <a href="DocumentReference-ex-MHV-note-0.html" title="DocumentReference/ex-MHV-note-0">Example 0 of a MHV Note</a>
                     </td>
                     <td>
@@ -319,18 +367,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="Patient-ex-patient.html" title="Patient/ex-patient">Dummy Patient example</a>
+                        <a href="Patient-ex-MHV-patient-0.html" title="Patient/ex-MHV-patient-0">Example MHVLISAONE from PatientTO</a>
                     </td>
                     <td>
-<p>Dummy patient example for completeness sake. No actual use of this resource other than an example target</p>
+<p>This example is derived off of a mock PatientTO</p>
 </td>
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="Patient-ex-patient-1.html" title="Patient/ex-patient-1">Example from PatientTO</a>
+                        <a href="Patient-ex-MHV-patient-1.html" title="Patient/ex-MHV-patient-1">Example DAYSHR from PatientTO</a>
                     </td>
                     <td>
-<p>This example is derived off of a sample PatientTO</p>
+<p>This example is derived off of a mock PatientTO</p>
 </td>
                 </tr>
                 <tr>
@@ -390,7 +438,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 23, 2022 08:33-0600">2022-12-23</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 23, 2022 15:55-0600">2022-12-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

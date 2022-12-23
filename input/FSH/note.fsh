@@ -12,7 +12,7 @@ A profile on the DocumentReference resource for MHV PHR exposing Notes using FHI
 Mapping: Notes-Mapping
 Source:	MHVnote
 Target: "NoteTO"
-Title: "VIA/VDIF to MHV-PHR"
+Title: "VDIF to MHV-PHR"
 * -> "NoteTO" "MHV PHR FHIR API"
 * category -> "clinical-note"
 * author -> "GetPractitioner(NoteTO.author.[AuthorTO])"

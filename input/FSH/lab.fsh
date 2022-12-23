@@ -19,7 +19,7 @@ A profile showing how Labs will be exposed using FHIR API to MyHealtheVet PHR.
 Mapping: Lab-Mapping-LabReportTO
 Source:	MHVlab
 Target: "LabReportTO"
-Title: "VIA/VDIF to MHV-PHR"
+Title: "VDIF to MHV-PHR"
 * -> "LabReportTO" "MHV PHR FHIR API"
 * category -> "laboratory"
 * status -> "final"
@@ -39,7 +39,7 @@ Title: "VIA/VDIF to MHV-PHR"
 Mapping: Lab-Mapping-LabResultTO
 Source:	MHVlab
 Target: "LabTestTO"
-Title: "VIA/VDIF to MHV-PHR"
+Title: "VDIF to MHV-PHR"
 * -> "LabTestTO / LabResultTO" "MHV PHR FHIR API"
 * specimen -> "Contained Specimen (LabTestTO.specimen.[LabSpecimenTO])"
 * identifier -> "LabTestTO.id"

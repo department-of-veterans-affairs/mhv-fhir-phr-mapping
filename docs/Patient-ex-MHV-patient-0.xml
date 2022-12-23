@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-patient-0"/>
+  <meta>
+    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p style="border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;"><b>ROBERT M MHVLISAONE </b> male, DoB: 1962-08-09 ( mpiPID: 1013025697 (use: OFFICIAL))</p><hr/><table class="grid"><tr><td style="background-color: #f3f5da" title="Known Marital status of Patient">Marital Status:</td><td colspan="3"><span title="Codes: ">MARRIED</span></td></tr><tr><td style="background-color: #f3f5da" title="Other Ids (see the one above)">Other Ids:</td><td colspan="3"><ul><li>Social Security number: 666114838 (use: SECONDARY)</li><li>localPID: 49906 (use: SECONDARY)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Ways to contact the Patient">Contact Details:</td><td colspan="3"><ul><li>ph: 765-555-6688(HOME)</li><li>55 NORTH MCDONALD DRIVE WINCHESTER INDIANA 47394 USA (HOME)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Nominated Contact: Next-of-Kin">Next-of-Kin:</td><td colspan="3"><ul><li>BETTY J ANTRAS </li><li>55 NORTH MCDONALD DRIVE WINCHESTER INDIANA 47394 </li><li>ph: 765-555-6688(HOME)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Nominated Contact: Emergency Contact">Emergency Contact:</td><td colspan="3"><ul><li>BETTY J ANTRAS </li><li>55 NORTH MCDONALD DRIVE WINCHESTER INDIANA 47394 </li><li>ph: 765-555-6688(HOME)</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="Concepts classifying the person into a named category of humans sharing common history, traits, geographical origin or nationality.  The ethnicity codes used to represent these concepts are based upon the [CDC ethnicity and Ethnicity Code Set Version 1.0](http://www.cdc.gov/phin/resources/vocabulary/index.html) which includes over 900 concepts for representing race and ethnicity of which 43 reference ethnicity.  The ethnicity concepts are grouped by and pre-mapped to the 2 OMB ethnicity categories: - Hispanic or Latino - Not Hispanic or Latino.">US Core Ethnicity Extension:</td><td colspan="3"><ul><li>text: WHITE, NOT OF HISPANIC ORIGIN</li></ul></td></tr><tr><td style="background-color: #f3f5da" title="The registered place of birth of the patient. A sytem may use the address.text if they don't store the birthPlace address in discrete elements."><a href="http://hl7.org/fhir/R4/extension-patient-birthplace.html">Birth Place:</a></td><td colspan="3"><ul><li>BOONE COUNTY KENTUCKY </li></ul></td></tr><tr><td style="background-color: #f3f5da" title="The patient's professed religious affiliations."><a href="http://hl7.org/fhir/R4/extension-patient-religion.html">religion:</a></td><td colspan="3"><ul><li><span title="Codes: ">PROTESTANT, NO DENOMINATION</span></li></ul></td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/patient-religion">
+    <valueCodeableConcept>
+      <text value="PROTESTANT, NO DENOMINATION"/>
+    </valueCodeableConcept>
+  </extension>
+  <extension url="http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity">
+    <extension url="text">
+      <valueString value="WHITE, NOT OF HISPANIC ORIGIN"/>
+    </extension>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/patient-birthPlace">
+    <valueAddress>
+      <city value="BOONE COUNTY"/>
+      <state value="KENTUCKY"/>
+    </valueAddress>
+  </extension>
+  <identifier>
+    <use value="secondary"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="SS"/>
+        <display value="Social Security number"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.1"/>
+    <value value="666114838"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <text value="mpiPID"/>
+    </type>
+    <system value="http://example.org/mpiPID"/>
+    <value value="1013025697"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <type>
+      <text value="localPID"/>
+    </type>
+    <system value="http://example.org/localPID"/>
+    <value value="49906"/>
+  </identifier>
+  <name>
+    <use value="usual"/>
+    <family value="MHVLISAONE"/>
+    <given value="ROBERT"/>
+    <given value="M"/>
+  </name>
+  <telecom>
+    <system value="phone"/>
+    <value value="765-555-6688"/>
+    <use value="home"/>
+  </telecom>
+  <gender value="male"/>
+  <birthDate value="1962-08-09"/>
+  <address>
+    <use value="home"/>
+    <line value="55 NORTH MCDONALD DRIVE"/>
+    <city value="WINCHESTER"/>
+    <district value="135"/>
+    <state value="INDIANA"/>
+    <postalCode value="47394"/>
+    <country value="USA"/>
+  </address>
+  <maritalStatus>
+    <text value="MARRIED"/>
+  </maritalStatus>
+  <contact>
+    <relationship>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0131"/>
+        <code value="N"/>
+        <display value="Next-of-Kin"/>
+      </coding>
+    </relationship>
+    <name>
+      <family value="ANTRAS"/>
+      <given value="BETTY"/>
+      <given value="J"/>
+    </name>
+    <telecom>
+      <system value="phone"/>
+      <value value="765-555-6688"/>
+      <use value="home"/>
+    </telecom>
+    <address>
+      <line value="55 NORTH MCDONALD DRIVE"/>
+      <city value="WINCHESTER"/>
+      <district value="135"/>
+      <state value="INDIANA"/>
+      <postalCode value="47394"/>
+    </address>
+  </contact>
+  <contact>
+    <relationship>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0131"/>
+        <code value="C"/>
+        <display value="Emergency Contact"/>
+      </coding>
+    </relationship>
+    <name>
+      <family value="ANTRAS"/>
+      <given value="BETTY"/>
+      <given value="J"/>
+    </name>
+    <telecom>
+      <system value="phone"/>
+      <value value="765-555-6688"/>
+      <use value="home"/>
+    </telecom>
+    <address>
+      <line value="55 NORTH MCDONALD DRIVE"/>
+      <city value="WINCHESTER"/>
+      <district value="135"/>
+      <state value="INDIANA"/>
+      <postalCode value="47394"/>
+    </address>
+  </contact>
+</Patient>

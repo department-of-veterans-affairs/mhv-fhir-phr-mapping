@@ -17,7 +17,7 @@
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2022-12-23T08:33:50-06:00"/>
+  <date value="2022-12-23T15:55:29-06:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -536,10 +536,43 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.location"/>
+      </reference>
+      <name value="VA MHV PHR Location"/>
+      <description value="A profile on the Location resource for MHV PHR exposing Location using FHIR API.&#xA;&#xA;- based on US-Core for Location&#xA;- hospitalLocationTO, SiteTO"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/VA.MHV.PHR.note"/>
       </reference>
       <name value="VA MHV PHR Notes"/>
       <description value="A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.&#xA;&#xA;- based on US-Core for Clinical Notes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.patient"/>
+      </reference>
+      <name value="VA MHV PHR Patient"/>
+      <description value="A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.&#xA;&#xA;- based on US-Core for Patient&#xA;- record the ICN value into the Patient.identifier"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </reference>
+      <name value="VA MHV PHR Practitioner"/>
+      <description value="A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.&#xA;&#xA;- based on US-Core for Practitioner&#xA;- used for UserTO, and AuthorTO&#xA;- might be used for PersonTO or is that RelatedPerson?"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -588,6 +621,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Location"/>
+      </extension>
+      <reference>
+        <reference value="Location/ex-MHV-location-0"/>
+      </reference>
+      <name value="Location DAYTSHR TEST Lab"/>
+      <description value="This example derived off of a mock HospitalLocationTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="DocumentReference"/>
       </extension>
       <reference>
@@ -602,22 +646,22 @@
         <valueString value="Patient"/>
       </extension>
       <reference>
-        <reference value="Patient/ex-patient"/>
+        <reference value="Patient/ex-MHV-patient-0"/>
       </reference>
-      <name value="Dummy Patient example"/>
-      <description value="Dummy patient example for completeness sake. No actual use of this resource other than an example target"/>
-      <exampleBoolean value="true"/>
+      <name value="Example MHVLISAONE from PatientTO"/>
+      <description value="This example is derived off of a mock PatientTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Patient"/>
       </extension>
       <reference>
-        <reference value="Patient/ex-patient-1"/>
+        <reference value="Patient/ex-MHV-patient-1"/>
       </reference>
-      <name value="Example from PatientTO"/>
-      <description value="This example is derived off of a sample PatientTO"/>
-      <exampleBoolean value="true"/>
+      <name value="Example DAYSHR from PatientTO"/>
+      <description value="This example is derived off of a mock PatientTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -628,7 +672,7 @@
       </reference>
       <name value="Example Practitioner"/>
       <description value="holding typical values"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">

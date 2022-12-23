@@ -9,7 +9,7 @@ Example from a mock ImmunizationTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #completed
 * vaccineCode.text = "COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE"
-* patient = Reference(Patient/ex-patient-1)
+* patient = Reference(Patient/ex-MHV-patient-1)
 * occurrenceDateTime = 2022-08-08T11:15:28Z
 * recorded = 2022-08-08T11:15:28Z
 * primarySource = false
@@ -32,7 +32,7 @@ Example from a mock ImmunizationTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #completed
 * vaccineCode.text = "INFLUENZA, INJECTABLE, QUADRIVALENT"
-* patient = Reference(Patient/ex-patient-1)
+* patient = Reference(Patient/ex-MHV-patient-1)
 * occurrenceDateTime = 2022-08-05T16:56:38Z
 * recorded = 2022-08-05T16:56:38Z
 * primarySource = false
