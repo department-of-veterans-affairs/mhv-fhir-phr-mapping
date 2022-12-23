@@ -4,18 +4,21 @@
 MyHealtheVet acts as a FHIR Server.
 
 - [Immunization](StructureDefinition-VA.MHV.PHR.immunization.html)
-  - [Mapping from VIA/VDIF](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-via-vdif-fileman-to-fhir-phr-mapping-via-vdif-filem)
+  - [Mapping from VIA/VDIF](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-viavdif-to-mhv-phr-immunizationto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
 - [Notes](StructureDefinition-VA.MHV.PHR.note.html)
-  - [Mapping from VIA/VDIF](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-via-vdif-fileman-to-fhir-phr-mapping-via-vdif-filem)
+  - [Mapping from VIA/VDIF](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-viavdif-to-mhv-phr-noteto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
 - [Labs](StructureDefinition-VA.MHV.PHR.lab.html)
-  - [Mapping from VIA/VDIF - LabReport](StructureDefinition-VA.MHV.PHR.lab-mappings.html#mappings-for-via-vdif-fileman-to-fhir-phr-mapping-observation-la)
-  - [Mapping from VIA/VDIF - LabResult](StructureDefinition-VA.MHV.PHR.lab-mappings.html#mappings-for-via-vdif-fileman-to-fhir-phr-mapping-observation-la-1)
+  - [Mapping from VIA/VDIF - LabReport](StructureDefinition-VA.MHV.PHR.lab-mappings.html#Lab-Mapping-LabResultTO)
+  - [Mapping from VIA/VDIF - LabResult](StructureDefinition-VA.MHV.PHR.lab-mappings.html#Lab-Mapping-LabResultTO)
+  - [Examples](StructureDefinition-VA.MHV.PHR.lab-examples.html)
 
 ### References
 
 Source of data received from VIA/VDIF using a SOAP xml schema that might be from one of:
-- [VIA_v4.0.7_uat.wsdl](C:\Users\johnm\git\VA\mhv-np-via-wsclient\src\main\resources\VIA_v4.0.7_uat.wsdl)
-- [mockey-mdws3-service.wsdl](C:\Users\johnm\git\VA\mhv-ap-vde-support\src\test\wsdl\mockey-mdws3-service.wsdl)
+- [VIA_v4.0.7_uat.wsdl](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl)
+- [mockey-mdws3-service.wsdl](https://github.com/department-of-veterans-affairs/mhv-ap-vde-support/blob/development/src/test/wsdl/mockey-mdws3-service.wsdl)
 - VA [Vista Fileman](http://www.vistapedia.com/index.php/Main_Page)
 
 ## Utility Functions

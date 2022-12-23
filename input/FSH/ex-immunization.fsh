@@ -1,49 +1,10 @@
 
-
-Instance:   ex-MHV-immunization-0
-InstanceOf: VA.MHV.PHR.immunization
-Title: "Example of an MHV immunization R4 to flu, no note, no reaction"
-Description:      "holding typical values"
-Usage: #example
-//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* status = #completed
-* vaccineCode = http://hl7.org/fhir/sid/cvx#111
-* patient = Reference(Patient/ex-patient)
-* occurrenceDateTime = 2020-12-25T23:50:50-05:00
-* recorded = 2020-12-25T23:50:50-05:00
-* primarySource = false
-* identifier[+].value = "HI" 
-
-
-// TODO need more Immunization examples
-
 Instance:   ex-MHV-immunization-1
 InstanceOf: VA.MHV.PHR.immunization
-Title: "Example of an MHV immunization from a ImmunizationTO"
+Title: "Example 1 of an MHV immunization"
 Usage: #example
 Description:      """
-Example from a sample ImmunizationTO
-
-`
-<immunizationTO>
-    <administeredDate>3220808.111528</administeredDate>
-    <comments>test</comments>
-    <contraindicated>0</contraindicated>
-    <encounter>
-        <location>
-            <name>23 HOUR OBSERVATION</name>
-        </location>
-        <visitId>6433274</visitId>
-        <facility>
-            <sitecode>552</sitecode>
-            <name>DAYTON</name>
-        </facility>
-    </encounter>
-    <id>124684</id>
-    <name>COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE</name>
-    <series>COMPLETE</series>
-</immunizationTO>
-`
+Example from a mock ImmunizationTO
 """
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #completed
@@ -63,36 +24,10 @@ Example from a sample ImmunizationTO
 
 Instance:   ex-MHV-immunization-2
 InstanceOf: VA.MHV.PHR.immunization
-Title: "Example of an MHV immunization from a ImmunizationTO"
+Title: "Example 2 of an MHV immunization"
 Usage: #example
 Description:      """
-Example from a sample ImmunizationTO
-
-`
-<immunizationTO>
-    <administeredDate>3220805.165638</administeredDate>
-    <comments>test comment</comments>
-    <contraindicated>0</contraindicated>
-    <cptCode>
-        <id>90688</id>
-        <name>IIV4 VACCINE SPLT 0.5 ML IM</name>
-    </cptCode>
-    <encounter>
-        <location>
-            <name>ADTP BURNETT</name>
-        </location>
-        <visitId>6433261</visitId>
-        <facility>
-            <sitecode>552</sitecode>
-            <name>DAYTON</name>
-        </facility>
-    </encounter>
-    <id>124685</id>
-    <name>INFLUENZA, INJECTABLE, QUADRIVALENT</name>
-    <reaction>FEVER</reaction>
-    <series>COMPLETE</series>
-</immunizationTO>
-`
+Example from a mock ImmunizationTO
 """
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #completed

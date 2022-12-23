@@ -1,5 +1,5 @@
 Instance:   ex-MHV-lab-0
-InstanceOf: VA.MHV.lab
+InstanceOf: VA.MHV.PHR.lab
 Title: "Example of an MHV lab observation"
 Description:      "holding typical values"
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST

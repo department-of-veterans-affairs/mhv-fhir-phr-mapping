@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="MHVcapabilities"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>MHV_PHR</h2><div><p>CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data</p>
+</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>MHV supports queries to PHR.</p>
+</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td>y</td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title="GET a resource (read interaction)">Read</b></th><th><b title="GET all set of resources of the type (search interaction)">Search</b></th><th><b title="PUT a new resource version (update interaction)">Update</b></th><th><b title="POST a new resource (create interaction)">Create</b></th></tr><tr><td>Observation</td><td>Supported profiles:<br/>  <a href="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Immunization</td><td>Supported profiles:<br/>  <a href="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>DocumentReference</td><td>Supported profiles:<br/>  <a href="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Organization</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Location</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Practitioner</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Patient</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="https://johnmoehrke.github.io/MHV-PHR/CapabilityStatement/MHVcapabilities"/>
+  <version value="0.1.0-beta"/>
+  <name value="MHV_PHR"/>
+  <title value="This indicates how MHV exposes PHR using FHIR"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2022-12-22"/>
+  <publisher value="John Moehrke (himself)"/>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://healthcaresecprivacy.blogspot.com"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <description value="CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <kind value="instance"/>
+  <implementation>
+    <description value="MyHealtheVet"/>
+    <url value="https://www.myhealth.va.gov/"/>
+  </implementation>
+  <fhirVersion value="4.0.1"/>
+  <format value="application/fhir+json"/>
+  <format value="application/fhir+xml"/>
+  <rest>
+    <mode value="server"/>
+    <documentation value="MHV supports queries to PHR."/>
+    <security>
+      <cors value="false"/>
+      <description value="Security is system level, PGHD presumes MHV properly handles user (as patient) rights"/>
+    </security>
+    <resource>
+      <type value="Observation"/>
+      <supportedProfile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab"/>
+      <documentation value="MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="code"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Immunization"/>
+      <supportedProfile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization"/>
+      <documentation value="MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="DocumentReference"/>
+      <supportedProfile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note"/>
+      <documentation value="MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="_id"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="status"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="patient"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="category"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="type"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="date"/>
+        <type value="token"/>
+      </searchParam>
+      <searchParam>
+        <name value="period"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Organization"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Location"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Practitioner"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <resource>
+      <type value="Patient"/>
+      <interaction>
+        <code value="search-type"/>
+      </interaction>
+      <interaction>
+        <code value="read"/>
+      </interaction>
+      <searchParam>
+        <name value="identifier"/>
+        <type value="token"/>
+      </searchParam>
+    </resource>
+    <interaction>
+      <code value="search-system"/>
+    </interaction>
+  </rest>
+</CapabilityStatement>

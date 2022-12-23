@@ -62,8 +62,8 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 
 Mapping: Immunization-Mapping
 Source:	MHVimmunization
-Target: "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization"
-Title: "VIA/VDIF Fileman to FHIR PHR Mapping"
+Target: "ImmunizationTO"
+Title: "VIA/VDIF to MHV-PHR"
 * -> "ImmunizationTO" "MHV PHR FHIR API"
 * vaccineCode.text -> "ImmunizationTO.name"
 * note.text -> "ImmunizationTO.comments"

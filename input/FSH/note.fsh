@@ -11,8 +11,8 @@ A profile on the DocumentReference resource for MHV PHR exposing Notes using FHI
 
 Mapping: Notes-Mapping
 Source:	MHVnote
-Target: "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"
-Title: "VIA/VDIF Fileman to FHIR PHR Mapping"
+Target: "NoteTO"
+Title: "VIA/VDIF to MHV-PHR"
 * -> "NoteTO" "MHV PHR FHIR API"
 * category -> "clinical-note"
 * author -> "GetPractitioner(NoteTO.author.[AuthorTO])"

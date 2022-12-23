@@ -18,8 +18,8 @@ A profile showing how Labs will be exposed using FHIR API to MyHealtheVet PHR.
 
 Mapping: Lab-Mapping-LabReportTO
 Source:	MHVlab
-Target: "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.lab"
-Title: "VIA/VDIF Fileman to FHIR PHR Mapping ObservatioN(LabReportTO)"
+Target: "LabReportTO"
+Title: "VIA/VDIF to MHV-PHR"
 * -> "LabReportTO" "MHV PHR FHIR API"
 * category -> "laboratory"
 * status -> "final"
@@ -38,8 +38,8 @@ Title: "VIA/VDIF Fileman to FHIR PHR Mapping ObservatioN(LabReportTO)"
 
 Mapping: Lab-Mapping-LabResultTO
 Source:	MHVlab
-Target: "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.lab"
-Title: "VIA/VDIF Fileman to FHIR PHR Mapping Observation(LabResultTO)"
+Target: "LabTestTO"
+Title: "VIA/VDIF to MHV-PHR"
 * -> "LabTestTO / LabResultTO" "MHV PHR FHIR API"
 * specimen -> "Contained Specimen (LabTestTO.specimen.[LabSpecimenTO])"
 * identifier -> "LabTestTO.id"
