@@ -1,3 +1,7 @@
+/*
+to support GetPatient(ICN)
+*/
+
 Profile:        MHVpatient
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
 Id:             VA.MHV.PHR.patient
@@ -10,6 +14,7 @@ A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.
 """
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named religion 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-birthPlace named birthPlace 0..1
+// TODO: could define some slices for the various names, addresses, telecom, and contact
 
 
 Mapping: Patient-Mapping
@@ -17,6 +22,7 @@ Source:	MHVpatient
 Target: "PatientTO"
 Title: "VDIF to MHV-PHR"
 * -> "PatientTO" "MHV PHR FHIR API"
+* active -> "true"
 * identifier -> "ICN"
 * managingOrganization -> "MHV PHR - TREATING_FACILITY"
 * name -> "PatientTO.name"

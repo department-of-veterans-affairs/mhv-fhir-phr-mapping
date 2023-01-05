@@ -1,0 +1,145 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-labReport-1> a fhir:DiagnosticReport;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ex-MHV-labReport-1"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport";
+       fhir:index 0;
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 79381-0}\">LR MICROBIOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1995-08-03 14:49:00+0000</td></tr><tr><td>Reported</td><td>1995-08-03 14:49:00+0000</td></tr><tr><td>Identifier:</td><td> id: MI;7049269 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>When For</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table><p>Accession [UID]: PARAS 95 264 []            Received: Aug 01, 1995@11:02\nCollection sample: STOOL               Collection date: Jul 30, 1995\nSite/Specimen: FECES\nProvider: MANGAS,PHYLLIS A\n\n* PARASITOLOGY FINAL REPORT =&gt; Aug 03, 1995   TECH CODE: 1003\nParasitology Remark(s):\nNO OVA OR PARASITES FOUND</p></div>"
+  ]; # 
+  fhir:DomainResource.contained [
+     a fhir:Observation;
+     fhir:index 0;
+     fhir:Resource.id [ fhir:value "ex-MHV-labTest-1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest";
+         fhir:index 0;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest>
+       ]
+     ];
+     fhir:Observation.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "usual" ];
+       fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id" ];
+       fhir:Identifier.value [ fhir:value "MI;7049269;1" ]
+     ];
+     fhir:Observation.status [ fhir:value "final" ];
+     fhir:Observation.category [
+       fhir:index 0;
+       fhir:CodeableConcept.coding [
+         fhir:index 0;
+         fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/observation-category" ];
+         fhir:Coding.code [ fhir:value "laboratory" ]
+       ]
+     ];
+     fhir:Observation.code [
+       fhir:CodeableConcept.text [ fhir:value "Parasitology Remark(s)" ]
+     ];
+     fhir:Observation.subject [
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1>;
+       fhir:Reference.reference [ fhir:value "Patient/ex-MHV-patient-1" ]
+     ];
+     fhir:Observation.effectiveDateTime [ fhir:value "1995-08-03T14:49:00Z"^^xsd:dateTime ];
+     fhir:Observation.performer [
+       fhir:index 0;
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-989>;
+       fhir:Reference.reference [ fhir:value "Organization/ex-MHV-organization-989" ]
+     ];
+     fhir:Observation.valueString [ fhir:value "NO OVA OR PARASITES FOUND" ]
+  ], [
+     a fhir:Specimen;
+     fhir:index 1;
+     fhir:Resource.id [ fhir:value "ex-MHV-specimen-1" ];
+     fhir:Resource.meta [
+       fhir:Meta.profile [
+         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen";
+         fhir:index 0;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen>
+       ]
+     ];
+     fhir:Specimen.identifier [
+       fhir:index 0;
+       fhir:Identifier.use [ fhir:value "usual" ];
+       fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabSpecimenTO.id" ];
+       fhir:Identifier.value [ fhir:value "6Y100" ]
+     ];
+     fhir:Specimen.accessionIdentifier [
+       fhir:Identifier.use [ fhir:value "usual" ];
+       fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id" ];
+       fhir:Identifier.value [ fhir:value "PARAS 95 264" ]
+     ];
+     fhir:Specimen.status [ fhir:value "available" ];
+     fhir:Specimen.type [
+       fhir:CodeableConcept.text [ fhir:value "FECES" ]
+     ];
+     fhir:Specimen.collection [
+       fhir:Specimen.collection.collectedDateTime [ fhir:value "1995-07-30"^^xsd:date ]
+     ]
+  ]; # 
+  fhir:DiagnosticReport.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id" ];
+     fhir:Identifier.value [ fhir:value "MI;7049269" ]
+  ]; # 
+  fhir:DiagnosticReport.status [ fhir:value "final"]; # 
+  fhir:DiagnosticReport.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0074" ];
+       fhir:Coding.code [ fhir:value "LAB" ]
+     ]
+  ]; # 
+  fhir:DiagnosticReport.code [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:79381-0;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "79381-0" ];
+       fhir:Coding.display [ fhir:value "MI" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "LR MICROBIOLOGY REPORT" ]
+  ]; # 
+  fhir:DiagnosticReport.subject [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1>;
+     fhir:Reference.reference [ fhir:value "Patient/ex-MHV-patient-1" ]
+  ]; # 
+  fhir:DiagnosticReport.effectiveDateTime [ fhir:value "1995-08-03T14:49:00Z"^^xsd:dateTime]; # 
+  fhir:DiagnosticReport.issued [ fhir:value "1995-08-03T14:49:00Z"^^xsd:dateTime]; # 
+  fhir:DiagnosticReport.performer [
+     fhir:index 0;
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-989>;
+     fhir:Reference.reference [ fhir:value "Organization/ex-MHV-organization-989" ]
+  ]; # 
+  fhir:DiagnosticReport.specimen [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#ex-MHV-specimen-1" ]
+  ]; # 
+  fhir:DiagnosticReport.result [
+     fhir:index 0;
+     fhir:Reference.reference [ fhir:value "#ex-MHV-labTest-1" ]
+  ]; # 
+  fhir:DiagnosticReport.conclusion [ fhir:value "Accession [UID]: PARAS 95 264 []            Received: Aug 01, 1995@11:02\nCollection sample: STOOL               Collection date: Jul 30, 1995\nSite/Specimen: FECES\nProvider: MANGAS,PHYLLIS A\n\n* PARASITOLOGY FINAL REPORT => Aug 03, 1995   TECH CODE: 1003\nParasitology Remark(s):\nNO OVA OR PARASITES FOUND"] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-labReport-1.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

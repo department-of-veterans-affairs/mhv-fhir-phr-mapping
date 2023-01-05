@@ -1,0 +1,62 @@
+{
+  "resourceType" : "DiagnosticReport",
+  "id" : "ex-MHV-labReport-6",
+  "meta" : {
+    "profile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Reported</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Identifier:</td><td> id: SP;7009190 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Aug 09, 1999        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: Aug 10, 1999 13:27  Resident: \nDate  completed: Aug 11, 1999        Accession #: SP 99 1804\nSubmitted by: KATHLEEN MARIE WOLNER  Practitioner:KATHLEEN MARIE WOLNER MD\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYP @ 12CM\nBrief Clinical History:\n70 YEAR OLD MALE FOR SCREENING EXAM.  \nOperative Findings:\nSMOOTH BROAD BASED POLYP\nPostoperative Diagnosis:\nPROBABLE BENIGN POLYP\nGross description:\nRECEIVED IN FORMALIN AND LABELED &quot;POLYP&quot;  CONSISTS OF TWO 1 MM FRAGMENTS\nOF PINK TISSUE.  SUBMITTED IN TOTAL IN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Aug 09, 1999)\n|TAB||BLANK(3)|\nDIAGNOSIS:\nPOLYP AT 12 CM. TUBULAR ADENOMA.</p></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Specimen",
+    "id" : "ex-MHV-specimen-6",
+    "meta" : {
+      "profile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"]
+    },
+    "accessionIdentifier" : {
+      "use" : "usual",
+      "system" : "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id",
+      "value" : "SP 99 1804"
+    },
+    "status" : "available",
+    "type" : {
+      "text" : "POLYP @ 12CM"
+    },
+    "collection" : {
+      "collectedDateTime" : "1999-08-09"
+    }
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id",
+    "value" : "SP;7009190"
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "code" : "LAB"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "60567-5",
+      "display" : "SP"
+    }],
+    "text" : "LR SURGICAL PATHOLOGY REPORT"
+  },
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-1"
+  },
+  "effectiveDateTime" : "1999-08-11T16:09:00Z",
+  "issued" : "1999-08-11T16:09:00Z",
+  "performer" : [{
+    "reference" : "Organization/ex-MHV-organization-989"
+  }],
+  "specimen" : [{
+    "reference" : "#ex-MHV-specimen-6"
+  }],
+  "conclusion" : "Date Spec taken: Aug 09, 1999        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: Aug 10, 1999 13:27  Resident: \nDate  completed: Aug 11, 1999        Accession #: SP 99 1804\nSubmitted by: KATHLEEN MARIE WOLNER  Practitioner:KATHLEEN MARIE WOLNER MD\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYP @ 12CM\nBrief Clinical History:\n70 YEAR OLD MALE FOR SCREENING EXAM.  \nOperative Findings:\nSMOOTH BROAD BASED POLYP\nPostoperative Diagnosis:\nPROBABLE BENIGN POLYP\nGross description:\nRECEIVED IN FORMALIN AND LABELED \"POLYP\"  CONSISTS OF TWO 1 MM FRAGMENTS\nOF PINK TISSUE.  SUBMITTED IN TOTAL IN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Aug 09, 1999)\n|TAB||BLANK(3)|\nDIAGNOSIS:\nPOLYP AT 12 CM. TUBULAR ADENOMA."
+}

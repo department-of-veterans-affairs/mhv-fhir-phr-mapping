@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-labReport-3"/>
+  <meta>
+    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 79381-0}">LR MICROBIOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Reported</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Identifier:</td><td> id: MI;7049271 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>When For</b></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr></table><p>Accession [UID]: PARAS 95 262 []            Received: Aug 01, 1995@11:00
+Collection sample: STOOL               Collection date: Jul 28, 1995
+Site/Specimen: FECES
+Provider: MANGAS,PHYLLIS A
+
+* PARASITOLOGY FINAL REPORT =&gt; Aug 01, 1995   TECH CODE: 420
+Parasitology Remark(s):
+REJECTED=LEAKED</p></div>
+  </text>
+  <contained>
+    <Observation>
+      <id value="ex-MHV-labTest-5"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"/>
+        <value value="MI;7049271;1"/>
+      </identifier>
+      <status value="final"/>
+      <category>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="laboratory"/>
+        </coding>
+      </category>
+      <code>
+        <text value="Parasitology Remark(s)"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-1"/>
+      </subject>
+      <effectiveDateTime value="1995-08-01T11:07:00Z"/>
+      <performer>
+        <reference value="Organization/ex-MHV-organization-989"/>
+      </performer>
+      <valueString value="REJECTED=LEAKED"/>
+    </Observation>
+  </contained>
+  <contained>
+    <Observation>
+      <id value="ex-MHV-labTest-6"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"/>
+        <value value="MI;7049271;2"/>
+      </identifier>
+      <status value="final"/>
+      <category>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="laboratory"/>
+        </coding>
+      </category>
+      <code>
+        <text value="Parasitology Remark(s)"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-1"/>
+      </subject>
+      <effectiveDateTime value="1995-08-01T11:07:00Z"/>
+      <performer>
+        <reference value="Organization/ex-MHV-organization-989"/>
+      </performer>
+      <valueString value="MODERATE WBC'S SEEN"/>
+    </Observation>
+  </contained>
+  <contained>
+    <Observation>
+      <id value="ex-MHV-labTest-7"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"/>
+        <value value="MI;7049271;3"/>
+      </identifier>
+      <status value="final"/>
+      <category>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="laboratory"/>
+        </coding>
+      </category>
+      <code>
+        <text value="Parasitology Remark(s)"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-1"/>
+      </subject>
+      <effectiveDateTime value="1995-08-01T11:07:00Z"/>
+      <performer>
+        <reference value="Organization/ex-MHV-organization-989"/>
+      </performer>
+      <valueString value="MODERATE YEAST"/>
+    </Observation>
+  </contained>
+  <contained>
+    <Specimen>
+      <id value="ex-MHV-specimen-3"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabSpecimenTO.id"/>
+        <value value="6Y100"/>
+      </identifier>
+      <accessionIdentifier>
+        <use value="usual"/>
+        <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"/>
+        <value value="PARAS 95 262"/>
+      </accessionIdentifier>
+      <status value="available"/>
+      <type>
+        <text value="FECES"/>
+      </type>
+      <collection>
+        <collectedDateTime value="1995-07-28"/>
+      </collection>
+    </Specimen>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <value value="MI;7049271"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="LAB"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="79381-0"/>
+      <display value="MI"/>
+    </coding>
+    <text value="LR MICROBIOLOGY REPORT"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-1"/>
+  </subject>
+  <effectiveDateTime value="1995-08-01T11:07:00Z"/>
+  <issued value="1995-08-01T11:07:00Z"/>
+  <performer>
+    <reference value="Organization/ex-MHV-organization-989"/>
+  </performer>
+  <specimen>
+    <reference value="#ex-MHV-specimen-3"/>
+  </specimen>
+  <result>
+    <reference value="#ex-MHV-labTest-5"/>
+  </result>
+  <result>
+    <reference value="#ex-MHV-labTest-6"/>
+  </result>
+  <result>
+    <reference value="#ex-MHV-labTest-7"/>
+  </result>
+  <conclusion value="Accession [UID]: PARAS 95 262 []            Received: Aug 01, 1995@11:00&#xA;Collection sample: STOOL               Collection date: Jul 28, 1995&#xA;Site/Specimen: FECES&#xA;Provider: MANGAS,PHYLLIS A&#xA;&#xA;* PARASITOLOGY FINAL REPORT =&gt; Aug 01, 1995   TECH CODE: 420&#xA;Parasitology Remark(s):&#xA;REJECTED=LEAKED"/>
+</DiagnosticReport>

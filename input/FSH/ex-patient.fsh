@@ -73,6 +73,21 @@ Usage: #example
 // dropping currentMeansStatus
 // dropping elegibilityCode
 
+/*
+<patientTO>
+    <name>MTPZEROTWO,DAYTSHR</name>
+    <patientName>MTPZEROTWO,DAYTSHR</patientName>
+    <mpiPid>1013699147</mpiPid>
+    <mpiChecksum>368567</mpiChecksum>
+    <localPid>552164786</localPid>
+    <confidentiality>
+        <tag>0</tag>
+    </confidentiality>
+    <patientFlags>
+        <count>0</count>
+    </patientFlags>
+</patientTO>
+*/
 Instance: ex-MHV-patient-1
 InstanceOf: MHVpatient
 Title: "Example DAYSHR from PatientTO"
@@ -81,6 +96,7 @@ This example is derived off of a mock PatientTO
 """
 Usage: #example
 * name[+].use = #usual
+* name[=].text = "MTPZEROTWO,DAYTSHR"
 * name[=].family = "DAYTSHR"
 * name[=].given = "MTPZEROTWO"
 * gender = #male 

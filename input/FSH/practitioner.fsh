@@ -1,3 +1,6 @@
+/*
+to support GetPractitioner(UserTO | AuthorTO)
+*/
 Profile:        MHVpractitioner
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
 Id:             VA.MHV.PHR.practitioner
@@ -9,7 +12,7 @@ A profile on the Practitioner resource for MHV PHR exposing Practitioner using F
 - used for UserTO, and AuthorTO
 - might be used for PersonTO or is that RelatedPerson?
 """
-
+// TODO: could define some slices for the various identifiers, telecom, and name
 
 /*
       <s:complexType name="UserTO">
@@ -46,12 +49,13 @@ Source:	MHVpractitioner
 Target: "UserTO"
 Title: "VDIF to MHV-PHR"
 * -> "UserTO" "MHV PHR FHIR API"
-* name -> "UserTO.name"
+* name.text -> "UserTO.name"
 * telecom -> "UserTO.phone"
 * telecom -> "UserTO.pager"
 * telecom -> "UserTO.digitalPager"
 * communication -> "UserTO.greeting"
-* identifier -> "UserTO.ids"
+* identifier.value -> "UserTO.ids"
+* identifier.system -> "https://johnmoehrke.github.io/MHV-PHR/Vista/111/UserTO.id"
 * telecom -> "UserTO.emailAddress"
 
 /*
@@ -73,8 +77,9 @@ Source:	MHVpractitioner
 Target: "AuthorTO"
 Title: "VDIF to MHV-PHR"
 * -> "AuthorTO" "MHV PHR FHIR API"
-* identifier -> "AuthorTO.id"
-* name -> "AuthorTO.name"
+* identifier.value -> "AuthorTO.id"
+* identifier.system -> "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id"
+* name.text -> "AuthorTO.name"
 
 
 

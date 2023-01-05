@@ -183,22 +183,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <p><!-- white space is critical inside of capture --></p>
 <div class="markdown-toc">
 <ul id="markdown-toc">
-  <li><a href="#myhealthevet-makes-phr-available-using-fhir" id="markdown-toc-myhealthevet-makes-phr-available-using-fhir">MyHealtheVet makes PHR available using FHIR</a>    <ul>
-      <li><a href="#data-input-processing" id="markdown-toc-data-input-processing">Data input processing</a></li>
-      <li><a href="#general-processing-of-clinical-resources" id="markdown-toc-general-processing-of-clinical-resources">General Processing of clinical resources</a></li>
-      <li><a href="#references" id="markdown-toc-references">References</a></li>
-    </ul>
-  </li>
-  <li><a href="#utility-functions" id="markdown-toc-utility-functions">Utility Functions</a>    <ul>
-      <li><a href="#support-resources" id="markdown-toc-support-resources">Support Resources</a></li>
-      <li><a href="#conversions" id="markdown-toc-conversions">Conversions</a></li>
-    </ul>
-  </li>
+  <li><a href="#todo" id="markdown-toc-todo">todo</a></li>
+  <li><a href="#data-input-processing" id="markdown-toc-data-input-processing">Data input processing</a></li>
+  <li><a href="#general-processing-of-clinical-resources" id="markdown-toc-general-processing-of-clinical-resources">General Processing of clinical resources</a></li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+  <li><a href="#utility-functions" id="markdown-toc-utility-functions">Utility Functions</a></li>
 </ul>
 
 </div>
-
-<h2 id="myhealthevet-makes-phr-available-using-fhir">MyHealtheVet makes PHR available using FHIR</h2>
 
 <p>MyHealtheVet acts as a FHIR Server.</p>
 
@@ -234,13 +226,78 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="StructureDefinition-VA.MHV.PHR.note-examples.html">Examples</a></li>
     </ul>
   </li>
-  <li><a href="StructureDefinition-VA.MHV.PHR.lab.html">Labs</a>
+</ul>
+
+<h3 id="todo">todo</h3>
+<p>Not yet done</p>
+
+<h4 id="labs">Labs</h4>
+
+<ul>
+  <li>Labs and Tests
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.lab-mappings.html#Lab-Mapping-LabResultTO">Mapping from VDIF - LabReport</a></li>
-      <li><a href="StructureDefinition-VA.MHV.PHR.lab-mappings.html#Lab-Mapping-LabResultTO">Mapping from VDIF - LabResult</a></li>
-      <li><a href="StructureDefinition-VA.MHV.PHR.lab-examples.html">Examples</a></li>
+      <li>Pathology Reports</li>
+      <li>Microbiology</li>
     </ul>
   </li>
+</ul>
+
+<p>Not clear if “Labs and Tests” (MHV-39107) is a different thing from “Pathology Reports” (MHV-39123) and “Microbiology” (MHV-39131). Muazzam spreadsheet has Pathology and MicroBiology; but not Lab. The Pathology and the MicroBiology example given is the same. So I presume that Labs is the same as Pathology and MicroBiology. I will thus go from the VDIF schema direct to FHIR.</p>
+
+<p>The given example aligns with the VIA_v4.0.7_uat.wsdl. The VDIF provides lab data in four schema</p>
+<ul>
+  <li>LabReportTO</li>
+  <li>LabTestTO</li>
+  <li>LabResultTO</li>
+  <li>LabSpecimenTO</li>
+</ul>
+
+<p>The LabReportTO is mapped onto a FHIR DiagnosticReport for laboratory reporting.</p>
+
+<p>The LabTestTO plus LabResultTO are combined and mapped onto a FHIR Observation for laboratory result that is contained in the DiagnosticReport.</p>
+
+<p>The LabSpecimen is mapped into a Specimen resource that is contained in the DiagnosticReport.</p>
+
+<p>The use of contained means that we do not need to de-duplicate specimen.</p>
+
+<p>Note that LOINC has a report on this topic https://loinc.org/file-access/?download-id=22762</p>
+
+<p>Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)</p>
+
+<ul>
+  <li><a href="StructureDefinition-VA.MHV.PHR.labReport.html">LabReport</a>
+    <ul>
+      <li><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">Mapping from VDIF</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.labReport-examples.html">Examples</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="other">other</h4>
+
+<ul>
+  <li>Admission and Discharge</li>
+  <li>Allergies</li>
+  <li>Medication History</li>
+  <li>Problem List</li>
+  <li>Vital Readings</li>
+  <li>ECG</li>
+  <li>Radiology Reports</li>
+  <li>Appointments</li>
+  <li>Provenance</li>
+</ul>
+
+<p>unknown (FHIR supports the following topics but unclear if this data exists in PHR)</p>
+
+<ul>
+  <li>care plan / care team</li>
+  <li>device</li>
+  <li>goal</li>
+  <li>procedure</li>
+  <li>questionnaire</li>
+  <li>related person</li>
+  <li>service request</li>
+  <li>coverage</li>
 </ul>
 
 <h3 id="data-input-processing">Data input processing</h3>
@@ -276,18 +333,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li><a href="https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl">VIA_v4.0.7_uat.wsdl</a></li>
   <li><a href="https://github.com/department-of-veterans-affairs/mhv-ap-vde-support/blob/development/src/test/wsdl/mockey-mdws3-service.wsdl">mockey-mdws3-service.wsdl</a></li>
+  <li><a href="https://github.com/department-of-veterans-affairs/mhv-hla-app-ui/blob/dbb0301be4a17f31e67048300d72c87c0977aa09/hra-mock-via-app/src/main/java/gov/va/hra/integration/via/mock/ws/EmrService.wsdl">EmrService.wsdl</a></li>
   <li>VA <a href="http://www.vistapedia.com/index.php/Main_Page">Vista Fileman</a></li>
 </ul>
 
-<h2 id="utility-functions">Utility Functions</h2>
+<h3 id="utility-functions">Utility Functions</h3>
 
 <p>To support functions and resources:</p>
 
-<h3 id="support-resources">Support Resources</h3>
+<h4 id="support-resources">Support Resources</h4>
 
 <p>To support the primary FHIR Resources, there are some untility Resources that will be needed. These will be created upon demand, based on a lookup need.</p>
 
-<h4 id="getpractitioner">GetPractitioner()</h4>
+<h5 id="getpractitioner">GetPractitioner()</h5>
 
 <p>Input: UserTO, AuthorTO, etc</p>
 
@@ -297,7 +355,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>If a Practitioner is found, and the details given are different, then presume parameters are newer and use them to update the found Practitioner Resource.</p>
 
-<h4 id="getpatient">GetPatient()</h4>
+<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.practitioner.html">Practitioner</a></p>
+
+<h5 id="getpatient">GetPatient()</h5>
 
 <p>Input: ICN, PatientTO</p>
 
@@ -309,7 +369,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p><strong>QUESTION: Should the patient also be populated with given patient demographics found in eVault?</strong></p>
 
-<h4 id="getlocation">GetLocation()</h4>
+<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.patient.html">Patient</a></p>
+
+<h5 id="getlocation">GetLocation()</h5>
 
 <p>Input: hospitalLocationTO, SiteTO</p>
 
@@ -319,7 +381,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>If a Location is found, and the details given are different, then presume parameters are newer and use them to update the found Location Resource.</p>
 
-<h4 id="getorganization">GetOrganization()</h4>
+<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.location.html">Location</a></p>
+
+<h5 id="getorganization">GetOrganization()</h5>
 
 <p>Input: organiztion id (e.g. Lab id)</p>
 
@@ -329,11 +393,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>If a Organization is found, and the details given are different, then presume parameters are newer and use them to update the found Organization Resource.</p>
 
-<h3 id="conversions">Conversions</h3>
+<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.organization.html">Organization</a></p>
+
+<h4 id="conversions">Conversions</h4>
 
 <p>Historic data is using different dataTypes that can be well defined</p>
 
-<h4 id="convertdate">ConvertDate()</h4>
+<h5 id="convertdate">ConvertDate()</h5>
 
 <p>Input: Fileman Date</p>
 
@@ -343,7 +409,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>See <a href="http://www.vistapedia.com/index.php/Date_formats">FileMan date</a></p>
 
-<h4 id="code-lookup">Code Lookup</h4>
+<h5 id="code-lookup">Code Lookup</h5>
 
 <p>Most of the historic data just uses strings. Will need some method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a <a href="http://hl7.org/fhir/conceptmap.html">FHIR ConceptMap</a> resource, thus making maintaining it easy.</p>
 
@@ -351,12 +417,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possiblly update of the given ConceptMap.</p>
 
-<h4 id="id-vs-identifier">Id vs Identifier</h4>
+<h5 id="id-vs-identifier">Id vs Identifier</h5>
 
 <p>Our FHIR database will track linkages to source objects using the FHIR resource <code class="language-plaintext highlighter-rouge">.identifier</code> element, and the Vista <code class="language-plaintext highlighter-rouge">.id</code> element.</p>
 
 <ol>
   <li>As far as I can tell the <code class="language-plaintext highlighter-rouge">.id</code> values coming from Vista (Fileman) are given to us as strings. I presume unique strings at the source for that given context of that data. (for a given Vista instance the ImmunizationTO.id is unique, but that id value might be a different ImmunizationTO object at a different Vista site, and that id value on a different object like NoteTO at the original Vista site)</li>
+  <li>The <code class="language-plaintext highlighter-rouge">.id</code> values seem to have a two or three part to them separated by <code class="language-plaintext highlighter-rouge">;</code>. I don’t know if there is something we can interpret, or if I am just looking at non-real examples.</li>
   <li>In FHIR <a href="http://hl7.org/fhir/datatypes.html#Identifier">Identifier datatype</a> tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique. We should define a system value for each Vista Site, and each context. In this way when more data sources come along we don’t have clashes of id because we can differentiate them with the system+id. For example when we receive Cerner data.</li>
   <li>Thus when we know the data received is from VDIF we can look up the given id as identifier of system+id.</li>
 </ol>
@@ -434,7 +501,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 23, 2022 15:55-0600">2022-12-23</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 4, 2023 18:59-0600">2023-01-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

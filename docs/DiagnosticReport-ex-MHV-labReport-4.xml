@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-labReport-4"/>
+  <meta>
+    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 60567-5}">LR SURGICAL PATHOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Reported</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Identifier:</td><td> id: SP;6999190 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD
+Date Spec rec'd: Aug 09, 2000 16:14  Resident: 
+Date  completed: Aug 10, 2000        Accession #: SP 00 1982
+Submitted by: MARK MAZUR MD          Practitioner:MARK MAZUR DPM
+-------------------------------------------------------------------------------
+Specimen: 
+OLD HARDWARE LEFT FOOT X2
+Brief Clinical History:
+This 71 y/o wm presents with painful hardware L 1st metatarsal head. The
+pins were inserted 3 years ago for a bunion procedure. The Bunionprocedure
+is well healed and pt is now wanting the pin removed. Will probably need
+k-wire driver and power for this case.
+Preoperative Diagnosis:
+PAINFUL HARDWARE LEFT FIRST METATARSAL 
+Postoperative Diagnosis:
+PAINFUL HARDWARE LEFT FIRST METATARSAL 
+Gross description:
+RECEIVED UNFIXED AND LABELED &quot;OLD HARDWARE LEFT FOOT X 2&quot; CONSISTS OF TWO
+1.7 CM AND 2.5 CM LONG 1 MM WIDE METALLIC PINS.
+|TAB||NOWRAP|
+DIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)</p></div>
+  </text>
+  <contained>
+    <Specimen>
+      <id value="ex-MHV-specimen-4"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"/>
+      </meta>
+      <accessionIdentifier>
+        <use value="usual"/>
+        <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"/>
+        <value value="SP 00 1982"/>
+      </accessionIdentifier>
+      <status value="available"/>
+      <type>
+        <text value="OLD HARDWARE LEFT FOOT X2"/>
+      </type>
+      <collection>
+        <collectedDateTime value="2000-08-09"/>
+      </collection>
+    </Specimen>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"/>
+    <value value="SP;6999190"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="LAB"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="60567-5"/>
+      <display value="SP"/>
+    </coding>
+    <text value="LR SURGICAL PATHOLOGY REPORT"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-1"/>
+  </subject>
+  <effectiveDateTime value="2000-08-10T15:56:00Z"/>
+  <issued value="2000-08-10T15:56:00Z"/>
+  <performer>
+    <reference value="Organization/ex-MHV-organization-989"/>
+  </performer>
+  <specimen>
+    <reference value="#ex-MHV-specimen-4"/>
+  </specimen>
+  <conclusion value="Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD&#xA;Date Spec rec'd: Aug 09, 2000 16:14  Resident: &#xA;Date  completed: Aug 10, 2000        Accession #: SP 00 1982&#xA;Submitted by: MARK MAZUR MD          Practitioner:MARK MAZUR DPM&#xA;-------------------------------------------------------------------------------&#xA;Specimen: &#xA;OLD HARDWARE LEFT FOOT X2&#xA;Brief Clinical History:&#xA;This 71 y/o wm presents with painful hardware L 1st metatarsal head. The&#xA;pins were inserted 3 years ago for a bunion procedure. The Bunionprocedure&#xA;is well healed and pt is now wanting the pin removed. Will probably need&#xA;k-wire driver and power for this case.&#xA;Preoperative Diagnosis:&#xA;PAINFUL HARDWARE LEFT FIRST METATARSAL &#xA;Postoperative Diagnosis:&#xA;PAINFUL HARDWARE LEFT FIRST METATARSAL &#xA;Gross description:&#xA;RECEIVED UNFIXED AND LABELED &quot;OLD HARDWARE LEFT FOOT X 2&quot; CONSISTS OF TWO&#xA;1.7 CM AND 2.5 CM LONG 1 MM WIDE METALLIC PINS.&#xA;|TAB||NOWRAP|&#xA;DIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)"/>
+</DiagnosticReport>

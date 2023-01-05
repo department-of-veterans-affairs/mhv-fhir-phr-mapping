@@ -48,7 +48,7 @@
   <name value="MHVnote"/>
   <title value="VA MHV PHR Notes"/>
   <status value="active"/>
-  <date value="2022-12-23T15:55:29-06:00"/>
+  <date value="2023-01-04T18:59:45-06:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -68,7 +68,7 @@
       <value value="JohnMoehrke@gmail.com"/>
     </telecom>
   </contact>
-  <description value="A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.&#xA;&#xA;- based on US-Core for Clinical Notes"/>
+  <description value="A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;- based on US-Core for Clinical Notes&#xA;&#xA;TODO Questions:&#xA;- is standardTitle or type used to differentiate between various note types?&#xA;- type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values&#xA;  - A - LOINC#83320-2 \&quot;Allergy and Immunology Adverse event note\&quot;&#xA;  - PN - LOINC#11505-5 \&quot;Physician procedure note\&quot;&#xA;  - DS - LOINC#18842-5 \&quot;Discharge summary\&quot;&#xA;- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.&#xA;  - serviceCategory&#xA;  - cosigner&#xA;  - hasAdendum&#xA;  - isAddendum&#xA;  - originalNoteID&#xA;  - hasImages&#xA;  - itemId&#xA;  - signatureTimestamp&#xA;  - consultId&#xA;  - surgicalProcId&#xA;  - prfId&#xA;  - parentId&#xA;  - procTimestamp&#xA;  - subject"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -829,7 +829,7 @@
       </mapping>
       <mapping>
         <identity value="Notes-Mapping"/>
-        <map value="NoteTo.type{A, PN, DS, ?} or ConvertTitleToCode(NoteTO.standardTitle)"/>
+        <map value="NoteTO.type{A, PN, DS, ?} or ConvertTitleToCode(NoteTO.standardTitle)"/>
       </mapping>
     </element>
     <element id="DocumentReference.type.text">
@@ -2856,7 +2856,7 @@
       <path value="DocumentReference.type.coding"/>
       <mapping>
         <identity value="Notes-Mapping"/>
-        <map value="NoteTo.type{A, PN, DS, ?} or ConvertTitleToCode(NoteTO.standardTitle)"/>
+        <map value="NoteTO.type{A, PN, DS, ?} or ConvertTitleToCode(NoteTO.standardTitle)"/>
       </mapping>
     </element>
     <element id="DocumentReference.type.text">

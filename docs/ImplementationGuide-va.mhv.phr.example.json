@@ -18,7 +18,7 @@
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2022-12-23T15:55:29-06:00",
+  "date" : "2023-01-04T18:59:45-06:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -690,7 +690,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.immunization"
       },
       "name" : "VA MHV PHR Immunization",
-      "description" : "A profile on the Immunization that declares how MHV will expose PHR immunization.\n\n**Proposed mapping not yet approved for implementation**\n\n* Derived off of US-Core Immunization\n  * US-Core already requires: status, vaccineCode, patient, occurance[x], primarySource\n* must point at the patient\n* must have status of completed \n* must have identifier as cross reference to original source\n* must have a code.text or code.coding from a valueset\n  * code.coding may should be a CVX but we don't have such.\n  * Might have a CPT code\n* must have a date (occuranceDateTime) the vaccine was administered from the UI\n  * will also be used for recorded date\n* must be indicated this data are not official record (primarySource=false)\n* any reaction is recorded as a contained observation\n* may have a comment note\n* once created will have an id, versionId, lastUpdated.\n* Not sure if text will be populated",
+      "description" : "A profile on the Immunization that declares how MHV will expose PHR immunization.\n\n**Proposed mapping not yet approved for implementation**\n\n* Derived off of US-Core Immunization\n  * US-Core already requires: status, vaccineCode, patient, occurance[x], primarySource\n* must point at the patient\n* must have status of completed \n* must have identifier as cross reference to original source\n* must have a code.text or code.coding from a valueset\n  * code.coding should be a CVX but we don't have such.\n  * Might have a CPT code\n* must have a date (occuranceDateTime) the vaccine was administered from the UI\n  * will also be used for recorded date\n* must be indicated this data are not official record (primarySource=false)\n* any reaction is recorded as a contained observation\n* may have a comment note\n* once created will have an id, versionId, lastUpdated.\n* Not sure if text will be populated\n\nMapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)\n\nTODO Questions: \n- The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.\n- reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?\n- contraindicated -- appears to be a number (e.g. 0). No idea what the values might be or what they might mean\n- id - presuming this is a persisted identifier we can cross-reference with\n- series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?\n- encounter - should we convert these to instances of FHIR Encounter?\n- could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature.",
       "exampleBoolean" : false
     },
     {
@@ -699,10 +699,34 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/VA.MHV.PHR.lab"
+        "reference" : "StructureDefinition/VA.MHV.PHR.labReport"
       },
-      "name" : "VA MHV PHR lab",
-      "description" : "A profile showing how Labs will be exposed using FHIR API to MyHealtheVet PHR.\n\n- This profile is based on US-Core Lab\n- sometimes a contained Specimen is needed\n  - Specimen.identifier <- LabSpecimenTO.id\n  - Specimen.type.text <- LabSpecimenTO.name\n  - Specimen.collection.collectedDateTime <- ConvertDate(LabSpecimenTO.collectionDate)\n  - Specimen.accessionIdentifier <- LabSpecimenTO.accessionNum",
+      "name" : "VA MHV PHR Lab Report",
+      "description" : "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport.\n\n- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting\n\n[Mapping from VDIF](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.LabSpecimen"
+      },
+      "name" : "VA MHV PHR Lab Specimen",
+      "description" : "A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.\n\n- This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - Specimen.type.text <- LabSpecimenTO.name\n  - type should be a code derived from LabSpecimenTO.name\n- should have a collectedDateTime derived from LabSpecimenTO.collectionDate\n- may have an identifier - Specimen.identifier <- LabSpecimenTO.id\n  - if no LabSpecimenTO.id is given, then the Specimen resource must be contained\n- should have an accessionIdentifier derived from LabSpecimenTO.accessionNum\n- should have a subject (unless Contained)\n\nMapping from [LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen)\n\nTODO questions: \n- examples didn't have much populated\n- not clear what site and facility might contain, so can't tell where they would go\n- some examples are likely FHIR Device (old hardware left foot), so this might change",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.labTest"
+      },
+      "name" : "VA MHV PHR labTest",
+      "description" : "A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.\n\n- This profile is based on US-Core Lab\n- sometimes a contained Specimen is needed",
       "exampleBoolean" : false
     },
     {
@@ -726,7 +750,19 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.note"
       },
       "name" : "VA MHV PHR Notes",
-      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.\n\n- based on US-Core for Clinical Notes",
+      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n\nTODO Questions:\n- is standardTitle or type used to differentiate between various note types?\n- type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values\n  - A - LOINC#83320-2 \\\"Allergy and Immunology Adverse event note\\\"\n  - PN - LOINC#11505-5 \\\"Physician procedure note\\\"\n  - DS - LOINC#18842-5 \\\"Discharge summary\\\"\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - serviceCategory\n  - cosigner\n  - hasAdendum\n  - isAddendum\n  - originalNoteID\n  - hasImages\n  - itemId\n  - signatureTimestamp\n  - consultId\n  - surgicalProcId\n  - prfId\n  - parentId\n  - procTimestamp\n  - subject",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.organization"
+      },
+      "name" : "VA MHV PHR Organization",
+      "description" : "A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.\n\n- based on US-Core for Organization\n- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)",
       "exampleBoolean" : false
     },
     {
@@ -792,14 +828,98 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Observation"
+        "valueString" : "DiagnosticReport"
       }],
       "reference" : {
-        "reference" : "Observation/ex-MHV-lab-0"
+        "reference" : "DiagnosticReport/ex-MHV-labReport-1"
       },
-      "name" : "Example of an MHV lab observation",
-      "description" : "holding typical values",
-      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.lab"
+      "name" : "Example 1 of an MHV labReport",
+      "description" : "Example from a mock labReportTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/ex-MHV-labReport-2"
+      },
+      "name" : "Example 2 of an MHV labReport",
+      "description" : "Example from a mock labReportTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/ex-MHV-labReport-3"
+      },
+      "name" : "Example 3 of an MHV labReport",
+      "description" : "Example from a mock labReportTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/ex-MHV-labReport-4"
+      },
+      "name" : "Example 4 of an MHV labReport",
+      "description" : "Example from a mock labReportTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/ex-MHV-labReport-5"
+      },
+      "name" : "Example 5 of an MHV labReport",
+      "description" : "Example from a mock labReportTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/ex-MHV-labReport-6"
+      },
+      "name" : "Example 6 of an MHV labReport",
+      "description" : "Example from a mock labReportTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/ex-MHV-labReport-7"
+      },
+      "name" : "Example 7 of an MHV labReport",
+      "description" : "Example from a mock labReportTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DiagnosticReport"
+      }],
+      "reference" : {
+        "reference" : "DiagnosticReport/ex-MHV-labReport-8"
+      },
+      "name" : "Example 8 of an MHV labReport",
+      "description" : "Example from a mock labReportTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
     },
     {
       "extension" : [{
@@ -807,7 +927,19 @@
         "valueString" : "Location"
       }],
       "reference" : {
-        "reference" : "Location/ex-MHV-location-0"
+        "reference" : "Location/ex-MHV-location-552"
+      },
+      "name" : "Location DAYTON Lab",
+      "description" : "This example derived off of a mock NoteTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Location"
+      }],
+      "reference" : {
+        "reference" : "Location/ex-MHV-location-984"
       },
       "name" : "Location DAYTSHR TEST Lab",
       "description" : "This example derived off of a mock HospitalLocationTO",
@@ -822,8 +954,68 @@
         "reference" : "DocumentReference/ex-MHV-note-0"
       },
       "name" : "Example 0 of a MHV Note",
-      "description" : "Derived from the a mock NoteTO:\n\nTODO, not completely mapped yet",
+      "description" : "Derived from the a mock NoteTO:",
       "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/ex-MHV-note-1"
+      },
+      "name" : "Example 1 of a MHV Note",
+      "description" : "Derived from the a mock NoteTO:",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/ex-MHV-note-2"
+      },
+      "name" : "Example 2 of a MHV Note",
+      "description" : "Derived from the a mock NoteTO:",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/ex-MHV-note-3"
+      },
+      "name" : "Example 3 of a MHV Note",
+      "description" : "Derived from the a mock NoteTO:",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/ex-MHV-note-4"
+      },
+      "name" : "Example 4 of a MHV Note",
+      "description" : "Derived from the a mock NoteTO:\n\nNote dropped cosigner",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/ex-MHV-organization-989"
+      },
+      "name" : "Organization lab site 989",
+      "description" : "This example derived off of a mock diagnostic report ",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization"
     },
     {
       "extension" : [{
@@ -859,6 +1051,30 @@
       },
       "name" : "Example Practitioner",
       "description" : "holding typical values",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/ex-practitioner-36556"
+      },
+      "name" : "Example Practitoner 36556",
+      "description" : "Muazzam Khan",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/ex-practitioner-37569"
+      },
+      "name" : "Example Practitoner 37569",
+      "description" : "Muazzam Khan",
       "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
     }],
     "page" : {

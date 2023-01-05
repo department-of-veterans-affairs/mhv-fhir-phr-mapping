@@ -1,3 +1,7 @@
+/*
+to support GetLocation()
+*/
+
 Profile:        MHVlocation
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-location
 Id:             VA.MHV.PHR.location
@@ -60,12 +64,12 @@ Title: "VDIF to MHV-PHR"
 * telecom -> "HospitalLocationTO.phone"
 
 /* 
-                           <location>
-                              <id>984</id>
-                              <name>DAYTSHR TEST LAB</name>
-                           </location>
+<location>
+  <id>984</id>
+  <name>DAYTSHR TEST LAB</name>
+</location>
 */
-Instance: ex-MHV-location-0
+Instance: ex-MHV-location-984
 InstanceOf: MHVlocation
 Title: "Location DAYTSHR TEST Lab"
 Description: "This example derived off of a mock HospitalLocationTO"
@@ -73,5 +77,20 @@ Usage: #example
 * name = "DAYTSHR TEST LAB"
 * identifier[+].use = #official
 * identifier[=].value = "984"
-* identifier[=].system = "http://example.org/HospitalLocationTO"
+* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/HospitalLocationTO"
 
+/*
+    <location>
+        <id>552</id>
+        <name>DAYTON</name>
+    </location>
+*/
+Instance: ex-MHV-location-552
+InstanceOf: MHVlocation
+Title: "Location DAYTON Lab"
+Description: "This example derived off of a mock NoteTO"
+Usage: #example
+* name = "DAYTON"
+* identifier[+].use = #official
+* identifier[=].value = "552"
+* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/HospitalLocationTO"

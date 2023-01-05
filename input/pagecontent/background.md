@@ -1,6 +1,4 @@
 
-## MyHealtheVet makes PHR available using FHIR
-
 MyHealtheVet acts as a FHIR Server.
 
 - [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
@@ -19,10 +17,62 @@ MyHealtheVet acts as a FHIR Server.
 - [Notes](StructureDefinition-VA.MHV.PHR.note.html)
   - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto)
   - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
-- [Labs](StructureDefinition-VA.MHV.PHR.lab.html)
-  - [Mapping from VDIF - LabReport](StructureDefinition-VA.MHV.PHR.lab-mappings.html#Lab-Mapping-LabResultTO)
-  - [Mapping from VDIF - LabResult](StructureDefinition-VA.MHV.PHR.lab-mappings.html#Lab-Mapping-LabResultTO)
-  - [Examples](StructureDefinition-VA.MHV.PHR.lab-examples.html)
+
+### todo
+Not yet done
+
+#### Labs
+
+- Labs and Tests
+  - Pathology Reports
+  - Microbiology
+  
+Not clear if "Labs and Tests" (MHV-39107) is a different thing from "Pathology Reports" (MHV-39123) and "Microbiology" (MHV-39131). Muazzam spreadsheet has Pathology and MicroBiology; but not Lab. The Pathology and the MicroBiology example given is the same. So I presume that Labs is the same as Pathology and MicroBiology. I will thus go from the VDIF schema direct to FHIR.
+
+The given example aligns with the VIA_v4.0.7_uat.wsdl. The VDIF provides lab data in four schema
+- LabReportTO
+- LabTestTO
+- LabResultTO
+- LabSpecimenTO
+
+The LabReportTO is mapped onto a FHIR DiagnosticReport for laboratory reporting.
+
+The LabTestTO plus LabResultTO are combined and mapped onto a FHIR Observation for laboratory result that is contained in the DiagnosticReport.
+
+The LabSpecimen is mapped into a Specimen resource that is contained in the DiagnosticReport. 
+
+The use of contained means that we do not need to de-duplicate specimen.
+
+Note that LOINC has a report on this topic https://loinc.org/file-access/?download-id=22762
+
+Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
+
+- [LabReport](StructureDefinition-VA.MHV.PHR.labReport.html)
+  - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
+
+#### other
+
+- Admission and Discharge
+- Allergies
+- Medication History
+- Problem List
+- Vital Readings
+- ECG
+- Radiology Reports
+- Appointments
+- Provenance
+  
+unknown (FHIR supports the following topics but unclear if this data exists in PHR)
+
+- care plan / care team
+- device
+- goal
+- procedure
+- questionnaire
+- related person
+- service request
+- coverage
 
 ### Data input processing
 
@@ -34,7 +84,7 @@ General Pattern
 4. Our FHIR database will have [support resources](background.html#support-resources) for common resource types: Patient, Practitioner, Location, etc -- a Patient resource for each patient within the database, Location for all locations, and Practitioner for all clinicians (Users) - So that clinical resources can point at these resources as appropriate. For example when an Immunization was given at a specific location, we point at a Location resource with the details. Thus all clinical resources that were associated with that location all point at the one instance of Location. Same for Practitioner (Users), and Patients. 
 5. Our FHIR database will have Provenance resource indicating each time a resource is created/updated/deleted. This will aid with the management of data changes and provide linkage back to origination and mapping details.
 
-### General Processing of clinical resources 
+### General Processing of clinical resources
 
 <div>
 {%include update-flow.svg%}
@@ -46,24 +96,24 @@ General Pattern
 3. When one item is found, we compare the data we have with the data we were given. If no change, then nothing more is done. If there is a difference, then we update our data.
 4. When creating a new instance, or updating an existing instance, create a Provenance instance to track what was imported, from what, to what, when, and given some detail to indicate the translation used.
 
-
 ### References
 
 Source of data received from VDIF using a SOAP xml schema that might be from one of:
 
 - [VIA_v4.0.7_uat.wsdl](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl)
 - [mockey-mdws3-service.wsdl](https://github.com/department-of-veterans-affairs/mhv-ap-vde-support/blob/development/src/test/wsdl/mockey-mdws3-service.wsdl)
+- [EmrService.wsdl](https://github.com/department-of-veterans-affairs/mhv-hla-app-ui/blob/dbb0301be4a17f31e67048300d72c87c0977aa09/hra-mock-via-app/src/main/java/gov/va/hra/integration/via/mock/ws/EmrService.wsdl)
 - VA [Vista Fileman](http://www.vistapedia.com/index.php/Main_Page)
 
-## Utility Functions
+### Utility Functions
 
 To support functions and resources:
 
-### Support Resources
+#### Support Resources
 
 To support the primary FHIR Resources, there are some untility Resources that will be needed. These will be created upon demand, based on a lookup need.
 
-#### GetPractitioner()
+##### GetPractitioner()
 
 Input: UserTO, AuthorTO, etc
 
@@ -73,7 +123,9 @@ If a Practitioner is not found given the input parameters, then one is created a
 
 If a Practitioner is found, and the details given are different, then presume parameters are newer and use them to update the found Practitioner Resource.
 
-#### GetPatient()
+Profiled [Practitioner](StructureDefinition-VA.MHV.PHR.practitioner.html)
+
+##### GetPatient()
 
 Input: ICN, PatientTO
 
@@ -85,7 +137,9 @@ If a Patient is found, and the details given are different, then presume paramet
 
 **QUESTION: Should the patient also be populated with given patient demographics found in eVault?**
 
-#### GetLocation()
+Profiled [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
+
+##### GetLocation()
 
 Input: hospitalLocationTO, SiteTO
 
@@ -95,7 +149,9 @@ If a Location is not found given the input parameters, then one is created and p
 
 If a Location is found, and the details given are different, then presume parameters are newer and use them to update the found Location Resource.
 
-#### GetOrganization()
+Profiled [Location](StructureDefinition-VA.MHV.PHR.location.html)
+
+##### GetOrganization()
 
 Input: organiztion id (e.g. Lab id)
 
@@ -105,11 +161,13 @@ If a Organization is not found given the input parameters, then one is created a
 
 If a Organization is found, and the details given are different, then presume parameters are newer and use them to update the found Organization Resource.
 
-### Conversions
+Profiled [Organization](StructureDefinition-VA.MHV.PHR.organization.html)
+
+#### Conversions
 
 Historic data is using different dataTypes that can be well defined
 
-#### ConvertDate()
+##### ConvertDate()
 
 Input: Fileman Date
 
@@ -119,7 +177,7 @@ Given that the Fileman date is slightly different than HL7. The conversion is si
 
 See [FileMan date](http://www.vistapedia.com/index.php/Date_formats)
 
-#### Code Lookup
+##### Code Lookup
 
 Most of the historic data just uses strings. Will need some method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a [FHIR ConceptMap](http://hl7.org/fhir/conceptmap.html) resource, thus making maintaining it easy.
 
@@ -127,13 +185,14 @@ For every context use of a concept encoded as a string, we presume they are uniq
 
 A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possiblly update of the given ConceptMap.
 
-#### Id vs Identifier
+##### Id vs Identifier
 
 Our FHIR database will track linkages to source objects using the FHIR resource `.identifier` element, and the Vista `.id` element.
 
 1. As far as I can tell the `.id` values coming from Vista (Fileman) are given to us as strings. I presume unique strings at the source for that given context of that data. (for a given Vista instance the ImmunizationTO.id is unique, but that id value might be a different ImmunizationTO object at a different Vista site, and that id value on a different object like NoteTO at the original Vista site)
-2. In FHIR [Identifier datatype](http://hl7.org/fhir/datatypes.html#Identifier) tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique. We should define a system value for each Vista Site, and each context. In this way when more data sources come along we don't have clashes of id because we can differentiate them with the system+id. For example when we receive Cerner data.
-3. Thus when we know the data received is from VDIF we can look up the given id as identifier of system+id.
+2. The `.id` values seem to have a two or three part to them separated by `;`. I don't know if there is something we can interpret, or if I am just looking at non-real examples.
+3. In FHIR [Identifier datatype](http://hl7.org/fhir/datatypes.html#Identifier) tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique. We should define a system value for each Vista Site, and each context. In this way when more data sources come along we don't have clashes of id because we can differentiate them with the system+id. For example when we receive Cerner data.
+4. Thus when we know the data received is from VDIF we can look up the given id as identifier of system+id.
 
 The system value should be composed of the Vista site and object context
 

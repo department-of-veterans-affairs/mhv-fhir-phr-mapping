@@ -14,7 +14,7 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * must have status of completed 
 * must have identifier as cross reference to original source
 * must have a code.text or code.coding from a valueset
-  * code.coding may should be a CVX but we don't have such.
+  * code.coding should be a CVX but we don't have such.
   * Might have a CPT code
 * must have a date (occuranceDateTime) the vaccine was administered from the UI
   * will also be used for recorded date
@@ -23,20 +23,26 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * may have a comment note
 * once created will have an id, versionId, lastUpdated.
 * Not sure if text will be populated
+
+Mapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)
+
+TODO Questions: 
+- The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.
+- reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?
+- contraindicated -- appears to be a number (e.g. 0). No idea what the values might be or what they might mean
+- id - presuming this is a persisted identifier we can cross-reference with
+- series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?
+- encounter - should we convert these to instances of FHIR Encounter?
+- could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature.
 """
 * status = #completed
-//* vaccineCode from http://hl7.org/fhir/us/core/ValueSet/us-core-vaccines-cvx
-// TODO is this set of codes the right one? It likely is more modern than the existing MHV list
 * occurrence[x] only dateTime
 * occurrence[x] 1..1
 * recorded 1..1
 * primarySource = false
 * identifier 1..
 * note 0..1
-// US-Core already requires these
-// 
 * reaction.detail ^type.aggregation = #contained
-// TODO characterize the contained Observations for the given reactions.
 // not allowed
 * route 0..0
 * statusReason 0..0
@@ -57,7 +63,7 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * fundingSource 0..0
 * protocolApplied 0..0
 
-// profile Contained Observation holding reaction
+// TODO profile Contained Observation holding reaction
 
 
 Mapping: Immunization-Mapping
@@ -71,7 +77,7 @@ Title: "VDIF to MHV-PHR"
 * occurrenceDateTime -> "ImmunizationTO.administeredDate"
 * recorded -> "ImmunizationTO.administeredDate"
 * performer.actor.display -> "ImmunizationTO.administrator.[UserTO]"
-* site.text -> "ImmunizationTO.anatomicSurvace"
+* site.text -> "ImmunizationTO.anatomicSurface"
 * vaccineCode.coding.code -> "ImmunizationTO.cptCode.id"
 * vaccineCode.coding.display -> "ImmunizationTO.cptCode.name"
 * encounter -> "ImmunizationTO.encounter.[VisitTO]"

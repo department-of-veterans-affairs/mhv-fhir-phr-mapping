@@ -46,7 +46,7 @@
   fhir:StructureDefinition.name [ fhir:value "MHVimmunization"]; # 
   fhir:StructureDefinition.title [ fhir:value "VA MHV PHR Immunization"]; # 
   fhir:StructureDefinition.status [ fhir:value "active"]; # 
-  fhir:StructureDefinition.date [ fhir:value "2022-12-23T15:55:29-06:00"^^xsd:dateTime]; # 
+  fhir:StructureDefinition.date [ fhir:value "2023-01-04T18:59:45-06:00"^^xsd:dateTime]; # 
   fhir:StructureDefinition.publisher [ fhir:value "John Moehrke (himself)"]; # 
   fhir:StructureDefinition.contact [
      fhir:index 0;
@@ -69,7 +69,7 @@
        fhir:ContactPoint.value [ fhir:value "JohnMoehrke@gmail.com" ]
      ]
   ]; # 
-  fhir:StructureDefinition.description [ fhir:value "A profile on the Immunization that declares how MHV will expose PHR immunization.\n\n**Proposed mapping not yet approved for implementation**\n\n* Derived off of US-Core Immunization\n  * US-Core already requires: status, vaccineCode, patient, occurance[x], primarySource\n* must point at the patient\n* must have status of completed \n* must have identifier as cross reference to original source\n* must have a code.text or code.coding from a valueset\n  * code.coding may should be a CVX but we don't have such.\n  * Might have a CPT code\n* must have a date (occuranceDateTime) the vaccine was administered from the UI\n  * will also be used for recorded date\n* must be indicated this data are not official record (primarySource=false)\n* any reaction is recorded as a contained observation\n* may have a comment note\n* once created will have an id, versionId, lastUpdated.\n* Not sure if text will be populated"]; # 
+  fhir:StructureDefinition.description [ fhir:value "A profile on the Immunization that declares how MHV will expose PHR immunization.\n\n**Proposed mapping not yet approved for implementation**\n\n* Derived off of US-Core Immunization\n  * US-Core already requires: status, vaccineCode, patient, occurance[x], primarySource\n* must point at the patient\n* must have status of completed \n* must have identifier as cross reference to original source\n* must have a code.text or code.coding from a valueset\n  * code.coding should be a CVX but we don't have such.\n  * Might have a CPT code\n* must have a date (occuranceDateTime) the vaccine was administered from the UI\n  * will also be used for recorded date\n* must be indicated this data are not official record (primarySource=false)\n* any reaction is recorded as a contained observation\n* may have a comment note\n* once created will have an id, versionId, lastUpdated.\n* Not sure if text will be populated\n\nMapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)\n\nTODO Questions: \n- The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.\n- reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?\n- contraindicated -- appears to be a number (e.g. 0). No idea what the values might be or what they might mean\n- id - presuming this is a persisted identifier we can cross-reference with\n- series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?\n- encounter - should we convert these to instances of FHIR Encounter?\n- could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature."]; # 
   fhir:StructureDefinition.jurisdiction [
      fhir:index 0;
      fhir:CodeableConcept.coding [
@@ -2450,7 +2450,7 @@
        ], [
          fhir:index 3;
          fhir:ElementDefinition.mapping.identity [ fhir:value "Immunization-Mapping" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "ImmunizationTO.anatomicSurvace" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "ImmunizationTO.anatomicSurface" ]
        ]
      ], [
        fhir:index 46;
@@ -4904,7 +4904,7 @@
        fhir:ElementDefinition.mapping [
          fhir:index 0;
          fhir:ElementDefinition.mapping.identity [ fhir:value "Immunization-Mapping" ];
-         fhir:ElementDefinition.mapping.map [ fhir:value "ImmunizationTO.anatomicSurvace" ]
+         fhir:ElementDefinition.mapping.map [ fhir:value "ImmunizationTO.anatomicSurface" ]
        ]
      ], [
        fhir:index 20;

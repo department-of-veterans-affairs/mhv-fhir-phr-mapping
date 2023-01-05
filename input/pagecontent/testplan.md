@@ -1,9 +1,7 @@
 
 Overall test plan leverages the Profiles, and Examples shown on the [Artifacts Summary](artifacts.html). The [Profiles](artifacts.html#structures-resource-profiles) listed are describing the constraints that MHV uses when publishing from the PHR. Thus any Resources that are known to have been published by MHV MUST be conformant to these profiles.
 
-The Examples listed in [Example Instances](artifacts.html#example-example-instances) are example instances that are conformant to the MHV profiles. 
-
-The Examples listed in [Other](artifacts.html#5) are examples that either assist with the structure of the examples (e.g. Patient and Encounter) or are examples that MHV should be able to handle in various ways. 
+The Examples listed in [Example Instances](artifacts.html#example-example-instances) are example instances that are conformant to the MHV profiles.
 
 See the Test Plan for each Profile to understand the specific expectations for each good, odd, and bad example.
 

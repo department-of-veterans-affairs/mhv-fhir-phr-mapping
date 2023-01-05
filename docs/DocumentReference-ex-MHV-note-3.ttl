@@ -1,0 +1,84 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/DocumentReference/ex-MHV-note-3> a fhir:DocumentReference;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ex-MHV-note-3"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note";
+       fhir:index 0;
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"ex-MHV-note-3\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;ex-MHV-note-3&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: 5281855 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: ALLERGY &amp;amp; IMMUNOLOGY ADVERSE EVENT NOTE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#83320-2 &quot;Allergy and Immunology Adverse event note&quot;)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-1.html\">Patient/ex-MHV-patient-1</a> &quot; DAYTSHR&quot;</p><p><b>date</b>: Aug 5, 2022, 6:22:39 AM</p><p><b>author</b>: <a href=\"Practitioner-ex-practitioner-36556.html\">Practitioner/ex-practitioner-36556</a> &quot; MARUF&quot;</p><p><b>authenticator</b>: <a href=\"Practitioner-ex-practitioner-36556.html\">Practitioner/ex-practitioner-36556</a> &quot; MARUF&quot;</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td>-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td></tr><tr><td>*</td><td>text/plain</td><td>TE9DQUwgVElUTEU6IEFkdmVyc2UgUmVhY3QvQWxsZXJneSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIApTVEFOREFSRCBUSVRMRTogQUxMRVJHWSAmYW1wOyBJTU1VTk9MT0dZIEFEVkVSU0UgRVZFTlQgTk9URSAgICAgICAgIApEQVRFIE9GIE5PVEU6IEFVRyAwNSwgMjAyMkAxMToyMjozOSAgRU5UUlkgREFURTogQVVHIDA1LCAyMDIyQDExOjIyOjM5ICAgICAgCiAgICAgIEFVVEhPUjogQUhNRUQsTUFSVUYgICAgICAgICAgRVhQIENPU0lHTkVSOiAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgIFVSR0VOQ1k6ICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNUQVRVUzogQ09NUExFVEVEICAgICAgICAgICAgICAgICAgICAgCgpUaGlzIHBhdGllbnQgaGFzIGhhZCB0aGUgZm9sbG93aW5nIHJlYWN0aW9ucyAKc2lnbmVkLW9mZiBvbiBBdWcgMDUsIDIwMjJAMTE6MjI6MzkuCgpQT0xMRU4gQUxMRVJHRU5JCgpBdXRob3IncyBjb21tZW50czoKCk1hcnVmJ3MgdGVzdCBkYXRhIAoKIAovZXMvIE1BUlVGIEFITUVEClBIWVNJQ0lBTgpTaWduZWQ6IDA4LzA4LzIwMjIgMTE6MDM=</td><td>Adverse React/Allergy</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td>-</td><td><b>Related</b></td></tr><tr><td>*</td><td><a href=\"Location-ex-MHV-location-984.html\">Location/ex-MHV-location-984</a> &quot;DAYTSHR TEST LAB&quot;</td></tr></table></div>"
+  ]; # 
+  fhir:DocumentReference.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "usual" ];
+     fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/NoteTO.id" ];
+     fhir:Identifier.value [ fhir:value "5281855" ]
+  ]; # 
+  fhir:DocumentReference.status [ fhir:value "current"]; # 
+  fhir:DocumentReference.type [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:83320-2;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "83320-2" ];
+       fhir:Coding.display [ fhir:value "Allergy and Immunology Adverse event note" ]
+     ];
+     fhir:CodeableConcept.text [ fhir:value "ALLERGY &amp; IMMUNOLOGY ADVERSE EVENT NOTE" ]
+  ]; # 
+  fhir:DocumentReference.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category" ];
+       fhir:Coding.code [ fhir:value "clinical-note" ]
+     ]
+  ]; # 
+  fhir:DocumentReference.subject [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1>;
+     fhir:Reference.reference [ fhir:value "Patient/ex-MHV-patient-1" ]
+  ]; # 
+  fhir:DocumentReference.date [ fhir:value "2022-08-05T11:22:39Z"^^xsd:dateTime]; # 
+  fhir:DocumentReference.author [
+     fhir:index 0;
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-practitioner-36556>;
+     fhir:Reference.reference [ fhir:value "Practitioner/ex-practitioner-36556" ]
+  ]; # 
+  fhir:DocumentReference.authenticator [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-practitioner-36556>;
+     fhir:Reference.reference [ fhir:value "Practitioner/ex-practitioner-36556" ]
+  ]; # 
+  fhir:DocumentReference.content [
+     fhir:index 0;
+     fhir:DocumentReference.content.attachment [
+       fhir:Attachment.contentType [ fhir:value "text/plain" ];
+       fhir:Attachment.data [ fhir:value "TE9DQUwgVElUTEU6IEFkdmVyc2UgUmVhY3QvQWxsZXJneSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIApTVEFOREFSRCBUSVRMRTogQUxMRVJHWSAmYW1wOyBJTU1VTk9MT0dZIEFEVkVSU0UgRVZFTlQgTk9URSAgICAgICAgIApEQVRFIE9GIE5PVEU6IEFVRyAwNSwgMjAyMkAxMToyMjozOSAgRU5UUlkgREFURTogQVVHIDA1LCAyMDIyQDExOjIyOjM5ICAgICAgCiAgICAgIEFVVEhPUjogQUhNRUQsTUFSVUYgICAgICAgICAgRVhQIENPU0lHTkVSOiAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgIFVSR0VOQ1k6ICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNUQVRVUzogQ09NUExFVEVEICAgICAgICAgICAgICAgICAgICAgCgpUaGlzIHBhdGllbnQgaGFzIGhhZCB0aGUgZm9sbG93aW5nIHJlYWN0aW9ucyAKc2lnbmVkLW9mZiBvbiBBdWcgMDUsIDIwMjJAMTE6MjI6MzkuCgpQT0xMRU4gQUxMRVJHRU5JCgpBdXRob3IncyBjb21tZW50czoKCk1hcnVmJ3MgdGVzdCBkYXRhIAoKIAovZXMvIE1BUlVGIEFITUVEClBIWVNJQ0lBTgpTaWduZWQ6IDA4LzA4LzIwMjIgMTE6MDM="^^xsd:base64Binary ];
+       fhir:Attachment.title [ fhir:value "Adverse React/Allergy" ]
+     ]
+  ]; # 
+  fhir:DocumentReference.context [
+     fhir:DocumentReference.context.related [
+       fhir:index 0;
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/Location/ex-MHV-location-984>;
+       fhir:Reference.reference [ fhir:value "Location/ex-MHV-location-984" ]
+     ]
+  ] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/DocumentReference/ex-MHV-note-3.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

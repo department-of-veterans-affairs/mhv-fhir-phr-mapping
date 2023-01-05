@@ -222,7 +222,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>must have identifier as cross reference to original source</li>
   <li>must have a code.text or code.coding from a valueset
     <ul>
-      <li>code.coding may should be a CVX but we don’t have such.</li>
+      <li>code.coding should be a CVX but we don’t have such.</li>
       <li>Might have a CPT code</li>
     </ul>
   </li>
@@ -237,25 +237,80 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>once created will have an id, versionId, lastUpdated.</li>
   <li>Not sure if text will be populated</li>
 </ul>
+
+<p>Mapping from <a href="StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto">ImmunizationTO</a></p>
+
+<p>TODO Questions:</p>
+<ul>
+  <li>The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.</li>
+  <li>reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?</li>
+  <li>contraindicated – appears to be a number (e.g. 0). No idea what the values might be or what they might mean</li>
+  <li>id - presuming this is a persisted identifier we can cross-reference with</li>
+  <li>series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?</li>
+  <li>encounter - should we convert these to instances of FHIR Encounter?</li>
+  <li>could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature.</li>
+</ul>
 </td>
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="StructureDefinition-VA.MHV.PHR.lab.html" title="StructureDefinition/VA.MHV.PHR.lab">VA MHV PHR lab</a>
+                        <a href="StructureDefinition-VA.MHV.PHR.labReport.html" title="StructureDefinition/VA.MHV.PHR.labReport">VA MHV PHR Lab Report</a>
                     </td>
                     <td>
-<p>A profile showing how Labs will be exposed using FHIR API to MyHealtheVet PHR.</p>
+<p>A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport.</p>
+
+<ul>
+  <li>This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting</li>
+</ul>
+
+<p><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">Mapping from VDIF</a></p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen.html" title="StructureDefinition/VA.MHV.PHR.LabSpecimen">VA MHV PHR Lab Specimen</a>
+                    </td>
+                    <td>
+<p>A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.</p>
+
+<ul>
+  <li>This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances</li>
+  <li>must have a type
+    <ul>
+      <li>Specimen.type.text &lt;- LabSpecimenTO.name</li>
+      <li>type should be a code derived from LabSpecimenTO.name</li>
+    </ul>
+  </li>
+  <li>should have a collectedDateTime derived from LabSpecimenTO.collectionDate</li>
+  <li>may have an identifier - Specimen.identifier &lt;- LabSpecimenTO.id
+    <ul>
+      <li>if no LabSpecimenTO.id is given, then the Specimen resource must be contained</li>
+    </ul>
+  </li>
+  <li>should have an accessionIdentifier derived from LabSpecimenTO.accessionNum</li>
+  <li>should have a subject (unless Contained)</li>
+</ul>
+
+<p>Mapping from <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen">LabSpecimenTO</a></p>
+
+<p>TODO questions:</p>
+<ul>
+  <li>examples didn’t have much populated</li>
+  <li>not clear what site and facility might contain, so can’t tell where they would go</li>
+  <li>some examples are likely FHIR Device (old hardware left foot), so this might change</li>
+</ul>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="StructureDefinition-VA.MHV.PHR.labTest.html" title="StructureDefinition/VA.MHV.PHR.labTest">VA MHV PHR labTest</a>
+                    </td>
+                    <td>
+<p>A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.</p>
 
 <ul>
   <li>This profile is based on US-Core Lab</li>
-  <li>sometimes a contained Specimen is needed
-    <ul>
-      <li>Specimen.identifier &lt;- LabSpecimenTO.id</li>
-      <li>Specimen.type.text &lt;- LabSpecimenTO.name</li>
-      <li>Specimen.collection.collectedDateTime &lt;- ConvertDate(LabSpecimenTO.collectionDate)</li>
-      <li>Specimen.accessionIdentifier &lt;- LabSpecimenTO.accessionNum</li>
-    </ul>
-  </li>
+  <li>sometimes a contained Specimen is needed</li>
 </ul>
 </td>
                 </tr>
@@ -280,7 +335,51 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.</p>
 
 <ul>
+  <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
   <li>based on US-Core for Clinical Notes</li>
+</ul>
+
+<p>TODO Questions:</p>
+<ul>
+  <li>is standardTitle or type used to differentiate between various note types?</li>
+  <li>type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values
+    <ul>
+      <li>A - LOINC#83320-2 "Allergy and Immunology Adverse event note"</li>
+      <li>PN - LOINC#11505-5 "Physician procedure note"</li>
+      <li>DS - LOINC#18842-5 "Discharge summary"</li>
+    </ul>
+  </li>
+  <li>some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can’t tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
+    <ul>
+      <li>serviceCategory</li>
+      <li>cosigner</li>
+      <li>hasAdendum</li>
+      <li>isAddendum</li>
+      <li>originalNoteID</li>
+      <li>hasImages</li>
+      <li>itemId</li>
+      <li>signatureTimestamp</li>
+      <li>consultId</li>
+      <li>surgicalProcId</li>
+      <li>prfId</li>
+      <li>parentId</li>
+      <li>procTimestamp</li>
+      <li>subject</li>
+    </ul>
+  </li>
+</ul>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="StructureDefinition-VA.MHV.PHR.organization.html" title="StructureDefinition/VA.MHV.PHR.organization">VA MHV PHR Organization</a>
+                    </td>
+                    <td>
+<p>A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.</p>
+
+<ul>
+  <li>based on US-Core for Organization</li>
+  <li>used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can’t take a Location. (TechnicalDebt)</li>
 </ul>
 </td>
                 </tr>
@@ -341,15 +440,79 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="Observation-ex-MHV-lab-0.html" title="Observation/ex-MHV-lab-0">Example of an MHV lab observation</a>
+                        <a href="DiagnosticReport-ex-MHV-labReport-1.html" title="DiagnosticReport/ex-MHV-labReport-1">Example 1 of an MHV labReport</a>
                     </td>
                     <td>
-<p>holding typical values</p>
+<p>Example from a mock labReportTO</p>
 </td>
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="Location-ex-MHV-location-0.html" title="Location/ex-MHV-location-0">Location DAYTSHR TEST Lab</a>
+                        <a href="DiagnosticReport-ex-MHV-labReport-2.html" title="DiagnosticReport/ex-MHV-labReport-2">Example 2 of an MHV labReport</a>
+                    </td>
+                    <td>
+<p>Example from a mock labReportTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DiagnosticReport-ex-MHV-labReport-3.html" title="DiagnosticReport/ex-MHV-labReport-3">Example 3 of an MHV labReport</a>
+                    </td>
+                    <td>
+<p>Example from a mock labReportTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DiagnosticReport-ex-MHV-labReport-4.html" title="DiagnosticReport/ex-MHV-labReport-4">Example 4 of an MHV labReport</a>
+                    </td>
+                    <td>
+<p>Example from a mock labReportTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DiagnosticReport-ex-MHV-labReport-5.html" title="DiagnosticReport/ex-MHV-labReport-5">Example 5 of an MHV labReport</a>
+                    </td>
+                    <td>
+<p>Example from a mock labReportTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DiagnosticReport-ex-MHV-labReport-6.html" title="DiagnosticReport/ex-MHV-labReport-6">Example 6 of an MHV labReport</a>
+                    </td>
+                    <td>
+<p>Example from a mock labReportTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DiagnosticReport-ex-MHV-labReport-7.html" title="DiagnosticReport/ex-MHV-labReport-7">Example 7 of an MHV labReport</a>
+                    </td>
+                    <td>
+<p>Example from a mock labReportTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DiagnosticReport-ex-MHV-labReport-8.html" title="DiagnosticReport/ex-MHV-labReport-8">Example 8 of an MHV labReport</a>
+                    </td>
+                    <td>
+<p>Example from a mock labReportTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Location-ex-MHV-location-552.html" title="Location/ex-MHV-location-552">Location DAYTON Lab</a>
+                    </td>
+                    <td>
+<p>This example derived off of a mock NoteTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Location-ex-MHV-location-984.html" title="Location/ex-MHV-location-984">Location DAYTSHR TEST Lab</a>
                     </td>
                     <td>
 <p>This example derived off of a mock HospitalLocationTO</p>
@@ -361,8 +524,48 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                     </td>
                     <td>
 <p>Derived from the a mock NoteTO:</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DocumentReference-ex-MHV-note-1.html" title="DocumentReference/ex-MHV-note-1">Example 1 of a MHV Note</a>
+                    </td>
+                    <td>
+<p>Derived from the a mock NoteTO:</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DocumentReference-ex-MHV-note-2.html" title="DocumentReference/ex-MHV-note-2">Example 2 of a MHV Note</a>
+                    </td>
+                    <td>
+<p>Derived from the a mock NoteTO:</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DocumentReference-ex-MHV-note-3.html" title="DocumentReference/ex-MHV-note-3">Example 3 of a MHV Note</a>
+                    </td>
+                    <td>
+<p>Derived from the a mock NoteTO:</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="DocumentReference-ex-MHV-note-4.html" title="DocumentReference/ex-MHV-note-4">Example 4 of a MHV Note</a>
+                    </td>
+                    <td>
+<p>Derived from the a mock NoteTO:</p>
 
-<p>TODO, not completely mapped yet</p>
+<p>Note dropped cosigner</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Organization-ex-MHV-organization-989.html" title="Organization/ex-MHV-organization-989">Organization lab site 989</a>
+                    </td>
+                    <td>
+<p>This example derived off of a mock diagnostic report</p>
 </td>
                 </tr>
                 <tr>
@@ -387,6 +590,22 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                     </td>
                     <td>
 <p>holding typical values</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Practitioner-ex-practitioner-36556.html" title="Practitioner/ex-practitioner-36556">Example Practitoner 36556</a>
+                    </td>
+                    <td>
+<p>Muazzam Khan</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Practitioner-ex-practitioner-37569.html" title="Practitioner/ex-practitioner-37569">Example Practitoner 37569</a>
+                    </td>
+                    <td>
+<p>Muazzam Khan</p>
 </td>
                 </tr>
             </tbody>
@@ -438,7 +657,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 23, 2022 15:55-0600">2022-12-23</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 4, 2023 18:59-0600">2023-01-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

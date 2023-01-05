@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.5"}
-    h3,h4,h5,h6{--heading-prefix:"5.5"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.7"}
+    h3,h4,h5,h6{--heading-prefix:"5.7"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -281,7 +281,38 @@
 <p>A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.</p>
 
 <ul>
+  <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
   <li>based on US-Core for Clinical Notes</li>
+</ul>
+
+<p>TODO Questions:</p>
+<ul>
+  <li>is standardTitle or type used to differentiate between various note types?</li>
+  <li>type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values
+    <ul>
+      <li>A - LOINC#83320-2 "Allergy and Immunology Adverse event note"</li>
+      <li>PN - LOINC#11505-5 "Physician procedure note"</li>
+      <li>DS - LOINC#18842-5 "Discharge summary"</li>
+    </ul>
+  </li>
+  <li>some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can’t tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
+    <ul>
+      <li>serviceCategory</li>
+      <li>cosigner</li>
+      <li>hasAdendum</li>
+      <li>isAddendum</li>
+      <li>originalNoteID</li>
+      <li>hasImages</li>
+      <li>itemId</li>
+      <li>signatureTimestamp</li>
+      <li>consultId</li>
+      <li>surgicalProcId</li>
+      <li>prfId</li>
+      <li>parentId</li>
+      <li>procTimestamp</li>
+      <li>subject</li>
+    </ul>
+  </li>
 </ul>
 
 </p>
@@ -295,7 +326,7 @@
 
 <p><b>Usage:</b></p>
 <ul>
- <li>Examples for this Resource Profile: <a href="DocumentReference-ex-MHV-note-0.html">DocumentReference/ex-MHV-note-0</a></li>
+ <li>Examples for this Resource Profile: <a href="DocumentReference-ex-MHV-note-0.html">DocumentReference/ex-MHV-note-0</a>, <a href="DocumentReference-ex-MHV-note-1.html">DocumentReference/ex-MHV-note-1</a>, <a href="DocumentReference-ex-MHV-note-2.html">DocumentReference/ex-MHV-note-2</a>, <a href="DocumentReference-ex-MHV-note-3.html">DocumentReference/ex-MHV-note-3</a>, <a href="DocumentReference-ex-MHV-note-4.html">DocumentReference/ex-MHV-note-4</a></li>
 </ul>
 
 
@@ -1201,7 +1232,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 23, 2022 15:55-0600">2022-12-23</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 4, 2023 18:59-0600">2023-01-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

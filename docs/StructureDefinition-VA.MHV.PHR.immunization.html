@@ -293,7 +293,7 @@
   <li>must have identifier as cross reference to original source</li>
   <li>must have a code.text or code.coding from a valueset
     <ul>
-      <li>code.coding may should be a CVX but we don’t have such.</li>
+      <li>code.coding should be a CVX but we don’t have such.</li>
       <li>Might have a CPT code</li>
     </ul>
   </li>
@@ -307,6 +307,19 @@
   <li>may have a comment note</li>
   <li>once created will have an id, versionId, lastUpdated.</li>
   <li>Not sure if text will be populated</li>
+</ul>
+
+<p>Mapping from <a href="StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto">ImmunizationTO</a></p>
+
+<p>TODO Questions:</p>
+<ul>
+  <li>The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.</li>
+  <li>reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?</li>
+  <li>contraindicated – appears to be a number (e.g. 0). No idea what the values might be or what they might mean</li>
+  <li>id - presuming this is a persisted identifier we can cross-reference with</li>
+  <li>series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?</li>
+  <li>encounter - should we convert these to instances of FHIR Encounter?</li>
+  <li>could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature.</li>
 </ul>
 
 </p>
@@ -1012,7 +1025,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 23, 2022 15:55-0600">2022-12-23</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 4, 2023 18:59-0600">2023-01-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
