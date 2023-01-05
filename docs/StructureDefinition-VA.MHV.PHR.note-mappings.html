@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.0-beta - ci-build
+            <span style="display:inline-block;">0.1.1-beta - ci-build
 
 
 
@@ -150,7 +150,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.0-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.1-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -273,7 +273,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;docStatus</td><td>Composition.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>Composition.type</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Composition.class</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>Composition.class</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Composition.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>Composition.date</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;author</td><td>Composition.author</td> </tr>
@@ -314,7 +313,6 @@ Composition.date</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>.participation[typeCode=&quot;SBJ&quot;].role[typeCode=&quot;PAT&quot;]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>.availabilityTime[type=&quot;TS&quot;]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;author</td><td>.participation[typeCode=&quot;AUT&quot;].role[classCode=&quot;ASSIGNED&quot;]</td> </tr>
@@ -368,7 +366,6 @@ Composition.date</td> </tr>
 
 The typeCode should be mapped from the ClinicalDocument/code element to a set of document type codes configured in the affinity domain. One suggested coding system to use for typeCode is LOINC, in which case the mapping step can be omitted.</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>Derived from a mapping of /ClinicalDocument/code/@code to an Affinity Domain specified coded value to use and coding system. Affinity Domains are encouraged to use the appropriate value for Type of Service, based on the LOINC Type of Service (see Page 53 of the LOINC User's Manual). Must be consistent with /ClinicalDocument/code/@code</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>Derived from a mapping of /ClinicalDocument/code/@code to an Affinity Domain specified coded value to use and coding system. Affinity Domains are encouraged to use the appropriate value for Type of Service, based on the LOINC Type of Service (see Page 53 of the LOINC User's Manual). Must be consistent with /ClinicalDocument/code/@code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>ClinicalDocument/recordTarget/</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;author</td><td>ClinicalDocument/author</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authenticator</td><td>ClinicalDocument/legalAuthenticator</td> </tr>
@@ -396,7 +393,6 @@ serviceEvent/effectiveTime/high/
  <tr><td>&nbsp;&nbsp;&nbsp;docStatus</td><td>FiveWs.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>FiveWs.class</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>FiveWs.class</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authenticator</td><td>FiveWs.witness</td> </tr>
@@ -436,7 +432,6 @@ serviceEvent/effectiveTime/high/
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>DocumentEntry.availabilityStatus</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;type</td><td>DocumentEntry.type</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>DocumentEntry.class</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>DocumentEntry.class</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>DocumentEntry.patientId</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;author</td><td>DocumentEntry.author</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authenticator</td><td>DocumentEntry.legalAuthenticator</td> </tr>
@@ -558,7 +553,7 @@ serviceEvent/effectiveTime/high/
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 4, 2023 18:59-0600">2023-01-04</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.1-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 5, 2023 09:18-0600">2023-01-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

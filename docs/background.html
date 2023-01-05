@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.0-beta - ci-build
+            <span style="display:inline-block;">0.1.1-beta - ci-build
 
 
 
@@ -153,7 +153,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.0-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.1-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Background</h2>
   
 
@@ -214,6 +214,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="StructureDefinition-VA.MHV.PHR.location-examples.html">Examples</a></li>
     </ul>
   </li>
+  <li><a href="StructureDefinition-VA.MHV.PHR.organization.html">Organization</a>
+    <ul>
+      <li><a href="StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid">Mapping from VDIF</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.organization-examples.html">Examples</a></li>
+    </ul>
+  </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.immunization.html">Immunization</a>
     <ul>
       <li><a href="StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto">Mapping from VDIF</a></li>
@@ -226,52 +232,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="StructureDefinition-VA.MHV.PHR.note-examples.html">Examples</a></li>
     </ul>
   </li>
-</ul>
-
-<h3 id="todo">todo</h3>
-<p>Not yet done</p>
-
-<h4 id="labs">Labs</h4>
-
-<ul>
-  <li>Labs and Tests
-    <ul>
-      <li>Pathology Reports</li>
-      <li>Microbiology</li>
-    </ul>
-  </li>
-</ul>
-
-<p>Not clear if “Labs and Tests” (MHV-39107) is a different thing from “Pathology Reports” (MHV-39123) and “Microbiology” (MHV-39131). Muazzam spreadsheet has Pathology and MicroBiology; but not Lab. The Pathology and the MicroBiology example given is the same. So I presume that Labs is the same as Pathology and MicroBiology. I will thus go from the VDIF schema direct to FHIR.</p>
-
-<p>The given example aligns with the VIA_v4.0.7_uat.wsdl. The VDIF provides lab data in four schema</p>
-<ul>
-  <li>LabReportTO</li>
-  <li>LabTestTO</li>
-  <li>LabResultTO</li>
-  <li>LabSpecimenTO</li>
-</ul>
-
-<p>The LabReportTO is mapped onto a FHIR DiagnosticReport for laboratory reporting.</p>
-
-<p>The LabTestTO plus LabResultTO are combined and mapped onto a FHIR Observation for laboratory result that is contained in the DiagnosticReport.</p>
-
-<p>The LabSpecimen is mapped into a Specimen resource that is contained in the DiagnosticReport.</p>
-
-<p>The use of contained means that we do not need to de-duplicate specimen.</p>
-
-<p>Note that LOINC has a report on this topic https://loinc.org/file-access/?download-id=22762</p>
-
-<p>Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)</p>
-
-<ul>
-  <li><a href="StructureDefinition-VA.MHV.PHR.labReport.html">LabReport</a>
+  <li><a href="StructureDefinition-VA.MHV.PHR.labReport.html">LabReport</a> including Microbiology and Pathology
     <ul>
       <li><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">Mapping from VDIF</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.labReport-examples.html">Examples</a></li>
     </ul>
   </li>
 </ul>
+
+<h3 id="todo">todo</h3>
+
+<p>Not yet done</p>
+
+<h4 id="in-progress">in progress</h4>
 
 <h4 id="other">other</h4>
 
@@ -299,6 +272,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>service request</li>
   <li>coverage</li>
 </ul>
+
+<p>The use of FHIR AuditEvent should be used to track all uses of the FHIR API. This is a base configuration of the HAPI FHIR Server. See IHE Implementation Guide on the use of <a href="https://profiles.ihe.net/ITI/BALP/index.html">Basic Audit Log Patterns</a></p>
 
 <h3 id="data-input-processing">Data input processing</h3>
 
@@ -501,7 +476,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.0-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 4, 2023 18:59-0600">2023-01-04</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.1-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 5, 2023 09:18-0600">2023-01-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

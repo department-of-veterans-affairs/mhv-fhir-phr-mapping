@@ -1,6 +1,6 @@
 "Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: RIM Mapping","Mapping: CDA (R2)","Mapping: FiveWs Pattern Mapping","Mapping: HL7 v2 Mapping","Mapping: LOINC code for the element","Mapping: VDIF to MHV-PHR"
 "Patient","Patient","","SubjectOfCare Client Resident
-","",0,*,"","","","","Information about an individual or animal receiving health care services","\-","\-","","","","","","","","",,,,,"",,,,"Patient",0,*,"","","Entity. Role, or Act","Patient[classCode=PAT]","ClinicalDocument.recordTarget.patientRole","PatientTO"
+","",0,*,"","","","","Information about an individual or animal receiving health care services","The US Core Patient Profile is based upon the core FHIR Patient Resource and designed to meet the applicable patient demographic data elements from the 2015 Edition Common Clinical Data Set.","","","","","","","","","",,,,,"",,,,"Patient",0,*,"","","Entity. Role, or Act","Patient[classCode=PAT]","ClinicalDocument.recordTarget.patientRole","PatientTO"
 "Patient.id","Patient.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "Patient.meta","Patient.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -41,10 +41,6 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Extension","A code classifying the person's sex assigned at birth  as specified by the [Office of the National Coordinator for Health IT (ONC)](https://www.healthit.gov/newsroom/about-onc).","The codes required are intended to present birth sex (i.e., the sex recorded on the patient’s birth certificate) and not gender identity or reassigned sex.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","player[classCode=PSN|ANM and determinerCode=INSTANCE]/administrativeGender"
-"Patient.extension:genderIdentity","Patient.extension","genderIdentity","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-genderIdentity]]} {[]}
-","Extension","An Extension","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
-","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "Patient.extension:religion","Patient.extension","religion","","",0,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/patient-religion]]} {[]}
 ","The patient's professed religious affiliations","The patient's professed religious affiliations.","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","PatientTO.religion"
@@ -95,7 +91,7 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
 ","statusCode","n/a","FiveWs.status","true"
 "Patient.name","Patient.name","","","",1,*,"Y","","Y","HumanName {[]} {[]}
 ","A name associated with the patient","A name associated with the individual.","A patient may have multiple names with different uses or applicable periods. For animals, the name is a ""HumanName"" in the sense that is assigned and used by humans and has the same patterns.","Need to be able to track the patient by multiple names. Examples are your official name and a partner name.","","","","","","","",,,,,"",,,,"Patient.name",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","name",".patient.name","PID-5, PID-9","PatientTO.name"
+us-core-8:Either Patient.name.given and/or Patient.name.family SHALL be present or a Data Absent Reason Extension SHALL be present. {(family.exists() or given.exists()) xor extension.where(url='http://hl7.org/fhir/StructureDefinition/data-absent-reason').exists()}","name",".patient.name","PID-5, PID-9","PatientTO.name"
 "Patient.name.id","Patient.name.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Patient.name.extension","Patient.name.extension","","extensions
@@ -111,12 +107,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","./formatted","implied by XPN.11"
 "Patient.name.family","Patient.name.family","","surname
 ","",0,1,"Y","","Y","string {[]} {[]}
-","Family name (often called 'Surname')","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"us-core-6
+","Family name (often called 'Surname')","The part of a name that links to the genealogy. In some cultures (e.g. Eritrea) the family name of a son is the first name of his father.","Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).","","","","","","","","",,,,,"",,,,"HumanName.family",0,1,"us-core-8
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./part[partType = FAM]","XPN.1/FN.1"
 "Patient.name.given","Patient.name.given","","first name
 middle name","",0,*,"Y","","Y","string {[]} {[]}
-","Given names (not always 'first'). Includes middle names","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"us-core-6
+","Given names (not always 'first'). Includes middle names","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"us-core-8
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./part[partType = GIV]","XPN.2 + XPN.3"
 "Patient.name.prefix","Patient.name.prefix","","","",0,*,"","","Y","string {[]} {[]}

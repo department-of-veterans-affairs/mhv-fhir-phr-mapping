@@ -11,45 +11,24 @@ MyHealtheVet acts as a FHIR Server.
 - [Location](StructureDefinition-VA.MHV.PHR.location.html)
   - [Mappings from VDIF](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)
   - [Examples](StructureDefinition-VA.MHV.PHR.location-examples.html)
+- [Organization](StructureDefinition-VA.MHV.PHR.organization.html)
+  - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid)
+  - [Examples](StructureDefinition-VA.MHV.PHR.organization-examples.html)
 - [Immunization](StructureDefinition-VA.MHV.PHR.immunization.html)
   - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)
   - [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
 - [Notes](StructureDefinition-VA.MHV.PHR.note.html)
   - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto)
   - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
-
-### todo
-Not yet done
-
-#### Labs
-
-- Labs and Tests
-  - Pathology Reports
-  - Microbiology
-  
-Not clear if "Labs and Tests" (MHV-39107) is a different thing from "Pathology Reports" (MHV-39123) and "Microbiology" (MHV-39131). Muazzam spreadsheet has Pathology and MicroBiology; but not Lab. The Pathology and the MicroBiology example given is the same. So I presume that Labs is the same as Pathology and MicroBiology. I will thus go from the VDIF schema direct to FHIR.
-
-The given example aligns with the VIA_v4.0.7_uat.wsdl. The VDIF provides lab data in four schema
-- LabReportTO
-- LabTestTO
-- LabResultTO
-- LabSpecimenTO
-
-The LabReportTO is mapped onto a FHIR DiagnosticReport for laboratory reporting.
-
-The LabTestTO plus LabResultTO are combined and mapped onto a FHIR Observation for laboratory result that is contained in the DiagnosticReport.
-
-The LabSpecimen is mapped into a Specimen resource that is contained in the DiagnosticReport. 
-
-The use of contained means that we do not need to de-duplicate specimen.
-
-Note that LOINC has a report on this topic https://loinc.org/file-access/?download-id=22762
-
-Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
-
-- [LabReport](StructureDefinition-VA.MHV.PHR.labReport.html)
+- [LabReport](StructureDefinition-VA.MHV.PHR.labReport.html) including Microbiology and Pathology
   - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
   - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
+
+### todo
+
+Not yet done
+
+#### in progress
 
 #### other
 
@@ -73,6 +52,8 @@ unknown (FHIR supports the following topics but unclear if this data exists in P
 - related person
 - service request
 - coverage
+
+The use of FHIR AuditEvent should be used to track all uses of the FHIR API. This is a base configuration of the HAPI FHIR Server. See IHE Implementation Guide on the use of [Basic Audit Log Patterns](https://profiles.ihe.net/ITI/BALP/index.html)
 
 ### Data input processing
 

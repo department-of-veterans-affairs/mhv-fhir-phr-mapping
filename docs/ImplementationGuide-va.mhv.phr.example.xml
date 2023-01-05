@@ -13,11 +13,11 @@
     <valueInteger value="0"/>
   </extension>
   <url value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
-  <version value="0.1.0-beta"/>
+  <version value="0.1.1-beta"/>
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-01-04T18:59:45-06:00"/>
+  <date value="2023-01-05T09:18:04-06:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -58,7 +58,7 @@
   <dependsOn id="hl7_fhir_us_core">
     <uri value="http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core"/>
     <packageId value="hl7.fhir.us.core"/>
-    <version value="5.0.1"/>
+    <version value="4.0.0"/>
   </dependsOn>
   <definition>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -528,7 +528,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.labReport"/>
       </reference>
       <name value="VA MHV PHR Lab Report"/>
-      <description value="A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport.&#xA;&#xA;- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting&#xA;&#xA;[Mapping from VDIF](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)"/>
+      <description value="A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport.&#xA;&#xA;- Labs and Tests&#xA;  - Pathology Reports&#xA;  - Microbiology&#xA;&#xA;TODO confirm: Not clear if Labs and Tests (MHV-39107) is a different thing from Pathology Reports (MHV-39123) and Microbiology (MHV-39131). Muazzam spreadsheet has Pathology and MicroBiology; but not Lab. The Pathology and the MicroBiology example given is the same. So I presume that Labs is the same as Pathology and MicroBiology. I will thus go from the VDIF schema direct to FHIR.&#xA;&#xA;The given example aligns with the VIA_v4.0.7_uat.wsdl. The VDIF provides lab data in four schema&#xA;- LabReportTO&#xA;- LabTestTO&#xA;- LabResultTO&#xA;- LabSpecimenTO&#xA;&#xA;The LabReportTO is mapped onto a FHIR DiagnosticReport for laboratory reporting.&#xA;&#xA;The LabTestTO plus LabResultTO are combined and mapped onto a FHIR Observation for laboratory result that is contained in the DiagnosticReport. This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.&#xA;&#xA;The LabSpecimen is mapped into a Specimen resource that is contained in the DiagnosticReport. These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.&#xA;&#xA;The use of contained means that we do not need to de-duplicate the lab tests or specimen.&#xA;&#xA;TODO determine impact: Note that LOINC has a report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.&#xA;&#xA;TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)&#xA;&#xA;- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting&#xA;&#xA;[Mapping from VDIF](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -539,7 +539,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.LabSpecimen"/>
       </reference>
       <name value="VA MHV PHR Lab Specimen"/>
-      <description value="A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.&#xA;&#xA;- This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances&#xA;- must have a type &#xA;  - Specimen.type.text &lt;- LabSpecimenTO.name&#xA;  - type should be a code derived from LabSpecimenTO.name&#xA;- should have a collectedDateTime derived from LabSpecimenTO.collectionDate&#xA;- may have an identifier - Specimen.identifier &lt;- LabSpecimenTO.id&#xA;  - if no LabSpecimenTO.id is given, then the Specimen resource must be contained&#xA;- should have an accessionIdentifier derived from LabSpecimenTO.accessionNum&#xA;- should have a subject (unless Contained)&#xA;&#xA;Mapping from [LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen)&#xA;&#xA;TODO questions: &#xA;- examples didn't have much populated&#xA;- not clear what site and facility might contain, so can't tell where they would go&#xA;- some examples are likely FHIR Device (old hardware left foot), so this might change"/>
+      <description value="A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.&#xA;&#xA;- This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances&#xA;- must have a type &#xA;  - Specimen.type.text &lt;- LabSpecimenTO.name&#xA;  - type should be a code derived from LabSpecimenTO.name&#xA;- should have a collectedDateTime derived from LabSpecimenTO.collectionDate&#xA;- may have an identifier - Specimen.identifier &lt;- LabSpecimenTO.id&#xA;  - if no LabSpecimenTO.id is given, then the Specimen resource must be contained&#xA;- should have an accessionIdentifier derived from LabSpecimenTO.accessionNum&#xA;- should have a subject (unless Contained)&#xA;&#xA;TODO questions: &#xA;- examples didn't have much populated&#xA;- not clear what site and facility might contain, so can't tell where they would go&#xA;- some examples are likely FHIR Device (old hardware left foot), so this might change"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

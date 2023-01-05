@@ -15,8 +15,6 @@ A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.
 - should have an accessionIdentifier derived from LabSpecimenTO.accessionNum
 - should have a subject (unless Contained)
 
-Mapping from [LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen)
-
 TODO questions: 
 - examples didn't have much populated
 - not clear what site and facility might contain, so can't tell where they would go
@@ -55,6 +53,30 @@ Id: VA.MHV.PHR.labReport
 Title: "VA MHV PHR Lab Report"
 Description: """
 A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport.
+
+- Labs and Tests
+  - Pathology Reports
+  - Microbiology
+  
+TODO confirm: Not clear if Labs and Tests (MHV-39107) is a different thing from Pathology Reports (MHV-39123) and Microbiology (MHV-39131). Muazzam spreadsheet has Pathology and MicroBiology; but not Lab. The Pathology and the MicroBiology example given is the same. So I presume that Labs is the same as Pathology and MicroBiology. I will thus go from the VDIF schema direct to FHIR.
+
+The given example aligns with the VIA_v4.0.7_uat.wsdl. The VDIF provides lab data in four schema
+- LabReportTO
+- LabTestTO
+- LabResultTO
+- LabSpecimenTO
+
+The LabReportTO is mapped onto a FHIR DiagnosticReport for laboratory reporting.
+
+The LabTestTO plus LabResultTO are combined and mapped onto a FHIR Observation for laboratory result that is contained in the DiagnosticReport. This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.
+
+The LabSpecimen is mapped into a Specimen resource that is contained in the DiagnosticReport. These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.
+
+The use of contained means that we do not need to de-duplicate the lab tests or specimen.
+
+TODO determine impact: Note that LOINC has a report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.
+
+TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
 
 - This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting
 

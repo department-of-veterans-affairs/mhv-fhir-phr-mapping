@@ -50,11 +50,11 @@
      ]
   ]; # 
   fhir:StructureDefinition.url [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"]; # 
-  fhir:StructureDefinition.version [ fhir:value "0.1.0-beta"]; # 
+  fhir:StructureDefinition.version [ fhir:value "0.1.1-beta"]; # 
   fhir:StructureDefinition.name [ fhir:value "MHVlabSpecimen"]; # 
   fhir:StructureDefinition.title [ fhir:value "VA MHV PHR Lab Specimen"]; # 
   fhir:StructureDefinition.status [ fhir:value "active"]; # 
-  fhir:StructureDefinition.date [ fhir:value "2023-01-04T18:59:45-06:00"^^xsd:dateTime]; # 
+  fhir:StructureDefinition.date [ fhir:value "2023-01-05T09:18:04-06:00"^^xsd:dateTime]; # 
   fhir:StructureDefinition.publisher [ fhir:value "John Moehrke (himself)"]; # 
   fhir:StructureDefinition.contact [
      fhir:index 0;
@@ -77,7 +77,7 @@
        fhir:ContactPoint.value [ fhir:value "JohnMoehrke@gmail.com" ]
      ]
   ]; # 
-  fhir:StructureDefinition.description [ fhir:value "A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.\n\n- This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - Specimen.type.text <- LabSpecimenTO.name\n  - type should be a code derived from LabSpecimenTO.name\n- should have a collectedDateTime derived from LabSpecimenTO.collectionDate\n- may have an identifier - Specimen.identifier <- LabSpecimenTO.id\n  - if no LabSpecimenTO.id is given, then the Specimen resource must be contained\n- should have an accessionIdentifier derived from LabSpecimenTO.accessionNum\n- should have a subject (unless Contained)\n\nMapping from [LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen)\n\nTODO questions: \n- examples didn't have much populated\n- not clear what site and facility might contain, so can't tell where they would go\n- some examples are likely FHIR Device (old hardware left foot), so this might change"]; # 
+  fhir:StructureDefinition.description [ fhir:value "A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.\n\n- This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - Specimen.type.text <- LabSpecimenTO.name\n  - type should be a code derived from LabSpecimenTO.name\n- should have a collectedDateTime derived from LabSpecimenTO.collectionDate\n- may have an identifier - Specimen.identifier <- LabSpecimenTO.id\n  - if no LabSpecimenTO.id is given, then the Specimen resource must be contained\n- should have an accessionIdentifier derived from LabSpecimenTO.accessionNum\n- should have a subject (unless Contained)\n\nTODO questions: \n- examples didn't have much populated\n- not clear what site and facility might contain, so can't tell where they would go\n- some examples are likely FHIR Device (old hardware left foot), so this might change"]; # 
   fhir:StructureDefinition.jurisdiction [
      fhir:index 0;
      fhir:CodeableConcept.coding [
