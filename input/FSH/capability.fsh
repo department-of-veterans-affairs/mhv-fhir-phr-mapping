@@ -99,6 +99,33 @@ Usage: #definition
     * searchParam[+]
       * name = "period"
       * type = #token
+  * resource[+]
+    * type = #Condition
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.condition"
+    * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
+    * interaction[+].code = #search-type
+    * interaction[+].code = #read
+    * searchParam[+]
+      * name = "identifier"
+      * type = #token
+    * searchParam[+]
+      * name = "_id"
+      * type = #token
+    * searchParam[+]
+      * name = "clinical-status"
+      * type = #token
+    * searchParam[+]
+      * name = "patient"
+      * type = #token
+    * searchParam[+]
+      * name = "category"
+      * type = #token
+    * searchParam[+]
+      * name = "code"
+      * type = #token
+    * searchParam[+]
+      * name = "recorded-date"
+      * type = #token
 
 
   * resource[+]

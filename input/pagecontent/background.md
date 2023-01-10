@@ -31,19 +31,25 @@ MyHealtheVet acts as a FHIR Server.
 
 Not yet done
 
-- Vital Readings
-- Medication History
-- ECG
 - Radiology Reports
+  - ImagingExamTO, RadiologyReportTO
+- ECG/EKG
+  - ClinicalProcedureTO
+- Vital Readings
+  - vitalSignTO
+
+Note in Muazzam spreadsheet
 - Appointments
+- Medication History
 
 #### in progress
 
-- Vital Readings
+- Radiology Reports
+  - ImagingExamTO, RadiologyReportTO
 
 #### other
 
-- Provenance
+- Provenance -- track where the data has come from, and if from multiple places track all.
   
 unknown (FHIR supports the following topics but unclear if this data exists in PHR)
 

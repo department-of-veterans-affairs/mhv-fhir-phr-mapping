@@ -251,23 +251,43 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Not yet done</p>
 
 <ul>
-  <li>Vital Readings</li>
-  <li>Medication History</li>
-  <li>ECG</li>
-  <li>Radiology Reports</li>
+  <li>Radiology Reports
+    <ul>
+      <li>ImagingExamTO, RadiologyReportTO</li>
+    </ul>
+  </li>
+  <li>ECG/EKG
+    <ul>
+      <li>ClinicalProcedureTO</li>
+    </ul>
+  </li>
+  <li>Vital Readings
+    <ul>
+      <li>vitalSignTO</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Note in Muazzam spreadsheet</p>
+<ul>
   <li>Appointments</li>
+  <li>Medication History</li>
 </ul>
 
 <h4 id="in-progress">in progress</h4>
 
 <ul>
-  <li>Vital Readings</li>
+  <li>Radiology Reports
+    <ul>
+      <li>ImagingExamTO, RadiologyReportTO</li>
+    </ul>
+  </li>
 </ul>
 
 <h4 id="other">other</h4>
 
 <ul>
-  <li>Provenance</li>
+  <li>Provenance – track where the data has come from, and if from multiple places track all.</li>
 </ul>
 
 <p>unknown (FHIR supports the following topics but unclear if this data exists in PHR)</p>
@@ -492,7 +512,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.2-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 10, 2023 07:11-0600">2023-01-10</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.2-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 10, 2023 08:15-0600">2023-01-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
