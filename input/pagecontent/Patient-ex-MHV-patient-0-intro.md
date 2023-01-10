@@ -1,15 +1,5 @@
 Example from a mock PatientTO
 
-Notes
-- some elements could be converted into `codes` but doing minimal translation. 
-- dropping age as not useful in persisted data, prefer dob
-- dropping occupation - could be recorded as SDOH Observation
-- dropping confidentiality flag - not sure the meaning - could be .meta.security
-- dropping patientFlags - not sure the meaning
-- dropping activeInsurance - could go into Account resource - could go in extension as text blob
-- dropping currentMeansStatus
-- dropping elegibilityCode
-
 ```xml
 <patientTO>
     <religion>PROTESTANT, NO DENOMINATION</religion>

@@ -14,11 +14,11 @@
     "valueInteger" : 0
   }],
   "url" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example",
-  "version" : "0.1.1-beta",
+  "version" : "0.1.2-beta",
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-01-05T09:18:04-06:00",
+  "date" : "2023-01-10T07:11:45-06:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -105,7 +105,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "false"
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -205,6 +205,17 @@
       {
         "url" : "value",
         "valueString" : "docs"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludettl"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -413,7 +424,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "false"
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -513,6 +524,17 @@
       {
         "url" : "value",
         "valueString" : "docs"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludettl"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -687,6 +709,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.condition"
+      },
+      "name" : "VA MHV PHR problems",
+      "description" : "A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Condition Resource\n- Presume we will not expose those that are ProblemTO.removed = true\n\nTODO:\n- not clear if the ProblemTO.location is describing, is it evidence?\n- what are the other values for ProblemTO.status\n- not clear what ProblemTO.accuity.tag is\n- not clear what ProblemTo.facility is",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/VA.MHV.PHR.immunization"
       },
       "name" : "VA MHV PHR Immunization",
@@ -702,7 +736,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.labReport"
       },
       "name" : "VA MHV PHR Lab Report",
-      "description" : "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport.\n\n- Labs and Tests\n  - Pathology Reports\n  - Microbiology\n\nTODO confirm: Not clear if Labs and Tests (MHV-39107) is a different thing from Pathology Reports (MHV-39123) and Microbiology (MHV-39131). Muazzam spreadsheet has Pathology and MicroBiology; but not Lab. The Pathology and the MicroBiology example given is the same. So I presume that Labs is the same as Pathology and MicroBiology. I will thus go from the VDIF schema direct to FHIR.\n\nThe given example aligns with the VIA_v4.0.7_uat.wsdl. The VDIF provides lab data in four schema\n- LabReportTO\n- LabTestTO\n- LabResultTO\n- LabSpecimenTO\n\nThe LabReportTO is mapped onto a FHIR DiagnosticReport for laboratory reporting.\n\nThe LabTestTO plus LabResultTO are combined and mapped onto a FHIR Observation for laboratory result that is contained in the DiagnosticReport. This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.\n\nThe LabSpecimen is mapped into a Specimen resource that is contained in the DiagnosticReport. These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact: Note that LOINC has a report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nTODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)\n\n- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting\n\n[Mapping from VDIF](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)",
+      "description" : "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.\n\nThe given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO\n\nThe LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)\n\nThe LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto). This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.\n\nThe LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen). These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nTODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)\n\n- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.",
       "exampleBoolean" : false
     },
     {
@@ -738,7 +772,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.location"
       },
       "name" : "VA MHV PHR Location",
-      "description" : "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n- hospitalLocationTO, SiteTO",
+      "description" : "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n\nMapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto).",
       "exampleBoolean" : false
     },
     {
@@ -762,7 +796,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.organization"
       },
       "name" : "VA MHV PHR Organization",
-      "description" : "A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.\n\n- based on US-Core for Organization\n- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)",
+      "description" : "A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.\n\n- based on US-Core for Organization\n- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)\n\nMap to [VDIF labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid)",
       "exampleBoolean" : false
     },
     {
@@ -774,7 +808,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.patient"
       },
       "name" : "VA MHV PHR Patient",
-      "description" : "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- record the ICN value into the Patient.identifier",
+      "description" : "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- record the ICN value into the Patient.identifier\n  - seems other ID values are possible too such as mpiPID, localPID, SSN.\n- some elements could be converted into `codes` but doing minimal translation. \n- notes given example\n  - dropping age as not useful in persisted data, prefer dob\n  - dropping occupation - could be recorded as SDOH Observation\n  - dropping confidentiality flag - not sure the meaning - could be .meta.security\n  - dropping patientFlags - not sure the meaning\n  - dropping activeInsurance - could go into Account resource - could go in extension as text blob\n  - dropping currentMeansStatus\n  - dropping elegibilityCode\n\nMapping to [VDIF PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)",
       "exampleBoolean" : false
     },
     {
@@ -786,7 +820,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.practitioner"
       },
       "name" : "VA MHV PHR Practitioner",
-      "description" : "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- based on US-Core for Practitioner\n- used for UserTO, and AuthorTO\n- might be used for PersonTO or is that RelatedPerson?",
+      "description" : "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- based on US-Core for Practitioner\n- used for UserTO, and AuthorTO\n- might be used for PersonTO or is that RelatedPerson?\n\nMapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto) and [VDIF AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)",
       "exampleBoolean" : false
     },
     {
@@ -800,6 +834,138 @@
       "name" : "MHVcapabilities",
       "description" : "CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data",
       "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-1"
+      },
+      "name" : "Example 1 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-10"
+      },
+      "name" : "Example 10 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-11"
+      },
+      "name" : "Example 11 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-2"
+      },
+      "name" : "Example 2 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-3"
+      },
+      "name" : "Example 3 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-4"
+      },
+      "name" : "Example 4 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-5"
+      },
+      "name" : "Example 5 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-6"
+      },
+      "name" : "Example 6 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-7"
+      },
+      "name" : "Example 7 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-8"
+      },
+      "name" : "Example 8 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Condition"
+      }],
+      "reference" : {
+        "reference" : "Condition/ex-MHV-condition-9"
+      },
+      "name" : "Example 9 of an MHV condition",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
     },
     {
       "extension" : [{
@@ -1044,10 +1210,22 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/ex-MHV-patient-2"
+      },
+      "name" : "Example ROBERT from PatientTO",
+      "description" : "This example is derived off of a mock PatientTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Practitioner"
       }],
       "reference" : {
-        "reference" : "Practitioner/ex-practitioner"
+        "reference" : "Practitioner/ex-MHV-practitioner"
       },
       "name" : "Example Practitioner",
       "description" : "holding typical values",
@@ -1059,9 +1237,45 @@
         "valueString" : "Practitioner"
       }],
       "reference" : {
-        "reference" : "Practitioner/ex-practitioner-36556"
+        "reference" : "Practitioner/ex-MHV-practitioner-110"
+      },
+      "name" : "Example Practitoner 110",
+      "description" : "Phyllis Mangas",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/ex-MHV-practitioner-22572"
+      },
+      "name" : "Example Practitoner 22572",
+      "description" : "Phyllis Mangas",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/ex-MHV-practitioner-36556"
       },
       "name" : "Example Practitoner 36556",
+      "description" : "Maruf Ahmed",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/ex-MHV-practitioner-37569"
+      },
+      "name" : "Example Practitoner 37569",
       "description" : "Muazzam Khan",
       "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
     },
@@ -1071,10 +1285,22 @@
         "valueString" : "Practitioner"
       }],
       "reference" : {
-        "reference" : "Practitioner/ex-practitioner-37569"
+        "reference" : "Practitioner/ex-MHV-practitioner-4262"
       },
-      "name" : "Example Practitoner 37569",
-      "description" : "Muazzam Khan",
+      "name" : "Example Practitoner 4262",
+      "description" : "Phyllis Mangas",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/ex-MHV-practitioner-6051"
+      },
+      "name" : "Example Practitoner 6051",
+      "description" : "Phyllis Mangas",
       "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"
     }],
     "page" : {

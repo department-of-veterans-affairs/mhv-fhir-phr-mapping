@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-condition-1"/>
+  <meta>
+    <lastUpdated value="1995-09-27T00:00:00Z"/>
+    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Condition</b><a name="ex-MHV-condition-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Condition &quot;ex-MHV-condition-1&quot; Updated &quot;1995-09-27 00:00:00+0000&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.condition.html">VA MHV PHR problems</a></p></div><p><b>identifier</b>: id: 487 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#unconfirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Hypertension (ICD-9-CM 401.9) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (icd-9-cm#401.9)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-2.html">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>recordedDate</b>: 1995-09-27</p><p><b>asserter</b>: <a href="Practitioner-ex-MHV-practitioner-110.html">Practitioner/ex-MHV-practitioner-110</a> &quot; MANGAS&quot;</p></div>
+  </text>
+  <identifier>
+    <use value="usual"/>
+    <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"/>
+    <value value="487"/>
+  </identifier>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="active"/>
+    </coding>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="unconfirmed"/>
+    </coding>
+  </verificationStatus>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+      <code value="problem-list-item"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-9-cm"/>
+      <code value="401.9"/>
+    </coding>
+    <text value="Hypertension (ICD-9-CM 401.9)"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-2"/>
+  </subject>
+  <recordedDate value="1995-09-27"/>
+  <asserter>
+    <reference value="Practitioner/ex-MHV-practitioner-110"/>
+  </asserter>
+</Condition>

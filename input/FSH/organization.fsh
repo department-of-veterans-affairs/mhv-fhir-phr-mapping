@@ -12,6 +12,8 @@ A profile on the Organization resource for MHV PHR exposing Organization using F
 
 - based on US-Core for Organization
 - used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)
+
+Map to [VDIF labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid)
 """
 
 Mapping: Organization-Mapping
@@ -20,10 +22,10 @@ Target: "labSiteId"
 Title: "VDIF to MHV-PHR"
 * -> "labSiteId" "MHV PHR FHIR API"
 * identifier.value -> "labSiteId"
-* identifier.system -> "https://johnmoehrke.github.io/MHV-PHR/labSiteId"
-* identifier.use -> "official"
+* identifier.system -> "`https://johnmoehrke.github.io/MHV-PHR/labSiteId`"
+* identifier.use -> "`official`"
 * name -> "Lab Site {number}"
-* active -> "true"
+* active -> "`true`"
 
 
 

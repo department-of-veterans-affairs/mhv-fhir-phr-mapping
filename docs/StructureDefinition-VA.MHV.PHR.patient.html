@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.9"}
-    h3,h4,h5,h6{--heading-prefix:"5.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"5.10"}
+    h3,h4,h5,h6{--heading-prefix:"5.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.1-beta - ci-build
+            <span style="display:inline-block;">0.1.2-beta - ci-build
 
 
 
@@ -150,7 +150,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.1-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.2-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -213,12 +213,6 @@
   
 
 
-  
-    <li>
-      <a href="StructureDefinition-VA.MHV.PHR.patient.profile.ttl.html">TTL</a>
-    </li>
-  
-
 
 </ul>
 
@@ -240,7 +234,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.1-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient|0.1.1-beta"/></span>
+      <span class="copy-text">0.1.2-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient|0.1.2-beta"/></span>
       </td>
     </tr>
 
@@ -282,8 +276,26 @@
 
 <ul>
   <li>based on US-Core for Patient</li>
-  <li>record the ICN value into the Patient.identifier</li>
+  <li>record the ICN value into the Patient.identifier
+    <ul>
+      <li>seems other ID values are possible too such as mpiPID, localPID, SSN.</li>
+    </ul>
+  </li>
+  <li>some elements could be converted into <code class="language-plaintext highlighter-rouge">codes</code> but doing minimal translation.</li>
+  <li>notes given example
+    <ul>
+      <li>dropping age as not useful in persisted data, prefer dob</li>
+      <li>dropping occupation - could be recorded as SDOH Observation</li>
+      <li>dropping confidentiality flag - not sure the meaning - could be .meta.security</li>
+      <li>dropping patientFlags - not sure the meaning</li>
+      <li>dropping activeInsurance - could go into Account resource - could go in extension as text blob</li>
+      <li>dropping currentMeansStatus</li>
+      <li>dropping elegibilityCode</li>
+    </ul>
+  </li>
 </ul>
+
+<p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto">VDIF PatientTO</a></p>
 
 </p>
 
@@ -296,7 +308,7 @@
 
 <p><b>Usage:</b></p>
 <ul>
- <li>Examples for this Resource Profile: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a>, <a href="Patient-ex-MHV-patient-1.html">Patient/ex-MHV-patient-1</a></li>
+ <li>Examples for this Resource Profile: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a>, <a href="Patient-ex-MHV-patient-1.html">Patient/ex-MHV-patient-1</a>, <a href="Patient-ex-MHV-patient-2.html">Patient/ex-MHV-patient-2</a></li>
 </ul>
 
 
@@ -327,10 +339,6 @@
         <a href="#tabs-json">Pseudo-JSON</a>
       </li>-->
 
-
-      <!--<li>
-        <a href="#tabs-ttl">Pseudo-TTL</a>
-      </li>-->
 
       <li>
         <a href="#tabs-summ">Statistics/References</a>
@@ -746,16 +754,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </div>
     </div>-->
 
-
-    <!--<a name="tabs-ttl"> </a>
-    <div id="tabs-ttl">
-      <div id="ttl">
-        <div id="ttl-inner">
-          <p><span style="color: maroon; font-weight: bold">yet to be done: Turtle template</span></p>
-
-        </div>
-      </div>
-    </div>-->
 
     <a name="tabs-summ"> </a>
     <div id="tabs-summ">
@@ -1190,16 +1188,6 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       </div>-->
 
 
-      <!--<div id="all-ttl">
-        <p>
-          <b>TTL Template</b>
-        </p>
-        <div id="all-ttl-inner">
-          <p><span style="color: maroon; font-weight: bold">yet to be done: Turtle template</span></p>
-
-        </div>
-      </div>-->
-
       <div id="all-summ">
         <p>This structure is derived from <a href="http://hl7.org/fhir/us/core/STU4/StructureDefinition-us-core-patient.html">USCorePatientProfile</a>
         </p>
@@ -1302,7 +1290,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.1-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 5, 2023 09:18-0600">2023-01-05</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.2-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 10, 2023 07:11-0600">2023-01-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

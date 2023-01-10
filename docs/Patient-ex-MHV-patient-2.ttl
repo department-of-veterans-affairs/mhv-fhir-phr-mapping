@@ -1,0 +1,60 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-2> a fhir:Patient;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ex-MHV-patient-2"]; # 
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient";
+       fhir:index 0;
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
+     ]
+  ]; # 
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>MHVLISAONE,ROBERT M</b> male, DoB Unknown ( mpiPID: 1013025697 (use: OFFICIAL))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Id:</td><td colspan=\"3\">localPID: 49906 (use: SECONDARY)</td></tr></table></div>"
+  ]; # 
+  fhir:Patient.identifier [
+     fhir:index 0;
+     fhir:Identifier.use [ fhir:value "official" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.text [ fhir:value "mpiPID" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://example.org/mpiPID" ];
+     fhir:Identifier.value [ fhir:value "1013025697" ]
+  ], [
+     fhir:index 1;
+     fhir:Identifier.use [ fhir:value "secondary" ];
+     fhir:Identifier.type [
+       fhir:CodeableConcept.text [ fhir:value "localPID" ]
+     ];
+     fhir:Identifier.system [ fhir:value "http://example.org/localPID" ];
+     fhir:Identifier.value [ fhir:value "49906" ]
+  ]; # 
+  fhir:Patient.name [
+     fhir:index 0;
+     fhir:HumanName.use [ fhir:value "usual" ];
+     fhir:HumanName.text [ fhir:value "MHVLISAONE,ROBERT M" ];
+     fhir:HumanName.family [ fhir:value "MHVLISAONE" ];
+     fhir:HumanName.given [
+       fhir:value "ROBERT";
+       fhir:index 0
+     ], [
+       fhir:value "M";
+       fhir:index 1
+     ]
+  ]; # 
+  fhir:Patient.gender [ fhir:value "male"] . # 
+
+# - ontology header ------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-2.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

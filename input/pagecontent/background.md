@@ -2,56 +2,62 @@
 MyHealtheVet acts as a FHIR Server.
 
 - [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
-  - [Mappings from VDIF](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)
+  - [Mappings from VDIF - PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)
   - [Examples](StructureDefinition-VA.MHV.PHR.patient-examples.html)
 - [Practitioner](StructureDefinition-VA.MHV.PHR.practitioner.html)
-  - [Mappings from VDIF - User](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto)
-  - [Mappings from VDIF - Author](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)
+  - [Mappings from VDIF - UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto)
+  - [Mappings from VDIF - AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)
   - [Examples](StructureDefinition-VA.MHV.PHR.practitioner-examples.html)
 - [Location](StructureDefinition-VA.MHV.PHR.location.html)
-  - [Mappings from VDIF](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)
+  - [Mappings from VDIF - HospitalAllocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)
   - [Examples](StructureDefinition-VA.MHV.PHR.location-examples.html)
 - [Organization](StructureDefinition-VA.MHV.PHR.organization.html)
-  - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid)
+  - [Mapping from VDIF - LabSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid)
   - [Examples](StructureDefinition-VA.MHV.PHR.organization-examples.html)
 - [Immunization](StructureDefinition-VA.MHV.PHR.immunization.html)
-  - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)
+  - [Mapping from VDIF - ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)
   - [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
 - [Notes](StructureDefinition-VA.MHV.PHR.note.html)
-  - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto)
+  - [Mapping from VDIF - NoteTO](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto)
   - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
 - [LabReport](StructureDefinition-VA.MHV.PHR.labReport.html) including Microbiology and Pathology
-  - [Mapping from VDIF](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
+  - [Mapping from VDIF - LabReportTO +](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
   - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
+- [Conditions](StructureDefinition-VA.MHV.PHR.condition.html)
+  - [Mapping from VDIF - ProblemTO](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
 
 ### todo
 
 Not yet done
 
-#### in progress
-
-#### other
-
-- Admission and Discharge
-- Allergies
-- Medication History
-- Problem List
 - Vital Readings
+- Medication History
 - ECG
 - Radiology Reports
 - Appointments
+
+#### in progress
+
+- Vital Readings
+
+#### other
+
 - Provenance
   
 unknown (FHIR supports the following topics but unclear if this data exists in PHR)
 
-- care plan / care team
-- device
-- goal
-- procedure
-- questionnaire
-- related person
-- service request
-- coverage
+- care plan / care team resources
+- allergy intolerance resources
+  - AllergyTO is defined for VIA
+- encounter resources
+- device resources
+- goal resources
+- procedure resources
+- questionnaire / questionnaireResponse resources
+- related person resources
+- service request resources
+- coverage resources
 
 The use of FHIR AuditEvent should be used to track all uses of the FHIR API. This is a base configuration of the HAPI FHIR Server. See IHE Implementation Guide on the use of [Basic Audit Log Patterns](https://profiles.ihe.net/ITI/BALP/index.html)
 

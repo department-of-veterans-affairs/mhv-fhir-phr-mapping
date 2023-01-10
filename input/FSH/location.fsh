@@ -10,7 +10,8 @@ Description:    """
 A profile on the Location resource for MHV PHR exposing Location using FHIR API.
 
 - based on US-Core for Location
-- hospitalLocationTO, SiteTO
+
+Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto).
 """
 
 

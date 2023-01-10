@@ -41,7 +41,7 @@ Title: "VDIF to MHV-PHR"
 * -> "LabSpecimenTO" "MHV PHR FHIR API"
 * identifier -> "LabSpecimenTO.id"
 * accessionIdentifier -> "LabSpecimenTO.accessionNum"
-* status -> "available"
+* status -> "`available`"
 * type.text -> "LabSpecimenTO.name"
 * subject -> "patient"
 * collection.collectedDateTime -> "ConvertDate(LabSpecimenTO.collectionDate)"
@@ -52,35 +52,23 @@ Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport
 Id: VA.MHV.PHR.labReport
 Title: "VA MHV PHR Lab Report"
 Description: """
-A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport.
+A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.
 
-- Labs and Tests
-  - Pathology Reports
-  - Microbiology
-  
-TODO confirm: Not clear if Labs and Tests (MHV-39107) is a different thing from Pathology Reports (MHV-39123) and Microbiology (MHV-39131). Muazzam spreadsheet has Pathology and MicroBiology; but not Lab. The Pathology and the MicroBiology example given is the same. So I presume that Labs is the same as Pathology and MicroBiology. I will thus go from the VDIF schema direct to FHIR.
+The given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO
 
-The given example aligns with the VIA_v4.0.7_uat.wsdl. The VDIF provides lab data in four schema
-- LabReportTO
-- LabTestTO
-- LabResultTO
-- LabSpecimenTO
+The LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
 
-The LabReportTO is mapped onto a FHIR DiagnosticReport for laboratory reporting.
+The LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto). This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.
 
-The LabTestTO plus LabResultTO are combined and mapped onto a FHIR Observation for laboratory result that is contained in the DiagnosticReport. This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.
-
-The LabSpecimen is mapped into a Specimen resource that is contained in the DiagnosticReport. These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.
+The LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen). These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.
 
 The use of contained means that we do not need to de-duplicate the lab tests or specimen.
 
-TODO determine impact: Note that LOINC has a report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.
+TODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.
 
 TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
 
-- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting
-
-[Mapping from VDIF](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
+- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.
 """
 * identifier 1..
 
@@ -90,8 +78,8 @@ Source:	MHVlabReport
 Target: "LabReportTO"
 Title: "VDIF to MHV-PHR"
 * -> "LabReportTO" "MHV PHR FHIR API"
-* category -> "laboratory"
-* status -> "final"
+* category -> "`laboratory`"
+* status -> "`final`"
 * subject -> "patient"
 * result -> "(0..*) Observation(LabResultTO)"
 * performer -> "GetPractitioner(LabReportTO.author)"
@@ -132,5 +120,5 @@ Title: "VDIF to MHV-PHR"
 * effectiveDateTime -> "ConvertDate(LabResultTO.timestamp)"
 * valueString -> "LabResultTO.value"
 * performer -> "GetOrganization(LabResultTO.labSiteId)"
-* status -> "final"
-* category -> "laboratory"
+* status -> "`final`"
+* category -> "`laboratory`"

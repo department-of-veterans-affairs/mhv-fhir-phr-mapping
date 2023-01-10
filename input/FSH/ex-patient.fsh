@@ -110,3 +110,39 @@ Usage: #example
 * identifier[=].value = "552164786"
 
 
+/*
+<patientTO>
+    <name>MHVLISAONE,ROBERT M</name>
+    <patientName>MHVLISAONE,ROBERT M</patientName>
+    <mpiPid>1013025697</mpiPid>
+    <mpiChecksum>197920</mpiChecksum>
+    <localPid>49906</localPid>
+    <confidentiality>
+        <tag>0</tag>
+    </confidentiality>
+    <patientFlags>
+        <count>0</count>
+    </patientFlags>
+</patientTO>
+*/
+Instance: ex-MHV-patient-2
+InstanceOf: MHVpatient
+Title: "Example ROBERT from PatientTO"
+Description: """
+This example is derived off of a mock PatientTO
+"""
+Usage: #example
+* name[+].use = #usual
+* name[=].text = "MHVLISAONE,ROBERT M"
+* name[=].family = "MHVLISAONE"
+* name[=].given[+] = "ROBERT"
+* name[=].given[+] = "M"
+* gender = #male 
+* identifier[+].use = #official
+* identifier[=].type.text = "mpiPID"
+* identifier[=].system = "http://example.org/mpiPID"
+* identifier[=].value = "1013025697"
+* identifier[+].use = #secondary
+* identifier[=].type.text = "localPID"
+* identifier[=].system = "http://example.org/localPID"
+* identifier[=].value = "49906"

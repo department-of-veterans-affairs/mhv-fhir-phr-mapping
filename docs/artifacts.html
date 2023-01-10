@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.1-beta - ci-build
+            <span style="display:inline-block;">0.1.2-beta - ci-build
 
 
 
@@ -153,7 +153,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.1-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.2-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -202,6 +202,28 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <table class="grid">
             <col style="width:20%"/>
             <tbody>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="StructureDefinition-VA.MHV.PHR.condition.html" title="StructureDefinition/VA.MHV.PHR.condition">VA MHV PHR problems</a>
+                    </td>
+                    <td>
+<p>A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.</p>
+
+<ul>
+  <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
+  <li>based on US-Core for Condition Resource</li>
+  <li>Presume we will not expose those that are ProblemTO.removed = true</li>
+</ul>
+
+<p>TODO:</p>
+<ul>
+  <li>not clear if the ProblemTO.location is describing, is it evidence?</li>
+  <li>what are the other values for ProblemTO.status</li>
+  <li>not clear what ProblemTO.accuity.tag is</li>
+  <li>not clear what ProblemTo.facility is</li>
+</ul>
+</td>
+                </tr>
                 <tr>
                     <td style="column-width:30%">
                         <a href="StructureDefinition-VA.MHV.PHR.immunization.html" title="StructureDefinition/VA.MHV.PHR.immunization">VA MHV PHR Immunization</a>
@@ -257,44 +279,25 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                         <a href="StructureDefinition-VA.MHV.PHR.labReport.html" title="StructureDefinition/VA.MHV.PHR.labReport">VA MHV PHR Lab Report</a>
                     </td>
                     <td>
-<p>A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport.</p>
+<p>A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.</p>
 
-<ul>
-  <li>Labs and Tests
-    <ul>
-      <li>Pathology Reports</li>
-      <li>Microbiology</li>
-    </ul>
-  </li>
-</ul>
+<p>The given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO</p>
 
-<p>TODO confirm: Not clear if Labs and Tests (MHV-39107) is a different thing from Pathology Reports (MHV-39123) and Microbiology (MHV-39131). Muazzam spreadsheet has Pathology and MicroBiology; but not Lab. The Pathology and the MicroBiology example given is the same. So I presume that Labs is the same as Pathology and MicroBiology. I will thus go from the VDIF schema direct to FHIR.</p>
+<p>The LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to <a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">VDIF LabReportTO</a></p>
 
-<p>The given example aligns with the VIA_v4.0.7_uat.wsdl. The VDIF provides lab data in four schema</p>
-<ul>
-  <li>LabReportTO</li>
-  <li>LabTestTO</li>
-  <li>LabResultTO</li>
-  <li>LabSpecimenTO</li>
-</ul>
+<p>The LabTestTO plus LabResultTO are combined and mapped onto a FHIR <a href="StructureDefinition-VA.MHV.PHR.labTest.html">Observation for laboratory result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto">VDIF LabTestTO and LabResultTO</a>. This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.</p>
 
-<p>The LabReportTO is mapped onto a FHIR DiagnosticReport for laboratory reporting.</p>
-
-<p>The LabTestTO plus LabResultTO are combined and mapped onto a FHIR Observation for laboratory result that is contained in the DiagnosticReport. This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.</p>
-
-<p>The LabSpecimen is mapped into a Specimen resource that is contained in the DiagnosticReport. These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.</p>
+<p>The LabSpecimen is mapped into a <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen">VDIF LabSpecimenTO</a>. These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.</p>
 
 <p>The use of contained means that we do not need to de-duplicate the lab tests or specimen.</p>
 
-<p>TODO determine impact: Note that LOINC has a report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.</p>
+<p>TODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.</p>
 
 <p>TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)</p>
 
 <ul>
-  <li>This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting</li>
+  <li>This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.</li>
 </ul>
-
-<p><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">Mapping from VDIF</a></p>
 </td>
                 </tr>
                 <tr>
@@ -352,8 +355,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>based on US-Core for Location</li>
-  <li>hospitalLocationTO, SiteTO</li>
 </ul>
+
+<p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto">VDIF HospitalLocationTO</a>.</p>
 </td>
                 </tr>
                 <tr>
@@ -410,6 +414,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>based on US-Core for Organization</li>
   <li>used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can’t take a Location. (TechnicalDebt)</li>
 </ul>
+
+<p>Map to <a href="StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid">VDIF labSiteID</a></p>
 </td>
                 </tr>
                 <tr>
@@ -421,8 +427,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>based on US-Core for Patient</li>
-  <li>record the ICN value into the Patient.identifier</li>
+  <li>record the ICN value into the Patient.identifier
+    <ul>
+      <li>seems other ID values are possible too such as mpiPID, localPID, SSN.</li>
+    </ul>
+  </li>
+  <li>some elements could be converted into <code class="language-plaintext highlighter-rouge">codes</code> but doing minimal translation.</li>
+  <li>notes given example
+    <ul>
+      <li>dropping age as not useful in persisted data, prefer dob</li>
+      <li>dropping occupation - could be recorded as SDOH Observation</li>
+      <li>dropping confidentiality flag - not sure the meaning - could be .meta.security</li>
+      <li>dropping patientFlags - not sure the meaning</li>
+      <li>dropping activeInsurance - could go into Account resource - could go in extension as text blob</li>
+      <li>dropping currentMeansStatus</li>
+      <li>dropping elegibilityCode</li>
+    </ul>
+  </li>
 </ul>
+
+<p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto">VDIF PatientTO</a></p>
 </td>
                 </tr>
                 <tr>
@@ -437,6 +461,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>used for UserTO, and AuthorTO</li>
   <li>might be used for PersonTO or is that RelatedPerson?</li>
 </ul>
+
+<p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto">VDIF UserTO</a> and <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto">VDIF AuthorTO</a></p>
 </td>
                 </tr>
             </tbody>
@@ -451,6 +477,94 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
         <table class="grid">
             <col style="width:20%"/>
             <tbody>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-1.html" title="Condition/ex-MHV-condition-1">Example 1 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-10.html" title="Condition/ex-MHV-condition-10">Example 10 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-11.html" title="Condition/ex-MHV-condition-11">Example 11 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-2.html" title="Condition/ex-MHV-condition-2">Example 2 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-3.html" title="Condition/ex-MHV-condition-3">Example 3 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-4.html" title="Condition/ex-MHV-condition-4">Example 4 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-5.html" title="Condition/ex-MHV-condition-5">Example 5 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-6.html" title="Condition/ex-MHV-condition-6">Example 6 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-7.html" title="Condition/ex-MHV-condition-7">Example 7 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-8.html" title="Condition/ex-MHV-condition-8">Example 8 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Condition-ex-MHV-condition-9.html" title="Condition/ex-MHV-condition-9">Example 9 of an MHV condition</a>
+                    </td>
+                    <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+                </tr>
                 <tr>
                     <td style="column-width:30%">
                         <a href="Immunization-ex-MHV-immunization-1.html" title="Immunization/ex-MHV-immunization-1">Example 1 of an MHV immunization</a>
@@ -615,7 +729,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="Practitioner-ex-practitioner.html" title="Practitioner/ex-practitioner">Example Practitioner</a>
+                        <a href="Patient-ex-MHV-patient-2.html" title="Patient/ex-MHV-patient-2">Example ROBERT from PatientTO</a>
+                    </td>
+                    <td>
+<p>This example is derived off of a mock PatientTO</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Practitioner-ex-MHV-practitioner.html" title="Practitioner/ex-MHV-practitioner">Example Practitioner</a>
                     </td>
                     <td>
 <p>holding typical values</p>
@@ -623,7 +745,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="Practitioner-ex-practitioner-36556.html" title="Practitioner/ex-practitioner-36556">Example Practitoner 36556</a>
+                        <a href="Practitioner-ex-MHV-practitioner-110.html" title="Practitioner/ex-MHV-practitioner-110">Example Practitoner 110</a>
+                    </td>
+                    <td>
+<p>Phyllis Mangas</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Practitioner-ex-MHV-practitioner-22572.html" title="Practitioner/ex-MHV-practitioner-22572">Example Practitoner 22572</a>
+                    </td>
+                    <td>
+<p>Phyllis Mangas</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Practitioner-ex-MHV-practitioner-36556.html" title="Practitioner/ex-MHV-practitioner-36556">Example Practitoner 36556</a>
+                    </td>
+                    <td>
+<p>Maruf Ahmed</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Practitioner-ex-MHV-practitioner-37569.html" title="Practitioner/ex-MHV-practitioner-37569">Example Practitoner 37569</a>
                     </td>
                     <td>
 <p>Muazzam Khan</p>
@@ -631,10 +777,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                 </tr>
                 <tr>
                     <td style="column-width:30%">
-                        <a href="Practitioner-ex-practitioner-37569.html" title="Practitioner/ex-practitioner-37569">Example Practitoner 37569</a>
+                        <a href="Practitioner-ex-MHV-practitioner-4262.html" title="Practitioner/ex-MHV-practitioner-4262">Example Practitoner 4262</a>
                     </td>
                     <td>
-<p>Muazzam Khan</p>
+<p>Phyllis Mangas</p>
+</td>
+                </tr>
+                <tr>
+                    <td style="column-width:30%">
+                        <a href="Practitioner-ex-MHV-practitioner-6051.html" title="Practitioner/ex-MHV-practitioner-6051">Example Practitoner 6051</a>
+                    </td>
+                    <td>
+<p>Phyllis Mangas</p>
 </td>
                 </tr>
             </tbody>
@@ -686,7 +840,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.1-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 5, 2023 09:18-0600">2023-01-05</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.2-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 10, 2023 07:11-0600">2023-01-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -14,6 +14,7 @@ Example from a mock ImmunizationTO
 * recorded = 2022-08-08T11:15:28Z
 * primarySource = false
 * identifier[+].value = "124684" 
+* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id"
 * identifier[=].use = #usual
 * note[0].text = "test"
 // TODO figure out why these three fail
@@ -37,6 +38,7 @@ Example from a mock ImmunizationTO
 * recorded = 2022-08-05T16:56:38Z
 * primarySource = false
 * identifier[+].value = "124685" 
+* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id"
 * identifier[=].use = #usual
 * note.text = "test comment"
 // TODO figure out why these three fail

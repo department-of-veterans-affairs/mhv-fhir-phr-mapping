@@ -1,5 +1,6 @@
 "Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: RIM Mapping","Mapping: FiveWs Pattern Mapping","Mapping: HL7 v2 Mapping","Mapping: VDIF to MHV-PHR"
-"Specimen","Specimen","","","",0,*,"","","","","Sample for analysis","A sample to be used for analysis.","","","","","","","","","",,,,,"",,,,"Specimen",0,*,"","","Entity. Role, or Act","Role[classCode=SPEC]","LabSpecimenTO"
+"Specimen","Specimen","","","",0,*,"","","","null {[]} {[]}
+","Sample for analysis","A sample to be used for analysis.","","","","","","","","","",,,,,"",,,,"Specimen",0,*,"","","Entity. Role, or Act","Role[classCode=SPEC]","LabSpecimenTO"
 "Specimen.id","Specimen.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "Specimen.meta","Specimen.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -36,7 +37,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ",".participation[typeCode=SBJ].act[classCode=ACSN, moodCode=EVN].id","FiveWs.identifier","SPM-30 (v2.7+)","LabSpecimenTO.accessionNum"
 "Specimen.status","Specimen.status","","","",0,1,"","Y","Y","code {[]} {[]}
 ","available | unavailable | unsatisfactory | entered-in-error","The availability of the specimen.","This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.","","","","","","","","",,"required","Codes providing the status/availability of a specimen.","http://hl7.org/fhir/ValueSet/specimen-status|4.0.1","",,,,"Specimen.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","status","FiveWs.status","SPM-20","available"
+","status","FiveWs.status","SPM-20","`available`"
 "Specimen.type","Specimen.type","","","",0,1,"","","Y","CodeableConcept {[]} {[]}
 ","Kind of material that forms the specimen","The kind of material that forms the specimen.","The type can change the way that a specimen is handled and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.","","","","","","","","",,"example","The type of the specimen.","http://terminology.hl7.org/ValueSet/v2-0487","",,,,"Specimen.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".code","FiveWs.what[x]","SPM-4 and possibly SPM-5"

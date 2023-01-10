@@ -8,7 +8,7 @@ name: MHVPHR
 title: "MyHealtheVet PHR FHIR API"
 description: "MyHealtheVet exposing PHR using FHIR and Testing Plan."
 status: active
-version: 0.1.1-beta
+version: 0.1.2-beta
 fhirVersion: 4.0.1
 copyrightyear: '2022+'
 #date: 2022-04-14
@@ -44,7 +44,7 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/C
 #    - input/pagecontent
 #    - fsh-generated/includes
   show-inherited-invariants: 'false'
-  usage-stats-opt-out: 'false'
+  usage-stats-opt-out: 'true'
   logging: progress
   shownav: 'true'
   active-tables: 'false'
@@ -55,6 +55,7 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/C
   autoload-resources: 'true'
   path-output: docs
  # fmm-definition: other.html#maturity-levels
+  excludettl: 'true'
 
 
 

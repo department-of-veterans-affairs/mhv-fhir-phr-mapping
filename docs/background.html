@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.1-beta - ci-build
+            <span style="display:inline-block;">0.1.2-beta - ci-build
 
 
 
@@ -153,7 +153,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.1-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.2-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Background</h2>
   
 
@@ -197,45 +197,51 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li><a href="StructureDefinition-VA.MHV.PHR.patient.html">Patient</a>
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto">Mappings from VDIF</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto">Mappings from VDIF - PatientTO</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.patient-examples.html">Examples</a></li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.practitioner.html">Practitioner</a>
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto">Mappings from VDIF - User</a></li>
-      <li><a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto">Mappings from VDIF - Author</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto">Mappings from VDIF - UserTO</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto">Mappings from VDIF - AuthorTO</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.practitioner-examples.html">Examples</a></li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.location.html">Location</a>
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto">Mappings from VDIF</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto">Mappings from VDIF - HospitalAllocationTO</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.location-examples.html">Examples</a></li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.organization.html">Organization</a>
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid">Mapping from VDIF</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid">Mapping from VDIF - LabSiteID</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.organization-examples.html">Examples</a></li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.immunization.html">Immunization</a>
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto">Mapping from VDIF</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto">Mapping from VDIF - ImmunizationTO</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.immunization-examples.html">Examples</a></li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.note.html">Notes</a>
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto">Mapping from VDIF</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto">Mapping from VDIF - NoteTO</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.note-examples.html">Examples</a></li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.labReport.html">LabReport</a> including Microbiology and Pathology
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">Mapping from VDIF</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">Mapping from VDIF - LabReportTO +</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.labReport-examples.html">Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="StructureDefinition-VA.MHV.PHR.condition.html">Conditions</a>
+    <ul>
+      <li><a href="StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto">Mapping from VDIF - ProblemTO</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.condition-examples.html">Examples</a></li>
     </ul>
   </li>
 </ul>
@@ -244,33 +250,43 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Not yet done</p>
 
+<ul>
+  <li>Vital Readings</li>
+  <li>Medication History</li>
+  <li>ECG</li>
+  <li>Radiology Reports</li>
+  <li>Appointments</li>
+</ul>
+
 <h4 id="in-progress">in progress</h4>
+
+<ul>
+  <li>Vital Readings</li>
+</ul>
 
 <h4 id="other">other</h4>
 
 <ul>
-  <li>Admission and Discharge</li>
-  <li>Allergies</li>
-  <li>Medication History</li>
-  <li>Problem List</li>
-  <li>Vital Readings</li>
-  <li>ECG</li>
-  <li>Radiology Reports</li>
-  <li>Appointments</li>
   <li>Provenance</li>
 </ul>
 
 <p>unknown (FHIR supports the following topics but unclear if this data exists in PHR)</p>
 
 <ul>
-  <li>care plan / care team</li>
-  <li>device</li>
-  <li>goal</li>
-  <li>procedure</li>
-  <li>questionnaire</li>
-  <li>related person</li>
-  <li>service request</li>
-  <li>coverage</li>
+  <li>care plan / care team resources</li>
+  <li>allergy intolerance resources
+    <ul>
+      <li>AllergyTO is defined for VIA</li>
+    </ul>
+  </li>
+  <li>encounter resources</li>
+  <li>device resources</li>
+  <li>goal resources</li>
+  <li>procedure resources</li>
+  <li>questionnaire / questionnaireResponse resources</li>
+  <li>related person resources</li>
+  <li>service request resources</li>
+  <li>coverage resources</li>
 </ul>
 
 <p>The use of FHIR AuditEvent should be used to track all uses of the FHIR API. This is a base configuration of the HAPI FHIR Server. See IHE Implementation Guide on the use of <a href="https://profiles.ihe.net/ITI/BALP/index.html">Basic Audit Log Patterns</a></p>
@@ -476,7 +492,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.1-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jan 5, 2023 09:18-0600">2023-01-05</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.2-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 10, 2023 07:11-0600">2023-01-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -11,6 +11,8 @@ A profile on the Practitioner resource for MHV PHR exposing Practitioner using F
 - based on US-Core for Practitioner
 - used for UserTO, and AuthorTO
 - might be used for PersonTO or is that RelatedPerson?
+
+Mapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto) and [VDIF AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)
 """
 // TODO: could define some slices for the various identifiers, telecom, and name
 
@@ -55,7 +57,7 @@ Title: "VDIF to MHV-PHR"
 * telecom -> "UserTO.digitalPager"
 * communication -> "UserTO.greeting"
 * identifier.value -> "UserTO.ids"
-* identifier.system -> "https://johnmoehrke.github.io/MHV-PHR/Vista/111/UserTO.id"
+* identifier.system -> "`https://johnmoehrke.github.io/MHV-PHR/Vista/111/UserTO.id`"
 * telecom -> "UserTO.emailAddress"
 
 /*
@@ -78,7 +80,7 @@ Target: "AuthorTO"
 Title: "VDIF to MHV-PHR"
 * -> "AuthorTO" "MHV PHR FHIR API"
 * identifier.value -> "AuthorTO.id"
-* identifier.system -> "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id"
+* identifier.system -> "`https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id`"
 * name.text -> "AuthorTO.name"
 
 
