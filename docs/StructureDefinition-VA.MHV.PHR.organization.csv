@@ -1,6 +1,6 @@
 "Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)","Mapping: HL7 v2 Mapping","Mapping: RIM Mapping","Mapping: ServD","Mapping: FiveWs Pattern Mapping","Mapping: VDIF to MHV-PHR"
 "Organization","Organization","","","",0,*,"","","","null {[]} {[]}
-","A grouping of people or organizations with a common purpose","A formally or informally recognized grouping of people or organizations formed for the purpose of achieving some form of collective action.  Includes companies, institutions, corporations, departments, community groups, healthcare practice groups, payer/insurer, etc.","","","","","","","","","",,,,,"",,,,"Organization",0,*,"","","(also see master files messages)","Entity. Role, or Act","Organization(classCode=ORG, determinerCode=INST)","Organization","labSiteId"
+","A grouping of people or organizations with a common purpose","\-","\-","","","","","","","","",,,,,"",,,,"Organization",0,*,"","","(also see master files messages)","Entity. Role, or Act","Organization(classCode=ORG, determinerCode=INST)","Organization","labSiteId"
 "Organization.id","Organization.id","","","",0,1,"","","Y","id {[]} {[]}
 ","Logical id of this artifact","The logical id of the resource, as used in the URL for the resource. Once assigned, this value never changes.","The only time that a resource does not have an id is when it is being submitted to the server using a create operation.","","","","","","","","",,,,,"",,,,"Resource.id",0,1,"",""
 "Organization.meta","Organization.meta","","","",0,1,"","","Y","Meta {[]} {[]}
@@ -33,7 +33,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Identifies this organization  across multiple systems","Identifier for the organization that is used to identify the organization across multiple disparate systems.","NPI preferred.","Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization.","","","","","","","",,,,,"","pattern:$this}
 ","",,"open","Organization.identifier",0,*,"org-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XON.10 / XON.3",".scopes[Role](classCode=IDENT)","./Identifiers","n/a","FiveWs.identifier"
+","XON.10 / XON.3",".scopes[Role](classCode=IDENT)","./Identifiers","FiveWs.identifier"
 "Organization.identifier.id","Organization.identifier.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Organization.identifier.extension","Organization.identifier.extension","","extensions
@@ -64,13 +64,13 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
   <system value=""http://hl7.org/fhir/sid/us-npi""/>
 </valueIdentifier>","","","",,,,,"",,,,"Organization.identifier",0,*,"org-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XON.10 / XON.3",".scopes[Role](classCode=IDENT)","./Identifiers","n/a","FiveWs.identifier"
+","XON.10 / XON.3",".scopes[Role](classCode=IDENT)","./Identifiers","FiveWs.identifier"
 "Organization.identifier:CLIA","Organization.identifier","CLIA","","",0,1,"","","Y","Identifier {[]} {[]}
 ","Clinical Laboratory Improvement Amendments (CLIA) Number for laboratories","Identifier for the organization that is used to identify the organization across multiple disparate systems.","","Organizations are known by a variety of ids. Some institutions maintain several, and most collect identifiers for exchange with other organizations concerning the organization.","","","","<valueIdentifier xmlns=""http://hl7.org/fhir"">
   <system value=""urn:oid:2.16.840.1.113883.4.7""/>
 </valueIdentifier>","","","",,,,,"",,,,"Organization.identifier",0,*,"org-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XON.10 / XON.3",".scopes[Role](classCode=IDENT)","./Identifiers","n/a","FiveWs.identifier"
+","XON.10 / XON.3",".scopes[Role](classCode=IDENT)","./Identifiers","FiveWs.identifier"
 "Organization.active","Organization.active","","","",1,1,"Y","Y","Y","boolean {[]} {[]}
 ","Whether the organization's record is still in active use","Whether the organization's record is still in active use.","This active flag is not intended to be used to mark an organization as temporarily closed or under construction. Instead the Location(s) within the Organization should have the suspended status. If further details of the reason for the suspension are required, then an extension on this element should be used.
 
@@ -86,7 +86,7 @@ We expect that some jurisdictions will profile this optionality to be a single c
 "Organization.name","Organization.name","","","",1,1,"Y","","Y","string {[]} {[]}
 ","Name used for the organization","A name associated with the organization.","If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.","Need to use the name as the label of the organization.","","","","","","","",,,,,"",,,,"Organization.name",0,1,"org-1
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XON.1",".name",".PreferredName/Name","./PrimaryAddress and ./OtherAddresses","Lab Site {number}"
+","XON.1",".name",".PreferredName/Name","Lab Site {number}"
 "Organization.alias","Organization.alias","","","",0,*,"","","","string {[]} {[]}
 ","A list of alternate names that the organization is known as, or was known as in the past","A list of alternate names that the organization is known as, or was known as in the past.","There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.","Over time locations and organizations go through many changes and can be known by different names.
 
@@ -122,7 +122,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Organization.address","Organization.address","","","",0,*,"Y","","","Address {[]} {[]}
 ","An address for the organization","An address for the organization.","Organization may have multiple addresses with different uses or applicable periods. The use code 'home' is not to be used.","May need to keep track of the organization's addresses for contacting, billing or reporting requirements.","","","","","","","",,,,,"",,,,"Organization.address",0,*,"org-2
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-org-2:An address of an organization can never be of use 'home' {where(use = 'home').empty()}","ORC-23?",".address","./PrimaryAddress and ./OtherAddresses","n/a"
+org-2:An address of an organization can never be of use 'home' {where(use = 'home').empty()}","ORC-23?",".address","./PrimaryAddress and ./OtherAddresses"
 "Organization.address.id","Organization.address.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Organization.address.extension","Organization.address.extension","","extensions
@@ -153,7 +153,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Organization.address.state","Organization.address.state","","Province
 Territory","",0,1,"Y","","Y","string {[]} {[]}
 ","Sub-unit of country (abbreviations ok)","Sub-unit of a country with limited sovereignty in a federally organized country. A code may be used if codes are in common use (e.g. US 2 letter state codes).","","","","","","","","","",,"extensible","Two letter USPS alphabetic codes.","http://hl7.org/fhir/us/core/ValueSet/us-core-usps-state","",,,,"Address.state",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","XAD.4","AD.part[parttype = STA]","./Region","./Sites"
+","XAD.4","AD.part[parttype = STA]","./Region"
 "Organization.address.postalCode","Organization.address.postalCode","","Zip
 ","",0,1,"Y","","Y","string {[]} {[]}
 ","US Zip Codes","A postal code designating a region defined by the postal service.","","","","","","","<valueString xmlns=""http://hl7.org/fhir"" value=""9132""/>","","",,,,,"",,,,"Address.postalCode",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

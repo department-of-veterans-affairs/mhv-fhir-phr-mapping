@@ -1,9 +1,9 @@
 ﻿MHVPHR : Validation Results
 =========================================
 
-err = 12, warn = 38, info = 10
+err = 18, warn = 38, info = 10
 IG Publisher Version: 1.2.26
-Generated Tue Jan 10 08:17:57 CST 2023. FHIR version 4.0.1 for va.mhv.phr.example#0.1.2-beta (canonical = https://johnmoehrke.github.io/MHV-PHR)
+Generated Wed Jan 11 06:12:33 CST 2023. FHIR version 4.0.1 for va.mhv.phr.example#0.1.3-beta (canonical = https://johnmoehrke.github.io/MHV-PHR)
  Build Errors : 0 / 0 / 0
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\CapabilityStatement-MHVcapabilities : 0 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\Condition-ex-MHV-condition-1 : 0 / 1 / 1
@@ -47,7 +47,7 @@ Generated Tue Jan 10 08:17:57 CST 2023. FHIR version 4.0.1 for va.mhv.phr.exampl
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\Practitioner-ex-MHV-practitioner-4262 : 0 / 0 / 2
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\Practitioner-ex-MHV-practitioner-6051 : 0 / 0 / 2
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.LabSpecimen : 0 / 0 / 2
- C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.condition : 0 / 0 / 1
+ C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.condition : 6 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.immunization : 0 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.labReport : 6 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.labTest : 6 / 0 / 2
@@ -110,15 +110,15 @@ WARNING: DiagnosticReport/ex-MHV-labReport-8: DiagnosticReport.code.coding[0]: T
 == fsh-generated\resources\DocumentReference-ex-MHV-note-3.json ==
 == fsh-generated\resources\DocumentReference-ex-MHV-note-4.json ==
 == fsh-generated\resources\Immunization-ex-MHV-immunization-1.json ==
-WARNING: Immunization/ex-MHV-immunization-1: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20180519)
+WARNING: Immunization/ex-MHV-immunization-1: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
 == fsh-generated\resources\Immunization-ex-MHV-immunization-2.json ==
-WARNING: Immunization/ex-MHV-immunization-2: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20180519)
+WARNING: Immunization/ex-MHV-immunization-2: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
 == fsh-generated\resources\ImplementationGuide-va.mhv.phr.example.json ==
 WARNING: ImplementationGuide/va.mhv.phr.example: ImplementationGuide.definition.resource[39].description: value should not start or finish with whitespace 'This...report '
 == fsh-generated\resources\Location-ex-MHV-location-552.json ==
 == fsh-generated\resources\Location-ex-MHV-location-984.json ==
 == fsh-generated\resources\Organization-ex-MHV-organization-989.json ==
-INFORMATION: Organization/ex-MHV-organization-989: Organization.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization|0.1.2-beta
+INFORMATION: Organization/ex-MHV-organization-989: Organization.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization|0.1.3-beta
 == fsh-generated\resources\Patient-ex-MHV-patient-0.json ==
 WARNING: Patient/ex-MHV-patient-0: Patient.extension[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'ReligiousAffiliation' (http://terminology.hl7.org/ValueSet/v3-ReligiousAffiliation|2.0.0)
 WARNING: Patient/ex-MHV-patient-0: Patient.identifier[1].type: No code provided, and a code should be provided from the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1)
@@ -131,23 +131,29 @@ WARNING: Patient/ex-MHV-patient-1: Patient.identifier[1].type: No code provided,
 WARNING: Patient/ex-MHV-patient-2: Patient.identifier[0].type: No code provided, and a code should be provided from the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1)
 WARNING: Patient/ex-MHV-patient-2: Patient.identifier[1].type: No code provided, and a code should be provided from the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1)
 == fsh-generated\resources\Practitioner-ex-MHV-practitioner.json ==
-INFORMATION: Practitioner/ex-MHV-practitioner: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.2-beta
+INFORMATION: Practitioner/ex-MHV-practitioner: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta
 WARNING: Practitioner/ex-MHV-practitioner: Practitioner.identifier[0].type: No code provided, and a code should be provided from the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1)
 == fsh-generated\resources\Practitioner-ex-MHV-practitioner-110.json ==
-INFORMATION: Practitioner/ex-MHV-practitioner-110: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.2-beta
+INFORMATION: Practitioner/ex-MHV-practitioner-110: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta
 == fsh-generated\resources\Practitioner-ex-MHV-practitioner-22572.json ==
-INFORMATION: Practitioner/ex-MHV-practitioner-22572: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.2-beta
+INFORMATION: Practitioner/ex-MHV-practitioner-22572: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta
 == fsh-generated\resources\Practitioner-ex-MHV-practitioner-36556.json ==
-INFORMATION: Practitioner/ex-MHV-practitioner-36556: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.2-beta
+INFORMATION: Practitioner/ex-MHV-practitioner-36556: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta
 == fsh-generated\resources\Practitioner-ex-MHV-practitioner-37569.json ==
-INFORMATION: Practitioner/ex-MHV-practitioner-37569: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.2-beta
+INFORMATION: Practitioner/ex-MHV-practitioner-37569: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta
 == fsh-generated\resources\Practitioner-ex-MHV-practitioner-4262.json ==
-INFORMATION: Practitioner/ex-MHV-practitioner-4262: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.2-beta
+INFORMATION: Practitioner/ex-MHV-practitioner-4262: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta
 == fsh-generated\resources\Practitioner-ex-MHV-practitioner-6051.json ==
-INFORMATION: Practitioner/ex-MHV-practitioner-6051: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.2-beta
+INFORMATION: Practitioner/ex-MHV-practitioner-6051: Practitioner.identifier[0]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.LabSpecimen.json ==
 INFORMATION: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen'): The Implementation Guide contains no explicitly linked examples for this profile
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.condition.json ==
+ERROR: https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition#Condition.code.coding: No match found in the generated snapshot: check that the path and definitions are legal in the differential (including order)
+ERROR: https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition#Condition.code.text: No match found in the generated snapshot: check that the path and definitions are legal in the differential (including order)
+ERROR: https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition: The profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition has 2 elements in the differential (id: Condition.code.coding, id: Condition.code.text, id: Condition.code.text) that don't have a matching element in the snapshot: check that the path and definitions are legal in the differential (including order)
+ERROR: StructureDefinition/VA.MHV.PHR.condition: StructureDefinition.differential.element.where(path = 'Condition.code.coding'): No match found in the generated snapshot: check that the path and definitions are legal in the differential (including order)
+ERROR: StructureDefinition/VA.MHV.PHR.condition: StructureDefinition.differential.element.where(path = 'Condition.code.text'): No match found in the generated snapshot: check that the path and definitions are legal in the differential (including order)
+ERROR: StructureDefinition/VA.MHV.PHR.condition: StructureDefinition: The profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition has 2 elements in the differential (id: Condition.code.coding, id: Condition.code.text, id: Condition.code.text) that don't have a matching element in the snapshot: check that the path and definitions are legal in the differential (including order)
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.immunization.json ==
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.labReport.json ==
 ERROR: https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport#DiagnosticReport.code.coding: No match found in the generated snapshot: check that the path and definitions are legal in the differential (including order)

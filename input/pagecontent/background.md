@@ -42,6 +42,9 @@ Note in Muazzam spreadsheet
 - Appointments
 - Medication History
 
+Chem-Hem - from HDR
+- CdsChemistryQueryService.java
+
 #### in progress
 
 - Radiology Reports

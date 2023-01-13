@@ -2,7 +2,7 @@
 
 
 Profile:        MHVcondition
-Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
 Id:             VA.MHV.PHR.condition
 Title:          "VA MHV PHR problems"
 Description:    """

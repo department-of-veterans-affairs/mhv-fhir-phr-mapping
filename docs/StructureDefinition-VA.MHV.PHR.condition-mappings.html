@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.2-beta - ci-build
+            <span style="display:inline-block;">0.1.3-beta - ci-build
 
 
 
@@ -150,7 +150,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.2-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.3-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -266,6 +266,8 @@
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>&lt; 303105007 |Disease phases|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>&lt; 410514004 |Finding context value|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>&lt; 404684003 |Clinical finding|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>&lt; 404684003 |Clinical finding|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (sdoh)</td><td>&lt; 404684003 |Clinical finding|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;severity</td><td>&lt; 272141005 |Severities|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>code 246090004 |Associated finding| (&lt; 404684003 |Clinical finding| MINUS
 &lt;&lt; 420134006 |Propensity to adverse reactions| MINUS 
@@ -289,6 +291,8 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>PRB-14</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>PRB-13</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>'problem' if from PRB-3. 'diagnosis' if from DG1 segment in PV1 message</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>'problem' if from PRB-3. 'diagnosis' if from DG1 segment in PV1 message</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (sdoh)</td><td>'problem' if from PRB-3. 'diagnosis' if from DG1 segment in PV1 message</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;severity</td><td>PRB-26 / ABS-3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>PRB-3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
@@ -311,7 +315,6 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>.id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>Observation ACT
@@ -319,6 +322,8 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>Observation ACT
 .inboundRelationship[typeCode=COMP].source[classCode=OBS, code=&quot;verificationStatus&quot;, moodCode=EVN].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (sdoh)</td><td>.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;severity</td><td>Can be pre/post-coordinated into value.  Or ./inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;severity&quot;].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>.value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
@@ -357,6 +362,8 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>FiveWs.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>FiveWs.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (sdoh)</td><td>FiveWs.class</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;severity</td><td>FiveWs.grade</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
@@ -389,9 +396,6 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>ProblemTO.status | !ProblemTO.removed ? `#active` : todo</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>ProblemTO.verified ? `#confirmed` : `#unconfirmed`</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`problem-list-item`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>ICD-9 # ProblemTO.icd</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ProblemTO.type.name</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>ProblemTO.onsetDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;abatement[x] (abatementDateTime)</td><td>ProblemTO.abatementDateTime</td> </tr>
@@ -476,7 +480,7 @@ OR &lt; 272379006 |Event|</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.2-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jan 10, 2023 08:15-0600">2023-01-10</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.3-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jan 11, 2023 06:10-0600">2023-01-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
