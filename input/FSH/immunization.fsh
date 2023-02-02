@@ -41,6 +41,14 @@ TODO Questions:
 * recorded 1..1
 * primarySource = false
 * identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..1
+* identifier[TOid].use = #usual
+* identifier[TOid].system ^short = "system for given Vista site and ImmunizationTO.id"
+* identifier[TOid].value ^short = "ImmunizationTO.id"
 * note 0..1
 * reaction.detail ^type.aggregation = #contained
 // not allowed

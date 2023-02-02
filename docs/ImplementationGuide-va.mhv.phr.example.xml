@@ -17,7 +17,7 @@
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-01-11T06:10:13-06:00"/>
+  <date value="2023-02-02T16:50:30-06:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -541,6 +541,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.imaging"/>
+      </reference>
+      <name value="VA MHV PHR Radiology"/>
+      <description value="A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;- based on US-Core for Clinical Notes&#xA;- type LOINC#18748-4 &quot;Diagnostic imaging study&quot;&#xA;- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details&#xA;&#xA;TODO Questions:&#xA;- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.&#xA;  - hasImages&#xA;  - imagingType - always was GENERAL RADIOLOGY&#xA;  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?&#xA;  - these never appeared in examples&#xA;    - modifiers&#xA;    - clinicalHX&#xA;    - impression&#xA;    - imagingExamTO&#xA;    - reportId"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/VA.MHV.PHR.immunization"/>
       </reference>
       <name value="VA MHV PHR Immunization"/>
@@ -599,7 +610,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.note"/>
       </reference>
       <name value="VA MHV PHR Notes"/>
-      <description value="A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;- based on US-Core for Clinical Notes&#xA;&#xA;TODO Questions:&#xA;- is standardTitle or type used to differentiate between various note types?&#xA;- type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values&#xA;  - A - LOINC#83320-2 \&quot;Allergy and Immunology Adverse event note\&quot;&#xA;  - PN - LOINC#11505-5 \&quot;Physician procedure note\&quot;&#xA;  - DS - LOINC#18842-5 \&quot;Discharge summary\&quot;&#xA;- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.&#xA;  - serviceCategory&#xA;  - cosigner&#xA;  - hasAdendum&#xA;  - isAddendum&#xA;  - originalNoteID&#xA;  - hasImages&#xA;  - itemId&#xA;  - signatureTimestamp&#xA;  - consultId&#xA;  - surgicalProcId&#xA;  - prfId&#xA;  - parentId&#xA;  - procTimestamp&#xA;  - subject"/>
+      <description value="A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;- based on US-Core for Clinical Notes&#xA;&#xA;TODO Questions:&#xA;- is standardTitle or type used to differentiate between various note types?&#xA;- type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values&#xA;  - A - LOINC#83320-2 \&quot;Allergy and Immunology Adverse event note\&quot;&#xA;  - PN - LOINC#11505-5 \&quot;Physician procedure note\&quot;&#xA;  - DS - LOINC#18842-5 \&quot;Discharge summary\&quot;&#xA;- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.&#xA;  - serviceCategory&#xA;  - cosigner&#xA;  - hasAdendum&#xA;  - isAddendum&#xA;  - originalNoteID&#xA;  - hasImages&#xA;  - itemId&#xA;  - signatureTimestamp&#xA;  - consultId&#xA;  - surgicalProcId&#xA;  - prfId&#xA;  - parentId&#xA;  - procTimestamp&#xA;  - subject"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -766,6 +777,17 @@
       <name value="Example 9 of an MHV condition"/>
       <description value="Example from a mock ProblemTO"/>
       <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-imaging-0"/>
+      </reference>
+      <name value="Example 0 of a MHV Radiology (Imaging Exam)"/>
+      <description value="Derived from the a mock ImagingExamTO:"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1074,6 +1096,16 @@
       <name value="Example Practitoner 6051"/>
       <description value="Phyllis Mangas"/>
       <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-imaging-2"/>
+      </reference>
+      <name value="ex-MHV-imaging-2"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging"/>
     </resource>
     <page>
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">

@@ -26,6 +26,9 @@ MyHealtheVet acts as a FHIR Server.
 - [Conditions](StructureDefinition-VA.MHV.PHR.condition.html)
   - [Mapping from VDIF - ProblemTO](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto)
   - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
+- [Radiology](StructureDefinition-VA.MHV.PHR.imaging.html)
+  - [Mapping from VDIF - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
 
 ### todo
 

@@ -46,7 +46,7 @@
   fhir:StructureDefinition.name [ fhir:value "MHVnote"]; # 
   fhir:StructureDefinition.title [ fhir:value "VA MHV PHR Notes"]; # 
   fhir:StructureDefinition.status [ fhir:value "active"]; # 
-  fhir:StructureDefinition.date [ fhir:value "2023-01-11T06:10:13-06:00"^^xsd:dateTime]; # 
+  fhir:StructureDefinition.date [ fhir:value "2023-02-02T16:50:30-06:00"^^xsd:dateTime]; # 
   fhir:StructureDefinition.publisher [ fhir:value "John Moehrke (himself)"]; # 
   fhir:StructureDefinition.contact [
      fhir:index 0;
@@ -69,7 +69,7 @@
        fhir:ContactPoint.value [ fhir:value "JohnMoehrke@gmail.com" ]
      ]
   ]; # 
-  fhir:StructureDefinition.description [ fhir:value "A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n\nTODO Questions:\n- is standardTitle or type used to differentiate between various note types?\n- type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values\n  - A - LOINC#83320-2 \\\"Allergy and Immunology Adverse event note\\\"\n  - PN - LOINC#11505-5 \\\"Physician procedure note\\\"\n  - DS - LOINC#18842-5 \\\"Discharge summary\\\"\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - serviceCategory\n  - cosigner\n  - hasAdendum\n  - isAddendum\n  - originalNoteID\n  - hasImages\n  - itemId\n  - signatureTimestamp\n  - consultId\n  - surgicalProcId\n  - prfId\n  - parentId\n  - procTimestamp\n  - subject"]; # 
+  fhir:StructureDefinition.description [ fhir:value "A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n\nTODO Questions:\n- is standardTitle or type used to differentiate between various note types?\n- type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values\n  - A - LOINC#83320-2 \\\"Allergy and Immunology Adverse event note\\\"\n  - PN - LOINC#11505-5 \\\"Physician procedure note\\\"\n  - DS - LOINC#18842-5 \\\"Discharge summary\\\"\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - serviceCategory\n  - cosigner\n  - hasAdendum\n  - isAddendum\n  - originalNoteID\n  - hasImages\n  - itemId\n  - signatureTimestamp\n  - consultId\n  - surgicalProcId\n  - prfId\n  - parentId\n  - procTimestamp\n  - subject"]; # 
   fhir:StructureDefinition.jurisdiction [
      fhir:index 0;
      fhir:CodeableConcept.coding [

@@ -26,7 +26,7 @@
   fhir:ImplementationGuide.name [ fhir:value "MHVPHR"]; # 
   fhir:ImplementationGuide.title [ fhir:value "MyHealtheVet PHR FHIR API"]; # 
   fhir:ImplementationGuide.status [ fhir:value "active"]; # 
-  fhir:ImplementationGuide.date [ fhir:value "2023-01-11T06:10:13-06:00"^^xsd:dateTime]; # 
+  fhir:ImplementationGuide.date [ fhir:value "2023-02-02T16:50:30-06:00"^^xsd:dateTime]; # 
   fhir:ImplementationGuide.publisher [ fhir:value "John Moehrke (himself)"]; # 
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -808,6 +808,20 @@
          fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/VA.MHV.PHR.imaging" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "VA MHV PHR Radiology" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n- type LOINC#18748-4 \"Diagnostic imaging study\"\n- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details\n\nTODO Questions:\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - hasImages\n  - imagingType - always was GENERAL RADIOLOGY\n  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?\n  - these never appeared in examples\n    - modifiers\n    - clinicalHX\n    - impression\n    - imagingExamTO\n    - reportId" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 2;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization>;
          fhir:Reference.reference [ fhir:value "StructureDefinition/VA.MHV.PHR.immunization" ]
        ];
@@ -815,7 +829,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Immunization that declares how MHV will expose PHR immunization.\n\n**Proposed mapping not yet approved for implementation**\n\n* Derived off of US-Core Immunization\n  * US-Core already requires: status, vaccineCode, patient, occurance[x], primarySource\n* must point at the patient\n* must have status of completed \n* must have identifier as cross reference to original source\n* must have a code.text or code.coding from a valueset\n  * code.coding should be a CVX but we don't have such.\n  * Might have a CPT code\n* must have a date (occuranceDateTime) the vaccine was administered from the UI\n  * will also be used for recorded date\n* must be indicated this data are not official record (primarySource=false)\n* any reaction is recorded as a contained observation\n* may have a comment note\n* once created will have an id, versionId, lastUpdated.\n* Not sure if text will be populated\n\nMapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)\n\nTODO Questions: \n- The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.\n- reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?\n- contraindicated -- appears to be a number (e.g. 0). No idea what the values might be or what they might mean\n- id - presuming this is a persisted identifier we can cross-reference with\n- series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?\n- encounter - should we convert these to instances of FHIR Encounter?\n- could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 2;
+       fhir:index 3;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -829,7 +843,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.\n\nThe given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO\n\nThe LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)\n\nThe LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto). This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.\n\nThe LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen). These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nTODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)\n\n- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 3;
+       fhir:index 4;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -843,7 +857,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.\n\n- This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - Specimen.type.text <- LabSpecimenTO.name\n  - type should be a code derived from LabSpecimenTO.name\n- should have a collectedDateTime derived from LabSpecimenTO.collectionDate\n- may have an identifier - Specimen.identifier <- LabSpecimenTO.id\n  - if no LabSpecimenTO.id is given, then the Specimen resource must be contained\n- should have an accessionIdentifier derived from LabSpecimenTO.accessionNum\n- should have a subject (unless Contained)\n\nTODO questions: \n- examples didn't have much populated\n- not clear what site and facility might contain, so can't tell where they would go\n- some examples are likely FHIR Device (old hardware left foot), so this might change" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 4;
+       fhir:index 5;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -857,7 +871,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.\n\n- This profile is based on US-Core Lab\n- sometimes a contained Specimen is needed" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 5;
+       fhir:index 6;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -871,7 +885,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n\nMapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 6;
+       fhir:index 7;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -882,10 +896,10 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/VA.MHV.PHR.note" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "VA MHV PHR Notes" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n\nTODO Questions:\n- is standardTitle or type used to differentiate between various note types?\n- type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values\n  - A - LOINC#83320-2 \\\"Allergy and Immunology Adverse event note\\\"\n  - PN - LOINC#11505-5 \\\"Physician procedure note\\\"\n  - DS - LOINC#18842-5 \\\"Discharge summary\\\"\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - serviceCategory\n  - cosigner\n  - hasAdendum\n  - isAddendum\n  - originalNoteID\n  - hasImages\n  - itemId\n  - signatureTimestamp\n  - consultId\n  - surgicalProcId\n  - prfId\n  - parentId\n  - procTimestamp\n  - subject" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n\nTODO Questions:\n- is standardTitle or type used to differentiate between various note types?\n- type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values\n  - A - LOINC#83320-2 \\\"Allergy and Immunology Adverse event note\\\"\n  - PN - LOINC#11505-5 \\\"Physician procedure note\\\"\n  - DS - LOINC#18842-5 \\\"Discharge summary\\\"\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - serviceCategory\n  - cosigner\n  - hasAdendum\n  - isAddendum\n  - originalNoteID\n  - hasImages\n  - itemId\n  - signatureTimestamp\n  - consultId\n  - surgicalProcId\n  - prfId\n  - parentId\n  - procTimestamp\n  - subject" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 7;
+       fhir:index 8;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -899,7 +913,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.\n\n- based on US-Core for Organization\n- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)\n\nMap to [VDIF labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid)" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 8;
+       fhir:index 9;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -913,7 +927,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- record the ICN value into the Patient.identifier\n  - seems other ID values are possible too such as mpiPID, localPID, SSN.\n- some elements could be converted into `codes` but doing minimal translation. \n- notes given example\n  - dropping age as not useful in persisted data, prefer dob\n  - dropping occupation - could be recorded as SDOH Observation\n  - dropping confidentiality flag - not sure the meaning - could be .meta.security\n  - dropping patientFlags - not sure the meaning\n  - dropping activeInsurance - could go into Account resource - could go in extension as text blob\n  - dropping currentMeansStatus\n  - dropping elegibilityCode\n\nMapping to [VDIF PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 9;
+       fhir:index 10;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -927,7 +941,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- based on US-Core for Practitioner\n- used for UserTO, and AuthorTO\n- might be used for PersonTO or is that RelatedPerson?\n\nMapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto) and [VDIF AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 10;
+       fhir:index 11;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -941,7 +955,7 @@
        fhir:ImplementationGuide.definition.resource.description [ fhir:value "CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
-       fhir:index 11;
+       fhir:index 12;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -958,7 +972,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 12;
+       fhir:index 13;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -975,7 +989,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 13;
+       fhir:index 14;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -992,7 +1006,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 14;
+       fhir:index 15;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1009,7 +1023,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 15;
+       fhir:index 16;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1026,7 +1040,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 16;
+       fhir:index 17;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1043,7 +1057,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 17;
+       fhir:index 18;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1060,7 +1074,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 18;
+       fhir:index 19;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1077,7 +1091,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 19;
+       fhir:index 20;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1094,7 +1108,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 20;
+       fhir:index 21;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1111,7 +1125,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 21;
+       fhir:index 22;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1128,7 +1142,24 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ], [
-       fhir:index 22;
+       fhir:index 23;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "DocumentReference" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/DocumentReference/ex-MHV-imaging-0>;
+         fhir:Reference.reference [ fhir:value "DocumentReference/ex-MHV-imaging-0" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example 0 of a MHV Radiology (Imaging Exam)" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Derived from the a mock ImagingExamTO:" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging";
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging>
+       ]
+     ], [
+       fhir:index 24;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1145,7 +1176,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization>
        ]
      ], [
-       fhir:index 23;
+       fhir:index 25;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1162,7 +1193,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization>
        ]
      ], [
-       fhir:index 24;
+       fhir:index 26;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1179,7 +1210,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
        ]
      ], [
-       fhir:index 25;
+       fhir:index 27;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1196,7 +1227,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
        ]
      ], [
-       fhir:index 26;
+       fhir:index 28;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1213,7 +1244,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
        ]
      ], [
-       fhir:index 27;
+       fhir:index 29;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1230,7 +1261,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
        ]
      ], [
-       fhir:index 28;
+       fhir:index 30;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1247,7 +1278,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
        ]
      ], [
-       fhir:index 29;
+       fhir:index 31;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1264,7 +1295,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
        ]
      ], [
-       fhir:index 30;
+       fhir:index 32;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1281,7 +1312,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
        ]
      ], [
-       fhir:index 31;
+       fhir:index 33;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1298,7 +1329,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
        ]
      ], [
-       fhir:index 32;
+       fhir:index 34;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1315,7 +1346,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location>
        ]
      ], [
-       fhir:index 33;
+       fhir:index 35;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1332,7 +1363,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location>
        ]
      ], [
-       fhir:index 34;
+       fhir:index 36;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1349,7 +1380,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note>
        ]
      ], [
-       fhir:index 35;
+       fhir:index 37;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1366,7 +1397,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note>
        ]
      ], [
-       fhir:index 36;
+       fhir:index 38;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1383,7 +1414,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note>
        ]
      ], [
-       fhir:index 37;
+       fhir:index 39;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1400,7 +1431,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note>
        ]
      ], [
-       fhir:index 38;
+       fhir:index 40;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1417,7 +1448,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note>
        ]
      ], [
-       fhir:index 39;
+       fhir:index 41;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1434,7 +1465,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization>
        ]
      ], [
-       fhir:index 40;
+       fhir:index 42;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1451,7 +1482,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
        ]
      ], [
-       fhir:index 41;
+       fhir:index 43;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1468,7 +1499,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
        ]
      ], [
-       fhir:index 42;
+       fhir:index 44;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1485,7 +1516,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
        ]
      ], [
-       fhir:index 43;
+       fhir:index 45;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1502,7 +1533,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
        ]
      ], [
-       fhir:index 44;
+       fhir:index 46;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1519,7 +1550,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
        ]
      ], [
-       fhir:index 45;
+       fhir:index 47;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1536,7 +1567,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
        ]
      ], [
-       fhir:index 46;
+       fhir:index 48;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1553,7 +1584,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
        ]
      ], [
-       fhir:index 47;
+       fhir:index 49;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1570,7 +1601,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
        ]
      ], [
-       fhir:index 48;
+       fhir:index 50;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1587,7 +1618,7 @@
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
        ]
      ], [
-       fhir:index 49;
+       fhir:index 51;
        fhir:Element.extension [
          fhir:index 0;
          fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
@@ -1602,6 +1633,22 @@
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner";
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
+       ]
+     ], [
+       fhir:index 52;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "DocumentReference" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/DocumentReference/ex-MHV-imaging-2>;
+         fhir:Reference.reference [ fhir:value "DocumentReference/ex-MHV-imaging-2" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "ex-MHV-imaging-2" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging";
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging>
        ]
      ];
      fhir:ImplementationGuide.definition.page [

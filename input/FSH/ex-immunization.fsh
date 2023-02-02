@@ -13,9 +13,9 @@ Example from a mock ImmunizationTO
 * occurrenceDateTime = 2022-08-08T11:15:28Z
 * recorded = 2022-08-08T11:15:28Z
 * primarySource = false
-* identifier[+].value = "124684" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "124684" 
+* identifier[TOid].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id"
+* identifier[TOid].use = #usual
 * note[0].text = "test"
 // TODO figure out why these three fail
 //* location.display = "DAYTON"
@@ -33,13 +33,15 @@ Example from a mock ImmunizationTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #completed
 * vaccineCode.text = "INFLUENZA, INJECTABLE, QUADRIVALENT"
+* vaccineCode.coding[0] = CPT#90688 "IIV4 VACCINE SPLT 0.5 ML IM"
+//* vaccineCode.coding[0].version = "2014"
 * patient = Reference(Patient/ex-MHV-patient-1)
 * occurrenceDateTime = 2022-08-05T16:56:38Z
 * recorded = 2022-08-05T16:56:38Z
 * primarySource = false
-* identifier[+].value = "124685" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "124685" 
+* identifier[TOid].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id"
+* identifier[TOid].use = #usual
 * note.text = "test comment"
 // TODO figure out why these three fail
 //* location.display = "DAYTON"

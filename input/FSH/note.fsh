@@ -3,7 +3,7 @@ Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-document
 Id:             VA.MHV.PHR.note
 Title:          "VA MHV PHR Notes"
 Description:    """
-A profile on the DocumentReference resource for MHV PHR exposing Notes using FHIR API.
+A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.
 
 - The mock example maps best to VIA_v4.0.7_uat.wsdl. 
 - based on US-Core for Clinical Notes

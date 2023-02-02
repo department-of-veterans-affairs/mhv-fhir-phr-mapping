@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!-- broken links = errors = 18, warn = 38, info = 10, 0 -->
+<!-- broken links = 0, errors = 43, warn = 39, info = 15-->
 <head>
   <title>MHVPHR : Validation Results</title>
   <link href="fhir.css" rel="stylesheet"/>
@@ -36,9 +36,9 @@
 </head>
 <body style="margin: 20px; background-color: #ffffff">
  <h1>Validation Results for MHVPHR</h1>
- <p>Generated Wed Jan 11 06:12:33 CST 2023, FHIR version 4.0.1 for va.mhv.phr.example#0.1.3-beta (canonical = <a href="https://johnmoehrke.github.io/MHV-PHR">https://johnmoehrke.github.io/MHV-PHR</a> (<a href="https://johnmoehrke.github.io/MHV-PHR/history.html">history</a>)). See <a href="qa.html">Full QA Report</a></p>
+ <p>Generated Thu Feb 02 16:52:26 CST 2023, FHIR version 4.0.1 for va.mhv.phr.example#0.1.3-beta (canonical = <a href="https://johnmoehrke.github.io/MHV-PHR">https://johnmoehrke.github.io/MHV-PHR</a> (<a href="https://johnmoehrke.github.io/MHV-PHR/history.html">history</a>)). See <a href="qa.html">Full QA Report</a></p>
 <table class="grid"> <tr><td colspan=2><b>Quality Checks</b></td></tr>
- <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.2.26</span></td></tr>
+ <tr><td>Publisher Version:</td><td><span>IG Publisher Version: v1.2.31</span></td></tr>
  <tr><td>Publication Code:</td><td>n/a<span style="color: maroon; font-weight: bold"> </span>. PackageId = va.mhv.phr.example, Canonical = https://johnmoehrke.github.io/MHV-PHR</td></tr>
  <tr><td>Realm Check for n/a:</td><td><span style="color: maroon; font-weight: bold"></span><ul><li>n/a</li></ul></td></tr>
  <tr><td>Publication Request:</td><td>No output package found - can't check publication details <img src="icon-warning.png" height="16px" width="16px"/></td></tr>
@@ -59,16 +59,16 @@
  <tr><td>HTA Analysis:</td><td><i>Non-HL7 Igs are exempt from terminology dependency analysis</i></td></tr>
  <tr><td>R5 Dependencies:</td><td><span style="color: grey">(none)</span></td></tr>
  <tr><td>Modifier Extensions:</td><td><span style="color: grey">(none)</span></td></tr>
- <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at https://johnmoehrke.github.io/MHV-PHR (Problem #1 with package-list.json at https://johnmoehrke.github.io/MHV-PHR: Invalid HTTP response 404 from https://johnmoehrke.github.io/MHV-PHR/package-list.json?nocache=1673439012310 (Not Found) (content in C:\Users\johnm\AppData\Local\Temp\fhir-http-2.log))</td></tr>
+ <tr><td>Previous Version Comparison:</td><td> Unable to compare with previous version: Unable to find version history at https://johnmoehrke.github.io/MHV-PHR (Problem #1 with package-list.json at https://johnmoehrke.github.io/MHV-PHR: Invalid HTTP response 404 from https://johnmoehrke.github.io/MHV-PHR/package-list.json?nocache=1675378228617 (Not Found) (content in C:\Users\johnm\AppData\Local\Temp\fhir-http-2.log))</td></tr>
  <tr><td>IPA Comparison:</td><td> n/a</td></tr>
- <tr><td>Summary:</td><td> errors = 18, warn = 38, info = 10, broken links = 0</td></tr>
+ <tr><td>Summary:</td><td> errors = 43, warn = 39, info = 15, broken links = 0</td></tr>
 </table>
  <table class="grid">
    <tr>
      <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Warnings</b></td><td><b>Hints</b></td>
    </tr>
    <tr style="background-color: #EFFFEF">
-     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>0</b></td>
+     <td><a href="#internal"><b>Build Errors</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
    </tr>
    <tr style="background-color: #EFFFEF">
      <td><a href="#C__Users_johnm_git_MHV-PHR_fsh-generated_resources_Condition-ex-MHV-condition-1"><b>C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\Condition-ex-MHV-condition-1</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
@@ -127,11 +127,11 @@
    <tr style="background-color: #EFFFEF">
      <td><a href="#C__Users_johnm_git_MHV-PHR_fsh-generated_resources_DiagnosticReport-ex-MHV-labReport-8"><b>C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\DiagnosticReport-ex-MHV-labReport-8</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
    </tr>
-   <tr style="background-color: #EFFFEF">
-     <td><a href="#C__Users_johnm_git_MHV-PHR_fsh-generated_resources_Immunization-ex-MHV-immunization-1"><b>C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\Immunization-ex-MHV-immunization-1</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#C__Users_johnm_git_MHV-PHR_fsh-generated_resources_DocumentReference-ex-MHV-imaging-0"><b>C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\DocumentReference-ex-MHV-imaging-0</b></a></td><td><b>4</b></td><td><b>0</b></td><td><b>2</b></td>
    </tr>
    <tr style="background-color: #EFFFEF">
-     <td><a href="#C__Users_johnm_git_MHV-PHR_fsh-generated_resources_Immunization-ex-MHV-immunization-2"><b>C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\Immunization-ex-MHV-immunization-2</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
+     <td><a href="#C__Users_johnm_git_MHV-PHR_fsh-generated_resources_Immunization-ex-MHV-immunization-1"><b>C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\Immunization-ex-MHV-immunization-1</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
    </tr>
    <tr style="background-color: #EFFFEF">
      <td><a href="#C__Users_johnm_git_MHV-PHR_fsh-generated_resources_ImplementationGuide-va.mhv.phr.example"><b>C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\ImplementationGuide-va.mhv.phr.example</b></a></td><td><b>0</b></td><td><b>1</b></td><td><b>0</b></td>
@@ -157,12 +157,18 @@
    <tr style="background-color: #ffcccc">
      <td><a href="#C__Users_johnm_git_MHV-PHR_fsh-generated_resources_StructureDefinition-VA.MHV.PHR.labTest"><b>C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.labTest</b></a></td><td><b>6</b></td><td><b>0</b></td><td><b>1</b></td>
    </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#C__Users_johnm_git_MHV-PHR_input_examples_image2"><b>C:\Users\johnm\git\MHV-PHR\input\examples\image2</b></a></td><td><b>21</b></td><td><b>1</b></td><td><b>2</b></td>
+   </tr>
 </table>
 <hr/>
 <a name="internal"> </a>
 <h2><a href="">n/a</a> <span id="sv" class="toggle" onclick="toggle('v')">Show Validation Information</span> <span class="vcount" onclick="toggle('v')"></span></h2>
  <div style="border: 1px grey solid; display: none" id="v"></div>
  <table class="grid">
+   <tr style="background-color: #ffebcc">
+     <td><b></b></td><td><b>warning</b></td><td title=""><b>Unable to find ImplementationGuide.definition.resource.description for the resource DocumentReference/ex-MHV-imaging-2.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.</b></td>
+   </tr>
 </table>
 <hr/>
 <a name="C__Users_johnm_git_MHV-PHR_fsh-generated_resources_Condition-ex-MHV-condition-1"> </a>
@@ -433,29 +439,44 @@
    </tr>
 </table>
 <hr/>
-<a name="C__Users_johnm_git_MHV-PHR_fsh-generated_resources_Immunization-ex-MHV-immunization-1"> </a>
-<h2><a href="Immunization-ex-MHV-immunization-1.html">fsh-generated\resources\Immunization-ex-MHV-immunization-1.json</a> <span id="svi20" class="toggle" onclick="toggle('vi20')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi20')">(1)</span></h2>
- <div style="border: 1px grey solid; display: none" id="vi20"><ul style="font-size: 7px"><li>Immunization: Validated against <i>this.</i><a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></li></ul>
+<a name="C__Users_johnm_git_MHV-PHR_fsh-generated_resources_DocumentReference-ex-MHV-imaging-0"> </a>
+<h2><a href="DocumentReference-ex-MHV-imaging-0.html">fsh-generated\resources\DocumentReference-ex-MHV-imaging-0.json</a> <span id="svi20" class="toggle" onclick="toggle('vi20')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi20')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi20"><ul style="font-size: 7px"><li>DocumentReference: Validated against <i>this.</i><a href="StructureDefinition-VA.MHV.PHR.imaging.html">VA MHV PHR Radiology</a></li></ul>
 </div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
    </tr>
-   <tr style="background-color: #ffebcc">
-     <td><b>Immunization.vaccineCode (l11/c4)</b></td><td><b>warning</b></td><td title="Terminology_TX_Code_ValueSet_Ext"><b>No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)</b></td>
+   <tr style="background-color: #ffffe6">
+     <td><b>DocumentReference.type.coding[1] (l32/c8)</b></td><td><b>information</b></td><td title="Terminology_TX_System_NotKnown"><b>Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.type.coding[0] (l28/c8)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:LO, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.type.coding[1] (l32/c8)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:LO, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.type.coding[0] (l28/c8)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:CP, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.type.coding[1] (l32/c8)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:CP, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>DocumentReference.type (l26/c4)</b></td><td><b>information</b></td><td title="Validation_VAL_Profile_NoCheckMin"><b>DocumentReference.type.coding:LO: Found 0 matches, but unable to check minimum required (DocumentReference.type.coding) due to lack of slicing validation (from https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging|0.1.3-beta)</b></td>
    </tr>
 </table>
 <hr/>
-<a name="C__Users_johnm_git_MHV-PHR_fsh-generated_resources_Immunization-ex-MHV-immunization-2"> </a>
-<h2><a href="Immunization-ex-MHV-immunization-2.html">fsh-generated\resources\Immunization-ex-MHV-immunization-2.json</a> <span id="svi21" class="toggle" onclick="toggle('vi21')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi21')">(2)</span></h2>
- <div style="border: 1px grey solid; display: none" id="vi21"><ul style="font-size: 7px"><li>Immunization: Validated against <i>this.</i><a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></li><li>Immunization.contained[0]: Validated against <a href="http://hl7.org/fhir">fhir</a>.<a href="http://hl7.org/fhir/R4/observation.html">Observation</a></li></ul>
+<a name="C__Users_johnm_git_MHV-PHR_fsh-generated_resources_Immunization-ex-MHV-immunization-1"> </a>
+<h2><a href="Immunization-ex-MHV-immunization-1.html">fsh-generated\resources\Immunization-ex-MHV-immunization-1.json</a> <span id="svi21" class="toggle" onclick="toggle('vi21')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi21')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi21"><ul style="font-size: 7px"><li>Immunization: Validated against <i>this.</i><a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></li></ul>
 </div>
  <table class="grid">
    <tr>
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
    </tr>
    <tr style="background-color: #ffebcc">
-     <td><b>Immunization.vaccineCode (l11/c4)</b></td><td><b>warning</b></td><td title="Terminology_TX_Code_ValueSet_Ext"><b>No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)</b></td>
+     <td><b>Immunization.vaccineCode (l18/c4)</b></td><td><b>warning</b></td><td title="Terminology_TX_Code_ValueSet_Ext"><b>No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)</b></td>
    </tr>
 </table>
 <hr/>
@@ -467,7 +488,7 @@
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
    </tr>
    <tr style="background-color: #ffebcc">
-     <td><b>ImplementationGuide.definition.resource[39].description (l1/c34205)</b></td><td><b>warning</b></td><td title="Type_Specific_Checks_DT_String_WS"><b>value should not start or finish with whitespace 'This...report '</b></td>
+     <td><b>ImplementationGuide.definition.resource[41].description (l1/c35819)</b></td><td><b>warning</b></td><td title="Type_Specific_Checks_DT_String_WS"><b>value should not start or finish with whitespace 'This...report '</b></td>
    </tr>
 </table>
 <hr/>
@@ -534,7 +555,7 @@
      <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
    </tr>
    <tr style="background-color: #ffffe6">
-     <td><b><a href="">Practitioner.identifier[0] (l18/c6)</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta</b> <span id="sl37" class="flip" onclick="flip('l37')">Show Reasoning</span><div id="l37" style="display: none"><p>&nbsp;</p>This element does not match any known slice Defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta<ul><li>Practitioner.identifier[0]: discriminator = true and $this.where(system = 'http://hl7.org/fhir/sid/us-npi').exists()</li></ul></div></td>
+     <td><b><a href="">Practitioner.identifier[0] (l18/c6)</a></b></td><td><b>Slicing Information</b></td><td><b>This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta</b> <span id="sl43" class="flip" onclick="flip('l43')">Show Reasoning</span><div id="l43" style="display: none"><p>&nbsp;</p>This element does not match any known slice Defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.3-beta<ul><li>Practitioner.identifier[0]: discriminator = true and $this.where(system = 'http://hl7.org/fhir/sid/us-npi').exists()</li></ul></div></td>
    </tr>
    <tr style="background-color: #ffebcc">
      <td><b>Practitioner.identifier[0].type (l20/c8)</b></td><td><b>warning</b></td><td title="Terminology_TX_Code_ValueSet_Ext"><b>No code provided, and a code should be provided from the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1)</b></td>
@@ -627,10 +648,129 @@
      <td><b>StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest')</b></td><td><b>information</b></td><td title=""><b>The Implementation Guide contains no explicitly linked examples for this profile</b></td>
    </tr>
 </table>
+<hr/>
+<a name="C__Users_johnm_git_MHV-PHR_input_examples_image2"> </a>
+<h2><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a> <span id="svi30" class="toggle" onclick="toggle('vi30')">Show Validation Information</span> <span class="vcount" onclick="toggle('vi30')">(1)</span></h2>
+ <div style="border: 1px grey solid; display: none" id="vi30"><ul style="font-size: 7px"><li>DocumentReference: Validated against <i>this.</i><a href="StructureDefinition-VA.MHV.PHR.imaging.html">VA MHV PHR Radiology</a></li></ul>
+</div>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>/f:DocumentReference/f:date (l45/c36)</b></td><td><b>error</b></td><td title=""><b>Undefined element 'value'</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>/f:DocumentReference/f:custodian/f:display (l61/c36)</b></td><td><b>error</b></td><td title=""><b>Undefined element 'value'</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>/f:DocumentReference/f:content/f:attachment/f:data (l69/c1746)</b></td><td><b>error</b></td><td title=""><b>Undefined element 'value'</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>/f:DocumentReference/f:content/f:attachment/f:creation (l73/c45)</b></td><td><b>error</b></td><td title=""><b>Undefined element 'value'</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>/f:DocumentReference/f:context/f:encounter/f:identifier (l79/c39)</b></td><td><b>error</b></td><td title=""><b>Undefined attribute '@value' on identifier for type Identifier</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>/f:DocumentReference/f:context/f:related/f:identifier (l82/c39)</b></td><td><b>error</b></td><td title=""><b>Undefined attribute '@value' on identifier for type Identifier</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>DocumentReference.type.coding[1] (l29/c15)</b></td><td><b>information</b></td><td title="Terminology_TX_System_NotKnown"><b>Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.type.coding[0] (l25/c15)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:LO, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.type.coding[1] (l29/c15)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:LO, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.type.coding[0] (l25/c15)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:CP, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.type.coding[1] (l29/c15)</b></td><td><b>error</b></td><td title="SLICING_CANNOT_BE_EVALUATED"><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:CP, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>DocumentReference.type (l24/c10)</b></td><td><b>information</b></td><td title="Validation_VAL_Profile_NoCheckMin"><b>DocumentReference.type.coding:LO: Found 0 matches, but unable to check minimum required (DocumentReference.type.coding) due to lack of slicing validation (from https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging|0.1.3-beta)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.date (l44/c10)</b></td><td><b>error</b></td><td title="Rule ele-1: 'All FHIR elements must have a @value or children' Failed"><b>Rule ele-1: 'All FHIR elements must have a @value or children' Failed</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.date (l44/c10)</b></td><td><b>error</b></td><td title="Type_Specific_Checks_DT_Primitive_ValueExt"><b>Primitive types must have a value or must have child extensions</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.custodian.display (l60/c16)</b></td><td><b>error</b></td><td title="Rule ele-1: 'All FHIR elements must have a @value or children' Failed"><b>Rule ele-1: 'All FHIR elements must have a @value or children' Failed</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.custodian.display (l60/c16)</b></td><td><b>error</b></td><td title="Type_Specific_Checks_DT_Primitive_ValueExt"><b>Primitive types must have a value or must have child extensions</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.description (l64/c27)</b></td><td><b>error</b></td><td title="Rule ele-1: 'All FHIR elements must have a @value or children' Failed"><b>Rule ele-1: 'All FHIR elements must have a @value or children' Failed</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.description (l64/c27)</b></td><td><b>error</b></td><td title="Type_Specific_Checks_DT_Primitive_NotEmpty"><b>value cannot be empty</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.content[0].attachment (l66/c19)</b></td><td><b>error</b></td><td title="Rule us-core-6: 'DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present.' Failed"><b>Rule us-core-6: 'DocumentReference.content.attachment.url or DocumentReference.content.attachment.data or both SHALL be present.' Failed</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.content[0].attachment.data (l68/c16)</b></td><td><b>error</b></td><td title="Rule ele-1: 'All FHIR elements must have a @value or children' Failed"><b>Rule ele-1: 'All FHIR elements must have a @value or children' Failed</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.content[0].attachment.data (l68/c16)</b></td><td><b>error</b></td><td title="Type_Specific_Checks_DT_Primitive_ValueExt"><b>Primitive types must have a value or must have child extensions</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.content[0].attachment.creation (l72/c20)</b></td><td><b>error</b></td><td title="Rule ele-1: 'All FHIR elements must have a @value or children' Failed"><b>Rule ele-1: 'All FHIR elements must have a @value or children' Failed</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>DocumentReference.content[0].attachment.creation (l72/c20)</b></td><td><b>error</b></td><td title="Type_Specific_Checks_DT_Primitive_ValueExt"><b>Primitive types must have a value or must have child extensions</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>DocumentReference.context.encounter[0] (l78/c18)</b></td><td><b>warning</b></td><td title="Reference_REF_NoDisplay"><b>A Reference without an actual reference or identifier should have a display</b></td>
+   </tr>
+</table>
 <a name="suppressed"> </a>
 <p><b>Suppressed Messages (Warnings, hints, broken links)</b></p>
 <p>No suppressed messsages</p><a name="sorted"> </a>
 <p><b>Errors sorted by type</b></p>
+<hr/>
+<a name="Reference_REF_NoDisplay"> </a>
+<h2>Reference_REF_NoDisplay</h2>
+ <table class="grid">
+   <tr style="background-color: #fff4ee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>A Reference without an actual reference or identifier should have a display</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="SLICING_CANNOT_BE_EVALUATED"> </a>
+<h2>SLICING_CANNOT_BE_EVALUATED</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-0.html">fsh-generated\resources\DocumentReference-ex-MHV-imaging-0.json</a></td><td><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:LO, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-0.html">fsh-generated\resources\DocumentReference-ex-MHV-imaging-0.json</a></td><td><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:LO, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-0.html">fsh-generated\resources\DocumentReference-ex-MHV-imaging-0.json</a></td><td><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:CP, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-0.html">fsh-generated\resources\DocumentReference-ex-MHV-imaging-0.json</a></td><td><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:CP, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:LO, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:LO, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:CP, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>Slicing cannot be evaluated: Unable to resolve discriminator in definitions: uri in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging on element DocumentReference.type.coding:CP, looking in profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging (@char 1)</b></td>
+   </tr>
+</table>
 <hr/>
 <a name="Terminology_PassThrough_TX_Message"> </a>
 <h2>Terminology_PassThrough_TX_Message</h2>
@@ -713,9 +853,6 @@
      <td><a href="Immunization-ex-MHV-immunization-1.html">fsh-generated\resources\Immunization-ex-MHV-immunization-1.json</a></td><td><b>No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)</b></td>
    </tr>
    <tr style="background-color: #fff4ee">
-     <td><a href="Immunization-ex-MHV-immunization-2.html">fsh-generated\resources\Immunization-ex-MHV-immunization-2.json</a></td><td><b>No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)</b></td>
-   </tr>
-   <tr style="background-color: #fff4ee">
      <td><a href="Patient-ex-MHV-patient-0.html">fsh-generated\resources\Patient-ex-MHV-patient-0.json</a></td><td><b>No code provided, and a code should be provided from the value set 'ReligiousAffiliation' (http://terminology.hl7.org/ValueSet/v3-ReligiousAffiliation|2.0.0)</b></td>
    </tr>
    <tr style="background-color: #fff4ee">
@@ -744,11 +881,61 @@
    </tr>
 </table>
 <hr/>
+<a name="Terminology_TX_System_NotKnown"> </a>
+<h2>Terminology_TX_System_NotKnown</h2>
+ <table class="grid">
+   <tr style="background-color: #fffff2">
+     <td><a href="DocumentReference-ex-MHV-imaging-0.html">fsh-generated\resources\DocumentReference-ex-MHV-imaging-0.json</a></td><td><b>Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="Immunization-ex-MHV-immunization-2.html">fsh-generated\resources\Immunization-ex-MHV-immunization-2.json</a></td><td><b>Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="Type_Specific_Checks_DT_Primitive_NotEmpty"> </a>
+<h2>Type_Specific_Checks_DT_Primitive_NotEmpty</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>value cannot be empty</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="Type_Specific_Checks_DT_Primitive_ValueExt"> </a>
+<h2>Type_Specific_Checks_DT_Primitive_ValueExt</h2>
+ <table class="grid">
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>Primitive types must have a value or must have child extensions</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>Primitive types must have a value or must have child extensions</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>Primitive types must have a value or must have child extensions</b></td>
+   </tr>
+   <tr style="background-color: #ffeeee">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>Primitive types must have a value or must have child extensions</b></td>
+   </tr>
+</table>
+<hr/>
 <a name="Type_Specific_Checks_DT_String_WS"> </a>
 <h2>Type_Specific_Checks_DT_String_WS</h2>
  <table class="grid">
    <tr style="background-color: #fff4ee">
      <td><a href="ImplementationGuide-va.mhv.phr.example.html">fsh-generated\resources\ImplementationGuide-va.mhv.phr.example.json</a></td><td><b>value should not start or finish with whitespace 'This...report '</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="Validation_VAL_Profile_NoCheckMin"> </a>
+<h2>Validation_VAL_Profile_NoCheckMin</h2>
+ <table class="grid">
+   <tr style="background-color: #fffff2">
+     <td><a href="DocumentReference-ex-MHV-imaging-0.html">fsh-generated\resources\DocumentReference-ex-MHV-imaging-0.json</a></td><td><b>DocumentReference.type.coding:LO: Found 0 matches, but unable to check minimum required (DocumentReference.type.coding) due to lack of slicing validation (from https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging|0.1.3-beta)</b></td>
+   </tr>
+   <tr style="background-color: #fffff2">
+     <td><a href="DocumentReference-ex-MHV-imaging-2.html">input\examples\image2.xml</a></td><td><b>DocumentReference.type.coding:LO: Found 0 matches, but unable to check minimum required (DocumentReference.type.coding) due to lack of slicing validation (from https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging|0.1.3-beta)</b></td>
    </tr>
 </table>
 </body>
