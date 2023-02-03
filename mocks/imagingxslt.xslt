@@ -73,11 +73,9 @@
       <reference value="Patient/ex-MHV-patient-0"/>
   </subject>
   <date>
-    <value>
       <xsl:attribute name="value">
         <xsl:value-of select="timestamp" />
       </xsl:attribute>
-    </value>
   </date>
   <author>
     <display>
@@ -109,11 +107,9 @@
           </value>
       </identifier>
         <display>
-          <value>
               <xsl:attribute name="value">
                 <xsl:value-of select="imagingLocation/name" />
               </xsl:attribute>              
-          </value>
         </display>
   </custodian>
   <description>
@@ -125,11 +121,9 @@
       <attachment>
         <contentType value="text/plain"/>          
         <data>
-          <value>
               <xsl:attribute name="value">
                 <xsl:value-of select="radiologyReportTO/text" />
-              </xsl:attribute>              
-          </value>            
+              </xsl:attribute>
         </data>
         <title>
               <xsl:attribute name="value">
@@ -137,27 +131,29 @@
               </xsl:attribute>              
         </title>
         <creation>
-          <value>
             <xsl:attribute name="value">
               <xsl:value-of select="radiologyReportTO/timestamp" />
             </xsl:attribute>
-          </value>
         </creation>
     </attachment>
   </content>
   <context>
       <encounter>
           <identifier>
-               <xsl:attribute name="value">
-                <xsl:value-of select="encounterId" />
-              </xsl:attribute>                
+            <value>
+                <xsl:attribute name="value">
+                  <xsl:value-of select="encounterId" />
+                </xsl:attribute>                
+            </value>
           </identifier>
       </encounter>
       <related>
           <identifier>
-              <xsl:attribute name="value">
-                <xsl:value-of select="order/id" />
-              </xsl:attribute>                 
+            <value>
+                <xsl:attribute name="value">
+                  <xsl:value-of select="order/id" />
+                </xsl:attribute>                 
+            </value>
           </identifier>
           <display>
               <xsl:attribute name="value">
