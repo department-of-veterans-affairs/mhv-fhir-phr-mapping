@@ -8,7 +8,7 @@ name: MHVPHR
 title: "MyHealtheVet PHR FHIR API"
 description: "MyHealtheVet exposing PHR using FHIR and Testing Plan."
 status: active
-version: 0.1.4-beta
+version: 0.1.5-beta
 fhirVersion: 4.0.1
 copyrightyear: '2022+'
 #date: 2022-04-14
@@ -58,7 +58,11 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/C
  # fmm-definition: other.html#maturity-levels
   excludettl: 'true'
 
-
+resources:
+  Bundle/images:
+    name: Example Bundle of Images response
+    description: An example of a transaction Bundle with many image reports as DocumentReference
+    exampleBoolean: true
 
 pages:
   index.md:

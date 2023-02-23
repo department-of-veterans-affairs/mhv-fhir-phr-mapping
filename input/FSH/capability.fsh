@@ -72,6 +72,7 @@ Usage: #definition
   * resource[+]
     * type = #DocumentReference
     * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.imaging"
     * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read

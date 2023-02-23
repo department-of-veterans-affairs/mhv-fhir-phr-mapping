@@ -22,11 +22,11 @@
      fhir:Extension.valueInteger [ fhir:value "0"^^xsd:integer ]
   ]; # 
   fhir:ImplementationGuide.url [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"]; # 
-  fhir:ImplementationGuide.version [ fhir:value "0.1.4-beta"]; # 
+  fhir:ImplementationGuide.version [ fhir:value "0.1.5-beta"]; # 
   fhir:ImplementationGuide.name [ fhir:value "MHVPHR"]; # 
   fhir:ImplementationGuide.title [ fhir:value "MyHealtheVet PHR FHIR API"]; # 
   fhir:ImplementationGuide.status [ fhir:value "active"]; # 
-  fhir:ImplementationGuide.date [ fhir:value "2023-02-21T15:24:44-06:00"^^xsd:dateTime]; # 
+  fhir:ImplementationGuide.date [ fhir:value "2023-02-23T08:24:10-06:00"^^xsd:dateTime]; # 
   fhir:ImplementationGuide.publisher [ fhir:value "John Moehrke (himself)"]; # 
   fhir:ImplementationGuide.contact [
      fhir:index 0;
@@ -798,7 +798,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/VA.MHV.PHR.condition" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "VA MHV PHR problems" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Condition Resource\n- Presume we will not expose those that are ProblemTO.removed = true\n\nTODO:\n- not clear if the ProblemTO.location is describing, is it evidence?\n- what are the other values for ProblemTO.status\n- not clear what ProblemTO.accuity.tag is\n- not clear what ProblemTo.facility is" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- Should be based on US-Core for Condition Resource\n- Presume we will not expose those that are ProblemTO.removed = true\n\nTODO:\n- not clear if the ProblemTO.location is describing, is it evidence?\n- what are the other values for ProblemTO.status\n- not clear what ProblemTO.accuity.tag is\n- not clear what ProblemTo.facility is" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 1;
@@ -840,7 +840,7 @@
          fhir:Reference.reference [ fhir:value "StructureDefinition/VA.MHV.PHR.labReport" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "VA MHV PHR Lab Report" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.\n\nThe given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO\n\nThe LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)\n\nThe LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto). This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.\n\nThe LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen). These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nTODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)\n\n- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations." ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.\n\nThe given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO\n\nThe LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)\n\nThe LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto). This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.\n\nThe LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen). These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nTODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)\n\n- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations." ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ], [
        fhir:index 4;
@@ -1459,7 +1459,7 @@
          fhir:Reference.reference [ fhir:value "Organization/ex-MHV-organization-989" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Organization lab site 989" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This example derived off of a mock diagnostic report " ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This example derived off of a mock diagnostic report" ];
        fhir:ImplementationGuide.definition.resource.exampleCanonical [
          fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization";
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization>
@@ -1650,6 +1650,20 @@
          fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging";
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging>
        ]
+     ], [
+       fhir:index 53;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Bundle" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Bundle/images>;
+         fhir:Reference.reference [ fhir:value "Bundle/images" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example Bundle of Images response" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "An example of a transaction Bundle with many image reports as DocumentReference" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
      ];
      fhir:ImplementationGuide.definition.page [
        fhir:Element.extension [

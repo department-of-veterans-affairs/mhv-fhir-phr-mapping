@@ -3,32 +3,27 @@
 xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"  
 xmlns:ns2="http://service.via.med.va.gov/"
 xmlns:saxon="http://saxon.sf.net/" 
-exclude-result-prefixes="soap ns2"
+xmlns:uuid="java:java.util.UUID"
+exclude-result-prefixes="soap ns2 uuid saxon"
 >
+<xsl:import href="fileman-to-datetime.xslt" />
 
     <xsl:output method="xml" encoding="UTF-8" indent="yes" />
 
     <xsl:template match="/">
 
     <Bundle xmlns="http://hl7.org/fhir">
-    <id>
-        <xsl:attribute name="value">
-            <xsl:value-of select="generate-id()"/>
-        </xsl:attribute>    
-    </id>
+    <id value="images"/>
     <type value="transaction"/>
     <timestamp>
         <xsl:attribute name="value">
             <xsl:value-of select="current-dateTime()"/>
-        </xsl:attribute>"
+        </xsl:attribute>
     </timestamp>
     <!-- TODO: should find a FHIR Patient given the PatientTO details GetPatient() -->
       <xsl:for-each select="soap:Envelope/soap:Body/ns2:getDataResponse/ns2:PatientMedicalRecordTO/imagingExams/arrays/taggedImagingExamArray/imagingExams/imagingExamTO">
         <entry>
-<!--  TODO: fullUrl should really be a proper UUID
-           <xsl:variable name="fullUrl" select="concat(generate-id(), '-', format-number(current-time(), '#####'))"/>
---> 
-           <xsl:variable name="fullUrl" select="generate-id()"/>
+           <xsl:variable name="fullUrl" select="uuid:randomUUID()"/>
             <fullUrl>
                 <xsl:attribute name="value">
                     <xsl:value-of select="concat('urn:uuid:', $fullUrl)"/>
@@ -37,7 +32,9 @@ exclude-result-prefixes="soap ns2"
             <resource>
                 <DocumentReference>
                 <id>
+                  <xsl:attribute name="value">
                     <xsl:value-of select="$fullUrl"/>                  
+                  </xsl:attribute>
                 </id>
 
                 <meta>
@@ -105,9 +102,14 @@ exclude-result-prefixes="soap ns2"
                     <reference value="Patient/ex-MHV-patient-0"/>  <!-- TODO: patient should come from patient lookup -->
                 </subject>
                 <date>
-                    <xsl:attribute name="value">
-                        <xsl:value-of select="timestamp" />  <!-- TODO ConvertDate() -->
-                    </xsl:attribute>
+                  <xsl:attribute name="value">
+                    <xsl:variable name="datetime">
+                      <xsl:call-template name="fileman-to-datetime">
+                        <xsl:with-param name="fileman-date" select="timestamp" />
+                      </xsl:call-template>
+                    </xsl:variable>
+                    <xsl:value-of select="$datetime" /> 
+                  </xsl:attribute>
                 </date>
                 <author>
                     <display>
@@ -144,11 +146,13 @@ exclude-result-prefixes="soap ns2"
                             </xsl:attribute>              
                         </display>
                 </custodian>
-                <description>
-                    <xsl:attribute name="value">
-                        <xsl:value-of select="interpretation" />
-                    </xsl:attribute>        
-                </description>
+                <xsl:if test="boolean(interpretation)">
+                  <description>
+                      <xsl:attribute name="value">
+                          <xsl:value-of select="interpretation" />
+                      </xsl:attribute>        
+                  </description>
+                </xsl:if>
                 <content>
                     <attachment>
                         <contentType value="text/plain"/>      
@@ -165,14 +169,23 @@ exclude-result-prefixes="soap ns2"
                                 <xsl:value-of select="name" />
                             </xsl:attribute>              
                         </title>
+
                         <creation>
                             <xsl:attribute name="value">
-                            <xsl:value-of select="radiologyReportTO/timestamp" /> <!-- TODO ConvertDate() -->
+                            <xsl:variable name="datetime">
+                              <xsl:call-template name="fileman-to-datetime">
+                                <xsl:with-param name="fileman-date" select="timestamp" />
+                              </xsl:call-template>
+                            </xsl:variable>
+                            <xsl:value-of select="$datetime" /> 
                             </xsl:attribute>
                         </creation>
+
                     </attachment>
                 </content>
+                <xsl:if test="boolean(encounterId) or boolean(order/id)">
                 <context>
+                  <xsl:if test="boolean(encounterId)">
                     <encounter>
                         <identifier>
                             <value>
@@ -182,6 +195,8 @@ exclude-result-prefixes="soap ns2"
                             </value>
                         </identifier>
                     </encounter>
+                  </xsl:if>
+                  <xsl:if test="boolean(order/id)">
                     <related>
                         <identifier>
                             <value>
@@ -196,7 +211,9 @@ exclude-result-prefixes="soap ns2"
                             </xsl:attribute>                 
                         </display>
                     </related>
+                  </xsl:if>
                 </context>
+                  </xsl:if>
 
 
 

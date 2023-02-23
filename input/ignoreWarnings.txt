@@ -1,2 +1,22 @@
 == Suppressed Messages ==
 
+# CPT will not validate, but I have it right https://terminology.hl7.org/5.0.0/CPT.html
+Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
+
+# ICD will not validate, but I have it right https://terminology.hl7.org/5.0.0/external_terminologies.html
+Code System URI 'http://terminology.hl7.org/CodeSystem/icd9cm' is unknown so the code cannot be validated
+
+# Some immunizations don't have CVX
+WARNING: Immunization/ex-MHV-immunization-1: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
+
+# These examples did not come with CodeSystem
+WARNING: DiagnosticReport/ex-MHV-labReport-1: DiagnosticReport.contained[0]/*Observation/ex-MHV-labTest-1*/.code: No code provided, and a code should be provided from the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes|4.0.1)
+WARNING: DiagnosticReport/ex-MHV-labReport-2: DiagnosticReport.contained[0]/*Observation/ex-MHV-labTest-2*/.code: No code provided, and a code should be provided from the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes|4.0.1)
+WARNING: DiagnosticReport/ex-MHV-labReport-2: DiagnosticReport.contained[1]/*Observation/ex-MHV-labTest-3*/.code: No code provided, and a code should be provided from the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes|4.0.1)
+WARNING: DiagnosticReport/ex-MHV-labReport-2: DiagnosticReport.contained[2]/*Observation/ex-MHV-labTest-4*/.code: No code provided, and a code should be provided from the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes|4.0.1)
+WARNING: DiagnosticReport/ex-MHV-labReport-3: DiagnosticReport.contained[0]/*Observation/ex-MHV-labTest-5*/.code: No code provided, and a code should be provided from the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes|4.0.1)
+WARNING: DiagnosticReport/ex-MHV-labReport-3: DiagnosticReport.contained[1]/*Observation/ex-MHV-labTest-6*/.code: No code provided, and a code should be provided from the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes|4.0.1)
+WARNING: DiagnosticReport/ex-MHV-labReport-3: DiagnosticReport.contained[2]/*Observation/ex-MHV-labTest-7*/.code: No code provided, and a code should be provided from the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes|4.0.1)
+
+# This is a profile that will only be used as contained, so no examples
+INFORMATION: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest'): The Implementation Guide contains no explicitly linked examples for this profile

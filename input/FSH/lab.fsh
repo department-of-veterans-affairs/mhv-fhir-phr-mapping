@@ -49,6 +49,7 @@ Title: "VDIF to MHV-PHR"
 
 Profile: MHVlabReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
+//Parent: DiagnosticReport
 Id: VA.MHV.PHR.labReport
 Title: "VA MHV PHR Lab Report"
 Description: """
@@ -68,7 +69,7 @@ TODO determine impact of the new LOINC report on this topic https://loinc.org/fi
 
 TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
 
-- This profile is based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.
+- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.
 """
 * identifier 1..
 

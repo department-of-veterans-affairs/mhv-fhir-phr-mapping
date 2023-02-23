@@ -1,0 +1,1 @@
+java -jar c:\saxon\saxon.jar -xsl:imagingxslt.xslt -s:radiology.xml -o:..\input\examples\images.xml 

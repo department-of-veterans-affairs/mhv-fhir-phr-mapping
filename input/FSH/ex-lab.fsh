@@ -68,8 +68,7 @@ Example from a mock labReportTO
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR MICROBIOLOGY REPORT"
-* code.coding = LOINC#79381-0
-* code.coding.display = "MI"
+* code = LOINC#79381-0
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * issued = 1995-08-03T14:49:00Z
@@ -221,7 +220,6 @@ Example from a mock labReportTO
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR MICROBIOLOGY REPORT"
 * code.coding = LOINC#79381-0
-* code.coding.display = "MI"
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * issued = 1995-08-03T14:49:00Z
@@ -379,7 +377,6 @@ Example from a mock labReportTO
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR MICROBIOLOGY REPORT"
 * code.coding = LOINC#79381-0
-* code.coding.display = "MI"
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1995-08-01T11:07:00Z
 * issued = 1995-08-01T11:07:00Z
@@ -439,7 +436,6 @@ Example from a mock labReportTO
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#60567-5
-* code.coding.display = "SP"
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 2000-08-10T15:56:00Z
 * issued = 2000-08-10T15:56:00Z
@@ -508,7 +504,6 @@ Example from a mock labReportTO
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#60567-5
-* code.coding.display = "SP"
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1999-09-27T13:07:00Z
 * issued = 1999-09-27T13:07:00Z
@@ -598,7 +593,6 @@ Example from a mock labReportTO
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#60567-5
-* code.coding.display = "SP"
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1999-08-11T16:09:00Z
 * issued = 1999-08-11T16:09:00Z
@@ -666,7 +660,6 @@ Example from a mock labReportTO
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#60567-5
-* code.coding.display = "SP"
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1997-09-09T13:13:00Z
 * issued = 1997-09-09T13:13:00Z
@@ -722,7 +715,6 @@ Example from a mock labReportTO
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#60567-5
-* code.coding.display = "SP"
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1997-05-14T09:54:00Z
 * issued = 1997-05-14T09:54:00Z

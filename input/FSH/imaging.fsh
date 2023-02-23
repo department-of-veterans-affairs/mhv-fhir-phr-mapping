@@ -24,7 +24,7 @@ TODO Questions:
 """
 * type.coding 1..2
 * type.coding ^slicing.discriminator.type = #pattern
-* type.coding ^slicing.discriminator.path = "uri"
+* type.coding ^slicing.discriminator.path = "system"
 * type.coding ^slicing.rules = #open
 * type.coding contains
   LO 1..1 and

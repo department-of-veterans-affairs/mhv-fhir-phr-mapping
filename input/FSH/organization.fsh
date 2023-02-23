@@ -35,7 +35,7 @@ Title: "VDIF to MHV-PHR"
 Instance: ex-MHV-organization-989
 InstanceOf: MHVorganization
 Title: "Organization lab site 989"
-Description: "This example derived off of a mock diagnostic report "
+Description: "This example derived off of a mock diagnostic report"
 Usage: #example
 * active = true
 * name = "Lab Site 989"

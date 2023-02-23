@@ -3,13 +3,14 @@
 
 Profile:        MHVcondition
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition-problems-health-concerns
+//Parent: Condition
 Id:             VA.MHV.PHR.condition
 Title:          "VA MHV PHR problems"
 Description:    """
 A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.
 
 - The mock example maps best to VIA_v4.0.7_uat.wsdl. 
-- based on US-Core for Condition Resource
+- Should be based on US-Core for Condition Resource
 - Presume we will not expose those that are ProblemTO.removed = true
 
 TODO:
@@ -19,7 +20,7 @@ TODO:
 - not clear what ProblemTo.facility is
 """
 * identifier 1..
-* code.text 1..1
+//* code.text 1..1
 
 Mapping: Condition-Mapping
 Source:	MHVcondition
