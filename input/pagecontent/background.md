@@ -34,8 +34,6 @@ MyHealtheVet acts as a FHIR Server.
 
 Not yet done
 
-- Radiology Reports
-  - ImagingExamTO, RadiologyReportTO
 - ECG/EKG
   - ClinicalProcedureTO
 - Vital Readings
@@ -50,8 +48,7 @@ Chem-Hem - from HDR
 
 #### in progress
 
-- Radiology Reports
-  - ImagingExamTO, RadiologyReportTO
+- ECG/EKG
 
 #### other
 
