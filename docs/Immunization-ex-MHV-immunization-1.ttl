@@ -5,46 +5,38 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/Immunization/ex-MHV-immunization-1> a fhir:Immunization;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "ex-MHV-immunization-1"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization";
-       fhir:index 0;
+<https://johnmoehrke.github.io/MHV-PHR/Immunization/ex-MHV-immunization-1> a fhir:Immunization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-immunization-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
        fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"ex-MHV-immunization-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;ex-MHV-immunization-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.immunization.html\">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: 124684 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>patient</b>: <a href=\"Patient-ex-MHV-patient-1.html\">Patient/ex-MHV-patient-1</a> &quot; DAYTSHR&quot;</p><p><b>occurrence</b>: 2022-08-08 11:15:28+0000</p><p><b>recorded</b>: 2022-08-08 11:15:28+0000</p><p><b>primarySource</b>: false</p><p><b>note</b>: test</p></div>"
-  ]; # 
-  fhir:Immunization.identifier [
-     fhir:index 0;
-     fhir:Identifier.use [ fhir:value "usual" ];
-     fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id" ];
-     fhir:Identifier.value [ fhir:value "124684" ]
-  ]; # 
-  fhir:Immunization.status [ fhir:value "completed"]; # 
-  fhir:Immunization.vaccineCode [
-     fhir:CodeableConcept.text [ fhir:value "COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE" ]
-  ]; # 
-  fhir:Immunization.patient [
-     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1>;
-     fhir:Reference.reference [ fhir:value "Patient/ex-MHV-patient-1" ]
-  ]; # 
-  fhir:Immunization.occurrenceDateTime [ fhir:value "2022-08-08T11:15:28Z"^^xsd:dateTime]; # 
-  fhir:Immunization.recorded [ fhir:value "2022-08-08T11:15:28Z"^^xsd:dateTime]; # 
-  fhir:Immunization.primarySource [ fhir:value "false"^^xsd:boolean]; # 
-  fhir:Immunization.note [
-     fhir:index 0;
-     fhir:Annotation.text [ fhir:value "test" ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://johnmoehrke.github.io/MHV-PHR/Immunization/ex-MHV-immunization-1.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"ex-MHV-immunization-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;ex-MHV-immunization-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.immunization.html\">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: 111;124684 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>patient</b>: <a href=\"Patient-ex-MHV-patient-1.html\">Patient/ex-MHV-patient-1</a> &quot; DAYTSHR&quot;</p><p><b>occurrence</b>: 2022-08-08 11:15:28+0000</p><p><b>recorded</b>: 2022-08-08 11:15:28+0000</p><p><b>primarySource</b>: false</p><p><b>note</b>: test</p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "111;124684" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:vaccineCode [
+     fhir:text [ fhir:v "COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE" ]
+  ] ; # 
+  fhir:patient [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-1" ]
+  ] ; # 
+  fhir:occurrence [ fhir:v "2022-08-08T11:15:28Z"^^xsd:dateTime] ; # 
+  fhir:recorded [ fhir:v "2022-08-08T11:15:28Z"^^xsd:dateTime] ; # 
+  fhir:primarySource [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "test" ]
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

@@ -5,71 +5,59 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/Condition/ex-MHV-condition-9> a fhir:Condition;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "ex-MHV-condition-9"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.lastUpdated [ fhir:value "2001-07-06T00:00:00Z"^^xsd:dateTime ];
-     fhir:Meta.profile [
-       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition";
-       fhir:index 0;
+<https://johnmoehrke.github.io/MHV-PHR/Condition/ex-MHV-condition-9> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-condition-9"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2001-07-06T00:00:00Z"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
        fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Condition</b><a name=\"ex-MHV-condition-9\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;ex-MHV-condition-9&quot; Updated &quot;2001-07-06 00:00:00+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.condition.html\">VA MHV PHR problems</a></p></div><p><b>identifier</b>: id: 229415 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-category.html\">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Benign Prostatic Hypertrophy (ICD-9-CM 799.9) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd9cm.html\">ICD-9CM</a>#799.9)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-2.html\">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>recordedDate</b>: 2001-07-06</p><p><b>asserter</b>: <a href=\"Practitioner-ex-MHV-practitioner-4262.html\">Practitioner/ex-MHV-practitioner-4262</a> &quot; PATIL&quot;</p></div>"
-  ]; # 
-  fhir:Condition.identifier [
-     fhir:index 0;
-     fhir:Identifier.use [ fhir:value "usual" ];
-     fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id" ];
-     fhir:Identifier.value [ fhir:value "229415" ]
-  ]; # 
-  fhir:Condition.clinicalStatus [
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-clinical" ];
-       fhir:Coding.code [ fhir:value "active" ]
-     ]
-  ]; # 
-  fhir:Condition.verificationStatus [
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-ver-status" ];
-       fhir:Coding.code [ fhir:value "confirmed" ]
-     ]
-  ]; # 
-  fhir:Condition.category [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/condition-category" ];
-       fhir:Coding.code [ fhir:value "problem-list-item" ]
-     ]
-  ]; # 
-  fhir:Condition.code [
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/icd9cm" ];
-       fhir:Coding.code [ fhir:value "799.9" ]
-     ];
-     fhir:CodeableConcept.text [ fhir:value "Benign Prostatic Hypertrophy (ICD-9-CM 799.9)" ]
-  ]; # 
-  fhir:Condition.subject [
-     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-2>;
-     fhir:Reference.reference [ fhir:value "Patient/ex-MHV-patient-2" ]
-  ]; # 
-  fhir:Condition.recordedDate [ fhir:value "2001-07-06"^^xsd:date]; # 
-  fhir:Condition.asserter [
-     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-MHV-practitioner-4262>;
-     fhir:Reference.reference [ fhir:value "Practitioner/ex-MHV-practitioner-4262" ]
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Condition</b><a name=\"ex-MHV-condition-9\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;ex-MHV-condition-9&quot; Updated &quot;2001-07-06 00:00:00+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.condition.html\">VA MHV PHR problems</a></p></div><p><b>identifier</b>: id: 111;229415 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-condition-category.html\">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Benign Prostatic Hypertrophy (ICD-9-CM 799.9) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-icd9cm.html\">ICD-9CM</a>#799.9)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-2.html\">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>recordedDate</b>: 2001-07-06</p><p><b>asserter</b>: <a href=\"Practitioner-ex-MHV-practitioner-4262.html\">Practitioner/ex-MHV-practitioner-4262</a> &quot; PATIL&quot;</p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "111;229415" ]
+  ] ) ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "problem-list-item" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/icd9cm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "799.9" ]
+     ] ) ;
+     fhir:text [ fhir:v "Benign Prostatic Hypertrophy (ICD-9-CM 799.9)" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-2> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-2" ]
+  ] ; # 
+  fhir:recordedDate [ fhir:v "2001-07-06"^^xsd:date] ; # 
+  fhir:asserter [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-MHV-practitioner-4262> ;
+     fhir:reference [ fhir:v "Practitioner/ex-MHV-practitioner-4262" ]
   ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://johnmoehrke.github.io/MHV-PHR/Condition/ex-MHV-condition-9.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
 
 # -------------------------------------------------------------------------------------
 

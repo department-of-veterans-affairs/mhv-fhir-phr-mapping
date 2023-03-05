@@ -47,8 +47,8 @@ TODO Questions:
 * identifier contains
   TOid 1..1
 * identifier[TOid].use = #usual
-* identifier[TOid].system ^short = "system for given Vista site and ImmunizationTO.id"
-* identifier[TOid].value ^short = "ImmunizationTO.id"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].value ^short = "{StationNbr} | `;` | {ImmunizationTO.id}"
 * note 0..1
 * reaction.detail ^type.aggregation = #contained
 // not allowed
@@ -90,7 +90,7 @@ Title: "VDIF to MHV-PHR"
 * vaccineCode.coding.display -> "ImmunizationTO.cptCode.name"
 * encounter -> "GetEncounter(ImmunizationTO.encounter.[VisitTO])"
 * location.display -> "ImmunizationTO.encounter.location.name or ImmunizationTO.encounter.facility.name"
-* identifier -> "ImmunizationTO.id"
+* identifier -> "{StationNbr} | `;` | {ImmunizationTO.id}"
 * lotNumber -> "ImmunizationTO.lotNumber"
 * manufacturer -> "ImmunizationTO.manufacture"
 * performer.actor.display -> "GetPractitioner(ImmunizationTO.orderedBy.[UserTO])"

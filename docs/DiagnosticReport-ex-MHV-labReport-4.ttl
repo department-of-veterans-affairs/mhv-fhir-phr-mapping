@@ -1,94 +1,80 @@
 @prefix fhir: <http://hl7.org/fhir/> .
-@prefix loinc: <http://loinc.org/rdf#> .
+@prefix loinc: <https://loinc.org/rdf/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-labReport-4> a fhir:DiagnosticReport;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "ex-MHV-labReport-4"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport";
-       fhir:index 0;
+<https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-labReport-4> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-labReport-4"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
        fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Reported</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Identifier:</td><td> id: SP;6999190 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: Aug 09, 2000 16:14  Resident: \nDate  completed: Aug 10, 2000        Accession #: SP 00 1982\nSubmitted by: MARK MAZUR MD          Practitioner:MARK MAZUR DPM\n-------------------------------------------------------------------------------\nSpecimen: \nOLD HARDWARE LEFT FOOT X2\nBrief Clinical History:\nThis 71 y/o wm presents with painful hardware L 1st metatarsal head. The\npins were inserted 3 years ago for a bunion procedure. The Bunionprocedure\nis well healed and pt is now wanting the pin removed. Will probably need\nk-wire driver and power for this case.\nPreoperative Diagnosis:\nPAINFUL HARDWARE LEFT FIRST METATARSAL \nPostoperative Diagnosis:\nPAINFUL HARDWARE LEFT FIRST METATARSAL \nGross description:\nRECEIVED UNFIXED AND LABELED &quot;OLD HARDWARE LEFT FOOT X 2&quot; CONSISTS OF TWO\n1.7 CM AND 2.5 CM LONG 1 MM WIDE METALLIC PINS.\n|TAB||NOWRAP|\nDIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)</p></div>"
-  ]; # 
-  fhir:DomainResource.contained [
-     a fhir:Specimen;
-     fhir:index 0;
-     fhir:Resource.id [ fhir:value "ex-MHV-specimen-4" ];
-     fhir:Resource.meta [
-       fhir:Meta.profile [
-         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen";
-         fhir:index 0;
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Reported</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Identifier:</td><td> id: SP;6999190 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: Aug 09, 2000 16:14  Resident: \nDate  completed: Aug 10, 2000        Accession #: SP 00 1982\nSubmitted by: MARK MAZUR MD          Practitioner:MARK MAZUR DPM\n-------------------------------------------------------------------------------\nSpecimen: \nOLD HARDWARE LEFT FOOT X2\nBrief Clinical History:\nThis 71 y/o wm presents with painful hardware L 1st metatarsal head. The\npins were inserted 3 years ago for a bunion procedure. The Bunionprocedure\nis well healed and pt is now wanting the pin removed. Will probably need\nk-wire driver and power for this case.\nPreoperative Diagnosis:\nPAINFUL HARDWARE LEFT FIRST METATARSAL \nPostoperative Diagnosis:\nPAINFUL HARDWARE LEFT FIRST METATARSAL \nGross description:\nRECEIVED UNFIXED AND LABELED &quot;OLD HARDWARE LEFT FOOT X 2&quot; CONSISTS OF TWO\n1.7 CM AND 2.5 CM LONG 1 MM WIDE METALLIC PINS.\n|TAB||NOWRAP|\nDIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)</p></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Specimen ;
+     fhir:id [ fhir:v "ex-MHV-specimen-4" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"^^xsd:anyURI ;
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen>
-       ]
-     ];
-     fhir:Specimen.accessionIdentifier [
-       fhir:Identifier.use [ fhir:value "usual" ];
-       fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id" ];
-       fhir:Identifier.value [ fhir:value "SP 00 1982" ]
-     ];
-     fhir:Specimen.status [ fhir:value "available" ];
-     fhir:Specimen.type [
-       fhir:CodeableConcept.text [ fhir:value "OLD HARDWARE LEFT FOOT X2" ]
-     ];
-     fhir:Specimen.collection [
-       fhir:Specimen.collection.collectedDateTime [ fhir:value "2000-08-09"^^xsd:date ]
+       ] )
+     ] ;
+     fhir:accessionIdentifier [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "SP 00 1982" ]
+     ] ;
+     fhir:status [ fhir:v "available" ] ;
+     fhir:type [
+       fhir:text [ fhir:v "OLD HARDWARE LEFT FOOT X2" ]
+     ] ;
+     fhir:collection [
+       fhir:collected [ fhir:v "2000-08-09"^^xsd:date ]
      ]
-  ]; # 
-  fhir:DiagnosticReport.identifier [
-     fhir:index 0;
-     fhir:Identifier.use [ fhir:value "usual" ];
-     fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id" ];
-     fhir:Identifier.value [ fhir:value "SP;6999190" ]
-  ]; # 
-  fhir:DiagnosticReport.status [ fhir:value "final"]; # 
-  fhir:DiagnosticReport.category [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0074" ];
-       fhir:Coding.code [ fhir:value "LAB" ]
-     ]
-  ]; # 
-  fhir:DiagnosticReport.code [
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       a loinc:60567-5;
-       fhir:Coding.system [ fhir:value "http://loinc.org" ];
-       fhir:Coding.code [ fhir:value "60567-5" ]
-     ];
-     fhir:CodeableConcept.text [ fhir:value "LR SURGICAL PATHOLOGY REPORT" ]
-  ]; # 
-  fhir:DiagnosticReport.subject [
-     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1>;
-     fhir:Reference.reference [ fhir:value "Patient/ex-MHV-patient-1" ]
-  ]; # 
-  fhir:DiagnosticReport.effectiveDateTime [ fhir:value "2000-08-10T15:56:00Z"^^xsd:dateTime]; # 
-  fhir:DiagnosticReport.issued [ fhir:value "2000-08-10T15:56:00Z"^^xsd:dateTime]; # 
-  fhir:DiagnosticReport.performer [
-     fhir:index 0;
-     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-989>;
-     fhir:Reference.reference [ fhir:value "Organization/ex-MHV-organization-989" ]
-  ]; # 
-  fhir:DiagnosticReport.specimen [
-     fhir:index 0;
-     fhir:Reference.reference [ fhir:value "#ex-MHV-specimen-4" ]
-  ]; # 
-  fhir:DiagnosticReport.conclusion [ fhir:value "Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: Aug 09, 2000 16:14  Resident: \nDate  completed: Aug 10, 2000        Accession #: SP 00 1982\nSubmitted by: MARK MAZUR MD          Practitioner:MARK MAZUR DPM\n-------------------------------------------------------------------------------\nSpecimen: \nOLD HARDWARE LEFT FOOT X2\nBrief Clinical History:\nThis 71 y/o wm presents with painful hardware L 1st metatarsal head. The\npins were inserted 3 years ago for a bunion procedure. The Bunionprocedure\nis well healed and pt is now wanting the pin removed. Will probably need\nk-wire driver and power for this case.\nPreoperative Diagnosis:\nPAINFUL HARDWARE LEFT FIRST METATARSAL \nPostoperative Diagnosis:\nPAINFUL HARDWARE LEFT FIRST METATARSAL \nGross description:\nRECEIVED UNFIXED AND LABELED \"OLD HARDWARE LEFT FOOT X 2\" CONSISTS OF TWO\n1.7 CM AND 2.5 CM LONG 1 MM WIDE METALLIC PINS.\n|TAB||NOWRAP|\nDIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)"] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-labReport-4.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "SP;6999190" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0074"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "LAB" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:60567-5 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "60567-5" ]
+     ] ) ;
+     fhir:text [ fhir:v "LR SURGICAL PATHOLOGY REPORT" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-1" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2000-08-10T15:56:00Z"^^xsd:dateTime] ; # 
+  fhir:issued [ fhir:v "2000-08-10T15:56:00Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-989> ;
+     fhir:reference [ fhir:v "Organization/ex-MHV-organization-989" ]
+  ] ) ; # 
+  fhir:specimen ( [
+     fhir:reference [ fhir:v "#ex-MHV-specimen-4" ]
+  ] ) ; # 
+  fhir:conclusion [ fhir:v "Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: Aug 09, 2000 16:14  Resident: \nDate  completed: Aug 10, 2000        Accession #: SP 00 1982\nSubmitted by: MARK MAZUR MD          Practitioner:MARK MAZUR DPM\n-------------------------------------------------------------------------------\nSpecimen: \nOLD HARDWARE LEFT FOOT X2\nBrief Clinical History:\nThis 71 y/o wm presents with painful hardware L 1st metatarsal head. The\npins were inserted 3 years ago for a bunion procedure. The Bunionprocedure\nis well healed and pt is now wanting the pin removed. Will probably need\nk-wire driver and power for this case.\nPreoperative Diagnosis:\nPAINFUL HARDWARE LEFT FIRST METATARSAL \nPostoperative Diagnosis:\nPAINFUL HARDWARE LEFT FIRST METATARSAL \nGross description:\nRECEIVED UNFIXED AND LABELED \"OLD HARDWARE LEFT FOOT X 2\" CONSISTS OF TWO\n1.7 CM AND 2.5 CM LONG 1 MM WIDE METALLIC PINS.\n|TAB||NOWRAP|\nDIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)"] . # 
 
 # -------------------------------------------------------------------------------------
 

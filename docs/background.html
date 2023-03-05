@@ -283,7 +283,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="in-progress">in progress</h4>
 
 <ul>
-  <li>ECG/EKG</li>
+  <li>Vital Readings</li>
+  <li>Allergies</li>
 </ul>
 
 <h4 id="other">other</h4>
@@ -480,16 +481,31 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Our FHIR database will track linkages to source objects using the FHIR resource <code class="language-plaintext highlighter-rouge">.identifier</code> element, and the Vista <code class="language-plaintext highlighter-rouge">.id</code> element.</p>
 
 <ol>
-  <li>As far as I can tell the <code class="language-plaintext highlighter-rouge">.id</code> values coming from Vista (Fileman) are given to us as strings. I presume unique strings at the source for that given context of that data. (for a given Vista instance the ImmunizationTO.id is unique, but that id value might be a different ImmunizationTO object at a different Vista site, and that id value on a different object like NoteTO at the original Vista site)</li>
-  <li>The <code class="language-plaintext highlighter-rouge">.id</code> values seem to have a two or three part to them separated by <code class="language-plaintext highlighter-rouge">;</code>. I don’t know if there is something we can interpret, or if I am just looking at non-real examples.</li>
-  <li>In FHIR <a href="http://hl7.org/fhir/datatypes.html#Identifier">Identifier datatype</a> tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique. We should define a system value for each Vista Site, and each context. In this way when more data sources come along we don’t have clashes of id because we can differentiate them with the system+id. For example when we receive Cerner data.</li>
+  <li>As far as I can tell the <code class="language-plaintext highlighter-rouge">.id</code> values coming from Vista (Fileman) are given to us as strings. They are unique strings at the source for that given context of that data. (for a given Vista instance the ImmunizationTO.id is unique, but that id value might be a different ImmunizationTO object at a different Vista site, and that id value on a different object like NoteTO at the original Vista site)</li>
+  <li>The <code class="language-plaintext highlighter-rouge">.id</code> values sometimes have a two or three part to them separated by <code class="language-plaintext highlighter-rouge">;</code>. I don’t know if there is something we can interpret, or if I am just looking at non-real examples.</li>
+  <li>In FHIR <a href="http://hl7.org/fhir/datatypes.html#Identifier">Identifier datatype</a> tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique.</li>
   <li>Thus when we know the data received is from VDIF we can look up the given id as identifier of system+id.</li>
+  <li>The VA CDA does a similar transform of the <code class="language-plaintext highlighter-rouge">.id</code> values into CDA <code class="language-plaintext highlighter-rouge">.id</code> values. We should use the same algorithm so that the same data is easily recognized regardless of if the data was received via CDA or our FHIR api.</li>
 </ol>
 
-<p>The system value should be composed of the Vista site and object context</p>
+<p>The system value is a fixed <a href="https://oidref.com/2.16.840.1.113883.4.349">OID assigned to VA</a></p>
 
 <blockquote>
-  <p>{canonical root}/Vista/{Vista Site}/{context}</p>
+  <p><code class="language-plaintext highlighter-rouge">urn:oid:2.16.840.1.113883.4.349</code></p>
+</blockquote>
+
+<p>the <code class="language-plaintext highlighter-rouge">value</code> is then composed of the id from the data plus (prefixed) the station number.</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>{stationNbr}</td>
+        <td><code class="language-plaintext highlighter-rouge">.</code></td>
+        <td>{id}</td>
+      </tr>
+    </tbody>
+  </table>
 </blockquote>
 
 <p>Context:</p>
@@ -497,8 +513,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li>UserTO.id</li>
   <li>PatientTO.id</li>
-  <li>AutorTO.id</li>
+  <li>AuthorTO.id</li>
   <li>HospitalLocationTO.id</li>
+  <li>AllergyTO.id</li>
+  <li>ClinicalProcedureTO.id</li>
+  <li>VitalSign.to</li>
   <li>ImmunizationTO.id</li>
   <li>NoteTO.id</li>
   <li>LabReportTO.id</li>
@@ -506,11 +525,36 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>LabSpecimenTO.id</li>
   <li>LabResultTO.labSiteId</li>
   <li>LabTestTO.id</li>
+  <li>ImagingExamTO.id</li>
+  <li>etc…</li>
 </ul>
 
-<p>For example, for Vista site 111, and the UserTO.id context:</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://johnmoehrke.github.io/MHV-PHR/Vista/111/UserTO.id
-</code></pre></div></div>
+<p>For example, for Vista site 111, and the ImmunizationTO.id of 222 context:</p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"identifier"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nl">"system"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:oid:2.16.840.1.113883.4.349"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"111;222"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note that Encounter is more complex. The VA CDA team has come up with the pattern for that as</p>
+
+<blockquote>
+  <table>
+    <tbody>
+      <tr>
+        <td>{SectionLOINC}</td>
+        <td><code class="language-plaintext highlighter-rouge">.</code></td>
+        <td>{stationNbr}</td>
+        <td><code class="language-plaintext highlighter-rouge">.</code></td>
+        <td>{id}</td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+
+<p>Note that the VA CDA does not include the id on Immunizations.</p>
+
+<p><strong>TODO: I see a problem with this algorithm, it produces unique values within a datatype, but does not really produce globally unique values</strong></p>
 
 
 
@@ -559,7 +603,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.5-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 23, 2023 08:47-0600">2023-02-23</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.5-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Mar 5, 2023 12:38-0600">2023-03-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

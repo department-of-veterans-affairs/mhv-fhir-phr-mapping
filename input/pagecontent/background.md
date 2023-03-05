@@ -48,7 +48,8 @@ Chem-Hem - from HDR
 
 #### in progress
 
-- ECG/EKG
+- Vital Readings
+- Allergies
 
 #### other
 
@@ -231,21 +232,29 @@ A failure to find a ConceptMap can be recorded simply as the given string. These
 
 Our FHIR database will track linkages to source objects using the FHIR resource `.identifier` element, and the Vista `.id` element.
 
-1. As far as I can tell the `.id` values coming from Vista (Fileman) are given to us as strings. I presume unique strings at the source for that given context of that data. (for a given Vista instance the ImmunizationTO.id is unique, but that id value might be a different ImmunizationTO object at a different Vista site, and that id value on a different object like NoteTO at the original Vista site)
-2. The `.id` values seem to have a two or three part to them separated by `;`. I don't know if there is something we can interpret, or if I am just looking at non-real examples.
-3. In FHIR [Identifier datatype](http://hl7.org/fhir/datatypes.html#Identifier) tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique. We should define a system value for each Vista Site, and each context. In this way when more data sources come along we don't have clashes of id because we can differentiate them with the system+id. For example when we receive Cerner data.
+1. As far as I can tell the `.id` values coming from Vista (Fileman) are given to us as strings. They are unique strings at the source for that given context of that data. (for a given Vista instance the ImmunizationTO.id is unique, but that id value might be a different ImmunizationTO object at a different Vista site, and that id value on a different object like NoteTO at the original Vista site)
+2. The `.id` values sometimes have a two or three part to them separated by `;`. I don't know if there is something we can interpret, or if I am just looking at non-real examples.
+3. In FHIR [Identifier datatype](http://hl7.org/fhir/datatypes.html#Identifier) tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique. 
 4. Thus when we know the data received is from VDIF we can look up the given id as identifier of system+id.
+5. The VA CDA does a similar transform of the `.id` values into CDA `.id` values. We should use the same algorithm so that the same data is easily recognized regardless of if the data was received via CDA or our FHIR api.
 
-The system value should be composed of the Vista site and object context
+The system value is a fixed [OID assigned to VA](https://oidref.com/2.16.840.1.113883.4.349)
 
-> {canonical root}/Vista/{Vista Site}/{context}
+> `urn:oid:2.16.840.1.113883.4.349`
+
+the `value` is then composed of the id from the data plus (prefixed) the station number. 
+
+> {stationNbr} | `.` | {id}
 
 Context:
 
 - UserTO.id
 - PatientTO.id
-- AutorTO.id
+- AuthorTO.id
 - HospitalLocationTO.id
+- AllergyTO.id
+- ClinicalProcedureTO.id
+- VitalSign.to
 - ImmunizationTO.id
 - NoteTO.id
 - LabReportTO.id
@@ -253,9 +262,21 @@ Context:
 - LabSpecimenTO.id
 - LabResultTO.labSiteId
 - LabTestTO.id
+- ImagingExamTO.id
+- etc...
 
-For example, for Vista site 111, and the UserTO.id context:
+For example, for Vista site 111, and the ImmunizationTO.id of 222 context:
+```json
+"identifier" : {
+  "system" : "urn:oid:2.16.840.1.113883.4.349",
+  "value" : "111;222"
+}
 ```
-https://johnmoehrke.github.io/MHV-PHR/Vista/111/UserTO.id
-```
-   
+
+Note that Encounter is more complex. The VA CDA team has come up with the pattern for that as
+
+> {SectionLOINC} | `.` | {stationNbr} | `.` | {id}
+
+Note that the VA CDA does not include the id on Immunizations.
+
+**TODO: I see a problem with this algorithm, it produces unique values within a datatype, but does not really produce globally unique values**

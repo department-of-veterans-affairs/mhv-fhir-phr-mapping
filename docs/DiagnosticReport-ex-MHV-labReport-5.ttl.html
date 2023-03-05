@@ -212,86 +212,72 @@
 
   <pre class="rdf" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
-@prefix loinc: &lt;http://loinc.org/rdf#&gt; .
+@prefix loinc: &lt;https://loinc.org/rdf/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
 @prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
 # - resource -------------------------------------------------------------------
 
- a fhir:DiagnosticReport;
-  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;ex-MHV-labReport-5&quot;]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.meta">fhir:Resource.meta</a> [
-     <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
-       <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport&quot;;
-       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-       <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport&gt;     ]
-  ]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.text">fhir:DomainResource.text</a> [
-     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
-     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;&lt;span title=\&quot;Codes: {http://loinc.org 60567-5}\&quot;&gt;LR SURGICAL PATHOLOGY REPORT&lt;/span&gt; (&lt;span title=\&quot;Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\&quot;&gt;Laboratory&lt;/span&gt;) &lt;/h2&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Subject&lt;/td&gt;&lt;td&gt;&lt;b&gt;MTPZEROTWO,DAYTSHR&lt;/b&gt; male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;When For&lt;/td&gt;&lt;td&gt;1999-09-27 13:07:00+0000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Reported&lt;/td&gt;&lt;td&gt;1999-09-27 13:07:00+0000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Identifier:&lt;/td&gt;&lt;td&gt; id: SP;7009075 (use: USUAL)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;Report Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp;amp;amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED.&lt;/p&gt;&lt;/div&gt;&quot;
-  ]; # 
-  <a href="http://hl7.org/fhir/R4/specimen.html#Specimen">fhir:DomainResource.contained</a> [
-     <a href="http://hl7.org/fhir/R4/specimen.html">a</a> fhir:Specimen;
-     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-     <a href="http://hl7.org/fhir/R4/specimen.html#Specimen.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:value</a> &quot;ex-MHV-specimen-5&quot; ];
-     <a href="http://hl7.org/fhir/R4/specimen.html#Specimen.meta">fhir:Resource.meta</a> [
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:Meta.profile</a> [
-         <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:value</a> &quot;https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen&quot;;
-         <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-         <a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen&gt;       ]     ];
-     <a href="http://hl7.org/fhir/R4/specimen.html#Specimen.accessionIdentifier">fhir:Specimen.accessionIdentifier</a> [
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">fhir:Identifier.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;usual&quot; ];
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:Identifier.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id&quot; ];
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:Identifier.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;SP 99 2207&quot; ]     ];
-     <a href="http://hl7.org/fhir/R4/specimen.html#Specimen.status">fhir:Specimen.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;available&quot; ];
-     <a href="http://hl7.org/fhir/R4/specimen.html#Specimen.type">fhir:Specimen.type</a> [
-       <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;POLYPS (A) CECAL,        (B) PROXIMAL ASCENDING,        (C) RECTAL&quot; ]     ];
-     <a href="http://hl7.org/fhir/R4/specimen.html#Specimen.collection">fhir:Specimen.collection</a> [
-       <a href="http://hl7.org/fhir/R4/specimen.html#Specimen.collection.collected[x]">fhir:Specimen.collection.collectedDateTime</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;1999-09-24&quot;^^xsd:date ]     ]
-  ]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.identifier">fhir:DiagnosticReport.identifier</a> [
-     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-     <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">fhir:Identifier.use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;usual&quot; ];
-     <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:Identifier.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id&quot; ];
-     <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:Identifier.value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;SP;7009075&quot; ]
-  ]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.status">fhir:DiagnosticReport.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;final&quot;]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.category">fhir:DiagnosticReport.category</a> [
-     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
-       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot; ];
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;LAB&quot; ]     ]
-  ]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.code">fhir:DiagnosticReport.code</a> [
-     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:CodeableConcept.coding</a> [
-       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-       a loinc:60567-5;
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://loinc.org&quot; ];
-       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;60567-5&quot; ]     ];
-     <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:CodeableConcept.text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;LR SURGICAL PATHOLOGY REPORT&quot; ]
-  ]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.subject">fhir:DiagnosticReport.subject</a> [
-     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Patient/ex-MHV-patient-1&quot; ]
-  ]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.effective[x]">fhir:DiagnosticReport.effectiveDateTime</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:value</a> &quot;1999-09-27T13:07:00Z&quot;^^xsd:dateTime]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.issued">fhir:DiagnosticReport.issued</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#instant">fhir:value</a> &quot;1999-09-27T13:07:00Z&quot;^^xsd:dateTime]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.performer">fhir:DiagnosticReport.performer</a> [
-     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Organization/ex-MHV-organization-989&quot; ]
-  ]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.specimen">fhir:DiagnosticReport.specimen</a> [
-     <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0;
-     <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:Reference.reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;#ex-MHV-specimen-5&quot; ]
-  ]; # 
-  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.conclusion">fhir:DiagnosticReport.conclusion</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp;amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED.&quot;]. # 
-
-# - ontology header ------------------------------------------------------------
-
- a owl:Ontology;
-  owl:imports fhir:fhir.ttl.
+ a fhir:DiagnosticReport ;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;ex-MHV-labReport-5&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.meta">fhir:meta</a> [
+    ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport&gt;     ] )
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.text">fhir:text</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
+fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;&lt;span title=\&quot;Codes: {http://loinc.org 60567-5}\&quot;&gt;LR SURGICAL PATHOLOGY REPORT&lt;/span&gt; (&lt;span title=\&quot;Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\&quot;&gt;Laboratory&lt;/span&gt;) &lt;/h2&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Subject&lt;/td&gt;&lt;td&gt;&lt;b&gt;MTPZEROTWO,DAYTSHR&lt;/b&gt; male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;When For&lt;/td&gt;&lt;td&gt;1999-09-27 13:07:00+0000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Reported&lt;/td&gt;&lt;td&gt;1999-09-27 13:07:00+0000&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Identifier:&lt;/td&gt;&lt;td&gt; id: SP;7009075 (use: USUAL)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;Report Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp;amp;amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED.&lt;/p&gt;&lt;/div&gt;&quot;
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/specimen.html#Specimen">fhir:contained</a> ( [
+<a href="http://hl7.org/fhir/R4/specimen.html">a</a> fhir:Specimen ;
+<a href="http://hl7.org/fhir/R4/specimen.html#Specimen.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ex-MHV-specimen-5&quot; ] ;
+<a href="http://hl7.org/fhir/R4/specimen.html#Specimen.meta">fhir:meta</a> [
+      ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen&gt;       ] )     ] ;
+<a href="http://hl7.org/fhir/R4/specimen.html#Specimen.accessionIdentifier">fhir:accessionIdentifier</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">fhir:use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;usual&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;SP 99 2207&quot; ]     ] ;
+<a href="http://hl7.org/fhir/R4/specimen.html#Specimen.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;available&quot; ] ;
+<a href="http://hl7.org/fhir/R4/specimen.html#Specimen.type">fhir:type</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;POLYPS (A) CECAL,        (B) PROXIMAL ASCENDING,        (C) RECTAL&quot; ]     ] ;
+<a href="http://hl7.org/fhir/R4/specimen.html#Specimen.collection">fhir:collection</a> [
+<a href="http://hl7.org/fhir/R4/specimen.html#Specimen.collection.collected[x]">fhir:collected</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;1999-09-24&quot;^^xsd:date ]     ]
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.identifier">fhir:identifier</a> ( [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">fhir:use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;usual&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;SP;7009075&quot; ]
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;final&quot;] ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.category">fhir:category</a> ( [
+    ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;LAB&quot; ]     ] )
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.code">fhir:code</a> [
+    ( <a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">fhir:coding</a> [
+a loinc:60567-5 ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://loinc.org&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;60567-5&quot; ]     ] ) ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;LR SURGICAL PATHOLOGY REPORT&quot; ]
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.subject">fhir:subject</a> [
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Patient/ex-MHV-patient-1&quot; ]
+  ] ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.effective[x]">fhir:effective</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;1999-09-27T13:07:00Z&quot;^^xsd:dateTime] ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.issued">fhir:issued</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#instant">fhir:v</a> &quot;1999-09-27T13:07:00Z&quot;^^xsd:dateTime] ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.performer">fhir:performer</a> ( [
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Organization/ex-MHV-organization-989&quot; ]
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.specimen">fhir:specimen</a> ( [
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;#ex-MHV-specimen-5&quot; ]
+  ] ) ; # 
+  <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.conclusion">fhir:conclusion</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp;amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED.&quot;] . # 
 
 </code></pre>
 
@@ -346,7 +332,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.5-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Feb 23, 2023 08:47-0600">2023-02-23</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.5-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Mar 5, 2023 12:38-0600">2023-03-05</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -5,32 +5,25 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/Location/ex-MHV-location-552> a fhir:Location;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "ex-MHV-location-552"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location";
-       fhir:index 0;
+<https://johnmoehrke.github.io/MHV-PHR/Location/ex-MHV-location-552> a fhir:Location ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-location-552"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location"^^xsd:anyURI ;
        fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"ex-MHV-location-552\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;ex-MHV-location-552&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.location.html\">VA MHV PHR Location</a></p></div><p><b>identifier</b>: id: 552 (use: OFFICIAL)</p><p><b>name</b>: DAYTON</p></div>"
-  ]; # 
-  fhir:Location.identifier [
-     fhir:index 0;
-     fhir:Identifier.use [ fhir:value "official" ];
-     fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/HospitalLocationTO" ];
-     fhir:Identifier.value [ fhir:value "552" ]
-  ]; # 
-  fhir:Location.name [ fhir:value "DAYTON"] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://johnmoehrke.github.io/MHV-PHR/Location/ex-MHV-location-552.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Location</b><a name=\"ex-MHV-location-552\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Location &quot;ex-MHV-location-552&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.location.html\">VA MHV PHR Location</a></p></div><p><b>identifier</b>: id: 552 (use: OFFICIAL)</p><p><b>name</b>: DAYTON</p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/HospitalLocationTO"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "552" ]
+  ] ) ; # 
+  fhir:name [ fhir:v "DAYTON"] . # 
 
 # -------------------------------------------------------------------------------------
 

@@ -5,352 +5,268 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/CapabilityStatement/MHVcapabilities> a fhir:CapabilityStatement;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "MHVcapabilities"]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "extensions" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>MHV_PHR</h2><div><p>CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data</p>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>MHV supports queries to PHR.</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td>y</td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Observation</td><td>Supported profiles:<br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Immunization</td><td>Supported profiles:<br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>DocumentReference</td><td>Supported profiles:<br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note</a><br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.imaging\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.imaging</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Condition</td><td>Supported profiles:<br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.condition\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.condition</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Organization</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Location</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Practitioner</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Patient</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr></table></div>"
-  ]; # 
-  fhir:DomainResource.extension [
-     fhir:index 0;
-     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" ];
-     fhir:Extension.valueInteger [
-       fhir:value "0"^^xsd:integer;
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom" ];
-         fhir:Extension.valueCanonical [
-           fhir:value "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example";
+<https://johnmoehrke.github.io/MHV-PHR/CapabilityStatement/MHVcapabilities> a fhir:CapabilityStatement ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "MHVcapabilities"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>MHV_PHR</h2><div><p>CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data</p>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>MHV supports queries to PHR.</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td>y</td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>Observation</td><td>Supported profiles:<br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Immunization</td><td>Supported profiles:<br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>DocumentReference</td><td>Supported profiles:<br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note</a><br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.imaging\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.imaging</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Condition</td><td>Supported profiles:<br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.condition\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.condition</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Organization</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Location</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Practitioner</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Patient</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "0"^^xsd:integer ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
            fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
          ]
-       ]
+       ] )
      ]
-  ], [
-     fhir:index 1;
-     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status" ];
-     fhir:Extension.valueCode [
-       fhir:value "trial-use";
-       fhir:Element.extension [
-         fhir:index 0;
-         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom" ];
-         fhir:Extension.valueCanonical [
-           fhir:value "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example";
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
            fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
          ]
-       ]
+       ] )
      ]
-  ]; # 
-  fhir:CapabilityStatement.url [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/CapabilityStatement/MHVcapabilities"]; # 
-  fhir:CapabilityStatement.version [ fhir:value "0.1.5-beta"]; # 
-  fhir:CapabilityStatement.name [ fhir:value "MHV_PHR"]; # 
-  fhir:CapabilityStatement.title [ fhir:value "This indicates how MHV exposes PHR using FHIR"]; # 
-  fhir:CapabilityStatement.status [ fhir:value "active"]; # 
-  fhir:CapabilityStatement.experimental [ fhir:value "false"^^xsd:boolean]; # 
-  fhir:CapabilityStatement.date [ fhir:value "2022-12-22"^^xsd:date]; # 
-  fhir:CapabilityStatement.publisher [ fhir:value "John Moehrke (himself)"]; # 
-  fhir:CapabilityStatement.contact [
-     fhir:index 0;
-     fhir:ContactDetail.name [ fhir:value "John Moehrke (himself)" ];
-     fhir:ContactDetail.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "url" ];
-       fhir:ContactPoint.value [ fhir:value "http://healthcaresecprivacy.blogspot.com" ]
-     ], [
-       fhir:index 1;
-       fhir:ContactPoint.system [ fhir:value "email" ];
-       fhir:ContactPoint.value [ fhir:value "JohnMoehrke@gmail.com" ]
-     ]
-  ], [
-     fhir:index 1;
-     fhir:ContactDetail.name [ fhir:value "John Moehrke (himself)" ];
-     fhir:ContactDetail.telecom [
-       fhir:index 0;
-       fhir:ContactPoint.system [ fhir:value "email" ];
-       fhir:ContactPoint.value [ fhir:value "JohnMoehrke@gmail.com" ]
-     ]
-  ]; # 
-  fhir:CapabilityStatement.description [ fhir:value "CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data"]; # 
-  fhir:CapabilityStatement.jurisdiction [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "urn:iso:std:iso:3166" ];
-       fhir:Coding.code [ fhir:value "US" ]
-     ]
-  ]; # 
-  fhir:CapabilityStatement.kind [ fhir:value "instance"]; # 
-  fhir:CapabilityStatement.implementation [
-     fhir:CapabilityStatement.implementation.description [ fhir:value "MyHealtheVet" ];
-     fhir:CapabilityStatement.implementation.url [ fhir:value "https://www.myhealth.va.gov/" ]
-  ]; # 
-  fhir:CapabilityStatement.fhirVersion [ fhir:value "4.0.1"]; # 
-  fhir:CapabilityStatement.format [
-     fhir:value "application/fhir+json";
-     fhir:index 0
-  ], [
-     fhir:value "application/fhir+xml";
-     fhir:index 1
-  ]; # 
-  fhir:CapabilityStatement.rest [
-     fhir:index 0;
-     fhir:CapabilityStatement.rest.mode [ fhir:value "server" ];
-     fhir:CapabilityStatement.rest.documentation [ fhir:value "MHV supports queries to PHR." ];
-     fhir:CapabilityStatement.rest.security [
-       fhir:CapabilityStatement.rest.security.cors [ fhir:value "false"^^xsd:boolean ];
-       fhir:CapabilityStatement.rest.security.description [ fhir:value "Security is system level, PGHD presumes MHV properly handles user (as patient) rights" ]
-     ];
-     fhir:CapabilityStatement.rest.resource [
-       fhir:index 0;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Observation" ];
-       fhir:CapabilityStatement.rest.resource.supportedProfile [
-         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab";
-         fhir:index 0;
+  ] ) ; # 
+  fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/CapabilityStatement/MHVcapabilities"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.5-beta"] ; # 
+  fhir:name [ fhir:v "MHV_PHR"] ; # 
+  fhir:title [ fhir:v "This indicates how MHV exposes PHR using FHIR"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2022-12-22"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://healthcaresecprivacy.blogspot.com" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:kind [ fhir:v "instance"] ; # 
+  fhir:implementation [
+     fhir:description [ fhir:v "MyHealtheVet" ] ;
+     fhir:url [ fhir:v "https://www.myhealth.va.gov/"^^xsd:anyURI ]
+  ] ; # 
+  fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
+  fhir:format ( [ fhir:v "application/fhir+json"] [ fhir:v "application/fhir+xml"] ) ; # 
+  fhir:rest ( [
+     fhir:mode [ fhir:v "server" ] ;
+     fhir:documentation [ fhir:v "MHV supports queries to PHR." ] ;
+     fhir:security [
+       fhir:cors [ fhir:v "false"^^xsd:boolean ] ;
+       fhir:description [ fhir:v "Security is system level, PGHD presumes MHV properly handles user (as patient) rights" ]
+     ] ;
+     fhir:resource ( [
+       fhir:type [ fhir:v "Observation" ] ;
+       fhir:supportedProfile ( [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab"^^xsd:anyURI ;
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab>
-       ];
-       fhir:CapabilityStatement.rest.resource.documentation [ fhir:value "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "_id" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 2;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 3;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "patient" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 4;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 5;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "category" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 6;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "code" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ]
-     ], [
-       fhir:index 1;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Immunization" ];
-       fhir:CapabilityStatement.rest.resource.supportedProfile [
-         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization";
-         fhir:index 0;
+       ] ) ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "patient" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "category" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "code" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Immunization" ] ;
+       fhir:supportedProfile ( [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization"^^xsd:anyURI ;
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization>
-       ];
-       fhir:CapabilityStatement.rest.resource.documentation [ fhir:value "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "_id" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 2;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 3;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "patient" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 4;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ]
-     ], [
-       fhir:index 2;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "DocumentReference" ];
-       fhir:CapabilityStatement.rest.resource.supportedProfile [
-         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note";
-         fhir:index 0;
+       ] ) ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "patient" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "DocumentReference" ] ;
+       fhir:supportedProfile ( [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note"^^xsd:anyURI ;
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note>
-       ], [
-         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.imaging";
-         fhir:index 1;
+       ] [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.imaging"^^xsd:anyURI ;
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.imaging>
-       ];
-       fhir:CapabilityStatement.rest.resource.documentation [ fhir:value "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "_id" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 2;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "status" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 3;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "patient" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 4;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "category" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 5;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "type" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 6;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 7;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "period" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ]
-     ], [
-       fhir:index 3;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Condition" ];
-       fhir:CapabilityStatement.rest.resource.supportedProfile [
-         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.condition";
-         fhir:index 0;
+       ] ) ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "status" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "patient" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "category" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "type" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "date" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "period" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Condition" ] ;
+       fhir:supportedProfile ( [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.condition"^^xsd:anyURI ;
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.condition>
-       ];
-       fhir:CapabilityStatement.rest.resource.documentation [ fhir:value "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "_id" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 2;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "clinical-status" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 3;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "patient" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 4;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "category" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 5;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "code" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ], [
-         fhir:index 6;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "recorded-date" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ]
-     ], [
-       fhir:index 4;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Organization" ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ]
-     ], [
-       fhir:index 5;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Location" ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ]
-     ], [
-       fhir:index 6;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Practitioner" ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ]
-     ], [
-       fhir:index 7;
-       fhir:CapabilityStatement.rest.resource.type [ fhir:value "Patient" ];
-       fhir:CapabilityStatement.rest.resource.interaction [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "search-type" ]
-       ], [
-         fhir:index 1;
-         fhir:CapabilityStatement.rest.resource.interaction.code [ fhir:value "read" ]
-       ];
-       fhir:CapabilityStatement.rest.resource.searchParam [
-         fhir:index 0;
-         fhir:CapabilityStatement.rest.resource.searchParam.name [ fhir:value "identifier" ];
-         fhir:CapabilityStatement.rest.resource.searchParam.type [ fhir:value "token" ]
-       ]
-     ];
-     fhir:CapabilityStatement.rest.interaction [
-       fhir:index 0;
-       fhir:CapabilityStatement.rest.interaction.code [ fhir:value "search-system" ]
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://johnmoehrke.github.io/MHV-PHR/CapabilityStatement/MHVcapabilities.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+       ] ) ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "_id" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "clinical-status" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "patient" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "category" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "code" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] [
+         fhir:name [ fhir:v "recorded-date" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Organization" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Location" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Practitioner" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] )
+     ] [
+       fhir:type [ fhir:v "Patient" ] ;
+       fhir:interaction ( [
+         fhir:code [ fhir:v "search-type" ]
+       ] [
+         fhir:code [ fhir:v "read" ]
+       ] ) ;
+       fhir:searchParam ( [
+         fhir:name [ fhir:v "identifier" ] ;
+         fhir:type [ fhir:v "token" ]
+       ] )
+     ] ) ;
+     fhir:interaction ( [
+       fhir:code [ fhir:v "search-system" ]
+     ] )
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

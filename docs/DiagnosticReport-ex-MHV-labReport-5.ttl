@@ -1,94 +1,80 @@
 @prefix fhir: <http://hl7.org/fhir/> .
-@prefix loinc: <http://loinc.org/rdf#> .
+@prefix loinc: <https://loinc.org/rdf/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-labReport-5> a fhir:DiagnosticReport;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "ex-MHV-labReport-5"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport";
-       fhir:index 0;
+<https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-labReport-5> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-labReport-5"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
        fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Reported</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Identifier:</td><td> id: SP;7009075 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp;amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED.</p></div>"
-  ]; # 
-  fhir:DomainResource.contained [
-     a fhir:Specimen;
-     fhir:index 0;
-     fhir:Resource.id [ fhir:value "ex-MHV-specimen-5" ];
-     fhir:Resource.meta [
-       fhir:Meta.profile [
-         fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen";
-         fhir:index 0;
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Reported</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Identifier:</td><td> id: SP;7009075 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp;amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED.</p></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Specimen ;
+     fhir:id [ fhir:v "ex-MHV-specimen-5" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"^^xsd:anyURI ;
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen>
-       ]
-     ];
-     fhir:Specimen.accessionIdentifier [
-       fhir:Identifier.use [ fhir:value "usual" ];
-       fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id" ];
-       fhir:Identifier.value [ fhir:value "SP 99 2207" ]
-     ];
-     fhir:Specimen.status [ fhir:value "available" ];
-     fhir:Specimen.type [
-       fhir:CodeableConcept.text [ fhir:value "POLYPS (A) CECAL,        (B) PROXIMAL ASCENDING,        (C) RECTAL" ]
-     ];
-     fhir:Specimen.collection [
-       fhir:Specimen.collection.collectedDateTime [ fhir:value "1999-09-24"^^xsd:date ]
+       ] )
+     ] ;
+     fhir:accessionIdentifier [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "SP 99 2207" ]
+     ] ;
+     fhir:status [ fhir:v "available" ] ;
+     fhir:type [
+       fhir:text [ fhir:v "POLYPS (A) CECAL,        (B) PROXIMAL ASCENDING,        (C) RECTAL" ]
+     ] ;
+     fhir:collection [
+       fhir:collected [ fhir:v "1999-09-24"^^xsd:date ]
      ]
-  ]; # 
-  fhir:DiagnosticReport.identifier [
-     fhir:index 0;
-     fhir:Identifier.use [ fhir:value "usual" ];
-     fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id" ];
-     fhir:Identifier.value [ fhir:value "SP;7009075" ]
-  ]; # 
-  fhir:DiagnosticReport.status [ fhir:value "final"]; # 
-  fhir:DiagnosticReport.category [
-     fhir:index 0;
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v2-0074" ];
-       fhir:Coding.code [ fhir:value "LAB" ]
-     ]
-  ]; # 
-  fhir:DiagnosticReport.code [
-     fhir:CodeableConcept.coding [
-       fhir:index 0;
-       a loinc:60567-5;
-       fhir:Coding.system [ fhir:value "http://loinc.org" ];
-       fhir:Coding.code [ fhir:value "60567-5" ]
-     ];
-     fhir:CodeableConcept.text [ fhir:value "LR SURGICAL PATHOLOGY REPORT" ]
-  ]; # 
-  fhir:DiagnosticReport.subject [
-     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1>;
-     fhir:Reference.reference [ fhir:value "Patient/ex-MHV-patient-1" ]
-  ]; # 
-  fhir:DiagnosticReport.effectiveDateTime [ fhir:value "1999-09-27T13:07:00Z"^^xsd:dateTime]; # 
-  fhir:DiagnosticReport.issued [ fhir:value "1999-09-27T13:07:00Z"^^xsd:dateTime]; # 
-  fhir:DiagnosticReport.performer [
-     fhir:index 0;
-     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-989>;
-     fhir:Reference.reference [ fhir:value "Organization/ex-MHV-organization-989" ]
-  ]; # 
-  fhir:DiagnosticReport.specimen [
-     fhir:index 0;
-     fhir:Reference.reference [ fhir:value "#ex-MHV-specimen-5" ]
-  ]; # 
-  fhir:DiagnosticReport.conclusion [ fhir:value "Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED."] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-labReport-5.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "SP;7009075" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0074"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "LAB" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:60567-5 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "60567-5" ]
+     ] ) ;
+     fhir:text [ fhir:v "LR SURGICAL PATHOLOGY REPORT" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-1" ]
+  ] ; # 
+  fhir:effective [ fhir:v "1999-09-27T13:07:00Z"^^xsd:dateTime] ; # 
+  fhir:issued [ fhir:v "1999-09-27T13:07:00Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-989> ;
+     fhir:reference [ fhir:v "Organization/ex-MHV-organization-989" ]
+  ] ) ; # 
+  fhir:specimen ( [
+     fhir:reference [ fhir:v "#ex-MHV-specimen-5" ]
+  ] ) ; # 
+  fhir:conclusion [ fhir:v "Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED."] . # 
 
 # -------------------------------------------------------------------------------------
 

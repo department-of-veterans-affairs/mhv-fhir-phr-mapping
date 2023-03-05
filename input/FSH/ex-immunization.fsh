@@ -13,8 +13,8 @@ Example from a mock ImmunizationTO
 * occurrenceDateTime = 2022-08-08T11:15:28Z
 * recorded = 2022-08-08T11:15:28Z
 * primarySource = false
-* identifier[TOid].value = "124684" 
-* identifier[TOid].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id"
+* identifier[TOid].value = "111;124684" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[TOid].use = #usual
 * note[0].text = "test"
 // TODO figure out why these three fail
@@ -39,8 +39,8 @@ Example from a mock ImmunizationTO
 * occurrenceDateTime = 2022-08-05T16:56:38Z
 * recorded = 2022-08-05T16:56:38Z
 * primarySource = false
-* identifier[TOid].value = "124685" 
-* identifier[TOid].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id"
+* identifier[TOid].value = "111;124685" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[TOid].use = #usual
 * note.text = "test comment"
 // TODO figure out why these three fail

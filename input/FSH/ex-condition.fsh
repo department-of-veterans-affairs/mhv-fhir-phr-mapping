@@ -9,8 +9,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "487" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;487" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "Hypertension (ICD-9-CM 401.9)"
 * code.coding = ICD#401.9
@@ -30,8 +30,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "488" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;488" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "Anxiety Neuroses (ICD-9-CM 300.00)"
 * code.coding = ICD#300.00
@@ -51,8 +51,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "489" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;489" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "Glaucoma (ICD-9-CM 365.9)"
 * code.coding = ICD#365.9
@@ -72,8 +72,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "37085" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;37085" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "SCREENING FOR ALCOHOLISM (ICD-9-CM V79.1)"
 * code.coding = ICD#V79.1
@@ -93,8 +93,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "37086" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;37086" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "SCREENING FOR OTHER SPECIFIED MENTAL DISORDERS AND DEVELOPMENTAL HANDICAPS (ICD-9-CM V79.8)"
 * code.coding = ICD#V79.8
@@ -114,8 +114,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "98034" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;98034" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "ENDOCARDITIS NOS (ICD-9-CM 424.90)"
 * code.coding = ICD#424.90
@@ -135,8 +135,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "118499" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;118499" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "COR ATHEROSCL UNSP TYP-VES (ICD-9-CM 414.00)"
 * code.coding = ICD#414.00
@@ -156,8 +156,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "128381" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;128381" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "Restless Legs (ICD-9-CM 333.99)"
 * code.coding = ICD#333.99
@@ -177,8 +177,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "229415" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;229415" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "Benign Prostatic Hypertrophy (ICD-9-CM 799.9)"
 * code.coding = ICD#799.9
@@ -198,8 +198,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "268463" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;268463" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "Hypertrophy (Benign) of Prostate without Urinary obstruction (ICD-9-CM 600.00)"
 * code.coding = ICD#600.00
@@ -220,8 +220,8 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * subject = Reference(Patient/ex-MHV-patient-2)
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
-* identifier[+].value = "318630" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ProblemTO.id"
+* identifier[+].value = "111;318630" 
+* identifier[=].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[=].use = #usual
 * code.text = "Lumbago (ICD-9-CM 724.2)"
 * code.coding = ICD#724.2

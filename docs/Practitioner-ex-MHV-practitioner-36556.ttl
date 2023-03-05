@@ -5,40 +5,29 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-MHV-practitioner-36556> a fhir:Practitioner;
-  fhir:nodeRole fhir:treeRoot;
-  fhir:Resource.id [ fhir:value "ex-MHV-practitioner-36556"]; # 
-  fhir:Resource.meta [
-     fhir:Meta.profile [
-       fhir:value "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner";
-       fhir:index 0;
+<https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-MHV-practitioner-36556> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-practitioner-36556"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
        fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
-     ]
-  ]; # 
-  fhir:DomainResource.text [
-     fhir:Narrative.status [ fhir:value "generated" ];
-     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"ex-MHV-practitioner-36556\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;ex-MHV-practitioner-36556&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.practitioner.html\">VA MHV PHR Practitioner</a></p></div><p><b>identifier</b>: id: 36556 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></div>"
-  ]; # 
-  fhir:Practitioner.identifier [
-     fhir:index 0;
-     fhir:Identifier.use [ fhir:value "usual" ];
-     fhir:Identifier.system [ fhir:value "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id" ];
-     fhir:Identifier.value [ fhir:value "36556" ]
-  ]; # 
-  fhir:Practitioner.name [
-     fhir:index 0;
-     fhir:HumanName.text [ fhir:value "AHMED,MARUF" ];
-     fhir:HumanName.family [ fhir:value "MARUF" ];
-     fhir:HumanName.given [
-       fhir:value "AHMED";
-       fhir:index 0
-     ]
-  ] . # 
-
-# - ontology header ------------------------------------------------------------
-
-<https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-MHV-practitioner-36556.ttl> a owl:Ontology;
-  owl:imports fhir:fhir.ttl .
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"ex-MHV-practitioner-36556\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;ex-MHV-practitioner-36556&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.practitioner.html\">VA MHV PHR Practitioner</a></p></div><p><b>identifier</b>: id: 36556 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "36556" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:text [ fhir:v "AHMED,MARUF" ] ;
+     fhir:family [ fhir:v "MARUF" ] ;
+     fhir:given ( [ fhir:v "AHMED" ] )
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 
