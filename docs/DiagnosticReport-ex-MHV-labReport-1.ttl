@@ -17,7 +17,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 79381-0}\">LR MICROBIOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1995-08-03 14:49:00+0000</td></tr><tr><td>Reported</td><td>1995-08-03 14:49:00+0000</td></tr><tr><td>Identifier:</td><td> id: MI;7049269 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>When For</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table><p>Accession [UID]: PARAS 95 264 []            Received: Aug 01, 1995@11:02\nCollection sample: STOOL               Collection date: Jul 30, 1995\nSite/Specimen: FECES\nProvider: MANGAS,PHYLLIS A\n\n* PARASITOLOGY FINAL REPORT =&gt; Aug 03, 1995   TECH CODE: 1003\nParasitology Remark(s):\nNO OVA OR PARASITES FOUND</p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 79381-0}\">LR MICROBIOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1995-08-03 14:49:00+0000</td></tr><tr><td>Reported</td><td>1995-08-03 14:49:00+0000</td></tr><tr><td>Identifier:</td><td> id: LabReportTO.MI;7049269 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>When For</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table><p>Accession [UID]: PARAS 95 264 []            Received: Aug 01, 1995@11:02\nCollection sample: STOOL               Collection date: Jul 30, 1995\nSite/Specimen: FECES\nProvider: MANGAS,PHYLLIS A\n\n* PARASITOLOGY FINAL REPORT =&gt; Aug 03, 1995   TECH CODE: 1003\nParasitology Remark(s):\nNO OVA OR PARASITES FOUND</p></div>"
   ] ; # 
   fhir:contained ( [
      a fhir:Observation ;
@@ -30,8 +30,8 @@
      ] ;
      fhir:identifier ( [
        fhir:use [ fhir:v "usual" ] ;
-       fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "MI;7049269;1" ]
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "LabTestTO.MI;7049269;1" ]
      ] ) ;
      fhir:status [ fhir:v "final" ] ;
      fhir:category ( [
@@ -64,12 +64,12 @@
      ] ;
      fhir:identifier ( [
        fhir:use [ fhir:v "usual" ] ;
-       fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabSpecimenTO.id"^^xsd:anyURI ] ;
-       fhir:value [ fhir:v "6Y100" ]
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "LabSpecimenTO.6Y100" ]
      ] ) ;
      fhir:accessionIdentifier [
        fhir:use [ fhir:v "usual" ] ;
-       fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"^^xsd:anyURI ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "PARAS 95 264" ]
      ] ;
      fhir:status [ fhir:v "available" ] ;
@@ -82,8 +82,8 @@
   ] ) ; # 
   fhir:identifier ( [
      fhir:use [ fhir:v "usual" ] ;
-     fhir:system [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "MI;7049269" ]
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "LabReportTO.MI;7049269" ]
   ] ) ; # 
   fhir:status [ fhir:v "final"] ; # 
   fhir:category ( [

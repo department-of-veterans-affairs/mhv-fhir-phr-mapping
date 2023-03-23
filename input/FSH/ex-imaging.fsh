@@ -10,8 +10,8 @@ Derived from the a mock ImagingExamTO:
 * docStatus = #final
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-0)
-* identifier[TOid].value = "6959075.8874-1" 
-* identifier[TOid].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImagingExamTO.id"
+* identifier[TOid].value = "ImagingExamTO.6959075.8874-1" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * identifier[accessionNumber].value = "092404-1582" 
 * identifier[accessionNumber].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AccessionNumber"

@@ -46,6 +46,18 @@ Mapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.ht
       </s:complexType>
 
 */
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "$this"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 0..*
+* identifier[TOid].use = #usual
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`UserTO` | `.` | {UserTO.id}"
+* identifier[TOid].value ^short = "`AuthorTO` | `.` | {AuthorTO.id}"
+
+
 Mapping: Practitioner-UserTO
 Source:	MHVpractitioner
 Target: "UserTO"
@@ -56,8 +68,7 @@ Title: "VDIF to MHV-PHR"
 * telecom -> "UserTO.pager"
 * telecom -> "UserTO.digitalPager"
 * communication -> "UserTO.greeting"
-* identifier.value -> "UserTO.ids"
-* identifier.system -> "`https://johnmoehrke.github.io/MHV-PHR/Vista/111/UserTO.id`"
+* identifier -> "{StationNbr} and {UserTO.id}"
 * telecom -> "UserTO.emailAddress"
 
 /*
@@ -79,8 +90,7 @@ Source:	MHVpractitioner
 Target: "AuthorTO"
 Title: "VDIF to MHV-PHR"
 * -> "AuthorTO" "MHV PHR FHIR API"
-* identifier.value -> "AuthorTO.id"
-* identifier.system -> "`https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id`"
+* identifier -> "{StationNbr} and {AuthorTO.id}"
 * name.text -> "AuthorTO.name"
 
 

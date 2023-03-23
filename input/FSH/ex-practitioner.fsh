@@ -4,10 +4,10 @@ Title: "Example Practitioner"
 Description:      "holding typical values"
 * name.family = "Practitioner"
 * name.given = "Prancy"
-* identifier[+].use = #official
-* identifier[=].type.text = "npiPID"
-* identifier[=].value = "10130425697"
-* identifier[=].system = "http://example.org/npi"
+* identifier[NPI].use = #official
+* identifier[NPI].type.text = "npiPID"
+* identifier[NPI].value = "10130425697"
+* identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 
 /*
 <author>
@@ -23,9 +23,9 @@ Usage: #example
 * name.text = "KHAN,MUAZZAM"
 * name.family = "KHAN"
 * name.given = "MUAZZAM"
-* identifier[+].use = #usual
-* identifier[=].value = "37569"
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "AuthorTO.37569"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 
 /*
 <author>
@@ -41,9 +41,9 @@ Usage: #example
 * name.text = "AHMED,MARUF"
 * name.family = "MARUF"
 * name.given = "AHMED"
-* identifier[+].use = #usual
-* identifier[=].value = "36556"
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "AuthorTO.37556"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 
 /*
 <observer>
@@ -61,9 +61,9 @@ Usage: #example
 * name.family = "MANGAS"
 * name.given[+] = "PHYLLIS"
 * name.given[+] = "A"
-* identifier[+].use = #usual
-* identifier[=].value = "110"
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "AuthorTO.110"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 
 /* 
 <observer>
@@ -80,9 +80,9 @@ Usage: #example
 * name.text = "PATIL,SARASWATI"
 * name.family = "PATIL"
 * name.given[+] = "SARASWATI"
-* identifier[+].use = #usual
-* identifier[=].value = "4262"
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "AuthorTO.4262"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 
 /*
 <observer>
@@ -100,9 +100,9 @@ Usage: #example
 * name.family = "BASHIR"
 * name.given[+] = "CHOWDRY"
 * name.given[+] = "MUJAHID"
-* identifier[+].use = #usual
-* identifier[=].value = "6051"
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "AuthorTO.6051"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 
 /*
 <observer>
@@ -120,6 +120,6 @@ Usage: #example
 * name.family = "FELKLEY"
 * name.given[+] = "KENNETH"
 * name.given[+] = "E"
-* identifier[+].use = #usual
-* identifier[=].value = "22572"
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AuthorTO.id"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "AuthorTO.22572"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"

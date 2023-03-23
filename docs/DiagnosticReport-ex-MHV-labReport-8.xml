@@ -6,7 +6,7 @@
     <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 60567-5}">LR SURGICAL PATHOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Reported</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Identifier:</td><td> id: SP;7029487 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: May 12, 1997        Pathologist:SEETHA SURYAPRASAD MD
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 60567-5}">LR SURGICAL PATHOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Reported</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Identifier:</td><td> id: LabReportTO.SP;7029487 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: May 12, 1997        Pathologist:SEETHA SURYAPRASAD MD
 Date Spec rec'd: May 12, 1997 14:00  Resident: 
 Date  completed: May 13, 1997        Accession #: SP 97 1099
 Submitted by: DEBRA K LATTA MD       Practitioner:DEBRA K LATTA
@@ -20,9 +20,12 @@ BONE FRAGMENTS, LEFT FOOT</p></div>
       <meta>
         <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"/>
       </meta>
+      <identifier>
+        <use value="usual"/>
+      </identifier>
       <accessionIdentifier>
         <use value="usual"/>
-        <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
         <value value="SP 97 1099"/>
       </accessionIdentifier>
       <status value="available"/>
@@ -36,8 +39,8 @@ BONE FRAGMENTS, LEFT FOOT</p></div>
   </contained>
   <identifier>
     <use value="usual"/>
-    <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"/>
-    <value value="SP;7029487"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="LabReportTO.SP;7029487"/>
   </identifier>
   <status value="final"/>
   <category>

@@ -24,10 +24,12 @@ TODO:
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
 * identifier contains
-  TOid 1..1
+  TOid 1..
 * identifier[TOid].use = #usual
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
-* identifier[TOid].value ^short = "{StationNbr} | `;` | {ProblemTO.id}"
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`ProblemTO` | `.` | {ProblemTO.id}"
+* code.text MS
+* code.coding MS
 
 
 Mapping: Condition-Mapping
@@ -35,7 +37,7 @@ Source:	MHVcondition
 Target: "ProblemTO"
 Title: "VDIF to MHV-PHR"
 * -> "ProblemTO" "MHV PHR FHIR API"
-* identifier -> "{StationNbr} | `;` | {ProblemTO.id}"
+* identifier -> "{StationNbr} and {ProblemTO.id}"
 * code.text -> "ProblemTO.type.name"
 * asserter -> "GetPractitioner(ProblemTO.observer)"
 * clinicalStatus -> "ProblemTO.status | !ProblemTO.removed ? `#active` : todo"

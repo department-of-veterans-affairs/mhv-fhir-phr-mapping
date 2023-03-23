@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/DocumentReference/ex-MHV-ecg-3> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-ecg-3"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg"^^xsd:anyURI ;
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"ex-MHV-ecg-3\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;ex-MHV-ecg-3&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.ecg.html\">VA MHV PHR ECG</a></p></div><p><b>identifier</b>: id: ClinicalProcedureTO.17160 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: EKG study <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11524-6)</span></p><p><b>category</b>: Cardiology <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#LP29708-2)</span>, Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-1.html\">Patient/ex-MHV-patient-1</a> &quot; DAYTSHR&quot;</p><p><b>date</b>: Dec 2, 1998, 3:34:00 AM</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td>-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td></tr><tr><td>*</td><td>text/plain</td><td>UGcuIDEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOS8xMi8yMiAxMDoxMgogICAgICAgICAgICAgICAgICAgICAgICAgICBDT05GSURFTlRJQUwgRUNHIFJFUE9SVCAgICAgICAgICAgICAgICAgICAgICAgICAgICAKTUhWTElTQU9ORSxST0JFUlQgTSAgICA2NjYtMTItMzQ1NiAgIE5PVCBJTlBBVElFTlQgICAgICAgICAgICAgIERPQjogQVVHIDksMTk2MgogICAgICAgICAgICAgICAgICAgICAgUFJPQ0VEVVJFIERBVEUvVElNRTogMTIvMDIvOTggMDk6MzQKLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBXQVJEL0NMSU5JQzogQ0FSRElPTE9HWSBPVVRQQVRJRU5UIChMT0MpCiAgICBBR0U6IDM2ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU0VYOiAgTUFMRQogICAgSFQgSU46IDA3MSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFdUIExCUzogMTYwCiAgICBCTE9PRCBQUkVTU1VSRTogICAgICAgICAgICAgICAgICAgICAgICAgVFlQRTogCgogICAgICAgICBWRU5UIFJBVEU6IDA3MSAgICAgICAgUFIgSU5URVJWQUw6IDE0MCAgICAgICBRUlMgRFVSQVRJT046IDEzNgogICAgICAgICBRVDogNDI4ICAgICAgICAgICAgICAgUVRDOiA0NjUKICAgICAgICAgUCBBWElTOiA3MiAgICAgICAgICAgIFIgQVhJUzogMTQwICAgICAgICAgICAgVCBBWElTOiA0NQoKICAgIElOVEVSUFJFVEFUSU9OOiAKCiAgICBJTlNUUlVNRU5UIERYOiAgTk9STUFMIFNJTlVTIFJIWVRITQogICAgICAgICAgICAgICAgICAgIFJJR0hUIEJVTkRMRSBCUkFOQ0ggQkxPQ0sKICAgICAgICAgICAgICAgICAgICBSSUdIVFdBUkQgQVhJUwogICAgICAgICAgICAgICAgICAgIEFCTk9STUFMIEVDRwogICAgICAgICAgICAgICAgICAgIE5PIFBSRVZJT1VTIEVDR1MgQVZBSUxBQkxFCgogICAgQ09ORklSTUFUSU9OIFNUQVRVUzogQ09ORklSTUVECgogICAgQ09NUEFSSVNPTjogCiAKCiAgICBDT01NRU5UUzogCgogICAgSEVBUlQgTUVEUzoKCiAgICBJTlRFUlBSRVRFRCBCWTogU1VSWUFQUkFTQUQsQUdBUkFN</td><td>ELECTROCARDIOGRAM</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td>-</td><td><b>Related</b></td></tr><tr><td>*</td><td><a href=\"Location-ex-MHV-location-989.html\">Location/ex-MHV-location-989</a> &quot;DAYT29 TEST LAB&quot;</td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ClinicalProcedureTO.17160" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:11524-6 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "11524-6" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a loinc:LP29708-2 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "LP29708-2" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-1> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-1" ]
+  ] ; # 
+  fhir:date [ fhir:v "1998-12-02T09:34:00Z"^^xsd:dateTime] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "UGcuIDEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOS8xMi8yMiAxMDoxMgogICAgICAgICAgICAgICAgICAgICAgICAgICBDT05GSURFTlRJQUwgRUNHIFJFUE9SVCAgICAgICAgICAgICAgICAgICAgICAgICAgICAKTUhWTElTQU9ORSxST0JFUlQgTSAgICA2NjYtMTItMzQ1NiAgIE5PVCBJTlBBVElFTlQgICAgICAgICAgICAgIERPQjogQVVHIDksMTk2MgogICAgICAgICAgICAgICAgICAgICAgUFJPQ0VEVVJFIERBVEUvVElNRTogMTIvMDIvOTggMDk6MzQKLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBXQVJEL0NMSU5JQzogQ0FSRElPTE9HWSBPVVRQQVRJRU5UIChMT0MpCiAgICBBR0U6IDM2ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU0VYOiAgTUFMRQogICAgSFQgSU46IDA3MSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFdUIExCUzogMTYwCiAgICBCTE9PRCBQUkVTU1VSRTogICAgICAgICAgICAgICAgICAgICAgICAgVFlQRTogCgogICAgICAgICBWRU5UIFJBVEU6IDA3MSAgICAgICAgUFIgSU5URVJWQUw6IDE0MCAgICAgICBRUlMgRFVSQVRJT046IDEzNgogICAgICAgICBRVDogNDI4ICAgICAgICAgICAgICAgUVRDOiA0NjUKICAgICAgICAgUCBBWElTOiA3MiAgICAgICAgICAgIFIgQVhJUzogMTQwICAgICAgICAgICAgVCBBWElTOiA0NQoKICAgIElOVEVSUFJFVEFUSU9OOiAKCiAgICBJTlNUUlVNRU5UIERYOiAgTk9STUFMIFNJTlVTIFJIWVRITQogICAgICAgICAgICAgICAgICAgIFJJR0hUIEJVTkRMRSBCUkFOQ0ggQkxPQ0sKICAgICAgICAgICAgICAgICAgICBSSUdIVFdBUkQgQVhJUwogICAgICAgICAgICAgICAgICAgIEFCTk9STUFMIEVDRwogICAgICAgICAgICAgICAgICAgIE5PIFBSRVZJT1VTIEVDR1MgQVZBSUxBQkxFCgogICAgQ09ORklSTUFUSU9OIFNUQVRVUzogQ09ORklSTUVECgogICAgQ09NUEFSSVNPTjogCiAKCiAgICBDT01NRU5UUzogCgogICAgSEVBUlQgTUVEUzoKCiAgICBJTlRFUlBSRVRFRCBCWTogU1VSWUFQUkFTQUQsQUdBUkFN"^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "ELECTROCARDIOGRAM" ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:related ( [
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/Location/ex-MHV-location-989> ;
+       fhir:reference [ fhir:v "Location/ex-MHV-location-989" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.5-beta - ci-build
+            <span style="display:inline-block;">0.1.6-beta - ci-build
 
 
 
@@ -99,8 +99,24 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Introduction</a>
+      </li>
+      <li>
+        <a href="utility.html">Utility</a>
+      </li>
+      <li>
+        <a href="ConvertDate.html">ConvertDate</a>
+      </li>
+      <li>
+        <a href="identifier.html">Id vs Identifier</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="testplan.html">Test Plan</a>
@@ -131,7 +147,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="testplan.html">next&gt;</a>
+          | <a href="utility.html">next&gt;</a>
 
           </span>
 
@@ -153,7 +169,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.5-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.6-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Background</h2>
   
 
@@ -187,7 +203,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="#data-input-processing" id="markdown-toc-data-input-processing">Data input processing</a></li>
   <li><a href="#general-processing-of-clinical-resources" id="markdown-toc-general-processing-of-clinical-resources">General Processing of clinical resources</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
-  <li><a href="#utility-functions" id="markdown-toc-utility-functions">Utility Functions</a></li>
 </ul>
 
 </div>
@@ -250,6 +265,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="StructureDefinition-VA.MHV.PHR.imaging-examples.html">Examples</a></li>
     </ul>
   </li>
+  <li><a href="StructureDefinition-VA.MHV.PHR.ecg.html">ECG</a>
+    <ul>
+      <li><a href="StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-vdif-to-mhv-phr-clinicalprocedureto">Mapping from VDIF - ClinicalProcedureTO</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.ecg-examples.html">Examples</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="todo">todo</h3>
@@ -257,11 +278,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Not yet done</p>
 
 <ul>
-  <li>ECG/EKG
-    <ul>
-      <li>ClinicalProcedureTO</li>
-    </ul>
-  </li>
   <li>Vital Readings
     <ul>
       <li>vitalSignTO</li>
@@ -284,7 +300,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <ul>
   <li>Vital Readings</li>
-  <li>Allergies</li>
+  <li>Allergies???</li>
 </ul>
 
 <h4 id="other">other</h4>
@@ -319,10 +335,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>General Pattern</p>
 
 <ol>
-  <li>Our FHIR database will assign id value naturally using normal HAPI method (likely GUID)</li>
+  <li>Our FHIR database will assign id value naturally using normal HAPI method (likely UUID)</li>
   <li>Our FHIR database will put external identifiers (e.g. Those from the Vista id such as ImmunizationTO.id) into the .identifier element</li>
   <li>Our FHIR database should have one Organization resource… or are there multiple?</li>
-  <li>Our FHIR database will have <a href="background.html#support-resources">support resources</a> for common resource types: Patient, Practitioner, Location, etc – a Patient resource for each patient within the database, Location for all locations, and Practitioner for all clinicians (Users) - So that clinical resources can point at these resources as appropriate. For example when an Immunization was given at a specific location, we point at a Location resource with the details. Thus all clinical resources that were associated with that location all point at the one instance of Location. Same for Practitioner (Users), and Patients.</li>
+  <li>Our FHIR database will have <a href="utility.html#support-resources">support resources</a> for common resource types: Patient, Practitioner, Location, etc – a Patient resource for each patient within the database, Location for all locations, and Practitioner for all clinicians (Users) - So that clinical resources can point at these resources as appropriate. For example when an Immunization was given at a specific location, we point at a Location resource with the details. Thus all clinical resources that were associated with that location all point at the one instance of Location. Same for Practitioner (Users), and Patients.</li>
   <li>Our FHIR database will have Provenance resource indicating each time a resource is created/updated/deleted. This will aid with the management of data changes and provide linkage back to origination and mapping details.</li>
 </ol>
 
@@ -334,7 +350,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p><br clear="all" /></p>
 
 <ol>
-  <li>given an id value on the data we are given, we look for the cooresponding FHIR Resource with an identifier element equal to that id value. Thus the identifier element within our FHIR database is the linkage to original data id value.</li>
+  <li>given an id value on the data we are given, we look for the corresponding FHIR Resource with an identifier element equal to that id value. Thus the identifier element within our FHIR database is the linkage to original data id value.</li>
   <li>When nothing is found, we create a new instance of that clinical resource and populate it with the data we are given. Populating the .identifier element with the id of the data we were given.</li>
   <li>When one item is found, we compare the data we have with the data we were given. If no change, then nothing more is done. If there is a difference, then we update our data.</li>
   <li>When creating a new instance, or updating an existing instance, create a Provenance instance to track what was imported, from what, to what, when, and given some detail to indicate the translation used.</li>
@@ -350,211 +366,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li><a href="https://github.com/department-of-veterans-affairs/mhv-hla-app-ui/blob/dbb0301be4a17f31e67048300d72c87c0977aa09/hra-mock-via-app/src/main/java/gov/va/hra/integration/via/mock/ws/EmrService.wsdl">EmrService.wsdl</a></li>
   <li>VA <a href="http://www.vistapedia.com/index.php/Main_Page">Vista Fileman</a></li>
 </ul>
-
-<h3 id="utility-functions">Utility Functions</h3>
-
-<p>To support functions and resources:</p>
-
-<h4 id="support-resources">Support Resources</h4>
-
-<p>To support the primary FHIR Resources, there are some untility Resources that will be needed. These will be created upon demand, based on a lookup need.</p>
-
-<h5 id="getpractitioner">GetPractitioner()</h5>
-
-<p>Input: UserTO, AuthorTO, etc</p>
-
-<p>Return: a Practitioner resource reference</p>
-
-<p>If a Practitioner is not found given the input parameters, then one is created and populated with the input parameters.</p>
-
-<p>If a Practitioner is found, and the details given are different, then presume parameters are newer and use them to update the found Practitioner Resource.</p>
-
-<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.practitioner.html">Practitioner</a></p>
-
-<h5 id="getpatient">GetPatient()</h5>
-
-<p>Input: ICN, PatientTO</p>
-
-<p>Return: a Patient resource reference</p>
-
-<p>If a Patient is not found given the input parameters, then one is created and populated with the input prameters.</p>
-
-<p>If a Patient is found, and the details given are different, then presume parameters are newer and use them to update the found Patient Resource.</p>
-
-<p><strong>QUESTION: Should the patient also be populated with given patient demographics found in eVault?</strong></p>
-
-<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.patient.html">Patient</a></p>
-
-<h5 id="getlocation">GetLocation()</h5>
-
-<p>Input: hospitalLocationTO, SiteTO</p>
-
-<p>Return: a Location resource reference</p>
-
-<p>If a Location is not found given the input parameters, then one is created and populated with the input prameters.</p>
-
-<p>If a Location is found, and the details given are different, then presume parameters are newer and use them to update the found Location Resource.</p>
-
-<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.location.html">Location</a></p>
-
-<h5 id="getorganization">GetOrganization()</h5>
-
-<p>Input: organiztion id (e.g. Lab id)</p>
-
-<p>Return: a Organization resource reference</p>
-
-<p>If a Organization is not found given the input parameters, then one is created and populated with the input prameters.</p>
-
-<p>If a Organization is found, and the details given are different, then presume parameters are newer and use them to update the found Organization Resource.</p>
-
-<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.organization.html">Organization</a></p>
-
-<h4 id="conversions">Conversions</h4>
-
-<p>Historic data is using different dataTypes that can be well defined</p>
-
-<h5 id="convertdate">ConvertDate()</h5>
-
-<p>Input: Fileman Date</p>
-
-<p>Return: FHIR DateTime</p>
-
-<p>Given that the Fileman date is slightly different than HL7. The conversion is simple.</p>
-
-<p>See <a href="http://www.vistapedia.com/index.php/Date_formats">FileMan date</a></p>
-
-<p>Here is XSLT</p>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
-<span class="nt">&lt;xsl:transform</span> <span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span> <span class="na">version=</span><span class="s">"2.0"</span> <span class="nt">&gt;</span>
-<span class="nt">&lt;xsl:template</span> <span class="na">name=</span><span class="s">"fileman-to-datetime"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;xsl:param</span> <span class="na">name=</span><span class="s">"fileman-date"</span> <span class="nt">/&gt;</span>
-  
-  <span class="c">&lt;!-- only handles 3 digit year based on 1700 --&gt;</span>
-  <span class="nt">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">"year"</span> <span class="na">select=</span><span class="s">"format-number(number(substring($fileman-date, 1, 3)) + 1700, '0000')"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">"month"</span> <span class="na">select=</span><span class="s">"substring($fileman-date, 4, 2)"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">"day"</span> <span class="na">select=</span><span class="s">"substring($fileman-date, 6, 2)"</span> <span class="nt">/&gt;</span>
-
-  <span class="nt">&lt;xsl:choose&gt;</span>
-    <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"not(string-length($fileman-date) &gt; 8)"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"concat($year, '-', $month, '-', $day)"</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;/xsl:when&gt;</span> 
-    <span class="nt">&lt;xsl:otherwise&gt;</span>
-      <span class="nt">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">"time"</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"format-number(number(substring($fileman-date, 9, 2)), '00')"</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;xsl:choose&gt;</span>
-        <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"string-length($fileman-date) &gt; 10"</span><span class="nt">&gt;</span>
-          <span class="nt">&lt;xsl:text&gt;</span>:<span class="nt">&lt;/xsl:text&gt;</span>
-          <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"format-number(number(substring($fileman-date, 11, 2)), '00')"</span> <span class="nt">/&gt;</span>
-          <span class="nt">&lt;xsl:choose&gt;</span>
-            <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"string-length($fileman-date) &gt; 12"</span><span class="nt">&gt;</span>
-              <span class="nt">&lt;xsl:text&gt;</span>:<span class="nt">&lt;/xsl:text&gt;</span>
-              <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"format-number(number(substring($fileman-date, 13, 2)), '00')"</span> <span class="nt">/&gt;</span>
-            <span class="nt">&lt;/xsl:when&gt;</span>
-            <span class="nt">&lt;xsl:otherwise&gt;</span>
-              <span class="nt">&lt;xsl:text&gt;</span>:00<span class="nt">&lt;/xsl:text&gt;</span>
-            <span class="nt">&lt;/xsl:otherwise&gt;</span>
-          <span class="nt">&lt;/xsl:choose&gt;</span>
-        <span class="nt">&lt;/xsl:when&gt;</span>
-        <span class="nt">&lt;xsl:otherwise&gt;</span>
-          <span class="nt">&lt;xsl:text&gt;</span>:00:00<span class="nt">&lt;/xsl:text&gt;</span>
-        <span class="nt">&lt;/xsl:otherwise&gt;</span>
-      <span class="nt">&lt;/xsl:choose&gt;</span>
-    <span class="nt">&lt;/xsl:variable&gt;</span>
-    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"concat($year, '-', $month, '-', $day, 'T', $time, 'Z')"</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/xsl:otherwise&gt;</span>
-  <span class="nt">&lt;/xsl:choose&gt;</span>
-<span class="nt">&lt;/xsl:template&gt;</span>
-<span class="nt">&lt;/xsl:transform&gt;</span>
-</code></pre></div></div>
-
-<h5 id="code-lookup">Code Lookup</h5>
-
-<p>Most of the historic data just uses strings. Will need some method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a <a href="http://hl7.org/fhir/conceptmap.html">FHIR ConceptMap</a> resource, thus making maintaining it easy.</p>
-
-<p>For every context use of a concept encoded as a string, we presume they are unique within that context. The context identifies a specific ConceptMap, and a lookup of the string in that ConceptMap will result in the mapped standard code value.</p>
-
-<p>A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possiblly update of the given ConceptMap.</p>
-
-<h5 id="id-vs-identifier">Id vs Identifier</h5>
-
-<p>Our FHIR database will track linkages to source objects using the FHIR resource <code class="language-plaintext highlighter-rouge">.identifier</code> element, and the Vista <code class="language-plaintext highlighter-rouge">.id</code> element.</p>
-
-<ol>
-  <li>As far as I can tell the <code class="language-plaintext highlighter-rouge">.id</code> values coming from Vista (Fileman) are given to us as strings. They are unique strings at the source for that given context of that data. (for a given Vista instance the ImmunizationTO.id is unique, but that id value might be a different ImmunizationTO object at a different Vista site, and that id value on a different object like NoteTO at the original Vista site)</li>
-  <li>The <code class="language-plaintext highlighter-rouge">.id</code> values sometimes have a two or three part to them separated by <code class="language-plaintext highlighter-rouge">;</code>. I don’t know if there is something we can interpret, or if I am just looking at non-real examples.</li>
-  <li>In FHIR <a href="http://hl7.org/fhir/datatypes.html#Identifier">Identifier datatype</a> tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique.</li>
-  <li>Thus when we know the data received is from VDIF we can look up the given id as identifier of system+id.</li>
-  <li>The VA CDA does a similar transform of the <code class="language-plaintext highlighter-rouge">.id</code> values into CDA <code class="language-plaintext highlighter-rouge">.id</code> values. We should use the same algorithm so that the same data is easily recognized regardless of if the data was received via CDA or our FHIR api.</li>
-</ol>
-
-<p>The system value is a fixed <a href="https://oidref.com/2.16.840.1.113883.4.349">OID assigned to VA</a></p>
-
-<blockquote>
-  <p><code class="language-plaintext highlighter-rouge">urn:oid:2.16.840.1.113883.4.349</code></p>
-</blockquote>
-
-<p>the <code class="language-plaintext highlighter-rouge">value</code> is then composed of the id from the data plus (prefixed) the station number.</p>
-
-<blockquote>
-  <table>
-    <tbody>
-      <tr>
-        <td>{stationNbr}</td>
-        <td><code class="language-plaintext highlighter-rouge">.</code></td>
-        <td>{id}</td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
-
-<p>Context:</p>
-
-<ul>
-  <li>UserTO.id</li>
-  <li>PatientTO.id</li>
-  <li>AuthorTO.id</li>
-  <li>HospitalLocationTO.id</li>
-  <li>AllergyTO.id</li>
-  <li>ClinicalProcedureTO.id</li>
-  <li>VitalSign.to</li>
-  <li>ImmunizationTO.id</li>
-  <li>NoteTO.id</li>
-  <li>LabReportTO.id</li>
-  <li>LabReportTO.caseNumber</li>
-  <li>LabSpecimenTO.id</li>
-  <li>LabResultTO.labSiteId</li>
-  <li>LabTestTO.id</li>
-  <li>ImagingExamTO.id</li>
-  <li>etc…</li>
-</ul>
-
-<p>For example, for Vista site 111, and the ImmunizationTO.id of 222 context:</p>
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"identifier"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-  </span><span class="nl">"system"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"urn:oid:2.16.840.1.113883.4.349"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"value"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"111;222"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<p>Note that Encounter is more complex. The VA CDA team has come up with the pattern for that as</p>
-
-<blockquote>
-  <table>
-    <tbody>
-      <tr>
-        <td>{SectionLOINC}</td>
-        <td><code class="language-plaintext highlighter-rouge">.</code></td>
-        <td>{stationNbr}</td>
-        <td><code class="language-plaintext highlighter-rouge">.</code></td>
-        <td>{id}</td>
-      </tr>
-    </tbody>
-  </table>
-</blockquote>
-
-<p>Note that the VA CDA does not include the id on Immunizations.</p>
-
-<p><strong>TODO: I see a problem with this algorithm, it produces unique values within a datatype, but does not really produce globally unique values</strong></p>
 
 
 
@@ -593,7 +404,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="testplan.html">next&gt;</a>
+                <a href="utility.html">next&gt;</a>
 
               </td>
             </tr>
@@ -603,7 +414,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.5-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Mar 5, 2023 12:38-0600">2023-03-05</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.6-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 23, 2023 11:34-0500">2023-03-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

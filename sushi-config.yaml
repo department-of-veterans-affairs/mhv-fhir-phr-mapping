@@ -8,7 +8,7 @@ name: MHVPHR
 title: "MyHealtheVet PHR FHIR API"
 description: "MyHealtheVet exposing PHR using FHIR and Testing Plan."
 status: active
-version: 0.1.5-beta
+version: 0.1.6-beta
 fhirVersion: 4.0.1
 copyrightyear: '2022+'
 #date: 2022-04-14
@@ -71,6 +71,15 @@ pages:
   background.md:
     title: Background
     generation: markdown
+  utility.md:
+    title: Utility Functions
+    generation: markdown
+  ConvertDate.md:
+    title: ConvertDate()
+    generation: markdown
+  identifier.md:
+    title: Id vs Identifier
+    generation: markdown
   testplan.md:
     title: Test Plan
     generation: markdown
@@ -82,7 +91,11 @@ pages:
 
 menu:
   Home: index.html
-  Background: background.html
+  Background: 
+    "Introduction": background.html
+    "Utility" : utility.html
+    "ConvertDate" : ConvertDate.html
+    "Id vs Identifier" : identifier.html
   Test Plan: testplan.html
   Artifacts: artifacts.html
   Downloads: downloads.html

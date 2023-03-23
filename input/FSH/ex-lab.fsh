@@ -20,11 +20,11 @@ Usage: #inline
 * status = #available
 * type.text = "FECES"
 * collection.collectedDateTime = 1995-07-30
-* identifier[+].value = "6Y100" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabSpecimenTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabSpecimenTO.6Y100" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * accessionIdentifier.value = "PARAS 95 264"
-* accessionIdentifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"
+* accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
 
 Instance: ex-MHV-labTest-1
@@ -49,9 +49,9 @@ Usage: #inline
 * status = #final
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code.text = "Parasitology Remark(s)"
-* identifier.value = "MI;7049269;1"
-* identifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"
-* identifier.use = #usual
+* identifier[TOid].value = "LabTestTO.MI;7049269;1"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * valueString = "NO OVA OR PARASITES FOUND"
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -72,9 +72,9 @@ Example from a mock labReportTO
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * issued = 1995-08-03T14:49:00Z
-* identifier[+].value = "MI;7049269" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabReportTO.MI;7049269" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * contained[+] = ex-MHV-labTest-1
 * result[+] = Reference(ex-MHV-labTest-1)
 * contained[+] = ex-MHV-specimen-1
@@ -109,11 +109,11 @@ Usage: #inline
 * status = #available
 * type.text = "FECES"
 * collection.collectedDateTime = 1995-07-29T07:00:00Z
-* identifier[+].value = "6Y100" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabSpecimenTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabSpecimenTO.6Y100" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * accessionIdentifier.value = "PARAS 95 263"
-* accessionIdentifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"
+* accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
 
 Instance: ex-MHV-labTest-2
@@ -138,9 +138,9 @@ Usage: #inline
 * status = #final
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code.text = "Parasitology Remark(s)"
-* identifier.value = "MI;7049269.93;1"
-* identifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"
-* identifier.use = #usual
+* identifier[TOid].value = "LabTestTO.MI;7049269.93;1"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * valueString = "NO OVA OR PARASITES FOUND"
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -168,9 +168,9 @@ Usage: #inline
 * status = #final
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code.text = "Parasitology Remark(s)"
-* identifier.value = "MI;7049269.93;2"
-* identifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"
-* identifier.use = #usual
+* identifier[TOid].value = "LabTestTO.MI;7049269.93;2"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * valueString = "MODERATE WBC'S SEEN"
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -198,9 +198,9 @@ Usage: #inline
 * status = #final
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code.text = "Parasitology Remark(s)"
-* identifier.value = "MI;7049269.93;3"
-* identifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"
-* identifier.use = #usual
+* identifier[TOid].value = "LabTestTO.MI;7049269.93;3"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * valueString = "MODERATE YEAST"
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -223,9 +223,9 @@ Example from a mock labReportTO
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * issued = 1995-08-03T14:49:00Z
-* identifier[+].value = "MI;7049269.93" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabReportTO.MI;7049269.93" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * contained[+] = ex-MHV-labTest-2
 * result[+] = Reference(ex-MHV-labTest-2)
 * contained[+] = ex-MHV-labTest-3
@@ -266,11 +266,11 @@ Usage: #inline
 * status = #available
 * type.text = "FECES"
 * collection.collectedDateTime = 1995-07-28
-* identifier[+].value = "6Y100" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabSpecimenTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabSpecimenTO.6Y100" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * accessionIdentifier.value = "PARAS 95 262"
-* accessionIdentifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"
+* accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
 
 Instance: ex-MHV-labTest-5
@@ -295,9 +295,9 @@ Usage: #inline
 * status = #final
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code.text = "Parasitology Remark(s)"
-* identifier.value = "MI;7049271;1"
-* identifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"
-* identifier.use = #usual
+* identifier[TOid].value = "LabTestTO.MI;7049271;1"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * valueString = "REJECTED=LEAKED"
 * effectiveDateTime = 1995-08-01T11:07:00Z
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -325,9 +325,9 @@ Usage: #inline
 * status = #final
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code.text = "Parasitology Remark(s)"
-* identifier.value = "MI;7049271;2"
-* identifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"
-* identifier.use = #usual
+* identifier[TOid].value = "LabTestTO.MI;7049271;2"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * valueString = "MODERATE WBC'S SEEN"
 * effectiveDateTime = 1995-08-01T11:07:00Z
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -355,9 +355,9 @@ Usage: #inline
 * status = #final
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * code.text = "Parasitology Remark(s)"
-* identifier.value = "MI;7049271;3"
-* identifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabTestTO.id"
-* identifier.use = #usual
+* identifier[TOid].value = "LabTestTO.MI;7049271;3"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * valueString = "MODERATE YEAST"
 * effectiveDateTime = 1995-08-01T11:07:00Z
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -380,8 +380,9 @@ Example from a mock labReportTO
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1995-08-01T11:07:00Z
 * issued = 1995-08-01T11:07:00Z
-* identifier[+].value = "MI;7049271" 
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabReportTO.MI;7049271" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * contained[+] = ex-MHV-labTest-5
 * result[+] = Reference(ex-MHV-labTest-5)
 * contained[+] = ex-MHV-labTest-6
@@ -419,7 +420,7 @@ Usage: #inline
 * type.text = "OLD HARDWARE LEFT FOOT X2"
 * collection.collectedDateTime = 2000-08-09
 * accessionIdentifier.value = "SP 00 1982"
-* accessionIdentifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"
+* accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
 
 
@@ -439,9 +440,9 @@ Example from a mock labReportTO
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 2000-08-10T15:56:00Z
 * issued = 2000-08-10T15:56:00Z
-* identifier[+].value = "SP;6999190" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabReportTo.SP;6999190" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-4
 * specimen[+] = Reference(ex-MHV-specimen-4)
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -487,7 +488,7 @@ Usage: #inline
 * type.text = "POLYPS (A) CECAL,        (B) PROXIMAL ASCENDING,        (C) RECTAL"
 * collection.collectedDateTime = 1999-09-24
 * accessionIdentifier.value = "SP 99 2207"
-* accessionIdentifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"
+* accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
 
 
@@ -507,9 +508,9 @@ Example from a mock labReportTO
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1999-09-27T13:07:00Z
 * issued = 1999-09-27T13:07:00Z
-* identifier[+].value = "SP;7009075" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabReportTO.SP;7009075" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-5
 * specimen[+] = Reference(ex-MHV-specimen-5)
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -576,7 +577,7 @@ Usage: #inline
 * type.text = "POLYP @ 12CM"
 * collection.collectedDateTime = 1999-08-09
 * accessionIdentifier.value = "SP 99 1804"
-* accessionIdentifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"
+* accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
 
 
@@ -596,9 +597,9 @@ Example from a mock labReportTO
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1999-08-11T16:09:00Z
 * issued = 1999-08-11T16:09:00Z
-* identifier[+].value = "SP;7009190" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabReportTO.SP;7009190" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-6
 * specimen[+] = Reference(ex-MHV-specimen-6)
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -643,7 +644,7 @@ Usage: #inline
 * type.text = "(A) BONE FROM RIGHT FOOT, (B) BONE RIGHT FOOT"
 * collection.collectedDateTime = 1997-09-08
 * accessionIdentifier.value = "SP 97 2091"
-* accessionIdentifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"
+* accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
 
 
@@ -663,9 +664,9 @@ Example from a mock labReportTO
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1997-09-09T13:13:00Z
 * issued = 1997-09-09T13:13:00Z
-* identifier[+].value = "SP;7029091" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabReportTO.SP;7029091" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-7
 * specimen[+] = Reference(ex-MHV-specimen-7)
 * performer = Reference(Organization/ex-MHV-organization-989)
@@ -698,7 +699,7 @@ Usage: #inline
 * type.text = "BONE FRAGMENTS, LEFT FOOT"
 * collection.collectedDateTime = 1997-05-12
 * accessionIdentifier.value = "SP 97 1099"
-* accessionIdentifier.system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"
+* accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
 
 
@@ -718,9 +719,9 @@ Example from a mock labReportTO
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1997-05-14T09:54:00Z
 * issued = 1997-05-14T09:54:00Z
-* identifier[+].value = "SP;7029487" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "LabReportTO.SP;7029487" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-8
 * specimen[+] = Reference(ex-MHV-specimen-8)
 * performer = Reference(Organization/ex-MHV-organization-989)

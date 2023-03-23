@@ -43,15 +43,15 @@ TODO Questions:
   accessionNumber 0..* and
   casenum 0..* 
 * identifier[TOid].use = #usual
-* identifier[TOid].system ^short = "system for given Vista site and ImagingExamTO.id"
-* identifier[TOid].value ^short = "ImagingExamTO.id"
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`ImagingExamTO` | `.` | {ImagingExamTO.id}"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = http://terminology.hl7.org/CodeSystem/v2-0203#ACSN
-* identifier[accessionNumber].system ^short = "system for given Vista site and AccessionNumber"
-* identifier[accessionNumber].value ^short = "ImagingExamTO.accessionNum"
+* identifier[accessionNumber].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[accessionNumber].value ^short = "`Accession` | `.` | {ImagingExamTO.accessionNum}"
 * identifier[casenum].use = #secondary
-* identifier[casenum].system ^short = "system for given Vista site and casenum"
-* identifier[casenum].value ^short = "ImagingExam.casenum"
+* identifier[casenum].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[casenum].value ^short = "`CaseNum` | `.` | {ImagingExam.casenum}"
 
 
 Mapping: ImagingExam-Mapping
@@ -67,7 +67,7 @@ Title: "VDIF to MHV-PHR"
 * author -> "GetPractitioner(ImagingStudyTO.provider.[UserTO])"
 * subject -> "GetPatient()"
 * custodian -> "GetLocation(ImagingExamTO.imagingLocation)"
-* identifier[TOid] -> "ImagingExamTO.id"
+* identifier[TOid] -> "{StationNbr} and {ImagingExamTO.id}"
 * identifier[accessionNumber] -> "ImagingExamTO.accessionNum"
 * identifier[casenum] -> "ImagingExamTO.casenum"
 * date -> "ConvertDate(ImagingExamTO.timestamp)"

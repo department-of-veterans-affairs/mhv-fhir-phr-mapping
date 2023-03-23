@@ -13,7 +13,15 @@ A profile on the Location resource for MHV PHR exposing Location using FHIR API.
 
 Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto).
 """
-
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..1
+* identifier[TOid].use = #usual
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].value ^short = "`HospitalLocationTO` | `.` | {HospitalLocationTO.id}"
 
 /*
       <s:complexType name="HospitalLocationTO">
@@ -76,9 +84,9 @@ Title: "Location DAYTSHR TEST Lab"
 Description: "This example derived off of a mock HospitalLocationTO"
 Usage: #example
 * name = "DAYTSHR TEST LAB"
-* identifier[+].use = #official
-* identifier[=].value = "984"
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/HospitalLocationTO"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "HospitalLocationTO.984"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
 
 /*
     <location>
@@ -92,6 +100,22 @@ Title: "Location DAYTON Lab"
 Description: "This example derived off of a mock NoteTO"
 Usage: #example
 * name = "DAYTON"
-* identifier[+].use = #official
-* identifier[=].value = "552"
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/HospitalLocationTO"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "HospitalLocationTO.552"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
+
+/* 
+<location>
+  <id>989</id>
+  <name>DAYT29 TEST LAB</name>
+</location>
+*/
+Instance: ex-MHV-location-989
+InstanceOf: MHVlocation
+Title: "Location DAYT29 TEST Lab"
+Description: "This example derived off of a mock ClinicalProcedureTO"
+Usage: #example
+* name = "DAYT29 TEST LAB"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "HospitalLocationTO.989"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"

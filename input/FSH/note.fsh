@@ -31,6 +31,15 @@ TODO Questions:
   - subject
 """
 * identifier 1..
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..1
+* identifier[TOid].use = #usual
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`NoteTO` | `.` | {NoteTO.id}"
 
 Mapping: Notes-Mapping
 Source:	MHVnote

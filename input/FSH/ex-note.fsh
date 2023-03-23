@@ -9,9 +9,9 @@ Derived from the a mock NoteTO:
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
-* identifier[+].value = "5281919" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/NoteTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "NoteTO.5281919" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * date = 2022-08-12T12:50:56Z
 * content.attachment.title = "Adverse React/Allergy"
 * type = LOINC#83320-2 "Allergy and Immunology Adverse event note"
@@ -34,9 +34,9 @@ Derived from the a mock NoteTO:
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
-* identifier[+].value = "5281863" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/NoteTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "NoteTO.5281863" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * date = 2022-08-05T16:56:00Z
 * content.attachment.title = "Adverse React/Allergy"
 * type = LOINC#11505-5 "Physician procedure note"
@@ -58,9 +58,9 @@ Derived from the a mock NoteTO:
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
-* identifier[+].value = "5281856" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/NoteTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "NoteTO.5281856" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * date = 2022-08-05T11:23:54Z
 * content.attachment.title = "Adverse React/Allergy"
 * type = LOINC#83320-2 "Allergy and Immunology Adverse event note"
@@ -82,9 +82,9 @@ Derived from the a mock NoteTO:
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
-* identifier[+].value = "5281855" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/NoteTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "NoteTO.5281855" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * date = 2022-08-05T11:22:39Z
 * content.attachment.title = "Adverse React/Allergy"
 * type = LOINC#83320-2 "Allergy and Immunology Adverse event note"
@@ -109,9 +109,9 @@ Note dropped cosigner
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
-* identifier[+].value = "5281877" 
-* identifier[=].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/NoteTO.id"
-* identifier[=].use = #usual
+* identifier[TOid].value = "NoteTO.5281877" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
 * date = 2022-08-09T13:41:23Z
 * content.attachment.title = "Discharge Summary"
 * type = LOINC#18842-5 "Discharge summary"

@@ -33,14 +33,24 @@ TODO questions:
 * container 0..0
 * condition 0..0
 * note 0..0
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..1
+* identifier[TOid].use = #usual
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`LabSpecimenTO` | `.` | {LabSpecimenTO.id}"
+
 
 Mapping: Lab-Mapping-LabSpecimenTO
 Source: MHVlabSpecimen
 Target: "LabSpecimen"
 Title: "VDIF to MHV-PHR"
 * -> "LabSpecimenTO" "MHV PHR FHIR API"
-* identifier -> "LabSpecimenTO.id"
-* accessionIdentifier -> "LabSpecimenTO.accessionNum"
+* identifier -> "{StationNbr} and {LabSpecimenTO.id}"
+* accessionIdentifier -> "{StationNbr} and {LabSpecimenTO.accessionNum}"
 * status -> "`available`"
 * type.text -> "LabSpecimenTO.name"
 * subject -> "patient"
@@ -72,7 +82,14 @@ TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is t
 - This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.
 """
 * identifier 1..
-
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..1
+* identifier[TOid].use = #usual
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`LabReportTO` | `.` | {LabReportTO.id}"
 
 Mapping: Lab-Mapping-LabReportTO
 Source:	MHVlabReport
@@ -87,7 +104,7 @@ Title: "VDIF to MHV-PHR"
 * basedOn.identifier -> "LabReportTO.caseNumber"
 * conclusion -> "LabReportTO.comment + LabReportTO.text"
 * performer -> "GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)"
-* identifier -> "LabReportTO.id"
+* identifier -> "{StationNbr} and {LabReportTO.id}"
 * specimen -> "Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])"
 * effectiveDateTime -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
 * issued -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
@@ -106,7 +123,14 @@ A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API t
 - sometimes a contained Specimen is needed
 """
 * identifier 1..
-
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..1
+* identifier[TOid].use = #usual
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`LabTestTO` | `.` | {LabTestTO.id}"
 
 
 Mapping: Lab-Mapping-LabResultTO
@@ -115,7 +139,7 @@ Target: "LabTestTO"
 Title: "VDIF to MHV-PHR"
 * -> "LabTestTO / LabResultTO" "MHV PHR FHIR API"
 * specimen -> "Contained Specimen (LabTestTO.specimen.[LabSpecimenTO])"
-* identifier -> "LabTestTO.id"
+* identifier -> "{StationNbr} and {LabTestTO.id}"
 * code.text -> "LabTestTO.name"
 * code.coding -> "LabTestTO.loinc"
 * effectiveDateTime -> "ConvertDate(LabResultTO.timestamp)"

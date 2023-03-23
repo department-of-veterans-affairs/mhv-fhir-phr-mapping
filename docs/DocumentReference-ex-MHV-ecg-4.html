@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA.MHV.PHR.EXAMPLE\ex-MHV-imaging-2 - FHIR v4.0.1</title>
+    <title>VA.MHV.PHR.EXAMPLE\Example 4 of a MHV ECG - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -50,8 +50,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"5.53"}
-    h3,h4,h5,h6{--heading-prefix:"5.53"}</style>
+    <style type="text/css">h2{--heading-prefix:"8.29"}
+    h3,h4,h5,h6{--heading-prefix:"8.29"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.5-beta - ci-build
+            <span style="display:inline-block;">0.1.6-beta - ci-build
 
 
 
@@ -99,8 +99,24 @@
   <li>
     <a href="index.html">Home</a>
   </li>
-  <li>
-    <a href="background.html">Background</a>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">Introduction</a>
+      </li>
+      <li>
+        <a href="utility.html">Utility</a>
+      </li>
+      <li>
+        <a href="ConvertDate.html">ConvertDate</a>
+      </li>
+      <li>
+        <a href="identifier.html">Id vs Identifier</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="testplan.html">Test Plan</a>
@@ -123,15 +139,15 @@
     <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
       <div class="container">  <!-- container -->
         <ul class="breadcrumb">
-          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>ex-MHV-imaging-2</b></li>
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Example 4 of a MHV ECG</b></li>
 
           <span style="float:right;">
 
-            <a href="Practitioner-ex-MHV-practitioner-6051.ttl.html">&lt;prev</a> | 
+            <a href="DocumentReference-ex-MHV-ecg-3.ttl.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="DocumentReference-ex-MHV-imaging-2.xml.html">next&gt;</a>
+          | <a href="DocumentReference-ex-MHV-ecg-4.xml.html">next&gt;</a>
 
           </span>
 
@@ -146,7 +162,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.5-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.6-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
   
 
@@ -167,14 +183,14 @@
 
   
     <li>
-      <a href="DocumentReference-ex-MHV-imaging-2.xml.html">XML</a>
+      <a href="DocumentReference-ex-MHV-ecg-4.xml.html">XML</a>
     </li>
   
 
 
   
     <li>
-      <a href="DocumentReference-ex-MHV-imaging-2.json.html">JSON</a>
+      <a href="DocumentReference-ex-MHV-ecg-4.json.html">JSON</a>
     </li>
   
 
@@ -187,7 +203,7 @@
   <a name="root"> </a>
 
 
-  <h2 id="root">Example DocumentReference: ex-MHV-imaging-2</h2>
+  <h2 id="root">Example DocumentReference: Example 4 of a MHV ECG</h2>
 
   <table class="colsi">
     <tr>
@@ -209,7 +225,62 @@
 
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="ex-MHV-imaging-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;ex-MHV-imaging-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.imaging.html">VA MHV PHR Radiology</a></p></div><p><b>identifier</b>: id: 6979076.8862-1 (use: USUAL), id: 092302-360 (use: OFFICIAL), id: 360 (use: SECONDARY)</p><p><b>status</b>: current</p><p><b>docStatus</b>: final</p><p><b>type</b>: RADIOLOGIC EXAMINATION, CHEST, 2 VIEWS, FRONTAL AND LATERAL; <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#18748-4; <a href="http://terminology.hl7.org/3.1.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#71020)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Sep 24, 2004, 6:25:00 AM</p><p><b>author</b>: </p><ul><li><span>: SUTTON,JOSEPH</span></li><li><span>: DAYT29 TEST LAB</span></li></ul><p><b>custodian</b>: <span>: RADIOLOGY</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td>-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td>*</td><td>text/plain</td><td>Q0hFU1QgMiBWSUVXUyBQQSZhbXA7TEFUCiAgIApFeG0gRGF0ZTogU0VQIDIzLCAyMDAyQDExOjM3ClJlcSBQaHlzOiBQQVRJTCxTQVJBU1dBVEkgICAgICAgICAgICAgICAgUGF0IExvYzogUENUX08gUEFUSUwgKEYvVSkgKFJlcSdnIExvYykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAzNjAgQ09NUExFVEUpICBDSEVTVCAyIFZJRVdTIFBBJmFtcDtMQVQgICAgICAgICAgICAgKFJBRCAgRGV0YWlsZWQpIENQVDo3MTAyMAoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIHB0IGMvbyBjb3VnaCBmb3Igd2tzICxub3QgY2xlYXJpbmcuICByL28gaW5maWx0cmF0ZS4gIAoKICAgIFJlcG9ydCBTdGF0dXM6IFZlcmlmaWVkICAgICAgICAgICAgICAgICAgIERhdGUgUmVwb3J0ZWQ6IFNFUCAyNSwgMjAwMgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRGF0ZSBWZXJpZmllZDogU0VQIDI2LCAyMDAyCiAgICBWZXJpZmllciBFLVNpZzovRVMvSi5FLiBTdXR0b24sIE0uRC4KCiAgICBSZXBvcnQ6CiAgICAgIFBBIGFuZCBsYXRlcmFsIG9mIHRoZSBjaGVzdCBhcmUgY29tcGFyZWQgdG8gYW4gZWFybGllcgogICAgICBleGFtaW5hdGlvbiBkYXRlZCAxMi80LzAwLiAgT25jZSBhZ2Fpbiwgd2Ugc2VlIGNocm9uaWMKICAgICAgb2JzdHJ1Y3RpdmUgcHVsbW9uYXJ5IGRpc2Vhc2UuICBUaGUgYXBpY2VzIG9mIGJvdGggbHVuZ3Mgc2hvdwogICAgICBmaWJyb2NhbGNpZmljIGNoYW5nZXMgY29tcGF0aWJsZSB3aXRoIG9sZCBncmFudWxvbWF0b3VzIGRpc2Vhc2UuIAogICAgICBUaGUgaGlsYXIgcmVnaW9ucyBoYXZlIGJlZW4gcmV0cmFjdGVkIGNlcGhhbGFkLiAgU2V2ZXJhbAogICAgICBkZWZvcm1pdGllcyBmcm9tIG9sZCBoZWFsZWQgcmliIGZyYWN0dXJlcyBhcmUgc2VlbiBvbiB0aGUgcmlnaHQuICAKICAgICAgIAogICAgICBBIGNvbXBhcmlzb24gd2l0aCB0aGUgZWFybGllciBleGFtaW5hdGlvbiBzaG93cyBubyBpbnRlcnZhbAogICAgICBjaGFuZ2UuICAKCiAgICBJbXByZXNzaW9uOgogICAgICAxLiAgQ09QRC4gIE9sZCBncmFudWxvbWF0b3VzIGRpc2Vhc2UuICAKCiAgICBQcmltYXJ5IERpYWdub3N0aWMgQ29kZTogCgpQcmltYXJ5IEludGVycHJldGluZyBTdGFmZjoKICBKT1NFUEggU1VUVE9OLCBSYWRpb2xvZ2lzdCAoVmVyaWZpZXIpCi9HRUc=</td><td>CHEST 2 VIEWS PA&amp;LAT</td><td>2004-09-24 11:25:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td>-</td><td><b>Encounter</b></td><td><b>Related</b></td></tr><tr><td>*</td><td><span/></td><td><span>: CHEST 2 VIEWS PA&amp;LAT</span></td></tr></table></div>
+<div style="display:inline-block" markdown="1">
+
+<p>Derived from the following mock ClinicalProcedureTO:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;clinicalProcedureTO&gt;</span>
+    <span class="nt">&lt;facility&gt;</span>
+        <span class="nt">&lt;sitecode&gt;</span>989<span class="nt">&lt;/sitecode&gt;</span>
+        <span class="nt">&lt;name&gt;</span>DAYT29 TEST LAB<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;/facility&gt;</span>
+    <span class="nt">&lt;name&gt;</span>ELECTROCARDIOGRAM<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;timestamp&gt;</span>DEC 8,1997@11:35<span class="nt">&lt;/timestamp&gt;</span>
+    <span class="nt">&lt;id&gt;</span>6384<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;report&gt;</span>Pg. 1                                                            09/12/22 10:12
+                           CONFIDENTIAL ECG REPORT                            
+MHVLISAONE,ROBERT M    666-12-3456   NOT INPATIENT              DOB: AUG 9,1962
+                      PROCEDURE DATE/TIME: 12/08/97 11:35
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+                                            WARD/CLINIC: CARDIOLOGY OUTPATIENT (LOC)
+    AGE: 35                                 SEX:  MALE
+    HT IN:                                  WT LBS: 
+    BLOOD PRESSURE:                         TYPE: 
+
+         VENT RATE: 085        PR INTERVAL: 136       QRS DURATION: 128
+         QT: 392               QTC: 466
+         P AXIS: 76            R AXIS: 163            T AXIS: 28
+
+    INTERPRETATION: 
+
+    INSTRUMENT DX:  NORMAL SINUS RHYTHM
+                    RIGHT BUNDLE BRANCH BLOCK
+                    LEFT POSTERIOR FASCICULAR BLOCK
+                    *** BIFASCICULAR BLOCK ***
+                    ABNORMAL ECG
+                    WHEN COMPARED WITH ECG OF 03-SEP-1997 14:44,
+                    NO SIGNIFICANT CHANGE WAS FOUND
+
+    CONFIRMATION STATUS: UNCONFIRMED
+
+    COMPARISON: 
+ 
+
+    COMMENTS: 
+
+    HEART MEDS:
+
+    INTERPRETED BY:<span class="nt">&lt;/report&gt;</span>
+<span class="nt">&lt;/clinicalProcedureTO&gt;</span>
+</code></pre></div></div>
+
+
+</div>
+
+
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="ex-MHV-ecg-4"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;ex-MHV-ecg-4&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.ecg.html">VA MHV PHR ECG</a></p></div><p><b>identifier</b>: id: ClinicalProcedureTO.6384 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: EKG study <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#11524-6)</span></p><p><b>category</b>: Cardiology <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#LP29708-2)</span>, Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-1.html">Patient/ex-MHV-patient-1</a> &quot; DAYTSHR&quot;</p><p><b>date</b>: Dec 8, 1997, 5:35:00 AM</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td>-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td></tr><tr><td>*</td><td>text/plain</td><td>UGcuIDEgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAwOS8xMi8yMiAxMDoxMgogICAgICAgICAgICAgICAgICAgICAgICAgICBDT05GSURFTlRJQUwgRUNHIFJFUE9SVCAgICAgICAgICAgICAgICAgICAgICAgICAgICAKTUhWTElTQU9ORSxST0JFUlQgTSAgICA2NjYtMTItMzQ1NiAgIE5PVCBJTlBBVElFTlQgICAgICAgICAgICAgIERPQjogQVVHIDksMTk2MgogICAgICAgICAgICAgICAgICAgICAgUFJPQ0VEVVJFIERBVEUvVElNRTogMTIvMDgvOTcgMTE6MzUKLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAtIC0gLSAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBXQVJEL0NMSU5JQzogQ0FSRElPTE9HWSBPVVRQQVRJRU5UIChMT0MpCiAgICBBR0U6IDM1ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU0VYOiAgTUFMRQogICAgSFQgSU46ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFdUIExCUzogCiAgICBCTE9PRCBQUkVTU1VSRTogICAgICAgICAgICAgICAgICAgICAgICAgVFlQRTogCgogICAgICAgICBWRU5UIFJBVEU6IDA4NSAgICAgICAgUFIgSU5URVJWQUw6IDEzNiAgICAgICBRUlMgRFVSQVRJT046IDEyOAogICAgICAgICBRVDogMzkyICAgICAgICAgICAgICAgUVRDOiA0NjYKICAgICAgICAgUCBBWElTOiA3NiAgICAgICAgICAgIFIgQVhJUzogMTYzICAgICAgICAgICAgVCBBWElTOiAyOAoKICAgIElOVEVSUFJFVEFUSU9OOiAKCiAgICBJTlNUUlVNRU5UIERYOiAgTk9STUFMIFNJTlVTIFJIWVRITQogICAgICAgICAgICAgICAgICAgIFJJR0hUIEJVTkRMRSBCUkFOQ0ggQkxPQ0sKICAgICAgICAgICAgICAgICAgICBMRUZUIFBPU1RFUklPUiBGQVNDSUNVTEFSIEJMT0NLCiAgICAgICAgICAgICAgICAgICAgKioqIEJJRkFTQ0lDVUxBUiBCTE9DSyAqKioKICAgICAgICAgICAgICAgICAgICBBQk5PUk1BTCBFQ0cKICAgICAgICAgICAgICAgICAgICBXSEVOIENPTVBBUkVEIFdJVEggRUNHIE9GIDAzLVNFUC0xOTk3IDE0OjQ0LAogICAgICAgICAgICAgICAgICAgIE5PIFNJR05JRklDQU5UIENIQU5HRSBXQVMgRk9VTkQKCiAgICBDT05GSVJNQVRJT04gU1RBVFVTOiBVTkNPTkZJUk1FRAoKICAgIENPTVBBUklTT046IAogCgogICAgQ09NTUVOVFM6IAoKICAgIEhFQVJUIE1FRFM6CgogICAgSU5URVJQUkVURUQgQlk6</td><td>ELECTROCARDIOGRAM</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td>-</td><td><b>Related</b></td></tr><tr><td>*</td><td><a href="Location-ex-MHV-location-989.html">Location/ex-MHV-location-989</a> &quot;DAYT29 TEST LAB&quot;</td></tr></table></div>
 
   
 
@@ -244,7 +315,7 @@
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="Practitioner-ex-MHV-practitioner-6051.ttl.html">&lt;prev</a>
+                <a href="DocumentReference-ex-MHV-ecg-3.ttl.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -252,7 +323,7 @@
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="DocumentReference-ex-MHV-imaging-2.xml.html">next&gt;</a>
+                <a href="DocumentReference-ex-MHV-ecg-4.xml.html">next&gt;</a>
 
               </td>
             </tr>
@@ -262,7 +333,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.5-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sun, Mar 5, 2023 12:38-0600">2023-03-05</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.6-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 23, 2023 11:34-0500">2023-03-23</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

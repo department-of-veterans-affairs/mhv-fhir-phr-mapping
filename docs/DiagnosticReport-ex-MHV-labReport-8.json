@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Reported</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Identifier:</td><td> id: SP;7029487 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: May 12, 1997        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: May 12, 1997 14:00  Resident: \nDate  completed: May 13, 1997        Accession #: SP 97 1099\nSubmitted by: DEBRA K LATTA MD       Practitioner:DEBRA K LATTA\n-------------------------------------------------------------------------------\nSpecimen: \nBONE FRAGMENTS, LEFT FOOT</p></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID:\u00a01013699147\u00a0(use:\u00a0OFFICIAL))</td></tr><tr><td>When For</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Reported</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Identifier:</td><td> id:\u00a0LabReportTO.SP;7029487\u00a0(use:\u00a0USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: May 12, 1997        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: May 12, 1997 14:00  Resident: \nDate  completed: May 13, 1997        Accession #: SP 97 1099\nSubmitted by: DEBRA K LATTA MD       Practitioner:DEBRA K LATTA\n-------------------------------------------------------------------------------\nSpecimen: \nBONE FRAGMENTS, LEFT FOOT</p></div>"
   },
   "contained" : [{
     "resourceType" : "Specimen",
@@ -14,9 +14,12 @@
     "meta" : {
       "profile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"]
     },
+    "identifier" : [{
+      "use" : "usual"
+    }],
     "accessionIdentifier" : {
       "use" : "usual",
-      "system" : "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
       "value" : "SP 97 1099"
     },
     "status" : "available",
@@ -29,8 +32,8 @@
   }],
   "identifier" : [{
     "use" : "usual",
-    "system" : "https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id",
-    "value" : "SP;7029487"
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "LabReportTO.SP;7029487"
   }],
   "status" : "final",
   "category" : [{

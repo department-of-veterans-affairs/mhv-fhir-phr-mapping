@@ -16,12 +16,15 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"ex-MHV-organization-989\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;ex-MHV-organization-989&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.organization.html\">VA MHV PHR Organization</a></p></div><p><b>identifier</b>: id: 989 (use: OFFICIAL)</p><p><b>active</b>: true</p><p><b>name</b>: Lab Site 989</p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Organization</b><a name=\"ex-MHV-organization-989\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Organization &quot;ex-MHV-organization-989&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.organization.html\">VA MHV PHR Organization</a></p></div><p><b>identifier</b>: id: LabSiteTO.989 (use: USUAL), id: 1234</p><p><b>active</b>: true</p><p><b>name</b>: Lab Site 989</p></div>"
   ] ; # 
   fhir:identifier ( [
-     fhir:use [ fhir:v "official" ] ;
-     fhir:system [ fhir:v "http://example.org/LabSiteTO"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "989" ]
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "LabSiteTO.989" ]
+  ] [
+     fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1234" ]
   ] ) ; # 
   fhir:active [ fhir:v "true"^^xsd:boolean] ; # 
   fhir:name [ fhir:v "Lab Site 989"] . # 

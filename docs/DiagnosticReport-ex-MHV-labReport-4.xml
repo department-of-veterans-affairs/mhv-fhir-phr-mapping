@@ -6,7 +6,7 @@
     <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 60567-5}">LR SURGICAL PATHOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Reported</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Identifier:</td><td> id: SP;6999190 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 60567-5}">LR SURGICAL PATHOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Reported</td><td>2000-08-10 15:56:00+0000</td></tr><tr><td>Identifier:</td><td> id: LabReportTo.SP;6999190 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD
 Date Spec rec'd: Aug 09, 2000 16:14  Resident: 
 Date  completed: Aug 10, 2000        Accession #: SP 00 1982
 Submitted by: MARK MAZUR MD          Practitioner:MARK MAZUR DPM
@@ -34,9 +34,12 @@ DIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)</p></div>
       <meta>
         <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"/>
       </meta>
+      <identifier>
+        <use value="usual"/>
+      </identifier>
       <accessionIdentifier>
         <use value="usual"/>
-        <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/Accession.id"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
         <value value="SP 00 1982"/>
       </accessionIdentifier>
       <status value="available"/>
@@ -50,8 +53,8 @@ DIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)</p></div>
   </contained>
   <identifier>
     <use value="usual"/>
-    <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/LabReportTO.id"/>
-    <value value="SP;6999190"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="LabReportTo.SP;6999190"/>
   </identifier>
   <status value="final"/>
   <category>
