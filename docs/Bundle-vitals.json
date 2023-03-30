@@ -1,0 +1,52 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "vitals",
+  "type" : "transaction",
+  "timestamp" : "2023-03-29T19:27:08.445Z",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce",
+    "resource" : {
+      "resourceType" : "Observation",
+      "id" : "urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce",
+      "meta" : {
+        "profile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"]
+      },
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.vitals.html\">VA MHV PHR Vital-Signs</a></p></div><p><b>identifier</b>: id:\u00a02200921\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: WEIGHT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#29463-7 &quot;Body weight&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-2.html\">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>effective</b>: </p><p><b>value</b>: 148 lb<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code lb = 'lb')</span></p></div>"
+      },
+      "identifier" : [{
+        "use" : "usual",
+        "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+        "value" : "2200921"
+      }],
+      "status" : "final",
+      "category" : [{
+        "coding" : [{
+          "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code" : "vital-signs"
+        }]
+      }],
+      "subject" : {
+        "reference" : "Patient/ex-MHV-patient-2"
+      },
+      "code" : {
+        "text" : "WEIGHT",
+        "coding" : [{
+          "system" : "http://loinc.org",
+          "code" : "29463-7",
+          "display" : "Body weight"
+        }]
+      },
+      "valueQuantity" : {
+        "value" : 148,
+        "system" : "http://unitsofmeasure.org",
+        "code" : "lb"
+      }
+    },
+    "request" : {
+      "method" : "POST",
+      "url" : "Observation"
+    }
+  }]
+}

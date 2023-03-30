@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir">
+   <id value="vitals"/>
+   <type value="transaction"/>
+   <timestamp value="2023-03-29T19:27:08.445Z"/>
+
+   <entry>
+      <fullUrl value="urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce"/>
+      <resource>
+         <Observation>
+            <id value="urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce"/>
+            <meta>
+               <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/>
+            </meta>
+            <identifier>
+               <use value="usual"/>
+               <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+               <value value="2200921"/>
+            </identifier>
+            <status value="final"/>
+            <category>
+               <coding>
+                  <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+                  <code value="vital-signs"/>
+               </coding>
+            </category>
+            <subject>
+               <reference value="Patient/ex-MHV-patient-2"/>
+            </subject>
+            <effectiveDateTime>2981202.0837</effectiveDateTime>
+            <code>
+               <text value="WEIGHT"/>
+               <coding>
+                  <system value="http://loinc.org"/>
+                  <code value="29463-7"/>
+                  <display value="Body weight"/>
+               </coding>
+            </code>
+            <valueQuantity>
+               <value value="148"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="lb"/>
+            </valueQuantity>
+         </Observation>
+      </resource>
+      <request>
+         <method value="POST"/>
+         <url value="Observation"/>
+      </request>
+   </entry>
+</Bundle>

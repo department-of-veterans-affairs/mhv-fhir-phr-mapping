@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "0"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.6-beta"] ; # 
+  fhir:version [ fhir:v "0.1.7-beta"] ; # 
   fhir:name [ fhir:v "MHVPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-03-23T11:34:13-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-03-29T16:54:48-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
@@ -744,6 +744,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals> ;
+         fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.vitals" ]
+       ] ;
+       fhir:name [ fhir:v "VA MHV PHR Vital-Signs" ] ;
+       fhir:description [ fhir:v "A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n  - BLOOD PRESSURE (SYSTOLIC BLOOD PRESSURE, DIASTOLIC BLOOD PRESSURE) = 26 (26, 26)\n  - HEIGHT = 12\n  - WEIGHT = 20\n  - PULSE = 20\n  - PAIN = 16\n  - RESPIRATION = 9\n  - TEMPERATURE = 18\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available, but sample code is just strings\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.\n- mock example didn't include, so I don't map\n  - type.shortName, type.dataId, type.dataName, or type.dataType\n  - value2\n  - comments\n  - recorder\n  - observer\n  - facility\n  - location\n  - qualifiers, qualifierItems\n- FETAL HEART TONES, HEARING, VISION CORRECTED, VISION UNCORRECTED - This is in theory in the VitalSignTO data, but I have no example and no clear mapping to loinc\n  - for these and anything else that does not match known map, will simply map strings with no attempt at codes or units\n\nTODO:" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "CapabilityStatement" ]
        ] ) ;
        fhir:reference [
@@ -752,6 +764,18 @@
        ] ;
        fhir:name [ fhir:v "MHVcapabilities" ] ;
        fhir:description [ fhir:v "CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/ConceptMap/ObservationTypeTOVsLoincCode> ;
+         fhir:reference [ fhir:v "ConceptMap/ObservationTypeTOVsLoincCode" ]
+       ] ;
+       fhir:name [ fhir:v "Vital Sign ObservationTypeTO.name to Loinc Code" ] ;
+       fhir:description [ fhir:v "map between Vital Sign ObservationTypeTO.name string and LOINC code." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1179,6 +1203,21 @@
          fhir:value [ fhir:v "Location" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Location/ex-MHV-location-2938> ;
+         fhir:reference [ fhir:v "Location/ex-MHV-location-2938" ]
+       ] ;
+       fhir:name [ fhir:v "Location PCT_O PATIL (F/U)" ] ;
+       fhir:description [ fhir:v "This example derived off of a mock VitalSignTO" ] ;
+       fhir:example [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location"^^xsd:anyURI ;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.location>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Location" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/Location/ex-MHV-location-552> ;
          fhir:reference [ fhir:v "Location/ex-MHV-location-552" ]
        ] ;
@@ -1461,14 +1500,41 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Observation/ex-MHV-vitals-1> ;
+         fhir:reference [ fhir:v "Observation/ex-MHV-vitals-1" ]
+       ] ;
+       fhir:name [ fhir:v "Example 1 of an MHV vital-sign" ] ;
+       fhir:description [ fhir:v "Example from a mock VitalSignTO" ] ;
+       fhir:example [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"^^xsd:anyURI ;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Bundle" ]
        ] ) ;
        fhir:reference [
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/Bundle/images> ;
          fhir:reference [ fhir:v "Bundle/images" ]
        ] ;
-       fhir:name [ fhir:v "Example Bundle of Images response" ] ;
+       fhir:name [ fhir:v "Example Bundle of Images" ] ;
        fhir:description [ fhir:v "An example of a transaction Bundle with many image reports as DocumentReference" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Bundle" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Bundle/vitals> ;
+         fhir:reference [ fhir:v "Bundle/vitals" ]
+       ] ;
+       fhir:name [ fhir:v "Example Bundle of Vitals" ] ;
+       fhir:description [ fhir:v "An example of a transaction Bundle with many vitals reports as Observation" ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] ) ;
      fhir:page [

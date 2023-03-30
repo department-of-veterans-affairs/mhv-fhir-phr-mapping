@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="vitals"/>
+  <type value="transaction"/>
+  <timestamp value="2023-03-29T19:27:08.445Z"/>
+  <entry>
+    <fullUrl value="urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce"/>
+    <resource>
+      <Observation>
+        <id value="urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce"/>
+        <meta>
+          <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;urn:uuid:236838b0-bea2-405d-beff-0ebd604239ce&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.vitals.html">VA MHV PHR Vital-Signs</a></p></div><p><b>identifier</b>: id: 2200921 (use: USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: WEIGHT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#29463-7 &quot;Body weight&quot;)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-2.html">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>effective</b>: </p><p><b>value</b>: 148 lb<span style="background: LightGoldenRodYellow"> (Details: UCUM code lb = 'lb')</span></p></div>
+        </text>
+        <identifier>
+          <use value="usual"/>
+          <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+          <value value="2200921"/>
+        </identifier>
+        <status value="final"/>
+        <category>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+            <code value="vital-signs"/>
+          </coding>
+        </category>
+        <subject>
+          <reference value="Patient/ex-MHV-patient-2"/>
+        </subject>
+        <effectiveDateTime/>
+        <code>
+          <text value="WEIGHT"/>
+          <coding>
+            <system value="http://loinc.org"/>
+            <code value="29463-7"/>
+            <display value="Body weight"/>
+          </coding>
+        </code>
+        <valueQuantity>
+          <value value="148"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="lb"/>
+        </valueQuantity>
+      </Observation>
+    </resource>
+    <request>
+      <method value="POST"/>
+      <url value="Observation"/>
+    </request>
+  </entry>
+</Bundle>

@@ -119,3 +119,19 @@ Usage: #example
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.989"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
+
+/*
+    <location>
+        <id>2938</id>
+        <name>PCT_O PATIL (F/U)</name>
+    </location>
+*/
+Instance: ex-MHV-location-2938
+InstanceOf: MHVlocation
+Title: "Location PCT_O PATIL (F/U)"
+Description: "This example derived off of a mock VitalSignTO"
+Usage: #example
+* name = "PCT_O PATIL (F/U)"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "HospitalLocationTO.2938"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"

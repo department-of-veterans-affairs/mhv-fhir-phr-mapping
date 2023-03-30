@@ -1,1 +1,1 @@
-java -jar c:\saxon\saxon.jar -xsl:imagingxslt.xslt -s:radiology.xml -o:..\input\examples\images.xml 
+java -jar c:\saxon\saxon-pe-11.5.jar -xsl:vitalsxslt.xslt -s:vitals.xml -o:..\input\examples\vitals.xml 

@@ -23,7 +23,7 @@ Map to [VDIF labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.htm
 * identifier contains
   TOid 1..*
 * identifier[TOid].system 1..1
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349" (exactly)
+* identifier[TOid] ^patternIdentifier.system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[TOid].value ^short = "`LabSiteTO` | `.` | {LabSiteTO.id}"
 * identifier[TOid].use = #usual
 

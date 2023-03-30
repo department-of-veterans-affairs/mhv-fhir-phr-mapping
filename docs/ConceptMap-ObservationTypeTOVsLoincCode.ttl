@@ -1,0 +1,215 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/ConceptMap/ObservationTypeTOVsLoincCode> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ObservationTypeTOVsLoincCode"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>ObservationTypeTOVsLoincCode (https://johnmoehrke.github.io/MHV-PHR/ConceptMap/ObservationTypeTOVsLoincCode)</h2><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-03-29 by John Moehrke (himself) (John Moehrke (himself): <a href=\"http://healthcaresecprivacy.blogspot.com\">http://healthcaresecprivacy.bl...</a>, <a href=\"mailto:JohnMoehrke@gmail.com\">JohnMoehrke@gmail.com</a>, John Moehrke (himself): <a href=\"mailto:JohnMoehrke@gmail.com\">JohnMoehrke@gmail.com</a>). </p><div><p>map between Vital Sign ObservationTypeTO.name string and LOINC code.</p>\n</div><br/><p><b>Group 1</b>Mapping from <code>http://service.via.med.va.gov/ObservationTypeTO</code> to <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-loinc.html\">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>ABDMONAL GIRTH</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>LP31969-6 (Abdominal circumference)</td><td>seems like possible match</td></tr><tr><td>AUDIOMETRY</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#wider\" title=\"wider\">maps to wider concept</a></td><td>89015-2 (Pure tone threshold audiometry panel)</td><td>seems like possible match</td></tr><tr><td>BLOOD PRESSURE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>85354-9 (Blood pressure panel with all children optional)</td><td/></tr><tr><td>TEMPERATURE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>8310-5 (Body temperature)</td><td/></tr><tr><td>CENTRAL VENOUS PRESSURE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>8591-0 (Central venous pressure (CVP) Mean)</td><td>seems like possible match</td></tr><tr><td>CIRCUMFERENCE%2FGIRTH</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>56086-2 (Adult Waist Circumference Protocol)</td><td>seems like possible match</td></tr><tr><td>FETAL HEART TONES</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#inexact\" title=\"inexact\">maps loosely to</a></td><td>55283-6 (Fetal Heart rate)</td><td>Not likely correct as tones vs rate</td></tr><tr><td>FUNDAL HEIGHT</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>11881-0 (Uterus Fundal height Tape measure)</td><td/></tr><tr><td>HEADCIRCUMFERENCE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>9843-4 (Head Occipital-frontal circumference)</td><td/></tr><tr><td>HEARING</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#inexact\" title=\"inexact\">maps loosely to</a></td><td>58232-0 (Hearing loss risk indicators [Identifier])</td><td>Not clear if this is Hearing Loss</td></tr><tr><td>HEIGHT</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>8302-2 (Body height)</td><td/></tr><tr><td>PAIN</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>72514-3 (Pain severity - 0-10 verbal numeric rating [Score] - Reported)</td><td/></tr><tr><td>PULSE OXIMETRY</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>2708-6 (Oxygen saturation in Arterial blood)</td><td/></tr><tr><td>PULSE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>8867-4 (Heart rate)</td><td/></tr><tr><td>RESPIRATION</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>9279-1 (Respiratory Rate)</td><td/></tr><tr><td>TONOMETRY</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td>LP76227-5 (Tonometry)</td><td>seems like possible match</td></tr><tr><td>VISION CORRECTED</td><td colspan=\"3\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>VISION UNCORRECTED</td><td colspan=\"3\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>WEIGHT</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>29463-7 (Body weight)</td><td/></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "0"^^xsd:integer ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
+           fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
+           fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/ConceptMap/ObservationTypeTOVsLoincCode"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.1.7-beta"] ; # 
+  fhir:name [ fhir:v "ObservationTypeTOVsLoincCode"] ; # 
+  fhir:title [ fhir:v "Vital Sign ObservationTypeTO.name to Loinc Code"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-03-29"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://healthcaresecprivacy.blogspot.com" ]
+     ] [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "map between Vital Sign ObservationTypeTO.name string and LOINC code."] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "To be able to use proper LOINC code in the FHIR Observation"] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "http://service.via.med.va.gov/ObservationTypeTO"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "ABDMONAL GIRTH" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "LP31969-6" ] ;
+         fhir:display [ fhir:v "Abdominal circumference" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "seems like possible match" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "AUDIOMETRY" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "89015-2" ] ;
+         fhir:display [ fhir:v "Pure tone threshold audiometry panel" ] ;
+         fhir:equivalence [ fhir:v "wider" ] ;
+         fhir:comment [ fhir:v "seems like possible match" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "BLOOD PRESSURE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "85354-9" ] ;
+         fhir:display [ fhir:v "Blood pressure panel with all children optional" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "TEMPERATURE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8310-5" ] ;
+         fhir:display [ fhir:v "Body temperature" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "CENTRAL VENOUS PRESSURE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8591-0" ] ;
+         fhir:display [ fhir:v "Central venous pressure (CVP) Mean" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "seems like possible match" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "CIRCUMFERENCE%2FGIRTH" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "56086-2" ] ;
+         fhir:display [ fhir:v "Adult Waist Circumference Protocol" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "seems like possible match" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FETAL HEART TONES" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "55283-6" ] ;
+         fhir:display [ fhir:v "Fetal Heart rate" ] ;
+         fhir:equivalence [ fhir:v "inexact" ] ;
+         fhir:comment [ fhir:v "Not likely correct as tones vs rate" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "FUNDAL HEIGHT" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "11881-0" ] ;
+         fhir:display [ fhir:v "Uterus Fundal height Tape measure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HEADCIRCUMFERENCE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "9843-4" ] ;
+         fhir:display [ fhir:v "Head Occipital-frontal circumference" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HEARING" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "58232-0" ] ;
+         fhir:display [ fhir:v "Hearing loss risk indicators [Identifier]" ] ;
+         fhir:equivalence [ fhir:v "inexact" ] ;
+         fhir:comment [ fhir:v "Not clear if this is Hearing Loss" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "HEIGHT" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8302-2" ] ;
+         fhir:display [ fhir:v "Body height" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "PAIN" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "72514-3" ] ;
+         fhir:display [ fhir:v "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "PULSE OXIMETRY" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "2708-6" ] ;
+         fhir:display [ fhir:v "Oxygen saturation in Arterial blood" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "PULSE" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "8867-4" ] ;
+         fhir:display [ fhir:v "Heart rate" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "RESPIRATION" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "9279-1" ] ;
+         fhir:display [ fhir:v "Respiratory Rate" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "TONOMETRY" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "LP76227-5" ] ;
+         fhir:display [ fhir:v "Tonometry" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "seems like possible match" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "VISION CORRECTED" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "VISION UNCORRECTED" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "WEIGHT" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "29463-7" ] ;
+         fhir:display [ fhir:v "Body weight" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+
