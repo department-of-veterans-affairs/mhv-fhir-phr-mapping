@@ -1,7 +1,7 @@
 
 
 Instance:   ex-MHV-vitals-1
-InstanceOf: VA.MHV.PHR.vitals
+InstanceOf: VA.MHV.PHR.vitalsBP
 Usage: #example
 Title: "Example 1 of an MHV vital-sign"
 Description: """
@@ -33,10 +33,39 @@ Example from a mock VitalSignTO
 * identifier[TOid].use = #usual
 * code.text = "BLOOD PRESSURE"
 * code.coding = LOINC#85354-9 "Blood pressure panel with all children optional"
-* subject = Reference(ex-MHV-patient-2)
+* subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = 2004-09-24T11:17:54Z
-* component[+].code = LOINC#8480-6 "Systolic blood pressure"
-* component[=].valueQuantity = 126 'mm[Hg]'
-* component[+].code = LOINC#8462-4 "Diastolic blood pressure"
-* component[=].valueQuantity = 70 'mm[Hg]'
+* component[systolic].code = LOINC#8480-6 "Systolic blood pressure"
+* component[systolic].valueQuantity = 126 'mm[Hg]'
+* component[systolic].valueQuantity.unit = "mmHg"
+* component[diastolic].code = LOINC#8462-4 "Diastolic blood pressure"
+* component[diastolic].valueQuantity = 70 'mm[Hg]'
+* component[diastolic].valueQuantity.unit = "mmHg"
 
+Instance:   ex-MHV-pain-1
+InstanceOf: VA.MHV.PHR.vitalsPain
+Title: "Example of a MHV pain R4 observation of 10"
+Description:      "holding typical values"
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #final
+* category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
+* code.coding = LOINC#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.text = "PAIN"
+* subject = Reference(Patient/ex-MHV-patient-2)
+* effectiveDateTime = 2004-12-25T23:50:50-05:00
+* valueQuantity.value = 10 
+* note.text = "Oh, scream in pain"
+
+Instance:   ex-MHV-heartRate-1
+InstanceOf: VA.MHV.PHR.vitals
+Title: "Example of an MHV heartRate R4 observation"
+Description:      "Heart Rate holding typical values"
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #final
+* category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
+* code.coding = LOINC#8867-4 "Heart rate"
+* code.text = "PULSE"
+* subject = Reference(Patient/ex-MHV-patient-2)
+* effectiveDateTime = 2004-12-25T23:50:50-05:00
+* valueQuantity = 185 '/min' 
+* note.text = "a bit fast"

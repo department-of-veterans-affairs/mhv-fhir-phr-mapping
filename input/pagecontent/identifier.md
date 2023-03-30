@@ -42,6 +42,7 @@ LabSpecimenTO.id | `LabSpecimen`
 LabResultTO.labSiteId | `labSiteId`
 LabTestTO.id | `LabTestTO`
 ImagingExamTO.id | `ImagingExamTO`
+{: .grid}
 
 Thus for a ClinicalProcedureTO.id value of 1234 from site 989. (I assume 989 is a test site that shows up in the test data often)
 

@@ -17,7 +17,7 @@
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-03-29T16:54:48-05:00"/>
+  <date value="2023-03-30T12:22:18-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -665,7 +665,29 @@
         <reference value="StructureDefinition/VA.MHV.PHR.vitals"/>
       </reference>
       <name value="VA MHV PHR Vital-Signs"/>
-      <description value="A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;  - BLOOD PRESSURE (SYSTOLIC BLOOD PRESSURE, DIASTOLIC BLOOD PRESSURE) = 26 (26, 26)&#xA;  - HEIGHT = 12&#xA;  - WEIGHT = 20&#xA;  - PULSE = 20&#xA;  - PAIN = 16&#xA;  - RESPIRATION = 9&#xA;  - TEMPERATURE = 18&#xA;- Should be based on US-Core for Vital-Signs Observation Resource&#xA;- status of `final`&#xA;- category code of `vital-signs`&#xA;- code should be LOINC if available, but sample code is just strings&#xA;- patient&#xA;- Not preserving the VitalSignTO.low and .high as they are referenceRange&#xA;- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.&#xA;- mock example didn't include, so I don't map&#xA;  - type.shortName, type.dataId, type.dataName, or type.dataType&#xA;  - value2&#xA;  - comments&#xA;  - recorder&#xA;  - observer&#xA;  - facility&#xA;  - location&#xA;  - qualifiers, qualifierItems&#xA;- FETAL HEART TONES, HEARING, VISION CORRECTED, VISION UNCORRECTED - This is in theory in the VitalSignTO data, but I have no example and no clear mapping to loinc&#xA;  - for these and anything else that does not match known map, will simply map strings with no attempt at codes or units&#xA;&#xA;TODO:"/>
+      <description value="A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.&#xA;&#xA;- Should be based on US-Core for Vital-Signs Observation Resource&#xA;- status of `final`&#xA;- category code of `vital-signs`&#xA;- code should be LOINC if available&#xA;  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)&#xA;  - note some of these codes are high confidence, many are not&#xA;- patient&#xA;- Not preserving the VitalSignTO.low and .high as they are referenceRange&#xA;- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.&#xA;  - Blood Pressure is recorded with `.component` rather than `.value[x]`&#xA;- some examples had units, so I used `.valueQuantity`&#xA;  - all unknown value types I record using `.valueString`&#xA;  - some units are not proper UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)&#xA;- mock example didn't include these elements, so I don't map&#xA;  - type.shortName, type.dataId, type.dataName, or type.dataType&#xA;  - value2&#xA;  - facility&#xA;  - location&#xA;  - qualifiers, qualifierItems"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.vitalsBP"/>
+      </reference>
+      <name value="VA MHV PHR Vital-Signs for Blood Pressure"/>
+      <description value="A profile on the Observation resource for Blood Pressure&#xA;&#xA;- Used only with Blood-Pressure&#xA;- Should be based on US-Core for Vital-Signs Observation Resource&#xA;- status of `final`&#xA;- category code of `vital-signs`&#xA;- code should be LOINC if available&#xA;  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)&#xA;- patient&#xA;- Not preserving the VitalSignTO.low and .high as they are referenceRange&#xA;- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.&#xA;  - Blood Pressure is recorded with `.component` rather than `.value[x]`"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.vitalsPain"/>
+      </reference>
+      <name value="VA MHV PHR Vital-Signs for PAIN"/>
+      <description value="A profile on the Observation resource for Pain&#xA;&#xA;- Should be based on US-Core for Vital-Signs Observation Resource&#xA;- status of `final`&#xA;- category code of `vital-signs`&#xA;- code should be LOINC if available&#xA;  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)&#xA;- patient&#xA;- Not preserving the VitalSignTO.low and .high as they are referenceRange&#xA;- Note the pain integer is stored in quantity, as that is what PGHD has been using."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -687,7 +709,7 @@
         <reference value="ConceptMap/ObservationTypeTOVsLoincCode"/>
       </reference>
       <name value="Vital Sign ObservationTypeTO.name to Loinc Code"/>
-      <description value="map between Vital Sign ObservationTypeTO.name string and LOINC code."/>
+      <description value="map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -876,6 +898,17 @@
       <name value="Example 5 of a MHV ECG"/>
       <description value="Derived from the a mock ClinicalProcedureTO:"/>
       <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ex-MHV-heartRate-1"/>
+      </reference>
+      <name value="Example of an MHV heartRate R4 observation"/>
+      <description value="Heart Rate holding typical values"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1110,6 +1143,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ex-MHV-pain-1"/>
+      </reference>
+      <name value="Example of a MHV pain R4 observation of 10"/>
+      <description value="holding typical values"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Patient"/>
       </extension>
       <reference>
@@ -1227,7 +1271,7 @@
       </reference>
       <name value="Example 1 of an MHV vital-sign"/>
       <description value="Example from a mock VitalSignTO"/>
-      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1314,6 +1358,17 @@
         </extension>
         <nameUrl value="identifier.html"/>
         <title value="Id vs Identifier"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="vitals.html"/>
+        </extension>
+        <nameUrl value="vitals.html"/>
+        <title value="Vitals"/>
         <generation value="markdown"/>
       </page>
       <page>

@@ -43,28 +43,34 @@ exclude-result-prefixes="soap ns2 uuid saxon"
 
                 <identifier>
                     <use value="usual"/>
-                    <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImagingExam.id"/>  <!-- TODO: system should be derived from Vista site -->
+                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>   <!-- TODO: should be derived from Vista site, using 989 -->
                     <value>
                     <xsl:attribute name="value">
-                        <xsl:value-of select="id" />
+                        <xsl:value-of select="concat('ImagingExamTO.',id)" />
                     </xsl:attribute>
                     </value>
                 </identifier>
                 <identifier>
                     <use value="official"/>
-                    <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/AccessionNumber"/>  <!-- TODO: system should be derived from Vista site -->
+                    <type>
+                        <coding>
+                            <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                            <code value="ACSN"/>
+                        </coding>
+                    </type>
+                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!-- TODO: should be derived from Vista site, using 989 -->
                     <value>
                     <xsl:attribute name="value">
-                        <xsl:value-of select="radiologyReportTO/accessionNumber" />
+                        <xsl:value-of select="concat('Accession..', radiologyReportTO/accessionNumber)" />
                     </xsl:attribute>
                     </value>
                 </identifier>
                     <identifier>
                     <use value="secondary"/>
-                    <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/Casenum"/>  <!-- TODO: system should be derived from Vista site -->
+                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>    <!-- TODO: should be derived from Vista site, using 989 -->
                     <value>
                     <xsl:attribute name="value">
-                        <xsl:value-of select="casenum" />
+                        <xsl:value-of select="concat('CaseNum.', casenum)" />
                     </xsl:attribute>
                     </value>
                 </identifier>
@@ -214,8 +220,6 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                   </xsl:if>
                 </context>
                   </xsl:if>
-
-
 
                 </DocumentReference>
             </resource>

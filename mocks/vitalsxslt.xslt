@@ -39,7 +39,17 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </id>
 
                 <meta>
-                    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/>
+                   <xsl:choose>
+                    <xsl:when test="type/name = 'BLOOD PRESSURE'">
+                        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"/>
+                    </xsl:when>
+                    <xsl:when test="type/name = 'PAIN'">
+                        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/>
+                    </xsl:otherwise>
+                    </xsl:choose>
                 </meta>
 
                 <identifier>
@@ -47,22 +57,83 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!-- TODO: system should be derived from Vista site -->
                     <value>
                     <xsl:attribute name="value">
-                        <xsl:value-of select="type/id" />
+                        <xsl:value-of select="concat('VitalSignTO.', type/id)" />
                     </xsl:attribute>
                     </value>
                 </identifier>
+
                 <status value="final"/>
 
-                <!-- code is added later, could use the ConceptMap() -->
                 <category>
                     <coding>
                     <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
                     <code value="vital-signs"/>
                     </coding>
                 </category>
+
+                <code>
+                   <xsl:choose>
+                    <xsl:when test="type/name = 'BLOOD PRESSURE'">
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="85354-9"/>
+                            <display value="Blood pressure panel with all children optional"/>
+                        </coding>
+                     </xsl:when>
+                     <xsl:when test="type/name = 'HEIGHT'">
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="8302-2"/>
+                            <display value="Body height"/>
+                        </coding>
+                     </xsl:when>
+                     <xsl:when test="type/name = 'WEIGHT'">
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="29463-7"/>
+                            <display value="Body weight"/>
+                        </coding>
+                     </xsl:when>
+                     <xsl:when test="type/name = 'PULSE'">
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="8867-4"/>
+                            <display value="Heart rate"/>
+                        </coding>
+                     </xsl:when>
+                     <xsl:when test="type/name = 'PAIN'">
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="72514-3"/>
+                            <display value="Pain severity - 0-10 verbal numeric rating [Score] - Reported"/>
+                        </coding>
+                     </xsl:when>
+                     <xsl:when test="type/name = 'RESPIRATION'">
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="9279-1"/>
+                            <display value="Respiratory Rate"/>
+                        </coding>
+                     </xsl:when>
+                     <xsl:when test="type/name = 'TEMPERATURE'">
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="8310-5"/>
+                            <display value="Body temperature"/>
+                        </coding>
+                     </xsl:when>
+                    </xsl:choose>
+                    <text>
+                    <xsl:attribute name="value">
+                        <xsl:value-of select="type/name" />
+                    </xsl:attribute>
+                    </text>
+                </code>
+
                 <subject>
                     <reference value="Patient/ex-MHV-patient-2"/>  <!-- TODO: patient should come from patient lookup -->
                 </subject>
+
                 <effectiveDateTime>
                   <xsl:attribute name="value">
                     <xsl:variable name="datetime">
@@ -73,17 +144,6 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     <xsl:value-of select="$datetime" /> 
                   </xsl:attribute>
                 </effectiveDateTime>
-
-                <xsl:if test="boolean(comments)">
-                  <note>
-                    <text>
-                        <xsl:attribute name="value">
-                            <xsl:value-of select="comments" />
-                        </xsl:attribute>        
-                    </text>
-                  </note>
-                </xsl:if>
-                <!-- Note the following will only record one, but could record both -->
 
                 <xsl:if test="boolean(recorder)">
                 <performer>
@@ -118,250 +178,136 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </performer>
                 </xsl:if>
 
-                   <xsl:choose>
-<!-- blood pressure -->
+                <xsl:choose>
                     <xsl:when test="type/name = 'BLOOD PRESSURE'">
+                        <!-- no value[x] -->
+                    </xsl:when>
+                    <xsl:when test="
+                     (type/name = 'HEIGHT') or
+                     (type/name = 'WEIGHT') or
+                     (type/name = 'PULSE') or
+                     (type/name = 'RESPIRATION') or
+                     (type/name = 'TEMPERATURE')
+                     ">
+                        <valueQuantity>
+                            <value>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="value1"/>
+                                </xsl:attribute>
+                            </value>
+                            <system value="http://unitsofmeasure.org"/>
+                            <xsl:choose> <!-- some vista ucum units are not proper -->
+                            <xsl:when test="units = 'in'">
+                                <code value="[in_i]"/>
+                            </xsl:when>
+                            <xsl:when test="units = 'lb'">
+                                <code value="[lb_av]"/>
+                            </xsl:when>
+                            <xsl:otherwise>
+                                <code>
+                                  <xsl:attribute name="value">
+                                      <xsl:value-of select="units"/>
+                                  </xsl:attribute>
+                                </code>
+                            </xsl:otherwise>
+                            </xsl:choose>
+                        </valueQuantity>
+                    </xsl:when>
+                    <xsl:when test="type/name = 'PAIN'">
+                        <valueQuantity>
+                            <value>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="value1"/>
+                                </xsl:attribute>
+                            </value>
+                        </valueQuantity>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:choose>
+                            <xsl:when test="units != ''">
+                                <valueQuantity>
+                                    <value>
+                                        <xsl:attribute name="value">
+                                            <xsl:value-of select="value1"/>
+                                        </xsl:attribute>
+                                    </value>
+                                    <system value="http://unitsofmeasure.org"/>
+                                    <code>
+                                        <xsl:attribute name="value">
+                                            <xsl:value-of select="units"/>
+                                        </xsl:attribute>
+                                    </code>
+                                </valueQuantity>   
+                            </xsl:when>   
+                            <xsl:otherwise>
+                                <valueString>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="value1"/>
+                                </xsl:attribute>
+                                </valueString>
+                            </xsl:otherwise>
+                        </xsl:choose>
+                    </xsl:otherwise>
+                </xsl:choose>
 
+                <xsl:if test="boolean(comments)">
+                  <note>
+                    <text>
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="comments" />
+                        </xsl:attribute>        
+                    </text>
+                  </note>
+                </xsl:if>
+
+                <xsl:if test="type/name = 'BLOOD PRESSURE'">
+                    <component>
                         <code>
-                            <text>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="type/name" />
-                            </xsl:attribute>
-                            </text>
                             <coding>
-                                <system value="http://loinc.org"/>
-                                <code value="85354-9"/>
-                                <display value="Blood pressure panel with all children optional"/>
-                            </coding>
-                        </code>
-                         <component>
-                           <code>
-                             <coding>
                                 <system value="http://loinc.org"/>
                                 <code value="8480-6"/>
                                 <display value="Systolic blood pressure"/>
-                              </coding>
+                            </coding>
+                        </code>
+                        <valueQuantity>
+                            <value>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="substring-before(value1, '/')"/>
+                                </xsl:attribute>
+                            </value>
+                            <unit value="mmHg"/>
+                            <system value="http://unitsofmeasure.org"/>
+                            <code>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="units"/>
+                                </xsl:attribute>
                             </code>
-                            <valueQuantity>
-                              <value>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="substring-before(value1, '/')"/>
-                                  </xsl:attribute>
-                              </value>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="units"/>
-                                  </xsl:attribute>
-                              </code>
-                            </valueQuantity>
-                         </component>
-
-                         <component>
-                           <code>
-                             <coding>
-                                 <system value="http://lonc.org"/>
-                                 <code value="8462-4"/>
-                                <display value="Diastolic blood pressure"/>
-                              </coding>
+                        </valueQuantity>
+                    </component>
+                    <component>
+                        <code>
+                            <coding>
+                                <system value="http://loinc.org"/>
+                                <code value="8462-4"/>
+                            <display value="Diastolic blood pressure"/>
+                            </coding>
+                        </code>
+                        <valueQuantity>
+                            <value>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="substring-after(value1, '/')"/>
+                                </xsl:attribute>
+                            </value>
+                            <unit value="mmHg"/>
+                            <system value="http://unitsofmeasure.org"/>
+                            <code>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="units"/>
+                                </xsl:attribute>
                             </code>
-                            <valueQuantity>
-                              <value>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="substring-after(value1, '/')"/>
-                                  </xsl:attribute>
-                              </value>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="units"/>
-                                  </xsl:attribute>
-                              </code>
-                            </valueQuantity>
-                         </component>
-                     </xsl:when>
-<!-- height -->
-                     <xsl:when test="type/name = 'HEIGHT'">
-                        <code>
-                            <text>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="type/name" />
-                            </xsl:attribute>
-                            </text>
-                            <coding>
-                                <system value="http://loinc.org"/>
-                                <code value="8302-2"/>
-                                <display value="Body height"/>
-                            </coding>
-                        </code>
-                        <valueQuantity>
-                              <value>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="value1"/>
-                                  </xsl:attribute>
-                              </value>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="units"/>
-                                  </xsl:attribute>
-                              </code>
-                            </valueQuantity>
-                     </xsl:when>
-<!-- weight -->
-                     <xsl:when test="type/name = 'WEIGHT'">
-                        <code>
-                            <text>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="type/name" />
-                            </xsl:attribute>
-                            </text>
-                            <coding>
-                                <system value="http://loinc.org"/>
-                                <code value="29463-7"/>
-                                <display value="Body weight"/>
-                            </coding>
-                        </code>
-                        <valueQuantity>
-                              <value>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="value1"/>
-                                  </xsl:attribute>
-                              </value>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="units"/>
-                                  </xsl:attribute>
-                              </code>
-                            </valueQuantity>
-                     </xsl:when>
-<!-- pulse -->
-                     <xsl:when test="type/name = 'PULSE'">
-                        <code>
-                            <text>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="type/name" />
-                            </xsl:attribute>
-                            </text>
-                            <coding>
-                                <system value="http://loinc.org"/>
-                                <code value="8867-4"/>
-                                <display value="Heart rate"/>
-                            </coding>
-                        </code>
-                        <valueQuantity>
-                              <value>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="value1"/>
-                                  </xsl:attribute>
-                              </value>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="units"/>
-                                  </xsl:attribute>
-                              </code>
-                            </valueQuantity>
-                     </xsl:when>
-<!-- pain -->
-                     <xsl:when test="type/name = 'PAIN'">
-                        <code>
-                            <text>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="type/name" />
-                            </xsl:attribute>
-                            </text>
-                            <coding>
-                                <system value="http://loinc.org"/>
-                                <code value="72514-3"/>
-                                <display value="Pain severity - 0-10 verbal numeric rating [Score] - Reported"/>
-                            </coding>
-                        </code>
-                        <valueQuantity>
-                              <value>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="value1"/>
-                                  </xsl:attribute>
-                              </value>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="units"/>
-                                  </xsl:attribute>
-                              </code>
-                            </valueQuantity>
-                     </xsl:when>
-<!-- respiration -->
-                     <xsl:when test="type/name = 'RESPIRATION'">
-                        <code>
-                            <text>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="type/name" />
-                            </xsl:attribute>
-                            </text>
-                            <coding>
-                                <system value="http://loinc.org"/>
-                                <code value="9279-1"/>
-                                <display value="Respiratory Rate"/>
-                            </coding>
-                        </code>
-                        <valueQuantity>
-                              <value>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="value1"/>
-                                  </xsl:attribute>
-                              </value>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="units"/>
-                                  </xsl:attribute>
-                              </code>
-                            </valueQuantity>
-                     </xsl:when>
-<!-- temperature -->
-                     <xsl:when test="type/name = 'TEMPERATURE'">
-                        <code>
-                            <text>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="type/name" />
-                            </xsl:attribute>
-                            </text>
-                            <coding>
-                                <system value="http://loinc.org"/>
-                                <code value="8310-5"/>
-                                <display value="Body temperature"/>
-                            </coding>
-                        </code>
-                        <valueQuantity>
-                              <value>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="value1"/>
-                                  </xsl:attribute>
-                              </value>
-                              <system value="http://unitsofmeasure.org"/>
-                              <code>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="units"/>
-                                  </xsl:attribute>
-                              </code>
-                            </valueQuantity>
-                     </xsl:when>
-<!-- otherwise -->
-                     <xsl:otherwise>
-                        <code>
-                            <text>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="type/name" />
-                            </xsl:attribute>
-                            </text>
-                        </code>
-                        <valueString>
-                            <xsl:value-of select="value1" />
-                        </valueString>        
-                      </xsl:otherwise>
-                    </xsl:choose>
+                        </valueQuantity>
+                    </component>
+                </xsl:if>
 
                 </Observation>
             </resource>

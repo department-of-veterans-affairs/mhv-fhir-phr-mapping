@@ -47,6 +47,7 @@ TODO Questions:
 * identifier contains
   TOid 1..1
 * identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`ImmunizationTO` | `.` | {ImmunizationTO.id}"
 * note 0..1

@@ -20,6 +20,7 @@ Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-map
 * identifier contains
   TOid 1..1
 * identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[TOid].value ^short = "`HospitalLocationTO` | `.` | {HospitalLocationTO.id}"
 
@@ -86,7 +87,7 @@ Usage: #example
 * name = "DAYTSHR TEST LAB"
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.984"
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 
 /*
     <location>
@@ -102,7 +103,7 @@ Usage: #example
 * name = "DAYTON"
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.552"
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 
 /* 
 <location>
@@ -118,7 +119,7 @@ Usage: #example
 * name = "DAYT29 TEST LAB"
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.989"
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 
 /*
     <location>
@@ -134,4 +135,4 @@ Usage: #example
 * name = "PCT_O PATIL (F/U)"
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.2938"
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"

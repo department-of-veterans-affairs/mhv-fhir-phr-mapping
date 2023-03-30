@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-heartRate-1"/>
+  <meta>
+    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="ex-MHV-heartRate-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;ex-MHV-heartRate-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.vitals.html">VA MHV PHR Vital-Signs</a></p></div><p><b>identifier</b>: id: ?ngen-9? (use: USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: PULSE <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#8867-4 &quot;Heart rate&quot;)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-2.html">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>effective</b>: 2004-12-25 23:50:50-0500</p><p><b>value</b>: 185 /min<span style="background: LightGoldenRodYellow"> (Details: UCUM code /min = '/min')</span></p><p><b>note</b>: a bit fast</p></div>
+  </text>
+  <identifier>
+    <use value="usual"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="8867-4"/>
+      <display value="Heart rate"/>
+    </coding>
+    <text value="PULSE"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-2"/>
+  </subject>
+  <effectiveDateTime value="2004-12-25T23:50:50-05:00"/>
+  <valueQuantity>
+    <value value="185"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="/min"/>
+  </valueQuantity>
+  <note>
+    <text value="a bit fast"/>
+  </note>
+</Observation>

@@ -71,6 +71,15 @@ For every context use of a concept encoded as a string, we presume they are uniq
 
 A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possiblly update of the given ConceptMap.
 
+#### UCUM code
+
+Some of the codes used in Vista are not proper codes.
+| Vista code | Proper UCUM |
+|------------|-------------|
+`in` | `[in_i]`
+`lb` | `[lb_av]`
+{: .grid}
+
 #### Identifier
 
 See [Identifier vs id](identifier.html)

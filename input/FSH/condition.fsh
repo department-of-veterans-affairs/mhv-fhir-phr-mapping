@@ -28,8 +28,9 @@ TODO:
 * identifier[TOid].use = #usual
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`ProblemTO` | `.` | {ProblemTO.id}"
-* code.text MS
-* code.coding MS
+* code 1..1 MS
+* code.text 1..1 MS
+* code.coding 1..1 MS
 
 
 Mapping: Condition-Mapping

@@ -13,11 +13,11 @@ Derived from the a mock ImagingExamTO:
 * identifier[TOid].value = "ImagingExamTO.6959075.8874-1" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
-* identifier[accessionNumber].value = "092404-1582" 
-* identifier[accessionNumber].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/AccessionNumber"
+* identifier[accessionNumber].value = "Accession.092404-1582" 
+* identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[accessionNumber].use = #official
-* identifier[casenum].value = "1582" 
-* identifier[casenum].system = "https://johnmoehrke.github.io/MHV-PHR/Vista/111/Casenum"
+* identifier[casenum].value = "CaseNum.1582" 
+* identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].use = #secondary
 * context.encounter.identifier.value = "5886199"
 * custodian.identifier.value = "2267"

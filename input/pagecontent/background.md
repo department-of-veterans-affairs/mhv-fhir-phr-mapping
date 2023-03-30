@@ -32,10 +32,7 @@ MyHealtheVet acts as a FHIR Server.
 - [ECG](StructureDefinition-VA.MHV.PHR.ecg.html)
   - [Mapping from VDIF - ClinicalProcedureTO](StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-vdif-to-mhv-phr-clinicalprocedureto)
   - [Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
-- [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html)
-  - [Mapping from VDIF - VitalSignTO](StructureDefinition-VA.MHV.PHR.vitals-mappings.html#mappings-for-vdif-to-mhv-phr-vitalsignto)
-  - [Concept Map from VitalSignTO.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)
-  - [Examples](StructureDefinition-VA.MHV.PHR.vitals-examples.html)
+- [Vitals](vitals.html)
 
 ### todo
 

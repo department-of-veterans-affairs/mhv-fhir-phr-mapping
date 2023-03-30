@@ -18,7 +18,7 @@
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-03-29T16:54:48-05:00",
+  "date" : "2023-03-30T12:22:18-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -856,7 +856,31 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.vitals"
       },
       "name" : "VA MHV PHR Vital-Signs",
-      "description" : "A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n  - BLOOD PRESSURE (SYSTOLIC BLOOD PRESSURE, DIASTOLIC BLOOD PRESSURE) = 26 (26, 26)\n  - HEIGHT = 12\n  - WEIGHT = 20\n  - PULSE = 20\n  - PAIN = 16\n  - RESPIRATION = 9\n  - TEMPERATURE = 18\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available, but sample code is just strings\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.\n- mock example didn't include, so I don't map\n  - type.shortName, type.dataId, type.dataName, or type.dataType\n  - value2\n  - comments\n  - recorder\n  - observer\n  - facility\n  - location\n  - qualifiers, qualifierItems\n- FETAL HEART TONES, HEARING, VISION CORRECTED, VISION UNCORRECTED - This is in theory in the VitalSignTO data, but I have no example and no clear mapping to loinc\n  - for these and anything else that does not match known map, will simply map strings with no attempt at codes or units\n\nTODO:",
+      "description" : "A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.\n\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available\n  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)\n  - note some of these codes are high confidence, many are not\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.\n  - Blood Pressure is recorded with `.component` rather than `.value[x]`\n- some examples had units, so I used `.valueQuantity`\n  - all unknown value types I record using `.valueString`\n  - some units are not proper UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)\n- mock example didn't include these elements, so I don't map\n  - type.shortName, type.dataId, type.dataName, or type.dataType\n  - value2\n  - facility\n  - location\n  - qualifiers, qualifierItems",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.vitalsBP"
+      },
+      "name" : "VA MHV PHR Vital-Signs for Blood Pressure",
+      "description" : "A profile on the Observation resource for Blood Pressure\n\n- Used only with Blood-Pressure\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available\n  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.\n  - Blood Pressure is recorded with `.component` rather than `.value[x]`",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.vitalsPain"
+      },
+      "name" : "VA MHV PHR Vital-Signs for PAIN",
+      "description" : "A profile on the Observation resource for Pain\n\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available\n  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- Note the pain integer is stored in quantity, as that is what PGHD has been using.",
       "exampleBoolean" : false
     },
     {
@@ -880,7 +904,7 @@
         "reference" : "ConceptMap/ObservationTypeTOVsLoincCode"
       },
       "name" : "Vital Sign ObservationTypeTO.name to Loinc Code",
-      "description" : "map between Vital Sign ObservationTypeTO.name string and LOINC code.",
+      "description" : "map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code.",
       "exampleBoolean" : false
     },
     {
@@ -1086,6 +1110,18 @@
       "name" : "Example 5 of a MHV ECG",
       "description" : "Derived from the a mock ClinicalProcedureTO:",
       "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/ex-MHV-heartRate-1"
+      },
+      "name" : "Example of an MHV heartRate R4 observation",
+      "description" : "Heart Rate holding typical values",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"
     },
     {
       "extension" : [{
@@ -1342,6 +1378,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/ex-MHV-pain-1"
+      },
+      "name" : "Example of a MHV pain R4 observation of 10",
+      "description" : "holding typical values",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
       }],
       "reference" : {
@@ -1469,7 +1517,7 @@
       },
       "name" : "Example 1 of an MHV vital-sign",
       "description" : "Example from a mock VitalSignTO",
-      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"
     },
     {
       "extension" : [{
@@ -1570,6 +1618,19 @@
         }],
         "nameUrl" : "identifier.html",
         "title" : "Id vs Identifier",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode" : "informative"
+        },
+        {
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "vitals.html"
+        }],
+        "nameUrl" : "vitals.html",
+        "title" : "Vitals",
         "generation" : "markdown"
       },
       {

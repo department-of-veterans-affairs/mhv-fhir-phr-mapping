@@ -50,8 +50,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"8"}
-    h3,h4,h5,h6{--heading-prefix:"8.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"9"}
+    h3,h4,h5,h6{--heading-prefix:"9.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -568,44 +568,89 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.</p>
 
 <ul>
-  <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.
-    <ul>
-      <li>BLOOD PRESSURE (SYSTOLIC BLOOD PRESSURE, DIASTOLIC BLOOD PRESSURE) = 26 (26, 26)</li>
-      <li>HEIGHT = 12</li>
-      <li>WEIGHT = 20</li>
-      <li>PULSE = 20</li>
-      <li>PAIN = 16</li>
-      <li>RESPIRATION = 9</li>
-      <li>TEMPERATURE = 18</li>
-    </ul>
-  </li>
   <li>Should be based on US-Core for Vital-Signs Observation Resource</li>
   <li>status of <code class="language-plaintext highlighter-rouge">final</code></li>
   <li>category code of <code class="language-plaintext highlighter-rouge">vital-signs</code></li>
-  <li>code should be LOINC if available, but sample code is just strings</li>
+  <li>code should be LOINC if available
+    <ul>
+      <li><a href="ConceptMap-ObservationTypeTOVsLoincCode.html">Concept Map from VitalSignTO.type.name to LOINC code</a></li>
+      <li>note some of these codes are high confidence, many are not</li>
+    </ul>
+  </li>
   <li>patient</li>
   <li>Not preserving the VitalSignTO.low and .high as they are referenceRange</li>
-  <li>Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.</li>
-  <li>mock example didn’t include, so I don’t map
+  <li>Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.
+    <ul>
+      <li>Blood Pressure is recorded with <code class="language-plaintext highlighter-rouge">.component</code> rather than <code class="language-plaintext highlighter-rouge">.value[x]</code></li>
+    </ul>
+  </li>
+  <li>some examples had units, so I used <code class="language-plaintext highlighter-rouge">.valueQuantity</code>
+    <ul>
+      <li>all unknown value types I record using <code class="language-plaintext highlighter-rouge">.valueString</code></li>
+      <li>some units are not proper UCUM, so I had to fix <code class="language-plaintext highlighter-rouge">lb</code> and <code class="language-plaintext highlighter-rouge">in</code> - <a href="utility.html">Utility UCUM</a></li>
+    </ul>
+  </li>
+  <li>mock example didn’t include these elements, so I don’t map
     <ul>
       <li>type.shortName, type.dataId, type.dataName, or type.dataType</li>
       <li>value2</li>
-      <li>comments</li>
-      <li>recorder</li>
-      <li>observer</li>
       <li>facility</li>
       <li>location</li>
       <li>qualifiers, qualifierItems</li>
     </ul>
   </li>
-  <li>FETAL HEART TONES, HEARING, VISION CORRECTED, VISION UNCORRECTED - This is in theory in the VitalSignTO data, but I have no example and no clear mapping to loinc
+</ul>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.vitalsBP.html"
+                     title="StructureDefinition/VA.MHV.PHR.vitalsBP">VA MHV PHR Vital-Signs for Blood Pressure</a>
+               </td>
+               <td>
+<p>A profile on the Observation resource for Blood Pressure</p>
+
+<ul>
+  <li>Used only with Blood-Pressure</li>
+  <li>Should be based on US-Core for Vital-Signs Observation Resource</li>
+  <li>status of <code class="language-plaintext highlighter-rouge">final</code></li>
+  <li>category code of <code class="language-plaintext highlighter-rouge">vital-signs</code></li>
+  <li>code should be LOINC if available
     <ul>
-      <li>for these and anything else that does not match known map, will simply map strings with no attempt at codes or units</li>
+      <li><a href="ConceptMap-ObservationTypeTOVsLoincCode.html">Concept Map from VitalSignTO.type.name to LOINC code</a></li>
+    </ul>
+  </li>
+  <li>patient</li>
+  <li>Not preserving the VitalSignTO.low and .high as they are referenceRange</li>
+  <li>Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.
+    <ul>
+      <li>Blood Pressure is recorded with <code class="language-plaintext highlighter-rouge">.component</code> rather than <code class="language-plaintext highlighter-rouge">.value[x]</code></li>
     </ul>
   </li>
 </ul>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.vitalsPain.html"
+                     title="StructureDefinition/VA.MHV.PHR.vitalsPain">VA MHV PHR Vital-Signs for PAIN</a>
+               </td>
+               <td>
+<p>A profile on the Observation resource for Pain</p>
 
-<p>TODO:</p>
+<ul>
+  <li>Should be based on US-Core for Vital-Signs Observation Resource</li>
+  <li>status of <code class="language-plaintext highlighter-rouge">final</code></li>
+  <li>category code of <code class="language-plaintext highlighter-rouge">vital-signs</code></li>
+  <li>code should be LOINC if available
+    <ul>
+      <li><a href="ConceptMap-ObservationTypeTOVsLoincCode.html">Concept Map from VitalSignTO.type.name to LOINC code</a></li>
+    </ul>
+  </li>
+  <li>patient</li>
+  <li>Not preserving the VitalSignTO.low and .high as they are referenceRange</li>
+  <li>Note the pain integer is stored in quantity, as that is what PGHD has been using.</li>
+</ul>
 </td>
             </tr>
          </tbody>
@@ -626,7 +671,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="ConceptMap/ObservationTypeTOVsLoincCode">Vital Sign ObservationTypeTO.name to Loinc Code</a>
                </td>
                <td>
-<p>map between Vital Sign ObservationTypeTO.name string and LOINC code.</p>
+<p>map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code.</p>
 </td>
             </tr>
          </tbody>
@@ -792,6 +837,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                </td>
                <td>
 <p>Derived from the a mock ClinicalProcedureTO:</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Observation-ex-MHV-heartRate-1.html"
+                     title="Observation/ex-MHV-heartRate-1">Example of an MHV heartRate R4 observation</a>
+               </td>
+               <td>
+<p>Heart Rate holding typical values</p>
 </td>
             </tr>
             <tr>
@@ -987,6 +1041,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="Observation-ex-MHV-pain-1.html" title="Observation/ex-MHV-pain-1">Example of a MHV pain R4 observation of 10</a>
+               </td>
+               <td>
+<p>holding typical values</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="Patient-ex-MHV-patient-0.html" title="Patient/ex-MHV-patient-0">Example MHVLISAONE from PatientTO</a>
                </td>
                <td>
@@ -1146,7 +1208,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 29, 2023 16:54-0500">2023-03-29</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Mar 30, 2023 12:22-0500">2023-03-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -1,6 +1,4 @@
 
-
-
 Profile:        MHVvitals
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs
 //Parent: Observation
@@ -9,34 +7,25 @@ Title:          "VA MHV PHR Vital-Signs"
 Description:    """
 A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.
 
-- The mock example maps best to VIA_v4.0.7_uat.wsdl. 
-  - BLOOD PRESSURE (SYSTOLIC BLOOD PRESSURE, DIASTOLIC BLOOD PRESSURE) = 26 (26, 26)
-  - HEIGHT = 12
-  - WEIGHT = 20
-  - PULSE = 20
-  - PAIN = 16
-  - RESPIRATION = 9
-  - TEMPERATURE = 18
 - Should be based on US-Core for Vital-Signs Observation Resource
 - status of `final`
 - category code of `vital-signs`
-- code should be LOINC if available, but sample code is just strings
+- code should be LOINC if available
+  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)
+  - note some of these codes are high confidence, many are not
 - patient
 - Not preserving the VitalSignTO.low and .high as they are referenceRange
 - Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.
-- mock example didn't include, so I don't map
+  - Blood Pressure is recorded with `.component` rather than `.value[x]`
+- some examples had units, so I used `.valueQuantity`
+  - all unknown value types I record using `.valueString`
+  - some units are not proper UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)
+- mock example didn't include these elements, so I don't map
   - type.shortName, type.dataId, type.dataName, or type.dataType
   - value2
-  - comments
-  - recorder
-  - observer
   - facility
   - location
   - qualifiers, qualifierItems
-- FETAL HEART TONES, HEARING, VISION CORRECTED, VISION UNCORRECTED - This is in theory in the VitalSignTO data, but I have no example and no clear mapping to loinc
-  - for these and anything else that does not match known map, will simply map strings with no attempt at codes or units
-
-TODO:
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -45,12 +34,102 @@ TODO:
 * identifier contains
   TOid 1..
 * identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.id}"
+* status = #final
+* category MS
+* code.text MS
+* code.coding MS
+* basedOn 0..0
+* partOf 0..0
+* subject 1..1
+* focus 0..0
+* encounter 0..0
+* effectiveDateTime 1..1
+* issued
+* performer MS
+* value[x] MS
+* dataAbsentReason 0..0
+* interpretation 0..0
+* note MS 
+* bodySite 0..0
+* method 0..0
+* specimen 0..0
+* device 0..0
+* referenceRange 0..0
+* hasMember 0..0
+* derivedFrom 0..0
+* component MS
+
+Profile:        MHVvitalsPain
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs
+//Parent: Observation
+Id:             VA.MHV.PHR.vitalsPain
+Title:          "VA MHV PHR Vital-Signs for PAIN"
+Description:    """
+A profile on the Observation resource for Pain
+
+- Should be based on US-Core for Vital-Signs Observation Resource
+- status of `final`
+- category code of `vital-signs`
+- code should be LOINC if available
+  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)
+- patient
+- Not preserving the VitalSignTO.low and .high as they are referenceRange
+- Note the pain integer is stored in quantity, as that is what PGHD has been using.
+"""
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..
+* identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.id}"
 * status = #final
 * code.text MS
 * code.coding MS
+* value[x] only Quantity
+* valueQuantity.value ^minValueQuantity = 0 UCUM#{score}
+* valueQuantity.value ^maxValueQuantity = 10 UCUM#{score}
+* component 0..0
 
+Profile:        MHVvitalsBP
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure
+//Parent: Observation
+Id:             VA.MHV.PHR.vitalsBP
+Title:          "VA MHV PHR Vital-Signs for Blood Pressure"
+Description:    """
+A profile on the Observation resource for Blood Pressure
+
+- Used only with Blood-Pressure
+- Should be based on US-Core for Vital-Signs Observation Resource
+- status of `final`
+- category code of `vital-signs`
+- code should be LOINC if available
+  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)
+- patient
+- Not preserving the VitalSignTO.low and .high as they are referenceRange
+- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.
+  - Blood Pressure is recorded with `.component` rather than `.value[x]`
+"""
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..
+* identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.id}"
+* status = #final
+* code.text MS
+* code.coding MS
+* value[x] 0..0
 
 Mapping: Vitals-Mapping
 Source:	MHVvitals
@@ -130,7 +209,7 @@ Title: "VDIF to MHV-PHR"
 Instance:   ObservationTypeTOVsLoincCode
 InstanceOf: ConceptMap
 Title:      "Vital Sign ObservationTypeTO.name to Loinc Code"
-Description: "map between Vital Sign ObservationTypeTO.name string and LOINC code."
+Description: "map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code."
 Usage: #definition
 * url = "https://johnmoehrke.github.io/MHV-PHR/ConceptMap/ObservationTypeTOVsLoincCode"
 * name =  "ObservationTypeTOVsLoincCode"
@@ -139,7 +218,7 @@ Usage: #definition
 * status = #active
 * date = 2023-03-29
 * publisher = "John Moehrke (himself)"
-* description = "map between Vital Sign ObservationTypeTO.name string and LOINC code."
+* description = "Map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code."
 * purpose = "To be able to use proper LOINC code in the FHIR Observation"
 * group.source = "http://service.via.med.va.gov/ObservationTypeTO"
 * group.target = LOINC

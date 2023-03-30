@@ -40,8 +40,10 @@ TODO questions:
 * identifier contains
   TOid 1..1
 * identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`LabSpecimenTO` | `.` | {LabSpecimenTO.id}"
+
 
 
 Mapping: Lab-Mapping-LabSpecimenTO
@@ -90,6 +92,11 @@ TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is t
 * identifier[TOid].use = #usual
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`LabReportTO` | `.` | {LabReportTO.id}"
+* code 1..1 MS
+* code.text 1..1 MS
+* code.text ^short = "LabReportTO.title"
+* code.coding ..1 MS
+* code.coding ^short = "LabReportTO.type -- should be converted to LOINC"
 
 Mapping: Lab-Mapping-LabReportTO
 Source:	MHVlabReport
@@ -131,6 +138,11 @@ A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API t
 * identifier[TOid].use = #usual
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`LabTestTO` | `.` | {LabTestTO.id}"
+* code 1..1 MS
+* code.text 1..1 MS
+* code.text ^short = "LabTestTO.name"
+* code.coding ..1 MS
+* code.coding ^short = "LabTestTO.loinc"
 
 
 Mapping: Lab-Mapping-LabResultTO

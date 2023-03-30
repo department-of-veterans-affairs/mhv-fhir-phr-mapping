@@ -43,13 +43,16 @@ TODO Questions:
   accessionNumber 0..* and
   casenum 0..* 
 * identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`ImagingExamTO` | `.` | {ImagingExamTO.id}"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = http://terminology.hl7.org/CodeSystem/v2-0203#ACSN
+* identifier[accessionNumber].system obeys TOid-startswithoid
 * identifier[accessionNumber].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[accessionNumber].value ^short = "`Accession` | `.` | {ImagingExamTO.accessionNum}"
 * identifier[casenum].use = #secondary
+* identifier[casenum].system obeys TOid-startswithoid
 * identifier[casenum].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[casenum].value ^short = "`CaseNum` | `.` | {ImagingExam.casenum}"
 

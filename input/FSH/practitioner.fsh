@@ -53,9 +53,15 @@ Mapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.ht
 * identifier contains
   TOid 0..*
 * identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`UserTO` | `.` | {UserTO.id}"
 * identifier[TOid].value ^short = "`AuthorTO` | `.` | {AuthorTO.id}"
+
+Invariant: TOid-startswithoid
+Description: "ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}"
+Severity: #error
+Expression: "value.startsWith('urn:oid:2.16.840.1.113883.4.349.4.')"
 
 
 Mapping: Practitioner-UserTO
