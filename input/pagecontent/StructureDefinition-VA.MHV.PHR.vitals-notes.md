@@ -1,7 +1,7 @@
 
-Simple (not fully functional) xslt from SOAP response with ImagingExamTO to FHIR Bundle with DocumentReference:
+Simple (not fully functional) xslt from SOAP response with VitalSignTO to FHIR Bundle with Observation:
 - uses a fixed Patient resource
-- uses fixed system values for identifiers
+- uses fixed site values for identifiers
 - does not lookup location or practitioner resources, just uses the identifier
 
 ```xml

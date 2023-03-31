@@ -7,6 +7,7 @@ Title:          "VA MHV PHR Vital-Signs"
 Description:    """
 A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.
 
+- The mock example maps best to VIA_v4.0.7_uat.wsdl.
 - Should be based on US-Core for Vital-Signs Observation Resource
 - status of `final`
 - category code of `vital-signs`
@@ -15,17 +16,13 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
   - note some of these codes are high confidence, many are not
 - patient
 - Not preserving the VitalSignTO.low and .high as they are referenceRange
-- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.
-  - Blood Pressure is recorded with `.component` rather than `.value[x]`
-- some examples had units, so I used `.valueQuantity`
-  - all unknown value types I record using `.valueString`
-  - some units are not proper UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)
-- mock example didn't include these elements, so I don't map
-  - type.shortName, type.dataId, type.dataName, or type.dataType
-  - value2
-  - facility
-  - location
-  - qualifiers, qualifierItems
+- value
+  - Blood Pressure - no `.value[x]`, but has `.component`
+  - Pain - `.valueInteger`
+  - Those with units use `.valueQuantity` else `.valueString`
+- value units
+  - There is a units within the data, and it seems mostly to be the proper code from the proper code system UCUM
+  - some units are not proper formal UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -60,7 +57,25 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * referenceRange 0..0
 * hasMember 0..0
 * derivedFrom 0..0
-* component MS
+* component 0..0
+
+Mapping: Vitals-Mapping
+Source:	MHVvitals
+Target: "VitalSignTO"
+Title: "VDIF to MHV-PHR"
+* -> "VitalSignTO" "MHV PHR FHIR API"
+* status -> "`final`"
+* category -> "`vital-signs`"
+* code -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
+* subject -> "patient"
+* effectiveDateTime -> "VitalSignTO.timestamp"
+* value[x] -> "VitalSignTO.value1 and VitalSignTO.units"
+* component -> "For BP is used for value1"
+* identifier -> "{StationNbr} and {VitalSignTO.type.id}"
+* performer -> "VitalSignTO.recorder and VitalSignTO.observer"
+* note.text -> "VitalSignTO.comments"
+
+
 
 Profile:        MHVvitalsPain
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-vital-signs
@@ -90,12 +105,51 @@ A profile on the Observation resource for Pain
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.id}"
 * status = #final
+* category MS
 * code.text MS
 * code.coding MS
+* basedOn 0..0
+* partOf 0..0
+* subject 1..1
+* focus 0..0
+* encounter 0..0
+* effectiveDateTime 1..1
+* issued
+* performer MS
+* value[x] MS
+* dataAbsentReason 0..0
+* interpretation 0..0
+* note MS 
+* bodySite 0..0
+* method 0..0
+* specimen 0..0
+* device 0..0
+* referenceRange 0..0
+* hasMember 0..0
+* derivedFrom 0..0
 * value[x] only Quantity
 * valueQuantity.value ^minValueQuantity = 0 UCUM#{score}
 * valueQuantity.value ^maxValueQuantity = 10 UCUM#{score}
 * component 0..0
+
+
+Mapping: VitalsPain-Mapping
+Source:	MHVvitalsPain
+Target: "MHVvitalsPain"
+Title: "VDIF to MHV-PHR"
+* -> "VitalSignTO Pain" "MHV PHR FHIR API"
+* status -> "`final`"
+* category -> "`vital-signs`"
+* code -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
+* subject -> "patient"
+* effectiveDateTime -> "VitalSignTO.timestamp"
+* value[x] -> "VitalSignTO.value1 and VitalSignTO.units"
+* component -> "For BP is used for value1"
+* identifier -> "{StationNbr} and {VitalSignTO.type.id}"
+* performer -> "VitalSignTO.recorder and VitalSignTO.observer"
+* note.text -> "VitalSignTO.comments"
+
+
 
 Profile:        MHVvitalsBP
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-blood-pressure
@@ -129,22 +183,48 @@ A profile on the Observation resource for Blood Pressure
 * status = #final
 * code.text MS
 * code.coding MS
+* category MS
+* code.text MS
+* code.coding MS
+* basedOn 0..0
+* partOf 0..0
+* subject 1..1
+* focus 0..0
+* encounter 0..0
+* effectiveDateTime 1..1
+* issued
+* performer MS
+* dataAbsentReason 0..0
+* interpretation 0..0
+* note MS 
+* bodySite 0..0
+* method 0..0
+* specimen 0..0
+* device 0..0
+* referenceRange 0..0
+* hasMember 0..0
+* derivedFrom 0..0
+* component MS
 * value[x] 0..0
+* component 2..2
 
-Mapping: Vitals-Mapping
-Source:	MHVvitals
-Target: "VitalSignTO"
+Mapping: VitalsBP-Mapping
+Source:	MHVvitalsBP
+Target: "MHVvitalsBP"
 Title: "VDIF to MHV-PHR"
-* -> "VitalSignTO" "MHV PHR FHIR API"
+* -> "VitalSignTO BP" "MHV PHR FHIR API"
 * status -> "`final`"
 * category -> "`vital-signs`"
 * code -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
 * subject -> "patient"
 * effectiveDateTime -> "VitalSignTO.timestamp"
 * value[x] -> "VitalSignTO.value1 and VitalSignTO.units"
+* component -> "For BP is used for value1"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "VitalSignTO.recorder and VitalSignTO.observer"
 * note.text -> "VitalSignTO.comments"
+
+
 
 
 

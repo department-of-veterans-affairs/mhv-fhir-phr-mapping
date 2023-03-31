@@ -60,12 +60,12 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/C
 
 resources:
   Bundle/images:
-    name: Example Bundle of Images
-    description: An example of a transaction Bundle with many image reports as DocumentReference
+    name: Bundle of Radiology results from mock data
+    description: An example of a transaction Bundle with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.
     exampleBoolean: true
   Bundle/vitals:
-    name: Example Bundle of Vitals
-    description: An example of a transaction Bundle with many vitals reports as Observation
+    name: Bundle of Vitals from mock data
+    description: An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/vitals.xml) MHV receives.
     exampleBoolean: true
     
 pages:

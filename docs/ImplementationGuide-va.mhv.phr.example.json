@@ -18,7 +18,7 @@
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-03-30T12:22:18-05:00",
+  "date" : "2023-03-31T07:50:38-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -736,7 +736,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.imaging"
       },
       "name" : "VA MHV PHR Radiology",
-      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n- type LOINC#18748-4 \"Diagnostic imaging study\"\n- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details\n\nTODO Questions:\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - hasImages\n  - imagingType - always was GENERAL RADIOLOGY\n  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?\n  - these never appeared in examples\n    - modifiers\n    - clinicalHX\n    - impression\n    - imagingExamTO\n    - reportId",
+      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n- type LOINC#18748-4 `Diagnostic imaging study`\n- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details\n- An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.\n\nTODO Questions:\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - hasImages\n  - imagingType - always was GENERAL RADIOLOGY\n  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?\n  - these never appeared in examples\n    - modifiers\n    - clinicalHX\n    - impression\n    - imagingExamTO\n    - reportId",
       "exampleBoolean" : false
     },
     {
@@ -856,7 +856,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.vitals"
       },
       "name" : "VA MHV PHR Vital-Signs",
-      "description" : "A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.\n\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available\n  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)\n  - note some of these codes are high confidence, many are not\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.\n  - Blood Pressure is recorded with `.component` rather than `.value[x]`\n- some examples had units, so I used `.valueQuantity`\n  - all unknown value types I record using `.valueString`\n  - some units are not proper UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)\n- mock example didn't include these elements, so I don't map\n  - type.shortName, type.dataId, type.dataName, or type.dataType\n  - value2\n  - facility\n  - location\n  - qualifiers, qualifierItems",
+      "description" : "A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl.\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available\n  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)\n  - note some of these codes are high confidence, many are not\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- value\n  - Blood Pressure - no `.value[x]`, but has `.component`\n  - Pain - `.valueInteger`\n  - Those with units use `.valueQuantity` else `.valueString`\n- value units\n  - There is a units within the data, and it seems mostly to be the proper code from the proper code system UCUM\n  - some units are not proper formal UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)",
       "exampleBoolean" : false
     },
     {
@@ -1527,8 +1527,8 @@
       "reference" : {
         "reference" : "Bundle/images"
       },
-      "name" : "Example Bundle of Images",
-      "description" : "An example of a transaction Bundle with many image reports as DocumentReference",
+      "name" : "Bundle of Radiology results from mock data",
+      "description" : "An example of a transaction Bundle with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.",
       "exampleBoolean" : true
     },
     {
@@ -1539,8 +1539,8 @@
       "reference" : {
         "reference" : "Bundle/vitals"
       },
-      "name" : "Example Bundle of Vitals",
-      "description" : "An example of a transaction Bundle with many vitals reports as Observation",
+      "name" : "Bundle of Vitals from mock data",
+      "description" : "An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/vitals.xml) MHV receives.",
       "exampleBoolean" : true
     }],
     "page" : {

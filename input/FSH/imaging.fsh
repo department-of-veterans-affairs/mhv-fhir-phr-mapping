@@ -7,8 +7,9 @@ A profile on the DocumentReference resource for MHV PHR exposing Radiology note 
 
 - The mock example maps best to VIA_v4.0.7_uat.wsdl. 
 - based on US-Core for Clinical Notes
-- type LOINC#18748-4 "Diagnostic imaging study"
+- type LOINC#18748-4 `Diagnostic imaging study`
 - see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details
+- An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.
 
 TODO Questions:
 - some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.

@@ -71,7 +71,7 @@
   <name value="MHVimagingExam"/>
   <title value="VA MHV PHR Radiology"/>
   <status value="active"/>
-  <date value="2023-03-30T12:22:18-05:00"/>
+  <date value="2023-03-31T07:50:38-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -91,7 +91,7 @@
       <value value="JohnMoehrke@gmail.com"/>
     </telecom>
   </contact>
-  <description value="A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;- based on US-Core for Clinical Notes&#xA;- type LOINC#18748-4 &quot;Diagnostic imaging study&quot;&#xA;- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details&#xA;&#xA;TODO Questions:&#xA;- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.&#xA;  - hasImages&#xA;  - imagingType - always was GENERAL RADIOLOGY&#xA;  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?&#xA;  - these never appeared in examples&#xA;    - modifiers&#xA;    - clinicalHX&#xA;    - impression&#xA;    - imagingExamTO&#xA;    - reportId"/>
+  <description value="A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;- based on US-Core for Clinical Notes&#xA;- type LOINC#18748-4 `Diagnostic imaging study`&#xA;- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details&#xA;- An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.&#xA;&#xA;TODO Questions:&#xA;- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.&#xA;  - hasImages&#xA;  - imagingType - always was GENERAL RADIOLOGY&#xA;  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?&#xA;  - these never appeared in examples&#xA;    - modifiers&#xA;    - clinicalHX&#xA;    - impression&#xA;    - imagingExamTO&#xA;    - reportId"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>

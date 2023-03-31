@@ -29,6 +29,7 @@ MyHealtheVet acts as a FHIR Server.
 - [Radiology](StructureDefinition-VA.MHV.PHR.imaging.html)
   - [Mapping from VDIF - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto)
   - [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
+  - most [examples are within this Bundle](https://johnmoehrke.github.io/MHV-PHR/Bundle-images.html), and thus not individually exposed.
 - [ECG](StructureDefinition-VA.MHV.PHR.ecg.html)
   - [Mapping from VDIF - ClinicalProcedureTO](StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-vdif-to-mhv-phr-clinicalprocedureto)
   - [Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
