@@ -249,8 +249,40 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.labReport.html">LabReport</a> including Microbiology and Pathology
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">Mapping from VDIF - LabReportTO +</a></li>
-      <li><a href="StructureDefinition-VA.MHV.PHR.labReport-examples.html">Examples</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">Mapping from VDIF - LabReportTO +</a>
+        <ul>
+          <li><a href="StructureDefinition-VA.MHV.PHR.labReport-examples.html">Examples</a></li>
+        </ul>
+      </li>
+      <li>Contained <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen.html">Specimen</a>
+        <ul>
+          <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen">VDIF LabSpecimen</a></li>
+        </ul>
+      </li>
+      <li>Contained <a href="StructureDefinition-VA.MHV.PHR.labTest.html">Observation</a>
+        <ul>
+          <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto">VDIF LabTestTO</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="StructureDefinition-VA.MHV.PHR.cbcReport.html">Chem-Hem (CBC) Diagnostic Report</a>
+    <ul>
+      <li><a href="StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">Mapping from HDR labTestPromises to DiagnosticReport</a>
+        <ul>
+          <li><a href="StructureDefinition-VA.MHV.PHR.cbcReport-examples.html">Examples</a></li>
+        </ul>
+      </li>
+      <li>contained <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen.html">Specimen</a>
+        <ul>
+          <li>Mappings from <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR labTestPromises.specimen</a></li>
+        </ul>
+      </li>
+      <li>contained <a href="StructureDefinition-VA.MHV.PHR.cbcTest.html">Observation(s)</a>
+        <ul>
+          <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR labTests</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.condition.html">Conditions</a>
@@ -293,7 +325,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h4 id="in-progress">in progress</h4>
 
 <ul>
-  <li>Allergies???</li>
+  <li>Allergies</li>
+  <li>Chem-Hem -&gt; CBC</li>
 </ul>
 
 <h4 id="other">other</h4>
@@ -407,7 +440,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 31, 2023 07:50-0500">2023-03-31</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 11, 2023 08:45-0500">2023-04-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

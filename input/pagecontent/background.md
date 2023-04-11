@@ -22,7 +22,18 @@ MyHealtheVet acts as a FHIR Server.
   - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
 - [LabReport](StructureDefinition-VA.MHV.PHR.labReport.html) including Microbiology and Pathology
   - [Mapping from VDIF - LabReportTO +](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
+    - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
+  - Contained [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html)
+    - Mapping from [VDIF LabSpecimen](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen)
+  - Contained [Observation](StructureDefinition-VA.MHV.PHR.labTest.html)
+    - Mapping from [VDIF LabTestTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto)
+- [Chem-Hem (CBC) Diagnostic Report](StructureDefinition-VA.MHV.PHR.cbcReport.html) 
+  - [Mapping from HDR labTestPromises to DiagnosticReport](StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)
+    - [Examples](StructureDefinition-VA.MHV.PHR.cbcReport-examples.html)
+  - contained [Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen.html)
+    - Mappings from [HDR labTestPromises.specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen)
+  - contained [Observation(s)](StructureDefinition-VA.MHV.PHR.cbcTest.html)
+    - Mapping from [HDR labTests](StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests)
 - [Conditions](StructureDefinition-VA.MHV.PHR.condition.html)
   - [Mapping from VDIF - ProblemTO](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto)
   - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
@@ -48,7 +59,8 @@ Chem-Hem - from HDR
 
 #### in progress
 
-- Allergies???
+- Allergies
+- Chem-Hem -> CBC
 
 #### other
 

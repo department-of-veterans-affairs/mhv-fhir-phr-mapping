@@ -1,9 +1,9 @@
 ﻿MHVPHR : Validation Results
 =========================================
 
-err = 25, warn = 9, info = 2
+err = 25, warn = 15, info = 4
 IG Publisher Version: 1.3.4
-Generated Fri Mar 31 07:53:38 CDT 2023. FHIR version 4.0.1 for va.mhv.phr.example#0.1.7-beta (canonical = https://johnmoehrke.github.io/MHV-PHR)
+Generated Tue Apr 11 08:49:40 CDT 2023. FHIR version 4.0.1 for va.mhv.phr.example#0.1.7-beta (canonical = https://johnmoehrke.github.io/MHV-PHR)
  Build Errors : 0 / 0 / 0
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\CapabilityStatement-MHVcapabilities : 0 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\ConceptMap-ObservationTypeTOVsLoincCode : 0 / 1 / 1
@@ -60,6 +60,10 @@ Generated Fri Mar 31 07:53:38 CDT 2023. FHIR version 4.0.1 for va.mhv.phr.exampl
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\Practitioner-ex-MHV-practitioner-4262 : 1 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\Practitioner-ex-MHV-practitioner-6051 : 1 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.LabSpecimen : 0 / 0 / 2
+ C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.allergyIntolerance : 0 / 1 / 1
+ C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.cbcReport : 0 / 1 / 2
+ C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.cbcSpecimen : 0 / 1 / 1
+ C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.cbcTest : 0 / 1 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.condition : 6 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.ecg : 0 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.imaging : 0 / 0 / 1
@@ -67,13 +71,15 @@ Generated Fri Mar 31 07:53:38 CDT 2023. FHIR version 4.0.1 for va.mhv.phr.exampl
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.labReport : 6 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.labTest : 6 / 0 / 2
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.location : 0 / 0 / 1
- C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.note : 0 / 0 / 1
+ C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.note : 0 / 2 / 2
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.organization : 0 / 0 / 2
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.patient : 0 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.practitioner : 0 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.vitals : 0 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.vitalsBP : 0 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\StructureDefinition-VA.MHV.PHR.vitalsPain : 0 / 0 / 1
+ C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\ValueSet-LabReportVS : 0 / 0 / 1
+ C:\Users\johnm\git\MHV-PHR\fsh-generated\resources\ValueSet-NoteTypeVS : 0 / 0 / 1
  C:\Users\johnm\git\MHV-PHR\input\examples\images : 0 / 0 / 96
  C:\Users\johnm\git\MHV-PHR\input\examples\vitals : 0 / 0 / 243
 </table>
@@ -150,6 +156,15 @@ ERROR: Practitioner/ex-MHV-practitioner-4262: Practitioner.identifier[0]: Slicin
 ERROR: Practitioner/ex-MHV-practitioner-6051: Practitioner.identifier[0]: Slicing cannot be evaluated: Could not match discriminator (1) for slice [$this] in profile Practitioner.identifier:TOid - the discriminator https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner|0.1.7-beta does not have fixed value, binding or existence assertions
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.LabSpecimen.json ==
 INFORMATION: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen'): The Implementation Guide contains no explicitly linked examples for this profile
+== fsh-generated\resources\StructureDefinition-VA.MHV.PHR.allergyIntolerance.json ==
+WARNING: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\StructureDefinition-VA.MHV.PHR.cbcReport.json ==
+INFORMATION: StructureDefinition/VA.MHV.PHR.cbcReport: StructureDefinition.snapshot.element[26].pattern.ofType(Coding): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
+WARNING: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcReport'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\StructureDefinition-VA.MHV.PHR.cbcSpecimen.json ==
+WARNING: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcSpecimen'): The Implementation Guide contains no examples for this profile
+== fsh-generated\resources\StructureDefinition-VA.MHV.PHR.cbcTest.json ==
+WARNING: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcTest'): The Implementation Guide contains no examples for this profile
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.condition.json ==
 ERROR: https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition#Condition.code.coding: No match found in the generated snapshot: check that the path and definitions are legal in the differential (including order)
 ERROR: https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition#Condition.code.text: No match found in the generated snapshot: check that the path and definitions are legal in the differential (including order)
@@ -176,6 +191,9 @@ ERROR: StructureDefinition/VA.MHV.PHR.labTest: StructureDefinition.differential.
 ERROR: StructureDefinition/VA.MHV.PHR.labTest: StructureDefinition: The profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest has 2 elements in the differential (id: Observation.code.coding, id: Observation.code.text) that don't have a matching element in the snapshot: check that the path and definitions are legal in the differential (including order)
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.location.json ==
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.note.json ==
+WARNING: VA MHV PHR Notes.DocumentReference.type: Unable to check if https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS is a proper subset of http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type - base value set is too large to check
+WARNING: StructureDefinition/VA.MHV.PHR.note: StructureDefinition: Unable to check if https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS is a proper subset of http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type - base value set is too large to check
+INFORMATION: StructureDefinition/VA.MHV.PHR.note: StructureDefinition.snapshot.element[27].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.organization.json ==
 INFORMATION: StructureDefinition/VA.MHV.PHR.organization: StructureDefinition.snapshot.element[12].pattern.ofType(Identifier): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.patient.json ==
@@ -183,5 +201,7 @@ INFORMATION: StructureDefinition/VA.MHV.PHR.organization: StructureDefinition.sn
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.vitals.json ==
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.vitalsBP.json ==
 == fsh-generated\resources\StructureDefinition-VA.MHV.PHR.vitalsPain.json ==
+== fsh-generated\resources\ValueSet-LabReportVS.json ==
+== fsh-generated\resources\ValueSet-NoteTypeVS.json ==
 == input\examples\images.xml ==
 == input\examples\vitals.xml ==

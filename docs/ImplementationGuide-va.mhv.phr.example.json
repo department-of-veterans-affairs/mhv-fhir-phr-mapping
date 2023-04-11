@@ -18,7 +18,7 @@
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-03-31T07:50:38-05:00",
+  "date" : "2023-04-11T08:45:33-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -709,6 +709,54 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.allergyIntolerance"
+      },
+      "name" : "VA MHV PHR Allergy and Intolerance",
+      "description" : "A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.\n\n- The mock example maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. \n- Should be based on US-Core for AllergyIntolerance Resource profile\n- a `clinicalStatus` of the allergy (e.g.,active or resolved)\n  - Given that intoleranceCondition.status is unclear; will presume we only see `active`\n  - set to `active`\n- a `code` which tells you what the patient is allergic to\n  - at least `code.text`\n  - would be good to have a coding, but there does not appear to be any source for that\n- a patient\n- category derived from .allergyType (multiple codes are multiple category)\n  - `D` -> #medication\n  - `F' -> #food\n  - `O` -> #environment\n\nTODO:\n- unclear\n  - `intoleranceCondition.status` is always `F` in the mock data I have been given, so unclear what the meaning is. From the name 'status' I presume this is the status of the allergy, but unclear.\n  - will presume we only get `active`\n  - reaction.reaction.code seems to be a number, but I can't find a codeSystem with these numbers.\n    - would be good to have SNOMED-CT, but this does not seem to be SNOMED",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.cbcReport"
+      },
+      "name" : "VA MHV PHR HDR CBC Report",
+      "description" : "A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (presumed CBC).\n- LOINC#58410-2 'CBC panel - Blood by Automated count'\n\nThe given example aligns with the `Lab.xsd` schema. \n\nThe `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for CBC laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)\n\nThe `labTestPromises.labTests` are each recorded as a FHIR [Observation for CBC result](StructureDefinition-VA.MHV.PHR.cbcTest.html) that is contained in the DiagnosticReport. The map to [HDR cbcTestPromise](StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). \n\nThe `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nThis profile is based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. Following the [US-Core example for CBC](https://www.hl7.org/fhir/us/core/DiagnosticReport-cbc.html)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.cbcSpecimen"
+      },
+      "name" : "VA MHV PHR HDR CBC Specimen",
+      "description" : "A profile showing how the `labTestPromises.specimen` is mapped into a FHIR Specimen.\n\n- This is usually a contained resource, contained in the Lab Report. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - `Specimen.type.text` <- `labTestPromises.specimen.specimenSource`\n- should have a `collectedDateTime` derived from `labTestPromises.specimen.specimenTakenDate`",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.cbcTest"
+      },
+      "name" : "VA MHV PHR CBC labTest",
+      "description" : "A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n- `orderedTestCode -> `.category`\n- 'chemistryResults`\n  - `valueInterpretation` -> `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)\n  - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n  - `testIdentifier` -> `.code`\n  - `referenceRange` -> `.referenceRange`\n  - `labCommentEvents` -> `.note.text`\n  - `observationValue` -> `.valueQuantity.value`\n  - `observationUnits.unit` -> `.valueQuantity.unit`\n  - `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n  - `observationUnits.codingSystem` -> `.valueQuantity.system`\n  - `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - no `.subject` is populated\n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n  - specimen is presumed from the DiagnosticReport",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/VA.MHV.PHR.condition"
       },
       "name" : "VA MHV PHR problems",
@@ -760,7 +808,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.labReport"
       },
       "name" : "VA MHV PHR Lab Report",
-      "description" : "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.\n\nThe given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO\n\nThe LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)\n\nThe LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto). This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.\n\nThe LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen). These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nTODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)\n\n- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.",
+      "description" : "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.\n\nThe given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO\n\nThe LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)\n\nThe LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto).\n\nThe LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nTODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)\n\n- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.",
       "exampleBoolean" : false
     },
     {
@@ -772,7 +820,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.LabSpecimen"
       },
       "name" : "VA MHV PHR Lab Specimen",
-      "description" : "A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.\n\n- This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - Specimen.type.text <- LabSpecimenTO.name\n  - type should be a code derived from LabSpecimenTO.name\n- should have a collectedDateTime derived from LabSpecimenTO.collectionDate\n- may have an identifier - Specimen.identifier <- LabSpecimenTO.id\n  - if no LabSpecimenTO.id is given, then the Specimen resource must be contained\n- should have an accessionIdentifier derived from LabSpecimenTO.accessionNum\n- should have a subject (unless Contained)\n\nTODO questions: \n- examples didn't have much populated\n- not clear what site and facility might contain, so can't tell where they would go\n- some examples are likely FHIR Device (old hardware left foot), so this might change",
+      "description" : "A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.\n\n- This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - `Specimen.type.text` <- `LabSpecimenTO.name`\n  - type should be a code derived from LabSpecimenTO.name\n- should have a `collectedDateTime` derived from `LabSpecimenTO.collectionDate`\n- may have an `identifier` - `Specimen.identifier` <- `LabSpecimenTO.id`\n  - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained\n- should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`\n\nTODO questions: \n- examples didn't have much populated\n- not clear what site and facility might contain, so can't tell where they would go\n- some examples are likely FHIR Device (old hardware left foot), so this might change",
       "exampleBoolean" : false
     },
     {
@@ -808,7 +856,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.note"
       },
       "name" : "VA MHV PHR Notes",
-      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n\nTODO Questions:\n- is standardTitle or type used to differentiate between various note types?\n- type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values\n  - A - LOINC#83320-2 \\\"Allergy and Immunology Adverse event note\\\"\n  - PN - LOINC#11505-5 \\\"Physician procedure note\\\"\n  - DS - LOINC#18842-5 \\\"Discharge summary\\\"\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - serviceCategory\n  - cosigner\n  - hasAdendum\n  - isAddendum\n  - originalNoteID\n  - hasImages\n  - itemId\n  - signatureTimestamp\n  - consultId\n  - surgicalProcId\n  - prfId\n  - parentId\n  - procTimestamp\n  - subject",
+      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n- `type` seems to hold an enum (A, PN, DS). \n  - `A` - LOINC#83320-2 \\\"Allergy and Immunology Adverse event note\\\"\n  - `PN` - LOINC#11505-5 \\\"Physician procedure note\\\"\n  - `DS` - LOINC#18842-5 \\\"Discharge summary\\\"\n  - anything else should be logged as not yet understood\n- not used in DocumentReference\n  - masterIdentifier 0..0\n  - docStatus 0..0\n  - relatesTo 0..0\n  - description 0..0\n  - securityLabel 0..0\n  - content.format 0..0\n  - context.encounter 0..0\n  - context.event 0..0\n  - context.facilityType 0..0\n  - context.practiceSetting 0..0\n  - context.sourcePatientInfo 0..0\n\nTODO Questions:\n- is `standardTitle` or `type` used to differentiate between various note types?\n- `status` might be derived from `NoteTO.status`, but at this point I presume we are only told about current notes and don't know what other `NoteTO.status` values might happen\n- what other `type` values might we see?\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - serviceCategory\n  - cosigner\n  - hasAdendum\n  - isAddendum\n  - originalNoteID\n  - hasImages\n  - itemId\n  - signatureTimestamp\n  - consultId\n  - surgicalProcId\n  - prfId\n  - parentId\n  - procTimestamp\n  - subject",
       "exampleBoolean" : false
     },
     {
@@ -881,6 +929,30 @@
       },
       "name" : "VA MHV PHR Vital-Signs for PAIN",
       "description" : "A profile on the Observation resource for Pain\n\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available\n  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- Note the pain integer is stored in quantity, as that is what PGHD has been using.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/LabReportVS"
+      },
+      "name" : "Known Lab Report types",
+      "description" : "Lab Report types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/NoteTypeVS"
+      },
+      "name" : "Known Note types",
+      "description" : "Note types",
       "exampleBoolean" : false
     },
     {

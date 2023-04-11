@@ -67,7 +67,7 @@ TOid-startswithoid:ID system must start with urn:oid:2.16.840.1.113883.4.349.4. 
 "Specimen.status","Specimen.status","","","",0,1,"","Y","Y","code {[]} {[]}
 ","available | unavailable | unsatisfactory | entered-in-error","The availability of the specimen.","This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.","","","","","","","","",,"required","Codes providing the status/availability of a specimen.","http://hl7.org/fhir/ValueSet/specimen-status|4.0.1","",,,,"Specimen.status",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","status","FiveWs.status","SPM-20","`available`"
-"Specimen.type","Specimen.type","","","",0,1,"","","Y","CodeableConcept {[]} {[]}
+"Specimen.type","Specimen.type","","","",1,1,"Y","","Y","CodeableConcept {[]} {[]}
 ","Kind of material that forms the specimen","The kind of material that forms the specimen.","The type can change the way that a specimen is handled and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.","","","","","","","","",,"example","The type of the specimen.","http://terminology.hl7.org/ValueSet/v2-0487","",,,,"Specimen.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".code","FiveWs.what[x]","SPM-4 and possibly SPM-5"
 "Specimen.type.id","Specimen.type.id","","","",0,1,"","","","string {[]} {[]}
@@ -83,9 +83,9 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Specimen.type.text","Specimen.type.text","","","",0,1,"","","Y","string {[]} {[]}
 ","Plain text representation of the concept","A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user.","Very often the text is the same as a displayName of one of the codings.","The codes from the terminologies do not always capture the correct meaning with all the nuances of the human using them, or sometimes there is no appropriate code at all. In these cases, the text is used to capture the full meaning of the source.","","","","","","","",,,,,"",,,,"CodeableConcept.text",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./originalText[mediaType/code=""text/plain""]/data","C*E.9. But note many systems use C*E.2 for this","LabSpecimenTO.name"
-"Specimen.subject","Specimen.subject","","","",0,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/Group], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[http://hl7.org/fhir/StructureDefinition/Substance], CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}
+"Specimen.subject","Specimen.subject","","","",0,0,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/Group], CanonicalType[http://hl7.org/fhir/StructureDefinition/Device], CanonicalType[http://hl7.org/fhir/StructureDefinition/Substance], CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}
 ","Where the specimen came from. This may be from patient(s), from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device","Where the specimen came from. This may be from patient(s), from a location (e.g., the source of an environmental sample), or a sampling of a substance or a device.","","Must know the subject context.","","","","","","","",,,,,"",,,,"Specimen.subject",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-",".scoper  or  .scoper.playsRole","FiveWs.subject[x]","FiveWs.subject","patient"
+",".scoper  or  .scoper.playsRole","FiveWs.subject[x]","FiveWs.subject"
 "Specimen.receivedTime","Specimen.receivedTime","","","",0,0,"","","Y","dateTime {[]} {[]}
 ","The time when specimen was received for processing","Time when specimen was received for processing or testing.","","","","","","","","","",,,,,"",,,,"Specimen.receivedTime",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".participation[typeCode=SBJ].act[code=SPCREC, moodCode=EVN].effectiveTime","FiveWs.done[x]","SPM-18"
@@ -95,7 +95,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Specimen.request","Specimen.request","","","",0,0,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/ServiceRequest]]}
 ","Why the specimen was collected","Details concerning a service request that required a specimen to be collected.","The request may be explicit or implied such with a ServiceRequest that requires a blood draw.","","","","","","","","",,,,,"",,,,"Specimen.request",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","outboundRelationship[typeCode=FLFS].target","FiveWs.why[x]","ORC? OBR-2/3?"
-"Specimen.collection","Specimen.collection","","","",0,1,"","","","BackboneElement {[]} {[]}
+"Specimen.collection","Specimen.collection","","","",0,1,"Y","","","BackboneElement {[]} {[]}
 ","Collection details","Details concerning the specimen collection.","","","","","","","","","",,,,,"",,,,"Specimen.collection",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".participation[typeCode=SBJ].act[classCode=SPECCOLLECT, moodCode=EVN]","SPM-14"
 "Specimen.collection.id","Specimen.collection.id","","","",0,1,"","","","string {[]} {[]}
@@ -117,7 +117,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 Period {[]} {[]}","Collection time","Time when specimen was collected from subject - the physiologically relevant time.","","","","","","","","","",,,,,"","type:$this}
 ","",,"open","Specimen.collection.collected[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".effectiveTime","FiveWs.init","SPM-17"
-"Specimen.collection.collected[x]:collectedDateTime","Specimen.collection.collected[x]","collectedDateTime","","",0,1,"","","Y","dateTime {[]} {[]}
+"Specimen.collection.collected[x]:collectedDateTime","Specimen.collection.collected[x]","collectedDateTime","","",0,1,"Y","","Y","dateTime {[]} {[]}
 ","Collection time","Time when specimen was collected from subject - the physiologically relevant time.","","","","","","","","","",,,,,"",,,,"Specimen.collection.collected[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".effectiveTime","FiveWs.init","SPM-17","ConvertDate(LabSpecimenTO.collectionDate)"
 "Specimen.collection.duration","Specimen.collection.duration","","","",0,0,"","","Y","Duration {[]} {[]}

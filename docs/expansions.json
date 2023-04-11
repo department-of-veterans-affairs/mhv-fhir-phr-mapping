@@ -1,8 +1,195 @@
 {
   "resourceType" : "Bundle",
-  "id" : "8707b1d2-f66f-45b0-aead-c02414c46f4e",
+  "id" : "ea9b102b-378c-4f3c-9979-1ff811f11694",
   "meta" : {
-    "lastUpdated" : "2023-03-31T07:50:38.632-05:00"
+    "lastUpdated" : "2023-04-11T08:45:33.034-05:00"
   },
-  "type" : "collection"
+  "type" : "collection",
+  "entry" : [{
+    "fullUrl" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "id" : "LabReportVS",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 2 concepts</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on Loinc v2.73</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-79381-0\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/79381-0/\">79381-0</a></td><td>http://loinc.org</td><td>Gastrointestinal pathogens panel - Stool by NAA with probe detection</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-60567-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/60567-5/\">60567-5</a></td><td>http://loinc.org</td><td>Comprehensive pathology report panel</td></tr></table></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+        "valueInteger" : 0,
+        "_valueInteger" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+            "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+          }]
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+        "valueCode" : "trial-use",
+        "_valueCode" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+            "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+          }]
+        }
+      }],
+      "url" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS",
+      "version" : "0.1.7-beta",
+      "name" : "LabReportVS",
+      "title" : "Known Lab Report types",
+      "status" : "active",
+      "experimental" : false,
+      "date" : "2023-04-11T08:45:33-05:00",
+      "publisher" : "John Moehrke (himself)",
+      "contact" : [{
+        "name" : "John Moehrke (himself)",
+        "telecom" : [{
+          "system" : "url",
+          "value" : "http://healthcaresecprivacy.blogspot.com"
+        },
+        {
+          "system" : "email",
+          "value" : "JohnMoehrke@gmail.com"
+        }]
+      },
+      {
+        "name" : "John Moehrke (himself)",
+        "telecom" : [{
+          "system" : "email",
+          "value" : "JohnMoehrke@gmail.com"
+        }]
+      }],
+      "description" : "Lab Report types",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "US"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:352e4036-4bdd-4c48-96bb-90a6d90a4c10",
+        "timestamp" : "2023-04-11T08:47:50-05:00",
+        "total" : 2,
+        "parameter" : [{
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "limitedExpansion",
+          "valueBoolean" : true
+        },
+        {
+          "name" : "version",
+          "valueUri" : "http://loinc.org|2.73"
+        }],
+        "contains" : [{
+          "system" : "http://loinc.org",
+          "code" : "79381-0",
+          "display" : "Gastrointestinal pathogens panel - Stool by NAA with probe detection"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "60567-5",
+          "display" : "Comprehensive pathology report panel"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "id" : "NoteTypeVS",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 3 concepts</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on Loinc v2.73</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-83320-2\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/83320-2/\">83320-2</a></td><td>http://loinc.org</td><td>Allergy and Immunology Adverse event note</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-11505-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/11505-5/\">11505-5</a></td><td>http://loinc.org</td><td>Physician procedure note</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-18842-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>http://loinc.org</td><td>Discharge summary</td></tr></table></div>"
+      },
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+        "valueInteger" : 0,
+        "_valueInteger" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+            "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+          }]
+        }
+      },
+      {
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+        "valueCode" : "trial-use",
+        "_valueCode" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+            "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+          }]
+        }
+      }],
+      "url" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS",
+      "version" : "0.1.7-beta",
+      "name" : "NoteTypeVS",
+      "title" : "Known Note types",
+      "status" : "active",
+      "experimental" : false,
+      "date" : "2023-04-11T08:45:33-05:00",
+      "publisher" : "John Moehrke (himself)",
+      "contact" : [{
+        "name" : "John Moehrke (himself)",
+        "telecom" : [{
+          "system" : "url",
+          "value" : "http://healthcaresecprivacy.blogspot.com"
+        },
+        {
+          "system" : "email",
+          "value" : "JohnMoehrke@gmail.com"
+        }]
+      },
+      {
+        "name" : "John Moehrke (himself)",
+        "telecom" : [{
+          "system" : "email",
+          "value" : "JohnMoehrke@gmail.com"
+        }]
+      }],
+      "description" : "Note types",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "US"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:b13cd36e-a93b-4348-991b-035702eadb35",
+        "timestamp" : "2023-04-11T08:47:50-05:00",
+        "total" : 3,
+        "parameter" : [{
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "limitedExpansion",
+          "valueBoolean" : true
+        },
+        {
+          "name" : "version",
+          "valueUri" : "http://loinc.org|2.73"
+        }],
+        "contains" : [{
+          "system" : "http://loinc.org",
+          "code" : "83320-2",
+          "display" : "Allergy and Immunology Adverse event note"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "11505-5",
+          "display" : "Physician procedure note"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "18842-5",
+          "display" : "Discharge summary"
+        }]
+      }
+    }
+  }]
 }

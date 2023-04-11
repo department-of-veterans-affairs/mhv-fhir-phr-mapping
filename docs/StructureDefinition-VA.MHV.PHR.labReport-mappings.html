@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9.6"}
-    h3,h4,h5,h6{--heading-prefix:"9.6"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.10"}
+    h3,h4,h5,h6{--heading-prefix:"9.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -270,11 +270,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Event.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Event.subject</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>Event.encounter</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Event.performer.actor</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;resultsInterpreter</td><td>Event.performer.actor</td> </tr>
 </table>
 <a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVlabReport</b></td></tr>
@@ -295,18 +293,13 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3 (no HL7 v2 mapping for Group or Device)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>PV1-19</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>OBR-7</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>OBR-7</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>OBR-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>PRT-8 (where this PRT-4-Participation = &quot;PO&quot;)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;resultsInterpreter</td><td>OBR-32, PRT-8 (where this PRT-4-Participation = &quot;PI&quot;)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>SPM</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>OBXs</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;media</td><td>OBX?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>OBX</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;conclusionCode</td><td>OBX</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;presentedForm</td><td>OBX</td> </tr>
 </table>
 <a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVlabReport</b></td></tr>
@@ -341,24 +334,13 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>participation[typeCode=SBJ]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>inboundRelationship[typeCode=COMP].source[classCode=ENC, moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>participation[typeCode=VRF or AUT].time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>.participation[typeCode=PRF]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;resultsInterpreter</td><td>.participation[typeCode=PRF]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>participation[typeCode=SBJ]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>outboundRelationship[typeCode=COMP].target</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;imagingStudy</td><td>outboundRelationship[typeCode=COMP].target[classsCode=DGIMG, moodCode=EVN]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;media</td><td>outboundRelationship[typeCode=COMP].target</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;comment</td><td>.inboundRelationship[typeCode=COMP].source[classCode=OBS, moodCode=EVN, code=&quot;annotation&quot;].value</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;link</td><td>.value.reference</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>inboundRelationship[typeCode=&quot;SPRT&quot;].source[classCode=OBS, moodCode=EVN, code=LOINC:48767-8].value (type=ST)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;conclusionCode</td><td>inboundRelationship[typeCode=SPRT].source[classCode=OBS, moodCode=EVN, code=LOINC:54531-9].value (type=CD)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;presentedForm</td><td>text (type=ED)</td> </tr>
 </table>
 <a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVlabReport</b></td></tr>
@@ -370,12 +352,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;category (LaboratorySlice)</td><td>FiveWs.class</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;encounter</td><td>FiveWs.context</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;resultsInterpreter</td><td>FiveWs.actor</td> </tr>
 </table>
 <a name="Lab-Mapping-LabReportTO"> </a><h3>Mappings for VDIF to MHV-PHR (LabReportTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVlabReport</b></td></tr>
@@ -390,7 +370,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetPractitioner(LabReportTO.author), GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>(0..*) Observation(LabResultTO)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>Contained Observation(LabResultTO)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>LabReportTO.comment + LabReportTO.text</td> </tr>
 </table>
 
@@ -468,7 +448,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 31, 2023 07:50-0500">2023-03-31</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 11, 2023 08:45-0500">2023-04-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

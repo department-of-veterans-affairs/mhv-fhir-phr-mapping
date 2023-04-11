@@ -187,10 +187,13 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <a href="#2">Structures: Resource Profiles</a>
       </li>
       <li>
-         <a href="#3">Terminology: Concept Maps</a>
+         <a href="#3">Terminology: Value Sets</a>
       </li>
       <li>
-         <a href="#4">Example: Example Instances</a>
+         <a href="#4">Terminology: Concept Maps</a>
+      </li>
+      <li>
+         <a href="#5">Example: Example Instances</a>
       </li>
    </ul>
 </div>
@@ -228,6 +231,137 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <table class="grid">
          <col style="width:20%"/>
          <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html"
+                     title="StructureDefinition/VA.MHV.PHR.allergyIntolerance">VA MHV PHR Allergy and Intolerance</a>
+               </td>
+               <td>
+<p>A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.</p>
+
+<ul>
+  <li>The mock example maps to <a href="https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd">intoleranceConditions</a> schema.</li>
+  <li>Should be based on US-Core for AllergyIntolerance Resource profile</li>
+  <li>a <code class="language-plaintext highlighter-rouge">clinicalStatus</code> of the allergy (e.g.,active or resolved)
+    <ul>
+      <li>Given that intoleranceCondition.status is unclear; will presume we only see <code class="language-plaintext highlighter-rouge">active</code></li>
+      <li>set to <code class="language-plaintext highlighter-rouge">active</code></li>
+    </ul>
+  </li>
+  <li>a <code class="language-plaintext highlighter-rouge">code</code> which tells you what the patient is allergic to
+    <ul>
+      <li>at least <code class="language-plaintext highlighter-rouge">code.text</code></li>
+      <li>would be good to have a coding, but there does not appear to be any source for that</li>
+    </ul>
+  </li>
+  <li>a patient</li>
+  <li>category derived from .allergyType (multiple codes are multiple category)
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">D</code> -&gt; #medication</li>
+      <li>`F’ -&gt; #food</li>
+      <li><code class="language-plaintext highlighter-rouge">O</code> -&gt; #environment</li>
+    </ul>
+  </li>
+</ul>
+
+<p>TODO:</p>
+<ul>
+  <li>unclear
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">intoleranceCondition.status</code> is always <code class="language-plaintext highlighter-rouge">F</code> in the mock data I have been given, so unclear what the meaning is. From the name ‘status’ I presume this is the status of the allergy, but unclear.</li>
+      <li>will presume we only get <code class="language-plaintext highlighter-rouge">active</code></li>
+      <li>reaction.reaction.code seems to be a number, but I can’t find a codeSystem with these numbers.
+        <ul>
+          <li>would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.cbcReport.html"
+                     title="StructureDefinition/VA.MHV.PHR.cbcReport">VA MHV PHR HDR CBC Report</a>
+               </td>
+               <td>
+<p>A profile showing how <code class="language-plaintext highlighter-rouge">labTestPromise</code> is mapped into a FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Observation</code>, and <code class="language-plaintext highlighter-rouge">Specimen</code>. Where the <code class="language-plaintext highlighter-rouge">labTestPromise</code> only has <code class="language-plaintext highlighter-rouge">labSubscript</code> of <code class="language-plaintext highlighter-rouge">CH</code> (presumed CBC).</p>
+<ul>
+  <li>LOINC#58410-2 ‘CBC panel - Blood by Automated count’</li>
+</ul>
+
+<p>The given example aligns with the <code class="language-plaintext highlighter-rouge">Lab.xsd</code> schema.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises</code> is mapped onto this FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> for CBC laboratory reporting. The mapping to <a href="StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">HDR labTestPromise</a></p>
+
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.labTests</code> are each recorded as a FHIR <a href="StructureDefinition-VA.MHV.PHR.cbcTest.html">Observation for CBC result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR cbcTestPromise</a>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR Specimen</a>.</p>
+
+<p>The use of contained means that we do not need to de-duplicate the lab tests or specimen.</p>
+
+<p>TODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.</p>
+
+<p>This profile is based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. Following the <a href="https://www.hl7.org/fhir/us/core/DiagnosticReport-cbc.html">US-Core example for CBC</a></p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen.html"
+                     title="StructureDefinition/VA.MHV.PHR.cbcSpecimen">VA MHV PHR HDR CBC Specimen</a>
+               </td>
+               <td>
+<p>A profile showing how the <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR Specimen.</p>
+
+<ul>
+  <li>This is usually a contained resource, contained in the Lab Report. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances</li>
+  <li>must have a type
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Specimen.type.text</code> &lt;- <code class="language-plaintext highlighter-rouge">labTestPromises.specimen.specimenSource</code></li>
+    </ul>
+  </li>
+  <li>should have a <code class="language-plaintext highlighter-rouge">collectedDateTime</code> derived from <code class="language-plaintext highlighter-rouge">labTestPromises.specimen.specimenTakenDate</code></li>
+</ul>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.cbcTest.html"
+                     title="StructureDefinition/VA.MHV.PHR.cbcTest">VA MHV PHR CBC labTest</a>
+               </td>
+               <td>
+<p>A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.</p>
+
+<p>One Observation holds one <code class="language-plaintext highlighter-rouge">labTests</code></p>
+<ul>
+  <li>This profile is based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html">US-Core Lab</a></li>
+  <li><code class="language-plaintext highlighter-rouge">orderedTestCode -&amp;gt; </code>.category`</li>
+  <li>‘chemistryResults`
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">valueInterpretation</code> -&gt; <code class="language-plaintext highlighter-rouge">.interpretation</code> (mock data has <code class="language-plaintext highlighter-rouge">L</code>, <code class="language-plaintext highlighter-rouge">H</code>, or absent) (? low, high, normal ?)</li>
+      <li><code class="language-plaintext highlighter-rouge">observedStatus</code> (mock data has <code class="language-plaintext highlighter-rouge">F</code>, <code class="language-plaintext highlighter-rouge">C</code>, ) (? final vs preliminary ?)</li>
+      <li><code class="language-plaintext highlighter-rouge">testIdentifier</code> -&gt; <code class="language-plaintext highlighter-rouge">.code</code></li>
+      <li><code class="language-plaintext highlighter-rouge">referenceRange</code> -&gt; <code class="language-plaintext highlighter-rouge">.referenceRange</code></li>
+      <li><code class="language-plaintext highlighter-rouge">labCommentEvents</code> -&gt; <code class="language-plaintext highlighter-rouge">.note.text</code></li>
+      <li><code class="language-plaintext highlighter-rouge">observationValue</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.value</code></li>
+      <li><code class="language-plaintext highlighter-rouge">observationUnits.unit</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.unit</code></li>
+      <li><code class="language-plaintext highlighter-rouge">observationUnits.code</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.code</code> - likely need to adjust some</li>
+      <li><code class="language-plaintext highlighter-rouge">observationUnits.codingSystem</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.system</code></li>
+      <li><code class="language-plaintext highlighter-rouge">performingOrganization</code> -&gt; <code class="language-plaintext highlighter-rouge">.performer</code></li>
+    </ul>
+  </li>
+  <li>given this is contained in the DiagnosticReport, then
+    <ul>
+      <li>no <code class="language-plaintext highlighter-rouge">.subject</code> is populated</li>
+      <li>effective[x] is presumed from the DiagnosticReport</li>
+      <li>issued is presumed from the DiagnosticReport</li>
+      <li>specimen is presumed from the DiagnosticReport</li>
+    </ul>
+  </li>
+</ul>
+</td>
+            </tr>
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-VA.MHV.PHR.condition.html"
@@ -373,9 +507,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to <a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto">VDIF LabReportTO</a></p>
 
-<p>The LabTestTO plus LabResultTO are combined and mapped onto a FHIR <a href="StructureDefinition-VA.MHV.PHR.labTest.html">Observation for laboratory result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto">VDIF LabTestTO and LabResultTO</a>. This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.</p>
+<p>The LabTestTO plus LabResultTO are combined and mapped onto a FHIR <a href="StructureDefinition-VA.MHV.PHR.labTest.html">Observation for laboratory result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto">VDIF LabTestTO and LabResultTO</a>.</p>
 
-<p>The LabSpecimen is mapped into a <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen">VDIF LabSpecimenTO</a>. These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.</p>
+<p>The LabSpecimen is mapped into a <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen">VDIF LabSpecimenTO</a>.</p>
 
 <p>The use of contained means that we do not need to de-duplicate the lab tests or specimen.</p>
 
@@ -394,24 +528,23 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="StructureDefinition/VA.MHV.PHR.LabSpecimen">VA MHV PHR Lab Specimen</a>
                </td>
                <td>
-<p>A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.</p>
+<p>A profile showing how the <code class="language-plaintext highlighter-rouge">LabSpecimenTO</code> is mapped into a FHIR Specimen.</p>
 
 <ul>
-  <li>This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances</li>
+  <li>This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances</li>
   <li>must have a type
     <ul>
-      <li>Specimen.type.text &lt;- LabSpecimenTO.name</li>
+      <li><code class="language-plaintext highlighter-rouge">Specimen.type.text</code> &lt;- <code class="language-plaintext highlighter-rouge">LabSpecimenTO.name</code></li>
       <li>type should be a code derived from LabSpecimenTO.name</li>
     </ul>
   </li>
-  <li>should have a collectedDateTime derived from LabSpecimenTO.collectionDate</li>
-  <li>may have an identifier - Specimen.identifier &lt;- LabSpecimenTO.id
+  <li>should have a <code class="language-plaintext highlighter-rouge">collectedDateTime</code> derived from <code class="language-plaintext highlighter-rouge">LabSpecimenTO.collectionDate</code></li>
+  <li>may have an <code class="language-plaintext highlighter-rouge">identifier</code> - <code class="language-plaintext highlighter-rouge">Specimen.identifier</code> &lt;- <code class="language-plaintext highlighter-rouge">LabSpecimenTO.id</code>
     <ul>
-      <li>if no LabSpecimenTO.id is given, then the Specimen resource must be contained</li>
+      <li>if no <code class="language-plaintext highlighter-rouge">LabSpecimenTO.id</code> is given, then the Specimen resource must be contained</li>
     </ul>
   </li>
-  <li>should have an accessionIdentifier derived from LabSpecimenTO.accessionNum</li>
-  <li>should have a subject (unless Contained)</li>
+  <li>should have an <code class="language-plaintext highlighter-rouge">accessionIdentifier</code> derived from <code class="language-plaintext highlighter-rouge">LabSpecimenTO.accessionNum</code></li>
 </ul>
 
 <p>TODO questions:</p>
@@ -462,18 +595,36 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
   <li>based on US-Core for Clinical Notes</li>
+  <li><code class="language-plaintext highlighter-rouge">type</code> seems to hold an enum (A, PN, DS).
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">A</code> - LOINC#83320-2 "Allergy and Immunology Adverse event note"</li>
+      <li><code class="language-plaintext highlighter-rouge">PN</code> - LOINC#11505-5 "Physician procedure note"</li>
+      <li><code class="language-plaintext highlighter-rouge">DS</code> - LOINC#18842-5 "Discharge summary"</li>
+      <li>anything else should be logged as not yet understood</li>
+    </ul>
+  </li>
+  <li>not used in DocumentReference
+    <ul>
+      <li>masterIdentifier 0..0</li>
+      <li>docStatus 0..0</li>
+      <li>relatesTo 0..0</li>
+      <li>description 0..0</li>
+      <li>securityLabel 0..0</li>
+      <li>content.format 0..0</li>
+      <li>context.encounter 0..0</li>
+      <li>context.event 0..0</li>
+      <li>context.facilityType 0..0</li>
+      <li>context.practiceSetting 0..0</li>
+      <li>context.sourcePatientInfo 0..0</li>
+    </ul>
+  </li>
 </ul>
 
 <p>TODO Questions:</p>
 <ul>
-  <li>is standardTitle or type used to differentiate between various note types?</li>
-  <li>type seems to hold an enum (A, PN, DS). I am not sure what these mean, or if there are other values
-    <ul>
-      <li>A - LOINC#83320-2 "Allergy and Immunology Adverse event note"</li>
-      <li>PN - LOINC#11505-5 "Physician procedure note"</li>
-      <li>DS - LOINC#18842-5 "Discharge summary"</li>
-    </ul>
-  </li>
+  <li>is <code class="language-plaintext highlighter-rouge">standardTitle</code> or <code class="language-plaintext highlighter-rouge">type</code> used to differentiate between various note types?</li>
+  <li><code class="language-plaintext highlighter-rouge">status</code> might be derived from <code class="language-plaintext highlighter-rouge">NoteTO.status</code>, but at this point I presume we are only told about current notes and don’t know what other <code class="language-plaintext highlighter-rouge">NoteTO.status</code> values might happen</li>
+  <li>what other <code class="language-plaintext highlighter-rouge">type</code> values might we see?</li>
   <li>some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can’t tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
     <ul>
       <li>serviceCategory</li>
@@ -652,6 +803,34 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </table>
    </p>
    <a name="3"> </a>
+   <h3>Terminology: Value Sets </h3>
+   <p>
+    <p>These define sets of codes used by systems conforming to this implementation guide.</p>
+</p>
+   <p>
+      <table class="grid">
+         <col style="width:20%"/>
+         <tbody>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-LabReportVS.html" title="ValueSet/LabReportVS">Known Lab Report types</a>
+               </td>
+               <td>
+<p>Lab Report types</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-NoteTypeVS.html" title="ValueSet/NoteTypeVS">Known Note types</a>
+               </td>
+               <td>
+<p>Note types</p>
+</td>
+            </tr>
+         </tbody>
+      </table>
+   </p>
+   <a name="4"> </a>
    <h3>Terminology: Concept Maps </h3>
    <p>
     <p>These define transformations to convert between codes by systems conforming with this implementation guide.</p>
@@ -672,7 +851,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tbody>
       </table>
    </p>
-   <a name="4"> </a>
+   <a name="5"> </a>
    <h3>Example: Example Instances </h3>
    <p>
     <p>These are example instances that show what data produced and consumed by systems conforming with this implementation guide might look like.</p>
@@ -1203,7 +1382,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 31, 2023 07:50-0500">2023-03-31</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 11, 2023 08:45-0500">2023-04-11</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

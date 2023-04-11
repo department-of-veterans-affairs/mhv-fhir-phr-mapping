@@ -3,17 +3,16 @@ Parent: Specimen
 Id: VA.MHV.PHR.LabSpecimen
 Title: "VA MHV PHR Lab Specimen"
 Description: """
-A profile showing how the LabSpecimenTO is mapped into a FHIR Specimen.
+A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.
 
-- This is usually a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances
+- This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances
 - must have a type 
-  - Specimen.type.text <- LabSpecimenTO.name
+  - `Specimen.type.text` <- `LabSpecimenTO.name`
   - type should be a code derived from LabSpecimenTO.name
-- should have a collectedDateTime derived from LabSpecimenTO.collectionDate
-- may have an identifier - Specimen.identifier <- LabSpecimenTO.id
-  - if no LabSpecimenTO.id is given, then the Specimen resource must be contained
-- should have an accessionIdentifier derived from LabSpecimenTO.accessionNum
-- should have a subject (unless Contained)
+- should have a `collectedDateTime` derived from `LabSpecimenTO.collectionDate`
+- may have an `identifier` - `Specimen.identifier` <- `LabSpecimenTO.id`
+  - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained
+- should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`
 
 TODO questions: 
 - examples didn't have much populated
@@ -43,8 +42,10 @@ TODO questions:
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`LabSpecimenTO` | `.` | {LabSpecimenTO.id}"
-
-
+* subject 0..0
+* collection MS
+* collection.collectedDateTime MS
+* type 1..1 MS
 
 Mapping: Lab-Mapping-LabSpecimenTO
 Source: MHVlabSpecimen
@@ -55,7 +56,6 @@ Title: "VDIF to MHV-PHR"
 * accessionIdentifier -> "{StationNbr} and {LabSpecimenTO.accessionNum}"
 * status -> "`available`"
 * type.text -> "LabSpecimenTO.name"
-* subject -> "patient"
 * collection.collectedDateTime -> "ConvertDate(LabSpecimenTO.collectionDate)"
 
 
@@ -71,9 +71,9 @@ The given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, L
 
 The LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
 
-The LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto). This does not ultimately need to be contained, but given the mock examples are so minimal these are not useful as standalone Observations.
+The LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto).
 
-The LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen). These Specimen could be standalone resources, but given the mock examples are so minimal these are best as contained.
+The LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen).
 
 The use of contained means that we do not need to de-duplicate the lab tests or specimen.
 
@@ -92,11 +92,32 @@ TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is t
 * identifier[TOid].use = #usual
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`LabReportTO` | `.` | {LabReportTO.id}"
+* subject 1..1
 * code 1..1 MS
 * code.text 1..1 MS
 * code.text ^short = "LabReportTO.title"
 * code.coding ..1 MS
+* code.coding from LabReportVS (required)
 * code.coding ^short = "LabReportTO.type -- should be converted to LOINC"
+* specimen ^type.aggregation = #contained
+* specimen only Reference(MHVlabSpecimen)
+* result ^type.aggregation = #contained
+* result only Reference(MHVlabTest)
+* encounter 0..0
+* resultsInterpreter 0..0
+* imagingStudy 0..0
+* media 0..0
+* conclusionCode 0..0
+* presentedForm 0..0
+
+
+ValueSet: LabReportVS
+Title: "Known Lab Report types"
+Description: "Lab Report types"
+* ^experimental = false
+* LOINC#79381-0 "Gastrointestinal pathogens panel - Stool by NAA with probe detection"
+* LOINC#60567-5 "Comprehensive pathology report panel"
+
 
 Mapping: Lab-Mapping-LabReportTO
 Source:	MHVlabReport
@@ -106,7 +127,7 @@ Title: "VDIF to MHV-PHR"
 * category -> "`laboratory`"
 * status -> "`final`"
 * subject -> "patient"
-* result -> "(0..*) Observation(LabResultTO)"
+* result -> "Contained Observation(LabResultTO)"
 * performer -> "GetPractitioner(LabReportTO.author)"
 * basedOn.identifier -> "LabReportTO.caseNumber"
 * conclusion -> "LabReportTO.comment + LabReportTO.text"
@@ -116,7 +137,7 @@ Title: "VDIF to MHV-PHR"
 * effectiveDateTime -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
 * issued -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
 * code.text -> "LabReportTO.title"
-* code.coding -> "LabReportTO.type -- should be converted to LOINC"
+* code.coding -> "LabReportTO.type -- should be converted to LOINC:  MI -> LOINC#79381-0,  SP -> LOINC#60567-5"
 
 
 Profile:        MHVlabTest
@@ -143,7 +164,7 @@ A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API t
 * code.text ^short = "LabTestTO.name"
 * code.coding ..1 MS
 * code.coding ^short = "LabTestTO.loinc"
-
+* specimen ^type.aggregation = #contained
 
 Mapping: Lab-Mapping-LabResultTO
 Source:	MHVlabTest

@@ -1,9 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="8707b1d2-f66f-45b0-aead-c02414c46f4e"/>
+  <id value="ea9b102b-378c-4f3c-9979-1ff811f11694"/>
   <meta>
-    <lastUpdated value="2023-03-31T07:50:38.632-05:00"/>
+    <lastUpdated value="2023-04-11T08:45:33.034-05:00"/>
   </meta>
   <type value="collection"/>
+  <entry>
+    <fullUrl value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS"/>
+    <resource>
+      <ValueSet>
+        <id value="LabReportVS"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 2 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on Loinc v2.73</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---loinc.org-79381-0"> </a>  
+                  <a href="https://loinc.org/79381-0/">79381-0</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Gastrointestinal pathogens panel - Stool by NAA with probe detection</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---loinc.org-60567-5"> </a>  
+                  <a href="https://loinc.org/60567-5/">60567-5</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Comprehensive pathology report panel</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+          <valueInteger value="0">
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+              <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+            </extension>
+          </valueInteger>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use">
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+              <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+            </extension>
+          </valueCode>
+        </extension>
+        <url value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS"/>
+        <version value="0.1.7-beta"/>
+        <name value="LabReportVS"/>
+        <title value="Known Lab Report types"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2023-04-11T08:45:33-05:00"/>
+        <publisher value="John Moehrke (himself)"/>
+        <contact>
+          <name value="John Moehrke (himself)"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://healthcaresecprivacy.blogspot.com"/>
+          </telecom>
+          <telecom>
+            <system value="email"/>
+            <value value="JohnMoehrke@gmail.com"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="John Moehrke (himself)"/>
+          <telecom>
+            <system value="email"/>
+            <value value="JohnMoehrke@gmail.com"/>
+          </telecom>
+        </contact>
+        <description value="Lab Report types"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:352e4036-4bdd-4c48-96bb-90a6d90a4c10"/>
+          <timestamp value="2023-04-11T08:47:50-05:00"/>
+          <total value="2"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="limitedExpansion"/>
+            <valueBoolean value="true"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://loinc.org|2.73"/>
+          </parameter>
+          <contains>
+            <system value="http://loinc.org"/>
+            <code value="79381-0"/>
+            <display value="Gastrointestinal pathogens panel - Stool by NAA with probe detection"/>
+          </contains>
+          <contains>
+            <system value="http://loinc.org"/>
+            <code value="60567-5"/>
+            <display value="Comprehensive pathology report panel"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS"/>
+    <resource>
+      <ValueSet>
+        <id value="NoteTypeVS"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 3 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on Loinc v2.73</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---loinc.org-83320-2"> </a>  
+                  <a href="https://loinc.org/83320-2/">83320-2</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Allergy and Immunology Adverse event note</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---loinc.org-11505-5"> </a>  
+                  <a href="https://loinc.org/11505-5/">11505-5</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Physician procedure note</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---loinc.org-18842-5"> </a>  
+                  <a href="https://loinc.org/18842-5/">18842-5</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Discharge summary</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+          <valueInteger value="0">
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+              <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+            </extension>
+          </valueInteger>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="trial-use">
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+              <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+            </extension>
+          </valueCode>
+        </extension>
+        <url value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS"/>
+        <version value="0.1.7-beta"/>
+        <name value="NoteTypeVS"/>
+        <title value="Known Note types"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2023-04-11T08:45:33-05:00"/>
+        <publisher value="John Moehrke (himself)"/>
+        <contact>
+          <name value="John Moehrke (himself)"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://healthcaresecprivacy.blogspot.com"/>
+          </telecom>
+          <telecom>
+            <system value="email"/>
+            <value value="JohnMoehrke@gmail.com"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="John Moehrke (himself)"/>
+          <telecom>
+            <system value="email"/>
+            <value value="JohnMoehrke@gmail.com"/>
+          </telecom>
+        </contact>
+        <description value="Note types"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:b13cd36e-a93b-4348-991b-035702eadb35"/>
+          <timestamp value="2023-04-11T08:47:50-05:00"/>
+          <total value="3"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="limitedExpansion"/>
+            <valueBoolean value="true"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://loinc.org|2.73"/>
+          </parameter>
+          <contains>
+            <system value="http://loinc.org"/>
+            <code value="83320-2"/>
+            <display value="Allergy and Immunology Adverse event note"/>
+          </contains>
+          <contains>
+            <system value="http://loinc.org"/>
+            <code value="11505-5"/>
+            <display value="Physician procedure note"/>
+          </contains>
+          <contains>
+            <system value="http://loinc.org"/>
+            <code value="18842-5"/>
+            <display value="Discharge summary"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
 </Bundle>
