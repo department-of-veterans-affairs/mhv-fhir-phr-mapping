@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.7-beta - ci-build
+            <span style="display:inline-block;">0.1.8-beta - ci-build
 
 
 
@@ -166,7 +166,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.7-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.8-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -365,6 +365,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>LabReportTO.caseNumber</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`laboratory`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>text = LabReportTO.title, LabReportTO.type -- should be converted to LOINC:  MI -&gt; LOINC#79381-0,  SP -&gt; LOINC#60567-5</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)</td> </tr>
@@ -448,7 +449,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 11, 2023 08:45-0500">2023-04-11</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.8-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 10:49-0500">2023-04-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

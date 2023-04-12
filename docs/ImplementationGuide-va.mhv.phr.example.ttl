@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "0"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.7-beta"] ; # 
+  fhir:version [ fhir:v "0.1.8-beta"] ; # 
   fhir:name [ fhir:v "MHVPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-04-11T08:45:33-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-04-12T10:49:54-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
@@ -619,7 +619,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.cbcReport" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR HDR CBC Report" ] ;
-       fhir:description [ fhir:v "A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (presumed CBC).\n- LOINC#58410-2 'CBC panel - Blood by Automated count'\n\nThe given example aligns with the `Lab.xsd` schema. \n\nThe `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for CBC laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)\n\nThe `labTestPromises.labTests` are each recorded as a FHIR [Observation for CBC result](StructureDefinition-VA.MHV.PHR.cbcTest.html) that is contained in the DiagnosticReport. The map to [HDR cbcTestPromise](StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). \n\nThe `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nThis profile is based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. Following the [US-Core example for CBC](https://www.hl7.org/fhir/us/core/DiagnosticReport-cbc.html)" ] ;
+       fhir:description [ fhir:v "A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (presumed CBC).\n- LOINC#58410-2 'CBC panel - Blood by Automated count'\n\nThe given example aligns with the `Lab.xsd` schema. \n\nThe `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for CBC laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)\n\nThe `labTestPromises.labTests` are each recorded as a FHIR [Observation for CBC result](StructureDefinition-VA.MHV.PHR.cbcTest.html) that is contained in the DiagnosticReport. The map to [HDR cbcTestPromise](StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). \n\nThe `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nThis profile is based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. Following the [US-Core example for CBC](https://www.hl7.org/fhir/us/core/DiagnosticReport-cbc.html)\n\nTODO: There are some code `system` values that are simple strings. To make them into URI/URL I prepend `http://example.org`, but something better needs to come along.\n- HL70070\n- 99VA60\n- 99VA61\n- 99VA64\n- 99VA95.3\nTODO: Confirm that \"CH\" is really a Loinc CBC Panel." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -643,7 +643,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.cbcTest" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR CBC labTest" ] ;
-       fhir:description [ fhir:v "A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n- `orderedTestCode -> `.category`\n- 'chemistryResults`\n  - `valueInterpretation` -> `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)\n  - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n  - `testIdentifier` -> `.code`\n  - `referenceRange` -> `.referenceRange`\n  - `labCommentEvents` -> `.note.text`\n  - `observationValue` -> `.valueQuantity.value`\n  - `observationUnits.unit` -> `.valueQuantity.unit`\n  - `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n  - `observationUnits.codingSystem` -> `.valueQuantity.system`\n  - `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - no `.subject` is populated\n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n  - specimen is presumed from the DiagnosticReport" ] ;
+       fhir:description [ fhir:v "A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n- `orderedTestCode -> `.category`\n- 'chemistryResults`\n  - `valueInterpretation` -> `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)\n  - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n  - `testIdentifier` -> `.code` -- where \"LN\" is Loinc\n  - `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value\n  - `labCommentEvents` -> `.note.text`\n  - `observationValue` -> `.valueQuantity.value`\n  - `observationUnits.unit` -> `.valueQuantity.unit`\n  - `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n  - `observationUnits.codingSystem` -> `.valueQuantity.system`\n  - `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - no `.subject` is populated\n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n  - specimen is presumed from the DiagnosticReport" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -873,6 +873,21 @@
        fhir:name [ fhir:v "Vital Sign ObservationTypeTO.name to Loinc Code" ] ;
        fhir:description [ fhir:v "map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-cbcReport-1> ;
+         fhir:reference [ fhir:v "DiagnosticReport/ex-MHV-cbcReport-1" ]
+       ] ;
+       fhir:name [ fhir:v "Example 1 of an MHV cbcReport" ] ;
+       fhir:description [ fhir:v "Example from a mock labTestPromises (1110200002)" ] ;
+       fhir:example [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcReport"^^xsd:anyURI ;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcReport>
+       ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1449,6 +1464,18 @@
          fhir:value [ fhir:v "Organization" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-552> ;
+         fhir:reference [ fhir:v "Organization/ex-MHV-organization-552" ]
+       ] ;
+       fhir:name [ fhir:v "Organization HDR Lab 552" ] ;
+       fhir:description [ fhir:v "This example derived off of a mock HDR Lab report" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Organization" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-989> ;
          fhir:reference [ fhir:v "Organization/ex-MHV-organization-989" ]
        ] ;
@@ -1521,6 +1548,21 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-27167> ;
+         fhir:reference [ fhir:v "Patient/ex-MHV-patient-27167" ]
+       ] ;
+       fhir:name [ fhir:v "Example TESTFIVE from HDR Lab Patient" ] ;
+       fhir:description [ fhir:v "This example is derived off of a mock patient" ] ;
+       fhir:example [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"^^xsd:anyURI ;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Practitioner" ]
        ] ) ;
        fhir:reference [
@@ -1548,6 +1590,18 @@
          fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner>
        ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Practitioner" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-MHV-practitioner-14934-VA552> ;
+         fhir:reference [ fhir:v "Practitioner/ex-MHV-practitioner-14934-VA552" ]
+       ] ;
+       fhir:name [ fhir:v "Example Practitoner 14934-VA552" ] ;
+       fhir:description [ fhir:v "Lisa A Hall" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;

@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.7-beta - ci-build
+            <span style="display:inline-block;">0.1.8-beta - ci-build
 
 
 
@@ -166,7 +166,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.7-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.8-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -431,6 +431,8 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>ProblemTO.status | !ProblemTO.removed ? `#active` : todo</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>ProblemTO.verified ? `#confirmed` : `#unconfirmed`</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`problem-list-item`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>ProblemTO.type.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>ICD-9 # ProblemTO.icd</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>ProblemTO.onsetDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;abatement[x] (abatementDateTime)</td><td>ProblemTO.abatementDateTime</td> </tr>
@@ -515,7 +517,7 @@ OR &lt; 272379006 |Event|</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 11, 2023 08:45-0500">2023-04-11</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.8-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 10:49-0500">2023-04-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -55,7 +55,7 @@ Title: "VDIF to MHV-PHR"
 * identifier -> "{StationNbr} and {LabSpecimenTO.id}"
 * accessionIdentifier -> "{StationNbr} and {LabSpecimenTO.accessionNum}"
 * status -> "`available`"
-* type.text -> "LabSpecimenTO.name"
+* type -> "text = LabSpecimenTO.name"
 * collection.collectedDateTime -> "ConvertDate(LabSpecimenTO.collectionDate)"
 
 
@@ -95,10 +95,8 @@ TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is t
 * subject 1..1
 * code 1..1 MS
 * code.text 1..1 MS
-* code.text ^short = "LabReportTO.title"
 * code.coding ..1 MS
 * code.coding from LabReportVS (required)
-* code.coding ^short = "LabReportTO.type -- should be converted to LOINC"
 * specimen ^type.aggregation = #contained
 * specimen only Reference(MHVlabSpecimen)
 * result ^type.aggregation = #contained
@@ -136,8 +134,8 @@ Title: "VDIF to MHV-PHR"
 * specimen -> "Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])"
 * effectiveDateTime -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
 * issued -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
-* code.text -> "LabReportTO.title"
-* code.coding -> "LabReportTO.type -- should be converted to LOINC:  MI -> LOINC#79381-0,  SP -> LOINC#60567-5"
+* code -> "text = LabReportTO.title"
+* code -> "LabReportTO.type -- should be converted to LOINC:  MI -> LOINC#79381-0,  SP -> LOINC#60567-5"
 
 
 Profile:        MHVlabTest
@@ -173,8 +171,8 @@ Title: "VDIF to MHV-PHR"
 * -> "LabTestTO / LabResultTO" "MHV PHR FHIR API"
 * specimen -> "Contained Specimen (LabTestTO.specimen.[LabSpecimenTO])"
 * identifier -> "{StationNbr} and {LabTestTO.id}"
-* code.text -> "LabTestTO.name"
-* code.coding -> "LabTestTO.loinc"
+* code -> "text = LabTestTO.name"
+* code -> "LabTestTO.loinc"
 * effectiveDateTime -> "ConvertDate(LabResultTO.timestamp)"
 * valueString -> "LabResultTO.value"
 * performer -> "GetOrganization(LabResultTO.labSiteId)"

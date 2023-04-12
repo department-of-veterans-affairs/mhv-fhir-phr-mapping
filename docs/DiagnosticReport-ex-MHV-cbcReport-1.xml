@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-cbcReport-1"/>
+  <meta>
+    <lastUpdated value="2021-01-21T13:23:48-05:00"/>
+    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcReport"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 58410-2}">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>TESTFIVE L MHVSYSTEST </b> unknown, DoB Unknown ( id: 27167 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>2021-01-21 11:32:47-0500</td></tr><tr><td>Reported</td><td>2021-01-21 11:32:47-0500</td></tr><tr><td>Identifier:</td><td> id: 1110200002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td><td><b>Note</b></td></tr><tr><td colspan="5"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="5"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's Test 1/20/2021 - Second lab
+Added Potassium test</p></div>
+  </text>
+  <contained>
+    <Observation>
+      <id value="ex-MHV-cbcTest-1a"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcTest"/>
+      </meta>
+      <status value="final"/>
+      <category>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="laboratory"/>
+        </coding>
+      </category>
+      <category>
+        <coding>
+          <system value="http://example.org/99VA64"/>
+          <code value="84140.0000"/>
+          <display value="Potassium"/>
+        </coding>
+      </category>
+      <category>
+        <coding>
+          <system value="http://example.org/99VA60"/>
+          <code value="177"/>
+          <display value="POTASSIUM"/>
+        </coding>
+      </category>
+      <category>
+        <coding>
+          <system value="http://example.org/99VA95.3"/>
+          <version value="2.68"/>
+          <code value="4670505"/>
+        </coding>
+      </category>
+      <code>
+        <coding>
+          <system value="http://loinc.org"/>
+          <version value="2.68"/>
+          <code value="2823-3"/>
+        </coding>
+        <text value="POTASSIUM"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-27167"/>
+      </subject>
+      <performer>
+        <reference value="Organization/ex-MHV-organization-552"/>
+      </performer>
+      <valueQuantity>
+        <value value="3.5"/>
+        <unit value="mEq/L"/>
+        <system value="http://unitsofmeasure.org"/>
+      </valueQuantity>
+      <interpretation>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+          <code value="L"/>
+        </coding>
+        <text value="L"/>
+      </interpretation>
+      <note>
+        <text value="Normal Range Prior to 8-22-02 was: 3.6 - 5.0 mEq/L."/>
+      </note>
+      <referenceRange>
+        <text value="3.6-5.1"/>
+      </referenceRange>
+    </Observation>
+  </contained>
+  <contained>
+    <Observation>
+      <id value="ex-MHV-cbcTest-1b"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcTest"/>
+      </meta>
+      <status value="final"/>
+      <category>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="laboratory"/>
+        </coding>
+      </category>
+      <category>
+        <coding>
+          <system value="http://example.org/99VA64"/>
+          <code value="84295.0000"/>
+          <display value="Sodium"/>
+        </coding>
+      </category>
+      <category>
+        <coding>
+          <system value="http://example.org/99VA60"/>
+          <code value="176"/>
+          <display value="SODIUM"/>
+        </coding>
+      </category>
+      <category>
+        <coding>
+          <system value="http://example.org/99VA95.3"/>
+          <version value="2.68"/>
+          <code value="4671912"/>
+        </coding>
+      </category>
+      <code>
+        <coding>
+          <system value="http://loinc.org"/>
+          <version value="2.68"/>
+          <code value="2951-2"/>
+        </coding>
+        <text value="SODIUM:SCNC:PT:SER/PLAS:QN:"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-27167"/>
+      </subject>
+      <performer>
+        <reference value="Organization/ex-MHV-organization-552"/>
+      </performer>
+      <valueQuantity>
+        <value value="138"/>
+        <unit value="mEq/L"/>
+        <system value="http://unitsofmeasure.org"/>
+      </valueQuantity>
+      <interpretation>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+          <code value="L"/>
+        </coding>
+        <text value="L"/>
+      </interpretation>
+      <referenceRange>
+        <text value="136-145"/>
+      </referenceRange>
+    </Observation>
+  </contained>
+  <contained>
+    <Specimen>
+      <id value="ex-MHV-cbcSpecimen-1"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcSpecimen"/>
+      </meta>
+      <status value="available"/>
+      <type>
+        <coding>
+          <system value="http://example.org/HL70070"/>
+          <code value="SER"/>
+          <display value="Serum"/>
+        </coding>
+        <coding>
+          <system value="http://example.org/99VA61"/>
+          <version value="5.2"/>
+          <code value="72"/>
+          <display value="SERUM"/>
+        </coding>
+        <text value="SERUM"/>
+      </type>
+      <collection>
+        <collectedDateTime value="2021-01-20T16:38:59-05:00"/>
+      </collection>
+    </Specimen>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="1110200002"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="LAB"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="58410-2"/>
+      <display value="CBC panel - Blood by Automated count"/>
+    </coding>
+    <text value="CH"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-27167"/>
+  </subject>
+  <effectiveDateTime value="2021-01-21T11:32:47-05:00"/>
+  <issued value="2021-01-21T11:32:47-05:00"/>
+  <performer>
+    <reference value="Organization/ex-MHV-organization-552"/>
+  </performer>
+  <performer>
+    <reference value="Practitioner/ex-MHV-practitioner-14934-VA552"/>
+  </performer>
+  <performer>
+    <reference value="Organization/ex-MHV-organization-989"/>
+  </performer>
+  <specimen>
+    <reference value="#ex-MHV-cbcSpecimen-1"/>
+  </specimen>
+  <result>
+    <reference value="#ex-MHV-cbcTest-1a"/>
+  </result>
+  <result>
+    <reference value="#ex-MHV-cbcTest-1b"/>
+  </result>
+  <conclusion value="Lisa's Test 1/20/2021 - Second lab&#xA;Added Potassium test"/>
+</DiagnosticReport>

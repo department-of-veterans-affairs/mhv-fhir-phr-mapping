@@ -53,3 +53,43 @@ Usage: #example
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
 * identifier[NPI].value = "1234"
+
+
+/* HDR Lab Sample
+               <performingOrganization>
+                  <identifier>
+                     <identity>552</identity>
+                     <name>DAYTON, OH VAMC</name>
+                     <assigningAuthority>USVHA</assigningAuthority>
+                     <nameTypeCode>L</nameTypeCode>
+                     <identityTypeCode>FI</identityTypeCode>
+                     <nameRepresentation>A</nameRepresentation>
+                     <stationNumber>552</stationNumber>
+                  </identifier>
+                  <address>
+                     <line1>4100 W. THIRD STREET</line1>
+                     <city>DAYTON</city>
+                     <postalCode>45428</postalCode>
+                     <country>USA</country>
+                     <state>OH</state>
+                  </address>
+               </performingOrganization>
+*/
+Instance: ex-MHV-organization-552
+InstanceOf: Organization
+// TODO: Not using MHVorganization as that requires a TOid
+Title: "Organization HDR Lab 552"
+Description: "This example derived off of a mock HDR Lab report"
+Usage: #example
+* active = true
+* name = "DAYTON, OH VAMC"
+* identifier[+].use = #official
+* identifier[=].value = "552"
+* identifier[=].system = "http://example.org/USVHA"
+* identifier[=].type.text = "L"
+* address.line = "4100 W. THIRD STREET"
+* address.city = "DAYTON"
+* address.postalCode = "45428"
+* address.country = "USA"
+* address.state = "OH"
+

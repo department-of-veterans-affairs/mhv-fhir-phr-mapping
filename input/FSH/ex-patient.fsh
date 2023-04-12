@@ -146,3 +146,35 @@ Usage: #example
 * identifier[=].type.text = "localPID"
 * identifier[=].system = "http://example.org/localPID"
 * identifier[=].value = "49906"
+
+
+/* from HDR Lab
+         <patient>
+            <identifier>
+               <identity>27167</identity>
+               <assigningFacility>989</assigningFacility>
+               <assigningAuthority>USVHA</assigningAuthority>
+            </identifier>
+            <name>
+               <given>TESTFIVE</given>
+               <middle>L</middle>
+               <family>MHVSYSTEST</family>
+            </name>
+         </patient>
+*/
+Instance: ex-MHV-patient-27167
+InstanceOf: MHVpatient
+Title: "Example TESTFIVE from HDR Lab Patient"
+Description: """
+This example is derived off of a mock patient
+"""
+Usage: #example
+* name[+].use = #usual
+* name[=].family = "MHVSYSTEST"
+* name[=].given[+] = "TESTFIVE"
+* name[=].given[+] = "L"
+* gender = #unknown
+* identifier[+].use = #official
+* identifier[=].system = "http://example.org/USVHA"
+* identifier[=].value = "27167"
+* identifier[=].assigner.display = "989"

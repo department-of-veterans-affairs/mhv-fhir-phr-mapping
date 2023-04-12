@@ -35,7 +35,7 @@ Target: "labTestPromises.specimen"
 Title: "HDR labTestPromises.specimen to MHV-PHR"
 * -> "labTestPromises.specimen" "MHV PHR FHIR API"
 * status -> "`available`"
-* type.text -> "labTestPromises.specimen.specimenSource"
+* type -> "labTestPromises.specimen.specimenSource"
 * collection.collectedDateTime -> "ConvertDate(labTestPromises.specimen.specimenTakenDate)"
 
 
@@ -58,9 +58,15 @@ The `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinit
 
 The use of contained means that we do not need to de-duplicate the lab tests or specimen.
 
-TODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.
-
 This profile is based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. Following the [US-Core example for CBC](https://www.hl7.org/fhir/us/core/DiagnosticReport-cbc.html)
+
+TODO: There are some code `system` values that are simple strings. To make them into URI/URL I prepend `http://example.org`, but something better needs to come along.
+- HL70070
+- 99VA60
+- 99VA61
+- 99VA64
+- 99VA95.3
+TODO: Confirm that "CH" is really a Loinc CBC Panel.
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -74,11 +80,14 @@ This profile is based on [US-Core DiagnosticReport profile for Laboratory Result
 * subject 1..1
 * code 1..1 MS
 * code.text = "CH"
-* code.coding = LOINC#58410-2 "CBC panel - Blood by Automated count"
+* code.coding ^slicing.discriminator.type = #value
+* code.coding ^slicing.discriminator.path = "$this"
+* code.coding ^slicing.rules = #open
+* code.coding contains CBC 1..1
+* code.coding[CBC] = LOINC#58410-2 "CBC panel - Blood by Automated count"
 * effectiveDateTime MS
 * issued MS
 * conclusion MS
-* presentedForm MS
 * specimen ^type.aggregation = #contained
 * specimen only Reference(MHVcbcSpecimen)
 * result ^type.aggregation = #contained
@@ -88,6 +97,7 @@ This profile is based on [US-Core DiagnosticReport profile for Laboratory Result
 * imagingStudy 0..0
 * media 0..0
 * conclusionCode 0..0
+* presentedForm 0..0
 
 
 Mapping: CBC-Mapping-labTestPromises
@@ -102,12 +112,13 @@ Title: "HDR to MHV-PHR"
 * issued -> "ConvertDate(labTestPromises.reportCompleDate.literal)"
 * code -> "labTestPromises.labSubscript"
 * code.coding -> "LOINC#58410-2 'CBC panel - Blood by Automated count'"
-* conclusion -> "labTestPromises.labCommentEvents[0].comments"
-* presentedForm.title -> "labTestPromises.labCommentEvent[1+].comments - when more than one comment"
+* conclusion -> "labTestPromises.labCommentEvents.comments combined"
 * performer -> "GetPractitioner(labTestPromises.labTestRequest.author)"
 * performer -> "GetLocation(labTestPromises.labTestRequest.orderingFacilityIdentifier)"
-* result -> "Contained Observation(labTestPromises.labTests.)"
+* performer -> "GetLocation(labTestPromises.recordSource)"
+* result -> "Contained Observation(labTestPromises.labTests)"
 * specimen -> "Contained Specimen (labTestPromises.specimen)"
+* meta.lastUpdated -> "ConvertDate(labTestPromises.recordUpdateTime)"
 
 
 Profile:        MHVcbcTest
@@ -123,8 +134,8 @@ One Observation holds one `labTests`
 - 'chemistryResults`
   - `valueInterpretation` -> `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)
   - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)
-  - `testIdentifier` -> `.code`
-  - `referenceRange` -> `.referenceRange`
+  - `testIdentifier` -> `.code` -- where "LN" is Loinc
+  - `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value
   - `labCommentEvents` -> `.note.text`
   - `observationValue` -> `.valueQuantity.value`
   - `observationUnits.unit` -> `.valueQuantity.unit`
@@ -140,7 +151,8 @@ One Observation holds one `labTests`
 * code 1..1 MS
 * code ^short = "testIdentifier"
 * code.coding ..1 MS
-* code.coding ^short = "LabTestTO.loinc"
+* code.coding ^short = "testIdentifier.code"
+* code.text ^short = "testIdentifier.displayText"
 * category MS
 * category ^short = "orderedTestCode"
 * interpretation MS
@@ -180,6 +192,7 @@ Target: "labTestPromises.labTests"
 Title: "HDR labTests to MHV-PHR"
 * -> "HDR labTests" "MHV PHR FHIR API"
 * code -> "testIdentifier"
+* code.text -> "testIdentifier.displayText"
 * category -> "orderedTestCode"
 * status -> "observedStatus"
 * interpretation -> "valueInterpretation"

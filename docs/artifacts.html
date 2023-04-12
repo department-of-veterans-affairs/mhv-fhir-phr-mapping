@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.7-beta - ci-build
+            <span style="display:inline-block;">0.1.8-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.7-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.8-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -301,9 +301,17 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The use of contained means that we do not need to de-duplicate the lab tests or specimen.</p>
 
-<p>TODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.</p>
-
 <p>This profile is based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. Following the <a href="https://www.hl7.org/fhir/us/core/DiagnosticReport-cbc.html">US-Core example for CBC</a></p>
+
+<p>TODO: There are some code <code class="language-plaintext highlighter-rouge">system</code> values that are simple strings. To make them into URI/URL I prepend <code class="language-plaintext highlighter-rouge">http://example.org</code>, but something better needs to come along.</p>
+<ul>
+  <li>HL70070</li>
+  <li>99VA60</li>
+  <li>99VA61</li>
+  <li>99VA64</li>
+  <li>99VA95.3
+TODO: Confirm that “CH” is really a Loinc CBC Panel.</li>
+</ul>
 </td>
             </tr>
             <tr>
@@ -341,8 +349,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <ul>
       <li><code class="language-plaintext highlighter-rouge">valueInterpretation</code> -&gt; <code class="language-plaintext highlighter-rouge">.interpretation</code> (mock data has <code class="language-plaintext highlighter-rouge">L</code>, <code class="language-plaintext highlighter-rouge">H</code>, or absent) (? low, high, normal ?)</li>
       <li><code class="language-plaintext highlighter-rouge">observedStatus</code> (mock data has <code class="language-plaintext highlighter-rouge">F</code>, <code class="language-plaintext highlighter-rouge">C</code>, ) (? final vs preliminary ?)</li>
-      <li><code class="language-plaintext highlighter-rouge">testIdentifier</code> -&gt; <code class="language-plaintext highlighter-rouge">.code</code></li>
-      <li><code class="language-plaintext highlighter-rouge">referenceRange</code> -&gt; <code class="language-plaintext highlighter-rouge">.referenceRange</code></li>
+      <li><code class="language-plaintext highlighter-rouge">testIdentifier</code> -&gt; <code class="language-plaintext highlighter-rouge">.code</code> – where “LN” is Loinc</li>
+      <li><code class="language-plaintext highlighter-rouge">referenceRange</code> -&gt; <code class="language-plaintext highlighter-rouge">.referenceRange.text</code> – don’t try to break out further as there is little use of this value</li>
       <li><code class="language-plaintext highlighter-rouge">labCommentEvents</code> -&gt; <code class="language-plaintext highlighter-rouge">.note.text</code></li>
       <li><code class="language-plaintext highlighter-rouge">observationValue</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.value</code></li>
       <li><code class="language-plaintext highlighter-rouge">observationUnits.unit</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.unit</code></li>
@@ -862,6 +870,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-cbcReport-1.html"
+                     title="DiagnosticReport/ex-MHV-cbcReport-1">Example 1 of an MHV cbcReport</a>
+               </td>
+               <td>
+<p>Example from a mock labTestPromises (1110200002)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="Condition-ex-MHV-condition-1.html"
                      title="Condition/ex-MHV-condition-1">Example 1 of an MHV condition</a>
                </td>
@@ -1206,6 +1223,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="Organization-ex-MHV-organization-552.html"
+                     title="Organization/ex-MHV-organization-552">Organization HDR Lab 552</a>
+               </td>
+               <td>
+<p>This example derived off of a mock HDR Lab report</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="Organization-ex-MHV-organization-989.html"
                      title="Organization/ex-MHV-organization-989">Organization lab site 989</a>
                </td>
@@ -1247,6 +1273,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="Patient-ex-MHV-patient-27167.html"
+                     title="Patient/ex-MHV-patient-27167">Example TESTFIVE from HDR Lab Patient</a>
+               </td>
+               <td>
+<p>This example is derived off of a mock patient</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="Practitioner-ex-MHV-practitioner.html"
                      title="Practitioner/ex-MHV-practitioner">Example Practitioner</a>
                </td>
@@ -1261,6 +1296,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                </td>
                <td>
 <p>Phyllis Mangas</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Practitioner-ex-MHV-practitioner-14934-VA552.html"
+                     title="Practitioner/ex-MHV-practitioner-14934-VA552">Example Practitoner 14934-VA552</a>
+               </td>
+               <td>
+<p>Lisa A Hall</p>
 </td>
             </tr>
             <tr>
@@ -1382,7 +1426,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 11, 2023 08:45-0500">2023-04-11</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.8-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 10:49-0500">2023-04-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

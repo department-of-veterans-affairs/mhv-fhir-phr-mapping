@@ -1,0 +1,25 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-MHV-practitioner-14934-VA552> a fhir:Practitioner ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-practitioner-14934-VA552"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Practitioner</b><a name=\"ex-MHV-practitioner-14934-VA552\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Practitioner &quot;ex-MHV-practitioner-14934-VA552&quot; </p></div><p><b>identifier</b>: id: 14934-VA552</p><p><b>name</b>: LISA A HALL </p></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:system [ fhir:v "http://example.org/99VA4"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "14934-VA552" ]
+  ] ) ; # 
+  fhir:name ( [
+     fhir:family [ fhir:v "HALL" ] ;
+     fhir:given ( [ fhir:v "LISA" ] [ fhir:v "A" ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

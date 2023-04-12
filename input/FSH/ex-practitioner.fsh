@@ -123,3 +123,29 @@ Usage: #example
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "AuthorTO.22572"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+
+
+/*  from HDR Lab
+
+            <author>
+               <identifier>
+                  <identity>14934-VA552</identity>
+               </identifier>
+               <idSourceTable>99VA4</idSourceTable>
+               <name>
+                  <given>LISA</given>
+                  <middle>A</middle>
+                  <family>HALL</family>
+               </name>
+            </author>
+*/
+Instance: ex-MHV-practitioner-14934-VA552
+InstanceOf: Practitioner
+Title: "Example Practitoner 14934-VA552"
+Description: "Lisa A Hall"
+Usage: #example
+* name.family = "HALL"
+* name.given[+] = "LISA"
+* name.given[+] = "A"
+* identifier[+].value = "14934-VA552"
+* identifier[=].system = "http://example.org/99VA4"

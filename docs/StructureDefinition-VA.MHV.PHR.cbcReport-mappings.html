@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.7-beta - ci-build
+            <span style="display:inline-block;">0.1.8-beta - ci-build
 
 
 
@@ -166,7 +166,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.7-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.8-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -201,6 +201,16 @@
 
 
 
+
+
+
+  
+    
+      <li>
+        <a href="StructureDefinition-VA.MHV.PHR.cbcReport-examples.html">Examples</a>
+      </li>
+    
+  
 
 
 
@@ -281,6 +291,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;category (LaboratorySlice)</td><td>OBR-24</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>OBR-4 (HL7 v2 doesn't provide an easy way to indicate both the ordered test and the performed panel)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (CBC)</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3 (no HL7 v2 mapping for Group or Device)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>OBR-7</td> </tr>
@@ -290,14 +301,13 @@
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>SPM</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>OBXs</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>OBX</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;presentedForm</td><td>OBX</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType</td><td>ED.2+ED.3/RP.2+RP.3. Note conversion may be needed if old style values are being used</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</td><td>ED.5</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>RP.1+RP.2 - if they refer to a URL (see v2.6)</td> </tr>
 </table>
 <a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVcbcReport</b></td></tr>
  <tr><td>DiagnosticReport</td><td>Entity. Role, or Act, Observation[classCode=OBS, moodCode=EVN]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;meta</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
@@ -320,6 +330,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (CBC)</td><td>union(., ./translation)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>participation[typeCode=SBJ]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>effectiveTime</td> </tr>
@@ -329,17 +340,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>participation[typeCode=SBJ]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>outboundRelationship[typeCode=COMP].target</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>inboundRelationship[typeCode=&quot;SPRT&quot;].source[classCode=OBS, moodCode=EVN, code=LOINC:48767-8].value (type=ST)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;presentedForm</td><td>text (type=ED)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType</td><td>./mediaType, ./charset</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language</td><td>./language</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</td><td>./data</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>./reference/literal</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size</td><td>N/A (needs data type R3 proposal)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hash</td><td>.integrityCheck[parent::ED/integrityCheckAlgorithm=&quot;SHA-1&quot;]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>./title/data</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creation</td><td>N/A (needs data type R3 proposal)</td> </tr>
 </table>
 <a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVcbcReport</b></td></tr>
@@ -359,6 +359,8 @@
 <a name="CBC-Mapping-labTestPromises"> </a><h3>Mappings for HDR to MHV-PHR (labTestPromises)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVcbcReport</b></td></tr>
  <tr><td>DiagnosticReport</td><td>HDR labTestPromises</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;meta</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastUpdated</td><td>ConvertDate(labTestPromises.recordUpdateTime)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`laboratory`</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>labTestPromises.labSubscript</td> </tr>
@@ -366,12 +368,10 @@
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>ConvertDate(labTestPromises.reportCompleDate.literal)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>ConvertDate(labTestPromises.reportCompleDate.literal)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetPractitioner(labTestPromises.labTestRequest.author), GetLocation(labTestPromises.labTestRequest.orderingFacilityIdentifier)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetPractitioner(labTestPromises.labTestRequest.author), GetLocation(labTestPromises.labTestRequest.orderingFacilityIdentifier), GetLocation(labTestPromises.recordSource)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Contained Specimen (labTestPromises.specimen)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>Contained Observation(labTestPromises.labTests.)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>labTestPromises.labCommentEvents[0].comments</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;presentedForm</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>labTestPromises.labCommentEvent[1+].comments - when more than one comment</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>Contained Observation(labTestPromises.labTests)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>labTestPromises.labCommentEvents.comments combined</td> </tr>
 </table>
 
 
@@ -448,7 +448,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.7-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Apr 11, 2023 08:45-0500">2023-04-11</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.8-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 10:49-0500">2023-04-12</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
