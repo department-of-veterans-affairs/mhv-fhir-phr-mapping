@@ -19,13 +19,42 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:451
 content-type:application/fhir+json
-date:Wed, 12 Apr 2023 15:50:02 GMT
-last-modified:Wed, 12 Apr 2023 15:50:02 GMT
+date:Fri, 14 Apr 2023 14:56:44 GMT
+last-modified:Fri, 14 Apr 2023 14:56:44 GMT
 pragma:no-cache
 server:nginx
 x-gdpr-disclosure:All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
-x-request-id:5-4346378
+x-request-id:7-222549
 
 {&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : false},{&quot;name&quot; : &quot;message&quot;,&quot;valueString&quot; : &quot;The code system 'http://service.via.med.va.gov/ObservationTypeTO' is not known (encountered paired with code = 'ABDMONAL GIRTH'); The code provided (http://service.via.med.va.gov/ObservationTypeTO#ABDMONAL GIRTH) is not valid in the value set 'All codes known to the system'&quot;},{&quot;name&quot; : &quot;cause&quot;,&quot;valueString&quot; : &quot;not-found&quot;}]}
+</pre>
+<hr/><a name="l2"> </a>
+<p>#2</p>
+<pre>
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;codeableConcept&quot;,&quot;valueCodeableConcept&quot;:{&quot;coding&quot;:[{&quot;code&quot;:&quot;4637183&quot;}],&quot;text&quot;:&quot;RESPIRATORY DISTRESS&quot;}},{&quot;name&quot;:&quot;valueSetMode&quot;,&quot;valueString&quot;:&quot;CHECK_MEMERSHIP_ONLY&quot;},{&quot;name&quot;:&quot;default-to-latest-version&quot;,&quot;valueBoolean&quot;:true},{&quot;name&quot;:&quot;valueSet&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;ValueSet&quot;,&quot;id&quot;:&quot;clinical-findings&quot;,&quot;meta&quot;:{&quot;lastUpdated&quot;:&quot;2019-11-01T09:29:23.356+11:00&quot;,&quot;profile&quot;:[&quot;http://hl7.org/fhir/StructureDefinition/shareablevalueset&quot;]},&quot;extension&quot;:[{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-wg&quot;,&quot;valueCode&quot;:&quot;oo&quot;},{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status&quot;,&quot;valueCode&quot;:&quot;draft&quot;},{&quot;url&quot;:&quot;http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm&quot;,&quot;valueInteger&quot;:1}],&quot;url&quot;:&quot;http://hl7.org/fhir/ValueSet/clinical-findings&quot;,&quot;identifier&quot;:[{&quot;system&quot;:&quot;urn:ietf:rfc:3986&quot;,&quot;value&quot;:&quot;urn:oid:2.16.840.1.113883.4.642.3.232&quot;}],&quot;version&quot;:&quot;4.0.1&quot;,&quot;name&quot;:&quot;SNOMEDCTClinicalFindings&quot;,&quot;title&quot;:&quot;SNOMED CT Clinical Findings&quot;,&quot;status&quot;:&quot;draft&quot;,&quot;experimental&quot;:false,&quot;date&quot;:&quot;2019-11-01T09:29:23+11:00&quot;,&quot;publisher&quot;:&quot;FHIR Project team&quot;,&quot;contact&quot;:[{&quot;telecom&quot;:[{&quot;system&quot;:&quot;url&quot;,&quot;value&quot;:&quot;http://hl7.org/fhir&quot;}]}],&quot;description&quot;:&quot;This value set includes all the \&quot;Clinical finding\&quot; [SNOMED CT](http://snomed.info/sct) codes - concepts where concept is-a 404684003 (Clinical finding (finding)).&quot;,&quot;copyright&quot;:&quot;This resource includes content from SNOMED Clinical Terms® (SNOMED CT®) which is copyright of the International Health Terminology Standards Development Organisation (IHTSDO). Implementers of these specifications must have the appropriate SNOMED CT Affiliate license - for more information contact http://www.snomed.org/snomed-ct/get-snomed-ct or info@snomed.org&quot;,&quot;compose&quot;:{&quot;include&quot;:[{&quot;system&quot;:&quot;http://snomed.info/sct&quot;,&quot;filter&quot;:[{&quot;property&quot;:&quot;concept&quot;,&quot;op&quot;:&quot;is-a&quot;,&quot;value&quot;:&quot;404684003&quot;}]}]}}},{&quot;name&quot;:&quot;cache-id&quot;,&quot;valueString&quot;:&quot;db253fb8-4c53-46c9-8734-3bbb61c3ac64&quot;},{&quot;name&quot;:&quot;profile&quot;,&quot;resource&quot;:{&quot;resourceType&quot;:&quot;Parameters&quot;,&quot;parameter&quot;:[{&quot;name&quot;:&quot;x-system-cache-id&quot;,&quot;valueString&quot;:&quot;dc8fd4bc-091a-424a-8a3b-6198ef146891&quot;}]}}]}
+</pre>
+<pre>
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:362
+content-type:application/fhir+json
+date:Fri, 14 Apr 2023 14:57:05 GMT
+last-modified:Fri, 14 Apr 2023 14:57:05 GMT
+pragma:no-cache
+server:nginx
+x-gdpr-disclosure:All access to this server is logged as AuditEvent Resources, and these store your ip address (and logged in user, if one exists). Also, your IP address is logged with Google Analytics for building geomaps of server usage. Your continued use of the API constitutes agreement to these terms. See [link] for erasure requests
+x-request-id:7-222557
+
+{&quot;resourceType&quot; : &quot;Parameters&quot;,&quot;parameter&quot; : [{&quot;name&quot; : &quot;result&quot;,&quot;valueBoolean&quot; : false},{&quot;name&quot; : &quot;message&quot;,&quot;valueString&quot; : &quot;The code system '' is not known (encountered paired with code = '4637183'); The code provided (#4637183, (RESPIRATORY DISTRESS)) is not valid in the value set 'SNOMEDCTClinicalFindings'&quot;},{&quot;name&quot; : &quot;cause&quot;,&quot;valueString&quot; : &quot;not-found&quot;}]}
 </pre>
 </head></html>

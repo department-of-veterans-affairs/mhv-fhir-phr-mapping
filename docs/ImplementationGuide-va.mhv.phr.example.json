@@ -14,11 +14,11 @@
     "valueInteger" : 0
   }],
   "url" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example",
-  "version" : "0.1.8-beta",
+  "version" : "0.1.9-beta",
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-04-12T10:49:54-05:00",
+  "date" : "2023-04-14T09:56:36-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -712,7 +712,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.allergyIntolerance"
       },
       "name" : "VA MHV PHR Allergy and Intolerance",
-      "description" : "A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.\n\n- The mock example maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. \n- Should be based on US-Core for AllergyIntolerance Resource profile\n- a `clinicalStatus` of the allergy (e.g.,active or resolved)\n  - Given that intoleranceCondition.status is unclear; will presume we only see `active`\n  - set to `active`\n- a `code` which tells you what the patient is allergic to\n  - at least `code.text`\n  - would be good to have a coding, but there does not appear to be any source for that\n- a patient\n- category derived from .allergyType (multiple codes are multiple category)\n  - `D` -> #medication\n  - `F' -> #food\n  - `O` -> #environment\n\nTODO:\n- unclear\n  - `intoleranceCondition.status` is always `F` in the mock data I have been given, so unclear what the meaning is. From the name 'status' I presume this is the status of the allergy, but unclear.\n  - will presume we only get `active`\n  - reaction.reaction.code seems to be a number, but I can't find a codeSystem with these numbers.\n    - would be good to have SNOMED-CT, but this does not seem to be SNOMED",
+      "description" : "A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.\n\n- The mock example maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. \n- Should be based on US-Core for AllergyIntolerance Resource profile\n- a `clinicalStatus` of the allergy (e.g.,active or resolved)\n  - Given that intoleranceCondition.status is unclear; will presume we only see `active`\n  - set to `active`\n- a `code` which tells you what the patient is allergic to\n  - at least `code.text`\n  - would be good to have a coding, but there does not appear to be any source for that\n- a patient\n- category derived from .allergyType (multiple codes are multiple category)\n  - `D` -> #medication\n  - `F' -> #food\n  - `O` -> #environment\n- presume if `drugClass` is indicated then the `category` should be #medication\n\nTODO:\n- unclear\n  - `intoleranceCondition.status` is always `F` in the mock data I have been given, so unclear what the meaning is. From the name 'status' I presume this is the status of the allergy, but unclear.\n  - will presume we only get `active`\n  - no clear place to record `informationSourceCategory`, `recordSource`, or `facilityIdentifer`\n  - reaction.reaction.code seems to be a number, but I can't find a codeSystem with these numbers.\n    - would be good to have SNOMED-CT, but this does not seem to be SNOMED",
       "exampleBoolean" : false
     },
     {
@@ -721,10 +721,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/VA.MHV.PHR.cbcReport"
+        "reference" : "StructureDefinition/VA.MHV.PHR.chReport"
       },
-      "name" : "VA MHV PHR HDR CBC Report",
-      "description" : "A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (presumed CBC).\n- LOINC#58410-2 'CBC panel - Blood by Automated count'\n\nThe given example aligns with the `Lab.xsd` schema. \n\nThe `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for CBC laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)\n\nThe `labTestPromises.labTests` are each recorded as a FHIR [Observation for CBC result](StructureDefinition-VA.MHV.PHR.cbcTest.html) that is contained in the DiagnosticReport. The map to [HDR cbcTestPromise](StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). \n\nThe `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nThis profile is based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. Following the [US-Core example for CBC](https://www.hl7.org/fhir/us/core/DiagnosticReport-cbc.html)\n\nTODO: There are some code `system` values that are simple strings. To make them into URI/URL I prepend `http://example.org`, but something better needs to come along.\n- HL70070\n- 99VA60\n- 99VA61\n- 99VA64\n- 99VA95.3\nTODO: Confirm that \"CH\" is really a Loinc CBC Panel.",
+      "name" : "VA MHV PHR HDR Chem-Hem Report",
+      "description" : "The given labTestPromise example aligns with the `Lab.xsd` schema. \nA profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (Chem-Hem).\n\nThe `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)\n- code.text must be `CH`. No other codeing values\n- category must be `LAB`\n- category also holds 1..* codes from the contained Observation.code\n\nThe `labTestPromises.labTests` are each recorded as a FHIR [Observation result](StructureDefinition-VA.MHV.PHR.chTest.html) that is contained in the DiagnosticReport. The map to [HDR chTestPromise](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). \n\nThe `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nThis profile is based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. \n\nTODO: There are some code `system` values that are simple strings. To make them into URI/URL I prepend `http://example.org`, but something better needs to come along.\n- HL70070\n- 99VA60\n- 99VA61\n- 99VA64\n- 99VA95.3",
       "exampleBoolean" : false
     },
     {
@@ -733,9 +733,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/VA.MHV.PHR.cbcSpecimen"
+        "reference" : "StructureDefinition/VA.MHV.PHR.chSpecimen"
       },
-      "name" : "VA MHV PHR HDR CBC Specimen",
+      "name" : "VA MHV PHR HDR CH Specimen",
       "description" : "A profile showing how the `labTestPromises.specimen` is mapped into a FHIR Specimen.\n\n- This is usually a contained resource, contained in the Lab Report. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - `Specimen.type.text` <- `labTestPromises.specimen.specimenSource`\n- should have a `collectedDateTime` derived from `labTestPromises.specimen.specimenTakenDate`",
       "exampleBoolean" : false
     },
@@ -745,9 +745,9 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/VA.MHV.PHR.cbcTest"
+        "reference" : "StructureDefinition/VA.MHV.PHR.chTest"
       },
-      "name" : "VA MHV PHR CBC labTest",
+      "name" : "VA MHV PHR CH labTest",
       "description" : "A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n- `orderedTestCode -> `.category`\n- 'chemistryResults`\n  - `valueInterpretation` -> `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)\n  - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n  - `testIdentifier` -> `.code` -- where \"LN\" is Loinc\n  - `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value\n  - `labCommentEvents` -> `.note.text`\n  - `observationValue` -> `.valueQuantity.value`\n  - `observationUnits.unit` -> `.valueQuantity.unit`\n  - `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n  - `observationUnits.codingSystem` -> `.valueQuantity.system`\n  - `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - no `.subject` is populated\n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n  - specimen is presumed from the DiagnosticReport",
       "exampleBoolean" : false
     },
@@ -982,14 +982,26 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "AllergyIntolerance"
+      }],
+      "reference" : {
+        "reference" : "AllergyIntolerance/ex-MHV-allergy-1"
+      },
+      "name" : "Example 1 of an MHV allergy or intolerance",
+      "description" : "Example from a mock ProblemTO",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "DiagnosticReport"
       }],
       "reference" : {
-        "reference" : "DiagnosticReport/ex-MHV-cbcReport-1"
+        "reference" : "DiagnosticReport/ex-MHV-chReport-1"
       },
-      "name" : "Example 1 of an MHV cbcReport",
+      "name" : "Example 1 of an MHV chReport",
       "description" : "Example from a mock labTestPromises (1110200002)",
-      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.cbcReport"
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"
     },
     {
       "extension" : [{
@@ -1527,7 +1539,19 @@
       "reference" : {
         "reference" : "Patient/ex-MHV-patient-27167"
       },
-      "name" : "Example TESTFIVE from HDR Lab Patient",
+      "name" : "Patient TESTFIVE",
+      "description" : "This example is derived off of a mock patient",
+      "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/ex-MHV-patient-89486"
+      },
+      "name" : "Patient MHVASPXXI",
       "description" : "This example is derived off of a mock patient",
       "exampleCanonical" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"
     },

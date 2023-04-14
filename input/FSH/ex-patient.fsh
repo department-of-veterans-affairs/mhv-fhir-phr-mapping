@@ -164,7 +164,7 @@ Usage: #example
 */
 Instance: ex-MHV-patient-27167
 InstanceOf: MHVpatient
-Title: "Example TESTFIVE from HDR Lab Patient"
+Title: "Patient TESTFIVE"
 Description: """
 This example is derived off of a mock patient
 """
@@ -178,3 +178,38 @@ Usage: #example
 * identifier[=].system = "http://example.org/USVHA"
 * identifier[=].value = "27167"
 * identifier[=].assigner.display = "989"
+
+
+/* from allergies.xml
+            <patient>
+                <identifier>
+                    <identity>89486</identity>
+                    <assigningFacility>979</assigningFacility>
+                    <assigningAuthority>USVHA</assigningAuthority>
+                </identifier>
+                <name>
+                    <given>MHVPDAADLZ</given>
+                    <middle>LUSER</middle>
+                    <family>MHVASPXXI</family>
+                    <suffix>MHV</suffix>
+                </name>
+            </patient>
+*/
+Instance: ex-MHV-patient-89486
+InstanceOf: MHVpatient
+Title: "Patient MHVASPXXI"
+Description: """
+This example is derived off of a mock patient
+"""
+Usage: #example
+* name[+].use = #usual
+* name[=].family = "MHVASPXXI"
+* name[=].given[+] = "MHVPDAADLZ"
+* name[=].given[+] = "LUSERL"
+* name[=].suffix = "MHV"
+* gender = #unknown
+* identifier[+].use = #official
+* identifier[=].system = "http://example.org/USVHA"
+* identifier[=].value = "89486"
+* identifier[=].assigner.display = "979"
+

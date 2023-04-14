@@ -22,11 +22,13 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
   - `D` -> #medication
   - `F' -> #food
   - `O` -> #environment
+- presume if `drugClass` is indicated then the `category` should be #medication
 
 TODO:
 - unclear
   - `intoleranceCondition.status` is always `F` in the mock data I have been given, so unclear what the meaning is. From the name 'status' I presume this is the status of the allergy, but unclear.
   - will presume we only get `active`
+  - no clear place to record `informationSourceCategory`, `recordSource`, or `facilityIdentifer`
   - reaction.reaction.code seems to be a number, but I can't find a codeSystem with these numbers.
     - would be good to have SNOMED-CT, but this does not seem to be SNOMED
 """
@@ -70,7 +72,8 @@ Title: "VHIM Allergy to MHV-PHR"
 * patient -> "GetPatient(intoleranceCondition.patient)"
 * clinicalStatus -> "`active`"
 * onsetDateTime -> "~intoleranceCondition.observationTime.literal"
-* category -> "~intoleranceCondition.allergyType.code & intoleranceCondition.drugClass.code"
+* category -> "~intoleranceCondition.allergyType.code"
+* category -> "intoleranceCondition.drugClass.code"
 * recorder -> "getFacility(intoleranceCondition.facilityIdentifier.identity)"
 * reaction.manifestation -> "intoleranceCondition.reaction.reaction"
 * reaction.manifestation.text -> "intoleranceCondition.reaction.reaction.displayText"

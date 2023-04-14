@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.8-beta - ci-build
+            <span style="display:inline-block;">0.1.9-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.8-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.9-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Background</h2>
   
 
@@ -209,6 +209,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>MyHealtheVet acts as a FHIR Server.</p>
 
+<p>Utility Resources:</p>
+
 <ul>
   <li><a href="StructureDefinition-VA.MHV.PHR.patient.html">Patient</a>
     <ul>
@@ -235,16 +237,52 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><a href="StructureDefinition-VA.MHV.PHR.organization-examples.html">Examples</a></li>
     </ul>
   </li>
+</ul>
+
+<p>Clinical Resources:</p>
+
+<ul>
+  <li><a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html">Allergy and Intolerance</a>
+    <ul>
+      <li><a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-vhim-allergy-to-mhv-phr-intolerancecondition">Mappings from VHIM Allergy</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html">Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="StructureDefinition-VA.MHV.PHR.chReport.html">Chem-Hem (CH) Diagnostic Report</a>
+    <ul>
+      <li><a href="StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">Mapping from HDR labTestPromises to DiagnosticReport</a>
+        <ul>
+          <li><a href="StructureDefinition-VA.MHV.PHR.chReport-examples.html">Examples</a></li>
+        </ul>
+      </li>
+      <li>contained <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html">Specimen</a>
+        <ul>
+          <li>Mappings from <a href="StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR labTestPromises.specimen</a></li>
+        </ul>
+      </li>
+      <li>contained <a href="StructureDefinition-VA.MHV.PHR.chTest.html">Observation(s)</a>
+        <ul>
+          <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR labTests</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="StructureDefinition-VA.MHV.PHR.condition.html">Conditions</a>
+    <ul>
+      <li><a href="StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto">Mapping from VDIF - ProblemTO</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.condition-examples.html">Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="StructureDefinition-VA.MHV.PHR.ecg.html">ECG</a>
+    <ul>
+      <li><a href="StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-vdif-to-mhv-phr-clinicalprocedureto">Mapping from VDIF - ClinicalProcedureTO</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.ecg-examples.html">Examples</a></li>
+    </ul>
+  </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.immunization.html">Immunization</a>
     <ul>
       <li><a href="StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto">Mapping from VDIF - ImmunizationTO</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.immunization-examples.html">Examples</a></li>
-    </ul>
-  </li>
-  <li><a href="StructureDefinition-VA.MHV.PHR.note.html">Notes</a>
-    <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto">Mapping from VDIF - NoteTO</a></li>
-      <li><a href="StructureDefinition-VA.MHV.PHR.note-examples.html">Examples</a></li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.labReport.html">LabReport</a> including Microbiology and Pathology
@@ -266,29 +304,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       </li>
     </ul>
   </li>
-  <li><a href="StructureDefinition-VA.MHV.PHR.cbcReport.html">Chem-Hem (CBC) Diagnostic Report</a>
+  <li><a href="StructureDefinition-VA.MHV.PHR.note.html">Notes</a>
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">Mapping from HDR labTestPromises to DiagnosticReport</a>
-        <ul>
-          <li><a href="StructureDefinition-VA.MHV.PHR.cbcReport-examples.html">Examples</a></li>
-        </ul>
-      </li>
-      <li>contained <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen.html">Specimen</a>
-        <ul>
-          <li>Mappings from <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR labTestPromises.specimen</a></li>
-        </ul>
-      </li>
-      <li>contained <a href="StructureDefinition-VA.MHV.PHR.cbcTest.html">Observation(s)</a>
-        <ul>
-          <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR labTests</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><a href="StructureDefinition-VA.MHV.PHR.condition.html">Conditions</a>
-    <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto">Mapping from VDIF - ProblemTO</a></li>
-      <li><a href="StructureDefinition-VA.MHV.PHR.condition-examples.html">Examples</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto">Mapping from VDIF - NoteTO</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.note-examples.html">Examples</a></li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.imaging.html">Radiology</a>
@@ -298,18 +317,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>most <a href="https://johnmoehrke.github.io/MHV-PHR/Bundle-images.html">examples are within this Bundle</a>, and thus not individually exposed.</li>
     </ul>
   </li>
-  <li><a href="StructureDefinition-VA.MHV.PHR.ecg.html">ECG</a>
-    <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-vdif-to-mhv-phr-clinicalprocedureto">Mapping from VDIF - ClinicalProcedureTO</a></li>
-      <li><a href="StructureDefinition-VA.MHV.PHR.ecg-examples.html">Examples</a></li>
-    </ul>
-  </li>
   <li><a href="vitals.html">Vitals</a></li>
 </ul>
 
 <h3 id="todo">todo</h3>
-
-<p>Not yet done</p>
 
 <p>Note in Muazzam spreadsheet</p>
 <ul>
@@ -317,16 +328,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Medication History</li>
 </ul>
 
-<p>Chem-Hem - from HDR</p>
-<ul>
-  <li>CdsChemistryQueryService.java</li>
-</ul>
-
 <h4 id="in-progress">in progress</h4>
 
 <ul>
-  <li>Allergies</li>
-  <li>Chem-Hem -&gt; CBC</li>
+  <li>Allergies Examples</li>
+  <li>xslt for CH</li>
 </ul>
 
 <h4 id="other">other</h4>
@@ -440,7 +446,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.8-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 10:49-0500">2023-04-12</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.9-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 14, 2023 09:56-0500">2023-04-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

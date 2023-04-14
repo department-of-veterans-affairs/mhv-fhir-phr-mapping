@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.8-beta - ci-build
+            <span style="display:inline-block;">0.1.9-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.8-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.9-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -262,6 +262,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li><code class="language-plaintext highlighter-rouge">O</code> -&gt; #environment</li>
     </ul>
   </li>
+  <li>presume if <code class="language-plaintext highlighter-rouge">drugClass</code> is indicated then the <code class="language-plaintext highlighter-rouge">category</code> should be #medication</li>
 </ul>
 
 <p>TODO:</p>
@@ -270,6 +271,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <ul>
       <li><code class="language-plaintext highlighter-rouge">intoleranceCondition.status</code> is always <code class="language-plaintext highlighter-rouge">F</code> in the mock data I have been given, so unclear what the meaning is. From the name ‘status’ I presume this is the status of the allergy, but unclear.</li>
       <li>will presume we only get <code class="language-plaintext highlighter-rouge">active</code></li>
+      <li>no clear place to record <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>, <code class="language-plaintext highlighter-rouge">recordSource</code>, or <code class="language-plaintext highlighter-rouge">facilityIdentifer</code></li>
       <li>reaction.reaction.code seems to be a number, but I can’t find a codeSystem with these numbers.
         <ul>
           <li>would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
@@ -282,26 +284,27 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-VA.MHV.PHR.cbcReport.html"
-                     title="StructureDefinition/VA.MHV.PHR.cbcReport">VA MHV PHR HDR CBC Report</a>
+                  <a href="StructureDefinition-VA.MHV.PHR.chReport.html"
+                     title="StructureDefinition/VA.MHV.PHR.chReport">VA MHV PHR HDR Chem-Hem Report</a>
                </td>
                <td>
-<p>A profile showing how <code class="language-plaintext highlighter-rouge">labTestPromise</code> is mapped into a FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Observation</code>, and <code class="language-plaintext highlighter-rouge">Specimen</code>. Where the <code class="language-plaintext highlighter-rouge">labTestPromise</code> only has <code class="language-plaintext highlighter-rouge">labSubscript</code> of <code class="language-plaintext highlighter-rouge">CH</code> (presumed CBC).</p>
+<p>The given labTestPromise example aligns with the <code class="language-plaintext highlighter-rouge">Lab.xsd</code> schema. 
+A profile showing how <code class="language-plaintext highlighter-rouge">labTestPromise</code> is mapped into a FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Observation</code>, and <code class="language-plaintext highlighter-rouge">Specimen</code>. Where the <code class="language-plaintext highlighter-rouge">labTestPromise</code> only has <code class="language-plaintext highlighter-rouge">labSubscript</code> of <code class="language-plaintext highlighter-rouge">CH</code> (Chem-Hem).</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises</code> is mapped onto this FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> for laboratory reporting. The mapping to <a href="StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">HDR labTestPromise</a></p>
 <ul>
-  <li>LOINC#58410-2 ‘CBC panel - Blood by Automated count’</li>
+  <li>code.text must be <code class="language-plaintext highlighter-rouge">CH</code>. No other codeing values</li>
+  <li>category must be <code class="language-plaintext highlighter-rouge">LAB</code></li>
+  <li>category also holds 1..* codes from the contained Observation.code</li>
 </ul>
 
-<p>The given example aligns with the <code class="language-plaintext highlighter-rouge">Lab.xsd</code> schema.</p>
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.labTests</code> are each recorded as a FHIR <a href="StructureDefinition-VA.MHV.PHR.chTest.html">Observation result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR chTestPromise</a>.</p>
 
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises</code> is mapped onto this FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> for CBC laboratory reporting. The mapping to <a href="StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">HDR labTestPromise</a></p>
-
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.labTests</code> are each recorded as a FHIR <a href="StructureDefinition-VA.MHV.PHR.cbcTest.html">Observation for CBC result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR cbcTestPromise</a>.</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR Specimen</a>.</p>
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR Specimen</a>.</p>
 
 <p>The use of contained means that we do not need to de-duplicate the lab tests or specimen.</p>
 
-<p>This profile is based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. Following the <a href="https://www.hl7.org/fhir/us/core/DiagnosticReport-cbc.html">US-Core example for CBC</a></p>
+<p>This profile is based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations.</p>
 
 <p>TODO: There are some code <code class="language-plaintext highlighter-rouge">system</code> values that are simple strings. To make them into URI/URL I prepend <code class="language-plaintext highlighter-rouge">http://example.org</code>, but something better needs to come along.</p>
 <ul>
@@ -309,15 +312,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>99VA60</li>
   <li>99VA61</li>
   <li>99VA64</li>
-  <li>99VA95.3
-TODO: Confirm that “CH” is really a Loinc CBC Panel.</li>
+  <li>99VA95.3</li>
 </ul>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-VA.MHV.PHR.cbcSpecimen.html"
-                     title="StructureDefinition/VA.MHV.PHR.cbcSpecimen">VA MHV PHR HDR CBC Specimen</a>
+                  <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html"
+                     title="StructureDefinition/VA.MHV.PHR.chSpecimen">VA MHV PHR HDR CH Specimen</a>
                </td>
                <td>
 <p>A profile showing how the <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR Specimen.</p>
@@ -335,8 +337,8 @@ TODO: Confirm that “CH” is really a Loinc CBC Panel.</li>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-VA.MHV.PHR.cbcTest.html"
-                     title="StructureDefinition/VA.MHV.PHR.cbcTest">VA MHV PHR CBC labTest</a>
+                  <a href="StructureDefinition-VA.MHV.PHR.chTest.html"
+                     title="StructureDefinition/VA.MHV.PHR.chTest">VA MHV PHR CH labTest</a>
                </td>
                <td>
 <p>A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.</p>
@@ -870,8 +872,17 @@ TODO: Confirm that “CH” is really a Loinc CBC Panel.</li>
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="DiagnosticReport-ex-MHV-cbcReport-1.html"
-                     title="DiagnosticReport/ex-MHV-cbcReport-1">Example 1 of an MHV cbcReport</a>
+                  <a href="AllergyIntolerance-ex-MHV-allergy-1.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-1">Example 1 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-chReport-1.html"
+                     title="DiagnosticReport/ex-MHV-chReport-1">Example 1 of an MHV chReport</a>
                </td>
                <td>
 <p>Example from a mock labTestPromises (1110200002)</p>
@@ -1274,7 +1285,16 @@ TODO: Confirm that “CH” is really a Loinc CBC Panel.</li>
             <tr>
                <td style="column-width:30%">
                   <a href="Patient-ex-MHV-patient-27167.html"
-                     title="Patient/ex-MHV-patient-27167">Example TESTFIVE from HDR Lab Patient</a>
+                     title="Patient/ex-MHV-patient-27167">Patient TESTFIVE</a>
+               </td>
+               <td>
+<p>This example is derived off of a mock patient</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-ex-MHV-patient-89486.html"
+                     title="Patient/ex-MHV-patient-89486">Patient MHVASPXXI</a>
                </td>
                <td>
 <p>This example is derived off of a mock patient</p>
@@ -1426,7 +1446,7 @@ TODO: Confirm that “CH” is really a Loinc CBC Panel.</li>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.8-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Apr 12, 2023 10:49-0500">2023-04-12</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.9-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 14, 2023 09:56-0500">2023-04-14</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

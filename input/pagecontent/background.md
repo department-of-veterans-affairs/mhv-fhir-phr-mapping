@@ -1,6 +1,8 @@
 
 MyHealtheVet acts as a FHIR Server.
 
+Utility Resources:
+
 - [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
   - [Mappings from VDIF - PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)
   - [Examples](StructureDefinition-VA.MHV.PHR.patient-examples.html)
@@ -14,12 +16,28 @@ MyHealtheVet acts as a FHIR Server.
 - [Organization](StructureDefinition-VA.MHV.PHR.organization.html)
   - [Mapping from VDIF - LabSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid)
   - [Examples](StructureDefinition-VA.MHV.PHR.organization-examples.html)
+
+Clinical Resources:
+
+- [Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html)
+  - [Mappings from VHIM Allergy](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-vhim-allergy-to-mhv-phr-intolerancecondition)
+  - [Examples](StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html)
+- [Chem-Hem (CH) Diagnostic Report](StructureDefinition-VA.MHV.PHR.chReport.html) 
+  - [Mapping from HDR labTestPromises to DiagnosticReport](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)
+    - [Examples](StructureDefinition-VA.MHV.PHR.chReport-examples.html)
+  - contained [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html)
+    - Mappings from [HDR labTestPromises.specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen)
+  - contained [Observation(s)](StructureDefinition-VA.MHV.PHR.chTest.html)
+    - Mapping from [HDR labTests](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests)
+- [Conditions](StructureDefinition-VA.MHV.PHR.condition.html)
+  - [Mapping from VDIF - ProblemTO](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
+- [ECG](StructureDefinition-VA.MHV.PHR.ecg.html)
+  - [Mapping from VDIF - ClinicalProcedureTO](StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-vdif-to-mhv-phr-clinicalprocedureto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
 - [Immunization](StructureDefinition-VA.MHV.PHR.immunization.html)
   - [Mapping from VDIF - ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)
   - [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
-- [Notes](StructureDefinition-VA.MHV.PHR.note.html)
-  - [Mapping from VDIF - NoteTO](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
 - [LabReport](StructureDefinition-VA.MHV.PHR.labReport.html) including Microbiology and Pathology
   - [Mapping from VDIF - LabReportTO +](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
     - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
@@ -27,40 +45,25 @@ MyHealtheVet acts as a FHIR Server.
     - Mapping from [VDIF LabSpecimen](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen)
   - Contained [Observation](StructureDefinition-VA.MHV.PHR.labTest.html)
     - Mapping from [VDIF LabTestTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto)
-- [Chem-Hem (CBC) Diagnostic Report](StructureDefinition-VA.MHV.PHR.cbcReport.html) 
-  - [Mapping from HDR labTestPromises to DiagnosticReport](StructureDefinition-VA.MHV.PHR.cbcReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)
-    - [Examples](StructureDefinition-VA.MHV.PHR.cbcReport-examples.html)
-  - contained [Specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen.html)
-    - Mappings from [HDR labTestPromises.specimen](StructureDefinition-VA.MHV.PHR.cbcSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen)
-  - contained [Observation(s)](StructureDefinition-VA.MHV.PHR.cbcTest.html)
-    - Mapping from [HDR labTests](StructureDefinition-VA.MHV.PHR.cbcTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests)
-- [Conditions](StructureDefinition-VA.MHV.PHR.condition.html)
-  - [Mapping from VDIF - ProblemTO](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
+- [Notes](StructureDefinition-VA.MHV.PHR.note.html)
+  - [Mapping from VDIF - NoteTO](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
 - [Radiology](StructureDefinition-VA.MHV.PHR.imaging.html)
   - [Mapping from VDIF - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto)
   - [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
   - most [examples are within this Bundle](https://johnmoehrke.github.io/MHV-PHR/Bundle-images.html), and thus not individually exposed.
-- [ECG](StructureDefinition-VA.MHV.PHR.ecg.html)
-  - [Mapping from VDIF - ClinicalProcedureTO](StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-vdif-to-mhv-phr-clinicalprocedureto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
 - [Vitals](vitals.html)
 
 ### todo
-
-Not yet done
 
 Note in Muazzam spreadsheet
 - Appointments
 - Medication History
 
-Chem-Hem - from HDR
-- CdsChemistryQueryService.java
-
 #### in progress
 
-- Allergies
-- Chem-Hem -> CBC
+- Allergies Examples
+- xslt for CH
 
 #### other
 
