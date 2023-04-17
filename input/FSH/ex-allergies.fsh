@@ -9,7 +9,7 @@ Example from a mock ProblemTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * patient = Reference(Patient/ex-MHV-patient-89486)
 * identifier[recordIdentifier].value = "53495" 
-* identifier[recordIdentifier].system = "http://example.org/979_120.8"
+* identifier[recordIdentifier].system = "http://va.gov/systems/979_120.8"
 * identifier[recordIdentifier].use = #usual
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * onsetDateTime = 2002-06-03T09:44:00Z

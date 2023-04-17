@@ -14,7 +14,8 @@ Utility Resources:
   - [Mappings from VDIF - HospitalAllocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)
   - [Examples](StructureDefinition-VA.MHV.PHR.location-examples.html)
 - [Organization](StructureDefinition-VA.MHV.PHR.organization.html)
-  - [Mapping from VDIF - LabSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid)
+  - [Mapping from VDIF - LabSiteTO](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteto)
+  - [Mapping from HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)
   - [Examples](StructureDefinition-VA.MHV.PHR.organization-examples.html)
 
 Clinical Resources:
@@ -57,6 +58,7 @@ Clinical Resources:
 ### todo
 
 Note in Muazzam spreadsheet
+
 - Appointments
 - Medication History
 

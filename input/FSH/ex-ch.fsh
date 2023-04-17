@@ -29,10 +29,10 @@ Usage: #inline
 * status = #available
 * type.coding[+].code = #SER
 * type.coding[=].display = "Serum"
-* type.coding[=].system = "http://example.org/HL70070"
+* type.coding[=].system = "http://va.gov/systems/HL70070"
 * type.coding[+].code = #72
 * type.coding[=].display = "SERUM"
-* type.coding[=].system = "http://example.org/99VA61"
+* type.coding[=].system = "http://va.gov/systems/99VA61"
 * type.coding[=].version = "5.2"
 * type.text = "SERUM"
 * collection.collectedDateTime = 2021-01-20T16:38:59-05:00
@@ -98,10 +98,10 @@ Usage: #inline
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * category[1].coding.code = #84140.0000
 * category[=].coding.display = "Potassium"
-* category[=].coding.system = "http://example.org/99VA64"
+* category[=].coding.system = "http://va.gov/systems/99VA64"
 * category[+].coding.code = #177
 * category[=].coding.display = "POTASSIUM"
-* category[=].coding.system = "http://example.org/99VA60"
+* category[=].coding.system = "http://va.gov/systems/99VA60"
 * interpretation.text = "L"
 * interpretation.coding = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L
 * status = #final
@@ -110,7 +110,7 @@ Usage: #inline
 * code.coding[=].system = LOINC
 * code.coding[=].version = "2.68"
 * category[+].coding.code = #4670505
-* category[=].coding.system = "http://example.org/99VA95.3"
+* category[=].coding.system = "http://va.gov/systems/99VA95.3"
 * category[=].coding.version = "2.68"
 * code.text = "POTASSIUM"
 * referenceRange.text = "3.6-5.1"
@@ -178,10 +178,10 @@ Usage: #inline
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
 * category[1].coding.code = #84295.0000
 * category[=].coding.display = "Sodium"
-* category[=].coding.system = "http://example.org/99VA64"
+* category[=].coding.system = "http://va.gov/systems/99VA64"
 * category[+].coding.code = #176
 * category[=].coding.display = "SODIUM"
-* category[=].coding.system = "http://example.org/99VA60"
+* category[=].coding.system = "http://va.gov/systems/99VA60"
 * interpretation.text = "L"
 * interpretation.coding = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L
 * status = #final
@@ -190,7 +190,7 @@ Usage: #inline
 * code.coding[=].system = LOINC
 * code.coding[=].version = "2.68"
 * category[+].coding.code = #4671912
-* category[=].coding.system = "http://example.org/99VA95.3"
+* category[=].coding.system = "http://va.gov/systems/99VA95.3"
 * category[=].coding.version = "2.68"
 * referenceRange.text = "136-145"
 * valueQuantity.value = 138.0

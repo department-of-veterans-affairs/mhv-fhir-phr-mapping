@@ -3,7 +3,7 @@ To support functions and resources:
 
 ### Support Resources
 
-To support the primary FHIR Resources, there are some untility Resources that will be needed. These will be created upon demand, based on a lookup need.
+To support the primary FHIR Resources, there are some utility Resources that will be needed. These will be created upon demand, based on a lookup need.
 
 #### GetPractitioner()
 
@@ -67,11 +67,27 @@ see [ConvertDate](ConvertDate.html)
 
 Most of the historic data just uses strings. Will need some method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a [FHIR ConceptMap](http://hl7.org/fhir/conceptmap.html) resource, thus making maintaining it easy.
 
+##### Formal code systems of interest
+
+- SCT = http://snomed.info/sct
+- UCUM = http://unitsofmeasure.org
+- LOINC = http://loinc.org
+- ICD = http://terminology.hl7.org/CodeSystem/icd9cm
+- CPT = http://www.ama-assn.org/go/cpt
+
+##### VA specific code systems
+
+There is often a system specified, but it is specified as a simple short string. These are not acceptable in FHIR. FHIR needs a URI or URL. So I propose we do the following conversion.
+
+Given a system ABCD, use `http://va.gov/systems/ABCD`
+
+##### Concept mapping
+
 For every context use of a concept encoded as a string, we presume they are unique within that context. The context identifies a specific ConceptMap, and a lookup of the string in that ConceptMap will result in the mapped standard code value.
 
-A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possiblly update of the given ConceptMap.
+A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possibily update of the given ConceptMap.
 
-#### UCUM code
+##### UCUM code
 
 Some of the codes used in Vista are not proper codes.
 | Vista code | Proper UCUM |

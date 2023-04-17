@@ -13,11 +13,11 @@
     <valueInteger value="0"/>
   </extension>
   <url value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
-  <version value="0.1.9-beta"/>
+  <version value="0.1.10-beta"/>
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-04-14T09:56:36-05:00"/>
+  <date value="2023-04-17T18:54:15-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -171,6 +171,62 @@
       </extension>
       <extension url="value">
         <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA95.3"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA60"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA64"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/HL70070"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/mpiPID"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/localPID"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA61"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -407,6 +463,62 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA95.3"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA60"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA64"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/HL70070"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/mpiPID"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/localPID"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA61"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueCode value="path-liquid"/>
       </extension>
       <extension url="value">
@@ -544,7 +656,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.chReport"/>
       </reference>
       <name value="VA MHV PHR HDR Chem-Hem Report"/>
-      <description value="The given labTestPromise example aligns with the `Lab.xsd` schema. &#xA;A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (Chem-Hem).&#xA;&#xA;The `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)&#xA;- code.text must be `CH`. No other codeing values&#xA;- category must be `LAB`&#xA;- category also holds 1..* codes from the contained Observation.code&#xA;&#xA;The `labTestPromises.labTests` are each recorded as a FHIR [Observation result](StructureDefinition-VA.MHV.PHR.chTest.html) that is contained in the DiagnosticReport. The map to [HDR chTestPromise](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). &#xA;&#xA;The `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).&#xA;&#xA;The use of contained means that we do not need to de-duplicate the lab tests or specimen.&#xA;&#xA;This profile is based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. &#xA;&#xA;TODO: There are some code `system` values that are simple strings. To make them into URI/URL I prepend `http://example.org`, but something better needs to come along.&#xA;- HL70070&#xA;- 99VA60&#xA;- 99VA61&#xA;- 99VA64&#xA;- 99VA95.3"/>
+      <description value="The given labTestPromise example aligns with the `Lab.xsd` schema. &#xA;A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (Chem-Hem).&#xA;&#xA;The `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)&#xA;- code.text must be `CH`. No other codeing values&#xA;- category must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`&#xA;- category also holds 1..* codes from the contained Observation.code&#xA;&#xA;The `labTestPromises.labTests` are each recorded as a FHIR [Observation result](StructureDefinition-VA.MHV.PHR.chTest.html) that is contained in the DiagnosticReport. The map to [HDR chTestPromise](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). &#xA;&#xA;The `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).&#xA;&#xA;The use of contained means that we do not need to de-duplicate the lab tests or specimen.&#xA;&#xA;This profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -566,7 +678,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.chTest"/>
       </reference>
       <name value="VA MHV PHR CH labTest"/>
-      <description value="A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests`&#xA;- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)&#xA;- `orderedTestCode -&gt; `.category`&#xA;- 'chemistryResults`&#xA;  - `valueInterpretation` -&gt; `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)&#xA;  - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)&#xA;  - `testIdentifier` -&gt; `.code` -- where &quot;LN&quot; is Loinc&#xA;  - `referenceRange` -&gt; `.referenceRange.text` -- don't try to break out further as there is little use of this value&#xA;  - `labCommentEvents` -&gt; `.note.text`&#xA;  - `observationValue` -&gt; `.valueQuantity.value`&#xA;  - `observationUnits.unit` -&gt; `.valueQuantity.unit`&#xA;  - `observationUnits.code` -&gt; `.valueQuantity.code` - likely need to adjust some&#xA;  - `observationUnits.codingSystem` -&gt; `.valueQuantity.system`&#xA;  - `performingOrganization` -&gt; `.performer`&#xA;- given this is contained in the DiagnosticReport, then &#xA;  - no `.subject` is populated&#xA;  - effective[x] is presumed from the DiagnosticReport&#xA;  - issued is presumed from the DiagnosticReport&#xA;  - specimen is presumed from the DiagnosticReport"/>
+      <description value="A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests`&#xA;- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;&#x9;- subject must be the patient&#xA;- `orderedTestCode -&gt; `.category`&#xA;- 'chemistryResults`&#xA;  - `valueInterpretation` -&gt; `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)&#xA;  - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)&#xA;  - `testIdentifier` -&gt; `.code` -- where &quot;LN&quot; is Loinc&#xA;  - `referenceRange` -&gt; `.referenceRange.text` -- don't try to break out further as there is little use of this value&#xA;  - `labCommentEvents` -&gt; `.note.text`&#xA;  - `observationValue` -&gt; `.valueQuantity.value`&#xA;  - `observationUnits.unit` -&gt; `.valueQuantity.unit`&#xA;  - `observationUnits.code` -&gt; `.valueQuantity.code` - likely need to adjust some&#xA;  - `observationUnits.codingSystem` -&gt; `.valueQuantity.system`&#xA;  - `performingOrganization` -&gt; `.performer`&#xA;- given this is contained in the DiagnosticReport, then &#xA;  - no `.subject` is populated&#xA;  - effective[x] is presumed from the DiagnosticReport&#xA;  - issued is presumed from the DiagnosticReport&#xA;  - specimen is presumed from the DiagnosticReport"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -676,7 +788,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.organization"/>
       </reference>
       <name value="VA MHV PHR Organization"/>
-      <description value="A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.&#xA;&#xA;- based on US-Core for Organization&#xA;- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)&#xA;&#xA;Map to [VDIF labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteid)"/>
+      <description value="A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.&#xA;&#xA;- based on US-Core for Organization&#xA;  - must have a status&#xA;  - must have a name&#xA;  - there are other things us-core defines that are not manditory (NPI, CLIA)&#xA;- two identifier types defined TOid and HDRid&#xA;- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)&#xA;&#xA;Map to [VDIF labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteto)&#xA;&#xA;Map to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -698,7 +810,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.practitioner"/>
       </reference>
       <name value="VA MHV PHR Practitioner"/>
-      <description value="A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.&#xA;&#xA;- based on US-Core for Practitioner&#xA;- used for UserTO, and AuthorTO&#xA;- might be used for PersonTO or is that RelatedPerson?&#xA;&#xA;Mapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto) and [VDIF AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)"/>
+      <description value="A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.&#xA;&#xA;- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible&#xA;- used for VIDF UserTO, and AuthorTO&#xA;- used for HDR PractitionerLite&#xA;- might be used for PersonTO or is that RelatedPerson?&#xA;&#xA;Mapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto) and [VDIF AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)&#xA;&#xA;Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1227,7 +1339,7 @@
       </reference>
       <name value="Organization HDR Lab 552"/>
       <description value="This example derived off of a mock HDR Lab report"/>
-      <exampleBoolean value="true"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1404,6 +1516,17 @@
       <name value="Example 1 of an MHV vital-sign"/>
       <description value="Example from a mock VitalSignTO"/>
       <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/fhirlabsample2"/>
+      </reference>
+      <name value="Bundle of a Chem-Hem Lab data"/>
+      <description value="Provided by Ken"/>
+      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

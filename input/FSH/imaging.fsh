@@ -32,9 +32,9 @@ TODO Questions:
   CP 0..1
 * type.coding[LO].system = LOINC
 * type.coding[LO].code 1..1
+* type.coding[LO] = LOINC#18748-4
 * type.coding[CP].system = CPT
 * type.coding[CP].code 1..1
-* type.coding[LO] = LOINC#18748-4
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"

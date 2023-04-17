@@ -2,19 +2,51 @@
 to support GetPractitioner(UserTO | AuthorTO)
 */
 Profile:        MHVpractitioner
-Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+//Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+// not using us-core, as it makes it difficult to slice on the VA OID pattern
+Parent: Practitioner
 Id:             VA.MHV.PHR.practitioner
 Title:          "VA MHV PHR Practitioner"
 Description:    """
 A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.
 
-- based on US-Core for Practitioner
-- used for UserTO, and AuthorTO
+- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible
+- used for VIDF UserTO, and AuthorTO
+- used for HDR PractitionerLite
 - might be used for PersonTO or is that RelatedPerson?
 
 Mapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto) and [VDIF AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)
+
+Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)
 """
-// TODO: could define some slices for the various identifiers, telecom, and name
+* name MS
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains  TOid 0..*
+* identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`UserTO` | `.` | {UserTO.id}"
+* identifier[TOid].value ^short = "`AuthorTO` | `.` | {AuthorTO.id}"
+* identifier contains  HDRid 0..*
+* identifier[HDRid].use = #secondary
+* identifier[HDRid].system obeys HDRid-startswithoid
+* identifier[HDRid].system ^short = "`http://va.gov/systems/` + {idSourceTable}"
+* identifier[HDRid].value ^short = "{identifier.identity}"
+
+
+Invariant: TOid-startswithoid
+Description: "ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}"
+Severity: #error
+Expression: "value.startsWith('urn:oid:2.16.840.1.113883.4.349.4.')"
+
+Invariant: HDRid-startswithoid
+Description: "ID system must start with http://va.gov/systems/ The next would be the {idSourceTable}"
+Severity: #error
+Expression: "value.startsWith('http://va.gov/systems/')"
+
 
 /*
       <s:complexType name="UserTO">
@@ -46,35 +78,20 @@ Mapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.ht
       </s:complexType>
 
 */
-* identifier 1..
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "$this"
-* identifier ^slicing.rules = #open
-* identifier contains
-  TOid 0..*
-* identifier[TOid].use = #usual
-* identifier[TOid].system obeys TOid-startswithoid
-* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
-* identifier[TOid].value ^short = "`UserTO` | `.` | {UserTO.id}"
-* identifier[TOid].value ^short = "`AuthorTO` | `.` | {AuthorTO.id}"
-
-Invariant: TOid-startswithoid
-Description: "ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}"
-Severity: #error
-Expression: "value.startsWith('urn:oid:2.16.840.1.113883.4.349.4.')"
-
 
 Mapping: Practitioner-UserTO
 Source:	MHVpractitioner
 Target: "UserTO"
 Title: "VDIF to MHV-PHR"
 * -> "UserTO" "MHV PHR FHIR API"
+* identifier.use -> "`usual`"
+* identifier.value -> "`UserTO` + {UserTO.id}"
+* identifier.system -> "ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}"
 * name.text -> "UserTO.name"
 * telecom -> "UserTO.phone"
 * telecom -> "UserTO.pager"
 * telecom -> "UserTO.digitalPager"
 * communication -> "UserTO.greeting"
-* identifier -> "{StationNbr} and {UserTO.id}"
 * telecom -> "UserTO.emailAddress"
 
 /*
@@ -96,7 +113,9 @@ Source:	MHVpractitioner
 Target: "AuthorTO"
 Title: "VDIF to MHV-PHR"
 * -> "AuthorTO" "MHV PHR FHIR API"
-* identifier -> "{StationNbr} and {AuthorTO.id}"
+* identifier.use -> "`usual`"
+* identifier.value -> "`AuthorTO.` + {AuthorTO.id}"
+* identifier.system -> "ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}"
 * name.text -> "AuthorTO.name"
 
 
@@ -129,3 +148,47 @@ Title: "VDIF to MHV-PHR"
         </s:complexContent>
       </s:complexType>
 */
+
+/*
+	<xsd:complexType name="HL72PersonIdentifier">
+		<xsd:all>
+			<xsd:element name="identity" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="assigningFacility" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="assigningAuthority" type="xsd:string" minOccurs="0"/>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:complexType name="HL72PersonName">
+		<xsd:all>
+			<xsd:element name="prefix" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="given" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="middle" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="family" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="suffix" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="title" type="xsd:string" minOccurs="0"/>
+		</xsd:all>
+	</xsd:complexType>
+  <xsd:complexType name="PractitionerLite">
+		<xsd:all>
+			<xsd:element name="identifier" type="basedatatypes:HL72PersonIdentifier" minOccurs="0"/>
+			<xsd:element name="idSourceTable" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="name" type="basedatatypes:HL72PersonName" minOccurs="0"/>
+		</xsd:all>
+	</xsd:complexType>
+*/
+Mapping: Practitioner-PractitionerLite
+Source:	MHVpractitioner
+Target: "PractitionerLite"
+Title: "HDR to MHV-PHR"
+* -> "PractitionerLite" "MHV PHR FHIR API"
+* identifier.use -> "`secondary`"
+* identifier.value -> "identifier.identity"
+* identifier.system -> "identifier.assigingFacility"
+* identifier.system -> "`http://va.gov/systems/` + idSourceTable"
+* name -> "name"
+* name.prefix -> "name.prefix"
+* name.given -> "name.given"
+* name.given -> "name.middle"
+* name.family -> "name.family"
+* name.suffix -> "name.suffix"
+* name.suffix -> "name.title"
+

@@ -95,12 +95,28 @@ Case Number will be `use` of `secondary`, and use the prefix `CaseNum`
 * identifier[casenum].value ^short = "`CaseNum` | `.` | {ImagingExam.casenum}"
 ```
 
-### HospitalLocationTO
+### Organization
 
-HospitalLocationTO will be a `use` of `usual`, and use the previx `HospitalLocationTO`, but will use the root OID
+Organization resources are different in that they are defining a facility. So, we use the identifier.system value of the fixed OID, and the value of the station
+
+#### HospitalLocationTO
+
+HospitalLocationTO will be a `use` of `usual`, and use the prefix `HospitalLocationTO`, but will use the root OID **without the station number**
 
 ```fs
 * identifier[TOid].use = #usual
-* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349"
-* identifier[TOid].value ^short = "`HospitalLocationTO` | `.` | {HospitalLocationTO.id}"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].value = "`HospitalLocationTO` | `.` | {HospitalLocationTO.id}"
+```
+
+TODO: possibility we don't need the prefix.
+
+#### HDR orderingFacilityIdentifier
+
+orderingFacilityIdentifier will be a `.use` of `usual`, and use the fixed OID for `.system`. The orderingFacilityIdentifier has a `.stationNumber` element that we will use for the `.value`. Since we know this is the station number, we will not add a prefix.
+
+```fs
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].value ^short = "{orderingFacilityIdentifier.identity}"
 ```

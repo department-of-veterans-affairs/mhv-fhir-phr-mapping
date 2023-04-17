@@ -16,21 +16,15 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( mpiPID: 1013699147 (use: OFFICIAL))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Id:</td><td colspan=\"3\">localPID: 552164786 (use: SECONDARY)</td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>MTPZEROTWO,DAYTSHR</b> male, DoB Unknown ( id: 1013699147 (use: OFFICIAL))</p><hr/><table class=\"grid\"><tr><td style=\"background-color: #f3f5da\" title=\"Other Ids (see the one above)\">Other Id:</td><td colspan=\"3\">id: 552164786 (use: SECONDARY)</td></tr></table></div>"
   ] ; # 
   fhir:identifier ( [
      fhir:use [ fhir:v "official" ] ;
-     fhir:type [
-       fhir:text [ fhir:v "mpiPID" ]
-     ] ;
-     fhir:system [ fhir:v "http://example.org/mpiPID"^^xsd:anyURI ] ;
+     fhir:system [ fhir:v "http://va.gov/systems/mpiPID"^^xsd:anyURI ] ;
      fhir:value [ fhir:v "1013699147" ]
   ] [
      fhir:use [ fhir:v "secondary" ] ;
-     fhir:type [
-       fhir:text [ fhir:v "localPID" ]
-     ] ;
-     fhir:system [ fhir:v "http://example.org/localPID"^^xsd:anyURI ] ;
+     fhir:system [ fhir:v "http://va.gov/systems/localPID"^^xsd:anyURI ] ;
      fhir:value [ fhir:v "552164786" ]
   ] ) ; # 
   fhir:name ( [

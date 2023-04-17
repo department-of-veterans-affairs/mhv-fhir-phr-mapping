@@ -60,12 +60,10 @@ Usage: #example
 * contact[=].telecom[=].system = #phone
 * identifier[+].use = #official
 // Not sure what .type to use
-* identifier[=].type.text = "mpiPID"
 * identifier[=].value = "1013025697"
-* identifier[=].system = "http://example.org/mpiPID"
+* identifier[=].system = "http://va.gov/systems/mpiPID"
 * identifier[+].use = #secondary
-* identifier[=].type.text = "localPID"
-* identifier[=].system = "http://example.org/localPID"
+* identifier[=].system = "http://va.gov/systems/localPID"
 * identifier[=].value = "49906"
 // not sure the meaning of confidentaility flag - could be .meta.security
 // not sure the meaning of patientFlags
@@ -101,12 +99,10 @@ Usage: #example
 * name[=].given = "MTPZEROTWO"
 * gender = #male 
 * identifier[+].use = #official
-* identifier[=].type.text = "mpiPID"
-* identifier[=].system = "http://example.org/mpiPID"
+* identifier[=].system = "http://va.gov/systems/mpiPID"
 * identifier[=].value = "1013699147"
 * identifier[+].use = #secondary
-* identifier[=].type.text = "localPID"
-* identifier[=].system = "http://example.org/localPID"
+* identifier[=].system = "http://va.gov/systems/localPID"
 * identifier[=].value = "552164786"
 
 
@@ -139,12 +135,10 @@ Usage: #example
 * name[=].given[+] = "M"
 * gender = #male 
 * identifier[+].use = #official
-* identifier[=].type.text = "mpiPID"
-* identifier[=].system = "http://example.org/mpiPID"
+* identifier[=].system = "http://va.gov/systems/mpiPID"
 * identifier[=].value = "1013025697"
 * identifier[+].use = #secondary
-* identifier[=].type.text = "localPID"
-* identifier[=].system = "http://example.org/localPID"
+* identifier[=].system = "http://va.gov/systems/localPID"
 * identifier[=].value = "49906"
 
 
@@ -175,7 +169,7 @@ Usage: #example
 * name[=].given[+] = "L"
 * gender = #unknown
 * identifier[+].use = #official
-* identifier[=].system = "http://example.org/USVHA"
+* identifier[=].system = "http://va.gov/systems/USVHA"
 * identifier[=].value = "27167"
 * identifier[=].assigner.display = "989"
 
@@ -209,7 +203,7 @@ Usage: #example
 * name[=].suffix = "MHV"
 * gender = #unknown
 * identifier[+].use = #official
-* identifier[=].system = "http://example.org/USVHA"
+* identifier[=].system = "http://va.gov/systems/USVHA"
 * identifier[=].value = "89486"
 * identifier[=].assigner.display = "979"
 

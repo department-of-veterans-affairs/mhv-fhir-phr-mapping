@@ -67,7 +67,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.9-beta - ci-build
+            <span style="display:inline-block;">0.1.10-beta - ci-build
 
 
 
@@ -164,7 +164,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.9-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.10-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -230,17 +230,22 @@
 {
   "<a href="http://hl7.org/fhir/R4/organization.html#Organization">resourceType</a>" : "Organization",
   "<a href="http://hl7.org/fhir/R4/organization.html#Organization.id">id</a>" : "ex-MHV-organization-552",
+  "<a href="http://hl7.org/fhir/R4/organization.html#Organization.meta">meta</a>" : {
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>" : [
+      "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization"
+    ]
+  },
   "<a href="http://hl7.org/fhir/R4/organization.html#Organization.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Organization&lt;/b&gt;&lt;a name=\&quot;ex-MHV-organization-552\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource Organization &amp;quot;ex-MHV-organization-552&amp;quot; &lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: L:\u00a0552\u00a0(use:\u00a0OFFICIAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: DAYTON, OH VAMC&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 4100 W. THIRD STREET DAYTON OH 45428 USA &lt;/p&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Organization&lt;/b&gt;&lt;a name=\&quot;ex-MHV-organization-552\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource Organization &amp;quot;ex-MHV-organization-552&amp;quot; &lt;/p&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-VA.MHV.PHR.organization.html\&quot;&gt;VA MHV PHR Organization&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: L:\u00a0552\u00a0(use:\u00a0USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: DAYTON, OH VAMC&lt;/p&gt;&lt;p&gt;&lt;b&gt;address&lt;/b&gt;: 4100 W. THIRD STREET DAYTON OH 45428 USA &lt;/p&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
   },
   "<a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">identifier</a>" : [
     {
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a>" : "official",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a>" : "usual",
       "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">type</a>" : {
         "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a>" : "L"
       },
-      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "http://example.org/USVHA",
+      "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a>" : "urn:oid:2.16.840.1.113883.4.349",
       "<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a>" : "552"
     }
   ],
@@ -309,7 +314,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.9-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 14, 2023 09:56-0500">2023-04-14</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.10-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 17, 2023 18:54-0500">2023-04-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

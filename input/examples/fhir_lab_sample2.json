@@ -1,0 +1,262 @@
+{
+  "resourceType": "Bundle",
+  "id": "fhirlabsample2",
+  "type": "transaction",
+  "entry": [ {
+    "fullUrl": "http://example.org/fhir/Patient/123456",
+    "resource": {
+      "resourceType": "Patient",
+      "identifier" : [{
+        "use" : "usual",
+        "system" : "http://va.gov/systems/USVHA",
+        "value" : "942104",
+        "assigner" : {
+          "display" : "979"
+        }
+      }],
+      "name": [ {
+        "family": "MHVSYSTEST",
+        "given": [ "TESTFIVE", "L" ]
+      } ],
+      "gender" : "unknown"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Patient"
+    }
+  }, {
+    "fullUrl": "http://example.org/fhir/Practitioner/59845-VA660",
+    "resource": {
+      "resourceType": "Practitioner",
+      "identifier" : [
+        {
+          "use" : "secondary",
+          "system" : "http://va.gov/systems/99VA",
+          "value" : "59845-VA660"
+        }
+      ],
+      "name": [ {
+        "family": "HALL",
+        "given": [ "LISA" ]
+      } ]
+    },
+    "request": {
+      "method": "POST",
+      "url": "Practitioner"
+    }
+  }, {
+    "fullUrl": "http://example.org/fhir/Organization/660",
+    "resource": {
+      "resourceType": "Organization",
+      "identifier" : [
+        {
+          "use" : "usual",
+          "system" : "urn:oid:2.16.840.1.113883.4.349",
+          "value" : "660"
+        }
+      ],
+      "active" : true,
+      "name": "VA SALT LAKE CITY HEALTH CARE SYSTEM (660)"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Organization"
+    }
+  }, {
+    "fullUrl": "urn:uuid:337307e4-3ea0-4435-942d-2c9f67acd814",
+    "resource": {
+      "resourceType": "DiagnosticReport",
+      "meta": {
+        "profile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"],
+        "lastUpdated": "2019-03-15T17:00:44-05:00"
+      },
+      "contained": [ {
+        "resourceType": "Specimen",
+        "id": "0",
+        "status": "available",
+        "type": {
+          "coding": [ {
+            "system": "http://snomed.info/sct",
+            "code": "78014005",
+            "display": "Urine (substance)"
+          },
+          {
+            "system": "http://va.gov/systems/HL70070",
+            "version": "5.2",
+            "code": "UR",
+            "display": "Urine"
+          } ],
+          "text": "URINE"
+        },
+        "collection": {
+          "collectedDateTime": "2019-03-15T16:59:44-04:00"
+        }
+      }, {
+        "resourceType": "Observation",
+        "id": "1.0",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code" : "laboratory"
+              }
+            ]
+          },
+          {
+            "coding" : [
+              {
+                "system" : "http://va.gov/systems/99VA64",
+                "code" : "82435.0000",
+                "display": "Chloride"
+              }
+            ]
+          },
+          {
+            "coding" : [
+              {
+                "system" : "http://va.gov/systems/99VA60",
+                "code" : "178",
+                "display": "CHLORIDE"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "2078-4",
+            "version" : "2.68",
+            "display": "CHLORIDE"
+          } ],
+          "text": "CHLORIDE:SCNC:PT:URINE:QN:"
+        },
+        "subject": {
+          "reference": "http://example.org/fhir/Patient/123456"
+        },
+        "performer" : [
+          {
+            "reference" : "http://example.org/fhir/Organization/660"
+          }
+        ],
+        "valueQuantity": {
+          "value": 99,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        }
+      },  {
+        "resourceType": "Observation",
+        "id": "2.0",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code" : "laboratory"
+              }
+            ]
+          },
+          {
+            "coding" : [
+              {
+                "system" : "http://va.gov/systems/99VA64",
+                "code" : "84140.0000",
+                "display": "Potassium"
+              }
+            ]
+          },
+          {
+            "coding" : [
+              {
+                "system" : "http://va.gov/systems/99VA60",
+                "code" : "177",
+                "display": "POTASSIUM"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "2823-3",
+            "version" : "2.64",
+            "display": "POTASSIUM"
+          }],
+          "text": "POTASSIUM:SCNC:PT:SER/PLAS:QN:"
+        },
+        "subject": {
+          "reference": "http://example.org/fhir/Patient/123456"
+        },
+        "performer" : [
+          {
+            "reference" : "http://example.org/fhir/Organization/660"
+          }
+        ],
+        "valueQuantity": {
+          "value": 4.1,
+          "unit": "mmol/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "mmol/L"
+        },
+        "referenceRange": [ {
+          "text": "3.8-5.2"
+        } ]
+      } ],
+      "status": "final",
+      "category": [ {
+        "coding": [ {
+          "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+          "code" : "LAB"
+        } ]
+      }, {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "2078-4",
+          "display": "CHLORIDE"
+        } ]
+      }, {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "2823-3",
+          "display": "POTASSIUM"
+        } ]
+      } ],
+      "identifier" : [
+        {
+          "use" : "usual",
+          "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+          "value" : "1190740002"
+        }
+      ],
+      "code": {
+        "text": "CH"
+      },
+      "subject": {
+        "reference": "http://example.org/fhir/Patient/123456"
+      },
+      "effectiveDateTime" : "2019-03-15T17:00:42-05:00",
+      "issued" : "2019-03-15T17:00:42-05:00",
+      "performer": [ {
+        "reference": "http://example.org/fhir/Practitioner/59845-VA660"
+      }, {
+        "reference": "http://example.org/fhir/Organization/660"
+      } ],
+      "specimen": [ {
+        "reference": "#0"
+      } ],
+      "result": [ {
+        "reference": "#1.0"
+      }, {
+        "reference": "#2.0"
+      } ],
+      "conclusion": "Test 3/15/19"
+    },
+    "request": {
+      "method": "POST",
+      "url": "Observation"
+    }
+  } ]
+}

@@ -8,7 +8,7 @@ name: MHVPHR
 title: "MyHealtheVet PHR FHIR API"
 description: "MyHealtheVet exposing PHR using FHIR and Testing Plan."
 status: active
-version: 0.1.9-beta
+version: 0.1.10-beta
 fhirVersion: 4.0.1
 copyrightyear: '2022+'
 #date: 2022-04-14
@@ -57,6 +57,14 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/C
   path-output: docs
  # fmm-definition: other.html#maturity-levels
   excludettl: 'true'
+  special-url: 
+    - http://va.gov/systems/99VA95.3
+    - http://va.gov/systems/99VA60
+    - http://va.gov/systems/99VA64
+    - http://va.gov/systems/HL70070
+    - http://va.gov/systems/mpiPID
+    - http://va.gov/systems/localPID
+    - http://va.gov/systems/99VA61
 
 resources:
   Bundle/images:
@@ -67,7 +75,11 @@ resources:
     name: Bundle of Vitals from mock data
     description: An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/vitals.xml) MHV receives.
     exampleBoolean: true
-    
+  Bundle/fhirlabsample2:
+    name: Bundle of a Chem-Hem Lab data 
+    description: Provided by Ken
+    exampleBoolean: true
+
 pages:
   index.md:
     title: Home Page

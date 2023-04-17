@@ -40,8 +40,8 @@ Title: "HDR labTestPromises.specimen to MHV-PHR"
 
 
 Profile: MHVchReport
-Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
-//Parent: DiagnosticReport
+//Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
+Parent: DiagnosticReport
 Id: VA.MHV.PHR.chReport
 Title: "VA MHV PHR HDR Chem-Hem Report"
 Description: """
@@ -50,7 +50,7 @@ A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`,
 
 The `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)
 - code.text must be `CH`. No other codeing values
-- category must be `LAB`
+- category must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`
 - category also holds 1..* codes from the contained Observation.code
 
 The `labTestPromises.labTests` are each recorded as a FHIR [Observation result](StructureDefinition-VA.MHV.PHR.chTest.html) that is contained in the DiagnosticReport. The map to [HDR chTestPromise](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). 
@@ -59,14 +59,7 @@ The `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinit
 
 The use of contained means that we do not need to de-duplicate the lab tests or specimen.
 
-This profile is based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. 
-
-TODO: There are some code `system` values that are simple strings. To make them into URI/URL I prepend `http://example.org`, but something better needs to come along.
-- HL70070
-- 99VA60
-- 99VA61
-- 99VA64
-- 99VA95.3
+This profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to.
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -80,13 +73,25 @@ TODO: There are some code `system` values that are simple strings. To make them 
 * subject 1..1
 * code 1..1 MS
 * code.text = "CH"
+* category MS
+* category 1..
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category contains LaboratorySlice 1..1
+* category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * effectiveDateTime MS
 * issued MS
 * conclusion MS
+* specimen MS
 * specimen ^type.aggregation = #contained
 * specimen only Reference(MHVchSpecimen)
+* result MS
 * result ^type.aggregation = #contained
 * result only Reference(MHVchTest)
+* performer MS
+* performer ^short = "performingOrganization"
+* performer only Reference(MHVorganization or MHVpractitioner)
 * encounter 0..0
 * resultsInterpreter 0..0
 * imagingStudy 0..0
@@ -100,7 +105,7 @@ Source:	MHVchReport
 Target: "labTestPromises"
 Title: "HDR to MHV-PHR"
 * -> "HDR labTestPromises" "MHV PHR FHIR API"
-* category -> "`laboratory`"
+* category -> "`LAB`"
 * category -> "all codes from contained labTests"
 * status -> "`final`"
 * subject -> "patient"
@@ -125,6 +130,8 @@ A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVe
 
 One Observation holds one `labTests`
 - This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)
+	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`
+	- subject must be the patient
 - `orderedTestCode -> `.category`
 - 'chemistryResults`
   - `valueInterpretation` -> `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)
@@ -157,6 +164,7 @@ One Observation holds one `labTests`
 * status ^short = "observedStatus"
 * performer MS
 * performer ^short = "performingOrganization"
+* performer only Reference(MHVorganization)
 * value[x] only Quantity
 * valueQuantity 1..1
 * value[x] ^short = "observationValue"

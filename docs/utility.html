@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.9-beta - ci-build
+            <span style="display:inline-block;">0.1.10-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.9-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.10-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Utility Functions</h2>
   
 
@@ -209,7 +209,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="support-resources">Support Resources</h3>
 
-<p>To support the primary FHIR Resources, there are some untility Resources that will be needed. These will be created upon demand, based on a lookup need.</p>
+<p>To support the primary FHIR Resources, there are some utility Resources that will be needed. These will be created upon demand, based on a lookup need.</p>
 
 <h4 id="getpractitioner">GetPractitioner()</h4>
 
@@ -273,11 +273,29 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Most of the historic data just uses strings. Will need some method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a <a href="http://hl7.org/fhir/conceptmap.html">FHIR ConceptMap</a> resource, thus making maintaining it easy.</p>
 
+<h5 id="formal-code-systems-of-interest">Formal code systems of interest</h5>
+
+<ul>
+  <li>SCT = http://snomed.info/sct</li>
+  <li>UCUM = http://unitsofmeasure.org</li>
+  <li>LOINC = http://loinc.org</li>
+  <li>ICD = http://terminology.hl7.org/CodeSystem/icd9cm</li>
+  <li>CPT = http://www.ama-assn.org/go/cpt</li>
+</ul>
+
+<h5 id="va-specific-code-systems">VA specific code systems</h5>
+
+<p>There is often a system specified, but it is specified as a simple short string. These are not acceptable in FHIR. FHIR needs a URI or URL. So I propose we do the following conversion.</p>
+
+<p>Given a system ABCD, use <code class="language-plaintext highlighter-rouge">http://va.gov/systems/ABCD</code></p>
+
+<h5 id="concept-mapping">Concept mapping</h5>
+
 <p>For every context use of a concept encoded as a string, we presume they are unique within that context. The context identifies a specific ConceptMap, and a lookup of the string in that ConceptMap will result in the mapped standard code value.</p>
 
-<p>A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possiblly update of the given ConceptMap.</p>
+<p>A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possibily update of the given ConceptMap.</p>
 
-<h4 id="ucum-code">UCUM code</h4>
+<h5 id="ucum-code">UCUM code</h5>
 
 <p class="grid">Some of the codes used in Vista are not proper codes.
 | Vista code | Proper UCUM |
@@ -336,7 +354,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.9-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Apr 14, 2023 09:56-0500">2023-04-14</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.10-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 17, 2023 18:54-0500">2023-04-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

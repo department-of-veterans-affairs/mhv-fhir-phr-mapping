@@ -4,10 +4,15 @@ Title: "Example Practitioner"
 Description:      "holding typical values"
 * name.family = "Practitioner"
 * name.given = "Prancy"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "AuthorTO.00000"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+/*
 * identifier[NPI].use = #official
 * identifier[NPI].type.text = "npiPID"
 * identifier[NPI].value = "10130425697"
 * identifier[NPI].system = "http://hl7.org/fhir/sid/us-npi"
+*/
 
 /*
 <author>
@@ -148,4 +153,4 @@ Usage: #example
 * name.given[+] = "LISA"
 * name.given[+] = "A"
 * identifier[+].value = "14934-VA552"
-* identifier[=].system = "http://example.org/99VA4"
+* identifier[=].system = "http://va.gov/systems/99VA4"
