@@ -243,7 +243,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Return: a Location resource reference</p>
 
-<p>If a Location is not found given the input parameters, then one is created and populated with the input prameters.</p>
+<p>If a Location is not found given the input parameters, then one is created and populated with the input parameters.</p>
 
 <p>If a Location is found, and the details given are different, then presume parameters are newer and use them to update the found Location Resource.</p>
 
@@ -251,11 +251,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="getorganization">GetOrganization()</h4>
 
-<p>Input: organiztion id (e.g. Lab id)</p>
+<p>Input: organization id (e.g. Lab id)</p>
 
 <p>Return: a Organization resource reference</p>
 
-<p>If a Organization is not found given the input parameters, then one is created and populated with the input prameters.</p>
+<p>If a Organization is not found given the input parameters, then one is created and populated with the input parameters.</p>
 
 <p>If a Organization is found, and the details given are different, then presume parameters are newer and use them to update the found Organization Resource.</p>
 
@@ -289,6 +289,18 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Given a system ABCD, use <code class="language-plaintext highlighter-rouge">http://va.gov/systems/ABCD</code></p>
 
+<p>These are systems I have used:</p>
+
+<ul>
+  <li>http://va.gov/systems/99VA95.3</li>
+  <li>http://va.gov/systems/99VA60</li>
+  <li>http://va.gov/systems/99VA61</li>
+  <li>http://va.gov/systems/99VA64</li>
+  <li>http://va.gov/systems/HL70070</li>
+  <li>http://va.gov/systems/mpiPID</li>
+  <li>http://va.gov/systems/localPID</li>
+</ul>
+
 <h5 id="concept-mapping">Concept mapping</h5>
 
 <p>For every context use of a concept encoded as a string, we presume they are unique within that context. The context identifies a specific ConceptMap, and a lookup of the string in that ConceptMap will result in the mapped standard code value.</p>
@@ -297,11 +309,26 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h5 id="ucum-code">UCUM code</h5>
 
-<p class="grid">Some of the codes used in Vista are not proper codes.
-| Vista code | Proper UCUM |
-|————|————-|
-<code class="language-plaintext highlighter-rouge">in</code> | <code class="language-plaintext highlighter-rouge">[in_i]</code>
-<code class="language-plaintext highlighter-rouge">lb</code> | <code class="language-plaintext highlighter-rouge">[lb_av]</code></p>
+<p>Some of the codes used in Vista are not proper codes.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Vista code</th>
+      <th>Proper UCUM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">in</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[in_i]</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">lb</code></td>
+      <td><code class="language-plaintext highlighter-rouge">[lb_av]</code></td>
+    </tr>
+  </tbody>
+</table>
 
 <h4 id="identifier">Identifier</h4>
 
@@ -354,7 +381,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.10-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 17, 2023 18:54-0500">2023-04-17</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.10-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 17, 2023 19:11-0500">2023-04-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

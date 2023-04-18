@@ -37,7 +37,7 @@ Input: hospitalLocationTO, SiteTO
 
 Return: a Location resource reference
 
-If a Location is not found given the input parameters, then one is created and populated with the input prameters.
+If a Location is not found given the input parameters, then one is created and populated with the input parameters.
 
 If a Location is found, and the details given are different, then presume parameters are newer and use them to update the found Location Resource.
 
@@ -45,11 +45,11 @@ Profiled [Location](StructureDefinition-VA.MHV.PHR.location.html)
 
 #### GetOrganization()
 
-Input: organiztion id (e.g. Lab id)
+Input: organization id (e.g. Lab id)
 
 Return: a Organization resource reference
 
-If a Organization is not found given the input parameters, then one is created and populated with the input prameters.
+If a Organization is not found given the input parameters, then one is created and populated with the input parameters.
 
 If a Organization is found, and the details given are different, then presume parameters are newer and use them to update the found Organization Resource.
 
@@ -81,6 +81,16 @@ There is often a system specified, but it is specified as a simple short string.
 
 Given a system ABCD, use `http://va.gov/systems/ABCD`
 
+These are systems I have used:
+
+- http://va.gov/systems/99VA95.3
+- http://va.gov/systems/99VA60
+- http://va.gov/systems/99VA61
+- http://va.gov/systems/99VA64
+- http://va.gov/systems/HL70070
+- http://va.gov/systems/mpiPID
+- http://va.gov/systems/localPID
+
 ##### Concept mapping
 
 For every context use of a concept encoded as a string, we presume they are unique within that context. The context identifies a specific ConceptMap, and a lookup of the string in that ConceptMap will result in the mapped standard code value.
@@ -90,6 +100,7 @@ A failure to find a ConceptMap can be recorded simply as the given string. These
 ##### UCUM code
 
 Some of the codes used in Vista are not proper codes.
+
 | Vista code | Proper UCUM |
 |------------|-------------|
 `in` | `[in_i]`
