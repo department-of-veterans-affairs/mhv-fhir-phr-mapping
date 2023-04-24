@@ -14,11 +14,11 @@
     "valueInteger" : 0
   }],
   "url" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example",
-  "version" : "0.1.10-beta",
+  "version" : "0.1.11-beta",
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-04-17T19:11:15-05:00",
+  "date" : "2023-04-24T08:03:17-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -902,7 +902,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.chTest"
       },
       "name" : "VA MHV PHR CH labTest",
-      "description" : "A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n\t- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n\t- subject must be the patient\n- `orderedTestCode -> `.category`\n- 'chemistryResults`\n  - `valueInterpretation` -> `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)\n  - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n  - `testIdentifier` -> `.code` -- where \"LN\" is Loinc\n  - `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value\n  - `labCommentEvents` -> `.note.text`\n  - `observationValue` -> `.valueQuantity.value`\n  - `observationUnits.unit` -> `.valueQuantity.unit`\n  - `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n  - `observationUnits.codingSystem` -> `.valueQuantity.system`\n  - `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - no `.subject` is populated\n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n  - specimen is presumed from the DiagnosticReport",
+      "description" : "A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n\t- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n\t- subject must be the patient\n- `orderedTestCode -> `.category`\n- 'chemistryResults`\n  - `valueInterpretation` -> `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)\n  - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n  - `testIdentifier` -> `.code` -- where \"LN\" is Loinc\n  - `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value\n  - `labCommentEvents` -> `.note.text`\n  - value[x] either String or Quantity with units\n  - `observationValue` -> `.valueQuantity.value`\n  - `observationUnits.unit` -> `.valueQuantity.unit`\n  - `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n  - `observationUnits.codingSystem` -> `.valueQuantity.system`\n  - `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - no `.subject` is populated\n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n  - specimen is presumed from the DiagnosticReport",
       "exampleBoolean" : false
     },
     {

@@ -99,9 +99,10 @@ General Pattern
 
 ### General Processing of clinical resources
 
-<div>
+<figure>
 {%include update-flow.svg%}
-</div>
+<figcaption>General Processing flow</figcaption>
+</figure>
 <br clear="all">
 
 1. given an id value on the data we are given, we look for the corresponding FHIR Resource with an identifier element equal to that id value. Thus the identifier element within our FHIR database is the linkage to original data id value.

@@ -139,6 +139,7 @@ One Observation holds one `labTests`
   - `testIdentifier` -> `.code` -- where "LN" is Loinc
   - `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value
   - `labCommentEvents` -> `.note.text`
+  - value[x] either String or Quantity with units
   - `observationValue` -> `.valueQuantity.value`
   - `observationUnits.unit` -> `.valueQuantity.unit`
   - `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some
@@ -165,8 +166,7 @@ One Observation holds one `labTests`
 * performer MS
 * performer ^short = "performingOrganization"
 * performer only Reference(MHVorganization)
-* value[x] only Quantity
-* valueQuantity 1..1
+* value[x] only Quantity or string
 * value[x] ^short = "observationValue"
 * note 0..* MS
 * note ^short = "labCommentEvents"
