@@ -28,7 +28,7 @@ TODO:
 - unclear
   - `intoleranceCondition.status` is always `F` in the mock data I have been given, so unclear what the meaning is. From the name 'status' I presume this is the status of the allergy, but unclear.
   - will presume we only get `active`
-  - no clear place to record `informationSourceCategory`, `recordSource`, or `facilityIdentifer`
+  - no clear place to record `informationSourceCategory`, `recordSource`, `recordVersion`
   - reaction.reaction.code seems to be a number, but I can't find a codeSystem with these numbers.
     - would be good to have SNOMED-CT, but this does not seem to be SNOMED
 """

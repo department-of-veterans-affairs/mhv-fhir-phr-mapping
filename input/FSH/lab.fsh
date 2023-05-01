@@ -60,8 +60,8 @@ Title: "VDIF to MHV-PHR"
 
 
 Profile: MHVlabReport
-Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
-//Parent: DiagnosticReport
+//Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
+Parent: DiagnosticReport
 Id: VA.MHV.PHR.labReport
 Title: "VA MHV PHR Lab Report"
 Description: """
@@ -81,7 +81,7 @@ TODO determine impact of the new LOINC report on this topic https://loinc.org/fi
 
 TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
 
-- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.
+- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations. BUT IS NOT because us-core requires us Practitioner and we can't be compliant with that. So I have replicated the us-core requirements here.
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -96,11 +96,26 @@ TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is t
 * code 1..1 MS
 * code.text 1..1 MS
 * code.coding ..1 MS
-* code.coding from LabReportVS (required)
+* code.coding from LabReportVS (preferred)
+* category MS
+* category 1..
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category contains LaboratorySlice 1..1
+* category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* effectiveDateTime MS
+* issued MS
+* conclusion MS
+* specimen MS
 * specimen ^type.aggregation = #contained
 * specimen only Reference(MHVlabSpecimen)
+* result MS
 * result ^type.aggregation = #contained
 * result only Reference(MHVlabTest)
+* performer MS
+* performer ^short = "LabReportTO.facility"
+* performer only Reference(MHVorganization or MHVpractitioner)
 * encounter 0..0
 * resultsInterpreter 0..0
 * imagingStudy 0..0

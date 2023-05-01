@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.11-beta - ci-build
+            <span style="display:inline-block;">0.1.12-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.11-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.12-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -271,12 +271,37 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <ul>
       <li><code class="language-plaintext highlighter-rouge">intoleranceCondition.status</code> is always <code class="language-plaintext highlighter-rouge">F</code> in the mock data I have been given, so unclear what the meaning is. From the name ‘status’ I presume this is the status of the allergy, but unclear.</li>
       <li>will presume we only get <code class="language-plaintext highlighter-rouge">active</code></li>
-      <li>no clear place to record <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>, <code class="language-plaintext highlighter-rouge">recordSource</code>, or <code class="language-plaintext highlighter-rouge">facilityIdentifer</code></li>
+      <li>no clear place to record <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>, <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code></li>
       <li>reaction.reaction.code seems to be a number, but I can’t find a codeSystem with these numbers.
         <ul>
           <li>would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
         </ul>
       </li>
+    </ul>
+  </li>
+</ul>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.chPanel.html"
+                     title="StructureDefinition/VA.MHV.PHR.chPanel">VA MHV PHR CH labTests.orderedTestCode</a>
+               </td>
+               <td>
+<p>A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.</p>
+
+<p>One Observation holds one <code class="language-plaintext highlighter-rouge">labTests.orderedTestCode</code></p>
+<ul>
+  <li>This profile is based Observation, as it is not found in us-core
+    <ul>
+      <li>category must have <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/observation-category#laboratory</code></li>
+    </ul>
+  </li>
+  <li>subject must be the patient</li>
+  <li><code class="language-plaintext highlighter-rouge">orderedTestCode -&amp;gt; </code>.code`</li>
+  <li>given this is contained in the DiagnosticReport, then
+    <ul>
+      <li>no <code class="language-plaintext highlighter-rouge">.subject</code> is populated</li>
     </ul>
   </li>
 </ul>
@@ -298,7 +323,9 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
   <li>category also holds 1..* codes from the contained Observation.code</li>
 </ul>
 
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.labTests</code> are each recorded as a FHIR <a href="StructureDefinition-VA.MHV.PHR.chTest.html">Observation result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR chTestPromise</a>.</p>
+<p>the <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.orderedTestCode</code> is recorded as a <a href="StructureDefinition-VA.MHV.PHR.chPanel.html">Observation panel</a> that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to <a href="StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode">HDR orderedTestCode</a>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.chemistryResult</code> are each recorded as a FHIR <a href="StructureDefinition-VA.MHV.PHR.chTest.html">Observation result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR chTestPromise</a>.</p>
 
 <p>The <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR Specimen</a>.</p>
 
@@ -329,35 +356,30 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             <tr>
                <td style="column-width:30%">
                   <a href="StructureDefinition-VA.MHV.PHR.chTest.html"
-                     title="StructureDefinition/VA.MHV.PHR.chTest">VA MHV PHR CH labTest</a>
+                     title="StructureDefinition/VA.MHV.PHR.chTest">VA MHV PHR CH labTest.chemistryResults</a>
                </td>
                <td>
-<p>A profile showing how HDR labTests will be exposed using FHIR API to MyHealtheVet PHR.</p>
+<p>A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.</p>
 
-<p>One Observation holds one <code class="language-plaintext highlighter-rouge">labTests</code></p>
+<p>One Observation holds one <code class="language-plaintext highlighter-rouge">labTests.chemistryResults</code></p>
 <ul>
   <li>This profile is based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html">US-Core Lab</a>
     <ul>
       <li>category must have <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/observation-category#laboratory</code></li>
-      <li>subject must be the patient</li>
     </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">orderedTestCode -&amp;gt; </code>.category`</li>
-  <li>‘chemistryResults`
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">valueInterpretation</code> -&gt; <code class="language-plaintext highlighter-rouge">.interpretation</code> (mock data has <code class="language-plaintext highlighter-rouge">L</code>, <code class="language-plaintext highlighter-rouge">H</code>, or absent) (? low, high, normal ?)</li>
-      <li><code class="language-plaintext highlighter-rouge">observedStatus</code> (mock data has <code class="language-plaintext highlighter-rouge">F</code>, <code class="language-plaintext highlighter-rouge">C</code>, ) (? final vs preliminary ?)</li>
-      <li><code class="language-plaintext highlighter-rouge">testIdentifier</code> -&gt; <code class="language-plaintext highlighter-rouge">.code</code> – where “LN” is Loinc</li>
-      <li><code class="language-plaintext highlighter-rouge">referenceRange</code> -&gt; <code class="language-plaintext highlighter-rouge">.referenceRange.text</code> – don’t try to break out further as there is little use of this value</li>
-      <li><code class="language-plaintext highlighter-rouge">labCommentEvents</code> -&gt; <code class="language-plaintext highlighter-rouge">.note.text</code></li>
-      <li>value[x] either String or Quantity with units</li>
-      <li><code class="language-plaintext highlighter-rouge">observationValue</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.value</code></li>
-      <li><code class="language-plaintext highlighter-rouge">observationUnits.unit</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.unit</code></li>
-      <li><code class="language-plaintext highlighter-rouge">observationUnits.code</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.code</code> - likely need to adjust some</li>
-      <li><code class="language-plaintext highlighter-rouge">observationUnits.codingSystem</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.system</code></li>
-      <li><code class="language-plaintext highlighter-rouge">performingOrganization</code> -&gt; <code class="language-plaintext highlighter-rouge">.performer</code></li>
-    </ul>
-  </li>
+  <li>subject must be the patient</li>
+  <li><code class="language-plaintext highlighter-rouge">valueInterpretation</code> -&gt; <code class="language-plaintext highlighter-rouge">.interpretation</code> (mock data has <code class="language-plaintext highlighter-rouge">L</code>, <code class="language-plaintext highlighter-rouge">H</code>, or absent) (? low, high, normal ?)</li>
+  <li><code class="language-plaintext highlighter-rouge">observedStatus</code> (mock data has <code class="language-plaintext highlighter-rouge">F</code>, <code class="language-plaintext highlighter-rouge">C</code>, ) (? final vs preliminary ?)</li>
+  <li><code class="language-plaintext highlighter-rouge">testIdentifier</code> -&gt; <code class="language-plaintext highlighter-rouge">.code</code> – where “LN” is Loinc</li>
+  <li><code class="language-plaintext highlighter-rouge">referenceRange</code> -&gt; <code class="language-plaintext highlighter-rouge">.referenceRange.text</code> – don’t try to break out further as there is little use of this value</li>
+  <li><code class="language-plaintext highlighter-rouge">labCommentEvents</code> -&gt; <code class="language-plaintext highlighter-rouge">.note.text</code></li>
+  <li>value[x] either String or Quantity with units</li>
+  <li><code class="language-plaintext highlighter-rouge">observationValue</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.value</code></li>
+  <li><code class="language-plaintext highlighter-rouge">observationUnits.unit</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.unit</code></li>
+  <li><code class="language-plaintext highlighter-rouge">observationUnits.code</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.code</code> - likely need to adjust some</li>
+  <li><code class="language-plaintext highlighter-rouge">observationUnits.codingSystem</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.system</code></li>
+  <li><code class="language-plaintext highlighter-rouge">performingOrganization</code> -&gt; <code class="language-plaintext highlighter-rouge">.performer</code></li>
   <li>given this is contained in the DiagnosticReport, then
     <ul>
       <li>no <code class="language-plaintext highlighter-rouge">.subject</code> is populated</li>
@@ -525,7 +547,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 <p>TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)</p>
 
 <ul>
-  <li>This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations.</li>
+  <li>This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations. BUT IS NOT because us-core requires us Practitioner and we can’t be compliant with that. So I have replicated the us-core requirements here.</li>
 </ul>
 </td>
             </tr>
@@ -1463,7 +1485,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.11-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 24, 2023 08:03-0500">2023-04-24</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.12-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 1, 2023 08:16-0500">2023-05-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

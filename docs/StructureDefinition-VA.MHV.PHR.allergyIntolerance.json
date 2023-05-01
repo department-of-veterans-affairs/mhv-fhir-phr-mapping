@@ -26,11 +26,11 @@
     }
   }],
   "url" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance",
-  "version" : "0.1.11-beta",
+  "version" : "0.1.12-beta",
   "name" : "MHVallergyIntolerance",
   "title" : "VA MHV PHR Allergy and Intolerance",
   "status" : "active",
-  "date" : "2023-04-24T08:03:17-05:00",
+  "date" : "2023-05-01T08:16:19-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -50,7 +50,7 @@
       "value" : "JohnMoehrke@gmail.com"
     }]
   }],
-  "description" : "A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.\n\n- The mock example maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. \n- Should be based on US-Core for AllergyIntolerance Resource profile\n- a `clinicalStatus` of the allergy (e.g.,active or resolved)\n  - Given that intoleranceCondition.status is unclear; will presume we only see `active`\n  - set to `active`\n- a `code` which tells you what the patient is allergic to\n  - at least `code.text`\n  - would be good to have a coding, but there does not appear to be any source for that\n- a patient\n- category derived from .allergyType (multiple codes are multiple category)\n  - `D` -> #medication\n  - `F' -> #food\n  - `O` -> #environment\n- presume if `drugClass` is indicated then the `category` should be #medication\n\nTODO:\n- unclear\n  - `intoleranceCondition.status` is always `F` in the mock data I have been given, so unclear what the meaning is. From the name 'status' I presume this is the status of the allergy, but unclear.\n  - will presume we only get `active`\n  - no clear place to record `informationSourceCategory`, `recordSource`, or `facilityIdentifer`\n  - reaction.reaction.code seems to be a number, but I can't find a codeSystem with these numbers.\n    - would be good to have SNOMED-CT, but this does not seem to be SNOMED",
+  "description" : "A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.\n\n- The mock example maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. \n- Should be based on US-Core for AllergyIntolerance Resource profile\n- a `clinicalStatus` of the allergy (e.g.,active or resolved)\n  - Given that intoleranceCondition.status is unclear; will presume we only see `active`\n  - set to `active`\n- a `code` which tells you what the patient is allergic to\n  - at least `code.text`\n  - would be good to have a coding, but there does not appear to be any source for that\n- a patient\n- category derived from .allergyType (multiple codes are multiple category)\n  - `D` -> #medication\n  - `F' -> #food\n  - `O` -> #environment\n- presume if `drugClass` is indicated then the `category` should be #medication\n\nTODO:\n- unclear\n  - `intoleranceCondition.status` is always `F` in the mock data I have been given, so unclear what the meaning is. From the name 'status' I presume this is the status of the allergy, but unclear.\n  - will presume we only get `active`\n  - no clear place to record `informationSourceCategory`, `recordSource`, `recordVersion`\n  - reaction.reaction.code seems to be a number, but I can't find a codeSystem with these numbers.\n    - would be good to have SNOMED-CT, but this does not seem to be SNOMED",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",

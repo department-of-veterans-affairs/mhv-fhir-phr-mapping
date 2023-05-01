@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9.10"}
-    h3,h4,h5,h6{--heading-prefix:"9.10"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.11"}
+    h3,h4,h5,h6{--heading-prefix:"9.11"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.11-beta - ci-build
+            <span style="display:inline-block;">0.1.12-beta - ci-build
 
 
 
@@ -166,7 +166,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.11-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.12-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -359,20 +359,20 @@
 </table>
 <a name="Lab-Mapping-LabReportTO"> </a><h3>Mappings for VDIF to MHV-PHR (LabReportTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVlabReport</b></td></tr>
- <tr><td>DiagnosticReport</td><td>LabReportTO</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {LabReportTO.id}</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>LabReportTO.caseNumber</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`laboratory`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>text = LabReportTO.title, LabReportTO.type -- should be converted to LOINC:  MI -&gt; LOINC#79381-0,  SP -&gt; LOINC#60567-5</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetPractitioner(LabReportTO.author), GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>Contained Observation(LabResultTO)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>LabReportTO.comment + LabReportTO.text</td> </tr>
+ <tr><td>DiagnosticReport</td><td>LabReportTO</td><td>MHV PHR FHIR API</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {LabReportTO.id}</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>LabReportTO.caseNumber</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`laboratory`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>text = LabReportTO.title, LabReportTO.type -- should be converted to LOINC:  MI -&gt; LOINC#79381-0,  SP -&gt; LOINC#60567-5</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetPractitioner(LabReportTO.author), GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)</td><td>, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>Contained Observation(LabResultTO)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>LabReportTO.comment + LabReportTO.text</td><td></td> </tr>
 </table>
 
 
@@ -449,7 +449,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.11-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Apr 24, 2023 08:03-0500">2023-04-24</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.12-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 1, 2023 08:16-0500">2023-05-01</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -38,8 +38,8 @@ Usage: #inline
 * collection.collectedDateTime = 2021-01-20T16:38:59-05:00
 
 
-Instance: ex-MHV-chTest-1a
-InstanceOf: VA.MHV.PHR.chTest 
+Instance: ex-MHV-chPanel-1a
+InstanceOf: VA.MHV.PHR.chPanel
 Usage: #inline
 /*  first labTest in the report
          <labTests>
@@ -51,6 +51,25 @@ Usage: #inline
                <alternateDisplayText>POTASSIUM</alternateDisplayText>
                <alternateCodingSystem>99VA60</alternateCodingSystem>
             </orderedTestCode>
+      ...
+*/
+* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code.coding[+].code = #84140.0000
+* code.text = "Potassium"
+* code.coding[=].system = "http://va.gov/systems/99VA64"
+* code.coding[+].code = #177
+* code.coding[=].display = "POTASSIUM"
+* code.coding[=].system = "http://va.gov/systems/99VA60"
+* status = #final
+* subject = Reference(Patient/ex-MHV-patient-27167)
+* hasMember = Reference(ex-MHV-chTest-1a)
+
+Instance: ex-MHV-chTest-1a
+InstanceOf: VA.MHV.PHR.chTest 
+Usage: #inline
+/*  first labTest in the report
+         <labTests>
+      ...
             <chemistryResults>
                <valueInterpretation>L</valueInterpretation>
                <observationStatus>F</observationStatus>
@@ -96,12 +115,6 @@ Usage: #inline
          </labTests>
 */
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* category[1].coding.code = #84140.0000
-* category[=].coding.display = "Potassium"
-* category[=].coding.system = "http://va.gov/systems/99VA64"
-* category[+].coding.code = #177
-* category[=].coding.display = "POTASSIUM"
-* category[=].coding.system = "http://va.gov/systems/99VA60"
 * interpretation.text = "L"
 * interpretation.coding = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L
 * status = #final
@@ -109,9 +122,9 @@ Usage: #inline
 * code.text = "POTASSIUM:SCNC:PT:SER/PLAS:QN:"
 * code.coding[=].system = LOINC
 * code.coding[=].version = "2.68"
-* category[+].coding.code = #4670505
-* category[=].coding.system = "http://va.gov/systems/99VA95.3"
-* category[=].coding.version = "2.68"
+* code.coding[+].code = #4670505
+* code.coding[=].system = "http://va.gov/systems/99VA95.3"
+* code.coding[=].version = "2.68"
 * code.text = "POTASSIUM"
 * referenceRange.text = "3.6-5.1"
 * note.text = "Normal Range Prior to 8-22-02 was: 3.6 - 5.0 mEq/L."
@@ -121,8 +134,10 @@ Usage: #inline
 * performer = Reference(Organization/ex-MHV-organization-552)
 * subject = Reference(Patient/ex-MHV-patient-27167)
 
-Instance: ex-MHV-chTest-1b
-InstanceOf: VA.MHV.PHR.chTest 
+
+
+Instance: ex-MHV-chPanel-1b
+InstanceOf: VA.MHV.PHR.chPanel 
 Usage: #inline
 /* second labTest in the report
          <labTests>
@@ -134,6 +149,26 @@ Usage: #inline
                <alternateDisplayText>SODIUM</alternateDisplayText>
                <alternateCodingSystem>99VA60</alternateCodingSystem>
             </orderedTestCode>
+         ...
+*/
+* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* code.coding[+].code = #84295.0000
+* code.text = "Sodium"
+* code.coding[=].system = "http://va.gov/systems/99VA64"
+* code.coding[+].code = #176
+* code.coding[=].display = "SODIUM"
+* code.coding[=].system = "http://va.gov/systems/99VA60"
+* status = #final
+* subject = Reference(Patient/ex-MHV-patient-27167)
+* hasMember = Reference(ex-MHV-chTest-1b)
+
+
+Instance: ex-MHV-chTest-1b
+InstanceOf: VA.MHV.PHR.chTest 
+Usage: #inline
+/* second labTest in the report
+         <labTests>
+      ...
             <chemistryResults>
                <observationStatus>F</observationStatus>
                <testIdentifier>
@@ -176,12 +211,6 @@ Usage: #inline
 
 */
 * category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* category[1].coding.code = #84295.0000
-* category[=].coding.display = "Sodium"
-* category[=].coding.system = "http://va.gov/systems/99VA64"
-* category[+].coding.code = #176
-* category[=].coding.display = "SODIUM"
-* category[=].coding.system = "http://va.gov/systems/99VA60"
 * interpretation.text = "L"
 * interpretation.coding = http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L
 * status = #final
@@ -189,9 +218,9 @@ Usage: #inline
 * code.text = "SODIUM:SCNC:PT:SER/PLAS:QN:"
 * code.coding[=].system = LOINC
 * code.coding[=].version = "2.68"
-* category[+].coding.code = #4671912
-* category[=].coding.system = "http://va.gov/systems/99VA95.3"
-* category[=].coding.version = "2.68"
+* code.coding[+].code = #4671912
+* code.coding[=].system = "http://va.gov/systems/99VA95.3"
+* code.coding[=].version = "2.68"
 * referenceRange.text = "136-145"
 * valueQuantity.value = 138.0
 * valueQuantity.unit = "mEq/L"
@@ -292,6 +321,8 @@ Added Potassium test
 * performer[+] = Reference(Practitioner/ex-MHV-practitioner-14934-VA552)
 * performer[+] = Reference(Organization/ex-MHV-organization-989)
 
+* contained[+] = ex-MHV-chPanel-1a
+* result[+] = Reference(ex-MHV-chPanel-1a)
 * contained[+] = ex-MHV-chTest-1a
 * result[+] = Reference(ex-MHV-chTest-1a)
 * category[1].coding.code = #2823-3
@@ -299,6 +330,8 @@ Added Potassium test
 * category[=].coding.system = LOINC
 * category[=].coding.version = "2.68"
 
+* contained[+] = ex-MHV-chPanel-1b
+* result[+] = Reference(ex-MHV-chPanel-1b)
 * contained[+] = ex-MHV-chTest-1b
 * result[+] = Reference(ex-MHV-chTest-1b)
 * category[+].coding.code = #2951-2

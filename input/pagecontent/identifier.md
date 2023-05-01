@@ -120,3 +120,7 @@ orderingFacilityIdentifier will be a `.use` of `usual`, and use the fixed OID fo
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[TOid].value ^short = "{orderingFacilityIdentifier.identity}"
 ```
+
+#### Patient
+
+I don't know enough about how patient id is managed. I understand that we are just going to use the MHV assigned patient identifier and nothing more.
