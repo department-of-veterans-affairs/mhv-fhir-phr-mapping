@@ -1,0 +1,69 @@
+Example from a mock intoleranceConditions
+
+```xml
+        <intoleranceConditions>
+            <recordIdentifier>
+                <identity>69124</identity>
+                <namespaceId>979_120.8</namespaceId>
+            </recordIdentifier>
+            <patient>
+                <identifier>
+                    <identity>89486</identity>
+                    <assigningFacility>979</assigningFacility>
+                    <assigningAuthority>USVHA</assigningAuthority>
+                </identifier>
+                <name>
+                    <given>MHVPDAADLZ</given>
+                    <middle>LUSER</middle>
+                    <family>MHVASPXXI</family>
+                    <suffix>MHV</suffix>
+                </name>
+            </patient>
+            <observationTime>
+                <literal>20130513173600</literal>
+            </observationTime>
+            <agent>
+                <code>PEANUTS</code>
+            </agent>
+            <allergyType>
+                <code>F</code>
+                <displayText>FOOD</displayText>
+            </allergyType>
+            <informationSourceCategory>
+                <code>4500978</code>
+                <displayText>OBSERVED</displayText>
+            </informationSourceCategory>
+            <status>F</status>
+            <reaction>
+                <reaction>
+                    <code>4538635</code>
+                    <displayText>RASH</displayText>
+                </reaction>
+            </reaction>
+            <reaction>
+                <reaction>
+                    <code>4637183</code>
+                    <displayText>RESPIRATORY DISTRESS</displayText>
+                </reaction>
+            </reaction>
+            <reaction>
+                <reaction>
+                    <code>4691091</code>
+                    <displayText>NAUSEA AND VOMITING</displayText>
+                </reaction>
+            </reaction>
+            <commentEvents>
+                <date>
+                    <literal>20130513173822</literal>
+                </date>
+                <comments>TEST SSC 5/13/2013 </comments>
+            </commentEvents>
+            <facilityIdentifier>
+                <identity>979</identity>
+            </facilityIdentifier>
+            <recordSource>
+                <universalId>SLC10.FO-BAYPINES.MED.VA.GOV</universalId>
+                <universalIdType>DNS</universalIdType>
+            </recordSource>
+        </intoleranceConditions>
+```

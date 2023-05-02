@@ -1,0 +1,57 @@
+Example from a mock intoleranceConditions
+
+```xml
+        <intoleranceConditions>
+            <recordIdentifier>
+                <identity>69123</identity>
+                <namespaceId>979_120.8</namespaceId>
+            </recordIdentifier>
+            <patient>
+                <identifier>
+                    <identity>89486</identity>
+                    <assigningFacility>979</assigningFacility>
+                    <assigningAuthority>USVHA</assigningAuthority>
+                </identifier>
+                <name>
+                    <given>MHVPDAADLZ</given>
+                    <middle>LUSER</middle>
+                    <family>MHVASPXXI</family>
+                    <suffix>MHV</suffix>
+                </name>
+            </patient>
+            <observationTime>
+                <literal>20120824154700</literal>
+            </observationTime>
+            <agent>
+                <code>BEE STINGS</code>
+            </agent>
+            <allergyType>
+                <code>O</code>
+                <displayText>OTHER</displayText>
+            </allergyType>
+            <informationSourceCategory>
+                <code>4500975</code>
+                <displayText>HISTORICAL</displayText>
+            </informationSourceCategory>
+            <status>F</status>
+            <reaction>
+                <reaction>
+                    <code>4637183</code>
+                    <displayText>RESPIRATORY DISTRESS</displayText>
+                </reaction>
+            </reaction>
+            <reaction>
+                <reaction>
+                    <code>4637164</code>
+                    <displayText>SWELLING</displayText>
+                </reaction>
+            </reaction>
+            <facilityIdentifier>
+                <identity>979</identity>
+            </facilityIdentifier>
+            <recordSource>
+                <universalId>SLC10.FO-BAYPINES.MED.VA.GOV</universalId>
+                <universalIdType>DNS</universalIdType>
+            </recordSource>
+        </intoleranceConditions>
+```

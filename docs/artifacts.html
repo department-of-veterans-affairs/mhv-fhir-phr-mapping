@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.12-beta - ci-build
+            <span style="display:inline-block;">0.1.13-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.12-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.13-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -240,7 +240,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.</p>
 
 <ul>
-  <li>The mock example maps to <a href="https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd">intoleranceConditions</a> schema.</li>
+  <li>The <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml">mock example</a> maps to <a href="https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd">intoleranceConditions</a> schema.</li>
   <li>Should be based on US-Core for AllergyIntolerance Resource profile</li>
   <li>a <code class="language-plaintext highlighter-rouge">clinicalStatus</code> of the allergy (e.g.,active or resolved)
     <ul>
@@ -255,24 +255,36 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </ul>
   </li>
   <li>a patient</li>
-  <li>category derived from .allergyType (multiple codes are multiple category)
+  <li><code class="language-plaintext highlighter-rouge">category</code> derived from <code class="language-plaintext highlighter-rouge">.allergyType</code>
     <ul>
       <li><code class="language-plaintext highlighter-rouge">D</code> -&gt; #medication</li>
-      <li>`F’ -&gt; #food</li>
+      <li><code class="language-plaintext highlighter-rouge">F</code> -&gt; #food</li>
       <li><code class="language-plaintext highlighter-rouge">O</code> -&gt; #environment</li>
+      <li>multiple codes are multiple category - <code class="language-plaintext highlighter-rouge">DF</code> -&gt; both #medication and #food</li>
     </ul>
   </li>
-  <li>presume if <code class="language-plaintext highlighter-rouge">drugClass</code> is indicated then the <code class="language-plaintext highlighter-rouge">category</code> should be #medication</li>
+  <li>presume if <code class="language-plaintext highlighter-rouge">drugClass</code> is indicated then the <code class="language-plaintext highlighter-rouge">category</code> should be #medication
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">drugClass.code.displayText</code> -&gt; <code class="language-plaintext highlighter-rouge">.code.coding.display</code></li>
+    </ul>
+  </li>
 </ul>
 
 <p>TODO:</p>
 <ul>
   <li>unclear
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">intoleranceCondition.status</code> is always <code class="language-plaintext highlighter-rouge">F</code> in the mock data I have been given, so unclear what the meaning is. From the name ‘status’ I presume this is the status of the allergy, but unclear.</li>
-      <li>will presume we only get <code class="language-plaintext highlighter-rouge">active</code></li>
-      <li>no clear place to record <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>, <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code></li>
-      <li>reaction.reaction.code seems to be a number, but I can’t find a codeSystem with these numbers.
+      <li><code class="language-plaintext highlighter-rouge">facilityIdentifier</code> might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.</li>
+      <li>no clear place to record <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>, <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code>
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">informationSourceCategory</code> mock data = 4500978/OBSERVED, 4500975/HISTORICAL
+            <ul>
+              <li>this might be FHIR <code class="language-plaintext highlighter-rouge">.verificationStatus</code>, but we can’t fill that element without also declaring one of the codes mandated (unconfirmed, confirmed, refuted, or entered-in-error)</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><code class="language-plaintext highlighter-rouge">reaction.reaction.code</code> seems to be a number, but I can’t find a codeSystem with these numbers.
         <ul>
           <li>would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
         </ul>
@@ -907,7 +919,133 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
                      title="AllergyIntolerance/ex-MHV-allergy-1">Example 1 of an MHV allergy or intolerance</a>
                </td>
                <td>
-<p>Example from a mock ProblemTO</p>
+<p>IntoleranceCondition record identity 53495 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-10.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-10">Example 10 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69075 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-11.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-11">Example 11 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69092 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-12.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-12">Example 12 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69093 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-13.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-13">Example 13 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69123 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-14.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-14">Example 14 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69124 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-15.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-15">Example 15 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69129 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-2.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-2">Example 2 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 67933 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-3.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-3">Example 3 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 67934 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-4.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-4">Example 4 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69066 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-5.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-5">Example 5 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69067 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-6.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-6">Example 6 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69071 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-7.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-7">Example 7 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69072 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-8.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-8">Example 8 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69073 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-9.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-9">Example 9 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69074 from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
@@ -1485,7 +1623,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.12-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, May 1, 2023 08:16-0500">2023-05-01</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.13-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 2, 2023 08:13-0500">2023-05-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -9,7 +9,7 @@ Title:          "VA MHV PHR Allergy and Intolerance"
 Description:    """
 A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.
 
-- The mock example maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
+- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
 - Should be based on US-Core for AllergyIntolerance Resource profile
 - a `clinicalStatus` of the allergy (e.g.,active or resolved)
   - Given that intoleranceCondition.status is unclear; will presume we only see `active`
@@ -18,18 +18,21 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
   - at least `code.text`
   - would be good to have a coding, but there does not appear to be any source for that
 - a patient
-- category derived from .allergyType (multiple codes are multiple category)
+- `category` derived from `.allergyType` 
   - `D` -> #medication
-  - `F' -> #food
+  - `F` -> #food
   - `O` -> #environment
+  - multiple codes are multiple category - `DF` -> both #medication and #food
 - presume if `drugClass` is indicated then the `category` should be #medication
+  - `drugClass.code.displayText` -> `.code.coding.display`
 
 TODO:
 - unclear
-  - `intoleranceCondition.status` is always `F` in the mock data I have been given, so unclear what the meaning is. From the name 'status' I presume this is the status of the allergy, but unclear.
-  - will presume we only get `active`
+  - `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.
   - no clear place to record `informationSourceCategory`, `recordSource`, `recordVersion`
-  - reaction.reaction.code seems to be a number, but I can't find a codeSystem with these numbers.
+    - `informationSourceCategory` mock data = 4500978/OBSERVED, 4500975/HISTORICAL
+	  - this might be FHIR `.verificationStatus`, but we can't fill that element without also declaring one of the codes mandated (unconfirmed, confirmed, refuted, or entered-in-error)
+  - `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers.
     - would be good to have SNOMED-CT, but this does not seem to be SNOMED
 """
 * identifier 1..
@@ -73,8 +76,7 @@ Title: "VHIM Allergy to MHV-PHR"
 * clinicalStatus -> "`active`"
 * onsetDateTime -> "~intoleranceCondition.observationTime.literal"
 * category -> "~intoleranceCondition.allergyType.code"
-* category -> "intoleranceCondition.drugClass.code"
-* recorder -> "getFacility(intoleranceCondition.facilityIdentifier.identity)"
+* code.coding.display -> "intoleranceCondition.drugClass.code"
 * reaction.manifestation -> "intoleranceCondition.reaction.reaction"
 * reaction.manifestation.text -> "intoleranceCondition.reaction.reaction.displayText"
 * reaction.manifestation.coding.code -> "intoleranceCondition.reaction.reaction.code"

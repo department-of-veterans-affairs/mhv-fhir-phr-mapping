@@ -1,0 +1,62 @@
+Example from a mock intoleranceConditions
+
+```xml
+        <intoleranceConditions>
+            <recordIdentifier>
+                <identity>69067</identity>
+                <namespaceId>979_120.8</namespaceId>
+            </recordIdentifier>
+            <patient>
+                <identifier>
+                    <identity>89486</identity>
+                    <assigningFacility>979</assigningFacility>
+                    <assigningAuthority>USVHA</assigningAuthority>
+                </identifier>
+                <name>
+                    <given>MHVPDAADLZ</given>
+                    <middle>LUSER</middle>
+                    <family>MHVASPXXI</family>
+                    <suffix>MHV</suffix>
+                </name>
+            </patient>
+            <observationTime>
+                <literal>20110216143300</literal>
+            </observationTime>
+            <agent>
+                <code>BALSALAZIDE</code>
+            </agent>
+            <allergyType>
+                <code>D</code>
+                <displayText>DRUG</displayText>
+            </allergyType>
+            <informationSourceCategory>
+                <code>4500978</code>
+                <displayText>OBSERVED</displayText>
+            </informationSourceCategory>
+            <status>F</status>
+            <reaction>
+                <reaction>
+                    <code>4637015</code>
+                    <displayText>DELIRIUM</displayText>
+                </reaction>
+            </reaction>
+            <commentEvents>
+                <date>
+                    <literal>20110216143418</literal>
+                </date>
+                <comments>new comments would go here, thanks </comments>
+            </commentEvents>
+            <drugClass>
+                <code>
+                    <displayText>GASTRIC MEDICATIONS,OTHER</displayText>
+                </code>
+            </drugClass>
+            <facilityIdentifier>
+                <identity>979</identity>
+            </facilityIdentifier>
+            <recordSource>
+                <universalId>SLC10.FO-BAYPINES.MED.VA.GOV</universalId>
+                <universalIdType>DNS</universalIdType>
+            </recordSource>
+        </intoleranceConditions>
+```

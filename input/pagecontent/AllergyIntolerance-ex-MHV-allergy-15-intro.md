@@ -1,0 +1,89 @@
+Example from a mock intoleranceConditions
+
+```xml
+        <intoleranceConditions>
+            <recordIdentifier>
+                <identity>69129</identity>
+                <namespaceId>979_120.8</namespaceId>
+            </recordIdentifier>
+            <patient>
+                <identifier>
+                    <identity>89486</identity>
+                    <assigningFacility>979</assigningFacility>
+                    <assigningAuthority>USVHA</assigningAuthority>
+                </identifier>
+                <name>
+                    <given>MHVPDAADLZ</given>
+                    <middle>LUSER</middle>
+                    <family>MHVASPXXI</family>
+                    <suffix>MHV</suffix>
+                </name>
+            </patient>
+            <observationTime>
+                <literal>20140825171200</literal>
+            </observationTime>
+            <agent>
+                <code>RUBBER</code>
+            </agent>
+            <allergyType>
+                <code>O</code>
+                <displayText>OTHER</displayText>
+            </allergyType>
+            <informationSourceCategory>
+                <code>4500978</code>
+                <displayText>OBSERVED</displayText>
+            </informationSourceCategory>
+            <status>F</status>
+            <reaction>
+                <reaction>
+                    <code>4538635</code>
+                    <displayText>RASH</displayText>
+                </reaction>
+            </reaction>
+            <reaction>
+                <reaction>
+                    <code>4637164</code>
+                    <displayText>SWELLING</displayText>
+                </reaction>
+            </reaction>
+            <reaction>
+                <reaction>
+                    <code>4637093</code>
+                    <displayText>LOW BLOOD PRESSURE</displayText>
+                </reaction>
+            </reaction>
+            <reaction>
+                <reaction>
+                    <code>4637050</code>
+                    <displayText>ANXIETY</displayText>
+                </reaction>
+            </reaction>
+            <reaction>
+                <reaction>
+                    <code>4637212</code>
+                    <displayText>NASAL CONGESTION</displayText>
+                </reaction>
+            </reaction>
+            <reaction>
+                <reaction>
+                    <code>4637020</code>
+                    <displayText>COUGH</displayText>
+                </reaction>
+            </reaction>
+            <commentEvents>
+                <date>
+                    <literal>20140825171324</literal>
+                </date>
+                <comments>Patient has a Moderate allergy to Rubber. This is a test to
+
+see if it shows up on the Report. SSC TEST 8/25/2014 </comments>
+            </commentEvents>
+            <facilityIdentifier>
+                <identity>979</identity>
+            </facilityIdentifier>
+            <recordSource>
+                <universalId>SLC10.FO-BAYPINES.MED.VA.GOV</universalId>
+                <universalIdType>DNS</universalIdType>
+            </recordSource>
+        </intoleranceConditions>
+```

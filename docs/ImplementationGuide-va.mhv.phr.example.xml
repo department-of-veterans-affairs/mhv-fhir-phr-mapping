@@ -13,11 +13,11 @@
     <valueInteger value="0"/>
   </extension>
   <url value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
-  <version value="0.1.12-beta"/>
+  <version value="0.1.13-beta"/>
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-05-01T08:16:19-05:00"/>
+  <date value="2023-05-02T08:13:48-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -648,7 +648,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
       </reference>
       <name value="VA MHV PHR Allergy and Intolerance"/>
-      <description value="A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.&#xA;&#xA;- The mock example maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. &#xA;- Should be based on US-Core for AllergyIntolerance Resource profile&#xA;- a `clinicalStatus` of the allergy (e.g.,active or resolved)&#xA;  - Given that intoleranceCondition.status is unclear; will presume we only see `active`&#xA;  - set to `active`&#xA;- a `code` which tells you what the patient is allergic to&#xA;  - at least `code.text`&#xA;  - would be good to have a coding, but there does not appear to be any source for that&#xA;- a patient&#xA;- category derived from .allergyType (multiple codes are multiple category)&#xA;  - `D` -&gt; #medication&#xA;  - `F' -&gt; #food&#xA;  - `O` -&gt; #environment&#xA;- presume if `drugClass` is indicated then the `category` should be #medication&#xA;&#xA;TODO:&#xA;- unclear&#xA;  - `intoleranceCondition.status` is always `F` in the mock data I have been given, so unclear what the meaning is. From the name 'status' I presume this is the status of the allergy, but unclear.&#xA;  - will presume we only get `active`&#xA;  - no clear place to record `informationSourceCategory`, `recordSource`, `recordVersion`&#xA;  - reaction.reaction.code seems to be a number, but I can't find a codeSystem with these numbers.&#xA;    - would be good to have SNOMED-CT, but this does not seem to be SNOMED"/>
+      <description value="A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.&#xA;&#xA;- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. &#xA;- Should be based on US-Core for AllergyIntolerance Resource profile&#xA;- a `clinicalStatus` of the allergy (e.g.,active or resolved)&#xA;  - Given that intoleranceCondition.status is unclear; will presume we only see `active`&#xA;  - set to `active`&#xA;- a `code` which tells you what the patient is allergic to&#xA;  - at least `code.text`&#xA;  - would be good to have a coding, but there does not appear to be any source for that&#xA;- a patient&#xA;- `category` derived from `.allergyType` &#xA;  - `D` -&gt; #medication&#xA;  - `F` -&gt; #food&#xA;  - `O` -&gt; #environment&#xA;  - multiple codes are multiple category - `DF` -&gt; both #medication and #food&#xA;- presume if `drugClass` is indicated then the `category` should be #medication&#xA;  - `drugClass.code.displayText` -&gt; `.code.coding.display`&#xA;&#xA;TODO:&#xA;- unclear&#xA;  - `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.&#xA;  - no clear place to record `informationSourceCategory`, `recordSource`, `recordVersion`&#xA;    - `informationSourceCategory` mock data = 4500978/OBSERVED, 4500975/HISTORICAL&#xA;&#x9;  - this might be FHIR `.verificationStatus`, but we can't fill that element without also declaring one of the codes mandated (unconfirmed, confirmed, refuted, or entered-in-error)&#xA;  - `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers.&#xA;    - would be good to have SNOMED-CT, but this does not seem to be SNOMED"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -912,7 +912,161 @@
         <reference value="AllergyIntolerance/ex-MHV-allergy-1"/>
       </reference>
       <name value="Example 1 of an MHV allergy or intolerance"/>
-      <description value="Example from a mock ProblemTO"/>
+      <description value="IntoleranceCondition record identity 53495 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-10"/>
+      </reference>
+      <name value="Example 10 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69075 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-11"/>
+      </reference>
+      <name value="Example 11 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69092 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-12"/>
+      </reference>
+      <name value="Example 12 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69093 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-13"/>
+      </reference>
+      <name value="Example 13 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69123 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-14"/>
+      </reference>
+      <name value="Example 14 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69124 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-15"/>
+      </reference>
+      <name value="Example 15 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69129 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-2"/>
+      </reference>
+      <name value="Example 2 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 67933 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-3"/>
+      </reference>
+      <name value="Example 3 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 67934 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-4"/>
+      </reference>
+      <name value="Example 4 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69066 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-5"/>
+      </reference>
+      <name value="Example 5 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69067 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-6"/>
+      </reference>
+      <name value="Example 6 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69071 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-7"/>
+      </reference>
+      <name value="Example 7 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69072 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-8"/>
+      </reference>
+      <name value="Example 8 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69073 from a mock ProblemTO"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-9"/>
+      </reference>
+      <name value="Example 9 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69074 from a mock ProblemTO"/>
       <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
     </resource>
     <resource>

@@ -1,0 +1,57 @@
+Example from a mock intoleranceConditions
+
+```xml
+        <intoleranceConditions>
+            <recordIdentifier>
+                <identity>69071</identity>
+                <namespaceId>979_120.8</namespaceId>
+            </recordIdentifier>
+            <patient>
+                <identifier>
+                    <identity>89486</identity>
+                    <assigningFacility>979</assigningFacility>
+                    <assigningAuthority>USVHA</assigningAuthority>
+                </identifier>
+                <name>
+                    <given>MHVPDAADLZ</given>
+                    <middle>LUSER</middle>
+                    <family>MHVASPXXI</family>
+                    <suffix>MHV</suffix>
+                </name>
+            </patient>
+            <observationTime>
+                <literal>20110221080800</literal>
+            </observationTime>
+            <agent>
+                <code>BANANAS</code>
+            </agent>
+            <allergyType>
+                <code>F</code>
+                <displayText>FOOD</displayText>
+            </allergyType>
+            <informationSourceCategory>
+                <code>4500978</code>
+                <displayText>OBSERVED</displayText>
+            </informationSourceCategory>
+            <status>F</status>
+            <reaction>
+                <reaction>
+                    <code>4538635</code>
+                    <displayText>RASH</displayText>
+                </reaction>
+            </reaction>
+            <commentEvents>
+                <date>
+                    <literal>20110221080901</literal>
+                </date>
+                <comments>test comments</comments>
+            </commentEvents>
+            <facilityIdentifier>
+                <identity>979</identity>
+            </facilityIdentifier>
+            <recordSource>
+                <universalId>SLC10.FO-BAYPINES.MED.VA.GOV</universalId>
+                <universalIdType>DNS</universalIdType>
+            </recordSource>
+        </intoleranceConditions>
+```

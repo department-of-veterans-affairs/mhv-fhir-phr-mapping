@@ -1,0 +1,58 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/AllergyIntolerance/ex-MHV-allergy-10> a fhir:AllergyIntolerance ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-allergy-10"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"^^xsd:anyURI ;
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"ex-MHV-allergy-10\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;ex-MHV-allergy-10&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.allergyIntolerance.html\">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>identifier</b>: id: 69075 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>category</b>: medication</p><p><b>code</b>: NAMENDA <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ([not stated] &quot;CNS MEDICATIONS,OTHER&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-ex-MHV-patient-89486.html\">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>onset</b>: 2011-02-21 08:57:00+0000</p><p><b>note</b>: test ( @Feb 21, 2011, 2:57:54 AM)</p><h3>Reactions</h3><table class=\"grid\"><tr><td>-</td><td><b>Manifestation</b></td></tr><tr><td>*</td><td>SWELLING <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ([not stated]#4637164)</span></td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "http://va.gov/systems/979_120.8"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "69075" ]
+  ] ) ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:category ( [ fhir:v "medication"] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:display [ fhir:v "CNS MEDICATIONS,OTHER" ]
+     ] ) ;
+     fhir:text [ fhir:v "NAMENDA" ]
+  ] ; # 
+  fhir:patient [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-89486> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-89486" ]
+  ] ; # 
+  fhir:onset [ fhir:v "2011-02-21T08:57:00Z"^^xsd:dateTime] ; # 
+  fhir:note ( [
+     fhir:time [ fhir:v "2011-02-21T08:57:54Z"^^xsd:dateTime ] ;
+     fhir:text [ fhir:v "test" ]
+  ] ) ; # 
+  fhir:reaction ( [
+     fhir:manifestation ( [
+       fhir:coding ( [
+         fhir:code [ fhir:v "4637164" ]
+       ] ) ;
+       fhir:text [ fhir:v "SWELLING" ]
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

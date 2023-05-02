@@ -1,0 +1,82 @@
+Example from a mock intoleranceConditions
+
+```xml
+        <intoleranceConditions>
+            <recordIdentifier>
+                <identity>69072</identity>
+                <namespaceId>979_120.8</namespaceId>
+            </recordIdentifier>
+            <patient>
+                <identifier>
+                    <identity>89486</identity>
+                    <assigningFacility>979</assigningFacility>
+                    <assigningAuthority>USVHA</assigningAuthority>
+                </identifier>
+                <name>
+                    <given>MHVPDAADLZ</given>
+                    <middle>LUSER</middle>
+                    <family>MHVASPXXI</family>
+                    <suffix>MHV</suffix>
+                </name>
+            </patient>
+            <observationTime>
+                <literal>20110221080900</literal>
+            </observationTime>
+            <agent>
+                <code>PENICILLIN</code>
+            </agent>
+            <allergyType>
+                <code>D</code>
+                <displayText>DRUG</displayText>
+            </allergyType>
+            <informationSourceCategory>
+                <code>4500975</code>
+                <displayText>HISTORICAL</displayText>
+            </informationSourceCategory>
+            <status>F</status>
+            <reaction>
+                <reaction>
+                    <code>4637164</code>
+                    <displayText>SWELLING</displayText>
+                </reaction>
+            </reaction>
+            <commentEvents>
+                <date>
+                    <literal>20110221080943</literal>
+                </date>
+                <comments>test</comments>
+            </commentEvents>
+            <drugClass>
+                <code>
+                    <displayText>(INACTIVE) PENICILLINS</displayText>
+                </code>
+            </drugClass>
+            <drugClass>
+                <code>
+                    <displayText>PENICILLIN-G RELATED PENICILLINS</displayText>
+                </code>
+            </drugClass>
+            <drugClass>
+                <code>
+                    <displayText>PENICILLINS,AMINO DERIVATIVES</displayText>
+                </code>
+            </drugClass>
+            <drugClass>
+                <code>
+                    <displayText>PENICILLINASE-RESISTANT PENICILLINS</displayText>
+                </code>
+            </drugClass>
+            <drugClass>
+                <code>
+                    <displayText>EXTENDED SPECTRUM PENICILLINS</displayText>
+                </code>
+            </drugClass>
+            <facilityIdentifier>
+                <identity>979</identity>
+            </facilityIdentifier>
+            <recordSource>
+                <universalId>SLC10.FO-BAYPINES.MED.VA.GOV</universalId>
+                <universalIdType>DNS</universalIdType>
+            </recordSource>
+        </intoleranceConditions>
+```

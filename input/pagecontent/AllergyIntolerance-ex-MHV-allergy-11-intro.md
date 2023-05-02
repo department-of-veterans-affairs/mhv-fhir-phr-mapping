@@ -1,0 +1,63 @@
+Example from a mock intoleranceConditions
+
+```xml
+        <intoleranceConditions>
+            <recordIdentifier>
+                <identity>69092</identity>
+                <namespaceId>979_120.8</namespaceId>
+            </recordIdentifier>
+            <patient>
+                <identifier>
+                    <identity>89486</identity>
+                    <assigningFacility>979</assigningFacility>
+                    <assigningAuthority>USVHA</assigningAuthority>
+                </identifier>
+                <name>
+                    <given>MHVPDAADLZ</given>
+                    <middle>LUSER</middle>
+                    <family>MHVASPXXI</family>
+                    <suffix>MHV</suffix>
+                </name>
+            </patient>
+            <observationTime>
+                <literal>20110228181100</literal>
+            </observationTime>
+            <agent>
+                <code>MALTOSE</code>
+            </agent>
+            <allergyType>
+                <code>DF</code>
+                <displayText>DRUG, FOOD</displayText>
+            </allergyType>
+            <informationSourceCategory>
+                <code>4500975</code>
+                <displayText>HISTORICAL</displayText>
+            </informationSourceCategory>
+            <status>F</status>
+            <reaction>
+                <reaction>
+                    <code>4637177</code>
+                    <displayText>SEDATED</displayText>
+                </reaction>
+            </reaction>
+            <reaction>
+                <reaction>
+                    <code>4637164</code>
+                    <displayText>SWELLING</displayText>
+                </reaction>
+            </reaction>
+            <commentEvents>
+                <date>
+                    <literal>20110228181147</literal>
+                </date>
+                <comments>test 123456 </comments>
+            </commentEvents>
+            <facilityIdentifier>
+                <identity>979</identity>
+            </facilityIdentifier>
+            <recordSource>
+                <universalId>SLC10.FO-BAYPINES.MED.VA.GOV</universalId>
+                <universalIdType>DNS</universalIdType>
+            </recordSource>
+        </intoleranceConditions>
+```

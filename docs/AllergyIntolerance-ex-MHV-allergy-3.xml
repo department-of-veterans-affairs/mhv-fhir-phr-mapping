@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AllergyIntolerance xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-allergy-3"/>
+  <meta>
+    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: AllergyIntolerance</b><a name="ex-MHV-allergy-3"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource AllergyIntolerance &quot;ex-MHV-allergy-3&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>identifier</b>: id: 67934 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>category</b>: medication</p><p><b>code</b>: LORTAB <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ([not stated] &quot;OPIOID ANALGESICS&quot;)</span></p><p><b>patient</b>: <a href="Patient-ex-MHV-patient-89486.html">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>onset</b>: 2006-02-01 13:58:00+0000</p><h3>Reactions</h3><table class="grid"><tr><td>-</td><td><b>Manifestation</b></td></tr><tr><td>*</td><td>NAUSEA AND VOMITING <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ([not stated]#4691091)</span></td></tr></table></div>
+  </text>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://va.gov/systems/979_120.8"/>
+    <value value="67934"/>
+  </identifier>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+      <code value="active"/>
+    </coding>
+  </clinicalStatus>
+  <category value="medication"/>
+  <code>
+    <coding>
+      <display value="OPIOID ANALGESICS"/>
+    </coding>
+    <text value="LORTAB"/>
+  </code>
+  <patient>
+    <reference value="Patient/ex-MHV-patient-89486"/>
+  </patient>
+  <onsetDateTime value="2006-02-01T13:58:00Z"/>
+  <reaction>
+    <manifestation>
+      <coding>
+        <code value="4691091"/>
+      </coding>
+      <text value="NAUSEA AND VOMITING"/>
+    </manifestation>
+  </reaction>
+</AllergyIntolerance>

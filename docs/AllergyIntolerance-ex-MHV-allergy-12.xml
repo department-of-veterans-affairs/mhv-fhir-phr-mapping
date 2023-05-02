@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AllergyIntolerance xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-allergy-12"/>
+  <meta>
+    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: AllergyIntolerance</b><a name="ex-MHV-allergy-12"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource AllergyIntolerance &quot;ex-MHV-allergy-12&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>identifier</b>: id: 69093 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>category</b>: environment</p><p><b>code</b>: QUINOLINE <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>patient</b>: <a href="Patient-ex-MHV-patient-89486.html">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>onset</b>: 2011-02-28 18:12:00+0000</p><p><b>note</b>: new entry  ( @Feb 28, 2011, 12:12:40 PM)</p><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: RASH <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ([not stated]#4538635)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: PRURITUS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ([not stated]#4637191)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: RENAL IMPAIRMENT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ([not stated]#4637184)</span></p></blockquote></div>
+  </text>
+  <identifier>
+    <use value="usual"/>
+    <system value="http://va.gov/systems/979_120.8"/>
+    <value value="69093"/>
+  </identifier>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+      <code value="active"/>
+    </coding>
+  </clinicalStatus>
+  <category value="environment"/>
+  <code>
+    <text value="QUINOLINE"/>
+  </code>
+  <patient>
+    <reference value="Patient/ex-MHV-patient-89486"/>
+  </patient>
+  <onsetDateTime value="2011-02-28T18:12:00Z"/>
+  <note>
+    <time value="2011-02-28T18:12:40Z"/>
+    <text value="new entry "/>
+  </note>
+  <reaction>
+    <manifestation>
+      <coding>
+        <code value="4538635"/>
+      </coding>
+      <text value="RASH"/>
+    </manifestation>
+  </reaction>
+  <reaction>
+    <manifestation>
+      <coding>
+        <code value="4637191"/>
+      </coding>
+      <text value="PRURITUS"/>
+    </manifestation>
+  </reaction>
+  <reaction>
+    <manifestation>
+      <coding>
+        <code value="4637184"/>
+      </coding>
+      <text value="RENAL IMPAIRMENT"/>
+    </manifestation>
+  </reaction>
+</AllergyIntolerance>
