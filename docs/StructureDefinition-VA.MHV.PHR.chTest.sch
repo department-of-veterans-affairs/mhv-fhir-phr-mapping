@@ -43,4 +43,14 @@
       <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Observation/f:referenceRange</sch:title>
+    <sch:rule context="f:Observation/f:referenceRange">
+      <sch:assert test="count(f:low) &lt;= 0">low: maximum cardinality of 'low' is 0</sch:assert>
+      <sch:assert test="count(f:high) &lt;= 0">high: maximum cardinality of 'high' is 0</sch:assert>
+      <sch:assert test="count(f:type) &lt;= 0">type: maximum cardinality of 'type' is 0</sch:assert>
+      <sch:assert test="count(f:appliesTo) &lt;= 0">appliesTo: maximum cardinality of 'appliesTo' is 0</sch:assert>
+      <sch:assert test="count(f:age) &lt;= 0">age: maximum cardinality of 'age' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>

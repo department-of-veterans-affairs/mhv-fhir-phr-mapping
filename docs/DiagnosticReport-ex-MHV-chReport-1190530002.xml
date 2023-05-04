@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-chReport-1190530002"/>
+  <meta>
+    <lastUpdated value="2019-02-22T21:12:58-05:00"/>
+    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://loinc.org 2345-7}">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L TESTFIVE MHVSYSTEST </b> unknown, DoB Unknown ( id: 942104 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Reported</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Identifier:</td><td> id: 1190530002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's test 2/22/19</p></div>
+  </text>
+  <contained>
+    <Observation>
+      <id value="ex-MHV-chPanel-1190530002a"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chPanel"/>
+      </meta>
+      <status value="final"/>
+      <category>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="laboratory"/>
+        </coding>
+      </category>
+      <code>
+        <coding>
+          <system value="http://va.gov/systems/99VA64"/>
+          <code value="84330.0000"/>
+        </coding>
+        <coding>
+          <system value="http://va.gov/systems/99VA60"/>
+          <code value="175"/>
+          <display value="GLUCOSE"/>
+        </coding>
+        <text value="PotasGlucose Quantsium"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-942104"/>
+      </subject>
+      <hasMember>
+        <reference value="#ex-MHV-chTest-1190530002a"/>
+      </hasMember>
+    </Observation>
+  </contained>
+  <contained>
+    <Observation>
+      <id value="ex-MHV-chTest-1190530002a"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chTest"/>
+      </meta>
+      <status value="final"/>
+      <category>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="laboratory"/>
+        </coding>
+      </category>
+      <code>
+        <coding>
+          <system value="http://loinc.org"/>
+          <version value="2.64"/>
+          <code value="2345-7"/>
+        </coding>
+        <coding>
+          <system value="http://va.gov/systems/99VA95.3"/>
+          <version value="2.64"/>
+          <code value="4665460"/>
+        </coding>
+        <text value="GLUCOSE"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-942104"/>
+      </subject>
+      <performer>
+        <reference value="Organization/ex-MHV-organization-660"/>
+      </performer>
+      <valueQuantity>
+        <value value="90"/>
+        <unit value="mg/dl"/>
+        <system value="http://unitsofmeasure.org"/>
+      </valueQuantity>
+      <referenceRange>
+        <text value="71-119"/>
+      </referenceRange>
+    </Observation>
+  </contained>
+  <contained>
+    <Specimen>
+      <id value="ex-MHV-chSpecimen-1190530002"/>
+      <meta>
+        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chSpecimen"/>
+      </meta>
+      <status value="available"/>
+      <type>
+        <coding>
+          <system value="http://va.gov/systems/HL70070"/>
+          <code value="PLAS"/>
+          <display value="Plasma"/>
+        </coding>
+        <coding>
+          <system value="http://va.gov/systems/99VA61"/>
+          <version value="5.2"/>
+          <code value="73"/>
+          <display value="PLASMA"/>
+        </coding>
+        <text value="PLASMA"/>
+      </type>
+      <collection>
+        <collectedDateTime value="2019-02-22T11:11:47-05:00"/>
+      </collection>
+    </Specimen>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="1190530002"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="LAB"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <version value="2.64"/>
+      <code value="2345-7"/>
+    </coding>
+    <text value="GLUCOSE:MCNC:PT:SER/PLAS:QN:"/>
+  </category>
+  <code>
+    <text value="CH"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-942104"/>
+  </subject>
+  <effectiveDateTime value="2019-02-22T21:12:57-05:00"/>
+  <issued value="2019-02-22T21:12:57-05:00"/>
+  <performer>
+    <reference value="Organization/ex-MHV-organization-979"/>
+  </performer>
+  <performer>
+    <reference value="Organization/ex-MHV-organization-660"/>
+  </performer>
+  <performer>
+    <reference value="Practitioner/ex-MHV-practitioner-59845-VA660"/>
+  </performer>
+  <specimen>
+    <reference value="#ex-MHV-chSpecimen-1190530002"/>
+  </specimen>
+  <result>
+    <reference value="#ex-MHV-chPanel-1190530002a"/>
+  </result>
+  <result>
+    <reference value="#ex-MHV-chTest-1190530002a"/>
+  </result>
+  <conclusion value="Lisa's test 2/22/19"/>
+</DiagnosticReport>

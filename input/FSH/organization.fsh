@@ -139,3 +139,69 @@ Usage: #example
 * address.country = "USA"
 * address.state = "OH"
 
+/* HDR Lab Sample
+            <orderingFacilityIdentifier>
+               <identity>660</identity>
+               <name>VA SALT LAKE CITY HEALTH CARE SYSTEM (660)</name>
+               <assigningAuthority>USVHA</assigningAuthority>
+               <nameTypeCode>L</nameTypeCode>
+               <identityTypeCode>FI</identityTypeCode>
+               <nameRepresentation>A</nameRepresentation>
+               <stationNumber>660</stationNumber>
+            </orderingFacilityIdentifier>
+	...
+	            <performingOrganization>
+                  <identifier>
+                     <identity>660</identity>
+                     <name>VA SALT LAKE CITY HEALTH CARE SYSTEM (660)</name>
+                     <assigningAuthority>USVHA</assigningAuthority>
+                     <nameTypeCode>L</nameTypeCode>
+                     <identityTypeCode>FI</identityTypeCode>
+                     <nameRepresentation>A</nameRepresentation>
+                     <stationNumber>660</stationNumber>
+                  </identifier>
+                  <address>
+                     <line1>500 FOOTHILL BLVD.</line1>
+                     <city>SALT LAKE CITY</city>
+                     <postalCode>84148</postalCode>
+                     <country>USA</country>
+                     <state>UT</state>
+                  </address>
+               </performingOrganization>
+*/
+Instance: ex-MHV-organization-660
+InstanceOf: MHVorganization
+Title: "Organization HDR Lab 660"
+Description: "This example derived off of a mock HDR Lab report"
+Usage: #example
+* active = true
+* name = "VA SALT LAKE CITY HEALTH CARE SYSTEM (660)"
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "660"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].type.text = "FI"
+* address.line = "500 FOOTHILL BLVD."
+* address.city = "SALT LAKE CITY"
+* address.postalCode = "84148"
+* address.country = "USA"
+* address.state = "UT"
+
+/*
+from HDR example
+         <recordSource>
+            <namespaceId>979</namespaceId>
+            <universalId>SLC10.FO-BAYPINES.MED.VA.GOV</universalId>
+            <universalIdType>DNS</universalIdType>
+         </recordSource>
+*/
+Instance: ex-MHV-organization-979
+InstanceOf: MHVorganization
+Title: "Organization HDR Lab 979"
+Description: "This example derived off of a mock HDR Lab report"
+Usage: #example
+* active = true
+* identifier[TOid].use = #usual
+* identifier[TOid].value = "979"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].type.text = "FI"
+* name = "Organization 979"

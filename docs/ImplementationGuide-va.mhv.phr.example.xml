@@ -13,11 +13,11 @@
     <valueInteger value="0"/>
   </extension>
   <url value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
-  <version value="0.1.13-beta"/>
+  <version value="0.1.14-beta"/>
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-05-02T08:13:48-05:00"/>
+  <date value="2023-05-04T14:24:58-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -648,7 +648,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
       </reference>
       <name value="VA MHV PHR Allergy and Intolerance"/>
-      <description value="A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.&#xA;&#xA;- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. &#xA;- Should be based on US-Core for AllergyIntolerance Resource profile&#xA;- a `clinicalStatus` of the allergy (e.g.,active or resolved)&#xA;  - Given that intoleranceCondition.status is unclear; will presume we only see `active`&#xA;  - set to `active`&#xA;- a `code` which tells you what the patient is allergic to&#xA;  - at least `code.text`&#xA;  - would be good to have a coding, but there does not appear to be any source for that&#xA;- a patient&#xA;- `category` derived from `.allergyType` &#xA;  - `D` -&gt; #medication&#xA;  - `F` -&gt; #food&#xA;  - `O` -&gt; #environment&#xA;  - multiple codes are multiple category - `DF` -&gt; both #medication and #food&#xA;- presume if `drugClass` is indicated then the `category` should be #medication&#xA;  - `drugClass.code.displayText` -&gt; `.code.coding.display`&#xA;&#xA;TODO:&#xA;- unclear&#xA;  - `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.&#xA;  - no clear place to record `informationSourceCategory`, `recordSource`, `recordVersion`&#xA;    - `informationSourceCategory` mock data = 4500978/OBSERVED, 4500975/HISTORICAL&#xA;&#x9;  - this might be FHIR `.verificationStatus`, but we can't fill that element without also declaring one of the codes mandated (unconfirmed, confirmed, refuted, or entered-in-error)&#xA;  - `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers.&#xA;    - would be good to have SNOMED-CT, but this does not seem to be SNOMED"/>
+      <description value="A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.&#xA;&#xA;- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. &#xA;- Should be based on US-Core for AllergyIntolerance Resource profile&#xA;- a `clinicalStatus` of the allergy (e.g.,active or resolved)&#xA;  - Given that intoleranceCondition.status is unclear; will presume we only see `active`&#xA;  - set to `active`&#xA;- a `code` which tells you what the patient is allergic to&#xA;  - at least `code.text`&#xA;  - would be good to have a coding, but there does not appear to be any source for that&#xA;- a patient&#xA;- `category` derived from `.allergyType` &#xA;  - `D` -&gt; #medication&#xA;  - `F` -&gt; #food&#xA;  - `O` -&gt; #environment&#xA;  - multiple codes are multiple category - `DF` -&gt; both #medication and #food&#xA;- presume if `drugClass` is indicated then the `category` should be #medication&#xA;  - `drugClass.code.displayText` -&gt; `.code.coding.display`&#xA;&#xA;Notes:&#xA;- `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.&#xA;- no clear place to record `recordSource`, `recordVersion`&#xA;- no clear handling of `informationSourceCategory` &#xA;  - mock data = 4500978/OBSERVED, 4500975/HISTORICAL&#xA;  - this might be FHIR `.verificationStatus`, but we must fill that element one of the codes (unconfirmed, confirmed, refuted, or entered-in-error)&#xA;  - could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)&#xA;  - or could define an extension if this is needed&#xA;- `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -659,7 +659,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.chPanel"/>
       </reference>
       <name value="VA MHV PHR CH labTests.orderedTestCode"/>
-      <description value="A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.orderedTestCode`&#xA;- This profile is based Observation, as it is not found in us-core&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- subject must be the patient&#xA;- `orderedTestCode -&gt; `.code`&#xA;- given this is contained in the DiagnosticReport, then &#xA;  - no `.subject` is populated"/>
+      <description value="A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.orderedTestCode`&#xA;- This profile is based Observation, as it is not found in us-core&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- `orderedTestCode -&gt; `.code`&#xA;- Panel is distinguished by &#xA;  - there is no `.value[x]` - as this is just a panel&#xA;  - there is `.hasMember` 1..* - These point at the results observations"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -670,7 +670,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.chReport"/>
       </reference>
       <name value="VA MHV PHR HDR Chem-Hem Report"/>
-      <description value="The given labTestPromise example aligns with the `Lab.xsd` schema. &#xA;A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (Chem-Hem).&#xA;&#xA;The `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)&#xA;- code.text must be `CH`. No other codeing values&#xA;- category must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`&#xA;- category also holds 1..* codes from the contained Observation.code&#xA;&#xA;the `labTestPromises.labTests.orderedTestCode` is recorded as a [Observation panel](StructureDefinition-VA.MHV.PHR.chPanel.html) that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to [HDR orderedTestCode](StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode). &#xA;&#xA;The `labTestPromises.labTests.chemistryResult` are each recorded as a FHIR [Observation result](StructureDefinition-VA.MHV.PHR.chTest.html) that is contained in the DiagnosticReport. The map to [HDR chTestPromise](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). &#xA;&#xA;The `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).&#xA;&#xA;The use of contained means that we do not need to de-duplicate the lab tests or specimen.&#xA;&#xA;This profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to."/>
+      <description value="The given labTestPromise example aligns with the `Lab.xsd` schema. &#xA;A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (Chem-Hem).&#xA;&#xA;The `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)&#xA;- code.text must be `CH`. No other codeing values&#xA;- category must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`&#xA;- category also holds 1..* codes from the contained Observation.code&#xA;&#xA;the `labTestPromises.labTests.orderedTestCode` is recorded as a [Observation panel](StructureDefinition-VA.MHV.PHR.chPanel.html) that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to [HDR orderedTestCode](StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode). &#xA;&#xA;The `labTestPromises.labTests.chemistryResult` are each recorded as a FHIR [Observation result](StructureDefinition-VA.MHV.PHR.chTest.html) that is contained in the DiagnosticReport. The map to [HDR chTestPromise](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). &#xA;&#xA;The `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).&#xA;&#xA;The use of contained means that we do not need to de-duplicate the lab tests or specimen.&#xA;&#xA;This profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.&#xA;&#xA;Notes:&#xA;- current distinguishing between panel and results is by way of if the `hasMember` element is populated. Panel will have no `value[x]` and will have `hasMember` populated; where as results will have a `value[x]` and will not have `hasMember` populated. &#xA;  - Could create a code to use in `category`, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.&#xA;  - I am checkng with the VA C-CDA team to see if they have set a precedence that I could use."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -692,7 +692,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.chTest"/>
       </reference>
       <name value="VA MHV PHR CH labTest.chemistryResults"/>
-      <description value="A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.chemistryResults`&#xA;- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- subject must be the patient&#xA;- `valueInterpretation` -&gt; `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)&#xA;- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)&#xA;- `testIdentifier` -&gt; `.code` -- where &quot;LN&quot; is Loinc&#xA;- `referenceRange` -&gt; `.referenceRange.text` -- don't try to break out further as there is little use of this value&#xA;- `labCommentEvents` -&gt; `.note.text`&#xA;- value[x] either String or Quantity with units&#xA;- `observationValue` -&gt; `.valueQuantity.value`&#xA;- `observationUnits.unit` -&gt; `.valueQuantity.unit`&#xA;- `observationUnits.code` -&gt; `.valueQuantity.code` - likely need to adjust some&#xA;- `observationUnits.codingSystem` -&gt; `.valueQuantity.system`&#xA;- `performingOrganization` -&gt; `.performer`&#xA;- given this is contained in the DiagnosticReport, then &#xA;  - no `.subject` is populated&#xA;  - effective[x] is presumed from the DiagnosticReport&#xA;  - issued is presumed from the DiagnosticReport&#xA;  - specimen is presumed from the DiagnosticReport"/>
+      <description value="A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.chemistryResults`&#xA;- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- `valueInterpretation` -&gt; `.interpretation` &#xA;  - `L` -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L&#xA;  - 'H' -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H&#xA;- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)&#xA;- `testIdentifier` -&gt; `.code` -- where &quot;LN&quot; is Loinc&#xA;- `referenceRange` -&gt; `.referenceRange.text` -- don't try to break out further as there is little use of this value&#xA;- `labCommentEvents` -&gt; `.note.text`&#xA;- value[x] either String or Quantity with units&#xA;- `observationValue` -&gt; `.valueQuantity.value`&#xA;- `observationUnits.unit` -&gt; `.valueQuantity.unit`&#xA;- `observationUnits.code` -&gt; `.valueQuantity.code` - likely need to adjust some&#xA;- `observationUnits.codingSystem` -&gt; `.valueQuantity.system`&#xA;- `performingOrganization` -&gt; `.performer`&#xA;- given this is contained in the DiagnosticReport, then &#xA;  - effective[x] is presumed from the DiagnosticReport&#xA;  - issued is presumed from the DiagnosticReport&#xA;  - specimen is presumed from the DiagnosticReport&#xA;- will not have a `.hasMember` as this is results not a panel"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -725,7 +725,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.imaging"/>
       </reference>
       <name value="VA MHV PHR Radiology"/>
-      <description value="A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;- based on US-Core for Clinical Notes&#xA;- type LOINC#18748-4 `Diagnostic imaging study`&#xA;- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details&#xA;- An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.&#xA;&#xA;TODO Questions:&#xA;- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.&#xA;  - hasImages&#xA;  - imagingType - always was GENERAL RADIOLOGY&#xA;  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?&#xA;  - these never appeared in examples&#xA;    - modifiers&#xA;    - clinicalHX&#xA;    - impression&#xA;    - imagingExamTO&#xA;    - reportId"/>
+      <description value="A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;- based on US-Core for Clinical Notes&#xA;- type LOINC#18748-4 `Diagnostic imaging study`&#xA;- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details&#xA;- An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.&#xA;- Order and Encounter are not converted into FHIR resources, but rather we save the original id into the Reference.identifier encoding.&#xA;&#xA;TODO Questions:&#xA;- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.&#xA;  - hasImages&#xA;  - imagingType - always was GENERAL RADIOLOGY&#xA;  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?&#xA;  - these never appeared in examples&#xA;    - modifiers&#xA;    - clinicalHX&#xA;    - impression&#xA;    - imagingExamTO&#xA;    - reportId"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1078,6 +1078,72 @@
       </reference>
       <name value="Example 1 of an MHV chReport"/>
       <description value="Example from a mock labTestPromises (1110200002)"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1103030001"/>
+      </reference>
+      <name value="Example 1103030001 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1103030001)"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1103030002"/>
+      </reference>
+      <name value="Example 1103030002 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1103030002)"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1190370002"/>
+      </reference>
+      <name value="Example 1190370002 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1190370002)"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1190530001"/>
+      </reference>
+      <name value="Example 1190530001 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1190530001)"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1190530002"/>
+      </reference>
+      <name value="Example 1190530002 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1190530002)"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1190740001"/>
+      </reference>
+      <name value="Example 1190740001 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1190740001)"/>
       <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"/>
     </resource>
     <resource>
@@ -1514,6 +1580,28 @@
         <valueString value="Organization"/>
       </extension>
       <reference>
+        <reference value="Organization/ex-MHV-organization-660"/>
+      </reference>
+      <name value="Organization HDR Lab 660"/>
+      <description value="This example derived off of a mock HDR Lab report"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/ex-MHV-organization-979"/>
+      </reference>
+      <name value="Organization HDR Lab 979"/>
+      <description value="This example derived off of a mock HDR Lab report"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
         <reference value="Organization/ex-MHV-organization-989"/>
       </reference>
       <name value="Organization lab site 989"/>
@@ -1583,6 +1671,17 @@
         <reference value="Patient/ex-MHV-patient-89486"/>
       </reference>
       <name value="Patient MHVASPXXI"/>
+      <description value="This example is derived off of a mock patient"/>
+      <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/ex-MHV-patient-942104"/>
+      </reference>
+      <name value="Patient TESTFIVE L, MHVSYSTEST"/>
       <description value="This example is derived off of a mock patient"/>
       <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"/>
     </resource>
@@ -1668,6 +1767,17 @@
         <valueString value="Practitioner"/>
       </extension>
       <reference>
+        <reference value="Practitioner/ex-MHV-practitioner-59845-VA660"/>
+      </reference>
+      <name value="Example Practitoner 59845-VA660"/>
+      <description value="Lisa A Hall"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
         <reference value="Practitioner/ex-MHV-practitioner-6051"/>
       </reference>
       <name value="Example Practitoner 6051"/>
@@ -1684,17 +1794,6 @@
       <name value="Example 1 of an MHV vital-sign"/>
       <description value="Example from a mock VitalSignTO"/>
       <exampleCanonical value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/fhirlabsample2"/>
-      </reference>
-      <name value="Bundle of a Chem-Hem Lab data"/>
-      <description value="Provided by Ken"/>
-      <exampleBoolean value="true"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">

@@ -26,14 +26,15 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 - presume if `drugClass` is indicated then the `category` should be #medication
   - `drugClass.code.displayText` -> `.code.coding.display`
 
-TODO:
-- unclear
-  - `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.
-  - no clear place to record `informationSourceCategory`, `recordSource`, `recordVersion`
-    - `informationSourceCategory` mock data = 4500978/OBSERVED, 4500975/HISTORICAL
-	  - this might be FHIR `.verificationStatus`, but we can't fill that element without also declaring one of the codes mandated (unconfirmed, confirmed, refuted, or entered-in-error)
-  - `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers.
-    - would be good to have SNOMED-CT, but this does not seem to be SNOMED
+Notes:
+- `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.
+- no clear place to record `recordSource`, `recordVersion`
+- no clear handling of `informationSourceCategory` 
+  - mock data = 4500978/OBSERVED, 4500975/HISTORICAL
+  - this might be FHIR `.verificationStatus`, but we must fill that element one of the codes (unconfirmed, confirmed, refuted, or entered-in-error)
+  - could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)
+  - or could define an extension if this is needed
+- `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern

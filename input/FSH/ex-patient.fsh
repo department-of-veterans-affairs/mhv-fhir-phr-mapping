@@ -207,3 +207,35 @@ Usage: #example
 * identifier[=].value = "89486"
 * identifier[=].assigner.display = "979"
 
+/*
+From hdr_lab_samples.xml
+
+         <patient>
+            <identifier>
+               <identity>942104</identity>
+               <assigningFacility>979</assigningFacility>
+               <assigningAuthority>USVHA</assigningAuthority>
+            </identifier>
+            <name>
+               <given>TESTFIVE</given>
+               <middle>L</middle>
+               <family>MHVSYSTEST</family>
+            </name>
+         </patient>
+*/
+Instance: ex-MHV-patient-942104
+InstanceOf: MHVpatient
+Title: "Patient TESTFIVE L, MHVSYSTEST"
+Description: """
+This example is derived off of a mock patient
+"""
+Usage: #example
+* name[+].use = #usual
+* name[=].family = "MHVSYSTEST"
+* name[=].given[+] = "L"
+* name[=].given[+] = "TESTFIVE"
+* gender = #unknown
+* identifier[+].use = #official
+* identifier[=].system = "http://va.gov/systems/USVHA"
+* identifier[=].value = "942104"
+* identifier[=].assigner.display = "979"

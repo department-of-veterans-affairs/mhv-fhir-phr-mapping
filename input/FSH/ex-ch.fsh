@@ -61,7 +61,7 @@ Usage: #inline
 * code.coding[=].display = "POTASSIUM"
 * code.coding[=].system = "http://va.gov/systems/99VA60"
 * status = #final
-* subject = Reference(Patient/ex-MHV-patient-27167)
+* subject = Reference(Patient/ex-MHV-patient-942104)
 * hasMember = Reference(ex-MHV-chTest-1a)
 
 Instance: ex-MHV-chTest-1a
@@ -132,7 +132,7 @@ Usage: #inline
 * valueQuantity.unit = "mEq/L"
 * valueQuantity.system = UCUM
 * performer = Reference(Organization/ex-MHV-organization-552)
-* subject = Reference(Patient/ex-MHV-patient-27167)
+* subject = Reference(Patient/ex-MHV-patient-942104)
 
 
 
@@ -159,7 +159,7 @@ Usage: #inline
 * code.coding[=].display = "SODIUM"
 * code.coding[=].system = "http://va.gov/systems/99VA60"
 * status = #final
-* subject = Reference(Patient/ex-MHV-patient-27167)
+* subject = Reference(Patient/ex-MHV-patient-942104)
 * hasMember = Reference(ex-MHV-chTest-1b)
 
 
@@ -226,7 +226,7 @@ Usage: #inline
 * valueQuantity.unit = "mEq/L"
 * valueQuantity.system = UCUM
 * performer = Reference(Organization/ex-MHV-organization-552)
-* subject = Reference(Patient/ex-MHV-patient-27167)
+* subject = Reference(Patient/ex-MHV-patient-942104)
 
 
 
@@ -310,7 +310,7 @@ Example from a mock labTestPromises (1110200002)
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "CH"
-* subject = Reference(Patient/ex-MHV-patient-27167)
+* subject = Reference(Patient/ex-MHV-patient-942104)
 * effectiveDateTime = 2021-01-21T11:32:47-05:00
 * issued = 2021-01-21T11:32:47-05:00
 * conclusion = """

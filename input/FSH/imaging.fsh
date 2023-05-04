@@ -10,6 +10,7 @@ A profile on the DocumentReference resource for MHV PHR exposing Radiology note 
 - type LOINC#18748-4 `Diagnostic imaging study`
 - see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details
 - An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.
+- Order and Encounter are not converted into FHIR resources, but rather we save the original id into the Reference.identifier encoding.
 
 TODO Questions:
 - some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
@@ -75,12 +76,11 @@ Title: "VDIF to MHV-PHR"
 * identifier[accessionNumber] -> "ImagingExamTO.accessionNum"
 * identifier[casenum] -> "ImagingExamTO.casenum"
 * date -> "ConvertDate(ImagingExamTO.timestamp)"
-* context.encounter -> "ImagingExamTO.encounterId"
-* context.related -> "ImagingExamTO.order[OrderTO]"
+* context.encounter -> "identifier.value = ImagingExamTO.encounterId"
+* context.related -> "identifier.value = ImagingExamTO.order.id"
+* context.related -> "identifier.display = ImagingExamTO.order.type.name1"
 * content.attachment.title -> "ImagingExamTO.name or ImagingExamTO.radiologyReportTo.title"
 * content.attachment.creation -> "ConvertDate(ImagingExamTO.radiologyReportTO.timestamp)"
-* content.attachment.size -> "calculate"
-* content.attachment.hash -> "calculate"
-* content.attachment.contentType -> "`text`"
-* content.attachment.data -> "ImagingStudyTO.radiologyReportTo.text"
+* content.attachment.contentType -> "`text/plain`"
+* content.attachment.data -> "Base64Encode(ImagingStudyTO.radiologyReportTo.text)"
 * description -> "ImagingStudyTO.interpretation"

@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.13-beta - ci-build
+            <span style="display:inline-block;">0.1.14-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.13-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.14-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -270,27 +270,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
 </ul>
 
-<p>TODO:</p>
+<p>Notes:</p>
 <ul>
-  <li>unclear
+  <li><code class="language-plaintext highlighter-rouge">facilityIdentifier</code> might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.</li>
+  <li>no clear place to record <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code></li>
+  <li>no clear handling of <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">facilityIdentifier</code> might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.</li>
-      <li>no clear place to record <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>, <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code>
-        <ul>
-          <li><code class="language-plaintext highlighter-rouge">informationSourceCategory</code> mock data = 4500978/OBSERVED, 4500975/HISTORICAL
-            <ul>
-              <li>this might be FHIR <code class="language-plaintext highlighter-rouge">.verificationStatus</code>, but we can’t fill that element without also declaring one of the codes mandated (unconfirmed, confirmed, refuted, or entered-in-error)</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><code class="language-plaintext highlighter-rouge">reaction.reaction.code</code> seems to be a number, but I can’t find a codeSystem with these numbers.
-        <ul>
-          <li>would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
-        </ul>
-      </li>
+      <li>mock data = 4500978/OBSERVED, 4500975/HISTORICAL</li>
+      <li>this might be FHIR <code class="language-plaintext highlighter-rouge">.verificationStatus</code>, but we must fill that element one of the codes (unconfirmed, confirmed, refuted, or entered-in-error)</li>
+      <li>could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)</li>
+      <li>or could define an extension if this is needed</li>
     </ul>
   </li>
+  <li><code class="language-plaintext highlighter-rouge">reaction.reaction.code</code> seems to be a number, but I can’t find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
 </ul>
 </td>
             </tr>
@@ -309,11 +301,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>category must have <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/observation-category#laboratory</code></li>
     </ul>
   </li>
-  <li>subject must be the patient</li>
+  <li><code class="language-plaintext highlighter-rouge">.subject</code> must be the patient from the DiagnosticReport</li>
   <li><code class="language-plaintext highlighter-rouge">orderedTestCode -&amp;gt; </code>.code`</li>
-  <li>given this is contained in the DiagnosticReport, then
+  <li>Panel is distinguished by
     <ul>
-      <li>no <code class="language-plaintext highlighter-rouge">.subject</code> is populated</li>
+      <li>there is no <code class="language-plaintext highlighter-rouge">.value[x]</code> - as this is just a panel</li>
+      <li>there is <code class="language-plaintext highlighter-rouge">.hasMember</code> 1..* - These point at the results observations</li>
     </ul>
   </li>
 </ul>
@@ -343,7 +336,17 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 
 <p>The use of contained means that we do not need to de-duplicate the lab tests or specimen.</p>
 
-<p>This profile is <strong>not</strong> based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. That profile requires use of us-core Practitioner that I can’t extend the way we need to.</p>
+<p>This profile is <strong>not</strong> based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. That profile requires use of us-core Practitioner that I can’t extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.</p>
+
+<p>Notes:</p>
+<ul>
+  <li>current distinguishing between panel and results is by way of if the <code class="language-plaintext highlighter-rouge">hasMember</code> element is populated. Panel will have no <code class="language-plaintext highlighter-rouge">value[x]</code> and will have <code class="language-plaintext highlighter-rouge">hasMember</code> populated; where as results will have a <code class="language-plaintext highlighter-rouge">value[x]</code> and will not have <code class="language-plaintext highlighter-rouge">hasMember</code> populated.
+    <ul>
+      <li>Could create a code to use in <code class="language-plaintext highlighter-rouge">category</code>, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.</li>
+      <li>I am checkng with the VA C-CDA team to see if they have set a precedence that I could use.</li>
+    </ul>
+  </li>
+</ul>
 </td>
             </tr>
             <tr>
@@ -380,8 +383,13 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
       <li>category must have <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/observation-category#laboratory</code></li>
     </ul>
   </li>
-  <li>subject must be the patient</li>
-  <li><code class="language-plaintext highlighter-rouge">valueInterpretation</code> -&gt; <code class="language-plaintext highlighter-rouge">.interpretation</code> (mock data has <code class="language-plaintext highlighter-rouge">L</code>, <code class="language-plaintext highlighter-rouge">H</code>, or absent) (? low, high, normal ?)</li>
+  <li><code class="language-plaintext highlighter-rouge">.subject</code> must be the patient from the DiagnosticReport</li>
+  <li><code class="language-plaintext highlighter-rouge">valueInterpretation</code> -&gt; <code class="language-plaintext highlighter-rouge">.interpretation</code>
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">L</code> -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L</li>
+      <li>‘H’ -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H</li>
+    </ul>
+  </li>
   <li><code class="language-plaintext highlighter-rouge">observedStatus</code> (mock data has <code class="language-plaintext highlighter-rouge">F</code>, <code class="language-plaintext highlighter-rouge">C</code>, ) (? final vs preliminary ?)</li>
   <li><code class="language-plaintext highlighter-rouge">testIdentifier</code> -&gt; <code class="language-plaintext highlighter-rouge">.code</code> – where “LN” is Loinc</li>
   <li><code class="language-plaintext highlighter-rouge">referenceRange</code> -&gt; <code class="language-plaintext highlighter-rouge">.referenceRange.text</code> – don’t try to break out further as there is little use of this value</li>
@@ -394,12 +402,12 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
   <li><code class="language-plaintext highlighter-rouge">performingOrganization</code> -&gt; <code class="language-plaintext highlighter-rouge">.performer</code></li>
   <li>given this is contained in the DiagnosticReport, then
     <ul>
-      <li>no <code class="language-plaintext highlighter-rouge">.subject</code> is populated</li>
       <li>effective[x] is presumed from the DiagnosticReport</li>
       <li>issued is presumed from the DiagnosticReport</li>
       <li>specimen is presumed from the DiagnosticReport</li>
     </ul>
   </li>
+  <li>will not have a <code class="language-plaintext highlighter-rouge">.hasMember</code> as this is results not a panel</li>
 </ul>
 </td>
             </tr>
@@ -462,6 +470,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
   <li>type LOINC#18748-4 <code class="language-plaintext highlighter-rouge">Diagnostic imaging study</code></li>
   <li>see <a href="StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto">mapping</a> for details</li>
   <li>An example of a <a href="Bundle-images.html">transaction Bundle</a> with many image reports as DocumentReference. This was <a href="StructureDefinition-VA.MHV.PHR.imaging.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml">mock sample SOAP message</a> MHV receives.</li>
+  <li>Order and Encounter are not converted into FHIR resources, but rather we save the original id into the Reference.identifier encoding.</li>
 </ul>
 
 <p>TODO Questions:</p>
@@ -1059,6 +1068,60 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-chReport-1103030001.html"
+                     title="DiagnosticReport/ex-MHV-chReport-1103030001">Example 1103030001 of an MHV chReport</a>
+               </td>
+               <td>
+<p>Example from a mock labTestPromises (1103030001)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-chReport-1103030002.html"
+                     title="DiagnosticReport/ex-MHV-chReport-1103030002">Example 1103030002 of an MHV chReport</a>
+               </td>
+               <td>
+<p>Example from a mock labTestPromises (1103030002)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-chReport-1190370002.html"
+                     title="DiagnosticReport/ex-MHV-chReport-1190370002">Example 1190370002 of an MHV chReport</a>
+               </td>
+               <td>
+<p>Example from a mock labTestPromises (1190370002)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-chReport-1190530001.html"
+                     title="DiagnosticReport/ex-MHV-chReport-1190530001">Example 1190530001 of an MHV chReport</a>
+               </td>
+               <td>
+<p>Example from a mock labTestPromises (1190530001)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-chReport-1190530002.html"
+                     title="DiagnosticReport/ex-MHV-chReport-1190530002">Example 1190530002 of an MHV chReport</a>
+               </td>
+               <td>
+<p>Example from a mock labTestPromises (1190530002)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-chReport-1190740001.html"
+                     title="DiagnosticReport/ex-MHV-chReport-1190740001">Example 1190740001 of an MHV chReport</a>
+               </td>
+               <td>
+<p>Example from a mock labTestPromises (1190740001)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="Condition-ex-MHV-condition-1.html"
                      title="Condition/ex-MHV-condition-1">Example 1 of an MHV condition</a>
                </td>
@@ -1412,6 +1475,24 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="Organization-ex-MHV-organization-660.html"
+                     title="Organization/ex-MHV-organization-660">Organization HDR Lab 660</a>
+               </td>
+               <td>
+<p>This example derived off of a mock HDR Lab report</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-ex-MHV-organization-979.html"
+                     title="Organization/ex-MHV-organization-979">Organization HDR Lab 979</a>
+               </td>
+               <td>
+<p>This example derived off of a mock HDR Lab report</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="Organization-ex-MHV-organization-989.html"
                      title="Organization/ex-MHV-organization-989">Organization lab site 989</a>
                </td>
@@ -1464,6 +1545,15 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
                <td style="column-width:30%">
                   <a href="Patient-ex-MHV-patient-89486.html"
                      title="Patient/ex-MHV-patient-89486">Patient MHVASPXXI</a>
+               </td>
+               <td>
+<p>This example is derived off of a mock patient</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-ex-MHV-patient-942104.html"
+                     title="Patient/ex-MHV-patient-942104">Patient TESTFIVE L, MHVSYSTEST</a>
                </td>
                <td>
 <p>This example is derived off of a mock patient</p>
@@ -1534,6 +1624,15 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="Practitioner-ex-MHV-practitioner-59845-VA660.html"
+                     title="Practitioner/ex-MHV-practitioner-59845-VA660">Example Practitoner 59845-VA660</a>
+               </td>
+               <td>
+<p>Lisa A Hall</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="Practitioner-ex-MHV-practitioner-6051.html"
                      title="Practitioner/ex-MHV-practitioner-6051">Example Practitoner 6051</a>
                </td>
@@ -1548,14 +1647,6 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
                </td>
                <td>
 <p>Example from a mock VitalSignTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Bundle-fhirlabsample2.html" title="Bundle/fhirlabsample2">Bundle of a Chem-Hem Lab data</a>
-               </td>
-               <td>
-<p>Provided by Ken</p>
 </td>
             </tr>
             <tr>
@@ -1623,7 +1714,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.13-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 2, 2023 08:13-0500">2023-05-02</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.14-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 4, 2023 14:24-0500">2023-05-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

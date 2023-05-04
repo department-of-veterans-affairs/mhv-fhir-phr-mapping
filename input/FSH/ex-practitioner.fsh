@@ -154,3 +154,29 @@ Usage: #example
 * name.given[+] = "A"
 * identifier[+].value = "14934-VA552"
 * identifier[=].system = "http://va.gov/systems/99VA4"
+
+
+/*  from HDR Lab
+
+            <author>
+               <identifier>
+                  <identity>59845-VA660</identity>
+               </identifier>
+               <idSourceTable>99VA4</idSourceTable>
+               <name>
+                  <given>LISA</given>
+                  <middle>V</middle>
+                  <family>HALL</family>
+               </name>
+            </author>
+*/
+Instance: ex-MHV-practitioner-59845-VA660
+InstanceOf: Practitioner
+Title: "Example Practitoner 59845-VA660"
+Description: "Lisa A Hall"
+Usage: #example
+* name.family = "HALL"
+* name.given[+] = "LISA"
+* name.given[+] = "V"
+* identifier[+].value = "59845-VA660"
+* identifier[=].system = "http://va.gov/systems/99VA4"

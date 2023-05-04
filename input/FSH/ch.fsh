@@ -1,3 +1,8 @@
+
+
+
+
+
 Profile: MHVchSpecimen
 Parent: Specimen
 Id: VA.MHV.PHR.chSpecimen
@@ -61,7 +66,12 @@ The `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinit
 
 The use of contained means that we do not need to de-duplicate the lab tests or specimen.
 
-This profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to.
+This profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.
+
+Notes:
+- current distinguishing between panel and results is by way of if the `hasMember` element is populated. Panel will have no `value[x]` and will have `hasMember` populated; where as results will have a `value[x]` and will not have `hasMember` populated. 
+  - Could create a code to use in `category`, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.
+  - I am checkng with the VA C-CDA team to see if they have set a precedence that I could use.
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -134,10 +144,11 @@ A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyH
 One Observation holds one `labTests.orderedTestCode`
 - This profile is based Observation, as it is not found in us-core
 	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`
-- subject must be the patient
+- `.subject` must be the patient from the DiagnosticReport
 - `orderedTestCode -> `.code`
-- given this is contained in the DiagnosticReport, then 
-  - no `.subject` is populated
+- Panel is distinguished by 
+  - there is no `.value[x]` - as this is just a panel
+  - there is `.hasMember` 1..* - These point at the results observations
 """
 * code 1..1 MS
 * code ^short = "orderedTestCode"
@@ -169,6 +180,7 @@ One Observation holds one `labTests.orderedTestCode`
 * specimen 0..0
 
 // other things not used
+* referenceRange 0..0
 * identifier 0..0
 * basedOn 0..0
 * partOf 0..0
@@ -187,10 +199,12 @@ Target: "labTestPromises.labTests.orderedTestCode"
 Title: "HDR labTests Panel to MHV-PHR"
 * -> "HDR labTests.orderedTestCode" "MHV PHR FHIR API"
 * code -> "orderedTestCode"
-* code.text -> ".displayText"
+* code.text -> "displayText"
+* code.coding -> "code and alternateCode"
 * category -> "`laboratory`"
 * status -> "final"
 * hasMember -> "reference to chemistryResults"
+* subject -> "patient"
 
 Profile:        MHVchTest
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
@@ -202,8 +216,10 @@ A profile showing how HDR labTests.chemistryResults will be exposed using FHIR A
 One Observation holds one `labTests.chemistryResults`
 - This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)
 	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`
-- subject must be the patient
-- `valueInterpretation` -> `.interpretation` (mock data has `L`, `H`, or absent) (? low, high, normal ?)
+- `.subject` must be the patient from the DiagnosticReport
+- `valueInterpretation` -> `.interpretation` 
+  - `L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L
+  - 'H' -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H
 - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)
 - `testIdentifier` -> `.code` -- where "LN" is Loinc
 - `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value
@@ -215,10 +231,10 @@ One Observation holds one `labTests.chemistryResults`
 - `observationUnits.codingSystem` -> `.valueQuantity.system`
 - `performingOrganization` -> `.performer`
 - given this is contained in the DiagnosticReport, then 
-  - no `.subject` is populated
   - effective[x] is presumed from the DiagnosticReport
   - issued is presumed from the DiagnosticReport
   - specimen is presumed from the DiagnosticReport
+- will not have a `.hasMember` as this is results not a panel
 """
 * code 1..1 MS
 * code ^short = "testIdentifier"
@@ -237,6 +253,13 @@ One Observation holds one `labTests.chemistryResults`
 * performer only Reference(MHVorganization)
 * value[x] only Quantity or string
 * value[x] ^short = "observationValue"
+* referenceRange MS
+* referenceRange.text MS
+* referenceRange.low 0..0
+* referenceRange.high 0..0
+* referenceRange.type 0..0
+* referenceRange.appliesTo 0..0
+* referenceRange.age 0..0
 * note 0..* MS
 * note ^short = "labCommentEvents"
 
@@ -267,11 +290,16 @@ Title: "HDR labTests to MHV-PHR"
 * -> "HDR labTests" "MHV PHR FHIR API"
 * code -> "testIdentifier"
 * code.text -> "testIdentifier.displayText"
-* status -> "observedStatus"
+* code.coding -> "testIdentifier.code"
+* status -> "~observedStatus"
 * interpretation.text -> "valueInterpretation"
-* valueQuantity -> "observatonValue"
+* interpretation.coding -> "`L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L"
+* interpretation.coding -> "`H` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H"
+* valueQuantity -> "observatonValue when quantity"
+* valueString -> "observationValue when string"
 * performer -> "GetOrganization(performingOrganization)"
 * category -> "`laboratory`"
+* subject -> "patient"
 
 /* Lab.xsd
 

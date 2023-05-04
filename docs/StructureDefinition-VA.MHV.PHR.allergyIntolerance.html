@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.13-beta - ci-build
+            <span style="display:inline-block;">0.1.14-beta - ci-build
 
 
 
@@ -166,7 +166,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.13-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.14-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -250,7 +250,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.13-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.1.13-beta"/></span>
+      <span class="copy-text">0.1.14-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.1.14-beta"/></span>
       </td>
     </tr>
 
@@ -321,27 +321,19 @@
   </li>
 </ul>
 
-<p>TODO:</p>
+<p>Notes:</p>
 <ul>
-  <li>unclear
+  <li><code class="language-plaintext highlighter-rouge">facilityIdentifier</code> might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.</li>
+  <li>no clear place to record <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code></li>
+  <li>no clear handling of <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">facilityIdentifier</code> might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.</li>
-      <li>no clear place to record <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>, <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code>
-        <ul>
-          <li><code class="language-plaintext highlighter-rouge">informationSourceCategory</code> mock data = 4500978/OBSERVED, 4500975/HISTORICAL
-            <ul>
-              <li>this might be FHIR <code class="language-plaintext highlighter-rouge">.verificationStatus</code>, but we can’t fill that element without also declaring one of the codes mandated (unconfirmed, confirmed, refuted, or entered-in-error)</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><code class="language-plaintext highlighter-rouge">reaction.reaction.code</code> seems to be a number, but I can’t find a codeSystem with these numbers.
-        <ul>
-          <li>would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
-        </ul>
-      </li>
+      <li>mock data = 4500978/OBSERVED, 4500975/HISTORICAL</li>
+      <li>this might be FHIR <code class="language-plaintext highlighter-rouge">.verificationStatus</code>, but we must fill that element one of the codes (unconfirmed, confirmed, refuted, or entered-in-error)</li>
+      <li>could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)</li>
+      <li>or could define an extension if this is needed</li>
     </ul>
   </li>
+  <li><code class="language-plaintext highlighter-rouge">reaction.reaction.code</code> seems to be a number, but I can’t find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
 </ul>
 
 </p>
@@ -1247,7 +1239,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.13-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, May 2, 2023 08:13-0500">2023-05-02</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.14-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 4, 2023 14:24-0500">2023-05-04</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

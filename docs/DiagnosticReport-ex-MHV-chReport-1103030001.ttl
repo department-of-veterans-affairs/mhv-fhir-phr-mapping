@@ -1,0 +1,180 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://johnmoehrke.github.io/MHV-PHR/DiagnosticReport/ex-MHV-chReport-1103030001> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-chReport-1103030001"] ; # 
+  fhir:meta [
+     fhir:lastUpdated [ fhir:v "2020-10-29T13:29:52-05:00"^^xsd:dateTime ] ;
+     fhir:profile ( [
+       fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 2345-7}\">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L TESTFIVE MHVSYSTEST </b> unknown, DoB Unknown ( id: 942104 (use: OFFICIAL))</td></tr><tr><td>When For</td><td>2020-10-29 13:29:52-0500</td></tr><tr><td>Reported</td><td>2020-10-29 13:29:52-0500</td></tr><tr><td>Identifier:</td><td> id: 1103030001 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's test 10/29/20</p></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Observation ;
+     fhir:id [ fhir:v "ex-MHV-chPanel-1103030001a" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chPanel"^^xsd:anyURI ;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chPanel>
+       ] )
+     ] ;
+     fhir:status [ fhir:v "final" ] ;
+     fhir:category ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "laboratory" ]
+       ] )
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://va.gov/systems/99VA64"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "84330.0000" ]
+       ] [
+         fhir:system [ fhir:v "http://va.gov/systems/99VA60"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "175" ] ;
+         fhir:display [ fhir:v "GLUCOSE" ]
+       ] ) ;
+       fhir:text [ fhir:v "Glucose Quant" ]
+     ] ;
+     fhir:subject [
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-942104> ;
+       fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
+     ] ;
+     fhir:hasMember ( [
+       fhir:reference [ fhir:v "#ex-MHV-chTest-1103030001a" ]
+     ] )
+  ] [
+     a fhir:Observation ;
+     fhir:id [ fhir:v "ex-MHV-chTest-1103030001a" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chTest"^^xsd:anyURI ;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chTest>
+       ] )
+     ] ;
+     fhir:status [ fhir:v "final" ] ;
+     fhir:category ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "laboratory" ]
+       ] )
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         a loinc:2345-7 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "2.68" ] ;
+         fhir:code [ fhir:v "2345-7" ]
+       ] [
+         fhir:system [ fhir:v "http://va.gov/systems/99VA95.3"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "2.68" ] ;
+         fhir:code [ fhir:v "4665460" ]
+       ] ) ;
+       fhir:text [ fhir:v "GLUCOSE" ]
+     ] ;
+     fhir:subject [
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-942104> ;
+       fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
+     ] ;
+     fhir:performer ( [
+       fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-660> ;
+       fhir:reference [ fhir:v "Organization/ex-MHV-organization-660" ]
+     ] ) ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "97"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "mg/dl" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ]
+     ] ;
+     fhir:referenceRange ( [
+       fhir:text [ fhir:v "71-119" ]
+     ] )
+  ] [
+     a fhir:Specimen ;
+     fhir:id [ fhir:v "ex-MHV-chSpecimen-1103030001" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chSpecimen"^^xsd:anyURI ;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chSpecimen>
+       ] )
+     ] ;
+     fhir:status [ fhir:v "available" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://va.gov/systems/HL70070"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "PLAS" ] ;
+         fhir:display [ fhir:v "Plasma" ]
+       ] [
+         fhir:system [ fhir:v "http://va.gov/systems/99VA61"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "5.2" ] ;
+         fhir:code [ fhir:v "73" ] ;
+         fhir:display [ fhir:v "PLASMA" ]
+       ] ) ;
+       fhir:text [ fhir:v "PLASMA" ]
+     ] ;
+     fhir:collection [
+       fhir:collected [ fhir:v "2020-10-29T13:28:45-05:00"^^xsd:dateTime ]
+     ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1103030001" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0074"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "LAB" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       a loinc:2345-7 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "2.68" ] ;
+       fhir:code [ fhir:v "2345-7" ]
+     ] ) ;
+     fhir:text [ fhir:v "GLUCOSE:MCNC:PT:SER/PLAS:QN:" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:text [ fhir:v "CH" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-942104> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2020-10-29T13:29:52-05:00"^^xsd:dateTime] ; # 
+  fhir:issued [ fhir:v "2020-10-29T13:29:52-05:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-552> ;
+     fhir:reference [ fhir:v "Organization/ex-MHV-organization-552" ]
+  ] [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Practitioner/ex-MHV-practitioner-59845-VA660> ;
+     fhir:reference [ fhir:v "Practitioner/ex-MHV-practitioner-59845-VA660" ]
+  ] [
+     fhir:link <https://johnmoehrke.github.io/MHV-PHR/Organization/ex-MHV-organization-660> ;
+     fhir:reference [ fhir:v "Organization/ex-MHV-organization-660" ]
+  ] ) ; # 
+  fhir:specimen ( [
+     fhir:reference [ fhir:v "#ex-MHV-chSpecimen-1103030001" ]
+  ] ) ; # 
+  fhir:result ( [
+     fhir:reference [ fhir:v "#ex-MHV-chPanel-1103030001a" ]
+  ] [
+     fhir:reference [ fhir:v "#ex-MHV-chTest-1103030001a" ]
+  ] ) ; # 
+  fhir:conclusion [ fhir:v "Lisa's test 10/29/20"] . # 
+
+# -------------------------------------------------------------------------------------
+
