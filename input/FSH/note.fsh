@@ -3,15 +3,15 @@ Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-document
 Id:             VA.MHV.PHR.note
 Title:          "VA MHV PHR Notes"
 Description:    """
-A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.
+A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API. 
 
 - The mock example maps best to VIA_v4.0.7_uat.wsdl. 
 - based on US-Core for Clinical Notes
-- `type` seems to hold an enum (A, PN, DS). 
-  - `A` - LOINC#83320-2 \"Allergy and Immunology Adverse event note\"
+- `type` seems to hold an enum (PN, DS). 
   - `PN` - LOINC#11505-5 \"Physician procedure note\"
   - `DS` - LOINC#18842-5 \"Discharge summary\"
   - anything else should be logged as not yet understood
+- This also includes the (NoteTO) received on the 'Admission and Discharge' feed which holds a Discharge Summary without an id.
 - not used in DocumentReference
   - masterIdentifier 0..0
   - docStatus 0..0
@@ -24,10 +24,12 @@ A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) 
   - context.facilityType 0..0
   - context.practiceSetting 0..0
   - context.sourcePatientInfo 0..0
+- **Business Rule**: do not convert any NoteTO.status that is not `completed` or `COMPLETED`.
+- **Business Rule**: do not convet any NoteTO.type of `A`
 
 TODO Questions:
 - is `standardTitle` or `type` used to differentiate between various note types?
-- `status` might be derived from `NoteTO.status`, but at this point I presume we are only told about current notes and don't know what other `NoteTO.status` values might happen
+- `status` might be derived from `NoteTO.status`, but at this point I presume we are only told about completed notes, we have a business rule to ignore all others, and I don't know what other `NoteTO.status` values might happen
 - what other `type` values might we see?
 - some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
   - serviceCategory
@@ -45,12 +47,11 @@ TODO Questions:
   - procTimestamp
   - subject
 """
-* identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
 * identifier contains
-  TOid 1..1
+  TOid 0..1
 * identifier[TOid].use = #usual
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
@@ -83,7 +84,7 @@ ValueSet: NoteTypeVS
 Title: "Known Note types"
 Description: "Note types"
 * ^experimental = false
-* LOINC#83320-2 "Allergy and Immunology Adverse event note"
+//* LOINC#83320-2 "Allergy and Immunology Adverse event note"
 * LOINC#11505-5 "Physician procedure note"
 * LOINC#18842-5 "Discharge summary"
 
@@ -104,7 +105,7 @@ Title: "VDIF to MHV-PHR"
 * context.period.end -> "ConvertDate(NoteTO.dischargeTimestamp)"
 * content.attachment.title -> "NoteTO.localTitle"
 * type.text -> "NoteTO.standardTitle"
-* type.coding -> "NoteTO.type{A, PN, DS, ?}"
+* type.coding -> "NoteTO.type{PN, DS, ?}"
 * author -> "GetPractitioner(NoteTO.author.[AuthorTO])"
 * context.related -> "GetLocation(NoteTO.location.[HospitalLocationTO])"
 * authenticator -> "GetPractitioner(NoteTO.approvedBy)"

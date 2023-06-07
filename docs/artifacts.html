@@ -40,10 +40,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.14-beta - ci-build
+            <span style="display:inline-block;">0.1.15-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.14-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.15-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -233,6 +233,63 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.documentReference.html"
+                     title="StructureDefinition/VA.MHV.documentReference">VA MHV All DocumentReference</a>
+               </td>
+               <td>
+<p>A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API.</p>
+
+<ul>
+  <li>based on US-Core for Clinical Notes</li>
+  <li><code class="language-plaintext highlighter-rouge">.type</code> indicates the type of note</li>
+  <li>the text note will be in the <code class="language-plaintext highlighter-rouge">.content.attachment.data</code> element</li>
+  <li>not used in DocumentReference
+    <ul>
+      <li>masterIdentifier 0..0</li>
+      <li>docStatus 0..0</li>
+      <li>relatesTo 0..0</li>
+      <li>description 0..0</li>
+      <li>securityLabel 0..0</li>
+      <li>content.format 0..0</li>
+      <li>context.encounter 0..0</li>
+      <li>context.event 0..0</li>
+      <li>context.facilityType 0..0</li>
+      <li>context.practiceSetting 0..0</li>
+      <li>context.sourcePatientInfo 0..0</li>
+    </ul>
+  </li>
+  <li><strong>Business Rule</strong>: Only <code class="language-plaintext highlighter-rouge">completed</code> reports are included (<code class="language-plaintext highlighter-rouge">.status</code> == <code class="language-plaintext highlighter-rouge">current</code>)</li>
+</ul>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.diagnosticReport.html"
+                     title="StructureDefinition/VA.MHV.diagnosticReport">VA MHV DiagnosticReport</a>
+               </td>
+               <td>
+<p>This defines the use for Chem-Hem and 
+<code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, with contained <code class="language-plaintext highlighter-rouge">Observation</code> and <code class="language-plaintext highlighter-rouge">Specimen</code> as needed.</p>
+
+<ul>
+  <li>code.text is
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">CH</code> for ‘Chem-Hem’</li>
+      <li>other text values come from Pathology or Microbiology report</li>
+    </ul>
+  </li>
+  <li>category must be <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0074#LAB</code>
+    <ul>
+      <li>category also holds 1..* codes from the contained Observation.code</li>
+    </ul>
+  </li>
+</ul>
+
+<p>This profile is <strong>not</strong> based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. That profile requires use of us-core Practitioner that I can’t extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html"
                      title="StructureDefinition/VA.MHV.PHR.allergyIntolerance">VA MHV PHR Allergy and Intolerance</a>
                </td>
@@ -288,88 +345,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-VA.MHV.PHR.chPanel.html"
-                     title="StructureDefinition/VA.MHV.PHR.chPanel">VA MHV PHR CH labTests.orderedTestCode</a>
-               </td>
-               <td>
-<p>A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.</p>
-
-<p>One Observation holds one <code class="language-plaintext highlighter-rouge">labTests.orderedTestCode</code></p>
-<ul>
-  <li>This profile is based Observation, as it is not found in us-core
-    <ul>
-      <li>category must have <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/observation-category#laboratory</code></li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">.subject</code> must be the patient from the DiagnosticReport</li>
-  <li><code class="language-plaintext highlighter-rouge">orderedTestCode -&amp;gt; </code>.code`</li>
-  <li>Panel is distinguished by
-    <ul>
-      <li>there is no <code class="language-plaintext highlighter-rouge">.value[x]</code> - as this is just a panel</li>
-      <li>there is <code class="language-plaintext highlighter-rouge">.hasMember</code> 1..* - These point at the results observations</li>
-    </ul>
-  </li>
-</ul>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-VA.MHV.PHR.chReport.html"
-                     title="StructureDefinition/VA.MHV.PHR.chReport">VA MHV PHR HDR Chem-Hem Report</a>
-               </td>
-               <td>
-<p>The given labTestPromise example aligns with the <code class="language-plaintext highlighter-rouge">Lab.xsd</code> schema. 
-A profile showing how <code class="language-plaintext highlighter-rouge">labTestPromise</code> is mapped into a FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Observation</code>, and <code class="language-plaintext highlighter-rouge">Specimen</code>. Where the <code class="language-plaintext highlighter-rouge">labTestPromise</code> only has <code class="language-plaintext highlighter-rouge">labSubscript</code> of <code class="language-plaintext highlighter-rouge">CH</code> (Chem-Hem).</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises</code> is mapped onto this FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> for laboratory reporting. The mapping to <a href="StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">HDR labTestPromise</a></p>
-<ul>
-  <li>code.text must be <code class="language-plaintext highlighter-rouge">CH</code>. No other codeing values</li>
-  <li>category must be <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0074#LAB</code></li>
-  <li>category also holds 1..* codes from the contained Observation.code</li>
-</ul>
-
-<p>the <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.orderedTestCode</code> is recorded as a <a href="StructureDefinition-VA.MHV.PHR.chPanel.html">Observation panel</a> that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to <a href="StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode">HDR orderedTestCode</a>.</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.chemistryResult</code> are each recorded as a FHIR <a href="StructureDefinition-VA.MHV.PHR.chTest.html">Observation result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR chTestPromise</a>.</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR Specimen</a>.</p>
-
-<p>The use of contained means that we do not need to de-duplicate the lab tests or specimen.</p>
-
-<p>This profile is <strong>not</strong> based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. That profile requires use of us-core Practitioner that I can’t extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.</p>
-
-<p>Notes:</p>
-<ul>
-  <li>current distinguishing between panel and results is by way of if the <code class="language-plaintext highlighter-rouge">hasMember</code> element is populated. Panel will have no <code class="language-plaintext highlighter-rouge">value[x]</code> and will have <code class="language-plaintext highlighter-rouge">hasMember</code> populated; where as results will have a <code class="language-plaintext highlighter-rouge">value[x]</code> and will not have <code class="language-plaintext highlighter-rouge">hasMember</code> populated.
-    <ul>
-      <li>Could create a code to use in <code class="language-plaintext highlighter-rouge">category</code>, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.</li>
-      <li>I am checkng with the VA C-CDA team to see if they have set a precedence that I could use.</li>
-    </ul>
-  </li>
-</ul>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html"
-                     title="StructureDefinition/VA.MHV.PHR.chSpecimen">VA MHV PHR HDR CH Specimen</a>
-               </td>
-               <td>
-<p>A profile showing how the <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR Specimen.</p>
-
-<ul>
-  <li>This is usually a contained resource, contained in the Lab Report. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances</li>
-  <li>must have a type
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">Specimen.type.text</code> &lt;- <code class="language-plaintext highlighter-rouge">labTestPromises.specimen.specimenSource</code></li>
-    </ul>
-  </li>
-  <li>should have a <code class="language-plaintext highlighter-rouge">collectedDateTime</code> derived from <code class="language-plaintext highlighter-rouge">labTestPromises.specimen.specimenTakenDate</code></li>
-</ul>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
                   <a href="StructureDefinition-VA.MHV.PHR.chTest.html"
                      title="StructureDefinition/VA.MHV.PHR.chTest">VA MHV PHR CH labTest.chemistryResults</a>
                </td>
@@ -413,24 +388,27 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-VA.MHV.PHR.condition.html"
-                     title="StructureDefinition/VA.MHV.PHR.condition">VA MHV PHR problems</a>
+                  <a href="StructureDefinition-VA.MHV.PHR.chPanel.html"
+                     title="StructureDefinition/VA.MHV.PHR.chPanel">VA MHV PHR CH labTests.orderedTestCode</a>
                </td>
                <td>
-<p>A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.</p>
+<p>A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.</p>
 
+<p>One Observation holds one <code class="language-plaintext highlighter-rouge">labTests.orderedTestCode</code></p>
 <ul>
-  <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
-  <li>Should be based on US-Core for Condition Resource</li>
-  <li>Presume we will not expose those that are ProblemTO.removed = true</li>
-</ul>
-
-<p>TODO:</p>
-<ul>
-  <li>not clear if the ProblemTO.location is describing, is it evidence?</li>
-  <li>what are the other values for ProblemTO.status</li>
-  <li>not clear what ProblemTO.accuity.tag is</li>
-  <li>not clear what ProblemTo.facility is</li>
+  <li>This profile is based Observation, as it is not found in us-core
+    <ul>
+      <li>category must have <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/observation-category#laboratory</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">.subject</code> must be the patient from the DiagnosticReport</li>
+  <li><code class="language-plaintext highlighter-rouge">orderedTestCode -&amp;gt; </code>.code`</li>
+  <li>Panel is distinguished by
+    <ul>
+      <li>there is no <code class="language-plaintext highlighter-rouge">.value[x]</code> - as this is just a panel</li>
+      <li>there is <code class="language-plaintext highlighter-rouge">.hasMember</code> 1..* - These point at the results observations</li>
+    </ul>
+  </li>
 </ul>
 </td>
             </tr>
@@ -458,37 +436,55 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="StructureDefinition-VA.MHV.PHR.imaging.html"
-                     title="StructureDefinition/VA.MHV.PHR.imaging">VA MHV PHR Radiology</a>
+                  <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html"
+                     title="StructureDefinition/VA.MHV.PHR.chSpecimen">VA MHV PHR HDR CH Specimen</a>
                </td>
                <td>
-<p>A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.</p>
+<p>A profile showing how the <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR Specimen.</p>
 
 <ul>
-  <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
-  <li>based on US-Core for Clinical Notes</li>
-  <li>type LOINC#18748-4 <code class="language-plaintext highlighter-rouge">Diagnostic imaging study</code></li>
-  <li>see <a href="StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto">mapping</a> for details</li>
-  <li>An example of a <a href="Bundle-images.html">transaction Bundle</a> with many image reports as DocumentReference. This was <a href="StructureDefinition-VA.MHV.PHR.imaging.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml">mock sample SOAP message</a> MHV receives.</li>
-  <li>Order and Encounter are not converted into FHIR resources, but rather we save the original id into the Reference.identifier encoding.</li>
+  <li>This is usually a contained resource, contained in the Lab Report. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances</li>
+  <li>must have a type
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">Specimen.type.text</code> &lt;- <code class="language-plaintext highlighter-rouge">labTestPromises.specimen.specimenSource</code></li>
+    </ul>
+  </li>
+  <li>should have a <code class="language-plaintext highlighter-rouge">collectedDateTime</code> derived from <code class="language-plaintext highlighter-rouge">labTestPromises.specimen.specimenTakenDate</code></li>
+</ul>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.chReport.html"
+                     title="StructureDefinition/VA.MHV.PHR.chReport">VA MHV PHR HDR Chem-Hem Report</a>
+               </td>
+               <td>
+<p>The given labTestPromise example aligns with the <code class="language-plaintext highlighter-rouge">Lab.xsd</code> schema. 
+A profile showing how <code class="language-plaintext highlighter-rouge">labTestPromise</code> is mapped into a FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Observation</code>, and <code class="language-plaintext highlighter-rouge">Specimen</code>. Where the <code class="language-plaintext highlighter-rouge">labTestPromise</code> only has <code class="language-plaintext highlighter-rouge">labSubscript</code> of <code class="language-plaintext highlighter-rouge">CH</code> (Chem-Hem).</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises</code> is mapped onto this FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> for laboratory reporting. The mapping to <a href="StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">HDR labTestPromise</a></p>
+<ul>
+  <li>code.text must be <code class="language-plaintext highlighter-rouge">CH</code>. No other codeing values</li>
+  <li>category must be <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0074#LAB</code></li>
+  <li>category also holds 1..* codes from the contained Observation.code</li>
 </ul>
 
-<p>TODO Questions:</p>
+<p>the <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.orderedTestCode</code> is recorded as a <a href="StructureDefinition-VA.MHV.PHR.chPanel.html">Observation panel</a> that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to <a href="StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode">HDR orderedTestCode</a>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.chemistryResult</code> are each recorded as a FHIR <a href="StructureDefinition-VA.MHV.PHR.chTest.html">Observation result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR chTestPromise</a>.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR Specimen</a>.</p>
+
+<p>The use of contained means that we do not need to de-duplicate the lab tests or specimen.</p>
+
+<p>This profile is <strong>not</strong> based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. That profile requires use of us-core Practitioner that I can’t extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.</p>
+
+<p>Notes:</p>
 <ul>
-  <li>some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can’t tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
+  <li>current distinguishing between panel and results is by way of if the <code class="language-plaintext highlighter-rouge">hasMember</code> element is populated. Panel will have no <code class="language-plaintext highlighter-rouge">value[x]</code> and will have <code class="language-plaintext highlighter-rouge">hasMember</code> populated; where as results will have a <code class="language-plaintext highlighter-rouge">value[x]</code> and will not have <code class="language-plaintext highlighter-rouge">hasMember</code> populated.
     <ul>
-      <li>hasImages</li>
-      <li>imagingType - always was GENERAL RADIOLOGY</li>
-      <li>facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?</li>
-      <li>these never appeared in examples
-        <ul>
-          <li>modifiers</li>
-          <li>clinicalHX</li>
-          <li>impression</li>
-          <li>imagingExamTO</li>
-          <li>reportId</li>
-        </ul>
-      </li>
+      <li>Could create a code to use in <code class="language-plaintext highlighter-rouge">category</code>, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.</li>
+      <li>I am checkng with the VA C-CDA team to see if they have set a precedence that I could use.</li>
     </ul>
   </li>
 </ul>
@@ -645,14 +641,14 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 <ul>
   <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
   <li>based on US-Core for Clinical Notes</li>
-  <li><code class="language-plaintext highlighter-rouge">type</code> seems to hold an enum (A, PN, DS).
+  <li><code class="language-plaintext highlighter-rouge">type</code> seems to hold an enum (PN, DS).
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">A</code> - LOINC#83320-2 "Allergy and Immunology Adverse event note"</li>
       <li><code class="language-plaintext highlighter-rouge">PN</code> - LOINC#11505-5 "Physician procedure note"</li>
       <li><code class="language-plaintext highlighter-rouge">DS</code> - LOINC#18842-5 "Discharge summary"</li>
       <li>anything else should be logged as not yet understood</li>
     </ul>
   </li>
+  <li>This also includes the (NoteTO) received on the ‘Admission and Discharge’ feed which holds a Discharge Summary without an id.</li>
   <li>not used in DocumentReference
     <ul>
       <li>masterIdentifier 0..0</li>
@@ -668,12 +664,14 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
       <li>context.sourcePatientInfo 0..0</li>
     </ul>
   </li>
+  <li><strong>Business Rule</strong>: do not convert any NoteTO.status that is not <code class="language-plaintext highlighter-rouge">completed</code> or <code class="language-plaintext highlighter-rouge">COMPLETED</code>.</li>
+  <li><strong>Business Rule</strong>: do not convet any NoteTO.type of <code class="language-plaintext highlighter-rouge">A</code></li>
 </ul>
 
 <p>TODO Questions:</p>
 <ul>
   <li>is <code class="language-plaintext highlighter-rouge">standardTitle</code> or <code class="language-plaintext highlighter-rouge">type</code> used to differentiate between various note types?</li>
-  <li><code class="language-plaintext highlighter-rouge">status</code> might be derived from <code class="language-plaintext highlighter-rouge">NoteTO.status</code>, but at this point I presume we are only told about current notes and don’t know what other <code class="language-plaintext highlighter-rouge">NoteTO.status</code> values might happen</li>
+  <li><code class="language-plaintext highlighter-rouge">status</code> might be derived from <code class="language-plaintext highlighter-rouge">NoteTO.status</code>, but at this point I presume we are only told about completed notes, we have a business rule to ignore all others, and I don’t know what other <code class="language-plaintext highlighter-rouge">NoteTO.status</code> values might happen</li>
   <li>what other <code class="language-plaintext highlighter-rouge">type</code> values might we see?</li>
   <li>some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can’t tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
     <ul>
@@ -771,6 +769,67 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 <p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto">VDIF UserTO</a> and <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto">VDIF AuthorTO</a></p>
 
 <p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite">HDR PractitionerLite</a></p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.condition.html"
+                     title="StructureDefinition/VA.MHV.PHR.condition">VA MHV PHR problems</a>
+               </td>
+               <td>
+<p>A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.</p>
+
+<ul>
+  <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
+  <li>Should be based on US-Core for Condition Resource</li>
+  <li>Presume we will not expose those that are ProblemTO.removed = true</li>
+</ul>
+
+<p>TODO:</p>
+<ul>
+  <li>not clear if the ProblemTO.location is describing, is it evidence?</li>
+  <li>what are the other values for ProblemTO.status</li>
+  <li>not clear what ProblemTO.accuity.tag is</li>
+  <li>not clear what ProblemTo.facility is</li>
+</ul>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="StructureDefinition-VA.MHV.PHR.imaging.html"
+                     title="StructureDefinition/VA.MHV.PHR.imaging">VA MHV PHR Radiology</a>
+               </td>
+               <td>
+<p>A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.</p>
+
+<ul>
+  <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
+  <li>based on US-Core for Clinical Notes</li>
+  <li>type LOINC#18748-4 <code class="language-plaintext highlighter-rouge">Diagnostic imaging study</code></li>
+  <li>see <a href="StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto">mapping</a> for details</li>
+  <li>An example of a <a href="Bundle-images.html">transaction Bundle</a> with many image reports as DocumentReference. This was <a href="StructureDefinition-VA.MHV.PHR.imaging.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml">mock sample SOAP message</a> MHV receives.</li>
+  <li>Order and Encounter are not converted into FHIR resources, but rather we save the original id into the Reference.identifier encoding.</li>
+</ul>
+
+<p>TODO Questions:</p>
+<ul>
+  <li>some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can’t tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
+    <ul>
+      <li>hasImages</li>
+      <li>imagingType - always was GENERAL RADIOLOGY</li>
+      <li>facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?</li>
+      <li>these never appeared in examples
+        <ul>
+          <li>modifiers</li>
+          <li>clinicalHX</li>
+          <li>impression</li>
+          <li>imagingExamTO</li>
+          <li>reportId</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 </td>
             </tr>
             <tr>
@@ -875,6 +934,15 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
          <tbody>
             <tr>
                <td style="column-width:30%">
+                  <a href="ValueSet-DocumentReferenceTypeVS.html"
+                     title="ValueSet/DocumentReferenceTypeVS">Known DocumentReference types</a>
+               </td>
+               <td>
+<p>DocumentReference types</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="ValueSet-LabReportVS.html" title="ValueSet/LabReportVS">Known Lab Report types</a>
                </td>
                <td>
@@ -924,11 +992,108 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
          <tbody>
             <tr>
                <td style="column-width:30%">
+                  <a href="Bundle-images.html" title="Bundle/images">Bundle of Radiology results from mock data</a>
+               </td>
+               <td>
+<p>An example of a transaction Bundle with many image reports as DocumentReference. This was <a href="StructureDefinition-VA.MHV.PHR.imaging.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml">mock sample SOAP message</a> MHV receives.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Bundle-vitals.html" title="Bundle/vitals">Bundle of Vitals from mock data</a>
+               </td>
+               <td>
+<p>An example of a transaction Bundle with many vitals reports as Observation This was <a href="StructureDefinition-VA.MHV.PHR.vitals.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/vitals.xml">mock sample SOAP message</a> MHV receives.</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DocumentReference-ex-MHV-ecg-0.html"
+                     title="DocumentReference/ex-MHV-ecg-0">Example 0 of a MHV ECG</a>
+               </td>
+               <td>
+<p>Derived from the a mock ClinicalProcedureTO:</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DocumentReference-ex-MHV-imaging-0.html"
+                     title="DocumentReference/ex-MHV-imaging-0">Example 0 of a MHV Radiology (Imaging Exam)</a>
+               </td>
+               <td>
+<p>Derived from the a mock ImagingExamTO:</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DocumentReference-ex-MHV-ecg-1.html"
+                     title="DocumentReference/ex-MHV-ecg-1">Example 1 of a MHV ECG</a>
+               </td>
+               <td>
+<p>Derived from the a mock ClinicalProcedureTO:</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DocumentReference-ex-MHV-note-1.html"
+                     title="DocumentReference/ex-MHV-note-1">Example 1 of a MHV Note</a>
+               </td>
+               <td>
+<p>Derived from the a mock NoteTO:</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="AllergyIntolerance-ex-MHV-allergy-1.html"
                      title="AllergyIntolerance/ex-MHV-allergy-1">Example 1 of an MHV allergy or intolerance</a>
                </td>
                <td>
 <p>IntoleranceCondition record identity 53495 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-chReport-1.html"
+                     title="DiagnosticReport/ex-MHV-chReport-1">Example 1 of an MHV chReport</a>
+               </td>
+               <td>
+<p>Example from a mock labTestPromises (1110200002)</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Condition-ex-MHV-condition-1.html"
+                     title="Condition/ex-MHV-condition-1">Example 1 of an MHV condition</a>
+               </td>
+               <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Immunization-ex-MHV-immunization-1.html"
+                     title="Immunization/ex-MHV-immunization-1">Example 1 of an MHV immunization</a>
+               </td>
+               <td>
+<p>Example from a mock ImmunizationTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-labReport-1.html"
+                     title="DiagnosticReport/ex-MHV-labReport-1">Example 1 of an MHV labReport</a>
+               </td>
+               <td>
+<p>Example from a mock labReportTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Observation-ex-MHV-vitals-1.html"
+                     title="Observation/ex-MHV-vitals-1">Example 1 of an MHV vital-sign</a>
+               </td>
+               <td>
+<p>Example from a mock VitalSignTO</p>
 </td>
             </tr>
             <tr>
@@ -942,6 +1107,15 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
+                  <a href="Condition-ex-MHV-condition-10.html"
+                     title="Condition/ex-MHV-condition-10">Example 10 of an MHV condition</a>
+               </td>
+               <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
                   <a href="AllergyIntolerance-ex-MHV-allergy-11.html"
                      title="AllergyIntolerance/ex-MHV-allergy-11">Example 11 of an MHV allergy or intolerance</a>
                </td>
@@ -951,119 +1125,11 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-12.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-12">Example 12 of an MHV allergy or intolerance</a>
+                  <a href="Condition-ex-MHV-condition-11.html"
+                     title="Condition/ex-MHV-condition-11">Example 11 of an MHV condition</a>
                </td>
                <td>
-<p>IntoleranceCondition record identity 69093 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-13.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-13">Example 13 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 69123 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-14.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-14">Example 14 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 69124 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-15.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-15">Example 15 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 69129 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-2.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-2">Example 2 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 67933 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-3.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-3">Example 3 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 67934 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-4.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-4">Example 4 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 69066 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-5.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-5">Example 5 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 69067 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-6.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-6">Example 6 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 69071 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-7.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-7">Example 7 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 69072 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-8.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-8">Example 8 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 69073 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="AllergyIntolerance-ex-MHV-allergy-9.html"
-                     title="AllergyIntolerance/ex-MHV-allergy-9">Example 9 of an MHV allergy or intolerance</a>
-               </td>
-               <td>
-<p>IntoleranceCondition record identity 69074 from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DiagnosticReport-ex-MHV-chReport-1.html"
-                     title="DiagnosticReport/ex-MHV-chReport-1">Example 1 of an MHV chReport</a>
-               </td>
-               <td>
-<p>Example from a mock labTestPromises (1110200002)</p>
+<p>Example from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
@@ -1122,119 +1188,38 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-1.html"
-                     title="Condition/ex-MHV-condition-1">Example 1 of an MHV condition</a>
+                  <a href="AllergyIntolerance-ex-MHV-allergy-12.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-12">Example 12 of an MHV allergy or intolerance</a>
                </td>
                <td>
-<p>Example from a mock ProblemTO</p>
+<p>IntoleranceCondition record identity 69093 from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-10.html"
-                     title="Condition/ex-MHV-condition-10">Example 10 of an MHV condition</a>
+                  <a href="AllergyIntolerance-ex-MHV-allergy-13.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-13">Example 13 of an MHV allergy or intolerance</a>
                </td>
                <td>
-<p>Example from a mock ProblemTO</p>
+<p>IntoleranceCondition record identity 69123 from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-11.html"
-                     title="Condition/ex-MHV-condition-11">Example 11 of an MHV condition</a>
+                  <a href="AllergyIntolerance-ex-MHV-allergy-14.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-14">Example 14 of an MHV allergy or intolerance</a>
                </td>
                <td>
-<p>Example from a mock ProblemTO</p>
+<p>IntoleranceCondition record identity 69124 from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-2.html"
-                     title="Condition/ex-MHV-condition-2">Example 2 of an MHV condition</a>
+                  <a href="AllergyIntolerance-ex-MHV-allergy-15.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-15">Example 15 of an MHV allergy or intolerance</a>
                </td>
                <td>
-<p>Example from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-3.html"
-                     title="Condition/ex-MHV-condition-3">Example 3 of an MHV condition</a>
-               </td>
-               <td>
-<p>Example from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-4.html"
-                     title="Condition/ex-MHV-condition-4">Example 4 of an MHV condition</a>
-               </td>
-               <td>
-<p>Example from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-5.html"
-                     title="Condition/ex-MHV-condition-5">Example 5 of an MHV condition</a>
-               </td>
-               <td>
-<p>Example from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-6.html"
-                     title="Condition/ex-MHV-condition-6">Example 6 of an MHV condition</a>
-               </td>
-               <td>
-<p>Example from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-7.html"
-                     title="Condition/ex-MHV-condition-7">Example 7 of an MHV condition</a>
-               </td>
-               <td>
-<p>Example from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-8.html"
-                     title="Condition/ex-MHV-condition-8">Example 8 of an MHV condition</a>
-               </td>
-               <td>
-<p>Example from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Condition-ex-MHV-condition-9.html"
-                     title="Condition/ex-MHV-condition-9">Example 9 of an MHV condition</a>
-               </td>
-               <td>
-<p>Example from a mock ProblemTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-ecg-0.html"
-                     title="DocumentReference/ex-MHV-ecg-0">Example 0 of a MHV ECG</a>
-               </td>
-               <td>
-<p>Derived from the a mock ClinicalProcedureTO:</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-ecg-1.html"
-                     title="DocumentReference/ex-MHV-ecg-1">Example 1 of a MHV ECG</a>
-               </td>
-               <td>
-<p>Derived from the a mock ClinicalProcedureTO:</p>
+<p>IntoleranceCondition record identity 69129 from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
@@ -1248,56 +1233,20 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-ecg-3.html"
-                     title="DocumentReference/ex-MHV-ecg-3">Example 3 of a MHV ECG</a>
+                  <a href="AllergyIntolerance-ex-MHV-allergy-2.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-2">Example 2 of an MHV allergy or intolerance</a>
                </td>
                <td>
-<p>Derived from the a mock ClinicalProcedureTO:</p>
+<p>IntoleranceCondition record identity 67933 from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-ecg-4.html"
-                     title="DocumentReference/ex-MHV-ecg-4">Example 4 of a MHV ECG</a>
+                  <a href="Condition-ex-MHV-condition-2.html"
+                     title="Condition/ex-MHV-condition-2">Example 2 of an MHV condition</a>
                </td>
                <td>
-<p>Derived from the a mock ClinicalProcedureTO:</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-ecg-5.html"
-                     title="DocumentReference/ex-MHV-ecg-5">Example 5 of a MHV ECG</a>
-               </td>
-               <td>
-<p>Derived from the a mock ClinicalProcedureTO:</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Observation-ex-MHV-heartRate-1.html"
-                     title="Observation/ex-MHV-heartRate-1">Example of an MHV heartRate R4 observation</a>
-               </td>
-               <td>
-<p>Heart Rate holding typical values</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-imaging-0.html"
-                     title="DocumentReference/ex-MHV-imaging-0">Example 0 of a MHV Radiology (Imaging Exam)</a>
-               </td>
-               <td>
-<p>Derived from the a mock ImagingExamTO:</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Immunization-ex-MHV-immunization-1.html"
-                     title="Immunization/ex-MHV-immunization-1">Example 1 of an MHV immunization</a>
-               </td>
-               <td>
-<p>Example from a mock ImmunizationTO</p>
+<p>Example from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
@@ -1311,8 +1260,8 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="DiagnosticReport-ex-MHV-labReport-1.html"
-                     title="DiagnosticReport/ex-MHV-labReport-1">Example 1 of an MHV labReport</a>
+                  <a href="DiagnosticReport-ex-MHV-labReport-2.html"
+                     title="DiagnosticReport/ex-MHV-labReport-2">Example 2 of an MHV labReport</a>
                </td>
                <td>
 <p>Example from a mock labReportTO</p>
@@ -1320,11 +1269,29 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="DiagnosticReport-ex-MHV-labReport-2.html"
-                     title="DiagnosticReport/ex-MHV-labReport-2">Example 2 of an MHV labReport</a>
+                  <a href="DocumentReference-ex-MHV-ecg-3.html"
+                     title="DocumentReference/ex-MHV-ecg-3">Example 3 of a MHV ECG</a>
                </td>
                <td>
-<p>Example from a mock labReportTO</p>
+<p>Derived from the a mock ClinicalProcedureTO:</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-3.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-3">Example 3 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 67934 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Condition-ex-MHV-condition-3.html"
+                     title="Condition/ex-MHV-condition-3">Example 3 of an MHV condition</a>
+               </td>
+               <td>
+<p>Example from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
@@ -1338,119 +1305,11 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="DiagnosticReport-ex-MHV-labReport-4.html"
-                     title="DiagnosticReport/ex-MHV-labReport-4">Example 4 of an MHV labReport</a>
+                  <a href="DocumentReference-ex-MHV-ecg-4.html"
+                     title="DocumentReference/ex-MHV-ecg-4">Example 4 of a MHV ECG</a>
                </td>
                <td>
-<p>Example from a mock labReportTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DiagnosticReport-ex-MHV-labReport-5.html"
-                     title="DiagnosticReport/ex-MHV-labReport-5">Example 5 of an MHV labReport</a>
-               </td>
-               <td>
-<p>Example from a mock labReportTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DiagnosticReport-ex-MHV-labReport-6.html"
-                     title="DiagnosticReport/ex-MHV-labReport-6">Example 6 of an MHV labReport</a>
-               </td>
-               <td>
-<p>Example from a mock labReportTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DiagnosticReport-ex-MHV-labReport-7.html"
-                     title="DiagnosticReport/ex-MHV-labReport-7">Example 7 of an MHV labReport</a>
-               </td>
-               <td>
-<p>Example from a mock labReportTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DiagnosticReport-ex-MHV-labReport-8.html"
-                     title="DiagnosticReport/ex-MHV-labReport-8">Example 8 of an MHV labReport</a>
-               </td>
-               <td>
-<p>Example from a mock labReportTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Location-ex-MHV-location-2938.html"
-                     title="Location/ex-MHV-location-2938">Location PCT_O PATIL (F/U)</a>
-               </td>
-               <td>
-<p>This example derived off of a mock VitalSignTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Location-ex-MHV-location-552.html"
-                     title="Location/ex-MHV-location-552">Location DAYTON Lab</a>
-               </td>
-               <td>
-<p>This example derived off of a mock NoteTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Location-ex-MHV-location-984.html"
-                     title="Location/ex-MHV-location-984">Location DAYTSHR TEST Lab</a>
-               </td>
-               <td>
-<p>This example derived off of a mock HospitalLocationTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Location-ex-MHV-location-989.html"
-                     title="Location/ex-MHV-location-989">Location DAYT29 TEST Lab</a>
-               </td>
-               <td>
-<p>This example derived off of a mock ClinicalProcedureTO</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-note-0.html"
-                     title="DocumentReference/ex-MHV-note-0">Example 0 of a MHV Note</a>
-               </td>
-               <td>
-<p>Derived from the a mock NoteTO:</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-note-1.html"
-                     title="DocumentReference/ex-MHV-note-1">Example 1 of a MHV Note</a>
-               </td>
-               <td>
-<p>Derived from the a mock NoteTO:</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-note-2.html"
-                     title="DocumentReference/ex-MHV-note-2">Example 2 of a MHV Note</a>
-               </td>
-               <td>
-<p>Derived from the a mock NoteTO:</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="DocumentReference-ex-MHV-note-3.html"
-                     title="DocumentReference/ex-MHV-note-3">Example 3 of a MHV Note</a>
-               </td>
-               <td>
-<p>Derived from the a mock NoteTO:</p>
+<p>Derived from the a mock ClinicalProcedureTO:</p>
 </td>
             </tr>
             <tr>
@@ -1466,54 +1325,164 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Organization-ex-MHV-organization-552.html"
-                     title="Organization/ex-MHV-organization-552">Organization HDR Lab 552</a>
+                  <a href="AllergyIntolerance-ex-MHV-allergy-4.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-4">Example 4 of an MHV allergy or intolerance</a>
                </td>
                <td>
-<p>This example derived off of a mock HDR Lab report</p>
+<p>IntoleranceCondition record identity 69066 from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Organization-ex-MHV-organization-660.html"
-                     title="Organization/ex-MHV-organization-660">Organization HDR Lab 660</a>
+                  <a href="Condition-ex-MHV-condition-4.html"
+                     title="Condition/ex-MHV-condition-4">Example 4 of an MHV condition</a>
                </td>
                <td>
-<p>This example derived off of a mock HDR Lab report</p>
+<p>Example from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Organization-ex-MHV-organization-979.html"
-                     title="Organization/ex-MHV-organization-979">Organization HDR Lab 979</a>
+                  <a href="DiagnosticReport-ex-MHV-labReport-4.html"
+                     title="DiagnosticReport/ex-MHV-labReport-4">Example 4 of an MHV labReport</a>
                </td>
                <td>
-<p>This example derived off of a mock HDR Lab report</p>
+<p>Example from a mock labReportTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Organization-ex-MHV-organization-989.html"
-                     title="Organization/ex-MHV-organization-989">Organization lab site 989</a>
+                  <a href="DocumentReference-ex-MHV-ecg-5.html"
+                     title="DocumentReference/ex-MHV-ecg-5">Example 5 of a MHV ECG</a>
                </td>
                <td>
-<p>This example derived off of a mock diagnostic report</p>
+<p>Derived from the a mock ClinicalProcedureTO:</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Observation-ex-MHV-pain-1.html" title="Observation/ex-MHV-pain-1">Example of a MHV pain R4 observation of 10</a>
+                  <a href="AllergyIntolerance-ex-MHV-allergy-5.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-5">Example 5 of an MHV allergy or intolerance</a>
                </td>
                <td>
-<p>holding typical values</p>
+<p>IntoleranceCondition record identity 69067 from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Patient-ex-MHV-patient-0.html" title="Patient/ex-MHV-patient-0">Example MHVLISAONE from PatientTO</a>
+                  <a href="Condition-ex-MHV-condition-5.html"
+                     title="Condition/ex-MHV-condition-5">Example 5 of an MHV condition</a>
                </td>
                <td>
-<p>This example is derived off of a mock PatientTO</p>
+<p>Example from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-labReport-5.html"
+                     title="DiagnosticReport/ex-MHV-labReport-5">Example 5 of an MHV labReport</a>
+               </td>
+               <td>
+<p>Example from a mock labReportTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-6.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-6">Example 6 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69071 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Condition-ex-MHV-condition-6.html"
+                     title="Condition/ex-MHV-condition-6">Example 6 of an MHV condition</a>
+               </td>
+               <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-labReport-6.html"
+                     title="DiagnosticReport/ex-MHV-labReport-6">Example 6 of an MHV labReport</a>
+               </td>
+               <td>
+<p>Example from a mock labReportTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-7.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-7">Example 7 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69072 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Condition-ex-MHV-condition-7.html"
+                     title="Condition/ex-MHV-condition-7">Example 7 of an MHV condition</a>
+               </td>
+               <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-labReport-7.html"
+                     title="DiagnosticReport/ex-MHV-labReport-7">Example 7 of an MHV labReport</a>
+               </td>
+               <td>
+<p>Example from a mock labReportTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-8.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-8">Example 8 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69073 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Condition-ex-MHV-condition-8.html"
+                     title="Condition/ex-MHV-condition-8">Example 8 of an MHV condition</a>
+               </td>
+               <td>
+<p>Example from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="DiagnosticReport-ex-MHV-labReport-8.html"
+                     title="DiagnosticReport/ex-MHV-labReport-8">Example 8 of an MHV labReport</a>
+               </td>
+               <td>
+<p>Example from a mock labReportTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="AllergyIntolerance-ex-MHV-allergy-9.html"
+                     title="AllergyIntolerance/ex-MHV-allergy-9">Example 9 of an MHV allergy or intolerance</a>
+               </td>
+               <td>
+<p>IntoleranceCondition record identity 69074 from a mock ProblemTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Condition-ex-MHV-condition-9.html"
+                     title="Condition/ex-MHV-condition-9">Example 9 of an MHV condition</a>
+               </td>
+               <td>
+<p>Example from a mock ProblemTO</p>
 </td>
             </tr>
             <tr>
@@ -1526,7 +1495,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Patient-ex-MHV-patient-2.html" title="Patient/ex-MHV-patient-2">Example ROBERT from PatientTO</a>
+                  <a href="Patient-ex-MHV-patient-0.html" title="Patient/ex-MHV-patient-0">Example MHVLISAONE from PatientTO</a>
                </td>
                <td>
 <p>This example is derived off of a mock PatientTO</p>
@@ -1534,29 +1503,19 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Patient-ex-MHV-patient-27167.html"
-                     title="Patient/ex-MHV-patient-27167">Patient TESTFIVE</a>
+                  <a href="Observation-ex-MHV-pain-1.html" title="Observation/ex-MHV-pain-1">Example of a MHV pain R4 observation of 10</a>
                </td>
                <td>
-<p>This example is derived off of a mock patient</p>
+<p>holding typical values</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Patient-ex-MHV-patient-89486.html"
-                     title="Patient/ex-MHV-patient-89486">Patient MHVASPXXI</a>
+                  <a href="Observation-ex-MHV-heartRate-1.html"
+                     title="Observation/ex-MHV-heartRate-1">Example of an MHV heartRate R4 observation</a>
                </td>
                <td>
-<p>This example is derived off of a mock patient</p>
-</td>
-            </tr>
-            <tr>
-               <td style="column-width:30%">
-                  <a href="Patient-ex-MHV-patient-942104.html"
-                     title="Patient/ex-MHV-patient-942104">Patient TESTFIVE L, MHVSYSTEST</a>
-               </td>
-               <td>
-<p>This example is derived off of a mock patient</p>
+<p>Heart Rate holding typical values</p>
 </td>
             </tr>
             <tr>
@@ -1642,27 +1601,109 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Observation-ex-MHV-vitals-1.html"
-                     title="Observation/ex-MHV-vitals-1">Example 1 of an MHV vital-sign</a>
+                  <a href="Patient-ex-MHV-patient-2.html" title="Patient/ex-MHV-patient-2">Example ROBERT from PatientTO</a>
                </td>
                <td>
-<p>Example from a mock VitalSignTO</p>
+<p>This example is derived off of a mock PatientTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Bundle-images.html" title="Bundle/images">Bundle of Radiology results from mock data</a>
+                  <a href="Location-ex-MHV-location-989.html"
+                     title="Location/ex-MHV-location-989">Location DAYT29 TEST Lab</a>
                </td>
                <td>
-<p>An example of a transaction Bundle with many image reports as DocumentReference. This was <a href="StructureDefinition-VA.MHV.PHR.imaging.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml">mock sample SOAP message</a> MHV receives.</p>
+<p>This example derived off of a mock ClinicalProcedureTO</p>
 </td>
             </tr>
             <tr>
                <td style="column-width:30%">
-                  <a href="Bundle-vitals.html" title="Bundle/vitals">Bundle of Vitals from mock data</a>
+                  <a href="Location-ex-MHV-location-552.html"
+                     title="Location/ex-MHV-location-552">Location DAYTON Lab</a>
                </td>
                <td>
-<p>An example of a transaction Bundle with many vitals reports as Observation This was <a href="StructureDefinition-VA.MHV.PHR.vitals.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/vitals.xml">mock sample SOAP message</a> MHV receives.</p>
+<p>This example derived off of a mock NoteTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Location-ex-MHV-location-984.html"
+                     title="Location/ex-MHV-location-984">Location DAYTSHR TEST Lab</a>
+               </td>
+               <td>
+<p>This example derived off of a mock HospitalLocationTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Location-ex-MHV-location-2938.html"
+                     title="Location/ex-MHV-location-2938">Location PCT_O PATIL (F/U)</a>
+               </td>
+               <td>
+<p>This example derived off of a mock VitalSignTO</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-ex-MHV-organization-552.html"
+                     title="Organization/ex-MHV-organization-552">Organization HDR Lab 552</a>
+               </td>
+               <td>
+<p>This example derived off of a mock HDR Lab report</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-ex-MHV-organization-660.html"
+                     title="Organization/ex-MHV-organization-660">Organization HDR Lab 660</a>
+               </td>
+               <td>
+<p>This example derived off of a mock HDR Lab report</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-ex-MHV-organization-979.html"
+                     title="Organization/ex-MHV-organization-979">Organization HDR Lab 979</a>
+               </td>
+               <td>
+<p>This example derived off of a mock HDR Lab report</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Organization-ex-MHV-organization-989.html"
+                     title="Organization/ex-MHV-organization-989">Organization lab site 989</a>
+               </td>
+               <td>
+<p>This example derived off of a mock diagnostic report</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-ex-MHV-patient-89486.html"
+                     title="Patient/ex-MHV-patient-89486">Patient MHVASPXXI</a>
+               </td>
+               <td>
+<p>This example is derived off of a mock patient</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-ex-MHV-patient-27167.html"
+                     title="Patient/ex-MHV-patient-27167">Patient TESTFIVE</a>
+               </td>
+               <td>
+<p>This example is derived off of a mock patient</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="Patient-ex-MHV-patient-942104.html"
+                     title="Patient/ex-MHV-patient-942104">Patient TESTFIVE L, MHVSYSTEST</a>
+               </td>
+               <td>
+<p>This example is derived off of a mock patient</p>
 </td>
             </tr>
          </tbody>
@@ -1714,7 +1755,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.14-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 4, 2023 14:24-0500">2023-05-04</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.15-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 7, 2023 11:47-0500">2023-06-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

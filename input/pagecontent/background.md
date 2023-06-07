@@ -1,7 +1,9 @@
 
 MyHealtheVet acts as a FHIR Server.
 
-Utility Resources:
+### Utility Resources
+
+Note that these resources are used purely to provide linkage, they are minimally populated based on the information MHV receives. Often that means all that is populated is an identifier.
 
 - [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
   - [Mappings from VDIF - PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)
@@ -18,7 +20,9 @@ Utility Resources:
   - [Mapping from HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)
   - [Examples](StructureDefinition-VA.MHV.PHR.organization-examples.html)
 
-Clinical Resources:
+### mapping Clinical Resources
+
+This section is dedicated to instructions on how MHV will transition the data we receive into FHIR format. 
 
 - [Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html)
   - [Mappings from VHIM Allergy](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-vhim-allergy-to-mhv-phr-intolerancecondition)
@@ -57,17 +61,29 @@ Clinical Resources:
   - most [examples are within this Bundle](https://johnmoehrke.github.io/MHV-PHR/Bundle-images.html), and thus not individually exposed.
 - [Vitals](vitals.html)
 
-### todo
+### FHIR API
 
-Note in Muazzam spreadsheet
+This section is focused on use of the FHIR API. The FHIR API is made up of the data that is mapped. Thus the above is useful, but not sufficient as an API definition.
 
-- Appointments
-- Medication History
+- [Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html)
+  - [Examples](StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html)
+- [Conditions](StructureDefinition-VA.MHV.PHR.condition.html)
+  - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
+- [DiagnosticReport](StructureDefinition-VA.MHV.diagnosticReport.html) shows all of the DiagnosticReport. Including Microbiology, Pathology, and Chem-Hem.
+  - [Microbiology and Pathology Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
+  - [Chem-Hem Examples](StructureDefinition-VA.MHV.PHR.chReport-examples.html)
+- [DocumentReference](StructureDefinition-VA.MHV.documentReference.html) shows all uses of DocumentReference. Including Notes, Discharge Summary, EKG, and Imaging.
+  - [Note Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
+    - Clinical Notes, Discharge Summary
+  - [ECG Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
+  - [Imaging Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
+- [Immunization](StructureDefinition-VA.MHV.PHR.immunization.html)
+  - [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
+- [Vitals](vitals.html)
 
 #### in progress
 
-- Allergies Examples
-- xslt for CH
+- Medications (not defined yet what is the source or goal. I note that VIA does have a schema for a MedicationTO. I have heard that there are questions on how to best fit the FHIR medication concept domain.)
 
 #### other
 

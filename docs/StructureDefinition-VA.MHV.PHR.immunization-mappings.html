@@ -44,10 +44,10 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.14-beta - ci-build
+            <span style="display:inline-block;">0.1.15-beta - ci-build
 
 
 
@@ -166,7 +166,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.14-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.15-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -270,7 +270,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td>Event.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>Event.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>Event.occurrence[x]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x] (occurrenceDateTime)</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>Event.note</td> </tr>
 </table>
 <a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
@@ -294,7 +293,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>PID-3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>RXA-3</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x] (occurrenceDateTime)</td><td>RXA-3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>RXA-9</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>OBX-5 : OBX-3 = 48767-8</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author[x]</td><td>N/A</td> </tr>
@@ -337,7 +335,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>.partipication[ttypeCode=].role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>.effectiveTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x] (occurrenceDateTime)</td><td>.effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>.participation[typeCode=AUT].time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>immunization.uncertaintycode (if primary source=false, uncertainty=U)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>note</td> </tr>
@@ -364,7 +361,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td>FiveWs.what[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>FiveWs.done[x]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x] (occurrenceDateTime)</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>FiveWs.source</td> </tr>
 </table>
@@ -375,11 +371,11 @@
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (TOid)</td><td>ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td>ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/realmCode/code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/effectiveTime/value</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x] (occurrenceDateTime)</td><td>ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/effectiveTime/value</td> </tr>
 </table>
 <a name="Immunization-Mapping"> </a><h3>Mappings for VDIF to MHV-PHR (ImmunizationTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVimmunization</b></td></tr>
- <tr><td>Immunization</td><td>ImmunizationTO</td><td>MHV PHR FHIR API</td> </tr>
+ <tr><td>Immunization</td><td>ImmunizationTO</td><td><p>MHV PHR FHIR API</p>
+</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ImmunizationTO.id}</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`completed`</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td></td><td></td> </tr>
@@ -388,7 +384,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>ImmunizationTO.cptCode.name</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.name</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>patient</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x] (occurrenceDateTime)</td><td>ImmunizationTO.administeredDate</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ImmunizationTO.administeredDate</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>ImmunizationTO.administeredDate</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>`false`</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td><td></td> </tr>
@@ -471,7 +467,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.14-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, May 4, 2023 14:24-0500">2023-05-04</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.15-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 7, 2023 11:47-0500">2023-06-07</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

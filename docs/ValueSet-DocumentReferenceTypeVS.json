@@ -1,0 +1,75 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "DocumentReferenceTypeVS",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href=\"ValueSet-NoteTypeVS.html\">Known Note types</a></li><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/11524-6/\">11524-6</a></td><td>EKG study</td></tr><tr><td><a href=\"https://loinc.org/18748-4/\">18748-4</a></td><td>Diagnostic imaging study</td></tr></table></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 0,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+      }]
+    }
+  }],
+  "url" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS",
+  "version" : "0.1.15-beta",
+  "name" : "DocumentReferenceTypeVS",
+  "title" : "Known DocumentReference types",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-06-07T11:47:17-05:00",
+  "publisher" : "John Moehrke (himself)",
+  "contact" : [{
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://healthcaresecprivacy.blogspot.com"
+    },
+    {
+      "system" : "email",
+      "value" : "JohnMoehrke@gmail.com"
+    }]
+  },
+  {
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "JohnMoehrke@gmail.com"
+    }]
+  }],
+  "description" : "DocumentReference types",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "valueSet" : ["https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS"]
+    },
+    {
+      "system" : "http://loinc.org",
+      "concept" : [{
+        "code" : "11524-6"
+      },
+      {
+        "code" : "18748-4"
+      }]
+    }]
+  }
+}

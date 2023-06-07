@@ -1,44 +1,25 @@
 {
   "resourceType" : "Bundle",
-  "id" : "22a5d3a0-a9af-47df-a6b4-54243998685a",
+  "id" : "b99e6f4e-9937-4a43-82ee-1dddedea75d4",
   "meta" : {
-    "lastUpdated" : "2023-05-04T14:24:58.363-05:00"
+    "lastUpdated" : "2023-06-07T11:47:17.740-05:00"
   },
   "type" : "collection",
   "entry" : [{
-    "fullUrl" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS",
+    "fullUrl" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS",
     "resource" : {
       "resourceType" : "ValueSet",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 2 concepts</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on Loinc v2.73</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-79381-0\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/79381-0/\">79381-0</a></td><td>http://loinc.org</td><td>Gastrointestinal pathogens panel - Stool by NAA with probe detection</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-60567-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/60567-5/\">60567-5</a></td><td>http://loinc.org</td><td>Comprehensive pathology report panel</td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 4 concepts</p><div style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\"><p>Expansion based on: </p><ul><li><a href=\"ValueSet-NoteTypeVS.html\">Known Note types v0.1.15-beta (ValueSet)</a></li><li>Loinc v2.74</li></ul></div><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-11505-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/11505-5/\">11505-5</a></td><td>http://loinc.org</td><td>Physician procedure note</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-18842-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>http://loinc.org</td><td>Discharge summary</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-11524-6\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/11524-6/\">11524-6</a></td><td>http://loinc.org</td><td>EKG study</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-18748-4\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/18748-4/\">18748-4</a></td><td>http://loinc.org</td><td>Diagnostic imaging study</td></tr></table></div>"
       },
-      "url" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS",
-      "version" : "0.1.14-beta",
-      "name" : "LabReportVS",
-      "title" : "Known Lab Report types",
+      "url" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS",
+      "version" : "0.1.15-beta",
+      "name" : "DocumentReferenceTypeVS",
+      "title" : "Known DocumentReference types",
       "status" : "active",
       "experimental" : false,
-      "date" : "2023-05-04T14:24:58-05:00",
-      "contact" : [{
-        "name" : "John Moehrke (himself)",
-        "telecom" : [{
-          "system" : "url",
-          "value" : "http://healthcaresecprivacy.blogspot.com"
-        },
-        {
-          "system" : "email",
-          "value" : "JohnMoehrke@gmail.com"
-        }]
-      },
-      {
-        "name" : "John Moehrke (himself)",
-        "telecom" : [{
-          "system" : "email",
-          "value" : "JohnMoehrke@gmail.com"
-        }]
-      }],
-      "description" : "Lab Report types",
+      "date" : "2023-06-07T11:47:17-05:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -46,8 +27,76 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:26e0251b-b590-4692-8492-e75a150bbd0b",
-        "timestamp" : "2023-05-04T14:27:58-05:00",
+        "identifier" : "urn:uuid:323ed9f0-ae4f-4860-9f6b-d4cfc21aadb6",
+        "timestamp" : "2023-06-07T11:50:08-05:00",
+        "total" : 4,
+        "parameter" : [{
+          "name" : "excludeNested",
+          "valueBoolean" : false
+        },
+        {
+          "name" : "version",
+          "valueUri" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS|0.1.15-beta"
+        },
+        {
+          "name" : "limitedExpansion",
+          "valueBoolean" : true
+        },
+        {
+          "name" : "version",
+          "valueUri" : "http://loinc.org|2.74"
+        },
+        {
+          "name" : "excludeNested",
+          "valueBoolean" : true
+        }],
+        "contains" : [{
+          "system" : "http://loinc.org",
+          "code" : "11505-5",
+          "display" : "Physician procedure note"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "18842-5",
+          "display" : "Discharge summary"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "11524-6",
+          "display" : "EKG study"
+        },
+        {
+          "system" : "http://loinc.org",
+          "code" : "18748-4",
+          "display" : "Diagnostic imaging study"
+        }]
+      }
+    }
+  },
+  {
+    "fullUrl" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS",
+    "resource" : {
+      "resourceType" : "ValueSet",
+      "text" : {
+        "status" : "generated",
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 2 concepts</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on Loinc v2.74</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-79381-0\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/79381-0/\">79381-0</a></td><td>http://loinc.org</td><td>Gastrointestinal pathogens panel - Stool by NAA with probe detection</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-60567-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/60567-5/\">60567-5</a></td><td>http://loinc.org</td><td>Comprehensive pathology report panel</td></tr></table></div>"
+      },
+      "url" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS",
+      "version" : "0.1.15-beta",
+      "name" : "LabReportVS",
+      "title" : "Known Lab Report types",
+      "status" : "active",
+      "experimental" : false,
+      "date" : "2023-06-07T11:47:17-05:00",
+      "jurisdiction" : [{
+        "coding" : [{
+          "system" : "urn:iso:std:iso:3166",
+          "code" : "US"
+        }]
+      }],
+      "expansion" : {
+        "identifier" : "urn:uuid:5722815b-cb40-4185-832b-04e19a2e0767",
+        "timestamp" : "2023-06-07T11:50:09-05:00",
         "total" : 2,
         "parameter" : [{
           "name" : "excludeNested",
@@ -59,7 +108,7 @@
         },
         {
           "name" : "version",
-          "valueUri" : "http://loinc.org|2.73"
+          "valueUri" : "http://loinc.org|2.74"
         }],
         "contains" : [{
           "system" : "http://loinc.org",
@@ -80,34 +129,15 @@
       "resourceType" : "ValueSet",
       "text" : {
         "status" : "generated",
-        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 3 concepts</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on Loinc v2.73</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-83320-2\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/83320-2/\">83320-2</a></td><td>http://loinc.org</td><td>Allergy and Immunology Adverse event note</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-11505-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/11505-5/\">11505-5</a></td><td>http://loinc.org</td><td>Physician procedure note</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-18842-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>http://loinc.org</td><td>Discharge summary</td></tr></table></div>"
+        "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set contains 2 concepts</p><p style=\"border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px\">Expansion based on Loinc v2.74</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>System</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-11505-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/11505-5/\">11505-5</a></td><td>http://loinc.org</td><td>Physician procedure note</td></tr><tr><td style=\"white-space:nowrap\"><a name=\"http---loinc.org-18842-5\"> </a>\u00a0\u00a0<a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>http://loinc.org</td><td>Discharge summary</td></tr></table></div>"
       },
       "url" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS",
-      "version" : "0.1.14-beta",
+      "version" : "0.1.15-beta",
       "name" : "NoteTypeVS",
       "title" : "Known Note types",
       "status" : "active",
       "experimental" : false,
-      "date" : "2023-05-04T14:24:58-05:00",
-      "contact" : [{
-        "name" : "John Moehrke (himself)",
-        "telecom" : [{
-          "system" : "url",
-          "value" : "http://healthcaresecprivacy.blogspot.com"
-        },
-        {
-          "system" : "email",
-          "value" : "JohnMoehrke@gmail.com"
-        }]
-      },
-      {
-        "name" : "John Moehrke (himself)",
-        "telecom" : [{
-          "system" : "email",
-          "value" : "JohnMoehrke@gmail.com"
-        }]
-      }],
-      "description" : "Note types",
+      "date" : "2023-06-07T11:47:17-05:00",
       "jurisdiction" : [{
         "coding" : [{
           "system" : "urn:iso:std:iso:3166",
@@ -115,9 +145,9 @@
         }]
       }],
       "expansion" : {
-        "identifier" : "urn:uuid:328beb0d-3428-4549-8e60-0769a94768d9",
-        "timestamp" : "2023-05-04T14:27:58-05:00",
-        "total" : 3,
+        "identifier" : "urn:uuid:97ec7366-0ebb-452a-a620-5ae92056efe9",
+        "timestamp" : "2023-06-07T11:50:09-05:00",
+        "total" : 2,
         "parameter" : [{
           "name" : "excludeNested",
           "valueBoolean" : false
@@ -128,14 +158,9 @@
         },
         {
           "name" : "version",
-          "valueUri" : "http://loinc.org|2.73"
+          "valueUri" : "http://loinc.org|2.74"
         }],
         "contains" : [{
-          "system" : "http://loinc.org",
-          "code" : "83320-2",
-          "display" : "Allergy and Immunology Adverse event note"
-        },
-        {
           "system" : "http://loinc.org",
           "code" : "11505-5",
           "display" : "Physician procedure note"

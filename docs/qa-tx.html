@@ -1,2 +1,32 @@
 <html><head><title>Terminology Server Log</title></head><body><h2>Terminology Server Log</h2>
+
+--- 1 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/CodeSystem/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://service.via.med.va.gov/ObservationTypeTO","code":"ABDMONAL GIRTH"}},{"name":"displayLanguage","valueString":"en-US"},{"name":"displayLanguage","valueString":"en"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:563
+content-type:application/fhir+json
+date:Wed, 07 Jun 2023 16:47:24 GMT
+last-modified:Wed, 07 Jun 2023 16:47:24 GMT
+pragma:no-cache
+server:nginx
+x-request-id:19-142595
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "x-caused-by-unknown-system","valueUri" : "http://service.via.med.va.gov/ObservationTypeTO"},{"name" : "message","valueString" : "The CodeSystem http://service.via.med.va.gov/ObservationTypeTO is unknown"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"text" : "The CodeSystem http://service.via.med.va.gov/ObservationTypeTO is unknown"},"location" : ["Coding.system"]}]}}]}
 </head></html>
