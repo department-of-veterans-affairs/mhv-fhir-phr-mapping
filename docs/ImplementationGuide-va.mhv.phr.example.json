@@ -11,14 +11,14 @@
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 0
+    "valueInteger" : 1
   }],
   "url" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example",
   "version" : "0.1.16-beta",
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-06-13T11:38:47-05:00",
+  "date" : "2023-06-13T14:37:26-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -1894,6 +1894,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/ConditionVerificationVS"
+      },
+      "name" : "Subset of condition verification status",
+      "description" : "not all of them",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -2104,7 +2116,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.condition"
       },
       "name" : "VA MHV PHR problems",
-      "description" : "A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- Should be based on US-Core for Condition Resource\n- Presume we will not expose those that are ProblemTO.removed = true\n\nTODO:\n- not clear if the ProblemTO.location is describing, is it evidence?\n- what are the other values for ProblemTO.status\n- not clear what ProblemTO.accuity.tag is\n- not clear what ProblemTo.facility is",
+      "description" : "A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.",
       "exampleBoolean" : false
     },
     {

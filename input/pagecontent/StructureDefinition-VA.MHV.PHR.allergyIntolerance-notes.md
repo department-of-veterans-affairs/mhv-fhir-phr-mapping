@@ -5,18 +5,17 @@
 - a `clinicalStatus` of the allergy (e.g.,active or resolved)
   - Given that intoleranceCondition.status is unclear; will presume we only see `active`
   - set to `active`
-  - if we receive indications of not active, we should update our data to remove (or set `inactive`) the AllergyIntolerance if we had previously recorded it
+  - if we receive indications of not active, we should update our data to remove (or set `inactive` or `entered-in-error`) the AllergyIntolerance if we had previously recorded it
 - a `code` which tells you what the patient is allergic to
   - at least `code.text`
   - would be good to have a coding, but there does not appear to be any source for that
-  - may be a `code.coding.display` when the allergy is to a medication and we have a drug indicated, but it is not coded so is only recorded as a display.
+  - presume if `drugClass` is indicated then the `category` should be #medication
+  - `drugClass.code.displayText` -> `.code.coding.display`
 - `category` derived from `.allergyType`
   - `D` -> #medication
   - `F` -> #food
   - `O` -> #environment
   - multiple codes are multiple category - `DF` -> both #medication and #food
-- `reaction.manifestation` may have `.text`
-  - may have `.coding.code` but no system is known
 
 ##### Mapping Concerns
 

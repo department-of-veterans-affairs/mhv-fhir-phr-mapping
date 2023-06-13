@@ -17,14 +17,14 @@
      fhir:value [ fhir:v "trial-use" ]
   ] [
      fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "0"^^xsd:integer ]
+     fhir:value [ fhir:v "1"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI] ; # 
   fhir:version [ fhir:v "0.1.16-beta"] ; # 
   fhir:name [ fhir:v "MHVPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-06-13T11:38:47-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-06-13T14:37:26-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
@@ -1989,6 +1989,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/ValueSet/ConditionVerificationVS> ;
+         fhir:reference [ fhir:v "ValueSet/ConditionVerificationVS" ]
+       ] ;
+       fhir:name [ fhir:v "Subset of condition verification status" ] ;
+       fhir:description [ fhir:v "not all of them" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -2200,7 +2212,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.condition" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR problems" ] ;
-       fhir:description [ fhir:v "A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- Should be based on US-Core for Condition Resource\n- Presume we will not expose those that are ProblemTO.removed = true\n\nTODO:\n- not clear if the ProblemTO.location is describing, is it evidence?\n- what are the other values for ProblemTO.status\n- not clear what ProblemTO.accuity.tag is\n- not clear what ProblemTo.facility is" ] ;
+       fhir:description [ fhir:v "A profile on the Condition resource for MHV PHR exposing Problems using FHIR API." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

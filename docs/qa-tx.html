@@ -22,11 +22,41 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:563
 content-type:application/fhir+json
-date:Tue, 13 Jun 2023 16:39:04 GMT
-last-modified:Tue, 13 Jun 2023 16:39:04 GMT
+date:Tue, 13 Jun 2023 19:37:39 GMT
+last-modified:Tue, 13 Jun 2023 19:37:38 GMT
 pragma:no-cache
 server:nginx
-x-request-id:23-56927
+x-request-id:23-79569
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "x-caused-by-unknown-system","valueUri" : "http://service.via.med.va.gov/ObservationTypeTO"},{"name" : "message","valueString" : "The CodeSystem http://service.via.med.va.gov/ObservationTypeTO is unknown"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"text" : "The CodeSystem http://service.via.med.va.gov/ObservationTypeTO is unknown"},"location" : ["Coding.system"]}]}}]}
+
+--- 2 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$expand?_limit=1000&_incomplete=true HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"},{"name":"includeDefinition","valueBoolean":false},{"name":"excludeNested","valueBoolean":true},{"name":"tx-resource","resource":{"resourceType":"CodeSystem","id":"condition-ver-status","meta":{"lastUpdated":"2020-04-09T15:10:28.568-06:00"},"text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system http://terminology.hl7.org/CodeSystem/condition-ver-status defines the following codes:</p><table class=\"codes\"><tr><td><b>Lvl</b></td><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td>1</td><td style=\"white-space:nowrap\">unconfirmed<a name=\"condition-ver-status-unconfirmed\"> </a></td><td>Unconfirmed</td><td>There is not sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">\u00a0\u00a0provisional<a name=\"condition-ver-status-provisional\"> </a></td><td>Provisional</td><td>This is a tentative diagnosis - still a candidate that is under consideration.</td></tr><tr><td>2</td><td style=\"white-space:nowrap\">\u00a0\u00a0differential<a name=\"condition-ver-status-differential\"> </a></td><td>Differential</td><td>One of a set of potential (and typically mutually exclusive) diagnoses asserted to further guide the diagnostic process and preliminary treatment.</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">confirmed<a name=\"condition-ver-status-confirmed\"> </a></td><td>Confirmed</td><td>There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">refuted<a name=\"condition-ver-status-refuted\"> </a></td><td>Refuted</td><td>This condition has been ruled out by subsequent diagnostic and clinical evidence.</td></tr><tr><td>1</td><td style=\"white-space:nowrap\">entered-in-error<a name=\"condition-ver-status-entered-in-error\"> </a></td><td>Entered in Error</td><td>The statement was entered in error and is not valid.</td></tr></table></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-wg","valueCode":"pc"},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use"},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":3}],"url":"http://terminology.hl7.org/CodeSystem/condition-ver-status","identifier":[{"system":"urn:ietf:rfc:3986","value":"urn:oid:2.16.840.1.113883.4.642.1.1075"}],"version":"0.5.0","name":"ConditionVerificationStatus","title":"ConditionVerificationStatus","status":"draft","experimental":false,"date":"2020-04-09T21:10:28+00:00","publisher":"HL7 (FHIR Project)","contact":[{"telecom":[{"system":"url","value":"http://hl7.org/fhir"},{"system":"email","value":"fhir@lists.hl7.org"}]}],"description":"The verification status to support or decline the clinical status of the condition or diagnosis.","caseSensitive":true,"valueSet":"http://terminology.hl7.org/ValueSet/condition-ver-status","content":"complete","concept":[{"code":"unconfirmed","display":"Unconfirmed","definition":"There is not sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.","concept":[{"code":"provisional","display":"Provisional","definition":"This is a tentative diagnosis - still a candidate that is under consideration."},{"code":"differential","display":"Differential","definition":"One of a set of potential (and typically mutually exclusive) diagnoses asserted to further guide the diagnostic process and preliminary treatment."}]},{"code":"confirmed","display":"Confirmed","definition":"There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition."},{"code":"refuted","display":"Refuted","definition":"This condition has been ruled out by subsequent diagnostic and clinical evidence."},{"code":"entered-in-error","display":"Entered in Error","definition":"The statement was entered in error and is not valid."}]}},{"name":"cache-id","valueId":"e6065020-680a-497a-a61f-95e5386523d8"},{"name":"valueSet","resource":{"resourceType":"ValueSet","status":"active","compose":{"inactive":true,"include":[{"system":"http://terminology.hl7.org/CodeSystem/condition-ver-status","concept":[{"code":"confirmed"},{"code":"unconfirmed"}]}]}}},{"name":"_limit","valueString":"1000"},{"name":"_incomplete","valueString":"true"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:656
+content-type:application/fhir+json
+date:Tue, 13 Jun 2023 19:37:48 GMT
+last-modified:Tue, 13 Jun 2023 19:37:48 GMT
+pragma:no-cache
+server:nginx
+x-request-id:23-79608
+
+{"resourceType" : "ValueSet","status" : "active","expansion" : {"identifier" : "urn:uuid:4d33d5f0-1730-4a74-8e7d-af36efe97a8c","timestamp" : "2023-06-13T19:37:48.536Z","total" : 2,"parameter" : [{"name" : "limitedExpansion","valueBoolean" : true},{"name" : "excludeNested","valueBoolean" : true},{"name" : "version","valueUri" : "http://terminology.hl7.org/CodeSystem/condition-ver-status|0.5.0"}],"contains" : [{"system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status","code" : "confirmed","display" : "Confirmed"},{"system" : "http://terminology.hl7.org/CodeSystem/condition-ver-status","code" : "unconfirmed","display" : "Unconfirmed"}]}}
 </head></html>

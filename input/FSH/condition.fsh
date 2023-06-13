@@ -8,16 +8,6 @@ Id:             VA.MHV.PHR.condition
 Title:          "VA MHV PHR problems"
 Description:    """
 A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.
-
-- The mock example maps best to VIA_v4.0.7_uat.wsdl. 
-- Should be based on US-Core for Condition Resource
-- Presume we will not expose those that are ProblemTO.removed = true
-
-TODO:
-- not clear if the ProblemTO.location is describing, is it evidence?
-- what are the other values for ProblemTO.status
-- not clear what ProblemTO.accuity.tag is
-- not clear what ProblemTo.facility is
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -31,17 +21,45 @@ TODO:
 * code 1..1 MS
 * code.text 1..1 MS
 * code.coding 1..1 MS
+// already limited to us-core patient * subject only Reference(Patient)
+* asserter MS
+* asserter only Reference(Practitioner)
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
+* verificationStatus from ConditionVerificationVS (required)
+* note MS
+* recordedDate MS
+* onsetDateTime MS
+* abatementDateTime MS
+* evidence.detail MS
+* category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
+* severity 0..0
+* bodySite 0..0
+* encounter 0..0
+* onset[x] only dateTime
+* abatement[x] only dateTime
+* recorder 0..0
+* stage 0..0
+* evidence.code 0..0
+
+
+ValueSet: ConditionVerificationVS
+Title: "Subset of condition verification status"
+Description: "not all of them"
+* ^experimental = false
+* http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
+* http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
+
 
 
 Mapping: Condition-Mapping
 Source:	MHVcondition
 Target: "ProblemTO"
 Title: "VDIF to MHV-PHR"
-* -> "ProblemTO" "MHV PHR FHIR API"
+* -> "ProblemTO"
 * identifier -> "{StationNbr} and {ProblemTO.id}"
-* code -> "ProblemTO.type.name"
+* code.text -> "ProblemTO.type.name"
 * asserter -> "GetPractitioner(ProblemTO.observer)"
-* clinicalStatus -> "ProblemTO.status | !ProblemTO.removed ? `#active` : todo"
+* clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo"
 * verificationStatus -> "ProblemTO.verified ? `#confirmed` : `#unconfirmed`"
 * note -> "ProblemTO.comments + ProblemTO.comment"
 * recordedDate -> "ProblemTO.modifiedDate"

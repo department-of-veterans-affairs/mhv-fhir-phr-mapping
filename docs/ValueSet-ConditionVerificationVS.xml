@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="ConditionVerificationVS"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <a href="http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html"><code>http://terminology.hl7.org/CodeSystem/condition-ver-status</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html#condition-ver-status-confirmed">confirmed</a></td><td>Confirmed</td><td>There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</td></tr><tr><td><a href="http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html#condition-ver-status-unconfirmed">unconfirmed</a></td><td>Unconfirmed</td><td>There is not sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</td></tr></table></li></ul></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/ConditionVerificationVS"/>
+  <version value="0.1.16-beta"/>
+  <name value="ConditionVerificationVS"/>
+  <title value="Subset of condition verification status"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2023-06-13T14:37:26-05:00"/>
+  <publisher value="John Moehrke (himself)"/>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://healthcaresecprivacy.blogspot.com"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <description value="not all of them"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <compose>
+    <include>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <concept>
+        <code value="confirmed"/>
+      </concept>
+      <concept>
+        <code value="unconfirmed"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

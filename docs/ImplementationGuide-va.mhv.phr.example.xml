@@ -10,14 +10,14 @@
     <valueCode value="trial-use"/>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-    <valueInteger value="0"/>
+    <valueInteger value="1"/>
   </extension>
   <url value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
   <version value="0.1.16-beta"/>
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-06-13T11:38:47-05:00"/>
+  <date value="2023-06-13T14:37:26-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -1585,6 +1585,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ConditionVerificationVS"/>
+      </reference>
+      <name value="Subset of condition verification status"/>
+      <description value="not all of them"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -1778,7 +1789,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.condition"/>
       </reference>
       <name value="VA MHV PHR problems"/>
-      <description value="A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.&#xA;&#xA;- The mock example maps best to VIA_v4.0.7_uat.wsdl. &#xA;- Should be based on US-Core for Condition Resource&#xA;- Presume we will not expose those that are ProblemTO.removed = true&#xA;&#xA;TODO:&#xA;- not clear if the ProblemTO.location is describing, is it evidence?&#xA;- what are the other values for ProblemTO.status&#xA;- not clear what ProblemTO.accuity.tag is&#xA;- not clear what ProblemTo.facility is"/>
+      <description value="A profile on the Condition resource for MHV PHR exposing Problems using FHIR API."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

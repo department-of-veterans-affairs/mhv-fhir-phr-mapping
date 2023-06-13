@@ -735,20 +735,6 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
                </td>
                <td>
 <p>A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.</p>
-
-<ul>
-  <li>The mock example maps best to VIA_v4.0.7_uat.wsdl.</li>
-  <li>Should be based on US-Core for Condition Resource</li>
-  <li>Presume we will not expose those that are ProblemTO.removed = true</li>
-</ul>
-
-<p>TODO:</p>
-<ul>
-  <li>not clear if the ProblemTO.location is describing, is it evidence?</li>
-  <li>what are the other values for ProblemTO.status</li>
-  <li>not clear what ProblemTO.accuity.tag is</li>
-  <li>not clear what ProblemTo.facility is</li>
-</ul>
 </td>
             </tr>
             <tr>
@@ -918,6 +904,15 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
                <td style="column-width:30%">
                   <a href="ValueSet-AllergyCategoryVS.html"
                      title="ValueSet/AllergyCategoryVS">Subset of allergy intolerance category</a>
+               </td>
+               <td>
+<p>not all of them</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-ConditionVerificationVS.html"
+                     title="ValueSet/ConditionVerificationVS">Subset of condition verification status</a>
                </td>
                <td>
 <p>not all of them</p>
@@ -1721,7 +1716,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 11:38-0500">2023-06-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 14:37-0500">2023-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

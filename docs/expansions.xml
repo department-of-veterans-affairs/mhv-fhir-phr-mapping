@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="1f67a405-8311-4e9e-a88e-fe1e46bb653f"/>
+  <id value="73555263-3ab4-44a8-88af-13f60f750f31"/>
   <meta>
-    <lastUpdated value="2023-06-13T11:38:47.449-05:00"/>
+    <lastUpdated value="2023-06-13T14:37:26.508-05:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -83,7 +83,7 @@
         <title value="Subset of allergy intolerance category"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-06-13T11:38:47-05:00"/>
+        <date value="2023-06-13T14:37:26-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -91,8 +91,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:832845ac-d28b-4835-b16f-420639d7c1f5"/>
-          <timestamp value="2023-06-13T11:41:42-05:00"/>
+          <identifier value="urn:uuid:42137ed3-5553-4c05-be6f-5f14a328c59d"/>
+          <timestamp value="2023-06-13T14:40:13-05:00"/>
           <total value="3"/>
           <parameter>
             <name value="excludeNested"/>
@@ -116,6 +116,102 @@
             <system value="http://hl7.org/fhir/allergy-intolerance-category"/>
             <code value="environment"/>
             <display value="Environment"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/ConditionVerificationVS"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 2 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus v0.5.0 (CodeSystem)</a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---terminology.hl7.org-CodeSystem-condition-ver-status-confirmed"> </a>  
+                  <a href="http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html#condition-ver-status-confirmed">confirmed</a>
+                </td>
+                <td>http://terminology.hl7.org/CodeSystem/condition-ver-status</td>
+                <td>Confirmed</td>
+                <td>
+                  <div>
+                    <p>There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</p>
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---terminology.hl7.org-CodeSystem-condition-ver-status-unconfirmed"> </a>  
+                  <a href="http://terminology.hl7.org/3.1.0/CodeSystem-condition-ver-status.html#condition-ver-status-unconfirmed">unconfirmed</a>
+                </td>
+                <td>http://terminology.hl7.org/CodeSystem/condition-ver-status</td>
+                <td>Unconfirmed</td>
+                <td>
+                  <div>
+                    <p>There is not sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</p>
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/ConditionVerificationVS"/>
+        <version value="0.1.16-beta"/>
+        <name value="ConditionVerificationVS"/>
+        <title value="Subset of condition verification status"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2023-06-13T14:37:26-05:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:ab5746f0-24f3-4690-999d-06a5812c8f91"/>
+          <timestamp value="2023-06-13T14:40:13-05:00"/>
+          <total value="2"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://terminology.hl7.org/CodeSystem/condition-ver-status|0.5.0"/>
+          </parameter>
+          <contains>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="confirmed"/>
+            <display value="Confirmed"/>
+          </contains>
+          <contains>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+            <code value="unconfirmed"/>
+            <display value="Unconfirmed"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -191,7 +287,7 @@
         <title value="Known DocumentReference types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-06-13T11:38:47-05:00"/>
+        <date value="2023-06-13T14:37:26-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -199,8 +295,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:fbe6af4f-4ceb-4923-8768-60eceb53c25a"/>
-          <timestamp value="2023-06-13T11:41:43-05:00"/>
+          <identifier value="urn:uuid:2c401326-6852-4ead-a85c-97e249e26b7b"/>
+          <timestamp value="2023-06-13T14:40:14-05:00"/>
           <total value="4"/>
           <parameter>
             <name value="excludeNested"/>
@@ -292,7 +388,7 @@
         <title value="Known Lab Report types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-06-13T11:38:47-05:00"/>
+        <date value="2023-06-13T14:37:26-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -300,8 +396,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:566fbb10-c00b-4765-b33a-b3c9fb616113"/>
-          <timestamp value="2023-06-13T11:41:43-05:00"/>
+          <identifier value="urn:uuid:3cd2e84f-c8be-4b85-b2ba-7d5af1df9b6f"/>
+          <timestamp value="2023-06-13T14:40:14-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
@@ -375,7 +471,7 @@
         <title value="Known Note types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-06-13T11:38:47-05:00"/>
+        <date value="2023-06-13T14:37:26-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -383,8 +479,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:e9727a52-18e0-4656-b473-e1900c121cff"/>
-          <timestamp value="2023-06-13T11:41:43-05:00"/>
+          <identifier value="urn:uuid:bf67143e-e2ba-4305-80b4-e5aa4c76b7ec"/>
+          <timestamp value="2023-06-13T14:40:14-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>

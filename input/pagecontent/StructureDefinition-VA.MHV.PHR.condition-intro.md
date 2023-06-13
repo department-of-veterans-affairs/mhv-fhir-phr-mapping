@@ -1,0 +1,17 @@
+
+- based on US-Core for Condition Resource profile
+- `subject` is a reference to this patient
+- `identifier` will hold the record identifier from Vista
+- `category` will be `problem-list-item`
+- `code` is the condition, problem or diagnosis
+  - `code.coding` may be populated with an ICD-9 code
+- a `clinicalStatus` of `active`
+- `asserter` the clinician
+- `verificationStatus` only `confirmed` or `unconfirmed`
+- `note` may have notes
+- `recordedDate` indicate last modified date on Vista
+- `onsetDateTime` will hold the onsetDate
+- `abatementDateTime` may hold the abatement date
+- `evidence.detail` may have hospital location detail
+- `meta.lastUpdated` will indicate the last time the resource was updated
+- no other elements are populated
