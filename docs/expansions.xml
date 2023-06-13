@@ -1,11 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="b99e6f4e-9937-4a43-82ee-1dddedea75d4"/>
+  <id value="1f67a405-8311-4e9e-a88e-fe1e46bb653f"/>
   <meta>
-    <lastUpdated value="2023-06-07T11:47:17.740-05:00"/>
+    <lastUpdated value="2023-06-13T11:38:47.449-05:00"/>
   </meta>
   <type value="collection"/>
+  <entry>
+    <fullUrl value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/AllergyCategoryVS"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 3 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html">AllergyIntoleranceCategory v4.0.1 (CodeSystem)</a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-allergy-intolerance-category-food"> </a>  
+                  <a href="http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html#allergy-intolerance-category-food">food</a>
+                </td>
+                <td>http://hl7.org/fhir/allergy-intolerance-category</td>
+                <td>Food</td>
+                <td>
+                  <div>
+                    <p>Any substance consumed to provide nutritional support for the body.</p>
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-allergy-intolerance-category-medication"> </a>  
+                  <a href="http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html#allergy-intolerance-category-medication">medication</a>
+                </td>
+                <td>http://hl7.org/fhir/allergy-intolerance-category</td>
+                <td>Medication</td>
+                <td>
+                  <div>
+                    <p>Substances administered to achieve a physiological effect.</p>
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---hl7.org-fhir-allergy-intolerance-category-environment"> </a>  
+                  <a href="http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html#allergy-intolerance-category-environment">environment</a>
+                </td>
+                <td>http://hl7.org/fhir/allergy-intolerance-category</td>
+                <td>Environment</td>
+                <td>
+                  <div>
+                    <p>Any substances that are encountered in the environment, including any substance not already classified as food, medication, or biologic.</p>
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/AllergyCategoryVS"/>
+        <version value="0.1.16-beta"/>
+        <name value="AllergyCategoryVS"/>
+        <title value="Subset of allergy intolerance category"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2023-06-13T11:38:47-05:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:832845ac-d28b-4835-b16f-420639d7c1f5"/>
+          <timestamp value="2023-06-13T11:41:42-05:00"/>
+          <total value="3"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://hl7.org/fhir/allergy-intolerance-category|4.0.1"/>
+          </parameter>
+          <contains>
+            <system value="http://hl7.org/fhir/allergy-intolerance-category"/>
+            <code value="food"/>
+            <display value="Food"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/allergy-intolerance-category"/>
+            <code value="medication"/>
+            <display value="Medication"/>
+          </contains>
+          <contains>
+            <system value="http://hl7.org/fhir/allergy-intolerance-category"/>
+            <code value="environment"/>
+            <display value="Environment"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
   <entry>
     <fullUrl value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS"/>
     <resource>
@@ -18,7 +133,7 @@
               <p>Expansion based on: </p>
               <ul>
                 <li>
-                  <a href="ValueSet-NoteTypeVS.html">Known Note types v0.1.15-beta (ValueSet)</a>
+                  <a href="ValueSet-NoteTypeVS.html">Known Note types v0.1.16-beta (ValueSet)</a>
                 </li>
                 <li>Loinc v2.74</li>
               </ul>
@@ -71,12 +186,12 @@
           </div>
         </text>
         <url value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS"/>
-        <version value="0.1.15-beta"/>
+        <version value="0.1.16-beta"/>
         <name value="DocumentReferenceTypeVS"/>
         <title value="Known DocumentReference types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-06-07T11:47:17-05:00"/>
+        <date value="2023-06-13T11:38:47-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -84,8 +199,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:323ed9f0-ae4f-4860-9f6b-d4cfc21aadb6"/>
-          <timestamp value="2023-06-07T11:50:08-05:00"/>
+          <identifier value="urn:uuid:fbe6af4f-4ceb-4923-8768-60eceb53c25a"/>
+          <timestamp value="2023-06-13T11:41:43-05:00"/>
           <total value="4"/>
           <parameter>
             <name value="excludeNested"/>
@@ -93,7 +208,7 @@
           </parameter>
           <parameter>
             <name value="version"/>
-            <valueUri value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS|0.1.15-beta"/>
+            <valueUri value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS|0.1.16-beta"/>
           </parameter>
           <parameter>
             <name value="limitedExpansion"/>
@@ -172,12 +287,12 @@
           </div>
         </text>
         <url value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS"/>
-        <version value="0.1.15-beta"/>
+        <version value="0.1.16-beta"/>
         <name value="LabReportVS"/>
         <title value="Known Lab Report types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-06-07T11:47:17-05:00"/>
+        <date value="2023-06-13T11:38:47-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -185,8 +300,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:5722815b-cb40-4185-832b-04e19a2e0767"/>
-          <timestamp value="2023-06-07T11:50:09-05:00"/>
+          <identifier value="urn:uuid:566fbb10-c00b-4765-b33a-b3c9fb616113"/>
+          <timestamp value="2023-06-13T11:41:43-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
@@ -255,12 +370,12 @@
           </div>
         </text>
         <url value="https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS"/>
-        <version value="0.1.15-beta"/>
+        <version value="0.1.16-beta"/>
         <name value="NoteTypeVS"/>
         <title value="Known Note types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-06-07T11:47:17-05:00"/>
+        <date value="2023-06-13T11:38:47-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -268,8 +383,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:97ec7366-0ebb-452a-a620-5ae92056efe9"/>
-          <timestamp value="2023-06-07T11:50:09-05:00"/>
+          <identifier value="urn:uuid:e9727a52-18e0-4656-b473-e1900c121cff"/>
+          <timestamp value="2023-06-13T11:41:43-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>

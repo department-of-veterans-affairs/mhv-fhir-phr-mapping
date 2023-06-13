@@ -10,6 +10,17 @@
     single schematron that validates contained resources (if you have any) 
   -->
   <sch:pattern>
+    <sch:title>f:AllergyIntolerance</sch:title>
+    <sch:rule context="f:AllergyIntolerance">
+      <sch:assert test="count(f:verificationStatus) &lt;= 0">verificationStatus: maximum cardinality of 'verificationStatus' is 0</sch:assert>
+      <sch:assert test="count(f:criticality) &lt;= 0">criticality: maximum cardinality of 'criticality' is 0</sch:assert>
+      <sch:assert test="count(f:encounter) &lt;= 0">encounter: maximum cardinality of 'encounter' is 0</sch:assert>
+      <sch:assert test="count(f:recordedDate) &lt;= 0">recordedDate: maximum cardinality of 'recordedDate' is 0</sch:assert>
+      <sch:assert test="count(f:asserter) &lt;= 0">asserter: maximum cardinality of 'asserter' is 0</sch:assert>
+      <sch:assert test="count(f:lastOccurrence) &lt;= 0">lastOccurrence: maximum cardinality of 'lastOccurrence' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:AllergyIntolerance/f:meta</sch:title>
     <sch:rule context="f:AllergyIntolerance/f:meta">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
@@ -68,6 +79,7 @@
       <sch:assert test="count(f:description) &lt;= 0">description: maximum cardinality of 'description' is 0</sch:assert>
       <sch:assert test="count(f:onset) &lt;= 0">onset: maximum cardinality of 'onset' is 0</sch:assert>
       <sch:assert test="count(f:severity) &lt;= 0">severity: maximum cardinality of 'severity' is 0</sch:assert>
+      <sch:assert test="count(f:exposureRoute) &lt;= 0">exposureRoute: maximum cardinality of 'exposureRoute' is 0</sch:assert>
       <sch:assert test="count(f:note) &lt;= 0">note: maximum cardinality of 'note' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>

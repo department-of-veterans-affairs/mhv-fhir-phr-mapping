@@ -1,0 +1,75 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "AllergyCategoryVS",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html\"><code>http://hl7.org/fhir/allergy-intolerance-category</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html#allergy-intolerance-category-food\">food</a></td><td>Food</td><td>Any substance consumed to provide nutritional support for the body.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html#allergy-intolerance-category-medication\">medication</a></td><td>Medication</td><td>Substances administered to achieve a physiological effect.</td></tr><tr><td><a href=\"http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html#allergy-intolerance-category-environment\">environment</a></td><td>Environment</td><td>Any substances that are encountered in the environment, including any substance not already classified as food, medication, or biologic.</td></tr></table></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 0,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+      }]
+    }
+  }],
+  "url" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/AllergyCategoryVS",
+  "version" : "0.1.16-beta",
+  "name" : "AllergyCategoryVS",
+  "title" : "Subset of allergy intolerance category",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-06-13T11:38:47-05:00",
+  "publisher" : "John Moehrke (himself)",
+  "contact" : [{
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://healthcaresecprivacy.blogspot.com"
+    },
+    {
+      "system" : "email",
+      "value" : "JohnMoehrke@gmail.com"
+    }]
+  },
+  {
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "JohnMoehrke@gmail.com"
+    }]
+  }],
+  "description" : "not all of them",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://hl7.org/fhir/allergy-intolerance-category",
+      "concept" : [{
+        "code" : "food"
+      },
+      {
+        "code" : "medication"
+      },
+      {
+        "code" : "environment"
+      }]
+    }]
+  }
+}

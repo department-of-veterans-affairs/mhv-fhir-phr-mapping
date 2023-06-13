@@ -22,9 +22,9 @@ Note that these resources are used purely to provide linkage, they are minimally
 
 ### mapping Clinical Resources
 
-This section is dedicated to instructions on how MHV will transition the data we receive into FHIR format. 
+This section is dedicated to instructions on how MHV will transition the data we receive into FHIR format.
 
-- [Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html)
+- [Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html#notes)
   - [Mappings from VHIM Allergy](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-vhim-allergy-to-mhv-phr-intolerancecondition)
   - [Examples](StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html)
 - [Chem-Hem (CH) Diagnostic Report](StructureDefinition-VA.MHV.PHR.chReport.html) 
@@ -61,25 +61,6 @@ This section is dedicated to instructions on how MHV will transition the data we
   - most [examples are within this Bundle](https://johnmoehrke.github.io/MHV-PHR/Bundle-images.html), and thus not individually exposed.
 - [Vitals](vitals.html)
 
-### FHIR API
-
-This section is focused on use of the FHIR API. The FHIR API is made up of the data that is mapped. Thus the above is useful, but not sufficient as an API definition.
-
-- [Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html)
-  - [Examples](StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html)
-- [Conditions](StructureDefinition-VA.MHV.PHR.condition.html)
-  - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
-- [DiagnosticReport](StructureDefinition-VA.MHV.diagnosticReport.html) shows all of the DiagnosticReport. Including Microbiology, Pathology, and Chem-Hem.
-  - [Microbiology and Pathology Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
-  - [Chem-Hem Examples](StructureDefinition-VA.MHV.PHR.chReport-examples.html)
-- [DocumentReference](StructureDefinition-VA.MHV.documentReference.html) shows all uses of DocumentReference. Including Notes, Discharge Summary, EKG, and Imaging.
-  - [Note Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
-    - Clinical Notes, Discharge Summary
-  - [ECG Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
-  - [Imaging Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
-- [Immunization](StructureDefinition-VA.MHV.PHR.immunization.html)
-  - [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
-- [Vitals](vitals.html)
 
 #### in progress
 

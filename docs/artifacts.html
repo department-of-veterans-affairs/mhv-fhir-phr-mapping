@@ -50,8 +50,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9"}
-    h3,h4,h5,h6{--heading-prefix:"9.0"}</style>
+    <style type="text/css">h2{--heading-prefix:"10"}
+    h3,h4,h5,h6{--heading-prefix:"10.0"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.15-beta - ci-build
+            <span style="display:inline-block;">0.1.16-beta - ci-build
 
 
 
@@ -99,13 +99,16 @@
   <li>
     <a href="index.html">Home</a>
   </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="background.html">Introduction</a>
+        <a href="background.html">Vista Mapping</a>
       </li>
       <li>
         <a href="utility.html">Utility</a>
@@ -169,7 +172,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.15-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.16-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -295,52 +298,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                </td>
                <td>
 <p>A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.</p>
-
-<ul>
-  <li>The <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml">mock example</a> maps to <a href="https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd">intoleranceConditions</a> schema.</li>
-  <li>Should be based on US-Core for AllergyIntolerance Resource profile</li>
-  <li>a <code class="language-plaintext highlighter-rouge">clinicalStatus</code> of the allergy (e.g.,active or resolved)
-    <ul>
-      <li>Given that intoleranceCondition.status is unclear; will presume we only see <code class="language-plaintext highlighter-rouge">active</code></li>
-      <li>set to <code class="language-plaintext highlighter-rouge">active</code></li>
-    </ul>
-  </li>
-  <li>a <code class="language-plaintext highlighter-rouge">code</code> which tells you what the patient is allergic to
-    <ul>
-      <li>at least <code class="language-plaintext highlighter-rouge">code.text</code></li>
-      <li>would be good to have a coding, but there does not appear to be any source for that</li>
-    </ul>
-  </li>
-  <li>a patient</li>
-  <li><code class="language-plaintext highlighter-rouge">category</code> derived from <code class="language-plaintext highlighter-rouge">.allergyType</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">D</code> -&gt; #medication</li>
-      <li><code class="language-plaintext highlighter-rouge">F</code> -&gt; #food</li>
-      <li><code class="language-plaintext highlighter-rouge">O</code> -&gt; #environment</li>
-      <li>multiple codes are multiple category - <code class="language-plaintext highlighter-rouge">DF</code> -&gt; both #medication and #food</li>
-    </ul>
-  </li>
-  <li>presume if <code class="language-plaintext highlighter-rouge">drugClass</code> is indicated then the <code class="language-plaintext highlighter-rouge">category</code> should be #medication
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">drugClass.code.displayText</code> -&gt; <code class="language-plaintext highlighter-rouge">.code.coding.display</code></li>
-    </ul>
-  </li>
-</ul>
-
-<p>Notes:</p>
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">facilityIdentifier</code> might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.</li>
-  <li>no clear place to record <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code></li>
-  <li>no clear handling of <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>
-    <ul>
-      <li>mock data = 4500978/OBSERVED, 4500975/HISTORICAL</li>
-      <li>this might be FHIR <code class="language-plaintext highlighter-rouge">.verificationStatus</code>, but we must fill that element one of the codes (unconfirmed, confirmed, refuted, or entered-in-error)</li>
-      <li>could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)</li>
-      <li>or could define an extension if this is needed</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">reaction.reaction.code</code> seems to be a number, but I can’t find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
-</ul>
 </td>
             </tr>
             <tr>
@@ -955,6 +912,15 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
                </td>
                <td>
 <p>Note types</p>
+</td>
+            </tr>
+            <tr>
+               <td style="column-width:30%">
+                  <a href="ValueSet-AllergyCategoryVS.html"
+                     title="ValueSet/AllergyCategoryVS">Subset of allergy intolerance category</a>
+               </td>
+               <td>
+<p>not all of them</p>
 </td>
             </tr>
          </tbody>
@@ -1755,7 +1721,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.15-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jun 7, 2023 11:47-0500">2023-06-07</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 11:38-0500">2023-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

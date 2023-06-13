@@ -1,0 +1,18 @@
+
+- based on US-Core for AllergyIntolerance Resource profile
+- `patient` is a reference to this patient
+- a `clinicalStatus` of `active`
+- a `code` which tells you what the patient is allergic to
+  - at least `code.text`
+  - may be a `code.coding.display` when the allergy is to a medication and we have a drug indicated, but it is not coded so is only recorded as a display.
+- presume if `drugClass` is indicated then the `category` should be #medication
+  - `drugClass.code.displayText` -> `.code.coding.display`
+- `category` only `medication`, `food`, and/or `environment`
+- `identifier` will hold the record identifier from Vista
+- `onsetDateTime` will hold the observed time
+- `reaction.manifestation` may have `.text`
+  - may have `.coding.code` but no system is known
+- `note.text` will hold comments
+  - `note.time` will hold the date of the comment
+- `meta.lastUpdated` will indicate the last time the resource was updated
+- no other elements are populated

@@ -13,11 +13,11 @@
     <valueInteger value="0"/>
   </extension>
   <url value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
-  <version value="0.1.15-beta"/>
+  <version value="0.1.16-beta"/>
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-06-07T11:47:17-05:00"/>
+  <date value="2023-06-13T11:38:47-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -1574,6 +1574,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AllergyCategoryVS"/>
+      </reference>
+      <name value="Subset of allergy intolerance category"/>
+      <description value="not all of them"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
@@ -1602,7 +1613,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
       </reference>
       <name value="VA MHV PHR Allergy and Intolerance"/>
-      <description value="A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.&#xA;&#xA;- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. &#xA;- Should be based on US-Core for AllergyIntolerance Resource profile&#xA;- a `clinicalStatus` of the allergy (e.g.,active or resolved)&#xA;  - Given that intoleranceCondition.status is unclear; will presume we only see `active`&#xA;  - set to `active`&#xA;- a `code` which tells you what the patient is allergic to&#xA;  - at least `code.text`&#xA;  - would be good to have a coding, but there does not appear to be any source for that&#xA;- a patient&#xA;- `category` derived from `.allergyType` &#xA;  - `D` -&gt; #medication&#xA;  - `F` -&gt; #food&#xA;  - `O` -&gt; #environment&#xA;  - multiple codes are multiple category - `DF` -&gt; both #medication and #food&#xA;- presume if `drugClass` is indicated then the `category` should be #medication&#xA;  - `drugClass.code.displayText` -&gt; `.code.coding.display`&#xA;&#xA;Notes:&#xA;- `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.&#xA;- no clear place to record `recordSource`, `recordVersion`&#xA;- no clear handling of `informationSourceCategory` &#xA;  - mock data = 4500978/OBSERVED, 4500975/HISTORICAL&#xA;  - this might be FHIR `.verificationStatus`, but we must fill that element one of the codes (unconfirmed, confirmed, refuted, or entered-in-error)&#xA;  - could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)&#xA;  - or could define an extension if this is needed&#xA;- `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED"/>
+      <description value="A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -1851,10 +1862,21 @@
           <valueCode value="informative"/>
         </extension>
         <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="api.html"/>
+        </extension>
+        <nameUrl value="api.html"/>
+        <title value="API"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
           <valueUrl value="background.html"/>
         </extension>
         <nameUrl value="background.html"/>
-        <title value="Background"/>
+        <title value="Vista Mapping"/>
         <generation value="markdown"/>
       </page>
       <page>

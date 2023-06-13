@@ -14,11 +14,11 @@
     "valueInteger" : 0
   }],
   "url" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example",
-  "version" : "0.1.15-beta",
+  "version" : "0.1.16-beta",
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-06-07T11:47:17-05:00",
+  "date" : "2023-06-13T11:38:47-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -1882,6 +1882,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AllergyCategoryVS"
+      },
+      "name" : "Subset of allergy intolerance category",
+      "description" : "not all of them",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
@@ -1912,7 +1924,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.allergyIntolerance"
       },
       "name" : "VA MHV PHR Allergy and Intolerance",
-      "description" : "A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.\n\n- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. \n- Should be based on US-Core for AllergyIntolerance Resource profile\n- a `clinicalStatus` of the allergy (e.g.,active or resolved)\n  - Given that intoleranceCondition.status is unclear; will presume we only see `active`\n  - set to `active`\n- a `code` which tells you what the patient is allergic to\n  - at least `code.text`\n  - would be good to have a coding, but there does not appear to be any source for that\n- a patient\n- `category` derived from `.allergyType` \n  - `D` -> #medication\n  - `F` -> #food\n  - `O` -> #environment\n  - multiple codes are multiple category - `DF` -> both #medication and #food\n- presume if `drugClass` is indicated then the `category` should be #medication\n  - `drugClass.code.displayText` -> `.code.coding.display`\n\nNotes:\n- `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.\n- no clear place to record `recordSource`, `recordVersion`\n- no clear handling of `informationSourceCategory` \n  - mock data = 4500978/OBSERVED, 4500975/HISTORICAL\n  - this might be FHIR `.verificationStatus`, but we must fill that element one of the codes (unconfirmed, confirmed, refuted, or entered-in-error)\n  - could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)\n  - or could define an extension if this is needed\n- `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED",
+      "description" : "A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.",
       "exampleBoolean" : false
     },
     {
@@ -2187,10 +2199,23 @@
         },
         {
           "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "api.html"
+        }],
+        "nameUrl" : "api.html",
+        "title" : "API",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode" : "informative"
+        },
+        {
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
           "valueUrl" : "background.html"
         }],
         "nameUrl" : "background.html",
-        "title" : "Background",
+        "title" : "Vista Mapping",
         "generation" : "markdown"
       },
       {

@@ -22,8 +22,64 @@ Usage: #definition
     * cors = false
     * description = "Security is system level, PGHD presumes MHV properly handles user (as patient) rights"
   * resource[+]
+    * type = #AllergyIntolerance
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"
+    * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
+    * interaction[+].code = #search-type
+    * interaction[+].code = #read
+    * searchParam[+]
+      * name = "identifier"
+      * type = #token
+    * searchParam[+]
+      * name = "_id"
+      * type = #token
+    * searchParam[+]
+      * name = "clinical-status"
+      * type = #token
+    * searchParam[+]
+      * name = "patient"
+      * type = #token
+    * searchParam[+]
+      * name = "category"
+      * type = #token
+    * searchParam[+]
+      * name = "code"
+      * type = #token
+    * searchParam[+]
+      * name = "date"
+      * type = #token
+  * resource[+]
+    * type = #Condition
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
+    * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
+    * interaction[+].code = #search-type
+    * interaction[+].code = #read
+    * searchParam[+]
+      * name = "identifier"
+      * type = #token
+    * searchParam[+]
+      * name = "_id"
+      * type = #token
+    * searchParam[+]
+      * name = "clinical-status"
+      * type = #token
+    * searchParam[+]
+      * name = "patient"
+      * type = #token
+    * searchParam[+]
+      * name = "category"
+      * type = #token
+    * searchParam[+]
+      * name = "code"
+      * type = #token
+    * searchParam[+]
+      * name = "recorded-date"
+      * type = #token
+  * resource[+]
     * type = #Observation
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.lab"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain"
     * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
@@ -50,7 +106,7 @@ Usage: #definition
       * type = #token
   * resource[+]
     * type = #Immunization
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.immunization"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization"
     * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
@@ -71,8 +127,10 @@ Usage: #definition
       * type = #token
   * resource[+]
     * type = #DocumentReference
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.note"
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.imaging"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.documentReference"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg"
     * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
@@ -101,8 +159,10 @@ Usage: #definition
       * name = "period"
       * type = #token
   * resource[+]
-    * type = #Condition
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.condition"
+    * type = #DiagnosticReport
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.diagnosticReport"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
     * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
@@ -113,19 +173,19 @@ Usage: #definition
       * name = "_id"
       * type = #token
     * searchParam[+]
-      * name = "clinical-status"
+      * name = "category"
       * type = #token
     * searchParam[+]
       * name = "patient"
       * type = #token
     * searchParam[+]
-      * name = "category"
-      * type = #token
-    * searchParam[+]
       * name = "code"
       * type = #token
     * searchParam[+]
-      * name = "recorded-date"
+      * name = "status"
+      * type = #token
+    * searchParam[+]
+      * name = "date"
       * type = #token
 
 

@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "0"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.15-beta"] ; # 
+  fhir:version [ fhir:v "0.1.16-beta"] ; # 
   fhir:name [ fhir:v "MHVPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-06-07T11:47:17-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-06-13T11:38:47-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
@@ -1977,6 +1977,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/ValueSet/AllergyCategoryVS> ;
+         fhir:reference [ fhir:v "ValueSet/AllergyCategoryVS" ]
+       ] ;
+       fhir:name [ fhir:v "Subset of allergy intolerance category" ] ;
+       fhir:description [ fhir:v "not all of them" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
@@ -2008,7 +2020,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.allergyIntolerance" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Allergy and Intolerance" ] ;
-       fhir:description [ fhir:v "A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.\n\n- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. \n- Should be based on US-Core for AllergyIntolerance Resource profile\n- a `clinicalStatus` of the allergy (e.g.,active or resolved)\n  - Given that intoleranceCondition.status is unclear; will presume we only see `active`\n  - set to `active`\n- a `code` which tells you what the patient is allergic to\n  - at least `code.text`\n  - would be good to have a coding, but there does not appear to be any source for that\n- a patient\n- `category` derived from `.allergyType` \n  - `D` -> #medication\n  - `F` -> #food\n  - `O` -> #environment\n  - multiple codes are multiple category - `DF` -> both #medication and #food\n- presume if `drugClass` is indicated then the `category` should be #medication\n  - `drugClass.code.displayText` -> `.code.coding.display`\n\nNotes:\n- `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.\n- no clear place to record `recordSource`, `recordVersion`\n- no clear handling of `informationSourceCategory` \n  - mock data = 4500978/OBSERVED, 4500975/HISTORICAL\n  - this might be FHIR `.verificationStatus`, but we must fill that element one of the codes (unconfirmed, confirmed, refuted, or entered-in-error)\n  - could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)\n  - or could define an extension if this is needed\n- `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED" ] ;
+       fhir:description [ fhir:v "A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2279,10 +2291,21 @@
            fhir:value [ fhir:v "informative" ]
          ] [
            fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "api.html"^^xsd:anyURI ]
+         ] ) ;
+         fhir:name [ fhir:v "api.html"^^xsd:anyURI ] ;
+         fhir:title [ fhir:v "API" ] ;
+         fhir:generation [ fhir:v "markdown" ]
+       ] [
+         fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "informative" ]
+         ] [
+           fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "background.html"^^xsd:anyURI ]
          ] ) ;
          fhir:name [ fhir:v "background.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Background" ] ;
+         fhir:title [ fhir:v "Vista Mapping" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

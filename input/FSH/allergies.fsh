@@ -8,33 +8,6 @@ Id:             VA.MHV.PHR.allergyIntolerance
 Title:          "VA MHV PHR Allergy and Intolerance"
 Description:    """
 A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.
-
-- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
-- Should be based on US-Core for AllergyIntolerance Resource profile
-- a `clinicalStatus` of the allergy (e.g.,active or resolved)
-  - Given that intoleranceCondition.status is unclear; will presume we only see `active`
-  - set to `active`
-- a `code` which tells you what the patient is allergic to
-  - at least `code.text`
-  - would be good to have a coding, but there does not appear to be any source for that
-- a patient
-- `category` derived from `.allergyType` 
-  - `D` -> #medication
-  - `F` -> #food
-  - `O` -> #environment
-  - multiple codes are multiple category - `DF` -> both #medication and #food
-- presume if `drugClass` is indicated then the `category` should be #medication
-  - `drugClass.code.displayText` -> `.code.coding.display`
-
-Notes:
-- `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.
-- no clear place to record `recordSource`, `recordVersion`
-- no clear handling of `informationSourceCategory` 
-  - mock data = 4500978/OBSERVED, 4500975/HISTORICAL
-  - this might be FHIR `.verificationStatus`, but we must fill that element one of the codes (unconfirmed, confirmed, refuted, or entered-in-error)
-  - could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)
-  - or could define an extension if this is needed
-- `reaction.reaction.code` seems to be a number, but I can't find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -47,9 +20,11 @@ Notes:
 * identifier[recordIdentifier].value ^short = "{intoleranceCondition.recordIdentifier.identity}"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * code.text 1..1
+* code 1..1
 * patient 1..1 MS
 * onsetDateTime MS
 * category 0..* MS
+* category from AllergyCategoryVS (required)
 * recorder MS
 * reaction 0..* MS
 * reaction.manifestation 1..1
@@ -63,14 +38,33 @@ Notes:
 * note.time 0..1 MS
 * note.author[x] 0..0
 * meta.lastUpdated MS
+* criticality 0..0
+* verificationStatus 0..0
+* encounter 0..0
+* recordedDate 0..0
+* asserter 0..0
+* lastOccurrence 0..0
+* reaction.substance 0..0
+* reaction.description 0..0
+* reaction.onset 0..0
+* reaction.severity 0..0
+* reaction.exposureRoute 0..0
+* reaction.note 0..0
 
+ValueSet: AllergyCategoryVS
+Title: "Subset of allergy intolerance category"
+Description: "not all of them"
+* ^experimental = false
+* http://hl7.org/fhir/allergy-intolerance-category#food
+* http://hl7.org/fhir/allergy-intolerance-category#medication
+* http://hl7.org/fhir/allergy-intolerance-category#environment
 
 
 Mapping: AllergyIntolerance-Mapping
 Source:	MHVallergyIntolerance
 Target: "intoleranceCondition"
 Title: "VHIM Allergy to MHV-PHR"
-* -> "VHIM Allergy" "MHV PHR FHIR API"
+* -> "VHIM Allergy"
 * identifier -> "intoleranceCondition.recordIdentifer"
 * code.text -> "intoleranceCondition.agent.code"
 * patient -> "GetPatient(intoleranceCondition.patient)"
