@@ -17,7 +17,7 @@
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-06-13T14:37:26-05:00"/>
+  <date value="2023-06-13T16:30:05-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -1690,7 +1690,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.immunization"/>
       </reference>
       <name value="VA MHV PHR Immunization"/>
-      <description value="A profile on the Immunization that declares how MHV will expose PHR immunization.&#xA;&#xA;**Proposed mapping not yet approved for implementation**&#xA;&#xA;* Derived off of US-Core Immunization&#xA;  * US-Core already requires: status, vaccineCode, patient, occurance[x], primarySource&#xA;* must point at the patient&#xA;* must have status of completed &#xA;* must have identifier as cross reference to original source&#xA;* must have a code.text or code.coding from a valueset&#xA;  * code.coding should be a CVX but we don't have such.&#xA;  * Might have a CPT code&#xA;* must have a date (occuranceDateTime) the vaccine was administered from the UI&#xA;  * will also be used for recorded date&#xA;* must be indicated this data are not official record (primarySource=false)&#xA;* any reaction is recorded as a contained observation&#xA;* may have a comment note&#xA;* once created will have an id, versionId, lastUpdated.&#xA;* Not sure if text will be populated&#xA;&#xA;Mapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)&#xA;&#xA;TODO Questions: &#xA;- The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.&#xA;- reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?&#xA;- contraindicated -- appears to be a number (e.g. 0). No idea what the values might be or what they might mean&#xA;- id - presuming this is a persisted identifier we can cross-reference with&#xA;- series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?&#xA;- encounter - should we convert these to instances of FHIR Encounter?&#xA;- could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature."/>
+      <description value="A profile on the Immunization that declares how MHV will expose PHR immunization."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

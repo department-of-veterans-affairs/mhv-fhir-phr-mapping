@@ -1,5 +1,5 @@
 
-- based on US-Core for Condition Resource profile
+- based on US-Core Condition Resource profile
 - `subject` is a reference to this patient
 - `identifier` will hold the record identifier from Vista
 - `category` will be `problem-list-item`

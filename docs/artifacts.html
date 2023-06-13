@@ -103,12 +103,12 @@
     <a href="api.html">API</a>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Vista Mapping
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="background.html">Vista Mapping</a>
+        <a href="background.html">background</a>
       </li>
       <li>
         <a href="utility.html">Utility</a>
@@ -454,48 +454,6 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
                </td>
                <td>
 <p>A profile on the Immunization that declares how MHV will expose PHR immunization.</p>
-
-<p><strong>Proposed mapping not yet approved for implementation</strong></p>
-
-<ul>
-  <li>Derived off of US-Core Immunization
-    <ul>
-      <li>US-Core already requires: status, vaccineCode, patient, occurance[x], primarySource</li>
-    </ul>
-  </li>
-  <li>must point at the patient</li>
-  <li>must have status of completed</li>
-  <li>must have identifier as cross reference to original source</li>
-  <li>must have a code.text or code.coding from a valueset
-    <ul>
-      <li>code.coding should be a CVX but we don’t have such.</li>
-      <li>Might have a CPT code</li>
-    </ul>
-  </li>
-  <li>must have a date (occuranceDateTime) the vaccine was administered from the UI
-    <ul>
-      <li>will also be used for recorded date</li>
-    </ul>
-  </li>
-  <li>must be indicated this data are not official record (primarySource=false)</li>
-  <li>any reaction is recorded as a contained observation</li>
-  <li>may have a comment note</li>
-  <li>once created will have an id, versionId, lastUpdated.</li>
-  <li>Not sure if text will be populated</li>
-</ul>
-
-<p>Mapping from <a href="StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto">ImmunizationTO</a></p>
-
-<p>TODO Questions:</p>
-<ul>
-  <li>The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.</li>
-  <li>reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?</li>
-  <li>contraindicated – appears to be a number (e.g. 0). No idea what the values might be or what they might mean</li>
-  <li>id - presuming this is a persisted identifier we can cross-reference with</li>
-  <li>series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?</li>
-  <li>encounter - should we convert these to instances of FHIR Encounter?</li>
-  <li>could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature.</li>
-</ul>
 </td>
             </tr>
             <tr>
@@ -1716,7 +1674,7 @@ A profile showing how <code class="language-plaintext highlighter-rouge">labTest
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 14:37-0500">2023-06-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 16:30-0500">2023-06-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

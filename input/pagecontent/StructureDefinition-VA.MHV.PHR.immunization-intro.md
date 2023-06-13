@@ -1,0 +1,19 @@
+
+- based on US-Core Immunization Resource profile
+  - US-Core already requires: `status`, `vaccineCode`, `patient`, `occurance[x]`, `primarySource`
+- `patient` is a reference to this patient
+- `status` is `completed`
+- `primarySource` is `false`
+- `identifier` will hold the record identifier from Vista
+- `vaccineCode.text` and/or
+  - `vaccineCode.coding` may be a CPT coding
+- `note.text` may have comments
+- `reaction.detail` may be a contained Observation with reaction detail
+- `occuranceDateTime` when the immunization given
+- `recorded` when the immunization was recorded
+- `performer.actor.display` may be the name of the one administering the immunization, and/or the one who ordered it
+- `site.text` where on the body the immunization was given
+- `lotNumber` may be the immunization lot number
+- `manufacture` may be the manufacture of the immunization given
+- `protocolApplied.doseNumberString` may be the series
+- `location.display` may be the location where the immunization was given

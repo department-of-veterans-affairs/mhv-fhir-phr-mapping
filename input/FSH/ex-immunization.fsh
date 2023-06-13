@@ -17,10 +17,9 @@ Example from a mock ImmunizationTO
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * note[0].text = "test"
-// TODO figure out why these three fail
-//* location.display = "DAYTON"
+* location.display = "DAYTON"
 //* encounter.identifier.value = "6433274"
-//* protocolApplied.series = "COMPLETE"
+* protocolApplied.doseNumberString = "COMPLETE"
 
 
 Instance:   ex-MHV-immunization-2
@@ -43,10 +42,9 @@ Example from a mock ImmunizationTO
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * note.text = "test comment"
-// TODO figure out why these three fail
-//* location.display = "DAYTON"
+* location.display = "DAYTON"
 //* encounter.identifier.value = "6433261"
-//* protocolApplied.series = "COMPLETE"
+* protocolApplied.doseNumberString = "COMPLETE"
 * reaction.detail = Reference(in-reaction-2)
 * contained[+] = in-reaction-2
 

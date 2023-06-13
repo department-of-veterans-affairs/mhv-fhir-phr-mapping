@@ -29,7 +29,7 @@ user content","",0,*,"","Y","","Extension {[]} {[]}
 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"DomainResource.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
-"Immunization.identifier","Immunization.identifier","","","",1,*,"","","","Identifier {[]} {[]}
+"Immunization.identifier","Immunization.identifier","","","",1,*,"Y","","","Identifier {[]} {[]}
 ","Business identifier","A unique identifier assigned to this immunization record.","","","","","","","","","",,,,,"","pattern:use}
 ","",,"open","Immunization.identifier",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.identifier",".id","FiveWs.identifier","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/id","{StationNbr} and {ImmunizationTO.id}"
@@ -112,11 +112,11 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","Event.subject","PID-3",".partipication[ttypeCode=].role","FiveWs.subject[x]","FiveWs.subject","patient"
 "Immunization.encounter","Immunization.encounter","","","",0,0,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Encounter]]}
 ","Encounter immunization was part of","The visit or admission or other contact between patient and health care provider the immunization was performed as part of.","","","","","","","","","",,,,,"",,,,"Immunization.encounter",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.context","PV1-19","component->EncounterEvent","FiveWs.context","GetEncounter(ImmunizationTO.encounter.[VisitTO])"
+","Event.context","PV1-19","component->EncounterEvent","FiveWs.context"
 "Immunization.occurrence[x]","Immunization.occurrence[x]","","","",1,1,"Y","","Y","dateTime {[]} {[]}
 ","Vaccine administration date","Date vaccine administered or was to be administered.","When immunizations are given a specific date and time should always be known.   When immunizations are patient reported, a specific date might not be known.  Although partial dates are allowed, an adult patient might not be able to recall the year a childhood immunization was given. An exact date is always preferable, but the use of the String data type is acceptable when an exact date is not known. A small number of vaccines (e.g. live oral typhoid vaccine) are given as a series of patient self-administered dose over a span of time. In cases like this, often, only the first dose (typically a provider supervised dose) is recorded with the occurrence indicating the date/time of the first dose.","","","","","","","","",,,,,"",,,,"Immunization.occurrence[x]",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.occurrence[x]","RXA-3",".effectiveTime","FiveWs.done[x]","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/effectiveTime/value","ImmunizationTO.administeredDate"
-"Immunization.recorded","Immunization.recorded","","","",1,1,"","","","dateTime {[]} {[]}
+"Immunization.recorded","Immunization.recorded","","","",1,1,"Y","","","dateTime {[]} {[]}
 ","When the immunization was first captured in the subject's record","The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event.","","","","","","","","","",,,,,"",,,,"Immunization.recorded",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".participation[typeCode=AUT].time","FiveWs.recorded","ImmunizationTO.administeredDate"
 "Immunization.primarySource","Immunization.primarySource","","","",1,1,"Y","","Y","boolean {[]} {[]}
@@ -125,9 +125,8 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Immunization.reportOrigin","Immunization.reportOrigin","","","",0,0,"","","","CodeableConcept {[]} {[]}
 ","Indicates the source of a secondarily reported record","The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.","Should not be populated if primarySource = True, not required even if primarySource = False.","","","","","","","","",,"example","The source of the data for a record which is not from a primary source.","http://hl7.org/fhir/ValueSet/immunization-origin","",,,,"Immunization.reportOrigin",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","RXA-9",".participation[typeCode=INF].role[classCode=PAT] (this syntax for self-reported) .participation[typeCode=INF].role[classCode=LIC] (this syntax for health care professional) .participation[typeCode=INF].role[classCode=PRS] (this syntax for family member)","FiveWs.source"
-"Immunization.location","Immunization.location","","","",0,0,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}
-","Where immunization occurred","The service delivery location where the vaccine administration occurred.","","","","","","","","","",,,,,"",,,,"Immunization.location",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.location","RXA-27  (or RXA-11, deprecated as of v2.7)",".participation[typeCode=LOC].COCT_MT240000UV","FiveWs.where[x]"
+"Immunization.location","Immunization.location","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]}
+","Where immunization occurred","The service delivery location where the vaccine administration occurred.","","","","","","","","","",,,,,"",,,,"Immunization.location",0,1,"","","Event.location","RXA-27  (or RXA-11, deprecated as of v2.7)",".participation[typeCode=LOC].COCT_MT240000UV","FiveWs.where[x]"
 "Immunization.location.id","Immunization.location.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Immunization.location.extension","Immunization.location.extension","","extensions
@@ -153,13 +152,13 @@ Applications converting a logical reference to a literal reference may choose to
 
 Reference is intended to point to a structure that can potentially be expressed as a FHIR resource, though there is no need for it to exist as an actual FHIR resource instance - except in as much as an application wishes to actual find the target of the reference. The content referred to be the identifier must meet the logical constraints implied by any limitations on what resource types are permitted for the reference.  For example, it would not be legitimate to send the identifier for a drug prescription if the type were Reference(Observation|DiagnosticReport).  One of the use-cases for Reference.identifier is the situation where no FHIR representation exists (where the type is Reference (Any).","","","","","","","","",,,,,"",,,,"Reference.identifier",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".identifier"
-"Immunization.location.display","Immunization.location.display","","","",0,1,"","","Y","string {[]} {[]}
+"Immunization.location.display","Immunization.location.display","","","",0,1,"Y","","Y","string {[]} {[]}
 ","Text alternative for the resource","Plain text narrative that identifies the resource in addition to the resource reference.","This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.","","","","","","","","",,,,,"",,,,"Reference.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A","ImmunizationTO.encounter.location.name or ImmunizationTO.encounter.facility.name"
-"Immunization.manufacturer","Immunization.manufacturer","","","",0,0,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+"Immunization.manufacturer","Immunization.manufacturer","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Vaccine manufacturer","Name of vaccine manufacturer.","","","","","","","","","",,,,,"",,,,"Immunization.manufacturer",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","RXA-17",".participation[typeCode=CSM].role[classCode=INST].scopedRole.scoper[classCode=ORG]","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacuturerOrganization/name","ImmunizationTO.manufacture"
-"Immunization.lotNumber","Immunization.lotNumber","","","",0,0,"","","","string {[]} {[]}
+"Immunization.lotNumber","Immunization.lotNumber","","","",0,1,"Y","","","string {[]} {[]}
 ","Vaccine lot number","Lot number of the  vaccine product.","","","","","","","","","",,,,,"",,,,"Immunization.lotNumber",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","RXA-15",".participation[typeCode=CSM].role[classCode=INST].scopedRole.scoper[classCode=MMAT].id","ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/lotNumberText","ImmunizationTO.lotNumber"
 "Immunization.expirationDate","Immunization.expirationDate","","","",0,0,"","","","date {[]} {[]}
@@ -187,7 +186,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Immunization.doseQuantity","Immunization.doseQuantity","","","",0,0,"","","","Quantity {[CanonicalType[http://hl7.org/fhir/StructureDefinition/SimpleQuantity]]} {[]}
 ","Amount of vaccine administered","The quantity of vaccine product that was administered.","","","","","","","","","",,,,,"",,,,"Immunization.doseQuantity",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","RXA-6 / RXA-7",".doseQuantity"
-"Immunization.performer","Immunization.performer","","","",0,0,"","","Y","BackboneElement {[]} {[]}
+"Immunization.performer","Immunization.performer","","","",0,*,"Y","","Y","BackboneElement {[]} {[]}
 ","Who performed event","Indicates who performed the immunization event.","","","","","","","","","",,,,,"",,,,"Immunization.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.performer","ORC-12 / RXA-10",".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]"
 "Immunization.performer.id","Immunization.performer.id","","","",0,1,"","","","string {[]} {[]}
@@ -235,8 +234,8 @@ Reference is intended to point to a structure that can potentially be expressed 
 ",".identifier"
 "Immunization.performer.actor.display","Immunization.performer.actor.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Text alternative for the resource","Plain text narrative that identifies the resource in addition to the resource reference.","This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.","","","","","","","","",,,,,"",,,,"Reference.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","N/A","GetPractitioner(ImmunizationTO.administrator.[UserTO])","GetPractitioner(ImmunizationTO.orderedBy.[UserTO])"
-"Immunization.note","Immunization.note","","","",0,1,"","","Y","Annotation {[]} {[]}
+","N/A","GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`","GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`"
+"Immunization.note","Immunization.note","","","",0,1,"Y","","Y","Annotation {[]} {[]}
 ","Additional immunization notes","Extra information about the immunization that is not conveyed by the other attributes.","","","","","","","","","",,,,,"",,,,"Immunization.note",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.note","OBX-5 : OBX-3 = 48767-8","note"
 "Immunization.note.id","Immunization.note.id","","","",0,1,"","","","string {[]} {[]}
@@ -315,17 +314,17 @@ user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
-"Immunization.reaction.date","Immunization.reaction.date","","","",0,1,"","","","dateTime {[]} {[]}
+"Immunization.reaction.date","Immunization.reaction.date","","","",0,0,"","","","dateTime {[]} {[]}
 ","When reaction started","Date of reaction to the immunization.","","","","","","","","","",,,,,"",,,,"Immunization.reaction.date",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","OBX-14 (ideally this would be reported in an IAM segment, but IAM is not part of the HL7 v2 VXU message - most likely would appear in OBX segments if at all)",".effectiveTime"
 "Immunization.reaction.detail","Immunization.reaction.detail","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation]]} (contained
 )
 ","Additional information on reaction","Details of the reaction.","","","","","","","","","",,,,,"",,,,"Immunization.reaction.detail",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","OBX-5",".value","ImmunizationTO.reaction"
-"Immunization.reaction.reported","Immunization.reaction.reported","","","",0,1,"","","","boolean {[]} {[]}
+"Immunization.reaction.reported","Immunization.reaction.reported","","","",0,0,"","","","boolean {[]} {[]}
 ","Indicates self-reported reaction","Self-reported indicator.","","","","","","","","","",,,,,"",,,,"Immunization.reaction.reported",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","(HL7 v2 doesn't seem to provide for this)",".participation[typeCode=INF].role[classCode=PAT] (this syntax for self-reported=true)"
-"Immunization.protocolApplied","Immunization.protocolApplied","","","",0,0,"","","","BackboneElement {[]} {[]}
+"Immunization.protocolApplied","Immunization.protocolApplied","","","",0,*,"Y","","","BackboneElement {[]} {[]}
 ","Protocol followed by the provider","The protocol (set of recommendations) being followed by the provider who administered the dose.","","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
 "Immunization.protocolApplied.id","Immunization.protocolApplied.id","","","",0,1,"","","","string {[]} {[]}
@@ -340,18 +339,22 @@ user contentmodifiers","",0,*,"","Y","Y","Extension {[]} {[]}
 
 Modifier extensions SHALL NOT change the meaning of any elements on Resource or DomainResource (including cannot change the meaning of modifierExtension itself).","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","Modifier extensions allow for extensions that *cannot* be safely ignored to be clearly distinguished from the vast majority of extensions which can be safely ignored.  This promotes interoperability by eliminating the need for implementers to prohibit the presence of extensions. For further information, see the [definition of modifier extensions](http://hl7.org/fhir/R4/extensibility.html#modifierExtension).","","","","","","","",,,,,"",,,,"BackboneElement.modifierExtension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
-"Immunization.protocolApplied.series","Immunization.protocolApplied.series","","","",0,1,"","","","string {[]} {[]}
+"Immunization.protocolApplied.series","Immunization.protocolApplied.series","","","",0,0,"","","","string {[]} {[]}
 ","Name of vaccine series","One possible path to achieve presumed immunity against a disease - within the context of an authority.","","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.series",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","N/A","ImmunizationTO.series"
-"Immunization.protocolApplied.authority","Immunization.protocolApplied.authority","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+","N/A"
+"Immunization.protocolApplied.authority","Immunization.protocolApplied.authority","","","",0,0,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Who is responsible for publishing the recommendations","Indicates the authority who published the protocol (e.g. ACIP) that is being followed.","","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.authority",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
-"Immunization.protocolApplied.targetDisease","Immunization.protocolApplied.targetDisease","","","",0,*,"","","","CodeableConcept {[]} {[]}
+"Immunization.protocolApplied.targetDisease","Immunization.protocolApplied.targetDisease","","","",0,0,"","","","CodeableConcept {[]} {[]}
 ","Vaccine preventatable disease being targetted","The vaccine preventable disease the dose is being administered against.","","","","","","","","","",,"example","The vaccine preventable disease the dose is being administered for.","http://hl7.org/fhir/ValueSet/immunization-target-disease","",,,,"Immunization.protocolApplied.targetDisease",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
 "Immunization.protocolApplied.doseNumber[x]","Immunization.protocolApplied.doseNumber[x]","","","",1,1,"","","","positiveInt {[]} {[]}
-string {[]} {[]}","Dose number within series","Nominal position in a series.","The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.doseNumber[x]",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+string {[]} {[]}","Dose number within series","Nominal position in a series.","The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).","","","","","","","","",,,,,"","type:$this}
+","",,"open","Immunization.protocolApplied.doseNumber[x]",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
-"Immunization.protocolApplied.seriesDoses[x]","Immunization.protocolApplied.seriesDoses[x]","","","",0,1,"","","","positiveInt {[]} {[]}
+"Immunization.protocolApplied.doseNumber[x]:doseNumberString","Immunization.protocolApplied.doseNumber[x]","doseNumberString","","",0,1,"Y","","","string {[]} {[]}
+","Dose number within series","Nominal position in a series.","The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.doseNumber[x]",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","N/A","ImmunizationTO.series"
+"Immunization.protocolApplied.seriesDoses[x]","Immunization.protocolApplied.seriesDoses[x]","","","",0,0,"","","","positiveInt {[]} {[]}
 string {[]} {[]}","Recommended number of doses for immunity","The recommended number of doses to achieve immunity.","The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.seriesDoses[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"

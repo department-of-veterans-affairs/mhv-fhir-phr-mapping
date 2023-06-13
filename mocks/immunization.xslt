@@ -28,21 +28,21 @@
         <xsl:value-of select="name" />
       </xsl:attribute>
     </text>
-<xsl:if test="cptCode">
-    <coding>
-     <system value="http://www.ama-assn.org/go/cpt"/>
-     <code>
-     <xsl:attribute name="value">
-        <xsl:value-of select="cptCode/id" />
-      </xsl:attribute>
-     </code>
-     <display>
+    <xsl:if test="cptCode">
+      <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code>
       <xsl:attribute name="value">
-        <xsl:value-of select="cptCode/name" />
-      </xsl:attribute>
-     </display>
-    </coding>
-</xsl:if>
+          <xsl:value-of select="cptCode/id" />
+        </xsl:attribute>
+      </code>
+      <display>
+        <xsl:attribute name="value">
+          <xsl:value-of select="cptCode/name" />
+        </xsl:attribute>
+      </display>
+      </coding>
+    </xsl:if>
 
   </vaccineCode>
   <patient>
