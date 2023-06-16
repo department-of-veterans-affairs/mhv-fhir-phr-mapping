@@ -5,6 +5,7 @@
 - a `code` which tells you what the patient is allergic to
   - at least `code.text`
   - may be a `code.coding.display` when the allergy is to a medication and we have a drug indicated, but it is not coded so is only recorded as a display.
+  - do not have any other codes available
 - `category` only `medication`, `food`, and/or `environment`
 - `identifier` will hold the record identifier from Vista
 - `onsetDateTime` will hold the observed time

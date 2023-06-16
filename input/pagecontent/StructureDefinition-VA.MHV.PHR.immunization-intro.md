@@ -3,10 +3,11 @@
   - US-Core already requires: `status`, `vaccineCode`, `patient`, `occurance[x]`, `primarySource`
 - `patient` is a reference to this patient
 - `status` is `completed`
-- `primarySource` is `false`
+- `primarySource` is `false` - the MHV FHIR API should not be seen as the primary source
 - `identifier` will hold the record identifier from Vista
 - `vaccineCode.text` and/or
   - `vaccineCode.coding` may be a CPT coding
+  - do not have any other codes available
 - `note.text` may have comments
 - `reaction.detail` may be a contained Observation with reaction detail
 - `occuranceDateTime` when the immunization given
@@ -17,3 +18,5 @@
 - `manufacture` may be the manufacture of the immunization given
 - `protocolApplied.doseNumberString` may be the series
 - `location.display` may be the location where the immunization was given
+- `meta.lastUpdated` will indicate the last time the resource was updated
+- no other elements are populated

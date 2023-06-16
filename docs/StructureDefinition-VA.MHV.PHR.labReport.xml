@@ -55,7 +55,7 @@
   <name value="MHVlabReport"/>
   <title value="VA MHV PHR Lab Report"/>
   <status value="active"/>
-  <date value="2023-06-13T16:30:05-05:00"/>
+  <date value="2023-06-16T14:48:21-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -75,7 +75,7 @@
       <value value="JohnMoehrke@gmail.com"/>
     </telecom>
   </contact>
-  <description value="A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.&#xA;&#xA;The given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO&#xA;&#xA;The LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)&#xA;&#xA;The LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto).&#xA;&#xA;The LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen).&#xA;&#xA;The use of contained means that we do not need to de-duplicate the lab tests or specimen.&#xA;&#xA;TODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.&#xA;&#xA;TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)&#xA;&#xA;- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations. BUT IS NOT because us-core requires us Practitioner and we can't be compliant with that. So I have replicated the us-core requirements here."/>
+  <description value="A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -199,7 +199,6 @@
       <mapping>
         <identity value="Lab-Mapping-LabReportTO"/>
         <map value="LabReportTO"/>
-        <comment value="MHV PHR FHIR API"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.id">
@@ -2351,7 +2350,6 @@
       <mapping>
         <identity value="Lab-Mapping-LabReportTO"/>
         <map value="LabReportTO"/>
-        <comment value="MHV PHR FHIR API"/>
       </mapping>
     </element>
     <element id="DiagnosticReport.identifier">

@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.18"}
-    h3,h4,h5,h6{--heading-prefix:"10.18"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.18"}
+    h3,h4,h5,h6{--heading-prefix:"9.18"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -407,41 +407,38 @@
 </table>
 <a name="Practitioner-UserTO"> </a><h3>Mappings for VDIF to MHV-PHR (UserTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVpractitioner</b></td></tr>
- <tr><td>Practitioner</td><td>UserTO</td><td><p>MHV PHR FHIR API</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>`usual`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>`UserTO` + {UserTO.id}</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;name</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>UserTO.name</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>UserTO.phone, UserTO.pager, UserTO.digitalPager, UserTO.emailAddress</td><td>, , , </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;communication</td><td>UserTO.greeting</td><td></td> </tr>
+ <tr><td>Practitioner</td><td>UserTO</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>`usual`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>`UserTO` + {UserTO.id}</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>UserTO.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;telecom</td><td>UserTO.phone, UserTO.pager, UserTO.digitalPager, UserTO.emailAddress</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;communication</td><td>UserTO.greeting</td> </tr>
 </table>
 <a name="Practitioner-AuthorTO"> </a><h3>Mappings for VDIF to MHV-PHR (AuthorTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVpractitioner</b></td></tr>
- <tr><td>Practitioner</td><td>AuthorTO</td><td><p>MHV PHR FHIR API</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>`usual`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>`AuthorTO.` + {AuthorTO.id}</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;name</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>AuthorTO.name</td><td></td> </tr>
+ <tr><td>Practitioner</td><td>AuthorTO</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>`usual`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>`AuthorTO.` + {AuthorTO.id}</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>AuthorTO.name</td> </tr>
 </table>
 <a name="Practitioner-PractitionerLite"> </a><h3>Mappings for HDR to MHV-PHR (PractitionerLite)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVpractitioner</b></td></tr>
- <tr><td>Practitioner</td><td>PractitionerLite</td><td><p>MHV PHR FHIR API</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>`secondary`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>identifier.assigingFacility, `http://va.gov/systems/` + idSourceTable</td><td>, </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>identifier.identity</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>name</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;family</td><td>name.family</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given</td><td>name.given, name.middle</td><td>, </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prefix</td><td>name.prefix</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suffix</td><td>name.suffix, name.title</td><td>, </td> </tr>
+ <tr><td>Practitioner</td><td>PractitionerLite</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;use</td><td>`secondary`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;system</td><td>identifier.assigingFacility, `http://va.gov/systems/` + idSourceTable</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value</td><td>identifier.identity</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;name</td><td>name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;family</td><td>name.family</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;given</td><td>name.given, name.middle</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;prefix</td><td>name.prefix</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suffix</td><td>name.suffix, name.title</td> </tr>
 </table>
 
 
@@ -518,7 +515,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 16:30-0500">2023-06-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 16, 2023 14:48-0500">2023-06-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

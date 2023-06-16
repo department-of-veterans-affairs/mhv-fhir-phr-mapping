@@ -7,7 +7,6 @@ Description: """
 Derived from the a mock ImagingExamTO:
 """
 * status = #current
-* docStatus = #final
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-0)
 * identifier[TOid].value = "ImagingExamTO.6959075.8874-1" 

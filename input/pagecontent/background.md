@@ -27,7 +27,7 @@ This section is dedicated to instructions on how MHV will transition the data we
 - [Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html#notes)
   - [Mappings from VHIM Allergy](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-vhim-allergy-to-mhv-phr-intolerancecondition)
   - [Examples](StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html)
-- [Chem-Hem (CH) Diagnostic Report](StructureDefinition-VA.MHV.PHR.chReport.html) 
+- [Chem-Hem (CH) Diagnostic Report](StructureDefinition-VA.MHV.PHR.chReport.html#notes)
   - [Mapping from HDR labTestPromises to DiagnosticReport](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)
     - [Examples](StructureDefinition-VA.MHV.PHR.chReport-examples.html)
   - contained [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html)
@@ -39,32 +39,47 @@ This section is dedicated to instructions on how MHV will transition the data we
 - [Conditions](StructureDefinition-VA.MHV.PHR.condition.html#notes)
   - [Mapping from VDIF - ProblemTO](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto)
   - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
-- [ECG](StructureDefinition-VA.MHV.PHR.ecg.html)
+- [ECG](StructureDefinition-VA.MHV.PHR.ecg.html#notes)
   - [Mapping from VDIF - ClinicalProcedureTO](StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-vdif-to-mhv-phr-clinicalprocedureto)
   - [Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
 - [Immunization](StructureDefinition-VA.MHV.PHR.immunization.html#notes)
   - [Mapping from VDIF - ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)
   - [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
-- [LabReport](StructureDefinition-VA.MHV.PHR.labReport.html) including Microbiology and Pathology
+- [LabReport](StructureDefinition-VA.MHV.PHR.labReport.html#notes) including Microbiology and Pathology
   - [Mapping from VDIF - LabReportTO +](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
     - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
   - Contained [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html)
     - Mapping from [VDIF LabSpecimen](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen)
   - Contained [Observation](StructureDefinition-VA.MHV.PHR.labTest.html)
     - Mapping from [VDIF LabTestTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto)
-- [Notes](StructureDefinition-VA.MHV.PHR.note.html)
+- [Notes](StructureDefinition-VA.MHV.PHR.note.html#notes)
   - [Mapping from VDIF - NoteTO](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto)
   - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
-- [Radiology](StructureDefinition-VA.MHV.PHR.imaging.html)
+- [Radiology](StructureDefinition-VA.MHV.PHR.imaging.html#notes)
   - [Mapping from VDIF - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto)
   - [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
   - most [examples are within this Bundle](https://johnmoehrke.github.io/MHV-PHR/Bundle-images.html), and thus not individually exposed.
-- [Vitals](vitals.html)
-
+- General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes)
+  - Additional specifics for [BP Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsBP.html)
+    - [Examples](StructureDefinition-VA.MHV.PHR.vitalsBP-examples.html)
+  - Additional specifics for [Pain Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsPain.html)
+    - [Examples](StructureDefinition-VA.MHV.PHR.vitalsPain-examples.html)
+  - Most [examples are within a Bundle](Bundle-vitals.html), which does not exposed each vital sign.
 
 #### in progress
 
 - Medications (not defined yet what is the source or goal. I note that VIA does have a schema for a MedicationTO. I have heard that there are questions on how to best fit the FHIR medication concept domain.)
+- Revisions of artifacts. Unclear how this comes to us via the feeds. Specifically we need to know how we ask for these, vs today just getting current. And what the vocabulary are to support changes
+  - IntoleranceCondition (allergies) could have the status change
+  - problemTO (conditions) could be removed or not active
+  - imagingExamTO.status
+  - noteTO -- there is also discussion of notes being amended, appended, and rescinded
+  - some artifacts don't seem to have a status in the schema api
+    - clinicalProcedureTO (ECG)
+    - immunizationTO
+    - labReportTO
+    - vitalSignTO
+- Enforcement of Business rules: Today this is enforced as data comes into the PHR, the data that should not be seen is not persisted. This works as the PHR is refreshed often. But with FHIR server we are persisting, and thus the business rule such as a timeframe to wait before showing the patient would need to be enforced on the FHIR API, not on the data feed.
 
 #### other
 

@@ -1,46 +1,36 @@
 Profile:        MHVdocumentReference
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference
-Id:             VA.MHV.documentReference
+Id:             VA.MHV.PHR.documentReference
 Title:          "VA MHV All DocumentReference"
 Description:    """
-A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. 
-
-- based on US-Core for Clinical Notes
-- `.type` indicates the type of note
-- the text note will be in the `.content.attachment.data` element
-- not used in DocumentReference
-  - masterIdentifier 0..0
-  - docStatus 0..0
-  - relatesTo 0..0
-  - description 0..0
-  - securityLabel 0..0
-  - content.format 0..0
-  - context.encounter 0..0
-  - context.event 0..0
-  - context.facilityType 0..0
-  - context.practiceSetting 0..0
-  - context.sourcePatientInfo 0..0
-- **Business Rule**: Only `completed` reports are included (`.status` == `current`)
+A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. This includes Physician Notes, Discharge Summary, ECG/EKG, and Imaging reports.
 """
 * identifier MS
 * type from DocumentReferenceTypeVS (required)
-* category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
+// us-core sets category to `clinical-note`
 * status = #current
 * date MS
-* content 1..1
 * author MS
 * authenticator MS
+* custodian MS
 * context.related MS
 * context.period MS
+* content 1..1
 * content.attachment.contentType MS
 * content.attachment.data MS
+* content.attachment.title MS
+* content.attachment.creation MS
+* description MS
+
 * masterIdentifier 0..0
 * docStatus 0..0
 * relatesTo 0..0
-* description 0..0
 * securityLabel 0..0
 * content.format 0..0
-* context.encounter 0..0
+* content.attachment.language 0..0
+* content.attachment.url 0..0
+* content.attachment.size 0..0
+* content.attachment.hash 0..0
 * context.event 0..0
 * context.facilityType 0..0
 * context.practiceSetting 0..0

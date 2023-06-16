@@ -4,11 +4,12 @@
 - Mapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)
 - Derived off of US-Core Immunization
   - US-Core already requires: `status`, `vaccineCode`, `patient`, `occurance[x]`, `primarySource`
+- should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization` to indicate the intent to be compliant with this profile
 - must have `identifier` as cross reference to original source
 - must be indicated this data are not official record (`primarySource`=false)
 - any reaction is recorded as a contained `Observation`
 
-##### Mapping Concerns
+#### Mapping Concerns
 
 - The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.
 - reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?

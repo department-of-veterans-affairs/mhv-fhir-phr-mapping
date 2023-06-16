@@ -1,0 +1,20 @@
+
+- based on US-Core Vital-Signs profile on Observation Resource
+  - Blood-Pressure is based off of the Blood-Pressure profile
+- `subject` is a reference to this patient
+- `status` is `final`
+- `category` code of `vital-signs`
+- `code.text` the original vital-sign type
+  - `code` should be LOINC if available
+    - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)
+- `identifier` will have cross reference to original source
+- value
+  - Blood Pressure - no `.value[x]`, but has `.component`
+  - Pain - `.valueQuantity`
+  - Those with units use `.valueQuantity` else `.valueString`
+- `effectiveDateTime` vital-sign timestamp
+- `performer` recorder and/or observer
+- `note.text` comment from vital-sign
+- `meta.lastUpdated` will indicate the last time the resource was updated
+- no other elements are populated
+- Most [examples are within a Bundle](Bundle-vitals.html), which does not exposed each vital sign.

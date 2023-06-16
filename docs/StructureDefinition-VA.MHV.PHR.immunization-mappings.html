@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.10"}
-    h3,h4,h5,h6{--heading-prefix:"10.10"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.10"}
+    h3,h4,h5,h6{--heading-prefix:"9.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -413,32 +413,31 @@
 </table>
 <a name="Immunization-Mapping"> </a><h3>Mappings for VDIF to MHV-PHR (ImmunizationTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVimmunization</b></td></tr>
- <tr><td>Immunization</td><td>ImmunizationTO</td><td><p>MHV PHR FHIR API</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ImmunizationTO.id}</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`completed`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>ImmunizationTO.cptCode.id</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>ImmunizationTO.cptCode.name</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.name</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>patient</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ImmunizationTO.administeredDate</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>ImmunizationTO.administeredDate</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>`false`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>ImmunizationTO.encounter.location.name or ImmunizationTO.encounter.facility.name</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>ImmunizationTO.manufacture</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>ImmunizationTO.lotNumber</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`, GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`</td><td>, </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.comments</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail</td><td>ImmunizationTO.reaction</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;protocolApplied</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseNumber[x] (doseNumberString)</td><td>ImmunizationTO.series</td><td></td> </tr>
+ <tr><td>Immunization</td><td>ImmunizationTO</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ImmunizationTO.id}</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`completed`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>ImmunizationTO.cptCode.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>ImmunizationTO.cptCode.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>patient</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ImmunizationTO.administeredDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>ImmunizationTO.administeredDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>`false`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>ImmunizationTO.encounter.location.name or ImmunizationTO.encounter.facility.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>ImmunizationTO.manufacture</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>ImmunizationTO.lotNumber</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`, GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.comments</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail</td><td>ImmunizationTO.reaction</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;protocolApplied</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseNumber[x] (doseNumberString)</td><td>ImmunizationTO.series</td> </tr>
 </table>
 
 
@@ -515,7 +514,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 16:30-0500">2023-06-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 16, 2023 14:48-0500">2023-06-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

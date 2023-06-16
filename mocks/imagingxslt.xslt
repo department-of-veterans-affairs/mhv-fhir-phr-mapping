@@ -75,7 +75,6 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     </value>
                 </identifier>
                 <status value="current"/>
-                <docStatus value="final"/>
                 <type>
                     <coding>
                     <system value="http://loinc.org"/>

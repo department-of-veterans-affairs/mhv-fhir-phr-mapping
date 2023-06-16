@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.22"}
-    h3,h4,h5,h6{--heading-prefix:"10.22"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.22"}
+    h3,h4,h5,h6{--heading-prefix:"9.22"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -324,7 +324,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>OBX-14, and/or OBX-19 after v2.4  (depends on who observation made)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>OBR.22 (or MSH.7), or perhaps OBX-19 (depends on who observation made)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>OBX.15 / (Practitioner)  OBX-16,  PRT-5:PRT-4='RO' /  (Device)  OBX-18 , PRT-10:PRT-4='EQUIP' / (Organization)  OBX-23,  PRT-8:PRT-4='PO'</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author[x]</td><td>N/A</td> </tr>
@@ -398,7 +397,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>participation[typeCode=RTGT]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>effectiveTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>participation[typeCode=AUT].time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>participation[typeCode=PRF]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>subjectOf.observationEvent[code=&quot;annotation&quot;].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
@@ -460,7 +458,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>FiveWs.done[x]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
@@ -485,18 +482,17 @@
 </table>
 <a name="VitalsBP-Mapping"> </a><h3>Mappings for VDIF to MHV-PHR (MHVvitalsBP)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVvitalsBP</b></td></tr>
- <tr><td>Observation</td><td>VitalSignTO BP</td><td><p>MHV PHR FHIR API</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {VitalSignTO.type.id}</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>VitalSignTO.timestamp</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>VitalSignTO.recorder and VitalSignTO.observer</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.comments</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;component</td><td>For BP is used for value1</td><td></td> </tr>
+ <tr><td>Observation</td><td>VitalSignTO BP</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {VitalSignTO.type.id}</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>VitalSignTO.timestamp</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>VitalSignTO.recorder and VitalSignTO.observer</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.comments</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;component</td><td>For BP is used for value1 parsed out to systolic and diastolic</td> </tr>
 </table>
 
 
@@ -573,7 +569,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 16:30-0500">2023-06-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 16, 2023 14:48-0500">2023-06-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

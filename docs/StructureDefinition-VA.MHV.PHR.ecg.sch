@@ -3,12 +3,19 @@
   <sch:ns prefix="f" uri="http://hl7.org/fhir"/>
   <sch:ns prefix="h" uri="http://www.w3.org/1999/xhtml"/>
   <!-- 
-    This file contains just the constraints for the profile USCoreDocumentReferenceProfile
+    This file contains just the constraints for the profile MHVdocumentReference
     It includes the base constraints for the resource as well.
     Because of the way that schematrons and containment work, 
     you may need to use this schematron fragment to build a, 
     single schematron that validates contained resources (if you have any) 
   -->
+  <sch:pattern>
+    <sch:title>f:DocumentReference</sch:title>
+    <sch:rule context="f:DocumentReference">
+      <sch:assert test="count(f:custodian) &lt;= 0">custodian: maximum cardinality of 'custodian' is 0</sch:assert>
+      <sch:assert test="count(f:description) &lt;= 0">description: maximum cardinality of 'description' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
   <sch:pattern>
     <sch:title>f:DocumentReference/f:identifier</sch:title>
     <sch:rule context="f:DocumentReference/f:identifier">
@@ -40,6 +47,18 @@
       <sch:assert test="count(f:code) &lt;= 1">code: maximum cardinality of 'code' is 1</sch:assert>
       <sch:assert test="count(f:display) &lt;= 1">display: maximum cardinality of 'display' is 1</sch:assert>
       <sch:assert test="count(f:userSelected) &lt;= 1">userSelected: maximum cardinality of 'userSelected' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:DocumentReference/f:content/f:attachment</sch:title>
+    <sch:rule context="f:DocumentReference/f:content/f:attachment">
+      <sch:assert test="count(f:creation) &lt;= 0">creation: maximum cardinality of 'creation' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:DocumentReference/f:context</sch:title>
+    <sch:rule context="f:DocumentReference/f:context">
+      <sch:assert test="count(f:encounter) &lt;= 0">encounter: maximum cardinality of 'encounter' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

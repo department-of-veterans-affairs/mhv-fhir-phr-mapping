@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.15"}
-    h3,h4,h5,h6{--heading-prefix:"10.15"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.15"}
+    h3,h4,h5,h6{--heading-prefix:"9.15"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -275,7 +275,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;author</td><td>Event.performer.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authenticator</td><td>Event.performer.actor</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;custodian</td><td>Event.performer.actor</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;context</td><td></td> </tr>
 </table>
 <a name="fhircomposition"> </a><h3>Mappings for FHIR Composition (http://hl7.org/fhir/composition)</h3><table class="grid">
@@ -288,7 +287,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>Composition.date</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;author</td><td>Composition.author</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authenticator</td><td>Composition.attester</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;custodian</td><td>Composition.custodian</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;content</td><td>Bundle(Composition+*)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attachment</td><td>Composition.language, 
 Composition.title, 
@@ -326,7 +324,6 @@ Composition.date</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>.availabilityTime[type=&quot;TS&quot;]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;author</td><td>.participation[typeCode=&quot;AUT&quot;].role[classCode=&quot;ASSIGNED&quot;]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;authenticator</td><td>.participation[typeCode=&quot;AUTHEN&quot;].role[classCode=&quot;ASSIGNED&quot;]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;custodian</td><td>.participation[typeCode=&quot;RCV&quot;].role[classCode=&quot;CUST&quot;].scoper[classCode=&quot;ORG&quot; and determinerCode=&quot;INST&quot;]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;content</td><td>document.text</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -335,13 +332,8 @@ Composition.date</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType</td><td>./mediaType, ./charset</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;language</td><td>./language</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</td><td>./data</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>./reference/literal</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size</td><td>N/A (needs data type R3 proposal)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hash</td><td>.integrityCheck[parent::ED/integrityCheckAlgorithm=&quot;SHA-1&quot;]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>./title/data</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;creation</td><td>N/A (needs data type R3 proposal)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;context</td><td>outboundRelationship[typeCode=&quot;SUBJ&quot;].target[classCode&lt;'ACT']</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -410,7 +402,6 @@ serviceEvent/effectiveTime/high/
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attachment</td><td>TXA-3 for mime type</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType</td><td>ED.2+ED.3/RP.2+RP.3. Note conversion may be needed if old style values are being used</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</td><td>ED.5</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>RP.1+RP.2 - if they refer to a URL (see v2.6)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;context</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>DR.1</td> </tr>
@@ -436,28 +427,27 @@ serviceEvent/effectiveTime/high/
 </table>
 <a name="Notes-Mapping"> </a><h3>Mappings for VDIF to MHV-PHR (NoteTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVnote</b></td></tr>
- <tr><td>DocumentReference</td><td>NoteTO</td><td><p>MHV PHR FHIR API</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>NoteTO.id</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`current`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;type</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>NoteTO.type{PN, DS, ?}</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>NoteTO.standardTitle</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`clinical-note`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>GetPatient()</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>ConvertDate(NoteTO.timestamp)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;author</td><td>GetPractitioner(NoteTO.author.[AuthorTO])</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;authenticator</td><td>GetPractitioner(NoteTO.approvedBy)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;content</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attachment</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType</td><td>`text/plain`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</td><td>base64(NoteTO.text)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>NoteTO.localTitle</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;context</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>ConvertDate(NoteTO.admitTimestamp)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>ConvertDate(NoteTO.dischargeTimestamp)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;related</td><td>GetLocation(NoteTO.location.[HospitalLocationTO])</td><td></td> </tr>
+ <tr><td>DocumentReference</td><td>NoteTO</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>NoteTO.id</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`current`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;type</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>NoteTO.type{PN, DS, ?}</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>NoteTO.standardTitle</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`clinical-note`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>GetPatient()</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;date</td><td>ConvertDate(NoteTO.timestamp)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;author</td><td>GetPractitioner(NoteTO.author.[AuthorTO])</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;authenticator</td><td>GetPractitioner(NoteTO.approvedBy)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;content</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;attachment</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contentType</td><td>`text/plain`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data</td><td>base64(NoteTO.text)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title</td><td>NoteTO.localTitle</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;context</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;period</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;start</td><td>ConvertDate(NoteTO.admitTimestamp)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;end</td><td>ConvertDate(NoteTO.dischargeTimestamp)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;related</td><td>GetLocation(NoteTO.location.[HospitalLocationTO])</td> </tr>
 </table>
 
 
@@ -534,7 +524,7 @@ serviceEvent/effectiveTime/high/
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 16:30-0500">2023-06-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 16, 2023 14:48-0500">2023-06-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

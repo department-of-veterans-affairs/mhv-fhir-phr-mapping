@@ -51,7 +51,7 @@ Mapping: Lab-Mapping-LabSpecimenTO
 Source: MHVlabSpecimen
 Target: "LabSpecimen"
 Title: "VDIF to MHV-PHR"
-* -> "LabSpecimenTO" "MHV PHR FHIR API"
+* -> "LabSpecimenTO"
 * identifier -> "{StationNbr} and {LabSpecimenTO.id}"
 * accessionIdentifier -> "{StationNbr} and {LabSpecimenTO.accessionNum}"
 * status -> "`available`"
@@ -66,22 +66,6 @@ Id: VA.MHV.PHR.labReport
 Title: "VA MHV PHR Lab Report"
 Description: """
 A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.
-
-The given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO
-
-The LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
-
-The LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto).
-
-The LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen).
-
-The use of contained means that we do not need to de-duplicate the lab tests or specimen.
-
-TODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.
-
-TODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
-
-- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations. BUT IS NOT because us-core requires us Practitioner and we can't be compliant with that. So I have replicated the us-core requirements here.
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -136,7 +120,7 @@ Mapping: Lab-Mapping-LabReportTO
 Source:	MHVlabReport
 Target: "LabReportTO"
 Title: "VDIF to MHV-PHR"
-* -> "LabReportTO" "MHV PHR FHIR API"
+* -> "LabReportTO"
 * category -> "`laboratory`"
 * status -> "`final`"
 * subject -> "patient"
@@ -183,7 +167,7 @@ Mapping: Lab-Mapping-LabResultTO
 Source:	MHVlabTest
 Target: "LabTestTO"
 Title: "VDIF to MHV-PHR"
-* -> "LabTestTO / LabResultTO" "MHV PHR FHIR API"
+* -> "LabTestTO / LabResultTO"
 * specimen -> "Contained Specimen (LabTestTO.specimen.[LabSpecimenTO])"
 * identifier -> "{StationNbr} and {LabTestTO.id}"
 * code -> "text = LabTestTO.name"
@@ -193,3 +177,75 @@ Title: "VDIF to MHV-PHR"
 * performer -> "GetOrganization(LabResultTO.labSiteId)"
 * status -> "`final`"
 * category -> "`laboratory`"
+
+/*
+  <xs:complexType name="labReportTO">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractTO">
+        <xs:sequence>
+          <xs:element form="unqualified" minOccurs="0" name="labTests" type="tns:labTestArray"/>
+          <xs:element form="unqualified" minOccurs="0" name="author" type="tns:authorTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="caseNumber" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="comment" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="facility" type="tns:siteTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="id" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="specimen" type="tns:labSpecimenTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="timestamp" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="title" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="text" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="type" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="result" type="tns:labResultTO"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="labSpecimenTO">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractTO">
+        <xs:sequence>
+          <xs:element form="unqualified" minOccurs="0" name="id" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="name" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="collectionDate" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="accessionNum" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="site" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="facility" type="tns:taggedText"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="labResultTO">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractTO">
+        <xs:sequence>
+          <xs:element form="unqualified" minOccurs="0" name="timestamp" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="test" type="tns:labTestTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="specimenType" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="comment" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="value" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="boundaryStatus" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="labSiteId" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="labTestTO">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractTO">
+        <xs:sequence>
+          <xs:element form="unqualified" minOccurs="0" name="result" type="tns:labResultTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="specimen" type="tns:labSpecimenTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="id" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="name" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="category" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="units" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="lowRef" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="hiRef" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="refRange" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="loinc" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+*/

@@ -1,20 +1,11 @@
 Profile:        MHVecg
-Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference
+Parent:         VA.MHV.PHR.documentReference
 Id:             VA.MHV.PHR.ecg
 Title:          "VA MHV PHR ECG"
 Description:    """
-A profile on the DocumentReference resource for MHV PHR exposing ECG (ClinicalProcedureTO) using FHIR API.
-
-- The mock example maps best to VIA_v4.0.7_uat.wsdl. 
-- based on US-Core for Clinical Notes
-- must also have category of [Cardiology (LP29708-2)](https://loinc.org/LP29708-2)
-- .identifier holds the ClinicalProcedureTO.id
-- must have type of LOINC 11524-6
-
-TODO Questions:
-- none
+A profile on the DocumentReference resource for MHV PHR exposing ECG/EKG (ClinicalProcedureTO) using FHIR API.
 """
-// must already be "clinical-note"
+// Most criteria come from the MHV documentReference
 * category 2..
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
@@ -40,13 +31,16 @@ TODO Questions:
 * identifier[TOid].use = #usual
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`ClinicalProcedureTO` | `.` | {ClinicalProcedureTO.id}"
-
+* context.encounter 0..0
+* content.attachment.creation 0..0
+* custodian 0..0
+* description 0..0
 
 Mapping: Ecg-Mapping
 Source:	MHVecg
 Target: "ClinicalProcedureTO"
 Title: "VDIF to MHV-PHR"
-* -> "ClinicalProcedureTO" "MHV PHR FHIR API"
+* -> "ClinicalProcedureTO"
 * category -> "`clinical-note` and Cardiology (LP29708-2)"
 * status -> "`current`"
 * subject -> "GetPatient()"
@@ -55,8 +49,23 @@ Title: "VDIF to MHV-PHR"
 * content.attachment.title -> "ClinicalProcedureTO.name"
 * type.coding -> "LOINC#8601-7"
 * context.related -> "GetLocation(ClinicalProcedureTO.facility.sitecode)"
-* content.attachment.creation -> "unknown"
-* content.attachment.size -> "calculate"
-* content.attachment.hash -> "calculate"
 * content.attachment.contentType -> "`text`"
 * content.attachment.data -> "ClinicalProcedureTO.report"
+
+/*
+  <xs:complexType name="clinicalProcedureTO">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractTO">
+        <xs:sequence>
+          <xs:element form="unqualified" minOccurs="0" name="facility" type="tns:siteTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="name" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="timestamp" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="note" type="tns:noteTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="id" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="report" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+*/

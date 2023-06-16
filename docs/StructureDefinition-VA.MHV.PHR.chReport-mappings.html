@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.9"}
-    h3,h4,h5,h6{--heading-prefix:"10.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.9"}
+    h3,h4,h5,h6{--heading-prefix:"9.9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -359,20 +359,19 @@
 </table>
 <a name="CH-Mapping-labTestPromises"> </a><h3>Mappings for HDR to MHV-PHR (labTestPromises)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVchReport</b></td></tr>
- <tr><td>DiagnosticReport</td><td>HDR labTestPromises</td><td><p>MHV PHR FHIR API</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;meta</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastUpdated</td><td>ConvertDate(labTestPromises.recordUpdateTime)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`LAB`, all codes from contained labTests</td><td>, </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>labTestPromises.labSubscript</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>ConvertDate(labTestPromises.reportCompleDate.literal)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>ConvertDate(labTestPromises.reportCompleDate.literal)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetPractitioner(labTestPromises.labTestRequest.author), GetLocation(labTestPromises.labTestRequest.orderingFacilityIdentifier), GetLocation(labTestPromises.recordSource)</td><td>, , </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Contained Specimen (labTestPromises.specimen)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>Contained Observation(labTestPromises.labTests)</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>labTestPromises.labCommentEvents.comments combined</td><td></td> </tr>
+ <tr><td>DiagnosticReport</td><td>HDR labTestPromises</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;meta</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastUpdated</td><td>ConvertDate(labTestPromises.recordUpdateTime)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`LAB`, all codes from contained labTests</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>labTestPromises.labSubscript</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>ConvertDate(labTestPromises.reportCompleDate.literal)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>ConvertDate(labTestPromises.reportCompleDate.literal)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetPractitioner(labTestPromises.labTestRequest.author), GetLocation(labTestPromises.labTestRequest.orderingFacilityIdentifier), GetLocation(labTestPromises.recordSource)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Contained Specimen (labTestPromises.specimen)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>Contained Observation(labTestPromises.labTests)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;conclusion</td><td>labTestPromises.labCommentEvents.comments combined</td> </tr>
 </table>
 
 
@@ -449,7 +448,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 16:30-0500">2023-06-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 16, 2023 14:48-0500">2023-06-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

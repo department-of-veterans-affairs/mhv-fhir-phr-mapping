@@ -5,6 +5,7 @@
 - `category` will be `problem-list-item`
 - `code` is the condition, problem or diagnosis
   - `code.coding` may be populated with an ICD-9 code
+  - do not have any other codes available
 - a `clinicalStatus` of `active`
 - `asserter` the clinician
 - `verificationStatus` only `confirmed` or `unconfirmed`

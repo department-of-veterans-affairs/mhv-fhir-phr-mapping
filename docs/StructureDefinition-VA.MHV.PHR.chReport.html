@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.9"}
-    h3,h4,h5,h6{--heading-prefix:"10.9"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.9"}
+    h3,h4,h5,h6{--heading-prefix:"9.9"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -291,41 +291,27 @@
   </table>
 
 <p>
-<p>The given labTestPromise example aligns with the <code class="language-plaintext highlighter-rouge">Lab.xsd</code> schema. 
-A profile showing how <code class="language-plaintext highlighter-rouge">labTestPromise</code> is mapped into a FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Observation</code>, and <code class="language-plaintext highlighter-rouge">Specimen</code>. Where the <code class="language-plaintext highlighter-rouge">labTestPromise</code> only has <code class="language-plaintext highlighter-rouge">labSubscript</code> of <code class="language-plaintext highlighter-rouge">CH</code> (Chem-Hem).</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises</code> is mapped onto this FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> for laboratory reporting. The mapping to <a href="StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">HDR labTestPromise</a></p>
-<ul>
-  <li>code.text must be <code class="language-plaintext highlighter-rouge">CH</code>. No other codeing values</li>
-  <li>category must be <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0074#LAB</code></li>
-  <li>category also holds 1..* codes from the contained Observation.code</li>
-</ul>
-
-<p>the <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.orderedTestCode</code> is recorded as a <a href="StructureDefinition-VA.MHV.PHR.chPanel.html">Observation panel</a> that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to <a href="StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode">HDR orderedTestCode</a>.</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.chemistryResult</code> are each recorded as a FHIR <a href="StructureDefinition-VA.MHV.PHR.chTest.html">Observation result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR chTestPromise</a>.</p>
-
-<p>The <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR Specimen</a>.</p>
-
-<p>The use of contained means that we do not need to de-duplicate the lab tests or specimen.</p>
-
-<p>This profile is <strong>not</strong> based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. That profile requires use of us-core Practitioner that I can’t extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.</p>
-
-<p>Notes:</p>
-<ul>
-  <li>current distinguishing between panel and results is by way of if the <code class="language-plaintext highlighter-rouge">hasMember</code> element is populated. Panel will have no <code class="language-plaintext highlighter-rouge">value[x]</code> and will have <code class="language-plaintext highlighter-rouge">hasMember</code> populated; where as results will have a <code class="language-plaintext highlighter-rouge">value[x]</code> and will not have <code class="language-plaintext highlighter-rouge">hasMember</code> populated.
-    <ul>
-      <li>Could create a code to use in <code class="language-plaintext highlighter-rouge">category</code>, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.</li>
-      <li>I am checkng with the VA C-CDA team to see if they have set a precedence that I could use.</li>
-    </ul>
-  </li>
-</ul>
+<p>Profile on DiagnosticReport for Chem-Hem lab report.</p>
 
 </p>
 
 
 
 <!-- insert intro if present -->
+
+
+
+
+<div style="display:inline-block" markdown="1">
+
+<p>For API details see:</p>
+
+<ul>
+  <li><a href="StructureDefinition-VA.MHV.PHR.diagnosticReport.html">DiagnosticReport</a> shows all of the DiagnosticReport. Including Microbiology, Pathology, and Chem-Hem.</li>
+</ul>
+
+
+</div>
 
 
 
@@ -1010,6 +996,47 @@ Summary
 <!-- insert notes if present -->
 
 
+<h3>Notes:</h3>
+
+
+<div style="display:inline-block" markdown="1">
+
+<ul>
+  <li>Chem-Hem comes from HDR (not VIA), thus is different schema than the others.</li>
+  <li>The given labTestPromise example aligns with the <a href="https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/tree/development/src/main/resources/xsd/templates/MHVLabChemHemRead1">CDS WSClient</a> <code class="language-plaintext highlighter-rouge">Lab.xsd</code> schema.</li>
+  <li>A profile showing how <code class="language-plaintext highlighter-rouge">labTestPromise</code> is mapped into a FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code>, <code class="language-plaintext highlighter-rouge">Observation</code>, and <code class="language-plaintext highlighter-rouge">Specimen</code>. Where the <code class="language-plaintext highlighter-rouge">labTestPromise</code> only has <code class="language-plaintext highlighter-rouge">labSubscript</code> of <code class="language-plaintext highlighter-rouge">CH</code> (Chem-Hem).</li>
+  <li>The <a href="https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/hdr_lab_sample.xml">mock example</a></li>
+  <li>should be based on US-Core for DiagnosticReport
+    <ul>
+      <li>This profile is <strong>not</strong> based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. That profile requires use of us-core Practitioner that I can’t extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.</li>
+    </ul>
+  </li>
+  <li>should have <code class="language-plaintext highlighter-rouge">meta.profile</code> set to <code class="language-plaintext highlighter-rouge">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport</code> to indicate the intent to be compliant with this profile</li>
+  <li>The <code class="language-plaintext highlighter-rouge">labTestPromises</code> is mapped onto this FHIR <code class="language-plaintext highlighter-rouge">DiagnosticReport</code> for laboratory reporting. The mapping to <a href="StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises">HDR labTestPromise</a></li>
+  <li>code.text must be <code class="language-plaintext highlighter-rouge">CH</code>. No other codeing values</li>
+  <li>category must be <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/v2-0074#LAB</code></li>
+  <li>category also holds 1..* codes from the contained Observation.code</li>
+  <li>the <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.orderedTestCode</code> is recorded as a <a href="StructureDefinition-VA.MHV.PHR.chPanel.html">Observation panel</a> that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to <a href="StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode">HDR orderedTestCode</a>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">labTestPromises.labTests.chemistryResult</code> are each recorded as a FHIR <a href="StructureDefinition-VA.MHV.PHR.chTest.html">Observation result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests">HDR chTestPromise</a>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">labTestPromises.specimen</code> is mapped into a FHIR <a href="StructureDefinition-VA.MHV.PHR.chSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen">HDR Specimen</a>.</li>
+  <li>The use of contained means that we do not need to de-duplicate the lab tests or specimen. Note that means that the specimen and observations are no individually findable or referenceable.</li>
+</ul>
+
+<h4 id="mapping-concerns">Mapping Concerns</h4>
+
+<ul>
+  <li>current distinguishing between panel and results is by way of if the <code class="language-plaintext highlighter-rouge">hasMember</code> element is populated. Panel will have no <code class="language-plaintext highlighter-rouge">value[x]</code> and will have <code class="language-plaintext highlighter-rouge">hasMember</code> populated; where as results will have a <code class="language-plaintext highlighter-rouge">value[x]</code> and will not have <code class="language-plaintext highlighter-rouge">hasMember</code> populated.
+    <ul>
+      <li>Could create a code to use in <code class="language-plaintext highlighter-rouge">category</code>, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.</li>
+      <li>I checked with the VA C-CDA team to see if they have set a precedence that I could use. –&gt; None</li>
+    </ul>
+  </li>
+</ul>
+
+
+</div>
+
+
 
 
 </div>
@@ -1080,7 +1107,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 16:30-0500">2023-06-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 16, 2023 14:48-0500">2023-06-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

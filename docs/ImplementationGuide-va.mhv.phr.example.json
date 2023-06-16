@@ -18,7 +18,7 @@
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-06-13T16:30:05-05:00",
+  "date" : "2023-06-16T14:48:21-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -1909,10 +1909,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/VA.MHV.documentReference"
+        "reference" : "StructureDefinition/VA.MHV.PHR.documentReference"
       },
       "name" : "VA MHV All DocumentReference",
-      "description" : "A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. \n\n- based on US-Core for Clinical Notes\n- `.type` indicates the type of note\n- the text note will be in the `.content.attachment.data` element\n- not used in DocumentReference\n  - masterIdentifier 0..0\n  - docStatus 0..0\n  - relatesTo 0..0\n  - description 0..0\n  - securityLabel 0..0\n  - content.format 0..0\n  - context.encounter 0..0\n  - context.event 0..0\n  - context.facilityType 0..0\n  - context.practiceSetting 0..0\n  - context.sourcePatientInfo 0..0\n- **Business Rule**: Only `completed` reports are included (`.status` == `current`)",
+      "description" : "A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. This includes Physician Notes, Discharge Summary, ECG/EKG, and Imaging reports.",
       "exampleBoolean" : false
     },
     {
@@ -1921,10 +1921,10 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/VA.MHV.diagnosticReport"
+        "reference" : "StructureDefinition/VA.MHV.PHR.diagnosticReport"
       },
       "name" : "VA MHV DiagnosticReport",
-      "description" : "This defines the use for Chem-Hem and \n`DiagnosticReport`, with contained `Observation` and `Specimen` as needed. \n\n- code.text is\n    - `CH` for 'Chem-Hem'\n    - other text values come from Pathology or Microbiology report\n- category must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`\n    - category also holds 1..* codes from the contained Observation.code\n\nThis profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.",
+      "description" : "This defines the use for Chem-Hem and \n`DiagnosticReport`, with contained `Observation` and `Specimen` as needed.",
       "exampleBoolean" : false
     },
     {
@@ -1972,7 +1972,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.ecg"
       },
       "name" : "VA MHV PHR ECG",
-      "description" : "A profile on the DocumentReference resource for MHV PHR exposing ECG (ClinicalProcedureTO) using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n- must also have category of [Cardiology (LP29708-2)](https://loinc.org/LP29708-2)\n- .identifier holds the ClinicalProcedureTO.id\n- must have type of LOINC 11524-6\n\nTODO Questions:\n- none",
+      "description" : "A profile on the DocumentReference resource for MHV PHR exposing ECG/EKG (ClinicalProcedureTO) using FHIR API.",
       "exampleBoolean" : false
     },
     {
@@ -1996,7 +1996,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.chReport"
       },
       "name" : "VA MHV PHR HDR Chem-Hem Report",
-      "description" : "The given labTestPromise example aligns with the `Lab.xsd` schema. \nA profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (Chem-Hem).\n\nThe `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)\n- code.text must be `CH`. No other codeing values\n- category must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`\n- category also holds 1..* codes from the contained Observation.code\n\nthe `labTestPromises.labTests.orderedTestCode` is recorded as a [Observation panel](StructureDefinition-VA.MHV.PHR.chPanel.html) that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to [HDR orderedTestCode](StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode). \n\nThe `labTestPromises.labTests.chemistryResult` are each recorded as a FHIR [Observation result](StructureDefinition-VA.MHV.PHR.chTest.html) that is contained in the DiagnosticReport. The map to [HDR chTestPromise](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). \n\nThe `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nThis profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.\n\nNotes:\n- current distinguishing between panel and results is by way of if the `hasMember` element is populated. Panel will have no `value[x]` and will have `hasMember` populated; where as results will have a `value[x]` and will not have `hasMember` populated. \n  - Could create a code to use in `category`, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.\n  - I am checkng with the VA C-CDA team to see if they have set a precedence that I could use.",
+      "description" : "Profile on DiagnosticReport for Chem-Hem lab report.",
       "exampleBoolean" : false
     },
     {
@@ -2020,7 +2020,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.labReport"
       },
       "name" : "VA MHV PHR Lab Report",
-      "description" : "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.\n\nThe given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO\n\nThe LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)\n\nThe LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto).\n\nThe LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nTODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)\n\n- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations. BUT IS NOT because us-core requires us Practitioner and we can't be compliant with that. So I have replicated the us-core requirements here.",
+      "description" : "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.",
       "exampleBoolean" : false
     },
     {
@@ -2068,7 +2068,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.note"
       },
       "name" : "VA MHV PHR Notes",
-      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API. \n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n- `type` seems to hold an enum (PN, DS). \n  - `PN` - LOINC#11505-5 \\\"Physician procedure note\\\"\n  - `DS` - LOINC#18842-5 \\\"Discharge summary\\\"\n  - anything else should be logged as not yet understood\n- This also includes the (NoteTO) received on the 'Admission and Discharge' feed which holds a Discharge Summary without an id.\n- not used in DocumentReference\n  - masterIdentifier 0..0\n  - docStatus 0..0\n  - relatesTo 0..0\n  - description 0..0\n  - securityLabel 0..0\n  - content.format 0..0\n  - context.encounter 0..0\n  - context.event 0..0\n  - context.facilityType 0..0\n  - context.practiceSetting 0..0\n  - context.sourcePatientInfo 0..0\n- **Business Rule**: do not convert any NoteTO.status that is not `completed` or `COMPLETED`.\n- **Business Rule**: do not convet any NoteTO.type of `A`\n\nTODO Questions:\n- is `standardTitle` or `type` used to differentiate between various note types?\n- `status` might be derived from `NoteTO.status`, but at this point I presume we are only told about completed notes, we have a business rule to ignore all others, and I don't know what other `NoteTO.status` values might happen\n- what other `type` values might we see?\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - serviceCategory\n  - cosigner\n  - hasAdendum\n  - isAddendum\n  - originalNoteID\n  - hasImages\n  - itemId\n  - signatureTimestamp\n  - consultId\n  - surgicalProcId\n  - prfId\n  - parentId\n  - procTimestamp\n  - subject",
+      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.",
       "exampleBoolean" : false
     },
     {
@@ -2128,7 +2128,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.imaging"
       },
       "name" : "VA MHV PHR Radiology",
-      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl. \n- based on US-Core for Clinical Notes\n- type LOINC#18748-4 `Diagnostic imaging study`\n- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details\n- An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.\n- Order and Encounter are not converted into FHIR resources, but rather we save the original id into the Reference.identifier encoding.\n\nTODO Questions:\n- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.\n  - hasImages\n  - imagingType - always was GENERAL RADIOLOGY\n  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?\n  - these never appeared in examples\n    - modifiers\n    - clinicalHX\n    - impression\n    - imagingExamTO\n    - reportId",
+      "description" : "A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.",
       "exampleBoolean" : false
     },
     {
@@ -2140,7 +2140,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.vitals"
       },
       "name" : "VA MHV PHR Vital-Signs",
-      "description" : "A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.\n\n- The mock example maps best to VIA_v4.0.7_uat.wsdl.\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available\n  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)\n  - note some of these codes are high confidence, many are not\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- value\n  - Blood Pressure - no `.value[x]`, but has `.component`\n  - Pain - `.valueInteger`\n  - Those with units use `.valueQuantity` else `.valueString`\n- value units\n  - There is a units within the data, and it seems mostly to be the proper code from the proper code system UCUM\n  - some units are not proper formal UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)",
+      "description" : "A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.",
       "exampleBoolean" : false
     },
     {
@@ -2152,7 +2152,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.vitalsBP"
       },
       "name" : "VA MHV PHR Vital-Signs for Blood Pressure",
-      "description" : "A profile on the Observation resource for Blood Pressure\n\n- Used only with Blood-Pressure\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available\n  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- Blood Pressure in the mock examples is triple recorded: First with both values, Second with just Systolic, Third with Diastolic. There only seems to be a nearness relationship. Note that only the first one has a type.id. So I recommend we use only the first, and split the values out. Note no pulse is recorded.\n  - Blood Pressure is recorded with `.component` rather than `.value[x]`",
+      "description" : "A profile on the Observation resource for Blood Pressure",
       "exampleBoolean" : false
     },
     {
@@ -2164,7 +2164,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.vitalsPain"
       },
       "name" : "VA MHV PHR Vital-Signs for PAIN",
-      "description" : "A profile on the Observation resource for Pain\n\n- Should be based on US-Core for Vital-Signs Observation Resource\n- status of `final`\n- category code of `vital-signs`\n- code should be LOINC if available\n  - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)\n- patient\n- Not preserving the VitalSignTO.low and .high as they are referenceRange\n- Note the pain integer is stored in quantity, as that is what PGHD has been using.",
+      "description" : "A profile on the Observation resource for Pain",
       "exampleBoolean" : false
     },
     {
@@ -2267,19 +2267,6 @@
         }],
         "nameUrl" : "identifier.html",
         "title" : "Id vs Identifier",
-        "generation" : "markdown"
-      },
-      {
-        "extension" : [{
-          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
-          "valueCode" : "informative"
-        },
-        {
-          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
-          "valueUrl" : "vitals.html"
-        }],
-        "nameUrl" : "vitals.html",
-        "title" : "Vitals",
         "generation" : "markdown"
       },
       {

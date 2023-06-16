@@ -4,19 +4,11 @@
 Profile: MHVdiagnosticReport
 //Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 Parent: DiagnosticReport
-Id: VA.MHV.diagnosticReport
+Id: VA.MHV.PHR.diagnosticReport
 Title: "VA MHV DiagnosticReport"
 Description: """
 This defines the use for Chem-Hem and 
-`DiagnosticReport`, with contained `Observation` and `Specimen` as needed. 
-
-- code.text is
-    - `CH` for 'Chem-Hem'
-    - other text values come from Pathology or Microbiology report
-- category must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`
-    - category also holds 1..* codes from the contained Observation.code
-
-This profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.
+`DiagnosticReport`, with contained `Observation` and `Specimen` as needed.
 """
 * identifier 1..
 * subject 1..1

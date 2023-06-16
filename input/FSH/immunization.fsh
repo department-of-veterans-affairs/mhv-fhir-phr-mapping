@@ -57,7 +57,7 @@ Mapping: Immunization-Mapping
 Source:	MHVimmunization
 Target: "ImmunizationTO"
 Title: "VDIF to MHV-PHR"
-* -> "ImmunizationTO" "MHV PHR FHIR API"
+* -> "ImmunizationTO"
 * vaccineCode.text -> "ImmunizationTO.name"
 * note.text -> "ImmunizationTO.comments"
 * reaction.detail -> "ImmunizationTO.reaction"

@@ -66,7 +66,7 @@ Mapping: Location-Mapping
 Source:	MHVlocation
 Target: "HospitalLocationTO"
 Title: "VDIF to MHV-PHR"
-* -> "HospitalLocationTO" "MHV PHR FHIR API"
+* -> "HospitalLocationTO"
 * identifier -> "HospitalLocationTO.ids"
 * name -> "HospitalLocationTO.name"
 * alias -> "HospitalLocationTO.abbreviation"

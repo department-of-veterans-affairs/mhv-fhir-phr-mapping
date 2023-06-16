@@ -1,0 +1,33 @@
+
+- based on US-Core documentReference Resource profile for clinical notes
+  - `category` will have `clinical-note`
+  - `category` may have other values
+    - [Cardiology (LP29708-2)](https://loinc.org/LP29708-2)
+- `type` indicates the specific type of document
+  - `.text` the standard title
+  - [ECG/EKG (11524-6)](https://loinc.org/11524-6/)
+  - [Imaging (18748-4)](https://loinc.org/18748-4/)
+    - may have a CPT code
+  - [Physician Procedure Note (11505-5)](https://loinc.org/11505-5/)
+  - [Discharge Summary (18842-5)](https://loinc.org/18842-5/)
+- `subject` is a reference to this patient
+- `status` is `current`
+  - **This is likely changing**, so should only display `current`
+- `identifier` will hold the record identifier from Vista
+  - may hold accession number for Radiology reports
+  - may hold case number
+- `date` the report date
+- `author` the report author
+- `authenticator` may hold the approver of the report
+- `custodian` may hold the imaging study location
+- `description` may hold the imaging interpretation
+- `context.period` may hold the admit time and discharge time
+- `context.related` may hold the location
+- `context.encounter` may hold the encounter identifier
+- `content.title` is the title of the report
+- `content.attachment.title` may be a local title for the report
+- `content.attachment.creation` may be the Radiology report timestamp
+- `content.attachment.contentType` will be `text/plain`
+- `content.attachment.data` the report text in base64 encoding
+- `meta.lastUpdated` will indicate the last time the resource was updated
+- no other elements are populated

@@ -1,29 +1,11 @@
 Profile:        MHVimagingExam
-Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference
+Parent:         VA.MHV.PHR.documentReference
 Id:             VA.MHV.PHR.imaging
 Title:          "VA MHV PHR Radiology"
 Description:    """
 A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.
-
-- The mock example maps best to VIA_v4.0.7_uat.wsdl. 
-- based on US-Core for Clinical Notes
-- type LOINC#18748-4 `Diagnostic imaging study`
-- see [mapping](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto) for details
-- An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.
-- Order and Encounter are not converted into FHIR resources, but rather we save the original id into the Reference.identifier encoding.
-
-TODO Questions:
-- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
-  - hasImages
-  - imagingType - always was GENERAL RADIOLOGY
-  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?
-  - these never appeared in examples
-    - modifiers
-    - clinicalHX
-    - impression
-    - imagingExamTO
-    - reportId
 """
+// Most criteria come from the MHV documentReference
 * type.coding 1..2
 * type.coding ^slicing.discriminator.type = #pattern
 * type.coding ^slicing.discriminator.path = "system"
@@ -63,7 +45,7 @@ Mapping: ImagingExam-Mapping
 Source:	MHVimagingExam
 Target: "ImagingExamTO"
 Title: "VDIF to MHV-PHR"
-* -> "ImagingExamTO" "MHV PHR FHIR API"
+* -> "ImagingExamTO"
 * category -> "`clinical-note`"
 * type.coding[LO] -> "LOINC#18748-4"
 * type.coding[CP] -> "ImagingExamTO.type"
@@ -84,3 +66,33 @@ Title: "VDIF to MHV-PHR"
 * content.attachment.contentType -> "`text/plain`"
 * content.attachment.data -> "Base64Encode(ImagingStudyTO.radiologyReportTo.text)"
 * description -> "ImagingStudyTO.interpretation"
+
+/*
+  <xs:complexType name="imagingExamTO">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractTO">
+        <xs:sequence>
+          <xs:element form="unqualified" minOccurs="0" name="accessionNum" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="casenum" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="encounterId" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="facility" type="tns:siteTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="hasImages" type="xs:boolean"/>
+          <xs:element form="unqualified" minOccurs="0" name="id" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="imagingType" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="interpretation" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="imagingLocation" type="tns:hospitalLocationTO"/>
+          <xs:element form="unqualified" maxOccurs="unbounded" minOccurs="0" name="modifiers" type="tns:cptCodeTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="name" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="order" type="tns:orderTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="provider" type="tns:userTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="radiologyReportTO" type="tns:radiologyReportTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="reportId" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="status" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="timestamp" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="type" type="tns:cptCodeTO"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+*/

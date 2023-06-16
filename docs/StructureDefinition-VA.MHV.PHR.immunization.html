@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.10"}
-    h3,h4,h5,h6{--heading-prefix:"10.10"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.10"}
+    h3,h4,h5,h6{--heading-prefix:"9.10"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -312,11 +312,12 @@
   </li>
   <li><code class="language-plaintext highlighter-rouge">patient</code> is a reference to this patient</li>
   <li><code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">completed</code></li>
-  <li><code class="language-plaintext highlighter-rouge">primarySource</code> is <code class="language-plaintext highlighter-rouge">false</code></li>
+  <li><code class="language-plaintext highlighter-rouge">primarySource</code> is <code class="language-plaintext highlighter-rouge">false</code> - the MHV FHIR API should not be seen as the primary source</li>
   <li><code class="language-plaintext highlighter-rouge">identifier</code> will hold the record identifier from Vista</li>
   <li><code class="language-plaintext highlighter-rouge">vaccineCode.text</code> and/or
     <ul>
       <li><code class="language-plaintext highlighter-rouge">vaccineCode.coding</code> may be a CPT coding</li>
+      <li>do not have any other codes available</li>
     </ul>
   </li>
   <li><code class="language-plaintext highlighter-rouge">note.text</code> may have comments</li>
@@ -329,6 +330,8 @@
   <li><code class="language-plaintext highlighter-rouge">manufacture</code> may be the manufacture of the immunization given</li>
   <li><code class="language-plaintext highlighter-rouge">protocolApplied.doseNumberString</code> may be the series</li>
   <li><code class="language-plaintext highlighter-rouge">location.display</code> may be the location where the immunization was given</li>
+  <li><code class="language-plaintext highlighter-rouge">meta.lastUpdated</code> will indicate the last time the resource was updated</li>
+  <li>no other elements are populated</li>
 </ul>
 
 
@@ -1251,12 +1254,13 @@ Summary
       <li>US-Core already requires: <code class="language-plaintext highlighter-rouge">status</code>, <code class="language-plaintext highlighter-rouge">vaccineCode</code>, <code class="language-plaintext highlighter-rouge">patient</code>, <code class="language-plaintext highlighter-rouge">occurance[x]</code>, <code class="language-plaintext highlighter-rouge">primarySource</code></li>
     </ul>
   </li>
+  <li>should have <code class="language-plaintext highlighter-rouge">meta.profile</code> set to <code class="language-plaintext highlighter-rouge">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization</code> to indicate the intent to be compliant with this profile</li>
   <li>must have <code class="language-plaintext highlighter-rouge">identifier</code> as cross reference to original source</li>
   <li>must be indicated this data are not official record (<code class="language-plaintext highlighter-rouge">primarySource</code>=false)</li>
   <li>any reaction is recorded as a contained <code class="language-plaintext highlighter-rouge">Observation</code></li>
 </ul>
 
-<h5 id="mapping-concerns">Mapping Concerns</h5>
+<h4 id="mapping-concerns">Mapping Concerns</h4>
 
 <ul>
   <li>The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.</li>
@@ -1430,7 +1434,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Jun 13, 2023 16:30-0500">2023-06-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 16, 2023 14:48-0500">2023-06-16</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

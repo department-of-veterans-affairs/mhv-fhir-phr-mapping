@@ -1,52 +1,11 @@
 Profile:        MHVnote
-Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-documentreference
+Parent:         VA.MHV.PHR.documentReference
 Id:             VA.MHV.PHR.note
 Title:          "VA MHV PHR Notes"
 Description:    """
-A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API. 
-
-- The mock example maps best to VIA_v4.0.7_uat.wsdl. 
-- based on US-Core for Clinical Notes
-- `type` seems to hold an enum (PN, DS). 
-  - `PN` - LOINC#11505-5 \"Physician procedure note\"
-  - `DS` - LOINC#18842-5 \"Discharge summary\"
-  - anything else should be logged as not yet understood
-- This also includes the (NoteTO) received on the 'Admission and Discharge' feed which holds a Discharge Summary without an id.
-- not used in DocumentReference
-  - masterIdentifier 0..0
-  - docStatus 0..0
-  - relatesTo 0..0
-  - description 0..0
-  - securityLabel 0..0
-  - content.format 0..0
-  - context.encounter 0..0
-  - context.event 0..0
-  - context.facilityType 0..0
-  - context.practiceSetting 0..0
-  - context.sourcePatientInfo 0..0
-- **Business Rule**: do not convert any NoteTO.status that is not `completed` or `COMPLETED`.
-- **Business Rule**: do not convet any NoteTO.type of `A`
-
-TODO Questions:
-- is `standardTitle` or `type` used to differentiate between various note types?
-- `status` might be derived from `NoteTO.status`, but at this point I presume we are only told about completed notes, we have a business rule to ignore all others, and I don't know what other `NoteTO.status` values might happen
-- what other `type` values might we see?
-- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
-  - serviceCategory
-  - cosigner
-  - hasAdendum
-  - isAddendum
-  - originalNoteID
-  - hasImages
-  - itemId
-  - signatureTimestamp
-  - consultId
-  - surgicalProcId
-  - prfId
-  - parentId
-  - procTimestamp
-  - subject
+A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.
 """
+// Most criteria come from the MHV documentReference
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
@@ -57,28 +16,10 @@ TODO Questions:
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`NoteTO` | `.` | {NoteTO.id}"
 * type from NoteTypeVS (required)
-* category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
-* status = #current
-* date MS
-* content 1..1
-* author MS
-* authenticator MS
-* context.related MS
-* context.period MS
-* content.attachment.contentType MS
-* content.attachment.data MS
-* masterIdentifier 0..0
-* docStatus 0..0
-* relatesTo 0..0
-* description 0..0
-* securityLabel 0..0
-* content.format 0..0
 * context.encounter 0..0
-* context.event 0..0
-* context.facilityType 0..0
-* context.practiceSetting 0..0
-* context.sourcePatientInfo 0..0
-
+* content.attachment.creation 0..0
+* custodian 0..0
+* description 0..0
 
 ValueSet: NoteTypeVS
 Title: "Known Note types"
@@ -94,7 +35,7 @@ Mapping: Notes-Mapping
 Source:	MHVnote
 Target: "NoteTO"
 Title: "VDIF to MHV-PHR"
-* -> "NoteTO" "MHV PHR FHIR API"
+* -> "NoteTO"
 * category -> "`clinical-note`"
 * author -> "GetPractitioner(NoteTO.author.[AuthorTO])"
 * status -> "`current`"

@@ -40,6 +40,9 @@ Usage: #definition
       * name = "patient"
       * type = #token
     * searchParam[+]
+      * name = "patient.identifier"
+      * type = #token
+    * searchParam[+]
       * name = "category"
       * type = #token
     * searchParam[+]
@@ -65,6 +68,9 @@ Usage: #definition
       * type = #token
     * searchParam[+]
       * name = "patient"
+      * type = #token
+    * searchParam[+]
+      * name = "patient.identifier"
       * type = #token
     * searchParam[+]
       * name = "category"
@@ -96,6 +102,9 @@ Usage: #definition
       * name = "patient"
       * type = #token
     * searchParam[+]
+      * name = "patient.identifier"
+      * type = #token
+    * searchParam[+]
       * name = "date"
       * type = #token
     * searchParam[+]
@@ -123,11 +132,14 @@ Usage: #definition
       * name = "patient"
       * type = #token
     * searchParam[+]
+      * name = "patient.identifier"
+      * type = #token
+    * searchParam[+]
       * name = "date"
       * type = #token
   * resource[+]
     * type = #DocumentReference
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.documentReference"
+    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.documentReference"
     * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"
     * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging"
     * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg"
@@ -145,6 +157,9 @@ Usage: #definition
       * type = #token
     * searchParam[+]
       * name = "patient"
+      * type = #token
+    * searchParam[+]
+      * name = "patient.identifier"
       * type = #token
     * searchParam[+]
       * name = "category"
@@ -177,6 +192,9 @@ Usage: #definition
       * type = #token
     * searchParam[+]
       * name = "patient"
+      * type = #token
+    * searchParam[+]
+      * name = "patient.identifier"
       * type = #token
     * searchParam[+]
       * name = "code"

@@ -30,7 +30,7 @@
   "name" : "MHVchReport",
   "title" : "VA MHV PHR HDR Chem-Hem Report",
   "status" : "active",
-  "date" : "2023-06-13T16:30:05-05:00",
+  "date" : "2023-06-16T14:48:21-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -50,7 +50,7 @@
       "value" : "JohnMoehrke@gmail.com"
     }]
   }],
-  "description" : "The given labTestPromise example aligns with the `Lab.xsd` schema. \nA profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (Chem-Hem).\n\nThe `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)\n- code.text must be `CH`. No other codeing values\n- category must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`\n- category also holds 1..* codes from the contained Observation.code\n\nthe `labTestPromises.labTests.orderedTestCode` is recorded as a [Observation panel](StructureDefinition-VA.MHV.PHR.chPanel.html) that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to [HDR orderedTestCode](StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode). \n\nThe `labTestPromises.labTests.chemistryResult` are each recorded as a FHIR [Observation result](StructureDefinition-VA.MHV.PHR.chTest.html) that is contained in the DiagnosticReport. The map to [HDR chTestPromise](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests). \n\nThe `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nThis profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.\n\nNotes:\n- current distinguishing between panel and results is by way of if the `hasMember` element is populated. Panel will have no `value[x]` and will have `hasMember` populated; where as results will have a `value[x]` and will not have `hasMember` populated. \n  - Could create a code to use in `category`, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.\n  - I am checkng with the VA C-CDA team to see if they have set a precedence that I could use.",
+  "description" : "Profile on DiagnosticReport for Chem-Hem lab report.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -176,8 +176,7 @@
       },
       {
         "identity" : "CH-Mapping-labTestPromises",
-        "map" : "HDR labTestPromises",
-        "comment" : "MHV PHR FHIR API"
+        "map" : "HDR labTestPromises"
       }]
     },
     {
@@ -2443,8 +2442,7 @@
       "path" : "DiagnosticReport",
       "mapping" : [{
         "identity" : "CH-Mapping-labTestPromises",
-        "map" : "HDR labTestPromises",
-        "comment" : "MHV PHR FHIR API"
+        "map" : "HDR labTestPromises"
       }]
     },
     {

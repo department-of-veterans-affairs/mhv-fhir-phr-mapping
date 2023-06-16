@@ -37,7 +37,7 @@ Mapping: Organization-LabSiteTO
 Source:	MHVorganization
 Target: "labSiteTO"
 Title: "VDIF to MHV-PHR"
-* -> "labSiteTO" "MHV PHR FHIR API"
+* -> "labSiteTO"
 * identifier.use -> "`usual`"
 * identifier.system -> "`urn:oid:2.16.840.1.113883.4.349`"
 * identifier.value -> "`LabSiteTO.` + {LabSiteTO.id}"
@@ -77,7 +77,7 @@ Mapping: Organization-performingOrganization
 Source: MHVorganization
 Target: "PerformingOrganization"
 Title: "HDR to MHV-PHR"
-* -> "PerformingOrganization" "MHV PHR FHIR API"
+* -> "PerformingOrganization"
 * identifier.use -> "`usual`"
 * identifier.system -> "`urn:oid:2.16.840.1.113883.4.349`"
 * identifier.value -> "{identifier.stationNumber}"

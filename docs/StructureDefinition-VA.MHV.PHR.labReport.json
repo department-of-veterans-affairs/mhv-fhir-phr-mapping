@@ -30,7 +30,7 @@
   "name" : "MHVlabReport",
   "title" : "VA MHV PHR Lab Report",
   "status" : "active",
-  "date" : "2023-06-13T16:30:05-05:00",
+  "date" : "2023-06-16T14:48:21-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -50,7 +50,7 @@
       "value" : "JohnMoehrke@gmail.com"
     }]
   }],
-  "description" : "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.\n\nThe given example aligns with the VIA_v4.0.7_uat.wsdl. LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO\n\nThe LabReportTO is mapped onto this FHIR DiagnosticReport for laboratory reporting. The mapping to [VDIF LabReportTO](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)\n\nThe LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VDIF LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto).\n\nThe LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VDIF LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen).\n\nThe use of contained means that we do not need to de-duplicate the lab tests or specimen.\n\nTODO determine impact of the new LOINC report on this topic https://loinc.org/file-access/?download-id=22762 the impact has not been assessed. I followed FHIR US-Core.\n\nTODO confirm: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports. I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)\n\n- This profile should be based on US-Core DiagnosticReport profile for Laboratory Results Reporting and lab Observations. BUT IS NOT because us-core requires us Practitioner and we can't be compliant with that. So I have replicated the us-core requirements here.",
+  "description" : "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -176,8 +176,7 @@
       },
       {
         "identity" : "Lab-Mapping-LabReportTO",
-        "map" : "LabReportTO",
-        "comment" : "MHV PHR FHIR API"
+        "map" : "LabReportTO"
       }]
     },
     {
@@ -2400,8 +2399,7 @@
       "path" : "DiagnosticReport",
       "mapping" : [{
         "identity" : "Lab-Mapping-LabReportTO",
-        "map" : "LabReportTO",
-        "comment" : "MHV PHR FHIR API"
+        "map" : "LabReportTO"
       }]
     },
     {

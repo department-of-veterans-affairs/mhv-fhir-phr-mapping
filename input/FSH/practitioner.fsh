@@ -83,7 +83,7 @@ Mapping: Practitioner-UserTO
 Source:	MHVpractitioner
 Target: "UserTO"
 Title: "VDIF to MHV-PHR"
-* -> "UserTO" "MHV PHR FHIR API"
+* -> "UserTO"
 * identifier.use -> "`usual`"
 * identifier.value -> "`UserTO` + {UserTO.id}"
 * identifier.system -> "ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}"
@@ -112,7 +112,7 @@ Mapping: Practitioner-AuthorTO
 Source:	MHVpractitioner
 Target: "AuthorTO"
 Title: "VDIF to MHV-PHR"
-* -> "AuthorTO" "MHV PHR FHIR API"
+* -> "AuthorTO"
 * identifier.use -> "`usual`"
 * identifier.value -> "`AuthorTO.` + {AuthorTO.id}"
 * identifier.system -> "ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}"
@@ -179,7 +179,7 @@ Mapping: Practitioner-PractitionerLite
 Source:	MHVpractitioner
 Target: "PractitionerLite"
 Title: "HDR to MHV-PHR"
-* -> "PractitionerLite" "MHV PHR FHIR API"
+* -> "PractitionerLite"
 * identifier.use -> "`secondary`"
 * identifier.value -> "identifier.identity"
 * identifier.system -> "identifier.assigingFacility"

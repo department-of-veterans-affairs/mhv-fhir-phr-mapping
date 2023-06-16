@@ -1,5 +1,31 @@
 
+- maps to [imagingExamTO](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
+- An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference.
+  - This was transformed using the included XSLT below
+  - from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.
+- [mapping to VHIM](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto)
+- based on US-Core for Clinical Notes
+- should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging` to indicate the intent to be compliant with this profile
+- `type` is LOINC#18748-4 `Diagnostic imaging study`
+- Order and Encounter are not converted into FHIR resources, but rather we save the original id into the Reference.identifier encoding.
+
+#### Mapping Concerns
+
+- some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
+  - hasImages
+  - imagingType - always was GENERAL RADIOLOGY
+  - facility - no clear place in DocumentReference. Need to understand this better, is it data best put inside a contained Encounter?
+  - these never appeared in examples
+    - modifiers
+    - clinicalHX
+    - impression
+    - imagingExamTO
+    - reportId
+
+#### xsl transform
+
 Simple (not fully functional) xslt from SOAP response with ImagingExamTO to FHIR Bundle with DocumentReference:
+
 - uses a fixed Patient resource
 - uses fixed site values for identifiers
 - does not lookup location or practitioner resources, just uses the identifier
@@ -82,7 +108,6 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     </value>
                 </identifier>
                 <status value="current"/>
-                <docStatus value="final"/>
                 <type>
                     <coding>
                     <system value="http://loinc.org"/>
