@@ -1,5 +1,6 @@
 
 - The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) 
+- Received from HDR
 - maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
 - [mapping to VHIM](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-vhim-allergy-to-mhv-phr-intolerancecondition)
 - Should be based on US-Core for AllergyIntolerance Resource profile
@@ -21,7 +22,7 @@
 
 #### Mapping Concerns
 
-- `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllertyIntolerance.
+- `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllergyIntolerance.
 - no clear place to record `recordSource`, `recordVersion`
 - no clear handling of `informationSourceCategory`
   - mock data = 4500978/OBSERVED, 4500975/HISTORICAL

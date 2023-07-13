@@ -1,5 +1,11 @@
 
-MyHealtheVet acts as a FHIR Server.
+MyHealtheVet acts as a FHIR Server. It receives information from many sources and produces a given set of FHIR Resourrces
+
+<figure>
+{%include data-flow.svg%}
+<figcaption>Data flow</figcaption>
+</figure>
+<br clear="all">
 
 ### Utility Resources
 
@@ -68,7 +74,14 @@ This section is dedicated to instructions on how MHV will transition the data we
 
 #### in progress
 
-- Medications (not defined yet what is the source or goal. I note that VIA does have a schema for a MedicationTO. I have heard that there are questions on how to best fit the FHIR medication concept domain.)
+- Medications
+  - support API for current feature where VA prescribed medications are displayed and where online dispensing is avail the veteran can request dispense
+  - Note that this is not defined yet what is the source or goal.
+  - I understand that the interface will be using HL7 v2 feed, and CMOP. I note that VIA does have a schema for a MedicationTO.
+  - I have heard that there are questions on how to best fit the FHIR medication concept domain.
+  - Should support Cerner in the future.
+  - non-VA meds is not in scope
+  - PGHD meds is not in scope
 - Revisions of artifacts. Unclear how this comes to us via the feeds. Specifically we need to know how we ask for these, vs today just getting current. And what the vocabulary are to support changes
   - IntoleranceCondition (allergies) could have the status change
   - problemTO (conditions) could be removed or not active
@@ -83,6 +96,7 @@ This section is dedicated to instructions on how MHV will transition the data we
 
 #### other
 
+- Eventually this same API would support data from Cerner. Thus the same API providing comprehensive data from Vista and/or Cerner where ever it is.
 - Provenance -- track where the data has come from, and if from multiple places track all.
   
 unknown (FHIR supports the following topics but unclear if this data exists in PHR)
@@ -132,4 +146,4 @@ Source of data received from VDIF using a SOAP xml schema that might be from one
 - [mockey-mdws3-service.wsdl](https://github.com/department-of-veterans-affairs/mhv-ap-vde-support/blob/development/src/test/wsdl/mockey-mdws3-service.wsdl)
 - [EmrService.wsdl](https://github.com/department-of-veterans-affairs/mhv-hla-app-ui/blob/dbb0301be4a17f31e67048300d72c87c0977aa09/hra-mock-via-app/src/main/java/gov/va/hra/integration/via/mock/ws/EmrService.wsdl)
 - VA [Vista Fileman](http://www.vistapedia.com/index.php/Main_Page)
-
+- VHIM [mhv-np-cds-wsclient](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates) schema.

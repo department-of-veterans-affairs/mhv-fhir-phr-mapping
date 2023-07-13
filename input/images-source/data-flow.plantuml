@@ -1,0 +1,90 @@
+@startuml
+
+
+package source {
+    class source.VIA
+    class source.HDR
+    class source.HL7v2
+}
+
+package fhir {
+    package util {
+        class fhir.util.Patient
+        class fhir.util.Practitioner
+        class fhir.util.Location
+        class fhir.util.Organization
+    }
+    class fhir.AllergyIntolerance
+    class fhir.Condition
+    class fhir.DiagnosticReport {
+        - lab
+        - chem 
+        - hem 
+        Specimen()
+        Observation()
+    }
+
+    class fhir.DocumentReference {
+        - Progress Note 
+        - Discharge Summary
+        - ECG Report
+        - Imaging Report
+    }
+    class fhir.Immunization
+    class fhir.Observation {
+confirmed:
+- BLOOD PRESSURE 
+- HEIGHT
+- WEIGHT
+- PULSE 
+- PAIN 
+- RESPIRATION 
+- TEMPERATURE 
+unconfirmed:
+- ABDMONAL GIRTH
+- AUDIOMETRY
+- CENTRAL VENOUS PRESSURE
+- CIRCUMFERENCE%2FGIRTH
+- FETAL HEART TONES
+- FUNDAL HEIGHT
+- HEADCIRCUMFERENCE
+- HEARING
+- PULSE OXIMETRY
+- RESPIRATION
+- TONOMETRY
+- VISION CORRECTED
+- VISION UNCORRECTED
+    }
+    class fhir.MedicationRequest
+    class fhir.MedicationDispense
+
+}
+
+source.VIA -[#red]down-> fhir.util.Patient
+source.VIA -[#red]down-> fhir.util.Practitioner
+source.VIA -[#red]down-> fhir.util.Location
+source.VIA -[#red]down-> fhir.util.Organization
+
+source.HDR -[#green]down-> fhir.util.Patient
+source.HDR -[#green]down-> fhir.util.Practitioner
+source.HDR -[#green]down-> fhir.util.Location
+source.HDR -[#green]down-> fhir.util.Organization
+
+source.HL7v2 -[#blue]down-> fhir.util.Patient
+
+source.VIA -[#red]down-> fhir.Observation
+source.VIA -[#red]down-> fhir.DiagnosticReport
+source.VIA -[#red]down-> fhir.AllergyIntolerance
+source.VIA -[#red]down-> fhir.Condition
+source.VIA -[#red]down-> fhir.DocumentReference
+source.VIA -[#red]down-> fhir.Immunization
+
+source.HDR -[#green]down-> fhir.DiagnosticReport
+
+source.HL7v2 -[#blue]down-> fhir.MedicationRequest
+source.HL7v2 -[#blue]down-> fhir.MedicationDispense
+
+interface "FHIR API" as API 
+API -up-> fhir
+
+@enduml

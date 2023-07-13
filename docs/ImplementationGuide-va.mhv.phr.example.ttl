@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "1"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.16-beta"] ; # 
+  fhir:version [ fhir:v "0.1.17-beta"] ; # 
   fhir:name [ fhir:v "MHVPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-06-16T14:48:21-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-07-13T09:22:36-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
@@ -2153,6 +2153,30 @@
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Location" ] ;
        fhir:description [ fhir:v "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n\nMapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.medicationdispense> ;
+         fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.medicationdispense" ]
+       ] ;
+       fhir:name [ fhir:v "VA MHV PHR medication dispense" ] ;
+       fhir:description [ fhir:v "A profile on the MedicationDispense resource for MHV PHR exposing current medications dispense using FHIR API." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.medicationRequest> ;
+         fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.medicationRequest" ]
+       ] ;
+       fhir:name [ fhir:v "VA MHV PHR medication request" ] ;
+       fhir:description [ fhir:v "A profile on the MedicationRequest resource for MHV PHR exposing current VA prescribed medications using FHIR API." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

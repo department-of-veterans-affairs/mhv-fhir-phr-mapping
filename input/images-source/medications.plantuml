@@ -1,0 +1,74 @@
+@startuml
+skinparam svgDimensionStyle false
+
+class MedicationsTO {
+failedStationList
+successfulStationList
+lastUpdatedTime
+medicationList
+errors
+infoMessages
+}
+class MedicationList.MedicationDetailTO {
+refillStatus;
+refillSubmitDate;
+refillDate;
+refillRemaining;
+facilityName;
+isRefillable;
+isTrackable;
+prescriptionId;
+sig;
+orderedDate;
+quantity;
+expirationDate;;
+prescriptionNumber;
+prescriptionName;
+dispensedDate;
+stationNumber;
+inCernerTransition;
+notRefillableDisplayMessage;
+cmopDivisionPhone;
+cmopNdcNumber;
+id;
+userId;
+providerFirstName;
+providerLastName;
+remarks; 	
+divisionName;
+modifiedDate;		
+institutionId;	
+dialCmopDivisionPhone;
+dispStatus;   
+ndc;    
+reason; 
+prescriptionNumberIndex;
+prescriptionSource;
+disclaimer;    
+indicationForUse;
+indicationForUseFlag;
+category;
+isTracking;
+}
+class MedicationTrackingList.MedicationTrackingTO {
+id;
+stationNumber;
+rxNumber;
+carrier;
+trackingNumber;
+completeDateTime;
+divisionPhone;
+ndc;
+dateLoaded;
+isOthersInSamePackage;
+isViewImageDisplayed;
+isLocalTracking;
+}
+
+
+MedicationsTO +-right- MedicationList: 0..1 medicationList.medication
+MedicationList.MedicationDetailTO +-right- MedicationTrackingList: 0..* trackingList.tracking
+MedicationList.MedicationDetailTO +-- MedicationDetailList.MedicationDetailTO: 0..* rxRFRecords.rfRecord
+
+
+@enduml

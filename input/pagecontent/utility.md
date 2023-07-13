@@ -3,9 +3,11 @@ To support functions and resources:
 
 ### Support Resources
 
-To support the primary FHIR Resources, there are some utility Resources that will be needed. These will be created upon demand, based on a lookup need.
+To support the primary FHIR Resources, there are some utility Resources that will be needed. These will be created upon demand, based on available details. Note that when we do not get a source `id` for the object, we will use a `contained` resource with the details we are given. Thus we will use a reference to a resource, that reference will most of the time be to a retrievable resource, but may be to a contained resource.
 
 #### GetPractitioner()
+
+Note that when we do not get an `id` for the user or author, we will use a `contained` Practitioner resource with the details we are given. The following only applies to cases where we are given an `id`.
 
 Input: UserTO, AuthorTO, etc
 
@@ -23,7 +25,7 @@ Input: ICN, PatientTO
 
 Return: a Patient resource reference
 
-If a Patient is not found given the input parameters, then one is created and populated with the input prameters.
+If a Patient is not found given the input parameters, then one is created and populated with the input parameters.
 
 If a Patient is found, and the details given are different, then presume parameters are newer and use them to update the found Patient Resource.
 

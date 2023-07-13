@@ -13,11 +13,11 @@
     <valueInteger value="1"/>
   </extension>
   <url value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
-  <version value="0.1.16-beta"/>
+  <version value="0.1.17-beta"/>
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-06-16T14:48:21-05:00"/>
+  <date value="2023-07-13T09:22:36-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -1735,6 +1735,28 @@
       </reference>
       <name value="VA MHV PHR Location"/>
       <description value="A profile on the Location resource for MHV PHR exposing Location using FHIR API.&#xA;&#xA;- based on US-Core for Location&#xA;&#xA;Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.medicationdispense"/>
+      </reference>
+      <name value="VA MHV PHR medication dispense"/>
+      <description value="A profile on the MedicationDispense resource for MHV PHR exposing current medications dispense using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.medicationRequest"/>
+      </reference>
+      <name value="VA MHV PHR medication request"/>
+      <description value="A profile on the MedicationRequest resource for MHV PHR exposing current VA prescribed medications using FHIR API."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

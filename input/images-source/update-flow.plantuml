@@ -1,18 +1,33 @@
 @startuml
 title Update MHV-PHR
 
+
 start
-: read data VDIF;
+: triggered by API request for a given Patient;
+
+: read data VDIF
+receive a multiple entry SOAP message
+with current information;
+
+: lookup Patient by **icn** to get **Patient/id**;
+if (found?) then (yes)
+  : update if needed;
+else (no)
+  : create new
+  may use PHR Patient content;
+endif 
 
 repeat
-  : lookup id for match;
-  if (found?) then (yes)
-    : update if needed;
-  else (no)
-    : create new;
-  endif 
+  : convert data;
+  : convert VDIF **.id** to FHIR **.identifier**;
+  : Add to FHIR Bundle;
 repeat while (more data?) is (yes)
 ->no;
+
+: Submit Transaction Bundle to FHIR
+FHIR server will match each entry on **.identifier** 
+and update or create new;
+
 stop
 
 @enduml

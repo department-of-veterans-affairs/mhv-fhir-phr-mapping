@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.16-beta - ci-build
+            <span style="display:inline-block;">0.1.17-beta - ci-build
 
 
 
@@ -172,7 +172,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.16-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.17-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Utility Functions</h2>
   
 
@@ -212,9 +212,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="support-resources">Support Resources</h3>
 
-<p>To support the primary FHIR Resources, there are some utility Resources that will be needed. These will be created upon demand, based on a lookup need.</p>
+<p>To support the primary FHIR Resources, there are some utility Resources that will be needed. These will be created upon demand, based on available details. Note that when we do not get a source <code class="language-plaintext highlighter-rouge">id</code> for the object, we will use a <code class="language-plaintext highlighter-rouge">contained</code> resource with the details we are given. Thus we will use a reference to a resource, that reference will most of the time be to a retrievable resource, but may be to a contained resource.</p>
 
 <h4 id="getpractitioner">GetPractitioner()</h4>
+
+<p>Note that when we do not get an <code class="language-plaintext highlighter-rouge">id</code> for the user or author, we will use a <code class="language-plaintext highlighter-rouge">contained</code> Practitioner resource with the details we are given. The following only applies to cases where we are given an <code class="language-plaintext highlighter-rouge">id</code>.</p>
 
 <p>Input: UserTO, AuthorTO, etc</p>
 
@@ -232,7 +234,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Return: a Patient resource reference</p>
 
-<p>If a Patient is not found given the input parameters, then one is created and populated with the input prameters.</p>
+<p>If a Patient is not found given the input parameters, then one is created and populated with the input parameters.</p>
 
 <p>If a Patient is found, and the details given are different, then presume parameters are newer and use them to update the found Patient Resource.</p>
 
@@ -384,7 +386,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.16-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jun 16, 2023 14:48-0500">2023-06-16</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.17-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 13, 2023 09:22-0500">2023-07-13</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
