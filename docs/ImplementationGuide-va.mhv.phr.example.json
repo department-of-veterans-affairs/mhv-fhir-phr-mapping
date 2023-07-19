@@ -14,11 +14,11 @@
     "valueInteger" : 1
   }],
   "url" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example",
-  "version" : "0.1.17-beta",
+  "version" : "0.1.18-beta",
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-07-13T09:22:36-05:00",
+  "date" : "2023-07-19T13:17:04-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -2069,6 +2069,18 @@
       },
       "name" : "VA MHV PHR medication dispense",
       "description" : "A profile on the MedicationDispense resource for MHV PHR exposing current medications dispense using FHIR API.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.medicationtracking"
+      },
+      "name" : "VA MHV PHR medication dispense tracking",
+      "description" : "A profile on the SupplyDelivery resource for MHV PHR exposing current medications dispense tracking using FHIR API.",
       "exampleBoolean" : false
     },
     {

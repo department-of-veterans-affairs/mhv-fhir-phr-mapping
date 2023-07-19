@@ -4,4 +4,6 @@
 - TODO
 
 More detailed profiling:
-- [Medication Dispense](StructureDefinition-VA.MHV.PHR.medicationDispense.html) 
+
+- [Medication Dispense](StructureDefinition-VA.MHV.PHR.medicationDispense.html)
+- [Medication Tracking](StructureDefinition-VA.MHV.PHR.medicationTracking.html)

@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.17-beta - ci-build
+            <span style="display:inline-block;">0.1.18-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.17-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.18-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -253,7 +253,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.17-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.1.17-beta"/></span>
+      <span class="copy-text">0.1.18-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.1.18-beta"/></span>
       </td>
     </tr>
 
@@ -1164,6 +1164,13 @@ Summary
   <li><a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-vhim-allergy-to-mhv-phr-intolerancecondition">mapping to VHIM</a></li>
   <li>Should be based on US-Core for AllergyIntolerance Resource profile</li>
   <li>should have <code class="language-plaintext highlighter-rouge">meta.profile</code> set to <code class="language-plaintext highlighter-rouge">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance</code> to indicate the intent to be compliant with this profile</li>
+  <li>Muazzam imposed rules
+    <ul>
+      <li>only <code class="language-plaintext highlighter-rouge">status</code> of <code class="language-plaintext highlighter-rouge">F</code> are processed</li>
+      <li>only those with <code class="language-plaintext highlighter-rouge">facilityIdentifier</code> are processed (is this just robustness, or is there a reason?)</li>
+      <li><em>recordId</em> is</li>
+    </ul>
+  </li>
   <li>a <code class="language-plaintext highlighter-rouge">clinicalStatus</code> of the allergy (e.g.,active or resolved)
     <ul>
       <li>Given that intoleranceCondition.status is unclear; will presume we only see <code class="language-plaintext highlighter-rouge">active</code></li>
@@ -1192,8 +1199,16 @@ Summary
 <h4 id="mapping-concerns">Mapping Concerns</h4>
 
 <ul>
-  <li><code class="language-plaintext highlighter-rouge">facilityIdentifier</code> might be where the allergy was first recorded, but there is no place for this in the FHIR AllergyIntolerance.</li>
-  <li>no clear place to record <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code></li>
+  <li><code class="language-plaintext highlighter-rouge">facilityIdentifier</code> might be where the allergy was first recorded, but there is no place for this in the FHIR AllergyIntolerance.
+    <ul>
+      <li>maybe put in .meta.source or Provenance</li>
+    </ul>
+  </li>
+  <li>no clear place to record <code class="language-plaintext highlighter-rouge">recordSource</code>, <code class="language-plaintext highlighter-rouge">recordVersion</code>
+    <ul>
+      <li>maybe in the .meta.source or in a Provenance</li>
+    </ul>
+  </li>
   <li>no clear handling of <code class="language-plaintext highlighter-rouge">informationSourceCategory</code>
     <ul>
       <li>mock data = 4500978/OBSERVED, 4500975/HISTORICAL</li>
@@ -1203,7 +1218,21 @@ Summary
     </ul>
   </li>
   <li><code class="language-plaintext highlighter-rouge">reaction.reaction.code</code> seems to be a number, but I can’t find a codeSystem with these numbers. Would be good to have SNOMED-CT, but this does not seem to be SNOMED</li>
-  <li><strong>updates from Active to not</strong> – given that we are only told about active allergies; what happens when we are told yesterday about a fooBar allergy, and the fooBar allergy gets removed or changed to inactive in Vista; how would we know? If we are told, would we delete our instance of that allergy, or mark it inactive, or mark it entered-in-error?</li>
+  <li><strong>updates from Active to not</strong> – given that we are only told about active allergies; what happens when we are told yesterday about a fooBar allergy, and the fooBar allergy gets removed or changed to inactive in Vista; how would we know? If we are told, would we delete our instance of that allergy, or mark it inactive, or mark it entered-in-error?
+    <ul>
+      <li>are those <code class="language-plaintext highlighter-rouge">status</code> that are not <code class="language-plaintext highlighter-rouge">F</code> changes that we should track in FHIR?</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="notes-to-muazzam">Notes to Muazzam</h4>
+
+<ul>
+  <li>what are other status values besides <code class="language-plaintext highlighter-rouge">F</code>?</li>
+  <li>are you handling when an allergy is both a medication and environment?</li>
+  <li>I am unclear on what your logic around <code class="language-plaintext highlighter-rouge">getInformationSourceCategory</code> is. You seem to have some logic for handling HISTORIC and OBSERVED, but I can’t understand the logic.</li>
+  <li>I am unclear on how your .identifier logic results</li>
+  <li>The reactant we are given is not always snomed.</li>
 </ul>
 
 
@@ -1280,7 +1309,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.17-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Jul 13, 2023 09:22-0500">2023-07-13</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.18-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 19, 2023 13:17-0500">2023-07-19</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

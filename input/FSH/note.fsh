@@ -28,6 +28,7 @@ Description: "Note types"
 //* LOINC#83320-2 "Allergy and Immunology Adverse event note"
 * LOINC#11505-5 "Physician procedure note"
 * LOINC#18842-5 "Discharge summary"
+//* LOINC#11506-3 "Progress note"
 
 
 

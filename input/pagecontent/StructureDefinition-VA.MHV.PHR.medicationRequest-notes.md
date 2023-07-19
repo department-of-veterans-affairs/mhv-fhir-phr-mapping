@@ -1,5 +1,5 @@
 
-MHV requests updates on medications from Vista using HL7 v2 messaging. This request is for table rows (RDT sgement), thus the result is not a defined HL7v2 message, it is some table. I don't have the definition of this table. The returned message of table rows is decomposed into Java objects. The Java objects are shown in the following diagram.
+MHV requests updates on medications from Vista using HL7 v2 messaging. This request is for table rows (RDT segment), thus the result is not a defined HL7v2 message, it is some table. I don't have the definition of this table. The returned message of table rows is decomposed into Java objects. The Java objects are shown in the following diagram.
 
 <figure>
 {%include medications.svg%}
@@ -11,69 +11,83 @@ MHV requests updates on medications from Vista using HL7 v2 messaging. This requ
 - This is not a VIA or HDR feed, so there is no schema. There is only the MHV Java Object definition (Note the convention of postfix of `TO` (e.g. MedicationDetail`TO`) is used in the java code object definition, but not an indication of VIA or any externally defined schema).
 The results of the HL7 v2 request is a:
 - the List of Medications is defined by a MedicationDetailTO which may have dispensed information and tracking information)
-  - The outer MedicationDetailTO is is mapped to **MedicationRequest**
+  - The outer MedicationDetailTO is is mapped to [Medication Request](StructureDefinition-VA.MHV.PHR.medicationRequest.html)
+    - This is also a [Medication Dispense](StructureDefinition-VA.MHV.PHR.medicationDispense.html)
   - Inside these outer MedicationDetailTO are lists of two objects
     - MedicationTrackingList trackingList -> tracking
-      - No clear place to put this (Location, SupplyDelivery, Basic)
+      - fill out the [Medication Tracking](StructureDefinition-VA.MHV.PHR.medicationTracking.html)
     - MedicationDetailList rxRFRecords -> rfRecord
-      - fill out the **MedicationDispense**
+      - fill out the [Medication Dispense](StructureDefinition-VA.MHV.PHR.medicationDispense.html)
+  - Image of the dispensed medication (NDC) is not supported.
+    - Could use FHIR **MedicationKnowledge** look up by `.code` by NDC; use the `.drugCharacteristic.valueBase64Binary` where the .type is `http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic#Image`
+    - These MedicationKnowledge resources should be managed at a much broader level than MHV
+    - Shortterm - just continue using the lookup API we are providing
 
 #### Mapping from
 
 All of the US-Core requirements are fulfilled.
-Many of the source items have no place to go in MedicationRequest, they are more dispense related. 
-Some have no place to go, we could create extensions for them but then we would be passing information that ultimately will not be available from Cerner. Could use .supportingInformation to hold contained resources.
+Note that the outer MedicationDetailTO is also the first dispense.
+
+Some have no place to go, we could create extensions for them but then we would be passing information that ultimately will not be available from Cerner. 
+
+- refillSubmitDate
+- refillRemaining
+
+Only convert those MedicationDetailTO with .category = "Rx Medication". Those with "Documented by VA" are not to be recorded as a [Medication Request](StructureDefinition-VA.MHV.PHR.medicationRequest.html), they might be a MedicationStatement.
+
+Could use .supportingInformation to hold contained resources.
 Many elements in the FHIR MedicationRequest would not be populated.
 Rows with `???` seem like we should be able to populate them.
 
-| MHV MedicationDetailTO | fhir MedicationRequest
-|---------------------|-----------------------------|
-| refillStatus;       | ~status
-| refillSubmitDate;
-| refillDate;
-| refillRemaining;
-| facilityName;
-| isRefillable;
-| isTrackable;
-| prescriptionId;     | identifier[prescriptionId]
-| sig;                | dosageInstruction.text
-| orderedDate;        | authoredOn
-| quantity;           | dispenseRequest.numberOfRepeatsAllowed
-| expirationDate;     | dispenseRequest.validityPeriod.end
-| prescriptionNumber; | identifier[prescriptionNumber]
-| prescriptionName;   | medicationCodeableConcept.text
-| dispensedDate;
-| stationNumber;      | 
-| inCernerTransition; |
-| notRefillableDisplayMessage;
-| cmopDivisionPhone;
-| cmopNdcNumber;
-| id;                 | *dup of prescriptionId*
-| userId;             | requester(Practitioner)
-| providerFirstName;  | requester(Practitioner)
-| providerLastName;   | requester(Practitioner)
-| remarks; 	          | note.text
-| divisionName;
-| modifiedDate;       | meta.lastUpdated
-| institutionId;	
-| dialCmopDivisionPhone;
-| dispStatus;         |  ~status ???
-| ndc;                | medicationCodeableConcept[NDC]
-| reason; 
-| prescriptionNumberIndex;
-| prescriptionSource;
-| disclaimer;    
-| indicationForUse;
-| indicationForUseFlag;
-| category;         | ??? reportedBoolean ???
-| isTracking;
-|                  | intent=`order` (no other codes)
-|                  | subject=Patient
-|  | category ???
+| MHV MedicationDetail  | FHIR [Medication Request](StructureDefinition-VA.MHV.PHR.medicationRequest.html)  | FHIR [Medication Dispense](StructureDefinition-VA.MHV.PHR.medicationDispense.html) | lost? |
+|-----------------------|-------------------------|-------------------------|-------|
+| refillStatus;         | ~status                 | ~status
+| refillSubmitDate;     |                         |                         | ???   |
+| refillDate;           |                         | whenHandedOver
+| refillRemaining;      |                         |                         | ???   |
+| facilityName;         |                         | location
+| isRefillable;         |                         | if !true status=completed
+| isTrackable;          |                         |                         | ???   |
+| prescriptionId;       | identifier[prescriptionId]    | identifier[prescriptionId]
+| sig;                  | dosageInstruction.text        | dosageInstruction.text
+| orderedDate;          | authoredOn
+| quantity;             | dispenseRequest.numberOfRepeatsAllowed | dispenseRequest.numberOfRepeatsAllowed
+| expirationDate;       | dispenseRequest.validityPeriod.end | dispenseRequest.validityPeriod.end
+| prescriptionNumber;   | identifier[prescriptionNumber]  | identifier[prescriptionNumber]
+| prescriptionName;     | medicationCodeableConcept.text  | medicationCodeableConcept.text
+| dispensedDate;        |                         | whenHandedOver (dup of refillDate)
+| stationNumber;        |                         | location (dup of facilityName)
+| inCernerTransition;   |                         |                         | ???   |
+| notRefillableDisplayMessage; |                  |                         | ???   |
+| cmopDivisionPhone;    |                         | performer.actor(Organization)
+| cmopNdcNumber;        |                         |                         | ???   |
+| id;                   | *dup of prescriptionId*
+| userId;               | requester(Practitioner) | performer.actor(Practitioner)
+| providerFirstName;    | requester(Practitioner) | performer.actor(Practitioner)
+| providerLastName;     | requester(Practitioner) | performer.actor(Practitioner)
+| remarks;              | note.text               | note.text
+| divisionName;         |                         |                         | ???   |
+| modifiedDate;         | meta.lastUpdated        | meta.lastUpdated
+| institutionId;        |                         |                         | ???   |
+| dialCmopDivisionPhone |                         |                         | ???   |
+| dispStatus;           |                         |                         | ???   |
+| ndc;                  | medicationCodeableConcept[NDC] | medicationCodeableConcept[NDC]
+| reason;               |                         |                         | ???   |
+| prescriptionNumberIndex |                       |                         | ???   |
+| prescriptionSource;   | must be "RX"            | type(RF-refill, PF-partial)
+| disclaimer;           |                         |                         | ???   |
+| indicationForUse;     |                         |                         | ???   |
+| indicationForUseFlag; |                         |                         | ???   |
+| category;             | only "Rx Medication"    |                         | ???   |
+| isTracking;           |                         |                         | ???   |
+|                       | intent=`order`          | intent=`order`
+|                       | subject=Patient         | subject=Patient
+|                       |                         | authorizingPrescription=medicationRequest(*)
+|                       | category ???            | category ???
 |  | priority ???
 |  | doNotPerform
 |  | encounter
-|  | supportingInformation (could use to hold anything)
+|  | supportingInformation
 |  | performer
 |  | performerType
 |  | recorder
@@ -90,6 +104,19 @@ Rows with `???` seem like we should be able to populate them.
 |  | priorPrescription
 |  | detectedIssue
 |  | eventHistory
+|  |  | category ???
+|  |  | context
+|  |  | supportingInformation
+|  |  | performer
+|  |  | performer.function
+|  |  | quantity (amount dispensed)
+|  |  | daysSupply
+|  |  | whenPrepared
+|  |  | destination
+|  |  | receiver
+|  |  | substitution
+|  |  | detectedIssue
+|  |  | eventHistory
 {:.grid}
 
 ##### refillStatus
@@ -120,6 +147,10 @@ Rows with `???` seem like we should be able to populate them.
 
 ##### category
 
+In theory we only see Rx medication. So the following is not useful. 
+
+Note that the mock sample data does have "Documented by VA", which might be non-VA meds? These should not be converted as they are not dispensable. These could be recorded as a MedicationStatement resource.
+
 | CategoryTypeEnumeration | FHIR |
 |-------------------------|------|
 | M("M", "Rx Medication"),
@@ -130,6 +161,8 @@ Rows with `???` seem like we should be able to populate them.
 {:.grid}
 
 ##### frequency
+
+I don't know where this shows up.
 
 | FrequencyEnumeration | FHIR |
 |----------------------|------|
@@ -152,11 +185,12 @@ Rows with `???` seem like we should be able to populate them.
 
 #### Mapping Concerns
 
-- not sure what to do when the inner MedicationDetailTO is different than the outer MedicationDetailTO in ways that are not consistent with a MedicationDispense
+- not sure what to do when the inner MedicationDetailTO is different than the outer MedicationDetailTO in ways that are not consistent with a [Medication Dispense](StructureDefinition-VA.MHV.PHR.medicationDispense.html)
 - MedicationDispense.status does not have a clear source
   - It seems we only get current, so how can we change a previously active to now be inactive?
   - possibly `dispStatus`, or `refillStatus`?
+    - dispStatus is a more friendly display value derived off of the refillStatus
 - source `category` seems to have value of `Rx Medication` or `Documented by VA`
-  - Should `Documented by VA` set MedicationRequest.reported[x]?
+  - Should `Documented by VA` be put these into MedicationStatement?
 - source `quantity` from the mock data I have, this seems like the number of refills, and only is populated in the outer MedicationDetailTO
 - no clear place to record tracking. No clear linkage between a tracking and which dispense.

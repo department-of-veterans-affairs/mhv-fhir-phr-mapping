@@ -100,6 +100,34 @@ Title: "Vista to MHV-PHR"
 
 
 /* 
+Dispense uses the same structure  MedicationDetailTO
+
+*/
+
+
+
+Profile:        MHVmedicationTracking
+Parent: SupplyDelivery
+Id:             VA.MHV.PHR.medicationtracking
+Title:          "VA MHV PHR medication dispense tracking"
+Description:    """
+A profile on the SupplyDelivery resource for MHV PHR exposing current medications dispense tracking using FHIR API.
+"""
+
+
+
+
+
+Mapping: MedicationTracking-Mapping
+Source:	MHVmedicationTracking
+Target: "Vista"
+Title: "Vista to MHV-PHR"
+* -> "MedicationTracking"
+
+
+
+
+/* 
 in the MedicationDetailTO there are two lists
 	- private MedicationTrackingList trackingList;	
     - this is tracking details for a dispense

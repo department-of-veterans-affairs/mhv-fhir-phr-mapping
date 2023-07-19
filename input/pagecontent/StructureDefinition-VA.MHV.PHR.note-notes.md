@@ -8,6 +8,7 @@
 - `type` seems to hold an enum (PN, DS). 
   - `PN` - LOINC#11505-5 \"Physician procedure note\"
   - `DS` - LOINC#18842-5 \"Discharge summary\"
+  - TODO `PN` might be 11506`
   - anything else should be logged as not yet understood
 - This also includes the (NoteTO) received on the 'Admission and Discharge' feed which holds a Discharge Summary without an id.
 - **Business Rule**: do not convert any NoteTO.status that is not `completed` or `COMPLETED`.

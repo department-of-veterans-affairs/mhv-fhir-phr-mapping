@@ -62,3 +62,7 @@ This seems to be formatted starting with three character month:
 ```xml
  <timestamp>DEC 2,1998@10:01:13</timestamp>
 ```
+### when no timezone
+
+Likely when there is no timezone, it was local time for that Vista. Likely then should just drop the time.
+

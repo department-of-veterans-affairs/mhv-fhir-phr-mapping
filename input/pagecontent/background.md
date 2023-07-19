@@ -75,6 +75,7 @@ This section is dedicated to instructions on how MHV will transition the data we
 #### in progress
 
 - Medications
+  - See [Medication Request notes](StructureDefinition-VA.MHV.PHR.medicationRequest.html#notes)
   - support API for current feature where VA prescribed medications are displayed and where online dispensing is avail the veteran can request dispense
   - Note that this is not defined yet what is the source or goal.
   - I understand that the interface will be using HL7 v2 feed, and CMOP. I note that VIA does have a schema for a MedicationTO.
