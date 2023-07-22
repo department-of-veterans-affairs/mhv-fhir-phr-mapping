@@ -18,7 +18,7 @@
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-07-19T13:17:04-05:00",
+  "date" : "2023-07-21T16:23:00-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -2017,6 +2017,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.immunizationReaction"
+      },
+      "name" : "VA MHV PHR Immunization Reaction",
+      "description" : "A profile for the contained Observation indicating an immunization reaction\n\n- status final\n- code.text ImmunizationTO.reaction\n- valueCodeableConcept - SNOMED#401515003 Known present",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/VA.MHV.PHR.labReport"
       },
       "name" : "VA MHV PHR Lab Report",
@@ -2065,7 +2077,7 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/VA.MHV.PHR.medicationdispense"
+        "reference" : "StructureDefinition/VA.MHV.PHR.medicationDispense"
       },
       "name" : "VA MHV PHR medication dispense",
       "description" : "A profile on the MedicationDispense resource for MHV PHR exposing current medications dispense using FHIR API.",
@@ -2077,7 +2089,7 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
-        "reference" : "StructureDefinition/VA.MHV.PHR.medicationtracking"
+        "reference" : "StructureDefinition/VA.MHV.PHR.medicationTracking"
       },
       "name" : "VA MHV PHR medication dispense tracking",
       "description" : "A profile on the SupplyDelivery resource for MHV PHR exposing current medications dispense tracking using FHIR API.",

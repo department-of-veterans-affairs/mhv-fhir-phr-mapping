@@ -54,8 +54,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"9.17"}
-    h3,h4,h5,h6{--heading-prefix:"9.17"}</style>
+    <style type="text/css">h2{--heading-prefix:"9.18"}
+    h3,h4,h5,h6{--heading-prefix:"9.18"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -150,7 +150,7 @@
 
           <span style="float:right;">
 
-            <a href="StructureDefinition-VA.MHV.PHR.medicationtracking.profile.ttl.html">&lt;prev</a> | 
+            <a href="StructureDefinition-VA.MHV.PHR.medicationTracking.profile.ttl.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
@@ -980,11 +980,18 @@ Note that the outer MedicationDetailTO is also the first dispense.</p>
 <p>Some have no place to go, we could create extensions for them but then we would be passing information that ultimately will not be available from Cerner.</p>
 
 <ul>
-  <li>refillSubmitDate</li>
+  <li>refillSubmitDate – we could stage a MedicationDispense with a whenPrepared, but that is not really the meaning of that element</li>
   <li>refillRemaining</li>
 </ul>
 
-<p>Only convert those MedicationDetailTO with .category = “Rx Medication”. Those with “Documented by VA” are not to be recorded as a <a href="StructureDefinition-VA.MHV.PHR.medicationRequest.html">Medication Request</a>, they might be a MedicationStatement.</p>
+<p>unclear what the MHV value of <code class="language-plaintext highlighter-rouge">quantity</code> holds. how is this related to total, refill, how many left, etc.</p>
+<ul>
+  <li>quantity is the number of units in a refill</li>
+</ul>
+
+<p>unclear what the various stations, facilities, and locations mean relative to the ordering location, the dispensing location, the handover location, etc.</p>
+
+<p>Only convert those MedicationDetailTO with .category = “Rx Medication”. Those with “Documented by VA” are not to be recorded as a <a href="StructureDefinition-VA.MHV.PHR.medicationRequest.html">Medication Request</a>, they might be a MedicationStatement but that is a task for the future.</p>
 
 <p>Could use .supportingInformation to hold contained resources.
 Many elements in the FHIR MedicationRequest would not be populated.
@@ -1010,7 +1017,7 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
       <td>refillSubmitDate;</td>
       <td> </td>
       <td> </td>
-      <td>???</td>
+      <td>whenPrepared (not really right)</td>
     </tr>
     <tr>
       <td>refillDate;</td>
@@ -1020,9 +1027,9 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
     </tr>
     <tr>
       <td>refillRemaining;</td>
+      <td>dispenseRequest.numberOfRepeatsAllowed</td>
+      <td>dispenseRequest.numberOfRepeatsAllowed</td>
       <td> </td>
-      <td> </td>
-      <td>???</td>
     </tr>
     <tr>
       <td>facilityName;</td>
@@ -1062,8 +1069,8 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
     </tr>
     <tr>
       <td>quantity;</td>
-      <td>dispenseRequest.numberOfRepeatsAllowed</td>
-      <td>dispenseRequest.numberOfRepeatsAllowed</td>
+      <td> </td>
+      <td>quantity</td>
       <td> </td>
     </tr>
     <tr>
@@ -1104,9 +1111,9 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
     </tr>
     <tr>
       <td>notRefillableDisplayMessage;</td>
+      <td>statusReason ?</td>
       <td> </td>
       <td> </td>
-      <td>???</td>
     </tr>
     <tr>
       <td>cmopDivisionPhone;</td>
@@ -1260,7 +1267,7 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
     </tr>
     <tr>
       <td> </td>
-      <td>priority ???</td>
+      <td>priority</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -1302,7 +1309,7 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
     </tr>
     <tr>
       <td> </td>
-      <td>reasonCode ???</td>
+      <td>reasonCode</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -1350,7 +1357,31 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
     </tr>
     <tr>
       <td> </td>
-      <td>dispenseRequest ???</td>
+      <td>dispenseRequest.initialFill</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>dispenseRequest.dispenseInterval</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>dispenseRequest.quantity</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>dispenseRequest.expectedSupplyDuration</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>dispenseRequest.performer</td>
       <td> </td>
       <td> </td>
     </tr>
@@ -1381,7 +1412,7 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
     <tr>
       <td> </td>
       <td> </td>
-      <td>category ???</td>
+      <td>category</td>
       <td> </td>
     </tr>
     <tr>
@@ -1423,12 +1454,6 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
     <tr>
       <td> </td>
       <td> </td>
-      <td>whenPrepared</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td> </td>
-      <td> </td>
       <td>destination</td>
       <td> </td>
     </tr>
@@ -1454,6 +1479,113 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
       <td> </td>
       <td> </td>
       <td>eventHistory</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h5 id="vagov-ux-mapping">va.gov UX mapping</h5>
+
+<p>From the UX document from va.gov. The first column is the terms they use, the other columns are where they would get that data from FHIR.</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>va.gov UX</th>
+      <th>MHV med</th>
+      <th>MedicationRequest</th>
+      <th>MedicationDispense</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>prescription ID</td>
+      <td>prescriptionId</td>
+      <td>identifier[prescriptionNumber]</td>
+      <td>identifier[prescriptionNumber]</td>
+    </tr>
+    <tr>
+      <td>prescription Number</td>
+      <td>prescriptionNumber</td>
+      <td>identifier[prescriptionId]</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>prescription name</td>
+      <td>prescriptionName</td>
+      <td>medicationCodeableConcept.text</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>refill status</td>
+      <td>refillStatus</td>
+      <td>~status</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>refill date</td>
+      <td>refillDate</td>
+      <td> </td>
+      <td>whenHandedOver</td>
+    </tr>
+    <tr>
+      <td>refill submit status</td>
+      <td>???</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>refill remaining</td>
+      <td>refillRemaining</td>
+      <td> </td>
+      <td>numberOfRepeatsAllowed</td>
+    </tr>
+    <tr>
+      <td>facility name</td>
+      <td>???</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ordered date</td>
+      <td>refillDate</td>
+      <td> </td>
+      <td>whenPrepared ~~~</td>
+    </tr>
+    <tr>
+      <td>quantity</td>
+      <td>quantity</td>
+      <td> </td>
+      <td>quantity</td>
+    </tr>
+    <tr>
+      <td>expiration date</td>
+      <td>??? is this the date that the prescription did expire ??? Which would be MedicationRequest.status==completed, the value of _lastUpdated</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>dispense date</td>
+      <td>dispensedDate</td>
+      <td> </td>
+      <td>whenHandedOver</td>
+    </tr>
+    <tr>
+      <td>station number</td>
+      <td>stationNumber</td>
+      <td> </td>
+      <td>???</td>
+    </tr>
+    <tr>
+      <td>is refillable</td>
+      <td>isRefillable</td>
+      <td> </td>
+      <td>status==completed</td>
+    </tr>
+    <tr>
+      <td>is trackable</td>
+      <td>isTrackable</td>
+      <td>???</td>
       <td> </td>
     </tr>
   </tbody>
@@ -1743,7 +1875,7 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="StructureDefinition-VA.MHV.PHR.medicationtracking.profile.ttl.html">&lt;prev</a>
+                <a href="StructureDefinition-VA.MHV.PHR.medicationTracking.profile.ttl.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -1761,7 +1893,7 @@ Rows with <code class="language-plaintext highlighter-rouge">???</code> seem lik
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.18-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Jul 19, 2023 13:17-0500">2023-07-19</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.18-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 21, 2023 16:23-0500">2023-07-21</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

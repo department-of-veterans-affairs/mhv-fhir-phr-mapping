@@ -30,10 +30,15 @@ Note that the outer MedicationDetailTO is also the first dispense.
 
 Some have no place to go, we could create extensions for them but then we would be passing information that ultimately will not be available from Cerner. 
 
-- refillSubmitDate
+- refillSubmitDate -- we could stage a MedicationDispense with a whenPrepared, but that is not really the meaning of that element
 - refillRemaining
 
-Only convert those MedicationDetailTO with .category = "Rx Medication". Those with "Documented by VA" are not to be recorded as a [Medication Request](StructureDefinition-VA.MHV.PHR.medicationRequest.html), they might be a MedicationStatement.
+unclear what the MHV value of `quantity` holds. how is this related to total, refill, how many left, etc.
+- quantity is the number of units in a refill
+
+unclear what the various stations, facilities, and locations mean relative to the ordering location, the dispensing location, the handover location, etc.
+
+Only convert those MedicationDetailTO with .category = "Rx Medication". Those with "Documented by VA" are not to be recorded as a [Medication Request](StructureDefinition-VA.MHV.PHR.medicationRequest.html), they might be a MedicationStatement but that is a task for the future.
 
 Could use .supportingInformation to hold contained resources.
 Many elements in the FHIR MedicationRequest would not be populated.
@@ -42,23 +47,23 @@ Rows with `???` seem like we should be able to populate them.
 | MHV MedicationDetail  | FHIR [Medication Request](StructureDefinition-VA.MHV.PHR.medicationRequest.html)  | FHIR [Medication Dispense](StructureDefinition-VA.MHV.PHR.medicationDispense.html) | lost? |
 |-----------------------|-------------------------|-------------------------|-------|
 | refillStatus;         | ~status                 | ~status
-| refillSubmitDate;     |                         |                         | ???   |
+| refillSubmitDate;     |                         |                         | whenPrepared (not really right)   |
 | refillDate;           |                         | whenHandedOver
-| refillRemaining;      |                         |                         | ???   |
+| refillRemaining;      | dispenseRequest.numberOfRepeatsAllowed | dispenseRequest.numberOfRepeatsAllowed
 | facilityName;         |                         | location
 | isRefillable;         |                         | if !true status=completed
 | isTrackable;          |                         |                         | ???   |
 | prescriptionId;       | identifier[prescriptionId]    | identifier[prescriptionId]
 | sig;                  | dosageInstruction.text        | dosageInstruction.text
 | orderedDate;          | authoredOn
-| quantity;             | dispenseRequest.numberOfRepeatsAllowed | dispenseRequest.numberOfRepeatsAllowed
+| quantity;             |                         | quantity
 | expirationDate;       | dispenseRequest.validityPeriod.end | dispenseRequest.validityPeriod.end
 | prescriptionNumber;   | identifier[prescriptionNumber]  | identifier[prescriptionNumber]
 | prescriptionName;     | medicationCodeableConcept.text  | medicationCodeableConcept.text
 | dispensedDate;        |                         | whenHandedOver (dup of refillDate)
 | stationNumber;        |                         | location (dup of facilityName)
 | inCernerTransition;   |                         |                         | ???   |
-| notRefillableDisplayMessage; |                  |                         | ???   |
+| notRefillableDisplayMessage; |  statusReason ?  |
 | cmopDivisionPhone;    |                         | performer.actor(Organization)
 | cmopNdcNumber;        |                         |                         | ???   |
 | id;                   | *dup of prescriptionId*
@@ -84,14 +89,14 @@ Rows with `???` seem like we should be able to populate them.
 |                       | subject=Patient         | subject=Patient
 |                       |                         | authorizingPrescription=medicationRequest(*)
 |                       | category ???            | category ???
-|  | priority ???
+|  | priority
 |  | doNotPerform
 |  | encounter
 |  | supportingInformation
 |  | performer
 |  | performerType
 |  | recorder
-|  | reasonCode ???
+|  | reasonCode
 |  | reasonReference
 |  | instantiatesCanonical
 |  | instantiatesUri
@@ -99,25 +104,52 @@ Rows with `???` seem like we should be able to populate them.
 |  | groupIdentifier
 |  | courseOfTherapyType
 |  | insurance
-|  | dispenseRequest ???
+|  | dispenseRequest.initialFill
+|  | dispenseRequest.dispenseInterval
+|  | dispenseRequest.quantity
+|  | dispenseRequest.expectedSupplyDuration
+|  | dispenseRequest.performer
 |  | substitution
 |  | priorPrescription
 |  | detectedIssue
 |  | eventHistory
-|  |  | category ???
+|  |  | category
 |  |  | context
 |  |  | supportingInformation
 |  |  | performer
 |  |  | performer.function
 |  |  | quantity (amount dispensed)
 |  |  | daysSupply
-|  |  | whenPrepared
 |  |  | destination
 |  |  | receiver
 |  |  | substitution
 |  |  | detectedIssue
 |  |  | eventHistory
 {:.grid}
+
+##### va.gov UX mapping
+
+From the UX document from va.gov. The first column is the terms they use, the other columns are where they would get that data from FHIR.
+
+| va.gov UX         | MHV med             | MedicationRequest         | MedicationDispense |
+|-------------------|---------------------|---------------------------|----------------|
+prescription ID     | prescriptionId      | identifier[prescriptionNumber]  | identifier[prescriptionNumber]
+prescription Number | prescriptionNumber  | identifier[prescriptionId]
+prescription name   | prescriptionName    | medicationCodeableConcept.text
+refill status       | refillStatus        | ~status
+refill date         | refillDate          |                           | whenHandedOver |
+refill submit status | ???
+refill remaining    | refillRemaining     |                           | numberOfRepeatsAllowed
+facility name       | ???
+ordered date        | refillDate          |                           | whenPrepared ~~~
+quantity            | quantity            |                           | quantity
+expiration date     | ??? is this the date that the prescription did expire ??? Which would be MedicationRequest.status==completed, the value of _lastUpdated
+dispense date       | dispensedDate       |                           | whenHandedOver
+station number      | stationNumber       |                           | ???
+is refillable       | isRefillable        |                           | status==completed
+is trackable        | isTrackable         | ???
+{:.grid}
+
 
 ##### refillStatus
 

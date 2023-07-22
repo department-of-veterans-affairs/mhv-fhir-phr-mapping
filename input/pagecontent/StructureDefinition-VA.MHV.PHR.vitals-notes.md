@@ -40,7 +40,7 @@
   - PAIN = 16
   - RESPIRATION = 9
   - TEMPERATURE = 18
-- do not have examples for
+- do not have examples for -- **these are not required in the UX, so low priority**
   - ABDMONAL GIRTH
   - AUDIOMETRY
   - CENTRAL VENOUS PRESSURE
@@ -70,6 +70,7 @@
 #### xsl transform
 
 Simple (not fully functional) xslt from SOAP response with VitalSignTO to FHIR Bundle with Observation:
+
 - uses a fixed Patient resource
 - uses fixed site values for identifiers
 - does not lookup location or practitioner resources, just uses the identifier

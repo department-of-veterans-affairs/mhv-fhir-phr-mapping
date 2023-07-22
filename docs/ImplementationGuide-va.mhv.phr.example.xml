@@ -17,7 +17,7 @@
   <name value="MHVPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-07-19T13:17:04-05:00"/>
+  <date value="2023-07-21T16:23:00-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -1698,6 +1698,17 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.immunizationReaction"/>
+      </reference>
+      <name value="VA MHV PHR Immunization Reaction"/>
+      <description value="A profile for the contained Observation indicating an immunization reaction&#xA;&#xA;- status final&#xA;- code.text ImmunizationTO.reaction&#xA;- valueCodeableConcept - SNOMED#401515003 Known present"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
         <reference value="StructureDefinition/VA.MHV.PHR.labReport"/>
       </reference>
       <name value="VA MHV PHR Lab Report"/>
@@ -1742,7 +1753,7 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/VA.MHV.PHR.medicationdispense"/>
+        <reference value="StructureDefinition/VA.MHV.PHR.medicationDispense"/>
       </reference>
       <name value="VA MHV PHR medication dispense"/>
       <description value="A profile on the MedicationDispense resource for MHV PHR exposing current medications dispense using FHIR API."/>
@@ -1753,7 +1764,7 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/VA.MHV.PHR.medicationtracking"/>
+        <reference value="StructureDefinition/VA.MHV.PHR.medicationTracking"/>
       </reference>
       <name value="VA MHV PHR medication dispense tracking"/>
       <description value="A profile on the SupplyDelivery resource for MHV PHR exposing current medications dispense tracking using FHIR API."/>

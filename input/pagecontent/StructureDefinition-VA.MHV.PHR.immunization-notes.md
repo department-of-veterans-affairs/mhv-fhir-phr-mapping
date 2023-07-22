@@ -7,18 +7,29 @@
 - should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization` to indicate the intent to be compliant with this profile
 - must have `identifier` as cross reference to original source
 - must be indicated this data are not official record (`primarySource`=false)
-- any reaction is recorded as a contained `Observation`
+- any reaction is recorded as a contained `Observation`. This Observation is simply
+  - status of final
+  - code.text from ImmunizationTo.reaction
+  - valueCodeableConcept of SNOMED#401515003 Known present
+  - see [Immunization Reaction Profile of Observation](StructureDefinition-VA.MHV.PHR.immunizationReaction.html)
 
 #### Mapping Concerns
 
 - The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.
-- reaction appears to be a controlled vocabulary (e.g. FEVER), or is it a number (1-11 - convertReactionCode())?
 - contraindicated -- appears to be a number (e.g. 0). No idea what the values might be or what they might mean
 - id - presuming this is a persisted identifier we can cross-reference with
 - series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?
 - encounter - should we convert these to instances of FHIR Encounter? Didn't do that because it is not clear how to convert the elements properly
 - could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature.
 - presuming our publication is not `primarySource`
+  - Concern that this should be left blank, and a Data-absent-reason be used to fill compliance with us-core.
+  - Given that the field is not used by UX, it does not matter what the value is
+  - should change when US-Core 6+
+- Updates must be supported somehow. Fixing the status at completed will only work if data never changes.
+
+#### change 2023-07-20
+
+- defined the specifics of the Contained Observation for the reaction
 
 #### xsl transform
 

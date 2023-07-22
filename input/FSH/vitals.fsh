@@ -212,7 +212,9 @@ Title: "VDIF to MHV-PHR"
 
 */
 
-
+// The full list of codes are from the source schema. No idea if that is exhaustive or even representative of actual data.
+// The codes that are strongly mapped are the only codes needed at this time. 
+// The codes with "seems like possible match" are not critical today. They are in the list because they are defined in the source schema.
 Instance:   ObservationTypeTOVsLoincCode
 InstanceOf: ConceptMap
 Title:      "Vital Sign ObservationTypeTO.name to Loinc Code"

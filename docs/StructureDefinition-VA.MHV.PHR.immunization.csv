@@ -317,7 +317,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Immunization.reaction.date","Immunization.reaction.date","","","",0,0,"","","","dateTime {[]} {[]}
 ","When reaction started","Date of reaction to the immunization.","","","","","","","","","",,,,,"",,,,"Immunization.reaction.date",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","OBX-14 (ideally this would be reported in an IAM segment, but IAM is not part of the HL7 v2 VXU message - most likely would appear in OBX segments if at all)",".effectiveTime"
-"Immunization.reaction.detail","Immunization.reaction.detail","","","",0,1,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Observation]]} (contained
+"Immunization.reaction.detail","Immunization.reaction.detail","","","",0,1,"","","","Reference {[]} {[CanonicalType[https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunizationReaction]]} (contained
 )
 ","Additional information on reaction","Details of the reaction.","","","","","","","","","",,,,,"",,,,"Immunization.reaction.detail",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","OBX-5",".value","ImmunizationTO.reaction"

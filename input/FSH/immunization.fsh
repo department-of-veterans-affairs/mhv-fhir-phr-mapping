@@ -23,6 +23,7 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * identifier[TOid].value ^short = "`ImmunizationTO` | `.` | {ImmunizationTO.id}"
 * note 0..1 MS
 * reaction.detail ^type.aggregation = #contained
+* reaction.detail only Reference(MHVimmunizationReaction)
 * reaction.date 0..0
 * reaction.reported 0..0
 // not allowed
@@ -50,7 +51,6 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * protocolApplied.doseNumberString MS
 * protocolApplied.seriesDoses[x] 0..0
 
-// TODO profile Contained Observation holding reaction
 
 
 Mapping: Immunization-Mapping
@@ -108,3 +108,51 @@ Title: "VDIF to MHV-PHR"
   </xs:complexType>
 
 */
+
+
+
+Profile:        MHVimmunizationReaction
+Parent: Observation
+Id:             VA.MHV.PHR.immunizationReaction
+Title:          "VA MHV PHR Immunization Reaction"
+Description:    """
+A profile for the contained Observation indicating an immunization reaction
+
+- status final
+- code.text ImmunizationTO.reaction
+- valueCodeableConcept - SNOMED#401515003 Known present
+"""
+* status = #final
+* code.text 1..1
+* valueCodeableConcept = SCT#410515003
+* category 0..0
+* code.coding 0..0
+* basedOn 0..0
+* partOf 0..0
+* subject 0..0
+* focus 0..0
+* encounter 0..0
+* effectiveDateTime 0..0
+* issued 0..0
+* performer 0..0
+* dataAbsentReason 0..0
+* interpretation 0..0
+* note 0..0
+* bodySite 0..0
+* method 0..0
+* specimen 0..0
+* device 0..0
+* referenceRange 0..0
+* hasMember 0..0
+* derivedFrom 0..0
+* component 0..0
+
+Mapping: ImmunizationReaction-Mapping
+Source:	MHVimmunizationReaction
+Target: "Immunization.reaction"
+Title: "VDIF to MHV-PHR"
+* -> "ImmunizationTO"
+* status -> "`final`"
+* code.text -> "ImmunizationTO.reaction"
+* valueCodeableConcept -> "SCT#410515003"
+

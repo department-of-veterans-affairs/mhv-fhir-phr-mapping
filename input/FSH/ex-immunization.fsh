@@ -49,7 +49,8 @@ Example from a mock ImmunizationTO
 * contained[+] = in-reaction-2
 
 Instance: in-reaction-2
-InstanceOf: Observation
+InstanceOf: MHVimmunizationReaction
 Usage: #inline
 * status = #final
-* code = SCT#386661006
+* code.text = "FEVER"
+* valueCodeableConcept = SCT#410515003

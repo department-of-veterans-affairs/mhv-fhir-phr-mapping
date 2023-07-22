@@ -17,7 +17,7 @@ IntoleranceCondition record identity 53495 from a mock ProblemTO
 * code.coding[+].display = "CONTRAST MEDIA, OTHER"
 * category = #medication
 * reaction[+].manifestation.text = "RESPIRATORY DISTRESS"
-* reaction[=].manifestation.coding.code = #4637183
+* reaction[=].manifestation.coding = VUID#4637183
 * note.text = "Updated using clean up process.  Changed reactant from IVP DYE (free text) to CONTRAST MEDIA, OTHER(file - PS(50.605,)"
 * note.time = 2004-07-24T18:29:07Z
 
@@ -41,7 +41,7 @@ IntoleranceCondition record identity 67933 from a mock ProblemTO
 * code.coding[+].display = "PHARMACEUTICAL AIDS/REAGENTS"
 * category = #medication
 * reaction[+].manifestation.text = "NAUSEA AND VOMITING"
-* reaction[=].manifestation.coding.code = #4691091
+* reaction[=].manifestation.coding = VUID#4691091
 
 
 
@@ -63,7 +63,7 @@ IntoleranceCondition record identity 67934 from a mock ProblemTO
 * code.coding[+].display = "OPIOID ANALGESICS"
 * category = #medication
 * reaction[+].manifestation.text = "NAUSEA AND VOMITING"
-* reaction[=].manifestation.coding.code = #4691091
+* reaction[=].manifestation.coding = VUID#4691091
 
 
 Instance:   ex-MHV-allergy-4
@@ -85,7 +85,7 @@ IntoleranceCondition record identity 69066 from a mock ProblemTO
 * category[+] = #medication
 * category[+] = #food
 * reaction[+].manifestation.text = "RASH"
-* reaction[=].manifestation.coding.code = #4538635
+* reaction[=].manifestation.coding = VUID#4538635
 * note.text = "test comments for 11.2 release testing "
 * note.time = 2011-02-16T14:33:26Z
 
@@ -108,7 +108,7 @@ IntoleranceCondition record identity 69067 from a mock ProblemTO
 * code.coding[+].display = "GASTRIC MEDICATIONS,OTHER"
 * category[+] = #medication
 * reaction[+].manifestation.text = "DELIRIUM"
-* reaction[=].manifestation.coding.code = #4637015
+* reaction[=].manifestation.coding = VUID#4637015
 * note.text = "new comments would go here, thanks "
 * note.time = 2011-02-16T14:34:18Z
 
@@ -130,7 +130,7 @@ IntoleranceCondition record identity 69071 from a mock ProblemTO
 * code.text = "BANANAS"
 * category[+] = #food
 * reaction[+].manifestation.text = "RASH"
-* reaction[=].manifestation.coding.code = #4538635
+* reaction[=].manifestation.coding = VUID#4538635
 * note.text = "test comments"
 * note.time = 2011-02-21T08:09:01Z
 
@@ -157,7 +157,7 @@ IntoleranceCondition record identity 69072 from a mock ProblemTO
 * code.coding[+].display = "EXTENDED SPECTRUM PENICILLINS"
 * category[+] = #medication
 * reaction[+].manifestation.text = "SWELLING"
-* reaction[=].manifestation.coding.code = #4637164
+* reaction[=].manifestation.coding = VUID#4637164
 * note.text = "test"
 * note.time = 2011-02-21T08:09:43Z
 
@@ -182,7 +182,7 @@ IntoleranceCondition record identity 69073 from a mock ProblemTO
 * reaction[+].manifestation.text = "RASH"
 * reaction[=].manifestation.coding.code = #4538635
 * reaction[+].manifestation.text = "SEDATED"
-* reaction[=].manifestation.coding.code = #4637177
+* reaction[=].manifestation.coding = VUID#4637177
 * note.text = "test data"
 * note.time = 2011-02-21T08:11:42Z
 
@@ -204,13 +204,13 @@ IntoleranceCondition record identity 69074 from a mock ProblemTO
 * code.text = "CARROTS"
 * category[+] = #food
 * reaction[+].manifestation.text = "SEDATED"
-* reaction[=].manifestation.coding.code = #4637177
+* reaction[=].manifestation.coding = VUID#4637177
 * reaction[+].manifestation.text = "PRURITUS"
-* reaction[=].manifestation.coding.code = #4637191
+* reaction[=].manifestation.coding = VUID#4637191
 * reaction[+].manifestation.text = "DELIRIUM"
-* reaction[=].manifestation.coding.code = #4637015
+* reaction[=].manifestation.coding = VUID#4637015
 * reaction[+].manifestation.text = "SWELLING"
-* reaction[=].manifestation.coding.code = #4637164
+* reaction[=].manifestation.coding = VUID#4637164
 * note.text = "none "
 * note.time = 2011-02-21T08:16:49Z
 
@@ -233,7 +233,7 @@ IntoleranceCondition record identity 69075 from a mock ProblemTO
 * code.coding[+].display = "CNS MEDICATIONS,OTHER"
 * category[+] = #medication
 * reaction[+].manifestation.text = "SWELLING"
-* reaction[=].manifestation.coding.code = #4637164
+* reaction[=].manifestation.coding = VUID#4637164
 * note.text = "test"
 * note.time = 2011-02-21T08:57:54Z
 
@@ -257,9 +257,9 @@ IntoleranceCondition record identity 69092 from a mock ProblemTO
 * category[+] = #food
 * category[+] = #medication
 * reaction[+].manifestation.text = "SEDATED"
-* reaction[=].manifestation.coding.code = #4637177
+* reaction[=].manifestation.coding = VUID#4637177
 * reaction[+].manifestation.text = "SWELLING"
-* reaction[=].manifestation.coding.code = #4637164
+* reaction[=].manifestation.coding = VUID#4637164
 * note.text = "test 123456 "
 * note.time = 2011-02-28T18:11:47Z
 
@@ -281,11 +281,11 @@ IntoleranceCondition record identity 69093 from a mock ProblemTO
 * code.text = "QUINOLINE"
 * category[+] = #environment
 * reaction[+].manifestation.text = "RASH"
-* reaction[=].manifestation.coding.code = #4538635
+* reaction[=].manifestation.coding = VUID#4538635
 * reaction[+].manifestation.text = "PRURITUS"
-* reaction[=].manifestation.coding.code = #4637191
+* reaction[=].manifestation.coding = VUID#4637191
 * reaction[+].manifestation.text = "RENAL IMPAIRMENT"
-* reaction[=].manifestation.coding.code = #4637184
+* reaction[=].manifestation.coding = VUID#4637184
 * note.text = "new entry "
 * note.time = 2011-02-28T18:12:40Z
 
@@ -307,9 +307,9 @@ IntoleranceCondition record identity 69123 from a mock ProblemTO
 * code.text = "BEE STINGS"
 * category[+] = #environment
 * reaction[+].manifestation.text = "RESPIRATORY DISTRESS"
-* reaction[=].manifestation.coding.code = #4637183
+* reaction[=].manifestation.coding = VUID#4637183
 * reaction[+].manifestation.text = "SWELLING"
-* reaction[=].manifestation.coding.code = #4637164
+* reaction[=].manifestation.coding = VUID#4637164
 
 
 Instance:   ex-MHV-allergy-14
@@ -329,11 +329,11 @@ IntoleranceCondition record identity 69124 from a mock ProblemTO
 * code.text = "PEANUTS"
 * category[+] = #food
 * reaction[+].manifestation.text = "RASH"
-* reaction[=].manifestation.coding.code = #4538635
+* reaction[=].manifestation.coding = VUID#4538635
 * reaction[+].manifestation.text = "RESPIRATORY DISTRESSELLING"
-* reaction[=].manifestation.coding.code = #4637183
+* reaction[=].manifestation.coding = VUID#4637183
 * reaction[+].manifestation.text = "NAUSEA AND VOMITING"
-* reaction[=].manifestation.coding.code = #4691091
+* reaction[=].manifestation.coding = VUID#4691091
 * note.text = "TEST SSC 5/13/2013 "
 * note.time = 2013-05-13T17:38:22Z
 
@@ -354,17 +354,17 @@ IntoleranceCondition record identity 69129 from a mock ProblemTO
 * code.text = "RUBBER"
 * category[+] = #environment
 * reaction[+].manifestation.text = "RASH"
-* reaction[=].manifestation.coding.code = #4538635
+* reaction[=].manifestation.coding = VUID#4538635
 * reaction[+].manifestation.text = "SWELLING"
-* reaction[=].manifestation.coding.code = #4637164
+* reaction[=].manifestation.coding = VUID#4637164
 * reaction[+].manifestation.text = "LOW BLOOD PRESSURE"
-* reaction[=].manifestation.coding.code = #4637093
+* reaction[=].manifestation.coding = VUID#4637093
 * reaction[+].manifestation.text = "ANXIETY"
-* reaction[=].manifestation.coding.code = #4637050
+* reaction[=].manifestation.coding = VUID#4637050
 * reaction[+].manifestation.text = "NASAL CONGESTION"
-* reaction[=].manifestation.coding.code = #4637212
+* reaction[=].manifestation.coding = VUID#4637212
 * reaction[+].manifestation.text = "COUGH"
-* reaction[=].manifestation.coding.code = #4637020
+* reaction[=].manifestation.coding = VUID#4637020
 * note.text = "Patient has a Moderate allergy to Rubber. This is a test to
 
 see if it shows up on the Report. SSC TEST 8/25/2014 "

@@ -92,6 +92,7 @@ These are systems I have used:
 - http://va.gov/systems/HL70070
 - http://va.gov/systems/mpiPID
 - http://va.gov/systems/localPID
+- VUID = urn:oid:2.16.840.1.113883.6.233
 
 ##### Concept mapping
 

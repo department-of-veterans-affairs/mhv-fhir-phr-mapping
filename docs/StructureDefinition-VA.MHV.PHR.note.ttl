@@ -42,7 +42,7 @@
   fhir:name [ fhir:v "MHVnote"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Notes"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-07-19T13:17:04-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-07-21T16:23:00-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
@@ -3561,9 +3561,6 @@
        fhir:id [ fhir:v "DocumentReference.author" ] ;
        fhir:path [ fhir:v "DocumentReference.author" ] ;
        fhir:mapping ( [
-         fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "GetPractitioner(NoteTO.author.[AuthorTO])" ]
-       ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
          fhir:map [ fhir:v "GetPractitioner(NoteTO.author.[AuthorTO])" ]
        ] )

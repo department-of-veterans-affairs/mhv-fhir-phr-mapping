@@ -80,7 +80,7 @@ Profile:        MHVmedicationDispense
 // us-core didn't profile MedicationDispense 
 //Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationdispense
 Parent: MedicationDispense
-Id:             VA.MHV.PHR.medicationdispense
+Id:             VA.MHV.PHR.medicationDispense
 Title:          "VA MHV PHR medication dispense"
 Description:    """
 A profile on the MedicationDispense resource for MHV PHR exposing current medications dispense using FHIR API.
@@ -108,7 +108,7 @@ Dispense uses the same structure  MedicationDetailTO
 
 Profile:        MHVmedicationTracking
 Parent: SupplyDelivery
-Id:             VA.MHV.PHR.medicationtracking
+Id:             VA.MHV.PHR.medicationTracking
 Title:          "VA MHV PHR medication dispense tracking"
 Description:    """
 A profile on the SupplyDelivery resource for MHV PHR exposing current medications dispense tracking using FHIR API.

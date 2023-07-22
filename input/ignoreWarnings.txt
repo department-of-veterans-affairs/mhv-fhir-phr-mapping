@@ -55,6 +55,7 @@ Code System URI 'http://va.gov/systems/99VA64' is unknown so the code cannot be 
 Code System URI 'http://va.gov/systems/99VA60' is unknown so the code cannot be validated
 Code System URI 'http://va.gov/systems/99VA95.3' is unknown so the code cannot be validated
 Code System URI 'http://va.gov/systems/99VA61' is unknown so the code cannot be validated
+Code System URI 'urn:oid:2.16.840.1.113883.6.233' is unknown so the code cannot be validated
 
 # example Chem-Hem has extra codes outside the slices defined by us-core
 INFORMATION: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport%
@@ -78,4 +79,7 @@ WARNING: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/
 WARNING: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.diagnosticReport'): The Implementation Guide contains no examples for this profile
 
 # MedicationDispense throws this INFO warning from FHIR core, [ignore chat confirmation](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/MedicationDispense.20html.20INFO.20warning).
-INFORMATION: StructureDefinition/VA.MHV.PHR.medicationdispense: StructureDefinition.snapshot.element[28].mapping[0].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+INFORMATION: StructureDefinition/VA.MHV.PHR.medicationDispense: StructureDefinition.snapshot.element[28].mapping[0].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
+
+# Immunization reaction Observation is a contained, so the IG validator doesn't see it
+INFORMATION: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunizationReaction'): The Implementation Guide contains no explicitly linked examples for this profile
