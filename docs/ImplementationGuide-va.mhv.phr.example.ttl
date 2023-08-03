@@ -24,7 +24,7 @@
   fhir:name [ fhir:v "MHVPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-07-21T16:23:00-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-03T12:49:33-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
@@ -1578,15 +1578,12 @@
          fhir:value [ fhir:v "Patient" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-0> ;
-         fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-VDIF-patient-0> ;
+         fhir:reference [ fhir:v "Patient/ex-VDIF-patient-0" ]
        ] ;
        fhir:name [ fhir:v "Example MHVLISAONE from PatientTO" ] ;
        fhir:description [ fhir:v "This example is derived off of a mock PatientTO" ] ;
-       fhir:example [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
-       ]
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
@@ -1616,6 +1613,21 @@
        fhir:example [
          fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"^^xsd:anyURI ;
          fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/Patient/ex-MHV-patient-0> ;
+         fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+       ] ;
+       fhir:name [ fhir:v "Example of MHV MHVLISAONE" ] ;
+       fhir:description [ fhir:v "Only values from eVault" ] ;
+       fhir:example [
+         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"^^xsd:anyURI ;
+         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient>
        ]
      ] [
        fhir:extension ( [
@@ -2164,7 +2176,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.location" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Location" ] ;
-       fhir:description [ fhir:v "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n\nMapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)." ] ;
+       fhir:description [ fhir:v "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n- `identifier`\n  - system = urn:oid:2.16.840.1.113883.4.349\n- `name` is the name as known\n\nNOT USING Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2236,7 +2248,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.patient" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Patient" ] ;
-       fhir:description [ fhir:v "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- record the ICN value into the Patient.identifier\n  - seems other ID values are possible too such as mpiPID, localPID, SSN.\n- some elements could be converted into `codes` but doing minimal translation. \n- notes given example\n  - dropping age as not useful in persisted data, prefer dob\n  - dropping occupation - could be recorded as SDOH Observation\n  - dropping confidentiality flag - not sure the meaning - could be .meta.security\n  - dropping patientFlags - not sure the meaning\n  - dropping activeInsurance - could go into Account resource - could go in extension as text blob\n  - dropping currentMeansStatus\n  - dropping elegibilityCode\n\nMapping to [VDIF PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)" ] ;
+       fhir:description [ fhir:v "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- mapping from patient details in eVault (not from VIA/HDR transaction)\n- `identifier`  \n  - `value` = GetPatientId\n  - `system` = `urn:oid:2.16.840.1.113883.4.349`\n  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.\n- `name` - First and Last Name\n- `gender`\n- `birthDate`\n- `active` = true\n\nmapping concerns - JIRA\n- The Identifier for the ICN is still being discussed\n- identifer.use is not being populated\n- name seems to only populate first and last, but puts them both in given\n- populating identifier with GetPatientId(), not sure that is the same as GetIcn()\n- eVault also has, but are not being used in the FHIR Patient\n  - MiddleName\n  - Ssn\n  - Email\n  - Icn \n- set .meta.profile\n- Would be even better if we could use a common Patient registry. \n\nNOT USING Mapping to [VDIF PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

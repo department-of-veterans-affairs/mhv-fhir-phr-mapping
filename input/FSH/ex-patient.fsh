@@ -1,7 +1,23 @@
 
-
 Instance: ex-MHV-patient-0
 InstanceOf: MHVpatient
+Title: "Example of MHV MHVLISAONE"
+Description: "Only values from eVault"
+Usage: #example
+* name[+].family = "MHVLISAONE"
+* name[=].given = "ROBERT"
+//* name[=].use = #usual
+* gender = #male 
+* birthDate = "1962-08-09"
+* active = true
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "0"
+* identifier[PatientId].use = #usual
+
+
+
+Instance: ex-VDIF-patient-0
+InstanceOf: Patient
 Title: "Example MHVLISAONE from PatientTO"
 Description: """
 This example is derived off of a mock PatientTO
@@ -18,6 +34,7 @@ Usage: #example
 * identifier[=].system = "urn:oid:2.16.840.1.113883.4.1"
 * gender = #male 
 * birthDate = "1962-08-09"
+* active = true
 * extension[us-core-ethnicity].extension[text].valueString = "WHITE, NOT OF HISPANIC ORIGIN"
 // drop age as not useful in persisted data
 * maritalStatus.text = "MARRIED"
@@ -93,17 +110,21 @@ Description: """
 This example is derived off of a mock PatientTO
 """
 Usage: #example
-* name[+].use = #usual
-* name[=].text = "MTPZEROTWO,DAYTSHR"
-* name[=].family = "DAYTSHR"
+* name[+].family = "DAYTSHR"
 * name[=].given = "MTPZEROTWO"
+//* name[=].use = #usual
+//* name[=].text = "MTPZEROTWO,DAYTSHR"
 * gender = #male 
-* identifier[+].use = #official
-* identifier[=].system = "http://va.gov/systems/mpiPID"
-* identifier[=].value = "1013699147"
-* identifier[+].use = #secondary
-* identifier[=].system = "http://va.gov/systems/localPID"
-* identifier[=].value = "552164786"
+* birthDate = "1000-01-01"
+//* identifier[+].use = #official
+//* identifier[=].system = "http://va.gov/systems/mpiPID"
+//* identifier[=].value = "1013699147"
+//* identifier[+].use = #secondary
+//* identifier[=].system = "http://va.gov/systems/localPID"
+//* identifier[=].value = "552164786"
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "1"
+* identifier[PatientId].use = #usual
 
 
 /*
@@ -128,18 +149,22 @@ Description: """
 This example is derived off of a mock PatientTO
 """
 Usage: #example
-* name[+].use = #usual
-* name[=].text = "MHVLISAONE,ROBERT M"
-* name[=].family = "MHVLISAONE"
+* name[+].family = "MHVLISAONE"
 * name[=].given[+] = "ROBERT"
-* name[=].given[+] = "M"
+//* name[=].given[+] = "M"
+//* name[=].use = #usual
+//* name[=].text = "MHVLISAONE,ROBERT M"
 * gender = #male 
-* identifier[+].use = #official
-* identifier[=].system = "http://va.gov/systems/mpiPID"
-* identifier[=].value = "1013025697"
-* identifier[+].use = #secondary
-* identifier[=].system = "http://va.gov/systems/localPID"
-* identifier[=].value = "49906"
+* birthDate = "1000-01-01"
+//* identifier[+].use = #official
+//* identifier[=].system = "http://va.gov/systems/mpiPID"
+//* identifier[=].value = "1013025697"
+//* identifier[+].use = #secondary
+//* identifier[=].system = "http://va.gov/systems/localPID"
+//* identifier[=].value = "49906"
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "2"
+* identifier[PatientId].use = #usual
 
 
 /* from HDR Lab
@@ -166,12 +191,16 @@ Usage: #example
 * name[+].use = #usual
 * name[=].family = "MHVSYSTEST"
 * name[=].given[+] = "TESTFIVE"
-* name[=].given[+] = "L"
+//* name[=].given[+] = "L"
 * gender = #unknown
-* identifier[+].use = #official
-* identifier[=].system = "http://va.gov/systems/USVHA"
-* identifier[=].value = "27167"
-* identifier[=].assigner.display = "989"
+* birthDate = "1000-01-01"
+//* identifier[+].use = #official
+//* identifier[=].system = "http://va.gov/systems/USVHA"
+//* identifier[=].value = "27167"
+//* identifier[=].assigner.display = "989"
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "27167"
+* identifier[PatientId].use = #usual
 
 
 /* from allergies.xml
@@ -199,13 +228,17 @@ Usage: #example
 * name[+].use = #usual
 * name[=].family = "MHVASPXXI"
 * name[=].given[+] = "MHVPDAADLZ"
-* name[=].given[+] = "LUSERL"
-* name[=].suffix = "MHV"
+//* name[=].given[+] = "LUSERL"
+//* name[=].suffix = "MHV"
 * gender = #unknown
-* identifier[+].use = #official
-* identifier[=].system = "http://va.gov/systems/USVHA"
-* identifier[=].value = "89486"
-* identifier[=].assigner.display = "979"
+* birthDate = "1000-01-01"
+//* identifier[+].use = #official
+//* identifier[=].system = "http://va.gov/systems/USVHA"
+//* identifier[=].value = "89486"
+//* identifier[=].assigner.display = "979"
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "89486"
+* identifier[PatientId].use = #usual
 
 /*
 From hdr_lab_samples.xml
@@ -233,9 +266,13 @@ Usage: #example
 * name[+].use = #usual
 * name[=].family = "MHVSYSTEST"
 * name[=].given[+] = "L"
-* name[=].given[+] = "TESTFIVE"
+//* name[=].given[+] = "TESTFIVE"
 * gender = #unknown
-* identifier[+].use = #official
-* identifier[=].system = "http://va.gov/systems/USVHA"
-* identifier[=].value = "942104"
-* identifier[=].assigner.display = "979"
+* birthDate = "1000-01-01"
+//* identifier[+].use = #official
+//* identifier[=].system = "http://va.gov/systems/USVHA"
+//* identifier[=].value = "942104"
+//* identifier[=].assigner.display = "979"
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "942104"
+* identifier[PatientId].use = #usual

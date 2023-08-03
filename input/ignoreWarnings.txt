@@ -1,10 +1,9 @@
 == Suppressed Messages ==
 
 # CPT will not validate, but I have it right https://terminology.hl7.org/5.0.0/CPT.html
-Code System URI 'http://www.ama-assn.org/go/cpt' is unknown so the code cannot be validated
+The definition for the Code System with URI 'http://www.ama-assn.org/go/cpt' doesnt provide any codes so the code cannot be validated
 
-# ICD will not validate, but I have it right https://terminology.hl7.org/5.0.0/external_terminologies.html
-Code System URI 'http://terminology.hl7.org/CodeSystem/icd9cm' is unknown so the code cannot be validated
+# ICD will not validate, but I have it right https://terminology.hl7.Condition.code.coding[0]: The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/icd9cm' doesnt provide any codes so the code cannot be validated
 
 # Some immunizations don't have CVX
 WARNING: Immunization/ex-MHV-immunization-1: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
@@ -83,3 +82,6 @@ INFORMATION: StructureDefinition/VA.MHV.PHR.medicationDispense: StructureDefinit
 
 # Immunization reaction Observation is a contained, so the IG validator doesn't see it
 INFORMATION: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunizationReaction'): The Implementation Guide contains no explicitly linked examples for this profile
+
+# Patient examples don't actually have a DOB, so I put in this so that I could find it
+Patient.birthDate: The value '1000-01-01' is outside the range of reasonable years - check for data entry error

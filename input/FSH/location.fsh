@@ -10,8 +10,11 @@ Description:    """
 A profile on the Location resource for MHV PHR exposing Location using FHIR API.
 
 - based on US-Core for Location
+- `identifier`
+  - system = urn:oid:2.16.840.1.113883.4.349
+- `name` is the name as known
 
-Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto).
+NOT USING Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto).
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -23,6 +26,23 @@ Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-map
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[TOid].value ^short = "`HospitalLocationTO` | `.` | {HospitalLocationTO.id}"
+* name 1..1
+* status 0..0
+* operationalStatus 0..0
+* alias 0..0
+* description 0..0
+* mode 0..0
+* type 0..0
+* telecom 0..0
+* address 0..0
+* physicalType 0..0
+* position 0..0
+* managingOrganization 0..0
+* partOf 0..0
+* hoursOfOperation 0..0
+* availabilityExceptions 0..0
+* endpoint 0..0
+
 
 /*
       <s:complexType name="HospitalLocationTO">

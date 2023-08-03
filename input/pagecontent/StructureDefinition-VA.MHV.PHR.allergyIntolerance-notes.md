@@ -39,12 +39,13 @@
 
 #### Notes to Roger
 
-- are you handling when an allergy is both a medication and environment and observation?
+JIRA 
+- need to handle when an allergy is both a medication and environment and observation? (PR 48)
   - Note medication should be set if EITHER 'D' or a drugClass
 - I am unclear on how your .identifier logic results
   - line 312
   - This does not follow the pattern
-- The reactant we are given is not always snomed.
+- The reactant we are given is not always snomed. (PR 48)
   - if it is a 7 digit number, then it is a VUID and system=`urn:oid:2.16.840.1.113883.6.233`
   - else it is likely a SNOMED system=`http://snomed.info/sct`
 - should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile

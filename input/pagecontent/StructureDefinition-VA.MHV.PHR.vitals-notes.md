@@ -3,7 +3,7 @@
 - Mapping from [VitalSignTo](StructureDefinition-VA.MHV.PHR.vitals-mappings.html#mappings-for-vdif-to-mhv-phr-vitalsignto)
 - based on US-Core for Vital-Signs Observation Resource
   - Blood-Pressure is based off of the Blood-Pressure profile
-- should have `meta.profile` set to
+- should have `meta.profile` set to - JIRA
   - General Vital-Signs `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals`
   - Pain `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain`
   - Blood-Pressure `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP`

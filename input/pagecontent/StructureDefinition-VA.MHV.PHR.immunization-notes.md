@@ -15,21 +15,53 @@
 
 #### Mapping Concerns
 
-- The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.
-- contraindicated -- appears to be a number (e.g. 0). No idea what the values might be or what they might mean
-- id - presuming this is a persisted identifier we can cross-reference with
-- series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?
-- encounter - should we convert these to instances of FHIR Encounter? Didn't do that because it is not clear how to convert the elements properly
-- could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature.
+- The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identified, and more rich mock example.
+- `id` - presuming this is a persisted identifier we can cross-reference with
+- Updates must be supported somehow. Fixing the status at completed will only work if data never changes.
+- `series` - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?
+- `encounter` - should we convert these to instances of FHIR Encounter? Didn't do that because it is not clear how to convert the elements properly
+  - do retrain the encounter location in the location.display
+- could have function that converts a defined set of `ImmunizationTO.name` values to proper codes. This might be an advanced feature.
 - presuming our publication is not `primarySource`
   - Concern that this should be left blank, and a Data-absent-reason be used to fill compliance with us-core.
   - Given that the field is not used by UX, it does not matter what the value is
   - should change when US-Core 6+
-- Updates must be supported somehow. Fixing the status at completed will only work if data never changes.
+- Not mapped due to lack of clarity on what the value is and if it will ever be populated
+  - `contraindicated` -- appears to be a number (e.g. 0). No idea what the values might be or what they might mean
+  - `shortName`
+  - `encounterProvider`
+  - `orderingProvider`
 
 #### change 2023-07-20
 
 - defined the specifics of the Contained Observation for the reaction
+
+##### code inspection
+
+didn't find - JIRA
+- recorded
+- performer
+- site
+- lotNumber
+- doseNumberString
+- manufacture
+- primarySource
+- recorded
+- should set the .meta.profile to the profile so that automatic validation can be done - JIRA
+
+did find
+- occurenceDateTime
+- vaccineCode.text (name)
+- vaccineCode.coding (ICD)
+- location
+  - Looks like .location is implemented as a reference, not just display. Looks like it is expecting the location given to be a logical id?
+  - Likely should be a contained Location - JIRA
+- note.text
+- identifier (OID+'.4.349', stationNumber + '.' + id) - JIRA
+- status=completed
+- patient
+- reaction.detail
+- occurrenceDateTime
 
 #### xsl transform
 

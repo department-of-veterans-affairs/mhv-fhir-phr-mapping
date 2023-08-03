@@ -8,7 +8,7 @@
 - `type` seems to hold an enum (PN, DS). 
   - `PN` - LOINC#11505-5 \"Physician procedure note\"
   - `DS` - LOINC#18842-5 \"Discharge summary\"
-  - TODO `PN` might be 11506`
+  - TODO `PN` might be 11506 \"Progress Note\" - JIRA
   - anything else should be logged as not yet understood
 - This also includes the (NoteTO) received on the 'Admission and Discharge' feed which holds a Discharge Summary without an id.
 - **Business Rule**: do not convert any NoteTO.status that is not `completed` or `COMPLETED`.
@@ -24,7 +24,7 @@
 - some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
   - serviceCategory
   - cosigner
-  - hasAdendum
+  - hasAddendum
   - isAddendum
   - originalNoteID
   - hasImages

@@ -16,23 +16,20 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>MHVPDAADLZ LUSERL MHVASPXXI </b> unknown, DoB Unknown ( id: 89486 (use: OFFICIAL))</p><hr/></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"border: 1px #661aff solid; background-color: #e6e6ff; padding: 10px;\"><b>MHVPDAADLZ MHVASPXXI </b> unknown, DoB: 1000-01-01 ( id: 89486 (use: USUAL))</p><hr/></div>"
   ] ; # 
   fhir:identifier ( [
-     fhir:use [ fhir:v "official" ] ;
-     fhir:system [ fhir:v "http://va.gov/systems/USVHA"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "89486" ] ;
-     fhir:assigner [
-       fhir:display [ fhir:v "979" ]
-     ]
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "89486" ]
   ] ) ; # 
   fhir:name ( [
      fhir:use [ fhir:v "usual" ] ;
      fhir:family [ fhir:v "MHVASPXXI" ] ;
-     fhir:given ( [ fhir:v "MHVPDAADLZ" ] [ fhir:v "LUSERL" ] ) ;
-     fhir:suffix ( [ fhir:v "MHV" ] )
+     fhir:given ( [ fhir:v "MHVPDAADLZ" ] )
   ] ) ; # 
-  fhir:gender [ fhir:v "unknown"] . # 
+  fhir:gender [ fhir:v "unknown"] ; # 
+  fhir:birthDate [ fhir:v "1000-01-01"^^xsd:date] . # 
 
 # -------------------------------------------------------------------------------------
 

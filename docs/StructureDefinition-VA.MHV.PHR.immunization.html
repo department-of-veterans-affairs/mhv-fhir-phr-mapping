@@ -1284,12 +1284,16 @@ Summary
 <h4 id="mapping-concerns">Mapping Concerns</h4>
 
 <ul>
-  <li>The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identifed, and more rich mock example.</li>
-  <li>contraindicated – appears to be a number (e.g. 0). No idea what the values might be or what they might mean</li>
-  <li>id - presuming this is a persisted identifier we can cross-reference with</li>
-  <li>series - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?</li>
-  <li>encounter - should we convert these to instances of FHIR Encounter? Didn’t do that because it is not clear how to convert the elements properly</li>
-  <li>could have function that converts a defined set of ImmunizationTO.name values to proper codes. This might be an advanced feature.</li>
+  <li>The given mock example aligns with both VIA_v4.0.7_uat.wsdl and mockey-mdws3-service.wsdl. The VIA schema has more elements. The mapping is only for elements that were in both and for which I had an example. Better mapping can be done if specific schema can be identified, and more rich mock example.</li>
+  <li><code class="language-plaintext highlighter-rouge">id</code> - presuming this is a persisted identifier we can cross-reference with</li>
+  <li>Updates must be supported somehow. Fixing the status at completed will only work if data never changes.</li>
+  <li><code class="language-plaintext highlighter-rouge">series</code> - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?</li>
+  <li><code class="language-plaintext highlighter-rouge">encounter</code> - should we convert these to instances of FHIR Encounter? Didn’t do that because it is not clear how to convert the elements properly
+    <ul>
+      <li>do retrain the encounter location in the location.display</li>
+    </ul>
+  </li>
+  <li>could have function that converts a defined set of <code class="language-plaintext highlighter-rouge">ImmunizationTO.name</code> values to proper codes. This might be an advanced feature.</li>
   <li>presuming our publication is not <code class="language-plaintext highlighter-rouge">primarySource</code>
     <ul>
       <li>Concern that this should be left blank, and a Data-absent-reason be used to fill compliance with us-core.</li>
@@ -1297,13 +1301,54 @@ Summary
       <li>should change when US-Core 6+</li>
     </ul>
   </li>
-  <li>Updates must be supported somehow. Fixing the status at completed will only work if data never changes.</li>
+  <li>Not mapped due to lack of clarity on what the value is and if it will ever be populated
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">contraindicated</code> – appears to be a number (e.g. 0). No idea what the values might be or what they might mean</li>
+      <li><code class="language-plaintext highlighter-rouge">shortName</code></li>
+      <li><code class="language-plaintext highlighter-rouge">encounterProvider</code></li>
+      <li><code class="language-plaintext highlighter-rouge">orderingProvider</code></li>
+    </ul>
+  </li>
 </ul>
 
 <h4 id="change-2023-07-20">change 2023-07-20</h4>
 
 <ul>
   <li>defined the specifics of the Contained Observation for the reaction</li>
+</ul>
+
+<h5 id="code-inspection">code inspection</h5>
+
+<p>didn’t find - JIRA</p>
+<ul>
+  <li>recorded</li>
+  <li>performer</li>
+  <li>site</li>
+  <li>lotNumber</li>
+  <li>doseNumberString</li>
+  <li>manufacture</li>
+  <li>primarySource</li>
+  <li>recorded</li>
+  <li>should set the .meta.profile to the profile so that automatic validation can be done - JIRA</li>
+</ul>
+
+<p>did find</p>
+<ul>
+  <li>occurenceDateTime</li>
+  <li>vaccineCode.text (name)</li>
+  <li>vaccineCode.coding (ICD)</li>
+  <li>location
+    <ul>
+      <li>Looks like .location is implemented as a reference, not just display. Looks like it is expecting the location given to be a logical id?</li>
+      <li>Likely should be a contained Location - JIRA</li>
+    </ul>
+  </li>
+  <li>note.text</li>
+  <li>identifier (OID+’.4.349’, stationNumber + ‘.’ + id) - JIRA</li>
+  <li>status=completed</li>
+  <li>patient</li>
+  <li>reaction.detail</li>
+  <li>occurrenceDateTime</li>
 </ul>
 
 <h4 id="xsl-transform">xsl transform</h4>
@@ -1467,7 +1512,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.18-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jul 21, 2023 16:23-0500">2023-07-21</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.18-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 3, 2023 12:49-0500">2023-08-03</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
