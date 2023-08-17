@@ -1091,6 +1091,12 @@ Summary
 <h4 id="mapping-concerns">Mapping Concerns</h4>
 
 <ul>
+  <li>what is <code class="language-plaintext highlighter-rouge">PN</code>, is it progress notes or physician procedure note?</li>
+  <li>ADT feed discharge summary do not have an <code class="language-plaintext highlighter-rouge">id</code> so it is not clear how we would keep from duplicating
+    <ul>
+      <li>discharge summary in the notes feed do have an <code class="language-plaintext highlighter-rouge">id</code></li>
+    </ul>
+  </li>
   <li>is <code class="language-plaintext highlighter-rouge">standardTitle</code> or <code class="language-plaintext highlighter-rouge">type</code> used to differentiate between various note types?</li>
   <li><code class="language-plaintext highlighter-rouge">status</code> might be derived from <code class="language-plaintext highlighter-rouge">NoteTO.status</code>, but at this point I presume we are only told about completed notes, we have a business rule to ignore all others, and I don’t know what other <code class="language-plaintext highlighter-rouge">NoteTO.status</code> values might happen</li>
   <li>what other <code class="language-plaintext highlighter-rouge">type</code> values might we see?</li>
@@ -1188,7 +1194,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.18-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 3, 2023 12:49-0500">2023-08-03</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.18-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 17, 2023 15:11-0500">2023-08-17</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

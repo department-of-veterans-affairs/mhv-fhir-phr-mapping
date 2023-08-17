@@ -6,7 +6,7 @@
     <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: AllergyIntolerance</b><a name="ex-MHV-allergy-9"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource AllergyIntolerance &quot;ex-MHV-allergy-9&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>identifier</b>: id: 69074 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>category</b>: food</p><p><b>code</b>: CARROTS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>patient</b>: <a href="Patient-ex-MHV-patient-89486.html">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>onset</b>: 2011-02-21 08:16:00+0000</p><p><b>note</b>: none  ( @Feb 21, 2011, 2:16:49 AM)</p><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: SEDATED <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4637177)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: PRURITUS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4637191)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: DELIRIUM <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4637015)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: SWELLING <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4637164)</span></p></blockquote></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: AllergyIntolerance</b><a name="ex-MHV-allergy-9"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource AllergyIntolerance &quot;ex-MHV-allergy-9&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>identifier</b>: id: 69074 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-allergyintolerance-verification.html">AllergyIntolerance Verification Status</a>#confirmed)</span></p><p><b>category</b>: food</p><p><b>code</b>: CARROTS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>patient</b>: <a href="Patient-ex-MHV-patient-89486.html">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>onset</b>: 2011-02-21 08:16:00+0000</p><p><b>recorder</b>: <span>??</span></p><p><b>note</b>: none  ( @Feb 21, 2011, 2:16:49 AM)</p><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: SEDATED <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4637177)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: PRURITUS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4637191)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: DELIRIUM <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4637015)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: SWELLING <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4637164)</span></p></blockquote></div>
   </text>
   <identifier>
     <use value="usual"/>
@@ -19,6 +19,12 @@
       <code value="active"/>
     </coding>
   </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+      <code value="confirmed"/>
+    </coding>
+  </verificationStatus>
   <category value="food"/>
   <code>
     <text value="CARROTS"/>
@@ -27,6 +33,13 @@
     <reference value="Patient/ex-MHV-patient-89486"/>
   </patient>
   <onsetDateTime value="2011-02-21T08:16:00Z"/>
+  <recorder>
+    <extension url="http://hl7.org/fhir/StructureDefinition/alternate-reference">
+      <valueReference>
+        <reference value="Organization/ex-MHV-organization-979"/>
+      </valueReference>
+    </extension>
+  </recorder>
   <note>
     <time value="2011-02-21T08:16:49Z"/>
     <text value="none "/>

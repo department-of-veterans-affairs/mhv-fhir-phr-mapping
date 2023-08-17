@@ -6,7 +6,7 @@
     <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: AllergyIntolerance</b><a name="ex-MHV-allergy-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource AllergyIntolerance &quot;ex-MHV-allergy-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>identifier</b>: id: 67933 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/3.1.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>category</b>: medication</p><p><b>code</b>: TYLENOL <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ([not stated] &quot;NON-OPIOID ANALGESICS&quot;; [not stated] &quot;PHARMACEUTICAL AIDS/REAGENTS&quot;)</span></p><p><b>patient</b>: <a href="Patient-ex-MHV-patient-89486.html">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>onset</b>: 2006-02-01 13:57:00+0000</p><h3>Reactions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Manifestation</b></td></tr><tr><td style="display: none">*</td><td>NAUSEA AND VOMITING <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4691091)</span></td></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: AllergyIntolerance</b><a name="ex-MHV-allergy-2"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource AllergyIntolerance &quot;ex-MHV-allergy-2&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>identifier</b>: id: 67933 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-allergyintolerance-clinical.html">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-allergyintolerance-verification.html">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>category</b>: medication</p><p><b>code</b>: TYLENOL <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ([not stated] &quot;NON-OPIOID ANALGESICS&quot;; [not stated] &quot;PHARMACEUTICAL AIDS/REAGENTS&quot;)</span></p><p><b>patient</b>: <a href="Patient-ex-MHV-patient-89486.html">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>onset</b>: 2006-02-01 13:57:00+0000</p><p><b>recorder</b>: <span>??</span></p><h3>Reactions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Manifestation</b></td></tr><tr><td style="display: none">*</td><td>NAUSEA AND VOMITING <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4691091)</span></td></tr></table></div>
   </text>
   <identifier>
     <use value="usual"/>
@@ -19,6 +19,12 @@
       <code value="active"/>
     </coding>
   </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+      <code value="unconfirmed"/>
+    </coding>
+  </verificationStatus>
   <category value="medication"/>
   <code>
     <coding>
@@ -33,6 +39,13 @@
     <reference value="Patient/ex-MHV-patient-89486"/>
   </patient>
   <onsetDateTime value="2006-02-01T13:57:00Z"/>
+  <recorder>
+    <extension url="http://hl7.org/fhir/StructureDefinition/alternate-reference">
+      <valueReference>
+        <reference value="Organization/ex-MHV-organization-979"/>
+      </valueReference>
+    </extension>
+  </recorder>
   <reaction>
     <manifestation>
       <coding>

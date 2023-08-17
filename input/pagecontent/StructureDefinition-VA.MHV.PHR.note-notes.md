@@ -18,6 +18,9 @@
 
 #### Mapping Concerns
 
+- what is `PN`, is it progress notes or physician procedure note?
+- ADT feed discharge summary do not have an `id` so it is not clear how we would keep from duplicating
+  - discharge summary in the notes feed do have an `id`
 - is `standardTitle` or `type` used to differentiate between various note types?
 - `status` might be derived from `NoteTO.status`, but at this point I presume we are only told about completed notes, we have a business rule to ignore all others, and I don't know what other `NoteTO.status` values might happen
 - what other `type` values might we see?

@@ -20,7 +20,8 @@ IntoleranceCondition record identity 53495 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637183
 * note.text = "Updated using clean up process.  Changed reactant from IVP DYE (free text) to CONTRAST MEDIA, OTHER(file - PS(50.605,)"
 * note.time = 2004-07-24T18:29:07Z
-
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 Instance:   ex-MHV-allergy-2
 InstanceOf: VA.MHV.PHR.allergyIntolerance
@@ -42,6 +43,8 @@ IntoleranceCondition record identity 67933 from a mock ProblemTO
 * category = #medication
 * reaction[+].manifestation.text = "NAUSEA AND VOMITING"
 * reaction[=].manifestation.coding = VUID#4691091
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 
@@ -64,6 +67,8 @@ IntoleranceCondition record identity 67934 from a mock ProblemTO
 * category = #medication
 * reaction[+].manifestation.text = "NAUSEA AND VOMITING"
 * reaction[=].manifestation.coding = VUID#4691091
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-4
@@ -88,6 +93,8 @@ IntoleranceCondition record identity 69066 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4538635
 * note.text = "test comments for 11.2 release testing "
 * note.time = 2011-02-16T14:33:26Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-5
@@ -111,6 +118,8 @@ IntoleranceCondition record identity 69067 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637015
 * note.text = "new comments would go here, thanks "
 * note.time = 2011-02-16T14:34:18Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-6
@@ -133,6 +142,8 @@ IntoleranceCondition record identity 69071 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4538635
 * note.text = "test comments"
 * note.time = 2011-02-21T08:09:01Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-7
@@ -160,6 +171,8 @@ IntoleranceCondition record identity 69072 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637164
 * note.text = "test"
 * note.time = 2011-02-21T08:09:43Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-8
@@ -185,6 +198,8 @@ IntoleranceCondition record identity 69073 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637177
 * note.text = "test data"
 * note.time = 2011-02-21T08:11:42Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-9
@@ -213,6 +228,8 @@ IntoleranceCondition record identity 69074 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637164
 * note.text = "none "
 * note.time = 2011-02-21T08:16:49Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-10
@@ -236,6 +253,8 @@ IntoleranceCondition record identity 69075 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637164
 * note.text = "test"
 * note.time = 2011-02-21T08:57:54Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-11
@@ -262,6 +281,8 @@ IntoleranceCondition record identity 69092 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637164
 * note.text = "test 123456 "
 * note.time = 2011-02-28T18:11:47Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-12
@@ -288,6 +309,8 @@ IntoleranceCondition record identity 69093 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637184
 * note.text = "new entry "
 * note.time = 2011-02-28T18:12:40Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-13
@@ -310,6 +333,8 @@ IntoleranceCondition record identity 69123 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637183
 * reaction[+].manifestation.text = "SWELLING"
 * reaction[=].manifestation.coding = VUID#4637164
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 
 
 Instance:   ex-MHV-allergy-14
@@ -336,6 +361,9 @@ IntoleranceCondition record identity 69124 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4691091
 * note.text = "TEST SSC 5/13/2013 "
 * note.time = 2013-05-13T17:38:22Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+
 
 Instance:   ex-MHV-allergy-15
 InstanceOf: VA.MHV.PHR.allergyIntolerance
@@ -369,4 +397,6 @@ IntoleranceCondition record identity 69129 from a mock ProblemTO
 
 see if it shows up on the Report. SSC TEST 8/25/2014 "
 * note.time = 2014-08-25T17:13:24Z
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
+* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
 

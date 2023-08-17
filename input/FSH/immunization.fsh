@@ -31,7 +31,7 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * statusReason 0..0
 * reportOrigin 0..0
 * encounter 0..0
-* location.display MS
+* location MS
 * manufacturer MS
 * lotNumber MS
 * expirationDate 0..0
@@ -63,13 +63,13 @@ Title: "VDIF to MHV-PHR"
 * reaction.detail -> "ImmunizationTO.reaction"
 * occurrenceDateTime -> "ImmunizationTO.administeredDate"
 * recorded -> "ImmunizationTO.administeredDate"
-* performer.actor.display -> "GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`"
-* performer.actor.display -> "GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`"
+* performer.actor -> "GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`"
+* performer.actor -> "GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`"
 * site.text -> "ImmunizationTO.anatomicSurface"
 * vaccineCode.coding.code -> "ImmunizationTO.cptCode.id"
 * vaccineCode.coding.display -> "ImmunizationTO.cptCode.name"
-//* encounter -> "GetEncounter(ImmunizationTO.encounter.[VisitTO])"
-* location.display -> "ImmunizationTO.encounter.location.name or ImmunizationTO.encounter.facility.name"
+* location.display -> "GetLocation(ImmunizationTO.encounter.location.name)"
+* performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility.name)"
 * identifier -> "{StationNbr} and {ImmunizationTO.id}"
 * lotNumber -> "ImmunizationTO.lotNumber"
 * manufacturer -> "ImmunizationTO.manufacture"

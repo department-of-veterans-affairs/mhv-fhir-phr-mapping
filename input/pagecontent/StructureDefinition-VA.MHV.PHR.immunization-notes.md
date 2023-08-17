@@ -19,8 +19,6 @@
 - `id` - presuming this is a persisted identifier we can cross-reference with
 - Updates must be supported somehow. Fixing the status at completed will only work if data never changes.
 - `series` - this appears to be a controlled vocabulary (e.g. COMPLETE). What are the possible values and what do they mean?
-- `encounter` - should we convert these to instances of FHIR Encounter? Didn't do that because it is not clear how to convert the elements properly
-  - do retrain the encounter location in the location.display
 - could have function that converts a defined set of `ImmunizationTO.name` values to proper codes. This might be an advanced feature.
 - presuming our publication is not `primarySource`
   - Concern that this should be left blank, and a Data-absent-reason be used to fill compliance with us-core.
@@ -36,9 +34,9 @@
 
 - defined the specifics of the Contained Observation for the reaction
 
-##### code inspection
+##### code inspection concerns
 
-didn't find - JIRA
+didn't find the following implemented
 - recorded
 - performer
 - site
@@ -54,14 +52,16 @@ did find
 - vaccineCode.text (name)
 - vaccineCode.coding (ICD)
 - location
-  - Looks like .location is implemented as a reference, not just display. Looks like it is expecting the location given to be a logical id?
-  - Likely should be a contained Location - JIRA
 - note.text
 - identifier (OID+'.4.349', stationNumber + '.' + id) - JIRA
 - status=completed
 - patient
 - reaction.detail
 - occurrenceDateTime
+
+should handle Organization and Location the same way everywhere.
+- Should this be just .display, .identifier, contained .reference, or reference to a server managed resource?
+- Looks like .location is implemented as a reference, logical id?
 
 #### xsl transform
 

@@ -22,39 +22,38 @@
 - `reaction.reaction.code` seems to be a number
   - if it is a 7 digit number, then it is a VUID and system=`urn:oid:2.16.840.1.113883.6.233`
   - else it is likely a SNOMED
+- `informationSourceCategory` contains one of two values
+  - `OBSERVED` shall be mapped to .verificationStatus=`confirmed`
+  - `HISTORICAL` shall be mapped to .verificationStatus=`unconfirmed`
+- `facilityIdentifier` is where the allergy was first recorded (The VISN number).
+  - logical to put this into `.recorder`, but that doesn't support a Organization reference
+  - use alternate-reference extension on the recorder, with a Organization holding the facilityIdentifier.
+    - `http://hl7.org/fhir/StructureDefinition/alternate-reference`
 
 #### Mapping Concerns
 
-- `facilityIdentifier` might be where the allergy was first recorded, but there is no place for this in the FHIR AllergyIntolerance.
-  - maybe put in .meta.source or Provenance
-- no clear place to record `recordSource`, `recordVersion`
-  - maybe in the .meta.source or in a Provenance
-- no clear handling of `informationSourceCategory`
-  - mock data = 4500978/OBSERVED, 4500975/HISTORICAL
-  - this might be FHIR `.verificationStatus`, but we must fill that element with one of the FHIR defined codes (unconfirmed, confirmed, refuted, or entered-in-error)
-  - could define a mapping to .verificationStatus codes (might be OBSERVED is confirmed, and HISTORICAL is unconfirmed?)
-  - or could define an extension if this is needed
-- **updates from Active to not** -- given that we are only told about active allergies; what happens when we are told yesterday about a fooBar allergy, and the fooBar allergy gets removed or changed to inactive in Vista; how would we know? If we are told, would we delete our instance of that allergy, or mark it inactive, or mark it entered-in-error?
+- **updates from Active to not** -- given that we are only told about active allergies; what happens when we are told yesterday about a fooBar allergy, and the fooBar allergy gets removed or changed to inactive in Vista; how would we know? 
   - are those `status` that are not `F` changes that we should track in FHIR?
+  - Carnetta expresses that it is possible HDR and VIA are filtering out non-current data. If this is the case, then we will need HDR and VIA to stop filtering, and we will might need to have our PHR code more defensive.
+  - If we are told, would we delete our instance of that allergy, or mark it inactive, or mark it entered-in-error?
 
-#### Notes to Roger
+#### code inspection concerns
 
-JIRA 
-- need to handle when an allergy is both a medication and environment and observation? (PR 48)
-  - Note medication should be set if EITHER 'D' or a drugClass
-- I am unclear on how your .identifier logic results
-  - line 312
-  - This does not follow the pattern
-- The reactant we are given is not always snomed. (PR 48)
+- need to handle when an allergy is both a medication and environment and observation. Today no all combinations are supported.
+  - medication should be set if EITHER 'D' or a drugClass
+- The reactant we are given is not always snomed.
   - if it is a 7 digit number, then it is a VUID and system=`urn:oid:2.16.840.1.113883.6.233`
   - else it is likely a SNOMED system=`http://snomed.info/sct`
 - should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile
-
-#### Notes to Muazzam
-
-- what are other status values besides `F`?
+- `informationSourceCategory` contains one of two values
+  - `OBSERVED` shall be mapped to .verificationStatus=`confirmed`
+  - `HISTORICAL` shall be mapped to .verificationStatus=`unconfirmed`
+- what are other status values besides `F`? Would these other status values need to result in updates to the data in our FHIR server? e.g. entered-in-error, resolved, etc.
 - only those with `facilityIdentifier` are processed (is this just robustness, or is there a reason?)
-- I am unclear on what your logic around `getInformationSourceCategory` is. You seem to have some logic for handling HISTORIC and OBSERVED, but I can't understand the logic.
+- I am unclear on the existing .identifier logic results
+  - line 312
+  - This does not follow the pattern
+- I am unclear on what the logic around `getInformationSourceCategory` is. You seem to have some logic for handling HISTORIC and OBSERVED, but I can't understand the logic.
   - line 224 
   - This seems to not result in anything.
   - I was wondering if there was some value to the InformationSourceCategory values.

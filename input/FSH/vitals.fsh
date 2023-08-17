@@ -55,7 +55,7 @@ Title: "VDIF to MHV-PHR"
 * value[x] -> "VitalSignTO.value1 and VitalSignTO.units"
 * component -> "For BP is used for value1"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
-* performer -> "VitalSignTO.recorder and VitalSignTO.observer"
+* performer -> "contained VitalSignTO.recorder and VitalSignTO.observer"
 * note.text -> "VitalSignTO.comments"
 
 

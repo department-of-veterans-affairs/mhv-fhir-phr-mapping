@@ -17,10 +17,10 @@ Example from a mock ImmunizationTO
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * note[0].text = "test"
-* location.display = "DAYTON"
+* location.display = "23 HOUR OBSERVATION"
 //* encounter.identifier.value = "6433274"
 * protocolApplied.doseNumberString = "COMPLETE"
-
+* performer[+].actor = Reference(ex-MHV-organization-552)
 
 Instance:   ex-MHV-immunization-2
 InstanceOf: VA.MHV.PHR.immunization
@@ -42,11 +42,12 @@ Example from a mock ImmunizationTO
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * note.text = "test comment"
-* location.display = "DAYTON"
+* location.display = "ADTP BURNETT"
 //* encounter.identifier.value = "6433261"
 * protocolApplied.doseNumberString = "COMPLETE"
 * reaction.detail = Reference(in-reaction-2)
 * contained[+] = in-reaction-2
+* performer[+].actor = Reference(ex-MHV-organization-552)
 
 Instance: in-reaction-2
 InstanceOf: MHVimmunizationReaction

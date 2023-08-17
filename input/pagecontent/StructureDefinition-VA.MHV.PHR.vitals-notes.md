@@ -67,6 +67,10 @@
   - There is a units within the data, and it seems mostly to be the proper code from the proper code system UCUM
   - some units are not proper formal UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)
 
+#### code review
+
+is location being saved in performer?
+
 #### xsl transform
 
 Simple (not fully functional) xslt from SOAP response with VitalSignTO to FHIR Bundle with Observation:

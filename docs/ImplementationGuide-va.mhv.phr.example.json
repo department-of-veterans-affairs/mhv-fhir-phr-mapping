@@ -18,7 +18,7 @@
   "name" : "MHVPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-08-03T12:49:33-05:00",
+  "date" : "2023-08-17T15:11:45-05:00",
   "publisher" : "John Moehrke (himself)",
   "contact" : [{
     "name" : "John Moehrke (himself)",
@@ -59,20 +59,16 @@
     "version" : "5.0.0"
   },
   {
-    "id" : "hl7ext",
-    "extension" : [{
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
-      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
-    }],
-    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
-    "packageId" : "hl7.fhir.uv.extensions.r4",
-    "version" : "1.0.0"
+    "id" : "hl7_fhir_us_core",
+    "uri" : "http://fhir.org/packages/hl7.fhir.us.core/ImplementationGuide/hl7.fhir.us.core",
+    "packageId" : "hl7.fhir.us.core",
+    "version" : "5.0.x"
   },
   {
-    "id" : "hl7_fhir_us_core",
-    "uri" : "http://hl7.org/fhir/us/core/ImplementationGuide/hl7.fhir.us.core",
-    "packageId" : "hl7.fhir.us.core",
-    "version" : "5.0.1"
+    "id" : "hl7_fhir_uv_extensions",
+    "uri" : "http://fhir.org/packages/hl7.fhir.uv.extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions",
+    "version" : "1.0.x"
   }],
   "definition" : {
     "extension" : [{

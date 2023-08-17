@@ -19,6 +19,7 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * identifier[recordIdentifier].system ^short = "{intoleranceCondition.recordIdentifier.namespaceId}"
 * identifier[recordIdentifier].value ^short = "{intoleranceCondition.recordIdentifier.identity}"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
+* verificationStatus 1..1
 * code.text 1..1
 * code 1..1
 * patient 1..1 MS
@@ -26,8 +27,11 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * category 0..* MS
 * category from AllergyCategoryVS (required)
 * recorder MS
+* recorder.extension contains http://hl7.org/fhir/StructureDefinition/alternate-reference named visn 0..1
+* recorder.extension[visn].valueReference only Reference(Organization)
 * reaction 0..* MS
 * reaction.manifestation 1..1
+// reaction.manifestation is either VUID or SNOMED
 * reaction.substance 0..0
 * reaction.description 0..0
 * reaction.onset 0..0
@@ -39,7 +43,6 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * note.author[x] 0..0
 * meta.lastUpdated MS
 * criticality 0..0
-* verificationStatus 0..0
 * encounter 0..0
 * recordedDate 0..0
 * asserter 0..0
@@ -80,7 +83,8 @@ Title: "VHIM Allergy to MHV-PHR"
 * note.text -> "intoleranceCondition.commentEvents.comment"
 * note.time -> "~intoleranceCondition.commentEvents.date.literal"
 * meta.lastUpdated -> "intoleranceCondition.recordUpdateTime"
-
+* verificationStatus -> "intoleranceCondition.informationSourceCategory: `OBSERVED` -> `confirmed`;  `HISTORICAL` -> `unconfirmed`"
+* recorder.extension[visn] -> "Organization(intoleranceCondition.facilityIdentifier)"
 
 /* 
 <?xml version="1.0" encoding="UTF-8"?>

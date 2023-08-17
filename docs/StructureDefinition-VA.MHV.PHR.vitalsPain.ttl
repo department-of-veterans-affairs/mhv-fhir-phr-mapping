@@ -42,7 +42,7 @@
   fhir:name [ fhir:v "MHVvitalsPain"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Vital-Signs for PAIN"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-03T12:49:33-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-17T15:11:45-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
@@ -2189,6 +2189,12 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "true"^^xsd:boolean ]
+         ] [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "true"^^xsd:boolean ]
+         ] [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:code [ fhir:v "dateTime"^^xsd:anyURI ]
        ] ) ;
@@ -2338,7 +2344,7 @@
          fhir:map [ fhir:v "participation[typeCode=PRF]" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
-         fhir:map [ fhir:v "VitalSignTO.recorder and VitalSignTO.observer" ]
+         fhir:map [ fhir:v "contained VitalSignTO.recorder and VitalSignTO.observer" ]
        ] [
          fhir:identity [ fhir:v "VitalsPain-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.recorder and VitalSignTO.observer" ]
@@ -2359,6 +2365,9 @@
        ] ;
        fhir:type ( [
          fhir:extension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "true"^^xsd:boolean ]
+         ] [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-type-must-support"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;

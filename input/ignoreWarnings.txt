@@ -3,7 +3,8 @@
 # CPT will not validate, but I have it right https://terminology.hl7.org/5.0.0/CPT.html
 The definition for the Code System with URI 'http://www.ama-assn.org/go/cpt' doesnt provide any codes so the code cannot be validated
 
-# ICD will not validate, but I have it right https://terminology.hl7.Condition.code.coding[0]: The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/icd9cm' doesnt provide any codes so the code cannot be validated
+# ICD will not validate, but I have it right 
+The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/icd9cm' doesnt provide any codes so the code cannot be validated
 
 # Some immunizations don't have CVX
 WARNING: Immunization/ex-MHV-immunization-1: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
@@ -30,13 +31,6 @@ WARNING: ConceptMap/ObservationTypeTOVsLoincCode: ConceptMap.group[0].source: Un
 INFORMATION: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chSpecimen'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chTest'): The Implementation Guide contains no explicitly linked examples for this profile
 INFORMATION: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chPanel'): The Implementation Guide contains no explicitly linked examples for this profile
-
-# Note is a broad set of document types
-WARNING: VA MHV PHR Notes.DocumentReference.type: Unable to check if https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS is a proper subset of http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type - base value set is too large to check
-WARNING: StructureDefinition/VA.MHV.PHR.note: StructureDefinition: Unable to check if https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS is a proper subset of http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type - base value set is too large to check
-Unable to check if https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS is a proper subset of http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type - base value set is too large to check
-Unable to check if https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS is a proper subset of http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type - base value set is too large to check
-INFORMATION: StructureDefinition/VA.MHV.PHR.note: StructureDefinition.snapshot.element[27].pattern.ofType(CodeableConcept): The repeating element has a pattern. The pattern will apply to all the repeats (this has not been clear to all users)
 
 # Organization sometimes has an identifier type, so put that into text
 No code provided, and a code should be provided from the value set 'IdentifierType' (http://hl7.org/fhir/ValueSet/identifier-type|4.0.1)
@@ -84,4 +78,8 @@ INFORMATION: StructureDefinition/VA.MHV.PHR.medicationDispense: StructureDefinit
 INFORMATION: StructureDefinition.where(url = 'https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunizationReaction'): The Implementation Guide contains no explicitly linked examples for this profile
 
 # Patient examples don't actually have a DOB, so I put in this so that I could find it
-Patient.birthDate: The value '1000-01-01' is outside the range of reasonable years - check for data entry error
+The value '1000-01-01' is outside the range of reasonable years - check for data entry error
+
+# Allergies keep the facilityIdentifier in an Organization as an extension on recorder. Thus recorder is only populated with an extension
+A Reference without an actual reference or identifier should have a display
+
