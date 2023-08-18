@@ -12,7 +12,9 @@
 - `reaction.detail` may be a contained Observation with reaction detail
 - `occuranceDateTime` when the immunization given
 - `recorded` when the immunization was recorded
-- `performer.actor.display` may be the name of the one administering the immunization, and/or the one who ordered it
+- `performer.actor` may be a Practitioner administering (AP) the immunization
+- `performer.actor` may be a Practitioner that ordered (OP)
+- `performer.actor` may be an Organization for the VAMC
 - `site.text` where on the body the immunization was given
 - `lotNumber` may be the immunization lot number
 - `manufacture` may be the manufacture of the immunization given

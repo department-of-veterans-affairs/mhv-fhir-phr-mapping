@@ -318,6 +318,8 @@
   <li><code class="language-plaintext highlighter-rouge">category</code> only <code class="language-plaintext highlighter-rouge">medication</code>, <code class="language-plaintext highlighter-rouge">food</code>, and/or <code class="language-plaintext highlighter-rouge">environment</code></li>
   <li><code class="language-plaintext highlighter-rouge">identifier</code> will hold the record identifier from Vista</li>
   <li><code class="language-plaintext highlighter-rouge">onsetDateTime</code> will hold the observed time</li>
+  <li><code class="language-plaintext highlighter-rouge">verificationStatus</code> will hold either <code class="language-plaintext highlighter-rouge">confirmed</code> or <code class="language-plaintext highlighter-rouge">unconfirmed</code></li>
+  <li><code class="language-plaintext highlighter-rouge">recorder</code> may have an extension <code class="language-plaintext highlighter-rouge">alternate-reference</code> that points to an Organization resource identifying the VAMC where the allergy was first recorded</li>
   <li><code class="language-plaintext highlighter-rouge">reaction.manifestation</code> may have <code class="language-plaintext highlighter-rouge">.text</code>
     <ul>
       <li>may have <code class="language-plaintext highlighter-rouge">.coding.code</code> but no system is known</li>
@@ -1430,7 +1432,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.19-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 18, 2023 06:56-0500">2023-08-18</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.19-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 18, 2023 07:55-0500">2023-08-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

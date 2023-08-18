@@ -31,7 +31,7 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * statusReason 0..0
 * reportOrigin 0..0
 * encounter 0..0
-* location MS
+* location.display MS
 * manufacturer MS
 * lotNumber MS
 * expirationDate 0..0
@@ -68,7 +68,7 @@ Title: "VDIF to MHV-PHR"
 * site.text -> "ImmunizationTO.anatomicSurface"
 * vaccineCode.coding.code -> "ImmunizationTO.cptCode.id"
 * vaccineCode.coding.display -> "ImmunizationTO.cptCode.name"
-* location.display -> "GetLocation(ImmunizationTO.encounter.location.name)"
+* location.display -> "ImmunizationTO.encounter.location.name"
 * performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility.name)"
 * identifier -> "{StationNbr} and {ImmunizationTO.id}"
 * lotNumber -> "ImmunizationTO.lotNumber"

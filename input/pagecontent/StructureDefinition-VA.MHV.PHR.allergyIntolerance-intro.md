@@ -9,6 +9,8 @@
 - `category` only `medication`, `food`, and/or `environment`
 - `identifier` will hold the record identifier from Vista
 - `onsetDateTime` will hold the observed time
+- `verificationStatus` will hold either `confirmed` or `unconfirmed`
+- `recorder` may have an extension `alternate-reference` that points to an Organization resource identifying the VAMC where the allergy was first recorded
 - `reaction.manifestation` may have `.text`
   - may have `.coding.code` but no system is known
 - `note.text` will hold comments
