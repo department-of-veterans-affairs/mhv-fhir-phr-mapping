@@ -2,9 +2,9 @@
 
 
 package source {
+    class source.HL7v2
     class source.VIA
     class source.HDR
-    class source.HL7v2
 }
 
 package fhir {
@@ -15,6 +15,7 @@ package fhir {
         class fhir.util.Organization
     }
     class fhir.AllergyIntolerance
+    class fhir.Immunization
     class fhir.Condition
     class fhir.DiagnosticReport {
         - lab
@@ -30,7 +31,6 @@ package fhir {
         - ECG Report
         - Imaging Report
     }
-    class fhir.Immunization
     class fhir.Observation {
 confirmed:
 - BLOOD PRESSURE 
@@ -60,6 +60,10 @@ unconfirmed:
 
 }
 
+source.HL7v2 -[#blue]down-> fhir.MedicationRequest
+source.HL7v2 -[#blue]down-> fhir.MedicationDispense
+
+
 source.VIA -[#red]down-> fhir.util.Patient
 source.VIA -[#red]down-> fhir.util.Practitioner
 source.VIA -[#red]down-> fhir.util.Location
@@ -74,15 +78,13 @@ source.HL7v2 -[#blue]down-> fhir.util.Patient
 
 source.VIA -[#red]down-> fhir.Observation
 source.VIA -[#red]down-> fhir.DiagnosticReport
-source.VIA -[#red]down-> fhir.AllergyIntolerance
+
 source.VIA -[#red]down-> fhir.Condition
 source.VIA -[#red]down-> fhir.DocumentReference
 source.VIA -[#red]down-> fhir.Immunization
 
 source.HDR -[#green]down-> fhir.DiagnosticReport
-
-source.HL7v2 -[#blue]down-> fhir.MedicationRequest
-source.HL7v2 -[#blue]down-> fhir.MedicationDispense
+source.HDR -[#green]down-> fhir.AllergyIntolerance
 
 interface "FHIR API" as API 
 API -up-> fhir

@@ -32,10 +32,11 @@
 
 #### Mapping Concerns
 
-- **updates from Active to not** -- given that we are only told about active allergies; what happens when we are told yesterday about a fooBar allergy, and the fooBar allergy gets removed or changed to inactive in Vista; how would we know? 
+- **updates from Active to not** -- given that we are only told about active allergies; what happens when we are told yesterday about a fooBar allergy, and the fooBar allergy gets removed or changed to inactive in Vista; how would we know?
   - are those `status` that are not `F` changes that we should track in FHIR?
   - Carnetta expresses that it is possible HDR and VIA are filtering out non-current data. If this is the case, then we will need HDR and VIA to stop filtering, and we will might need to have our PHR code more defensive.
   - If we are told, would we delete our instance of that allergy, or mark it inactive, or mark it entered-in-error?
+- not clear if we are getting full `allergyType` details. HL7 v2 uses [two character codes](https://terminology.hl7.org/2.1.0/CodeSystem-v2-0127.html), but it seems we are getting just single character codes. It may not matter as [there is HL7 guidance](https://confluence.hl7.org/pages/viewpage.action?pageId=44499731) that only uses the three categories in FHIR. [HL7 v2 to FHIR IG](https://hl7.org/fhir/uv/v2mappings/2020sep/ConceptMap-table-hl70127-to-allergy-intolerance-type.html)
 
 #### code inspection concerns
 
