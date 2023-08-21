@@ -3,7 +3,7 @@
 - An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference.
   - This was transformed using the included XSLT below
   - from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.
-- [mapping to VHIM](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto)
+- [mapping to VDIF](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto)
 - based on US-Core for Clinical Notes
 - should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging` to indicate the intent to be compliant with this profile
 - `type` is LOINC#18748-4 `Diagnostic imaging study`

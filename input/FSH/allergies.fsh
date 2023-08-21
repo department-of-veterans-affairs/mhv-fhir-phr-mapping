@@ -66,8 +66,8 @@ Description: "not all of them"
 Mapping: AllergyIntolerance-Mapping
 Source:	MHVallergyIntolerance
 Target: "intoleranceCondition"
-Title: "VHIM Allergy to MHV-PHR"
-* -> "VHIM Allergy"
+Title: "HDR Allergy to MHV-PHR"
+* -> "HDR Allergy"
 * identifier -> "intoleranceCondition.recordIdentifer"
 * code.text -> "intoleranceCondition.agent.code"
 * patient -> "GetPatient(intoleranceCondition.patient)"

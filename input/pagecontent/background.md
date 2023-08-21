@@ -31,7 +31,7 @@ Note that these resources are used purely to provide linkage, they are minimally
 This section is dedicated to instructions on how MHV will transition the data we receive into FHIR format.
 
 - [Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html#notes)
-  - [Mappings from VHIM Allergy](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-vhim-allergy-to-mhv-phr-intolerancecondition)
+  - [Mappings from HDR Allergy](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-hdr-allergy-to-mhv-phr-intolerancecondition)
   - [Examples](StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html)
 - [Chem-Hem (CH) Diagnostic Report](StructureDefinition-VA.MHV.PHR.chReport.html#notes)
   - [Mapping from HDR labTestPromises to DiagnosticReport](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)
@@ -147,4 +147,4 @@ Source of data received from VDIF using a SOAP xml schema that might be from one
 - [mockey-mdws3-service.wsdl](https://github.com/department-of-veterans-affairs/mhv-ap-vde-support/blob/development/src/test/wsdl/mockey-mdws3-service.wsdl)
 - [EmrService.wsdl](https://github.com/department-of-veterans-affairs/mhv-hla-app-ui/blob/dbb0301be4a17f31e67048300d72c87c0977aa09/hra-mock-via-app/src/main/java/gov/va/hra/integration/via/mock/ws/EmrService.wsdl)
 - VA [Vista Fileman](http://www.vistapedia.com/index.php/Main_Page)
-- VHIM [mhv-np-cds-wsclient](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates) schema.
+- HDR / VHIM [mhv-np-cds-wsclient](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates) schema.

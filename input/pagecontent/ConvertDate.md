@@ -64,5 +64,8 @@ This seems to be formatted starting with three character month:
 ```
 ### when no timezone
 
-Likely when there is no timezone, it was local time for that Vista. Likely then should just drop the time.
+TODO: Likely when there is no timezone, it was local time for that Vista.
 
+- should just drop the time, keeping only the date.
+- presume eastern time.
+- lookup in a table what timezone that vista lives in.
