@@ -19,8 +19,9 @@
   - when `contraindicated` is '1' then set `.reaction.detail.display` = `YES (DO NOT REPEAT THIS VACCINE)`
   - else .reaction is not populated
 - `series` - series of the immunization type was given to the patient
-  - see table below for hwo to set `.protocolApplied.series`
-  - when series is a number, place that number into `.protocolApplied.doseNumberPositiveInt`
+  - see table below for how to set `.protocolApplied.series`
+  - put the `series` into `.protocolApplied.doseNumberString`
+  - note not using doseNumberPositiveInt as this element is removed in future versions of FHIR so it seems string is more future proof
 
 | `series` |  FHIR `.protocolApplied.series` |
 |--------|------|

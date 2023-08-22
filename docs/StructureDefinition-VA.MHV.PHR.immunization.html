@@ -330,6 +330,7 @@
   <li><code class="language-plaintext highlighter-rouge">site.text</code> where on the body the immunization was given</li>
   <li><code class="language-plaintext highlighter-rouge">lotNumber</code> may be the immunization lot number</li>
   <li><code class="language-plaintext highlighter-rouge">manufacture</code> may be the manufacture of the immunization given</li>
+  <li><code class="language-plaintext highlighter-rouge">protocolApplied.series</code> may be derived from the series</li>
   <li><code class="language-plaintext highlighter-rouge">protocolApplied.doseNumberString</code> may be the series</li>
   <li><code class="language-plaintext highlighter-rouge">location.display</code> may be the location where the immunization was given</li>
   <li><code class="language-plaintext highlighter-rouge">meta.lastUpdated</code> will indicate the last time the resource was updated</li>
@@ -1347,8 +1348,9 @@ Summary
   </li>
   <li><code class="language-plaintext highlighter-rouge">series</code> - series of the immunization type was given to the patient
     <ul>
-      <li>see table below for hwo to set <code class="language-plaintext highlighter-rouge">.protocolApplied.series</code></li>
-      <li>when series is a number, place that number into <code class="language-plaintext highlighter-rouge">.protocolApplied.doseNumberPositiveInt</code></li>
+      <li>see table below for how to set <code class="language-plaintext highlighter-rouge">.protocolApplied.series</code></li>
+      <li>put the <code class="language-plaintext highlighter-rouge">series</code> into <code class="language-plaintext highlighter-rouge">.protocolApplied.doseNumberString</code></li>
+      <li>note not using doseNumberPositiveInt as this element is removed in future versions of FHIR so it seems string is more future proof</li>
     </ul>
   </li>
 </ul>
@@ -1545,7 +1547,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.20-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 11:16-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.20-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 12:58-0500">2023-08-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -18,6 +18,7 @@
 - `site.text` where on the body the immunization was given
 - `lotNumber` may be the immunization lot number
 - `manufacture` may be the manufacture of the immunization given
+- `protocolApplied.series` may be derived from the series
 - `protocolApplied.doseNumberString` may be the series
 - `location.display` may be the location where the immunization was given
 - `meta.lastUpdated` will indicate the last time the resource was updated
