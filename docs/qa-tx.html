@@ -24,13 +24,397 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:569
 content-type:application/fhir+json
-date:Fri, 18 Aug 2023 12:57:34 GMT
-last-modified:Fri, 18 Aug 2023 12:57:34 GMT
+date:Tue, 22 Aug 2023 16:18:07 GMT
+last-modified:Tue, 22 Aug 2023 16:18:07 GMT
 pragma:no-cache
 server:nginx
-x-request-id:11-304468
+x-request-id:15-87993
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://service.via.med.va.gov/ObservationTypeTO"},{"name" : "message","valueString" : "The CodeSystem http://service.via.med.va.gov/ObservationTypeTO is unknown"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"text" : "The CodeSystem http://service.via.med.va.gov/ObservationTypeTO is unknown"},"location" : ["Coding.system"]}]}}]}
+
+</pre><hr/>
+<a name="l2"> </a><h3>2</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"79381-0"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS--0","version":"0.1.20-beta","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"79381-0","display":"Gastrointestinal pathogens panel - Stool by NAA with probe detection"},{"code":"60567-5","display":"Comprehensive pathology report panel"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:335
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:33 GMT
+last-modified:Tue, 22 Aug 2023 16:20:33 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88158
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "79381-0"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Gastrointestinal pathogens panel - Stool by NAA with probe detection"}]}
+
+</pre><hr/>
+<a name="l3"> </a><h3>3</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"60567-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS--0|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:303
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:34 GMT
+last-modified:Tue, 22 Aug 2023 16:20:34 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88159
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "60567-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Comprehensive pathology report panel"}]}
+
+</pre><hr/>
+<a name="l4"> </a><h3>4</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0","version":"0.1.20-beta","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11505-5","display":"Physician procedure note"},{"code":"18842-5","display":"Discharge summary"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:636
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:34 GMT
+last-modified:Tue, 22 Aug 2023 16:20:34 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88160
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "version","valueString" : "2.74"},{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "The provided code http://loinc.org#11524-6 is not in the value set 'https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code http://loinc.org#11524-6 is not in the value set 'https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta'"},"location" : ["Coding"]}]}}]}
+
+</pre><hr/>
+<a name="l5"> </a><h3>5</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS--1","version":"0.1.20-beta","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11524-6"},{"code":"18748-4"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:276
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:34 GMT
+last-modified:Tue, 22 Aug 2023 16:20:34 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88161
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11524-6"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "EKG study"}]}
+
+</pre><hr/>
+<a name="l6"> </a><h3>6</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"DocumentReferenceTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href=\"ValueSet-NoteTypeVS.html\">Known Note types</a></li><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/11524-6/\">11524-6</a></td><td>EKG study</td></tr><tr><td><a href=\"https://loinc.org/18748-4/\">18748-4</a></td><td>Diagnostic imaging study</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}}],"url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS","version":"0.1.20-beta","name":"DocumentReferenceTypeVS","title":"Known DocumentReference types","status":"active","experimental":false,"date":"2023-08-22T11:16:10-05:00","publisher":"John Moehrke (himself)","contact":[{"name":"John Moehrke (himself)","telecom":[{"system":"url","value":"http://healthcaresecprivacy.blogspot.com"},{"system":"email","value":"JohnMoehrke@gmail.com"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"JohnMoehrke@gmail.com"}]}],"description":"DocumentReference types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"valueSet":["https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS"]},{"system":"http://loinc.org","concept":[{"code":"11524-6"},{"code":"18748-4"}]}]}}},{"name":"tx-resource","resource":{"resourceType":"ValueSet","id":"NoteTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/11505-5/\">11505-5</a></td><td>Physician procedure note</td></tr><tr><td><a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>Discharge summary</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}}],"url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS","version":"0.1.20-beta","name":"NoteTypeVS","title":"Known Note types","status":"active","experimental":false,"date":"2023-08-22T11:16:10-05:00","publisher":"John Moehrke (himself)","contact":[{"name":"John Moehrke (himself)","telecom":[{"system":"url","value":"http://healthcaresecprivacy.blogspot.com"},{"system":"email","value":"JohnMoehrke@gmail.com"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"JohnMoehrke@gmail.com"}]}],"description":"Note types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11505-5","display":"Physician procedure note"},{"code":"18842-5","display":"Discharge summary"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:276
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88162
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11524-6"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "EKG study"}]}
+
+</pre><hr/>
+<a name="l7"> </a><h3>7</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:636
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88163
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "version","valueString" : "2.74"},{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "The provided code http://loinc.org#18748-4 is not in the value set 'https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code http://loinc.org#18748-4 is not in the value set 'https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta'"},"location" : ["Coding"]}]}}]}
+
+</pre><hr/>
+<a name="l8"> </a><h3>8</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS--1|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88164
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18748-4"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Diagnostic imaging study"}]}
+
+</pre><hr/>
+<a name="l9"> </a><h3>9</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS|0.1.20-beta"},{"name":"tx-resource","resource":{"resourceType":"ValueSet","id":"NoteTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/11505-5/\">11505-5</a></td><td>Physician procedure note</td></tr><tr><td><a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>Discharge summary</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}}],"url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS","version":"0.1.20-beta","name":"NoteTypeVS","title":"Known Note types","status":"active","experimental":false,"date":"2023-08-22T11:16:10-05:00","publisher":"John Moehrke (himself)","contact":[{"name":"John Moehrke (himself)","telecom":[{"system":"url","value":"http://healthcaresecprivacy.blogspot.com"},{"system":"email","value":"JohnMoehrke@gmail.com"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"JohnMoehrke@gmail.com"}]}],"description":"Note types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11505-5","display":"Physician procedure note"},{"code":"18842-5","display":"Discharge summary"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88165
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18748-4"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Diagnostic imaging study"}]}
+
+</pre><hr/>
+<a name="l10"> </a><h3>10</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11505-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88166
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11505-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Physician procedure note"}]}
+
+</pre><hr/>
+<a name="l11"> </a><h3>11</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11505-5","display":"Physician procedure note"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88167
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11505-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Physician procedure note"}]}
+
+</pre><hr/>
+<a name="l12"> </a><h3>12</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18842-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:284
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88168
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18842-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Discharge summary"}]}
+
+</pre><hr/>
+<a name="l13"> </a><h3>13</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18842-5","display":"Discharge summary"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:284
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:36 GMT
+last-modified:Tue, 22 Aug 2023 16:20:36 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88169
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18842-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Discharge summary"}]}
 
 --- 1 -----------------
 Request: 
@@ -54,11 +438,371 @@ cache-control:public, max-age=600
 connection:keep-alive
 content-length:569
 content-type:application/fhir+json
-date:Fri, 18 Aug 2023 12:57:34 GMT
-last-modified:Fri, 18 Aug 2023 12:57:34 GMT
+date:Tue, 22 Aug 2023 16:18:07 GMT
+last-modified:Tue, 22 Aug 2023 16:18:07 GMT
 pragma:no-cache
 server:nginx
-x-request-id:11-304468
+x-request-id:15-87993
 
 {"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "x-caused-by-unknown-system","valueCanonical" : "http://service.via.med.va.gov/ObservationTypeTO"},{"name" : "message","valueString" : "The CodeSystem http://service.via.med.va.gov/ObservationTypeTO is unknown"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "not-found","details" : {"text" : "The CodeSystem http://service.via.med.va.gov/ObservationTypeTO is unknown"},"location" : ["Coding.system"]}]}}]}
+
+--- 2 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"79381-0"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS--0","version":"0.1.20-beta","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"79381-0","display":"Gastrointestinal pathogens panel - Stool by NAA with probe detection"},{"code":"60567-5","display":"Comprehensive pathology report panel"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:335
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:33 GMT
+last-modified:Tue, 22 Aug 2023 16:20:33 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88158
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "79381-0"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Gastrointestinal pathogens panel - Stool by NAA with probe detection"}]}
+
+--- 3 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"60567-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS--0|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:303
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:34 GMT
+last-modified:Tue, 22 Aug 2023 16:20:34 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88159
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "60567-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Comprehensive pathology report panel"}]}
+
+--- 4 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0","version":"0.1.20-beta","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11505-5","display":"Physician procedure note"},{"code":"18842-5","display":"Discharge summary"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:636
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:34 GMT
+last-modified:Tue, 22 Aug 2023 16:20:34 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88160
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "version","valueString" : "2.74"},{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "The provided code http://loinc.org#11524-6 is not in the value set 'https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code http://loinc.org#11524-6 is not in the value set 'https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta'"},"location" : ["Coding"]}]}}]}
+
+--- 5 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS--1","version":"0.1.20-beta","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11524-6"},{"code":"18748-4"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:276
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:34 GMT
+last-modified:Tue, 22 Aug 2023 16:20:34 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88161
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11524-6"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "EKG study"}]}
+
+--- 6 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"DocumentReferenceTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href=\"ValueSet-NoteTypeVS.html\">Known Note types</a></li><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/11524-6/\">11524-6</a></td><td>EKG study</td></tr><tr><td><a href=\"https://loinc.org/18748-4/\">18748-4</a></td><td>Diagnostic imaging study</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}}],"url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS","version":"0.1.20-beta","name":"DocumentReferenceTypeVS","title":"Known DocumentReference types","status":"active","experimental":false,"date":"2023-08-22T11:16:10-05:00","publisher":"John Moehrke (himself)","contact":[{"name":"John Moehrke (himself)","telecom":[{"system":"url","value":"http://healthcaresecprivacy.blogspot.com"},{"system":"email","value":"JohnMoehrke@gmail.com"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"JohnMoehrke@gmail.com"}]}],"description":"DocumentReference types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"valueSet":["https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS"]},{"system":"http://loinc.org","concept":[{"code":"11524-6"},{"code":"18748-4"}]}]}}},{"name":"tx-resource","resource":{"resourceType":"ValueSet","id":"NoteTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/11505-5/\">11505-5</a></td><td>Physician procedure note</td></tr><tr><td><a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>Discharge summary</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}}],"url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS","version":"0.1.20-beta","name":"NoteTypeVS","title":"Known Note types","status":"active","experimental":false,"date":"2023-08-22T11:16:10-05:00","publisher":"John Moehrke (himself)","contact":[{"name":"John Moehrke (himself)","telecom":[{"system":"url","value":"http://healthcaresecprivacy.blogspot.com"},{"system":"email","value":"JohnMoehrke@gmail.com"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"JohnMoehrke@gmail.com"}]}],"description":"Note types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11505-5","display":"Physician procedure note"},{"code":"18842-5","display":"Discharge summary"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:276
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88162
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11524-6"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "EKG study"}]}
+
+--- 7 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:636
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88163
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "version","valueString" : "2.74"},{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "The provided code http://loinc.org#18748-4 is not in the value set 'https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code http://loinc.org#18748-4 is not in the value set 'https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta'"},"location" : ["Coding"]}]}}]}
+
+--- 8 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS--1|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88164
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18748-4"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Diagnostic imaging study"}]}
+
+--- 9 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS|0.1.20-beta"},{"name":"tx-resource","resource":{"resourceType":"ValueSet","id":"NoteTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/11505-5/\">11505-5</a></td><td>Physician procedure note</td></tr><tr><td><a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>Discharge summary</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"}]}}],"url":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS","version":"0.1.20-beta","name":"NoteTypeVS","title":"Known Note types","status":"active","experimental":false,"date":"2023-08-22T11:16:10-05:00","publisher":"John Moehrke (himself)","contact":[{"name":"John Moehrke (himself)","telecom":[{"system":"url","value":"http://healthcaresecprivacy.blogspot.com"},{"system":"email","value":"JohnMoehrke@gmail.com"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"JohnMoehrke@gmail.com"}]}],"description":"Note types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11505-5","display":"Physician procedure note"},{"code":"18842-5","display":"Discharge summary"}]}]}}},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88165
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18748-4"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Diagnostic imaging study"}]}
+
+--- 10 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11505-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88166
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11505-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Physician procedure note"}]}
+
+--- 11 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11505-5","display":"Physician procedure note"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88167
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11505-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Physician procedure note"}]}
+
+--- 12 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18842-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS--0|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:284
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:35 GMT
+last-modified:Tue, 22 Aug 2023 16:20:35 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88168
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18842-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Discharge summary"}]}
+
+--- 13 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18842-5","display":"Discharge summary"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://johnmoehrke.github.io/MHV-PHR/ValueSet/NoteTypeVS|0.1.20-beta"},{"name":"cache-id","valueId":"ed366cd2-e0bc-4532-9b06-48714c9312a2"},{"name":"profile","resource":{"resourceType":"Parameters","parameter":[{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:284
+content-type:application/fhir+json
+date:Tue, 22 Aug 2023 16:20:36 GMT
+last-modified:Tue, 22 Aug 2023 16:20:36 GMT
+pragma:no-cache
+server:nginx
+x-request-id:15-88169
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18842-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Discharge summary"}]}
 </pre></head></html>

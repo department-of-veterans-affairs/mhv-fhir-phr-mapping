@@ -17,7 +17,6 @@
       <sch:assert test="count(f:recorded) &gt;= 1">recorded: minimum cardinality of 'recorded' is 1</sch:assert>
       <sch:assert test="count(f:reportOrigin) &lt;= 0">reportOrigin: maximum cardinality of 'reportOrigin' is 0</sch:assert>
       <sch:assert test="count(f:expirationDate) &lt;= 0">expirationDate: maximum cardinality of 'expirationDate' is 0</sch:assert>
-      <sch:assert test="count(f:site) &lt;= 0">site: maximum cardinality of 'site' is 0</sch:assert>
       <sch:assert test="count(f:route) &lt;= 0">route: maximum cardinality of 'route' is 0</sch:assert>
       <sch:assert test="count(f:doseQuantity) &lt;= 0">doseQuantity: maximum cardinality of 'doseQuantity' is 0</sch:assert>
       <sch:assert test="count(f:note) &lt;= 1">note: maximum cardinality of 'note' is 1</sch:assert>
@@ -95,9 +94,18 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:Immunization/f:reaction/f:detail</sch:title>
+    <sch:rule context="f:Immunization/f:reaction/f:detail">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:reference) &lt;= 1">reference: maximum cardinality of 'reference' is 1</sch:assert>
+      <sch:assert test="count(f:type) &lt;= 1">type: maximum cardinality of 'type' is 1</sch:assert>
+      <sch:assert test="count(f:identifier) &lt;= 0">identifier: maximum cardinality of 'identifier' is 0</sch:assert>
+      <sch:assert test="count(f:display) &lt;= 1">display: maximum cardinality of 'display' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:Immunization/f:protocolApplied</sch:title>
     <sch:rule context="f:Immunization/f:protocolApplied">
-      <sch:assert test="count(f:series) &lt;= 0">series: maximum cardinality of 'series' is 0</sch:assert>
       <sch:assert test="count(f:authority) &lt;= 0">authority: maximum cardinality of 'authority' is 0</sch:assert>
       <sch:assert test="count(f:targetDisease) &lt;= 0">targetDisease: maximum cardinality of 'targetDisease' is 0</sch:assert>
       <sch:assert test="count(f:seriesDoses[x]) &lt;= 0">seriesDoses[x]: maximum cardinality of 'seriesDoses[x]' is 0</sch:assert>

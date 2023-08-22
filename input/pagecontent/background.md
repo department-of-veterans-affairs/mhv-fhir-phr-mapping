@@ -148,3 +148,10 @@ Source of data received from VDIF using a SOAP xml schema that might be from one
 - [EmrService.wsdl](https://github.com/department-of-veterans-affairs/mhv-hla-app-ui/blob/dbb0301be4a17f31e67048300d72c87c0977aa09/hra-mock-via-app/src/main/java/gov/va/hra/integration/via/mock/ws/EmrService.wsdl)
 - VA [Vista Fileman](http://www.vistapedia.com/index.php/Main_Page)
 - HDR / VHIM [mhv-np-cds-wsclient](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates) schema.
+
+Vista Model
+- [VistA Cross Reference Documentation (aka Vivian)](https://vivian.worldvista.org/dox/)
+- [ViViaN Visualizing VistA and Namespaces](https://vivian.worldvista.org/vivian/)
+- [ViViaN Github](https://github.com/worldvista/vivian)
+- [Open Source Health Records(OSEHRA)](https://yippy.health/brand/osehra)
+- [FileMan Files List](https://vivian.worldvista.org/dox/filemanfiles.html)

@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.19-beta - ci-build
+            <span style="display:inline-block;">0.1.20-beta - ci-build
 
 
 
@@ -169,7 +169,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.19-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.20-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -253,7 +253,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.19-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals|0.1.19-beta"/></span>
+      <span class="copy-text">0.1.20-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals|0.1.20-beta"/></span>
       </td>
     </tr>
 
@@ -1248,7 +1248,30 @@ Summary
 
 <h4 id="code-review">code review</h4>
 
-<p>is location being saved in performer?</p>
+<p>august 21, 2023</p>
+
+<ul>
+  <li>identifier is not following the given pattern</li>
+  <li>lines 214-229, seems to be prototype code that should be removed?</li>
+  <li>lines 233-242, processing of identifier. I can’t understand this code, but it does not seem to be putting the right pattern in.</li>
+  <li>line 244, sets status final, will eventually need this to follow the status of updates</li>
+  <li>lines 247-254, (category) is wrong. <code class="language-plaintext highlighter-rouge">vital-signs</code> is not a loinc code it is <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/observation-category</code></li>
+  <li>lines 256-268, (code) is wrong. This code seems to be looking at the input name, but then just assuming it is loinc unless the name happens to be “X”. I guess that this switch statement was going to implement the <a href="ConceptMap-ObservationTypeTOVsLoincCode.html">mapping table</a> that I provide, but did not.
+    <ul>
+      <li>Note that this mapping table could be implemented as a FHIR ConceptMap, and thus be dynamically improved without changes to the code.</li>
+    </ul>
+  </li>
+  <li>line 270, This line seems to be consistent with allergy when the patient is new, but does not have the if statement tha allergy has.</li>
+  <li>line 272-280, (effectiveDate), seems okay</li>
+  <li>line 281-288, (recorder and observer), seems okay</li>
+  <li>lines 289-295, (value), seems mostly okay for quantity, but should also handle string, blood pressure, and pain
+    <ul>
+      <li>for quantity, some units are not proper formal UCUM, so I had to fix <code class="language-plaintext highlighter-rouge">lb</code> and <code class="language-plaintext highlighter-rouge">in</code> - <a href="utility.html">Utility UCUM</a></li>
+    </ul>
+  </li>
+  <li>lines 301-310, This is code to just throw a warning if we see data we did not have a map to. Should this code go to production, or be disablable in production? It might be useful to detect information we don’t have a map for.</li>
+  <li>line 312 has “DocumentReference” but surely this is wrong, I guess this should be “Observation”?</li>
+</ul>
 
 <h4 id="xsl-transform">xsl transform</h4>
 
@@ -1660,7 +1683,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.19-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 18, 2023 07:55-0500">2023-08-18</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.20-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 11:16-0500">2023-08-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

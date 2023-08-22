@@ -2,14 +2,16 @@
 
 
 package source {
-    class source.HL7v2
-    class source.VIA
     class source.HDR
+    class source.VIA
+    class source.HL7v2
 }
 
 package fhir {
     package util {
-        class fhir.util.Patient
+        class fhir.util.Patient {
+MHV Patient 
+             }
         class fhir.util.Practitioner
         class fhir.util.Location
         class fhir.util.Organization
@@ -18,13 +20,14 @@ package fhir {
     class fhir.Immunization
     class fhir.Condition
     class fhir.DiagnosticReport {
-        - lab
-        - chem 
-        - hem 
+        - VIA
+        -- lab
+        - HDR
+        -- chem 
+        -- hem 
         Specimen()
         Observation()
     }
-
     class fhir.DocumentReference {
         - Progress Note 
         - Discharge Summary
@@ -32,50 +35,26 @@ package fhir {
         - Imaging Report
     }
     class fhir.Observation {
-confirmed:
-- BLOOD PRESSURE 
-- HEIGHT
-- WEIGHT
-- PULSE 
-- PAIN 
-- RESPIRATION 
-- TEMPERATURE 
-unconfirmed:
-- ABDMONAL GIRTH
-- AUDIOMETRY
-- CENTRAL VENOUS PRESSURE
-- CIRCUMFERENCE%2FGIRTH
-- FETAL HEART TONES
-- FUNDAL HEIGHT
-- HEADCIRCUMFERENCE
-- HEARING
-- PULSE OXIMETRY
-- RESPIRATION
-- TONOMETRY
-- VISION CORRECTED
-- VISION UNCORRECTED
+        - BLOOD PRESSURE 
+        - HEIGHT
+        - WEIGHT
+        - PULSE 
+        - PAIN 
+        - RESPIRATION 
+        - TEMPERATURE 
     }
     class fhir.MedicationRequest
     class fhir.MedicationDispense
-
 }
 
 source.HL7v2 -[#blue]down-> fhir.MedicationRequest
 source.HL7v2 -[#blue]down-> fhir.MedicationDispense
+source.HL7v2 ..[#blue]down. fhir.util.Patient
 
-
-source.VIA -[#red]down-> fhir.util.Patient
+source.VIA ..[#red]down. fhir.util.Patient
 source.VIA -[#red]down-> fhir.util.Practitioner
 source.VIA -[#red]down-> fhir.util.Location
 source.VIA -[#red]down-> fhir.util.Organization
-
-source.HDR -[#green]down-> fhir.util.Patient
-source.HDR -[#green]down-> fhir.util.Practitioner
-source.HDR -[#green]down-> fhir.util.Location
-source.HDR -[#green]down-> fhir.util.Organization
-
-source.HL7v2 -[#blue]down-> fhir.util.Patient
-
 source.VIA -[#red]down-> fhir.Observation
 source.VIA -[#red]down-> fhir.DiagnosticReport
 
@@ -85,6 +64,11 @@ source.VIA -[#red]down-> fhir.Immunization
 
 source.HDR -[#green]down-> fhir.DiagnosticReport
 source.HDR -[#green]down-> fhir.AllergyIntolerance
+
+source.HDR ..[#green]down. fhir.util.Patient
+source.HDR -[#green]down-> fhir.util.Practitioner
+source.HDR -[#green]down-> fhir.util.Location
+source.HDR -[#green]down-> fhir.util.Organization
 
 interface "FHIR API" as API 
 API -up-> fhir

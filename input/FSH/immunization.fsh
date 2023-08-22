@@ -22,34 +22,37 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`ImmunizationTO` | `.` | {ImmunizationTO.id}"
 * note 0..1 MS
+* reaction.detail.display MS
+* reaction.detail.display ^short = "may be `YES (DO NOT REPEAT THIS VACCINE)`"
 * reaction.detail ^type.aggregation = #contained
 * reaction.detail only Reference(MHVimmunizationReaction)
-* reaction.date 0..0
-* reaction.reported 0..0
+* location.display MS
+* manufacturer MS
+* lotNumber MS
+* performer MS
+* protocolApplied MS
+* protocolApplied.series MS
+* protocolApplied.doseNumberString MS
 // not allowed
 * route 0..0
 * statusReason 0..0
 * reportOrigin 0..0
 * encounter 0..0
-* location.display MS
-* manufacturer MS
-* lotNumber MS
 * expirationDate 0..0
-* site 0..0
 * doseQuantity 0..0
-* performer MS
 * reasonCode 0..0
 * reasonReference 0..0
 * isSubpotent 0..0
 * education 0..0
 * programEligibility 0..0
 * fundingSource 0..0
-* protocolApplied MS
-* protocolApplied.series 0..0
+* reaction.detail.identifier 0..0
+* reaction.date 0..0
+* reaction.reported 0..0
 * protocolApplied.authority 0..0
 * protocolApplied.targetDisease 0..0
-* protocolApplied.doseNumberString MS
 * protocolApplied.seriesDoses[x] 0..0
+* protocolApplied.doseNumberPositiveInt 0..0
 
 
 
@@ -60,7 +63,8 @@ Title: "VDIF to MHV-PHR"
 * -> "ImmunizationTO"
 * vaccineCode.text -> "ImmunizationTO.name"
 * note.text -> "ImmunizationTO.comments"
-* reaction.detail -> "ImmunizationTO.reaction"
+* reaction.detail.display -> "if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`"
+* reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction"
 * occurrenceDateTime -> "ImmunizationTO.administeredDate"
 * recorded -> "ImmunizationTO.administeredDate"
 * performer.actor -> "GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`"
@@ -73,6 +77,7 @@ Title: "VDIF to MHV-PHR"
 * identifier -> "{StationNbr} and {ImmunizationTO.id}"
 * lotNumber -> "ImmunizationTO.lotNumber"
 * manufacturer -> "ImmunizationTO.manufacture"
+* protocolApplied.series -> "translation of ImmunizationTO.series"
 * protocolApplied.doseNumberString -> "ImmunizationTO.series"
 * patient -> "patient"
 * status -> "`completed`"

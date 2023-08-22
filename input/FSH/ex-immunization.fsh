@@ -19,6 +19,7 @@ Example from a mock ImmunizationTO
 * note[0].text = "test"
 * location.display = "23 HOUR OBSERVATION"
 //* encounter.identifier.value = "6433274"
+* protocolApplied.series = "COMPLETE"
 * protocolApplied.doseNumberString = "COMPLETE"
 * performer[+].actor = Reference(ex-MHV-organization-552)
 
@@ -44,6 +45,7 @@ Example from a mock ImmunizationTO
 * note.text = "test comment"
 * location.display = "ADTP BURNETT"
 //* encounter.identifier.value = "6433261"
+* protocolApplied.series = "COMPLETE"
 * protocolApplied.doseNumberString = "COMPLETE"
 * reaction.detail = Reference(in-reaction-2)
 * contained[+] = in-reaction-2
