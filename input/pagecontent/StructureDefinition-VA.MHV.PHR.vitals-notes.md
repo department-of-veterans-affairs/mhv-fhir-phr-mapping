@@ -1,12 +1,12 @@
-- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/vitals.xml) 
+- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/vitals.xml) 
 - maps to [VitalSignTO](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl) schema.
-- Mapping from [VitalSignTo](StructureDefinition-VA.MHV.PHR.vitals-mappings.html#mappings-for-vdif-to-mhv-phr-vitalsignto)
+- Mapping from [VitalSignTo](StructureDefinition-VA.MHV.PHR.vitals-mappings.html#mappings-for-via-to-mhv-phr-vitalsignto)
 - based on US-Core for Vital-Signs Observation Resource
   - Blood-Pressure is based off of the Blood-Pressure profile
 - should have `meta.profile` set to - JIRA
-  - General Vital-Signs `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals`
-  - Pain `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain`
-  - Blood-Pressure `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP`
+  - General Vital-Signs `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals`
+  - Pain `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain`
+  - Blood-Pressure `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP`
 - `status` of `final`
 - `category` code of `vital-signs`
 - `code.text` the original `VitalSignTO.type.name`
@@ -138,13 +138,13 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 <meta>
                    <xsl:choose>
                     <xsl:when test="type/name = 'BLOOD PRESSURE'">
-                        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"/>
+                        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP"/>
                     </xsl:when>
                     <xsl:when test="type/name = 'PAIN'">
-                        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
+                        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/>
+                        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"/>
                     </xsl:otherwise>
                     </xsl:choose>
                 </meta>

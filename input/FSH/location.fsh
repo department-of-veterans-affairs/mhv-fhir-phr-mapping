@@ -14,7 +14,7 @@ A profile on the Location resource for MHV PHR exposing Location using FHIR API.
   - system = urn:oid:2.16.840.1.113883.4.349
 - `name` is the name as known
 
-NOT USING Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto).
+NOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-phr-hospitallocationto).
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -85,7 +85,7 @@ NOT USING Mapping to [VDIF HospitalLocationTO](StructureDefinition-VA.MHV.PHR.lo
 Mapping: Location-Mapping
 Source:	MHVlocation
 Target: "HospitalLocationTO"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "HospitalLocationTO"
 * identifier -> "HospitalLocationTO.ids"
 * name -> "HospitalLocationTO.name"

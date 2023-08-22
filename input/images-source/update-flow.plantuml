@@ -5,7 +5,7 @@ title Update MHV-PHR
 start
 : triggered by API request for a given Patient;
 
-: read data VDIF
+: read data VIA
 receive a multiple entry SOAP message
 with current information;
 
@@ -19,7 +19,7 @@ endif
 
 repeat
   : convert data;
-  : convert VDIF **.id** to FHIR **.identifier**;
+  : convert VIA **.id** to FHIR **.identifier**;
   : Add to FHIR Bundle;
 repeat while (more data?) is (yes)
 ->no;

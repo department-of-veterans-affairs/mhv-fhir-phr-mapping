@@ -30,29 +30,29 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
-        <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
       </extension>
     </valueInteger>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
     <valueCode value="trial-use">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
-        <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
       </extension>
     </valueCode>
   </extension>
-  <url value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"/>
-  <version value="0.1.20-beta"/>
+  <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+  <version value="0.2.0"/>
   <name value="MHVpractitioner"/>
   <title value="VA MHV PHR Practitioner"/>
   <status value="active"/>
-  <date value="2023-08-22T12:58:52-05:00"/>
-  <publisher value="John Moehrke (himself)"/>
+  <date value="2023-08-22T16:36:15-05:00"/>
+  <publisher value="VA Digital Services"/>
   <contact>
-    <name value="John Moehrke (himself)"/>
+    <name value="VA Digital Services"/>
     <telecom>
       <system value="url"/>
-      <value value="http://healthcaresecprivacy.blogspot.com"/>
+      <value value="http://va.gov"/>
     </telecom>
     <telecom>
       <system value="email"/>
@@ -66,7 +66,7 @@
       <value value="JohnMoehrke@gmail.com"/>
     </telecom>
   </contact>
-  <description value="A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.&#xA;&#xA;- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible&#xA;- used for VIDF UserTO, and AuthorTO&#xA;- used for HDR PractitionerLite&#xA;- might be used for PersonTO or is that RelatedPerson?&#xA;&#xA;Mapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto) and [VDIF AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)&#xA;&#xA;Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)"/>
+  <description value="A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.&#xA;&#xA;- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible&#xA;- used for VIDF UserTO, and AuthorTO&#xA;- used for HDR PractitionerLite&#xA;- might be used for PersonTO or is that RelatedPerson?&#xA;&#xA;Mapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)&#xA;&#xA;Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -97,12 +97,12 @@
   <mapping>
     <identity value="Practitioner-UserTO"/>
     <uri value="UserTO"/>
-    <name value="VDIF to MHV-PHR"/>
+    <name value="VIA to MHV-PHR"/>
   </mapping>
   <mapping>
     <identity value="Practitioner-AuthorTO"/>
     <uri value="AuthorTO"/>
-    <name value="VDIF to MHV-PHR"/>
+    <name value="VIA to MHV-PHR"/>
   </mapping>
   <mapping>
     <identity value="Practitioner-PractitionerLite"/>
@@ -1110,7 +1110,7 @@
         <severity value="error"/>
         <human value="ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}"/>
         <expression value="value.startsWith('urn:oid:2.16.840.1.113883.4.349.4.')"/>
-        <source value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"/>
+        <source value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
@@ -1485,7 +1485,7 @@
         <severity value="error"/>
         <human value="ID system must start with http://va.gov/systems/ The next would be the {idSourceTable}"/>
         <expression value="value.startsWith('http://va.gov/systems/')"/>
-        <source value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"/>
+        <source value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
       </constraint>
       <isModifier value="false"/>
       <isSummary value="true"/>
@@ -2726,7 +2726,7 @@
         <severity value="error"/>
         <human value="ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}"/>
         <expression value="value.startsWith('urn:oid:2.16.840.1.113883.4.349.4.')"/>
-        <source value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"/>
+        <source value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
       </constraint>
     </element>
     <element id="Practitioner.identifier:TOid.value">
@@ -2752,7 +2752,7 @@
         <severity value="error"/>
         <human value="ID system must start with http://va.gov/systems/ The next would be the {idSourceTable}"/>
         <expression value="value.startsWith('http://va.gov/systems/')"/>
-        <source value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"/>
+        <source value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
       </constraint>
     </element>
     <element id="Practitioner.identifier:HDRid.value">

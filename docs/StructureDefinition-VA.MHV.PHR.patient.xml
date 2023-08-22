@@ -33,29 +33,29 @@
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
-        <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
       </extension>
     </valueInteger>
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
     <valueCode value="trial-use">
       <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
-        <valueCanonical value="https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"/>
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
       </extension>
     </valueCode>
   </extension>
-  <url value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.patient"/>
-  <version value="0.1.20-beta"/>
+  <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"/>
+  <version value="0.2.0"/>
   <name value="MHVpatient"/>
   <title value="VA MHV PHR Patient"/>
   <status value="active"/>
-  <date value="2023-08-22T12:58:52-05:00"/>
-  <publisher value="John Moehrke (himself)"/>
+  <date value="2023-08-22T16:36:15-05:00"/>
+  <publisher value="VA Digital Services"/>
   <contact>
-    <name value="John Moehrke (himself)"/>
+    <name value="VA Digital Services"/>
     <telecom>
       <system value="url"/>
-      <value value="http://healthcaresecprivacy.blogspot.com"/>
+      <value value="http://va.gov"/>
     </telecom>
     <telecom>
       <system value="email"/>
@@ -69,7 +69,7 @@
       <value value="JohnMoehrke@gmail.com"/>
     </telecom>
   </contact>
-  <description value="A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.&#xA;&#xA;- based on US-Core for Patient&#xA;- mapping from patient details in eVault (not from VIA/HDR transaction)&#xA;- `identifier`  &#xA;  - `value` = GetPatientId&#xA;  - `system` = `urn:oid:2.16.840.1.113883.4.349`&#xA;  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.&#xA;- `name` - First and Last Name&#xA;- `gender`&#xA;- `birthDate`&#xA;- `active` = true&#xA;&#xA;mapping concerns - JIRA&#xA;- The Identifier for the ICN is still being discussed&#xA;- identifer.use is not being populated&#xA;- name seems to only populate first and last, but puts them both in given&#xA;- populating identifier with GetPatientId(), not sure that is the same as GetIcn()&#xA;- eVault also has, but are not being used in the FHIR Patient&#xA;  - MiddleName&#xA;  - Ssn&#xA;  - Email&#xA;  - Icn &#xA;- set .meta.profile&#xA;- Would be even better if we could use a common Patient registry. &#xA;&#xA;NOT USING Mapping to [VDIF PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)"/>
+  <description value="A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.&#xA;&#xA;- based on US-Core for Patient&#xA;- mapping from patient details in eVault (not from VIA/HDR transaction)&#xA;- `identifier`  &#xA;  - `value` = GetPatientId&#xA;  - `system` = `urn:oid:2.16.840.1.113883.4.349`&#xA;  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.&#xA;- `name` - First and Last Name&#xA;- `gender`&#xA;- `birthDate`&#xA;- `active` = true&#xA;&#xA;mapping concerns - JIRA&#xA;- The Identifier for the ICN is still being discussed&#xA;- identifer.use is not being populated&#xA;- name seems to only populate first and last, but puts them both in given&#xA;- populating identifier with GetPatientId(), not sure that is the same as GetIcn()&#xA;- eVault also has, but are not being used in the FHIR Patient&#xA;  - MiddleName&#xA;  - Ssn&#xA;  - Email&#xA;  - Icn &#xA;- set .meta.profile&#xA;- Would be even better if we could use a common Patient registry. &#xA;&#xA;NOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-phr-patientto)"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -105,7 +105,7 @@
   <mapping>
     <identity value="Patient-Mapping"/>
     <uri value="PatientTO"/>
-    <name value="VDIF to MHV-PHR"/>
+    <name value="VIA to MHV-PHR"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>

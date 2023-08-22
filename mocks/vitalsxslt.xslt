@@ -41,13 +41,13 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 <meta>
                    <xsl:choose>
                     <xsl:when test="type/name = 'BLOOD PRESSURE'">
-                        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"/>
+                        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP"/>
                     </xsl:when>
                     <xsl:when test="type/name = 'PAIN'">
-                        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
+                        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
                     </xsl:when>
                     <xsl:otherwise>
-                        <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"/>
+                        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"/>
                     </xsl:otherwise>
                     </xsl:choose>
                 </meta>

@@ -44,7 +44,7 @@ BRIEF ADMISSION PHYSICAL EXAM:  test exam
 ADMISSION LAB/EKG/X-RAY RESULTS:  test again
  
 HOSPITAL COURSE:
-  via2vdif transstition
+  via2via transstition
  
 CONDITION ON DISCHARGE: test
  

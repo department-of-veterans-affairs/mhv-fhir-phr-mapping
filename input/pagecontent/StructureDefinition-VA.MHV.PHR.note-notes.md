@@ -1,10 +1,10 @@
 
-- The [mock example 1](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/notes.xml) and [mock example 2](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/note2.xml) 
+- The [mock example 1](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/notes.xml) and [mock example 2](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/note2.xml) 
 - maps to [NoteTO](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl) schema.
-- [Mapping from VDIF - NoteTO](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto)
+- [Mapping from VIA - NoteTO](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-via-to-mhv-phr-noteto)
 - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
 - based on US-Core for Clinical Notes
-- should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note` to indicate the intent to be compliant with this profile
+- should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note` to indicate the intent to be compliant with this profile
 - `type` seems to hold an enum (PN, DS). 
   - `PN` - LOINC#11505-5 \"Physician procedure note\"
   - `DS` - LOINC#18842-5 \"Discharge summary\"

@@ -6,7 +6,7 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg> a fhir:StructureDefinition ;
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg> a fhir:StructureDefinition ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "VA.MHV.PHR.ecg"] ; # 
   fhir:text [
@@ -20,8 +20,8 @@
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
          fhir:value [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
          ]
        ] )
      ]
@@ -32,24 +32,24 @@
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
          fhir:value [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
          ]
        ] )
      ]
   ] ) ; # 
-  fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.20-beta"] ; # 
+  fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "MHVecg"] ; # 
   fhir:title [ fhir:v "VA MHV PHR ECG"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-22T12:58:52-05:00"^^xsd:dateTime] ; # 
-  fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
+  fhir:date [ fhir:v "2023-08-22T16:36:15-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
-     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:name [ fhir:v "VA Digital Services" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "http://healthcaresecprivacy.blogspot.com" ]
+       fhir:value [ fhir:v "http://va.gov" ]
      ] [
        fhir:system [ fhir:v "email" ] ;
        fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
@@ -100,14 +100,14 @@
   ] [
      fhir:identity [ fhir:v "Ecg-Mapping" ] ;
      fhir:uri [ fhir:v "ClinicalProcedureTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VDIF to MHV-PHR" ]
+     fhir:name [ fhir:v "VIA to MHV-PHR" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
   fhir:type [ fhir:v "DocumentReference"^^xsd:anyURI] ; # 
   fhir:baseDefinition [
-     fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.documentReference"^^xsd:anyURI ;
-     fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.documentReference>
+     fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.documentReference"^^xsd:anyURI ;
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.documentReference>
   ] ; # 
   fhir:derivation [ fhir:v "constraint"] ; # 
   fhir:snapshot [
@@ -1128,8 +1128,8 @@
        fhir:binding [
          fhir:strength [ fhir:v "required" ] ;
          fhir:valueSet [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/ValueSet/DocumentReferenceTypeVS>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS>
          ]
        ] ;
        fhir:mapping ( [

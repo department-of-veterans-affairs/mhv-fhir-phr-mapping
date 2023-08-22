@@ -54,7 +54,7 @@ Description: "not all of them"
 Mapping: Condition-Mapping
 Source:	MHVcondition
 Target: "ProblemTO"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "ProblemTO"
 * identifier -> "{StationNbr} and {ProblemTO.id}"
 * code.text -> "ProblemTO.type.name"

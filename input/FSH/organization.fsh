@@ -18,7 +18,7 @@ A profile on the Organization resource for MHV PHR exposing Organization using F
 - two identifier types defined TOid and HDRid
 - used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)
 
-Map to [VDIF labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteto)
+Map to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-phr-labsiteto)
 
 Map to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)
 """
@@ -36,7 +36,7 @@ Map to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-
 Mapping: Organization-LabSiteTO
 Source:	MHVorganization
 Target: "labSiteTO"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "labSiteTO"
 * identifier.use -> "`usual`"
 * identifier.system -> "`urn:oid:2.16.840.1.113883.4.349`"

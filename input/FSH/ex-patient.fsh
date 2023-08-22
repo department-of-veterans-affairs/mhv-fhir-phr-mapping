@@ -16,7 +16,7 @@ Usage: #example
 
 
 
-Instance: ex-VDIF-patient-0
+Instance: ex-VIA-patient-0
 InstanceOf: Patient
 Title: "Example MHVLISAONE from PatientTO"
 Description: """

@@ -23,8 +23,8 @@ Usage: #definition
     * description = "Security is system level, PGHD presumes MHV properly handles user (as patient) rights"
   * resource[+]
     * type = #AllergyIntolerance
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"
-    * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"
+    * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
     * searchParam[+]
@@ -53,8 +53,8 @@ Usage: #definition
       * type = #token
   * resource[+]
     * type = #Condition
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"
-    * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"
+    * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
     * searchParam[+]
@@ -83,10 +83,10 @@ Usage: #definition
       * type = #token
   * resource[+]
     * type = #Observation
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain"
-    * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"
+    * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
     * searchParam[+]
@@ -115,8 +115,8 @@ Usage: #definition
       * type = #token
   * resource[+]
     * type = #Immunization
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization"
-    * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
     * searchParam[+]
@@ -139,11 +139,11 @@ Usage: #definition
       * type = #token
   * resource[+]
     * type = #DocumentReference
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.documentReference"
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging"
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg"
-    * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.documentReference"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg"
+    * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
     * searchParam[+]
@@ -175,10 +175,10 @@ Usage: #definition
       * type = #token
   * resource[+]
     * type = #DiagnosticReport
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.diagnosticReport"
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"
-    * supportedProfile[+] = "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"
-    * documentation = "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.diagnosticReport"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"
+    * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
     * searchParam[+]

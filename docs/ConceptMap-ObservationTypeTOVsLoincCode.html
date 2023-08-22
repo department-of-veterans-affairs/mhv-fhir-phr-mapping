@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA.MHV.PHR.EXAMPLE\Vital Sign ObservationTypeTO.name to Loinc Code - FHIR v4.0.1</title>
+    <title>VA.MHV.FHIR.PHR\Vital Sign ObservationTypeTO.name to Loinc Code - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.20-beta - ci-build
+            <span style="display:inline-block;">0.2.0 - ci-build
 
 
 
@@ -109,6 +109,33 @@
     <ul class="dropdown-menu">
       <li>
         <a href="background.html">background</a>
+      </li>
+      <li>
+        <a href="background.html#allergy">Allergy</a>
+      </li>
+      <li>
+        <a href="background.html#chem-hem">Chem-Hem</a>
+      </li>
+      <li>
+        <a href="background.html#condition">Condition</a>
+      </li>
+      <li>
+        <a href="background.html#ecg">ECG</a>
+      </li>
+      <li>
+        <a href="background.html#immunization">Immunization</a>
+      </li>
+      <li>
+        <a href="background.html#labreport">LabReport</a>
+      </li>
+      <li>
+        <a href="background.html#notes">Notes</a>
+      </li>
+      <li>
+        <a href="background.html#radiology">Radiology</a>
+      </li>
+      <li>
+        <a href="background.html#vital-sign">Vital-Sign</a>
       </li>
       <li>
         <a href="utility.html">Utility</a>
@@ -165,7 +192,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.20-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -210,10 +237,10 @@
   <table class="colstu">
 
     <tr>
-      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://johnmoehrke.github.io/MHV-PHR/ConceptMap/ObservationTypeTOVsLoincCode<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/ConceptMap/ObservationTypeTOVsLoincCode"/></span>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/ObservationTypeTOVsLoincCode<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/ObservationTypeTOVsLoincCode"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.20-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/ConceptMap/ObservationTypeTOVsLoincCode|0.1.20-beta"/></span>
+      <span class="copy-text">0.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/ObservationTypeTOVsLoincCode|0.2.0"/></span>
       </td>
     </tr>
 
@@ -274,7 +301,7 @@
   
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-03-29 by John Moehrke (himself) (John Moehrke (himself): <a href="http://healthcaresecprivacy.blogspot.com">http://healthcaresecprivacy.bl...</a>, <a href="mailto:JohnMoehrke@gmail.com">JohnMoehrke@gmail.com</a>, John Moehrke (himself): <a href="mailto:JohnMoehrke@gmail.com">JohnMoehrke@gmail.com</a>). </p><div><p>Map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code.</p>
+  <div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-03-29 by VA Digital Services (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, <a href="mailto:JohnMoehrke@gmail.com">JohnMoehrke@gmail.com</a>, John Moehrke (himself): <a href="mailto:JohnMoehrke@gmail.com">JohnMoehrke@gmail.com</a>). </p><div><p>Map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code.</p>
 </div><br/><p><b>Group 1</b>Mapping from <code>http://service.via.med.va.gov/ObservationTypeTO</code> to <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v3-loinc.html">Logical Observation Identifiers, Names and Codes (LOINC)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>ABDMONAL GIRTH</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent" title="equivalent">is equivalent to</a></td><td>LP31969-6 (Abdominal circumference)</td><td>seems like possible match</td></tr><tr><td>AUDIOMETRY</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#wider" title="wider">maps to wider concept</a></td><td>89015-2 (Pure tone threshold audiometry panel)</td><td>seems like possible match</td></tr><tr><td>BLOOD PRESSURE</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>85354-9 (Blood pressure panel with all children optional)</td><td/></tr><tr><td>TEMPERATURE</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>8310-5 (Body temperature)</td><td/></tr><tr><td>CENTRAL VENOUS PRESSURE</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent" title="equivalent">is equivalent to</a></td><td>8591-0 (Central venous pressure (CVP) Mean)</td><td>seems like possible match</td></tr><tr><td>CIRCUMFERENCE%2FGIRTH</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent" title="equivalent">is equivalent to</a></td><td>56086-2 (Adult Waist Circumference Protocol)</td><td>seems like possible match</td></tr><tr><td>FETAL HEART TONES</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#inexact" title="inexact">maps loosely to</a></td><td>55283-6 (Fetal Heart rate)</td><td>Not likely correct as tones vs rate</td></tr><tr><td>FUNDAL HEIGHT</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>11881-0 (Uterus Fundal height Tape measure)</td><td/></tr><tr><td>HEADCIRCUMFERENCE</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>9843-4 (Head Occipital-frontal circumference)</td><td/></tr><tr><td>HEARING</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#inexact" title="inexact">maps loosely to</a></td><td>58232-0 (Hearing loss risk indicators [Identifier])</td><td>Not clear if this is Hearing Loss</td></tr><tr><td>HEIGHT</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>8302-2 (Body height)</td><td/></tr><tr><td>PAIN</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>72514-3 (Pain severity - 0-10 verbal numeric rating [Score] - Reported)</td><td/></tr><tr><td>PULSE OXIMETRY</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>2708-6 (Oxygen saturation in Arterial blood)</td><td/></tr><tr><td>PULSE</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>8867-4 (Heart rate)</td><td/></tr><tr><td>RESPIRATION</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>9279-1 (Respiratory Rate)</td><td/></tr><tr><td>TONOMETRY</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent" title="equivalent">is equivalent to</a></td><td>LP76227-5 (Tonometry)</td><td>seems like possible match</td></tr><tr><td>VISION CORRECTED</td><td colspan="3" style="background-color: #efefef">(not mapped)</td></tr><tr><td>VISION UNCORRECTED</td><td colspan="3" style="background-color: #efefef">(not mapped)</td></tr><tr><td>WEIGHT</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>29463-7 (Body weight)</td><td/></tr></table></div>
 
   <!-- insert notes if present -->
@@ -328,12 +355,12 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.20-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 12:58-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/MHV-PHR/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/MHV-PHR/issues">Issues</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/issues">Issues</a>
                 
           </span>
         </p>

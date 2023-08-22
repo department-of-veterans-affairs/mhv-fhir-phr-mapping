@@ -5,7 +5,7 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization> a fhir:StructureDefinition ;
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization> a fhir:StructureDefinition ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "VA.MHV.PHR.immunization"] ; # 
   fhir:text [
@@ -19,8 +19,8 @@
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
          fhir:value [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
          ]
        ] )
      ]
@@ -31,24 +31,24 @@
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
          fhir:value [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
          ]
        ] )
      ]
   ] ) ; # 
-  fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.20-beta"] ; # 
+  fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "MHVimmunization"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Immunization"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-22T12:58:52-05:00"^^xsd:dateTime] ; # 
-  fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
+  fhir:date [ fhir:v "2023-08-22T16:36:15-05:00"^^xsd:dateTime] ; # 
+  fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
-     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:name [ fhir:v "VA Digital Services" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "http://healthcaresecprivacy.blogspot.com" ]
+       fhir:value [ fhir:v "http://va.gov" ]
      ] [
        fhir:system [ fhir:v "email" ] ;
        fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
@@ -91,7 +91,7 @@
   ] [
      fhir:identity [ fhir:v "Immunization-Mapping" ] ;
      fhir:uri [ fhir:v "ImmunizationTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VDIF to MHV-PHR" ]
+     fhir:name [ fhir:v "VIA to MHV-PHR" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
@@ -798,8 +798,8 @@
          fhir:human [ fhir:v "ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}" ] ;
          fhir:expression [ fhir:v "value.startsWith('urn:oid:2.16.840.1.113883.4.349.4.')" ] ;
          fhir:source [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
          ]
        ] ) ;
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
@@ -3821,8 +3821,8 @@
        fhir:type ( [
          fhir:code [ fhir:v "Reference"^^xsd:anyURI ] ;
          fhir:targetProfile ( [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunizationReaction"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunizationReaction>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunizationReaction"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunizationReaction>
          ] ) ;
          fhir:aggregation ( [ fhir:v "contained" ] )
        ] ) ;
@@ -4577,8 +4577,8 @@
          fhir:human [ fhir:v "ID system must start with urn:oid:2.16.840.1.113883.4.349.4. The next would be the {stationNbr}" ] ;
          fhir:expression [ fhir:v "value.startsWith('urn:oid:2.16.840.1.113883.4.349.4.')" ] ;
          fhir:source [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
          ]
        ] )
      ] [
@@ -4770,8 +4770,8 @@
        fhir:type ( [
          fhir:code [ fhir:v "Reference"^^xsd:anyURI ] ;
          fhir:targetProfile ( [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunizationReaction"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunizationReaction>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunizationReaction"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunizationReaction>
          ] ) ;
          fhir:aggregation ( [ fhir:v "contained" ] )
        ] )

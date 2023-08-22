@@ -1,11 +1,11 @@
 
-- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/allergies.xml) 
+- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/allergies.xml) 
 - Received from HDR
 - maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
 - [mapping to HDR](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-hdr-allergy-to-mhv-phr-intolerancecondition)
 - [Vivian Allegies](https://vivian.worldvista.org/dox/Global_XkdNUigxMjAuOA==.html)
 - Should be based on US-Core for AllergyIntolerance Resource profile
-- should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile
+- should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile
 - a `clinicalStatus` of the allergy (e.g.,active or resolved)
   - Given that intoleranceCondition.status is unclear; will presume we only see `active`
   - set to `active`
@@ -46,7 +46,7 @@
 - The reactant we are given is not always snomed.
   - if it is a 7 digit number, then it is a VUID and system=`urn:oid:2.16.840.1.113883.6.233`
   - else it is likely a SNOMED system=`http://snomed.info/sct`
-- should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile
+- should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile
 - `informationSourceCategory` contains one of two values
   - `OBSERVED` shall be mapped to .verificationStatus=`confirmed`
   - `HISTORICAL` shall be mapped to .verificationStatus=`unconfirmed`

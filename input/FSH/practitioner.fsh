@@ -15,7 +15,7 @@ A profile on the Practitioner resource for MHV PHR exposing Practitioner using F
 - used for HDR PractitionerLite
 - might be used for PersonTO or is that RelatedPerson?
 
-Mapping to [VDIF UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto) and [VDIF AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)
+Mapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)
 
 Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)
 """
@@ -82,7 +82,7 @@ Expression: "value.startsWith('http://va.gov/systems/')"
 Mapping: Practitioner-UserTO
 Source:	MHVpractitioner
 Target: "UserTO"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "UserTO"
 * identifier.use -> "`usual`"
 * identifier.value -> "`UserTO` + {UserTO.id}"
@@ -111,7 +111,7 @@ Title: "VDIF to MHV-PHR"
 Mapping: Practitioner-AuthorTO
 Source:	MHVpractitioner
 Target: "AuthorTO"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "AuthorTO"
 * identifier.use -> "`usual`"
 * identifier.value -> "`AuthorTO.` + {AuthorTO.id}"

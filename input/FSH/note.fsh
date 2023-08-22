@@ -35,7 +35,7 @@ Description: "Note types"
 Mapping: Notes-Mapping
 Source:	MHVnote
 Target: "NoteTO"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "NoteTO"
 * category -> "`clinical-note`"
 * author -> "GetPractitioner(NoteTO.author.[AuthorTO])"

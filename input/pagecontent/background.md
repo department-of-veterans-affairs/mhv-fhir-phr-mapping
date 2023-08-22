@@ -12,65 +12,100 @@ MyHealtheVet acts as a FHIR Server. It receives information from many sources an
 Note that these resources are used purely to provide linkage, they are minimally populated based on the information MHV receives. Often that means all that is populated is an identifier.
 
 - [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
-  - [Mappings from VDIF - PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-vdif-to-mhv-phr-patientto)
+  - [Mappings from VIA - PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-phr-patientto)
   - [Examples](StructureDefinition-VA.MHV.PHR.patient-examples.html)
 - [Practitioner](StructureDefinition-VA.MHV.PHR.practitioner.html)
-  - [Mappings from VDIF - UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-userto)
-  - [Mappings from VDIF - AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-vdif-to-mhv-phr-authorto)
+  - [Mappings from VIA - UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto)
+  - [Mappings from VIA - AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)
   - [Examples](StructureDefinition-VA.MHV.PHR.practitioner-examples.html)
 - [Location](StructureDefinition-VA.MHV.PHR.location.html)
-  - [Mappings from VDIF - HospitalAllocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-vdif-to-mhv-phr-hospitallocationto)
+  - [Mappings from VIA - HospitalAllocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-phr-hospitallocationto)
   - [Examples](StructureDefinition-VA.MHV.PHR.location-examples.html)
 - [Organization](StructureDefinition-VA.MHV.PHR.organization.html)
-  - [Mapping from VDIF - LabSiteTO](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-vdif-to-mhv-phr-labsiteto)
-  - [Mapping from HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)
+  - [Mapping from VIA - LabSiteTO](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-phr-labsiteto)
+  - [Mapping from HDR - PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)
   - [Examples](StructureDefinition-VA.MHV.PHR.organization-examples.html)
 
 ### mapping Clinical Resources
 
 This section is dedicated to instructions on how MHV will transition the data we receive into FHIR format.
 
-- [Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html#notes)
-  - [Mappings from HDR Allergy](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-hdr-allergy-to-mhv-phr-intolerancecondition)
-  - [Examples](StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html)
-- [Chem-Hem (CH) Diagnostic Report](StructureDefinition-VA.MHV.PHR.chReport.html#notes)
-  - [Mapping from HDR labTestPromises to DiagnosticReport](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)
-    - [Examples](StructureDefinition-VA.MHV.PHR.chReport-examples.html)
-  - contained [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html)
-    - Mappings from [HDR labTestPromises.specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen)
-  - contained Results [Observation(s)](StructureDefinition-VA.MHV.PHR.chTest.html)
-    - Mapping from [HDR labTests](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests)
-  - contained Panels [Observation(s)](StructureDefinition-VA.MHV.PHR.chPanel.html)
-    - Mapping from [HDR labTests.orderedTestCode](StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode)
-- [Conditions](StructureDefinition-VA.MHV.PHR.condition.html#notes)
-  - [Mapping from VDIF - ProblemTO](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-vdif-to-mhv-phr-problemto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
-- [ECG](StructureDefinition-VA.MHV.PHR.ecg.html#notes)
-  - [Mapping from VDIF - ClinicalProcedureTO](StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-vdif-to-mhv-phr-clinicalprocedureto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
-- [Immunization](StructureDefinition-VA.MHV.PHR.immunization.html#notes)
-  - [Mapping from VDIF - ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
-- [LabReport](StructureDefinition-VA.MHV.PHR.labReport.html#notes) including Microbiology and Pathology
-  - [Mapping from VDIF - LabReportTO +](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-vdif-to-mhv-phr-labreportto)
-    - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
-  - Contained [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html)
-    - Mapping from [VDIF LabSpecimen](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-vdif-to-mhv-phr-labspecimen)
-  - Contained [Observation](StructureDefinition-VA.MHV.PHR.labTest.html)
-    - Mapping from [VDIF LabTestTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-vdif-to-mhv-phr-labtestto)
-- [Notes](StructureDefinition-VA.MHV.PHR.note.html#notes)
-  - [Mapping from VDIF - NoteTO](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-vdif-to-mhv-phr-noteto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
-- [Radiology](StructureDefinition-VA.MHV.PHR.imaging.html#notes)
-  - [Mapping from VDIF - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-vdif-to-mhv-phr-imagingexamto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
-  - most [examples are within this Bundle](https://johnmoehrke.github.io/MHV-PHR/Bundle-images.html), and thus not individually exposed.
-- General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes)
-  - Additional specifics for [BP Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsBP.html)
-    - [Examples](StructureDefinition-VA.MHV.PHR.vitalsBP-examples.html)
-  - Additional specifics for [Pain Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsPain.html)
-    - [Examples](StructureDefinition-VA.MHV.PHR.vitalsPain-examples.html)
-  - Most [examples are within a Bundle](Bundle-vitals.html), which does not exposed each vital sign.
+#### Allergy
+
+[Allergy and Intolerance](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html#notes) Mapping Notes
+
+- [Mappings from HDR Allergy](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-hdr-allergy-to-mhv-phr-intolerancecondition)
+- [Examples](StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html)
+
+#### Chem-Hem
+
+[Chem-Hem (CH) Diagnostic Report](StructureDefinition-VA.MHV.PHR.chReport.html#notes) Mapping Notes
+
+- [Mapping from HDR labTestPromises to DiagnosticReport](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-phr-labtestpromises)
+  - [Examples](StructureDefinition-VA.MHV.PHR.chReport-examples.html)
+- contained [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html)
+  - Mappings from [HDR labTestPromises.specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-phr-labtestpromises-specimen)
+- contained Results [Observation(s)](StructureDefinition-VA.MHV.PHR.chTest.html)
+  - Mapping from [HDR labTests](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-phr-labtestpromises-labtests)
+- contained Panels [Observation(s)](StructureDefinition-VA.MHV.PHR.chPanel.html)
+  - Mapping from [HDR labTests.orderedTestCode](StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-phr-labtestpromises-labtests-orderedtestcode)
+
+#### Condition
+
+[Conditions](StructureDefinition-VA.MHV.PHR.condition.html#notes) Mapping Notes
+
+- [Mapping from VIA - ProblemTO](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-via-to-mhv-phr-problemto)
+- [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
+
+#### ECG
+
+[ECG](StructureDefinition-VA.MHV.PHR.ecg.html#notes) Mapping Notes
+
+- [Mapping from VIA - ClinicalProcedureTO](StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-via-to-mhv-phr-clinicalprocedureto)
+- [Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
+
+#### Immunization
+
+[Immunization](StructureDefinition-VA.MHV.PHR.immunization.html#notes) Mapping Notes
+
+- [Mapping from VIA - ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-via-to-mhv-phr-immunizationto)
+- [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
+
+#### LabReport
+
+[LabReport](StructureDefinition-VA.MHV.PHR.labReport.html#notes) including Microbiology and Pathology Mapping Notes
+
+- [Mapping from VIA - LabReportTO +](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-via-to-mhv-phr-labreportto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
+- Contained [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html)
+  - Mapping from [VIA LabSpecimen](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-via-to-mhv-phr-labspecimen)
+- Contained [Observation](StructureDefinition-VA.MHV.PHR.labTest.html)
+  - Mapping from [VIA LabTestTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-via-to-mhv-phr-labtestto)
+
+#### Notes
+
+[Notes](StructureDefinition-VA.MHV.PHR.note.html#notes) Mapping Notes
+
+- [Mapping from VIA - NoteTO](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-via-to-mhv-phr-noteto)
+- [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
+
+#### Radiology
+
+[Radiology](StructureDefinition-VA.MHV.PHR.imaging.html#notes) Mapping Notes
+
+- [Mapping from VIA - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-via-to-mhv-phr-imagingexamto)
+- [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
+- most [examples are within this Bundle](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Bundle-images.html), and thus not individually exposed.
+
+#### Vital-Sign
+
+General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes) Mapping Notes
+
+- Additional specifics for [BP Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsBP.html)
+  - [Examples](StructureDefinition-VA.MHV.PHR.vitalsBP-examples.html)
+- Additional specifics for [Pain Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsPain.html)
+  - [Examples](StructureDefinition-VA.MHV.PHR.vitalsPain-examples.html)
+- Most [examples are within a Bundle](Bundle-vitals.html), which does not exposed each vital sign.
 
 #### in progress
 
@@ -141,7 +176,7 @@ General Pattern
 
 ### References
 
-Source of data received from VDIF using a SOAP xml schema that might be from one of:
+Source of data received from VIA using a SOAP xml schema that might be from one of:
 
 - [VIA_v4.0.7_uat.wsdl](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl)
 - [mockey-mdws3-service.wsdl](https://github.com/department-of-veterans-affairs/mhv-ap-vde-support/blob/development/src/test/wsdl/mockey-mdws3-service.wsdl)

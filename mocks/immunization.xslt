@@ -9,12 +9,12 @@
   <id value="ex-MHV-immunization-1"/>
 
   <meta>
-      <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization"/>
+      <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
   </meta>
 
 <identifier>
     <use value="usual"/>
-    <system value="https://johnmoehrke.github.io/MHV-PHR/Vista/111/ImmunizationTO.id"/>
+    <system value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Vista/111/ImmunizationTO.id"/>
     <value>
       <xsl:attribute name="value">
         <xsl:value-of select="id" />

@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA.MHV.PHR.EXAMPLE\VA MHV PHR CH labTest.chemistryResults - FHIR v4.0.1</title>
+    <title>VA.MHV.FHIR.PHR\VA MHV PHR CH labTest.chemistryResults - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.20-beta - ci-build
+            <span style="display:inline-block;">0.2.0 - ci-build
 
 
 
@@ -113,6 +113,33 @@
     <ul class="dropdown-menu">
       <li>
         <a href="background.html">background</a>
+      </li>
+      <li>
+        <a href="background.html#allergy">Allergy</a>
+      </li>
+      <li>
+        <a href="background.html#chem-hem">Chem-Hem</a>
+      </li>
+      <li>
+        <a href="background.html#condition">Condition</a>
+      </li>
+      <li>
+        <a href="background.html#ecg">ECG</a>
+      </li>
+      <li>
+        <a href="background.html#immunization">Immunization</a>
+      </li>
+      <li>
+        <a href="background.html#labreport">LabReport</a>
+      </li>
+      <li>
+        <a href="background.html#notes">Notes</a>
+      </li>
+      <li>
+        <a href="background.html#radiology">Radiology</a>
+      </li>
+      <li>
+        <a href="background.html#vital-sign">Vital-Sign</a>
       </li>
       <li>
         <a href="utility.html">Utility</a>
@@ -169,7 +196,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.20-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -240,10 +267,10 @@
   <table class="colstu">
 
     <tr>
-      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chTest<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chTest"/></span>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.1.20-beta<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chTest|0.1.20-beta"/></span>
+      <span class="copy-text">0.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest|0.2.0"/></span>
       </td>
     </tr>
 
@@ -610,7 +637,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
       "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.code.text" title="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user" class="dict"><span style="text-decoration: underline">text</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></span>&gt;" <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">testIdentifier.displayText</span>
     },
     "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.subject" title="The patient, or group of patients, location, or device this observation is about and into whose record the observation is placed. If the actual focus of the observation is different from the subject (or a sample of, part, or region of the subject), the `focus` element or the `code` itself specifies the actual focus of the observation (this element must be supported)" class="dict"><span style="text-decoration: underline">subject</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient]])}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Who and/or what the observation is about</span>
-    "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.performer" title="Who was responsible for asserting the observed value as &quot;true&quot; (this element must be supported)" class="dict"><span style="text-decoration: underline">performer</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization]])}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">performingOrganization</span>
+    "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.performer" title="Who was responsible for asserting the observed value as &quot;true&quot; (this element must be supported)" class="dict"><span style="text-decoration: underline">performer</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization]])}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">performingOrganization</span>
     "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.valueQuantity" title="The Laboratory result value.  If a coded value,  the valueCodeableConcept.code **SHOULD** be selected from [SNOMED CT](http://hl7.org/fhir/ValueSet/uslab-obs-codedresults) if the concept exists. If a numeric value, valueQuantity.code **SHALL** be selected from [UCUM](http://unitsofmeasure.org).  A FHIR [UCUM Codes value set](http://hl7.org/fhir/STU3/valueset-ucum-units.html) that defines all UCUM codes is in the FHIR specification (this element must be supported)" class="dict"><span style="text-decoration: underline">valueQuantity</span></a>" : [ <span style="color: navy"></span>
       { // <span style="color: navy; opacity: 0.8">Result Value</span> <span style="color: brown" title=""><b>C?</b></span>
         // from Element: <a href="http://hl7.org/fhir/R4/extensibility.html">extension</a>
@@ -652,7 +679,7 @@ Summary
 <p>Must-Support: 7 elements<br/> Prohibited: 20 elements</p><p><b>Structures</b></p>
 <p>This structure refers to these other structures:</p>
 <ul>
-<li><a href="StructureDefinition-VA.MHV.PHR.organization.html">VA MHV PHR Organization <span style="font-size: 8px">(https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization)</span></a></li>
+<li><a href="StructureDefinition-VA.MHV.PHR.organization.html">VA MHV PHR Organization <span style="font-size: 8px">(https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization)</span></a></li>
 
 </ul>
 
@@ -913,7 +940,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
       "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.code.text" title="A human language representation of the concept as seen/selected/uttered by the user who entered the data and/or which represents the intended meaning of the user" class="dict"><span style="text-decoration: underline">text</span></a>" : "&lt;<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></span>&gt;" <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">testIdentifier.displayText</span>
     },
     "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.subject" title="The patient, or group of patients, location, or device this observation is about and into whose record the observation is placed. If the actual focus of the observation is different from the subject (or a sample of, part, or region of the subject), the `focus` element or the `code` itself specifies the actual focus of the observation (this element must be supported)" class="dict"><span style="text-decoration: underline">subject</span></a>" : {<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient]])}, <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: brown" title="This element is required"><b>R!</b></span> <span style="color: navy; opacity: 0.8">Who and/or what the observation is about</span>
-    "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.performer" title="Who was responsible for asserting the observed value as &quot;true&quot; (this element must be supported)" class="dict"><span style="text-decoration: underline">performer</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization]])}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">performingOrganization</span>
+    "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.performer" title="Who was responsible for asserting the observed value as &quot;true&quot; (this element must be supported)" class="dict"><span style="text-decoration: underline">performer</span></a>" : [{<span style="color: darkgreen"><a href="http://hl7.org/fhir/R4/references.html#Reference">Reference</a></span>([CanonicalType[https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization]])}], <span style="color: Gray">//</span> <span style="color: brown" title=""><b>C?</b></span> <span style="color: navy; opacity: 0.8">performingOrganization</span>
     "<a href="StructureDefinition-VA.MHV.PHR.chTest.html#Observation.valueQuantity" title="The Laboratory result value.  If a coded value,  the valueCodeableConcept.code **SHOULD** be selected from [SNOMED CT](http://hl7.org/fhir/ValueSet/uslab-obs-codedresults) if the concept exists. If a numeric value, valueQuantity.code **SHALL** be selected from [UCUM](http://unitsofmeasure.org).  A FHIR [UCUM Codes value set](http://hl7.org/fhir/STU3/valueset-ucum-units.html) that defines all UCUM codes is in the FHIR specification (this element must be supported)" class="dict"><span style="text-decoration: underline">valueQuantity</span></a>" : [ <span style="color: navy"></span>
       { // <span style="color: navy; opacity: 0.8">Result Value</span> <span style="color: brown" title=""><b>C?</b></span>
         // from Element: <a href="http://hl7.org/fhir/R4/extensibility.html">extension</a>
@@ -951,7 +978,7 @@ Summary
 <p>Must-Support: 7 elements<br/> Prohibited: 20 elements</p><p><b>Structures</b></p>
 <p>This structure refers to these other structures:</p>
 <ul>
-<li><a href="StructureDefinition-VA.MHV.PHR.organization.html">VA MHV PHR Organization <span style="font-size: 8px">(https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization)</span></a></li>
+<li><a href="StructureDefinition-VA.MHV.PHR.organization.html">VA MHV PHR Organization <span style="font-size: 8px">(https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization)</span></a></li>
 
 </ul>
 
@@ -1048,12 +1075,12 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.20-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 12:58-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/MHV-PHR/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/MHV-PHR/issues">Issues</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/issues">Issues</a>
                 
           </span>
         </p>

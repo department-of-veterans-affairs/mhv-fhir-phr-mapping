@@ -2,13 +2,13 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/docs/sushi/configuration/                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: va.mhv.phr.example
-canonical: https://johnmoehrke.github.io/MHV-PHR
-name: MHVPHR
+id: va.mhv.fhir.phr
+canonical: https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping
+name: VAMHVFHIRPHR
 title: "MyHealtheVet PHR FHIR API"
 description: "MyHealtheVet exposing PHR using FHIR and Testing Plan."
 status: active
-version: 0.1.20-beta
+version: 0.2.0
 fhirVersion: 4.0.1
 copyrightyear: '2022+'
 #date: 2022-04-14
@@ -16,8 +16,8 @@ releaselabel: ci-build
 #releaselabel: ballot
 #releaselabel: trial-use
 publisher:
-  name: John Moehrke (himself)
-  url: http://healthcaresecprivacy.blogspot.com
+  name: VA Digital Services
+  url: http://va.gov
   email: JohnMoehrke@gmail.com
 contact:
   - name: John Moehrke (himself)
@@ -70,11 +70,11 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/C
 resources:
   Bundle/images:
     name: Bundle of Radiology results from mock data
-    description: An example of a transaction Bundle with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.
+    description: An example of a transaction Bundle with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.
     exampleBoolean: true
   Bundle/vitals:
     name: Bundle of Vitals from mock data
-    description: An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/vitals.xml) MHV receives.
+    description: An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/vitals.xml) MHV receives.
     exampleBoolean: true
 
 
@@ -112,6 +112,15 @@ menu:
   API: api.html
   Vista Mapping: 
     "background": background.html
+    "Allergy": background.html#allergy
+    "Chem-Hem": background.html#chem-hem
+    "Condition": background.html#condition
+    "ECG": background.html#ecg
+    "Immunization": background.html#immunization
+    "LabReport": background.html#labreport
+    "Notes": background.html#notes
+    "Radiology": background.html#radiology
+    "Vital-Sign": background.html#vital-sign
     "Utility" : utility.html
     "ConvertDate" : ConvertDate.html
     "Id vs Identifier" : identifier.html

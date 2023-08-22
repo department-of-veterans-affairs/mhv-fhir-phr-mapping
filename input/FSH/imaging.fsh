@@ -44,7 +44,7 @@ A profile on the DocumentReference resource for MHV PHR exposing Radiology note 
 Mapping: ImagingExam-Mapping
 Source:	MHVimagingExam
 Target: "ImagingExamTO"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "ImagingExamTO"
 * category -> "`clinical-note`"
 * type.coding[LO] -> "LOINC#18748-4"

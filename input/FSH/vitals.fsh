@@ -45,7 +45,7 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 Mapping: Vitals-Mapping
 Source:	MHVvitals
 Target: "VitalSignTO"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "VitalSignTO"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -76,7 +76,7 @@ A profile on the Observation resource for Pain
 Mapping: VitalsPain-Mapping
 Source:	MHVvitalsPain
 Target: "MHVvitalsPain"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "VitalSignTO Pain"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -139,7 +139,7 @@ A profile on the Observation resource for Blood Pressure
 Mapping: VitalsBP-Mapping
 Source:	MHVvitalsBP
 Target: "MHVvitalsBP"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "VitalSignTO BP"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -220,7 +220,7 @@ InstanceOf: ConceptMap
 Title:      "Vital Sign ObservationTypeTO.name to Loinc Code"
 Description: "map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code."
 Usage: #definition
-* url = "https://johnmoehrke.github.io/MHV-PHR/ConceptMap/ObservationTypeTOVsLoincCode"
+* url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/ObservationTypeTOVsLoincCode"
 * name =  "ObservationTypeTOVsLoincCode"
 * title = "Vital Sign ObservationTypeTO.name to Loinc Code"
 * experimental = false

@@ -11,7 +11,7 @@
     "_valueInteger" : {
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-        "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
       }]
     }
   },
@@ -21,22 +21,22 @@
     "_valueCode" : {
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-        "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
       }]
     }
   }],
-  "url" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.diagnosticReport",
-  "version" : "0.1.20-beta",
+  "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.diagnosticReport",
+  "version" : "0.2.0",
   "name" : "MHVdiagnosticReport",
   "title" : "VA MHV DiagnosticReport",
   "status" : "active",
-  "date" : "2023-08-22T12:58:52-05:00",
-  "publisher" : "John Moehrke (himself)",
+  "date" : "2023-08-22T16:36:15-05:00",
+  "publisher" : "VA Digital Services",
   "contact" : [{
-    "name" : "John Moehrke (himself)",
+    "name" : "VA Digital Services",
     "telecom" : [{
       "system" : "url",
-      "value" : "http://healthcaresecprivacy.blogspot.com"
+      "value" : "http://va.gov"
     },
     {
       "system" : "email",
@@ -860,7 +860,7 @@
       "isSummary" : true,
       "binding" : {
         "strength" : "preferred",
-        "valueSet" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS"
+        "valueSet" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/LabReportVS"
       },
       "mapping" : [{
         "identity" : "v2",
@@ -1191,8 +1191,8 @@
       },
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization",
-        "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"]
+        "targetProfile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization",
+        "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
       }],
       "constraint" : [{
         "key" : "ele-1",
@@ -1288,8 +1288,8 @@
       },
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chSpecimen",
-        "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"],
+        "targetProfile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chSpecimen",
+        "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen"],
         "aggregation" : ["contained"]
       }],
       "constraint" : [{
@@ -1337,9 +1337,9 @@
       },
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chTest",
-        "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chPanel",
-        "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest"],
+        "targetProfile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest",
+        "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel",
+        "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labTest"],
         "aggregation" : ["contained"]
       }],
       "constraint" : [{
@@ -1772,7 +1772,7 @@
       "mustSupport" : true,
       "binding" : {
         "strength" : "preferred",
-        "valueSet" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/LabReportVS"
+        "valueSet" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/LabReportVS"
       }
     },
     {
@@ -1818,8 +1818,8 @@
       "path" : "DiagnosticReport.performer",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.organization",
-        "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.practitioner"]
+        "targetProfile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization",
+        "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
       }],
       "mustSupport" : true
     },
@@ -1833,8 +1833,8 @@
       "path" : "DiagnosticReport.specimen",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chSpecimen",
-        "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.LabSpecimen"],
+        "targetProfile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chSpecimen",
+        "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen"],
         "aggregation" : ["contained"]
       }],
       "mustSupport" : true
@@ -1844,9 +1844,9 @@
       "path" : "DiagnosticReport.result",
       "type" : [{
         "code" : "Reference",
-        "targetProfile" : ["https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chTest",
-        "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chPanel",
-        "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labTest"],
+        "targetProfile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest",
+        "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel",
+        "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labTest"],
         "aggregation" : ["contained"]
       }],
       "mustSupport" : true

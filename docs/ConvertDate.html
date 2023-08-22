@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA.MHV.PHR.EXAMPLE\ConvertDate() - FHIR v4.0.1</title>
+    <title>VA.MHV.FHIR.PHR\ConvertDate() - FHIR v4.0.1</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.1.20-beta - ci-build
+            <span style="display:inline-block;">0.2.0 - ci-build
 
 
 
@@ -109,6 +109,33 @@
     <ul class="dropdown-menu">
       <li>
         <a href="background.html">background</a>
+      </li>
+      <li>
+        <a href="background.html#allergy">Allergy</a>
+      </li>
+      <li>
+        <a href="background.html#chem-hem">Chem-Hem</a>
+      </li>
+      <li>
+        <a href="background.html#condition">Condition</a>
+      </li>
+      <li>
+        <a href="background.html#ecg">ECG</a>
+      </li>
+      <li>
+        <a href="background.html#immunization">Immunization</a>
+      </li>
+      <li>
+        <a href="background.html#labreport">LabReport</a>
+      </li>
+      <li>
+        <a href="background.html#notes">Notes</a>
+      </li>
+      <li>
+        <a href="background.html#radiology">Radiology</a>
+      </li>
+      <li>
+        <a href="background.html#vital-sign">Vital-Sign</a>
       </li>
       <li>
         <a href="utility.html">Utility</a>
@@ -172,7 +199,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.1.20-beta). See the <a href="https://johnmoehrke.github.io/MHV-PHR/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>ConvertDate()</h2>
   
 
@@ -203,12 +230,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#fileman-date" id="markdown-toc-fileman-date">Fileman Date</a></li>
+  <li><a href="#hl7-timestamp" id="markdown-toc-hl7-timestamp">HL7 timestamp</a></li>
   <li><a href="#clinicalprocedureto-timestamp" id="markdown-toc-clinicalprocedureto-timestamp">clinicalProcedureTO timestamp</a></li>
+  <li><a href="#other-formats" id="markdown-toc-other-formats">other formats</a></li>
   <li><a href="#when-no-timezone" id="markdown-toc-when-no-timezone">when no timezone</a></li>
 </ul>
 
 </div>
-<p>There appears to be two formats of timestamps. First is Fileman Date, second is found in ClinicalProcedureTO.timestamp</p>
+<p>There appears to be different formats of timestamps. First is Fileman Date, HL7 date time, and ClinicalProcedureTO.timestamp</p>
 
 <h3 id="fileman-date">Fileman Date</h3>
 
@@ -216,7 +245,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Return: FHIR DateTime</p>
 
-<p>Given that the Fileman date is slightly different than HL7. The conversion is simple.</p>
+<p>Given that the Fileman date is slightly different than HL7. The conversion is simple. The most important part is that the first three digits are the number of years since 1700.</p>
 
 <p>See <a href="http://www.vistapedia.com/index.php/Date_formats">FileMan date</a></p>
 
@@ -265,11 +294,53 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <span class="nt">&lt;/xsl:transform&gt;</span>
 </code></pre></div></div>
 
+<h3 id="hl7-timestamp">HL7 timestamp</h3>
+
+<p>Chem-Hem literal timestamps are following HL7 and do include a timezone offset.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         <span class="nt">&lt;reportCompleteDate&gt;</span>
+            <span class="nt">&lt;literal&gt;</span>20201029132952-0500<span class="nt">&lt;/literal&gt;</span>
+         <span class="nt">&lt;/reportCompleteDate&gt;</span>
+</code></pre></div></div>
+
 <h3 id="clinicalprocedureto-timestamp">clinicalProcedureTO timestamp</h3>
 
 <p>This seems to be formatted starting with three character month:</p>
+
 <div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;timestamp&gt;</span>DEC 2,1998@10:01:13<span class="nt">&lt;/timestamp&gt;</span>
 </code></pre></div></div>
+
+<h3 id="other-formats">other formats</h3>
+
+<p>Experience with the production system there are many other date/time formats we must consider. Consider that this does not include the above formats</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	private static final MHVDateFormat FORMATS[] = {
+		new MHVDateFormat("yyyyMMddHHmmss",false),
+		new MHVDateFormat("yyyyMMddHHmm",false),
+		new MHVDateFormat("yyyyMMddHHmmssZ", false),
+		new MHVDateFormat("yyyyMMddHHmmZ", false),
+		new MHVDateFormat("yyyyMMdd", true),
+		new MHVDateFormat("MM/dd/yyyy", true),
+		new MHVDateFormat("M/d/yyyy", true),
+		new MHVDateFormat("MMddyyyy", true),
+		new MHVDateFormat("M-d-yyyy", true),
+		new MHVDateFormat("yyyy-MM-dd", true),
+		new MHVDateFormat("MMM d yyyy", true),
+		new MHVDateFormat("d MMM yyyy", true),
+		new MHVDateFormat("MMM d, yyyy", true),
+		new MHVDateFormat("MMM d,yyyy", true),
+		new MHVDateFormat("MMMMM d yyyy", true),
+		new MHVDateFormat("d MMMMM yyyy", true),
+		new MHVDateFormat("dd-MMM-yyyy", true),
+		new MHVDateFormat("SyyMMdd.HHmmss", false),
+		new MHVDateFormat("yyyyMMdd.HHmmss", false),
+		new MHVDateFormat("SyyMMdd.kkmmss", false),
+		new MHVDateFormat("MMM d,yyyy@HH:mm:ss", false),
+		new MHVDateFormat("MMM d,yyyy@HH:mm:ss", false),//MAR 8,2005@15:09:02 (EKG)
+		new MHVDateFormat("dd MMM yyyy @ HHmm", false)//21 Jun 2012 @ 1200
+	};
+</code></pre></div></div>
+
 <h3 id="when-no-timezone">when no timezone</h3>
 
 <p>TODO: Likely when there is no timezone, it was local time for that Vista.</p>
@@ -327,12 +398,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package va.mhv.phr.example#0.1.20-beta based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 12:58-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/MHV-PHR/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/MHV-PHR/issues">Issues</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/issues">Issues</a>
                 
           </span>
         </p>

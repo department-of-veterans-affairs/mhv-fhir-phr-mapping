@@ -38,7 +38,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </id>
 
                 <meta>
-                    <profile value="https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging"/>
+                    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
                 </meta>
 
                 <identifier>

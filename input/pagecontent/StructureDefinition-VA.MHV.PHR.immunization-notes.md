@@ -1,11 +1,11 @@
 
-- The [mock example](https://github.com/JohnMoehrke/MHV-PHR/blob/main/mocks/immunization.xml) 
+- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/immunization.xml) 
 - maps to [ImmunizationTO](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl) schema.
-- Mapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-vdif-to-mhv-phr-immunizationto)
+- Mapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-via-to-mhv-phr-immunizationto)
 - [Vivian Immunization](https://vivian.worldvista.org/dox/Global_XkFVUE5WSU1N.html)
 - Derived off of US-Core Immunization
   - US-Core already requires: `status`, `vaccineCode`, `patient`, `occurrence[x]`, `primarySource`
-- should have `meta.profile` set to `https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization` to indicate the intent to be compliant with this profile
+- should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization` to indicate the intent to be compliant with this profile
 - must have `identifier` as cross reference to original source
 - must be indicated this data are not official record (`primarySource`=false)
   - Given that the field is not used by UX, it does not matter what the value is

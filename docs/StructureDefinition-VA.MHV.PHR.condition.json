@@ -11,7 +11,7 @@
     "_valueInteger" : {
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-        "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
       }]
     }
   },
@@ -21,22 +21,22 @@
     "_valueCode" : {
       "extension" : [{
         "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
-        "valueCanonical" : "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
       }]
     }
   }],
-  "url" : "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition",
-  "version" : "0.1.20-beta",
+  "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition",
+  "version" : "0.2.0",
   "name" : "MHVcondition",
   "title" : "VA MHV PHR problems",
   "status" : "active",
-  "date" : "2023-08-22T12:58:52-05:00",
-  "publisher" : "John Moehrke (himself)",
+  "date" : "2023-08-22T16:36:15-05:00",
+  "publisher" : "VA Digital Services",
   "contact" : [{
-    "name" : "John Moehrke (himself)",
+    "name" : "VA Digital Services",
     "telecom" : [{
       "system" : "url",
-      "value" : "http://healthcaresecprivacy.blogspot.com"
+      "value" : "http://va.gov"
     },
     {
       "system" : "email",
@@ -91,7 +91,7 @@
   {
     "identity" : "Condition-Mapping",
     "uri" : "ProblemTO",
-    "name" : "VDIF to MHV-PHR"
+    "name" : "VIA to MHV-PHR"
   }],
   "kind" : "resource",
   "abstract" : false,
@@ -1325,7 +1325,7 @@
       "isSummary" : true,
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/ConditionVerificationVS"
+        "valueSet" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionVerificationVS"
       },
       "mapping" : [{
         "identity" : "workflow",
@@ -2964,7 +2964,7 @@
       "path" : "Condition.verificationStatus",
       "binding" : {
         "strength" : "required",
-        "valueSet" : "https://johnmoehrke.github.io/MHV-PHR/ValueSet/ConditionVerificationVS"
+        "valueSet" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionVerificationVS"
       },
       "mapping" : [{
         "identity" : "Condition-Mapping",

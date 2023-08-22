@@ -1,4 +1,4 @@
-There appears to be two formats of timestamps. First is Fileman Date, second is found in ClinicalProcedureTO.timestamp
+There appears to be different formats of timestamps. First is Fileman Date, HL7 date time, and ClinicalProcedureTO.timestamp
 
 ### Fileman Date
 
@@ -6,7 +6,7 @@ Input: Fileman Date
 
 Return: FHIR DateTime
 
-Given that the Fileman date is slightly different than HL7. The conversion is simple.
+Given that the Fileman date is slightly different than HL7. The conversion is simple. The most important part is that the first three digits are the number of years since 1700.
 
 See [FileMan date](http://www.vistapedia.com/index.php/Date_formats)
 
@@ -56,12 +56,56 @@ Here is XSLT
 </xsl:transform>
 ```
 
+### HL7 timestamp
+
+Chem-Hem literal timestamps are following HL7 and do include a timezone offset.
+
+```xml
+         <reportCompleteDate>
+            <literal>20201029132952-0500</literal>
+         </reportCompleteDate>
+```
+
 ### clinicalProcedureTO timestamp
 
 This seems to be formatted starting with three character month:
+
 ```xml
  <timestamp>DEC 2,1998@10:01:13</timestamp>
 ```
+
+### other formats
+
+Experience with the production system there are many other date/time formats we must consider. Consider that this does not include the above formats
+
+```
+	private static final MHVDateFormat FORMATS[] = {
+		new MHVDateFormat("yyyyMMddHHmmss",false),
+		new MHVDateFormat("yyyyMMddHHmm",false),
+		new MHVDateFormat("yyyyMMddHHmmssZ", false),
+		new MHVDateFormat("yyyyMMddHHmmZ", false),
+		new MHVDateFormat("yyyyMMdd", true),
+		new MHVDateFormat("MM/dd/yyyy", true),
+		new MHVDateFormat("M/d/yyyy", true),
+		new MHVDateFormat("MMddyyyy", true),
+		new MHVDateFormat("M-d-yyyy", true),
+		new MHVDateFormat("yyyy-MM-dd", true),
+		new MHVDateFormat("MMM d yyyy", true),
+		new MHVDateFormat("d MMM yyyy", true),
+		new MHVDateFormat("MMM d, yyyy", true),
+		new MHVDateFormat("MMM d,yyyy", true),
+		new MHVDateFormat("MMMMM d yyyy", true),
+		new MHVDateFormat("d MMMMM yyyy", true),
+		new MHVDateFormat("dd-MMM-yyyy", true),
+		new MHVDateFormat("SyyMMdd.HHmmss", false),
+		new MHVDateFormat("yyyyMMdd.HHmmss", false),
+		new MHVDateFormat("SyyMMdd.kkmmss", false),
+		new MHVDateFormat("MMM d,yyyy@HH:mm:ss", false),
+		new MHVDateFormat("MMM d,yyyy@HH:mm:ss", false),//MAR 8,2005@15:09:02 (EKG)
+		new MHVDateFormat("dd MMM yyyy @ HHmm", false)//21 Jun 2012 @ 1200
+	};
+```
+
 ### when no timezone
 
 TODO: Likely when there is no timezone, it was local time for that Vista.

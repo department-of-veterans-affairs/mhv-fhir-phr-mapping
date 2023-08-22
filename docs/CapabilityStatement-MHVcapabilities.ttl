@@ -5,12 +5,12 @@
 
 # - resource -------------------------------------------------------------------
 
-<https://johnmoehrke.github.io/MHV-PHR/CapabilityStatement/MHVcapabilities> a fhir:CapabilityStatement ;
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CapabilityStatement/MHVcapabilities> a fhir:CapabilityStatement ;
   fhir:nodeRole fhir:treeRoot ;
   fhir:id [ fhir:v "MHVcapabilities"] ; # 
   fhir:text [
      fhir:status [ fhir:v "extensions" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>MHV_PHR</h2><div><p>CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data</p>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>MHV supports queries to PHR.</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td>y</td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>AllergyIntolerance</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.allergyIntolerance.html\">VA MHV PHR Allergy and Intolerance</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Condition</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.condition.html\">VA MHV PHR problems</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Observation</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.vitals.html\">VA MHV PHR Vital-Signs</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.vitalsBP.html\">VA MHV PHR Vital-Signs for Blood Pressure</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.vitalsPain.html\">VA MHV PHR Vital-Signs for PAIN</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Immunization</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.immunization.html\">VA MHV PHR Immunization</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>DocumentReference</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.documentReference.html\">VA MHV All DocumentReference</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.imaging.html\">VA MHV PHR Radiology</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.ecg.html\">VA MHV PHR ECG</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>DiagnosticReport</td><td>Supported profiles:<br/>  <a href=\"https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.diagnosticReport\">https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.diagnosticReport</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.chReport.html\">VA MHV PHR HDR Chem-Hem Report</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.labReport.html\">VA MHV PHR Lab Report</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Organization</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Location</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Practitioner</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Patient</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>MHV_PHR</h2><div><p>CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data</p>\n</div><table><tr><td>Mode</td><td>SERVER</td></tr><tr><td>Description</td><td><div><p>MHV supports queries to PHR.</p>\n</div></td></tr><tr><td>Transaction</td><td></td></tr><tr><td>System History</td><td></td></tr><tr><td>System Search</td><td>y</td></tr></table><table><tr><th><b>Resource Type</b></th><th><b>Profile</b></th><th><b title=\"GET a resource (read interaction)\">Read</b></th><th><b title=\"GET all set of resources of the type (search interaction)\">Search</b></th><th><b title=\"PUT a new resource version (update interaction)\">Update</b></th><th><b title=\"POST a new resource (create interaction)\">Create</b></th></tr><tr><td>AllergyIntolerance</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.allergyIntolerance.html\">VA MHV PHR Allergy and Intolerance</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Condition</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.condition.html\">VA MHV PHR problems</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Observation</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.vitals.html\">VA MHV PHR Vital-Signs</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.vitalsBP.html\">VA MHV PHR Vital-Signs for Blood Pressure</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.vitalsPain.html\">VA MHV PHR Vital-Signs for PAIN</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Immunization</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.immunization.html\">VA MHV PHR Immunization</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>DocumentReference</td><td>Supported profiles:<br/>  <a href=\"StructureDefinition-VA.MHV.PHR.documentReference.html\">VA MHV All DocumentReference</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.imaging.html\">VA MHV PHR Radiology</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.ecg.html\">VA MHV PHR ECG</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>DiagnosticReport</td><td>Supported profiles:<br/>  <a href=\"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.diagnosticReport\">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.diagnosticReport</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.chReport.html\">VA MHV PHR HDR Chem-Hem Report</a><br/>  <a href=\"StructureDefinition-VA.MHV.PHR.labReport.html\">VA MHV PHR Lab Report</a></td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Organization</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Location</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Practitioner</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr><tr><td>Patient</td><td> </td><td>y</td><td>y</td><td></td><td></td></tr></table></div>"
   ] ; # 
   fhir:extension ( [
      fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
@@ -19,8 +19,8 @@
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
          fhir:value [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
          ]
        ] )
      ]
@@ -31,25 +31,25 @@
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
          fhir:value [
-           fhir:v "https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example"^^xsd:anyURI ;
-           fhir:link <https://johnmoehrke.github.io/MHV-PHR/ImplementationGuide/va.mhv.phr.example>
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
          ]
        ] )
      ]
   ] ) ; # 
-  fhir:url [ fhir:v "https://johnmoehrke.github.io/MHV-PHR/CapabilityStatement/MHVcapabilities"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.1.20-beta"] ; # 
+  fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CapabilityStatement/MHVcapabilities"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.0"] ; # 
   fhir:name [ fhir:v "MHV_PHR"] ; # 
   fhir:title [ fhir:v "This indicates how MHV exposes PHR using FHIR"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
   fhir:date [ fhir:v "2022-12-22"^^xsd:date] ; # 
-  fhir:publisher [ fhir:v "John Moehrke (himself)"] ; # 
+  fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
-     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:name [ fhir:v "VA Digital Services" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
-       fhir:value [ fhir:v "http://healthcaresecprivacy.blogspot.com" ]
+       fhir:value [ fhir:v "http://va.gov" ]
      ] [
        fhir:system [ fhir:v "email" ] ;
        fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
@@ -85,10 +85,10 @@
      fhir:resource ( [
        fhir:type [ fhir:v "AllergyIntolerance" ] ;
        fhir:supportedProfile ( [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.allergyIntolerance>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance>
        ] ) ;
-       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)" ] ;
        fhir:interaction ( [
          fhir:code [ fhir:v "search-type" ]
        ] [
@@ -122,10 +122,10 @@
      ] [
        fhir:type [ fhir:v "Condition" ] ;
        fhir:supportedProfile ( [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.condition>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
        ] ) ;
-       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)" ] ;
        fhir:interaction ( [
          fhir:code [ fhir:v "search-type" ]
        ] [
@@ -159,16 +159,16 @@
      ] [
        fhir:type [ fhir:v "Observation" ] ;
        fhir:supportedProfile ( [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitals>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals>
        ] [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsBP>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP>
        ] [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.vitalsPain>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain>
        ] ) ;
-       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)" ] ;
        fhir:interaction ( [
          fhir:code [ fhir:v "search-type" ]
        ] [
@@ -202,10 +202,10 @@
      ] [
        fhir:type [ fhir:v "Immunization" ] ;
        fhir:supportedProfile ( [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.immunization>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
        ] ) ;
-       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)" ] ;
        fhir:interaction ( [
          fhir:code [ fhir:v "search-type" ]
        ] [
@@ -233,19 +233,19 @@
      ] [
        fhir:type [ fhir:v "DocumentReference" ] ;
        fhir:supportedProfile ( [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.documentReference"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.documentReference>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.documentReference"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.documentReference>
        ] [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.note>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note>
        ] [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.imaging>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging>
        ] [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.ecg>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg>
        ] ) ;
-       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)" ] ;
        fhir:interaction ( [
          fhir:code [ fhir:v "search-type" ]
        ] [
@@ -282,16 +282,16 @@
      ] [
        fhir:type [ fhir:v "DiagnosticReport" ] ;
        fhir:supportedProfile ( [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.diagnosticReport"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.diagnosticReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.diagnosticReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.diagnosticReport>
        ] [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.chReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
        ] [
-         fhir:v "https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
-         fhir:link <https://johnmoehrke.github.io/MHV-PHR/StructureDefinition/VA.MHV.PHR.labReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
        ] ) ;
-       fhir:documentation [ fhir:v "MHV [PGHD use](https://johnmoehrke.github.io/MHV-PHR/index.html)" ] ;
+       fhir:documentation [ fhir:v "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)" ] ;
        fhir:interaction ( [
          fhir:code [ fhir:v "search-type" ]
        ] [

@@ -59,7 +59,7 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 Mapping: Immunization-Mapping
 Source:	MHVimmunization
 Target: "ImmunizationTO"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "ImmunizationTO"
 * vaccineCode.text -> "ImmunizationTO.name"
 * note.text -> "ImmunizationTO.comments"
@@ -155,7 +155,7 @@ A profile for the contained Observation indicating an immunization reaction
 Mapping: ImmunizationReaction-Mapping
 Source:	MHVimmunizationReaction
 Target: "Immunization.reaction"
-Title: "VDIF to MHV-PHR"
+Title: "VIA to MHV-PHR"
 * -> "ImmunizationTO"
 * status -> "`final`"
 * code.text -> "ImmunizationTO.reaction"
