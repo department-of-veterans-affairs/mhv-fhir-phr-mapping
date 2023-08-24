@@ -138,8 +138,6 @@ General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes) Mapping 
 unknown (FHIR supports the following topics but unclear if this data exists in PHR)
 
 - care plan / care team resources
-- allergy intolerance resources
-  - AllergyTO is defined for VIA
 - encounter resources
 - device resources
 - goal resources

@@ -60,6 +60,7 @@ Profile on DiagnosticReport for Chem-Hem lab report.
   Rid 1..1
 * identifier[Rid].use = #usual
 * identifier[Rid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[Rid].system obeys TOid-startswithoid
 * identifier[Rid].value ^short = "`recordIdentifier` | `.` | {labTestPromises.recordIdentifier.identity}"
 * subject 1..1
 * code 1..1 MS
@@ -83,6 +84,7 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 * performer MS
 * performer ^short = "performingOrganization"
 * performer only Reference(MHVorganization or MHVpractitioner)
+* performer ^type.aggregation = #contained
 * encounter 0..0
 * resultsInterpreter 0..0
 * imagingStudy 0..0

@@ -10,6 +10,67 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 2345-7}\">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( id:\u00a0942104\u00a0(use:\u00a0USUAL))</td></tr><tr><td>When For</td><td>2020-10-29 13:29:52-0500</td></tr><tr><td>Reported</td><td>2020-10-29 13:29:52-0500</td></tr><tr><td>Identifier:</td><td> id:\u00a01103030001\u00a0(use:\u00a0USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's test 10/29/20</p></div>"
   },
   "contained" : [{
+    "resourceType" : "Organization",
+    "id" : "ex-MHV-organization-552",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "type" : {
+        "text" : "L"
+      },
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "552"
+    }],
+    "active" : true,
+    "name" : "DAYTON, OH VAMC",
+    "address" : [{
+      "line" : ["4100 W. THIRD STREET"],
+      "city" : "DAYTON",
+      "state" : "OH",
+      "postalCode" : "45428",
+      "country" : "USA"
+    }]
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "ex-MHV-practitioner-59845-VA660",
+    "identifier" : [{
+      "system" : "http://va.gov/systems/99VA4",
+      "value" : "59845-VA660"
+    }],
+    "name" : [{
+      "family" : "HALL",
+      "given" : ["LISA",
+      "V"]
+    }]
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "ex-MHV-organization-660",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "type" : {
+        "text" : "FI"
+      },
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "660"
+    }],
+    "active" : true,
+    "name" : "VA SALT LAKE CITY HEALTH CARE SYSTEM (660)",
+    "address" : [{
+      "line" : ["500 FOOTHILL BLVD."],
+      "city" : "SALT LAKE CITY",
+      "state" : "UT",
+      "postalCode" : "84148",
+      "country" : "USA"
+    }]
+  },
+  {
     "resourceType" : "Observation",
     "id" : "ex-MHV-chPanel-1103030001a",
     "meta" : {
@@ -71,7 +132,7 @@
       "reference" : "Patient/ex-MHV-patient-942104"
     },
     "performer" : [{
-      "reference" : "Organization/ex-MHV-organization-660"
+      "reference" : "#ex-MHV-organization-660"
     }],
     "valueQuantity" : {
       "value" : 97,
@@ -136,13 +197,13 @@
   "effectiveDateTime" : "2020-10-29T13:29:52-05:00",
   "issued" : "2020-10-29T13:29:52-05:00",
   "performer" : [{
-    "reference" : "Organization/ex-MHV-organization-552"
+    "reference" : "#ex-MHV-organization-552"
   },
   {
-    "reference" : "Practitioner/ex-MHV-practitioner-59845-VA660"
+    "reference" : "#ex-MHV-practitioner-59845-VA660"
   },
   {
-    "reference" : "Organization/ex-MHV-organization-660"
+    "reference" : "#ex-MHV-organization-660"
   }],
   "specimen" : [{
     "reference" : "#ex-MHV-chSpecimen-1103030001"

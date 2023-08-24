@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.2.1 - ci-build
 
 
 
@@ -196,7 +196,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.1). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -231,16 +231,6 @@
 
 
 
-
-
-
-  
-    
-      <li>
-        <a href="StructureDefinition-VA.MHV.PHR.organization-examples.html">Examples</a>
-      </li>
-    
-  
 
 
 
@@ -280,7 +270,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.2.0<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization|0.2.0"/></span>
+      <span class="copy-text">0.2.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization|0.2.1"/></span>
       </td>
     </tr>
 
@@ -330,6 +320,7 @@
   </li>
   <li>two identifier types defined TOid and HDRid</li>
   <li>used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can’t take a Location. (TechnicalDebt)</li>
+  <li>always a contained resource, so not exposed RESTfully</li>
 </ul>
 
 <p>Map to <a href="StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-phr-labsiteto">VIA labSiteID</a></p>
@@ -348,7 +339,6 @@
 <p><b>Usage:</b></p>
 <ul>
  <li>Refer to this Resource Profile: <a href="StructureDefinition-VA.MHV.PHR.chReport.html">VA MHV PHR HDR Chem-Hem Report</a>, <a href="StructureDefinition-VA.MHV.PHR.chTest.html">VA MHV PHR CH labTest.chemistryResults</a>, <a href="StructureDefinition-VA.MHV.PHR.diagnosticReport.html">VA MHV DiagnosticReport</a> and <a href="StructureDefinition-VA.MHV.PHR.labReport.html">VA MHV PHR Lab Report</a></li>
- <li>Examples for this Resource Profile: <a href="Organization-ex-MHV-organization-552.html">DAYTON, OH VAMC</a>, <a href="Organization-ex-MHV-organization-660.html">VA SALT LAKE CITY HEALTH CARE SYSTEM (660)</a>, <a href="Organization-ex-MHV-organization-979.html">Organization 979</a> and <a href="Organization-ex-MHV-organization-989.html">Lab Site 989</a></li>
 </ul>
 
 
@@ -1126,7 +1116,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

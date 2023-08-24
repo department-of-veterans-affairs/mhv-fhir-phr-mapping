@@ -6,18 +6,16 @@ Usage: #definition
 * title = "This indicates how MHV exposes PHR using FHIR"
 * status = #active
 * experimental = false
-* date = "2022-12-22"
-* kind = #instance
-//* kind = #requirements
-* implementation
-  * description = "MyHealtheVet"
-  * url = "https://www.myhealth.va.gov/"
+* date = "2023-08-23"
+//* kind = #instance
+* kind = #requirements
 * fhirVersion = #4.0.1
 * format[+] = #application/fhir+json
 * format[+] = #application/fhir+xml
 * rest
   * mode = #server
   * documentation = "MHV supports queries to PHR."
+  * interaction.code = #search-system
   * security
     * cors = false
     * description = "Security is system level, PGHD presumes MHV properly handles user (as patient) rights"
@@ -27,60 +25,12 @@ Usage: #definition
     * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "_id"
-      * type = #token
-    * searchParam[+]
-      * name = "clinical-status"
-      * type = #token
-    * searchParam[+]
-      * name = "patient"
-      * type = #token
-    * searchParam[+]
-      * name = "patient.identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "category"
-      * type = #token
-    * searchParam[+]
-      * name = "code"
-      * type = #token
-    * searchParam[+]
-      * name = "date"
-      * type = #token
   * resource[+]
     * type = #Condition
     * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"
     * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "_id"
-      * type = #token
-    * searchParam[+]
-      * name = "clinical-status"
-      * type = #token
-    * searchParam[+]
-      * name = "patient"
-      * type = #token
-    * searchParam[+]
-      * name = "patient.identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "category"
-      * type = #token
-    * searchParam[+]
-      * name = "code"
-      * type = #token
-    * searchParam[+]
-      * name = "recorded-date"
-      * type = #token
   * resource[+]
     * type = #Observation
     * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"
@@ -89,54 +39,12 @@ Usage: #definition
     * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "_id"
-      * type = #token
-    * searchParam[+]
-      * name = "status"
-      * type = #token
-    * searchParam[+]
-      * name = "patient"
-      * type = #token
-    * searchParam[+]
-      * name = "patient.identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "date"
-      * type = #token
-    * searchParam[+]
-      * name = "category"
-      * type = #token
-    * searchParam[+]
-      * name = "code"
-      * type = #token
   * resource[+]
     * type = #Immunization
     * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
     * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "_id"
-      * type = #token
-    * searchParam[+]
-      * name = "status"
-      * type = #token
-    * searchParam[+]
-      * name = "patient"
-      * type = #token
-    * searchParam[+]
-      * name = "patient.identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "date"
-      * type = #token
   * resource[+]
     * type = #DocumentReference
     * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.documentReference"
@@ -146,33 +54,6 @@ Usage: #definition
     * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "_id"
-      * type = #token
-    * searchParam[+]
-      * name = "status"
-      * type = #token
-    * searchParam[+]
-      * name = "patient"
-      * type = #token
-    * searchParam[+]
-      * name = "patient.identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "category"
-      * type = #token
-    * searchParam[+]
-      * name = "type"
-      * type = #token
-    * searchParam[+]
-      * name = "date"
-      * type = #token
-    * searchParam[+]
-      * name = "period"
-      * type = #token
   * resource[+]
     * type = #DiagnosticReport
     * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.diagnosticReport"
@@ -181,61 +62,10 @@ Usage: #definition
     * documentation = "MHV [PGHD use](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "_id"
-      * type = #token
-    * searchParam[+]
-      * name = "category"
-      * type = #token
-    * searchParam[+]
-      * name = "patient"
-      * type = #token
-    * searchParam[+]
-      * name = "patient.identifier"
-      * type = #token
-    * searchParam[+]
-      * name = "code"
-      * type = #token
-    * searchParam[+]
-      * name = "status"
-      * type = #token
-    * searchParam[+]
-      * name = "date"
-      * type = #token
-
-
-  * resource[+]
-    * type = #Organization
-    * interaction[+].code = #search-type
-    * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
-
-  * resource[+]
-    * type = #Location
-    * interaction[+].code = #search-type
-    * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
-
-  * resource[+]
-    * type = #Practitioner
-    * interaction[+].code = #search-type
-    * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
 
   * resource[+]
     * type = #Patient
+    * supportedProfile[+] = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.patient"
     * interaction[+].code = #search-type
     * interaction[+].code = #read
-    * searchParam[+]
-      * name = "identifier"
-      * type = #token
-  * interaction.code = #search-system
+

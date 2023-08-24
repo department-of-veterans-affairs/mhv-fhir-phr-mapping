@@ -10,6 +10,61 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 2823-3}\">POTASSIUM:SCNC:PT:SER/PLAS:QN:</span>, <span title=\"Codes: {http://loinc.org 2951-2}\">SODIUM:SCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( id:\u00a0942104\u00a0(use:\u00a0USUAL))</td></tr><tr><td>When For</td><td>2021-01-21 11:32:47-0500</td></tr><tr><td>Reported</td><td>2021-01-21 11:32:47-0500</td></tr><tr><td>Identifier:</td><td> id:\u00a01110200002\u00a0(use:\u00a0USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td><td><b>Note</b></td></tr><tr><td colspan=\"5\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"5\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"5\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"5\"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's Test 1/20/2021 - Second lab\nAdded Potassium test</p></div>"
   },
   "contained" : [{
+    "resourceType" : "Organization",
+    "id" : "ex-MHV-organization-552",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "type" : {
+        "text" : "L"
+      },
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "552"
+    }],
+    "active" : true,
+    "name" : "DAYTON, OH VAMC",
+    "address" : [{
+      "line" : ["4100 W. THIRD STREET"],
+      "city" : "DAYTON",
+      "state" : "OH",
+      "postalCode" : "45428",
+      "country" : "USA"
+    }]
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "ex-MHV-practitioner-14934-VA552",
+    "identifier" : [{
+      "system" : "http://va.gov/systems/99VA4",
+      "value" : "14934-VA552"
+    }],
+    "name" : [{
+      "family" : "HALL",
+      "given" : ["LISA",
+      "A"]
+    }]
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "ex-MHV-organization-989",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "LabSiteTO.989"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1234"
+    }],
+    "active" : true,
+    "name" : "Lab Site 989"
+  },
+  {
     "resourceType" : "Observation",
     "id" : "ex-MHV-chPanel-1a",
     "meta" : {
@@ -71,7 +126,7 @@
       "reference" : "Patient/ex-MHV-patient-942104"
     },
     "performer" : [{
-      "reference" : "Organization/ex-MHV-organization-552"
+      "reference" : "#ex-MHV-organization-552"
     }],
     "valueQuantity" : {
       "value" : 3.5,
@@ -154,7 +209,7 @@
       "reference" : "Patient/ex-MHV-patient-942104"
     },
     "performer" : [{
-      "reference" : "Organization/ex-MHV-organization-552"
+      "reference" : "#ex-MHV-organization-552"
     }],
     "valueQuantity" : {
       "value" : 138,
@@ -234,13 +289,13 @@
   "effectiveDateTime" : "2021-01-21T11:32:47-05:00",
   "issued" : "2021-01-21T11:32:47-05:00",
   "performer" : [{
-    "reference" : "Organization/ex-MHV-organization-552"
+    "reference" : "#ex-MHV-organization-552"
   },
   {
-    "reference" : "Practitioner/ex-MHV-practitioner-14934-VA552"
+    "reference" : "#ex-MHV-practitioner-14934-VA552"
   },
   {
-    "reference" : "Organization/ex-MHV-organization-989"
+    "reference" : "#ex-MHV-organization-989"
   }],
   "specimen" : [{
     "reference" : "#ex-MHV-chSpecimen-1"

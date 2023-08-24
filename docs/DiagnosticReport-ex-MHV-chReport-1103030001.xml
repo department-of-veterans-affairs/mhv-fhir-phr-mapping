@@ -10,6 +10,70 @@
     <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://loinc.org 2345-7}">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( id: 942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2020-10-29 13:29:52-0500</td></tr><tr><td>Reported</td><td>2020-10-29 13:29:52-0500</td></tr><tr><td>Identifier:</td><td> id: 1103030001 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's test 10/29/20</p></div>
   </text>
   <contained>
+    <Organization>
+      <id value="ex-MHV-organization-552"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <text value="L"/>
+        </type>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="552"/>
+      </identifier>
+      <active value="true"/>
+      <name value="DAYTON, OH VAMC"/>
+      <address>
+        <line value="4100 W. THIRD STREET"/>
+        <city value="DAYTON"/>
+        <state value="OH"/>
+        <postalCode value="45428"/>
+        <country value="USA"/>
+      </address>
+    </Organization>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="ex-MHV-practitioner-59845-VA660"/>
+      <identifier>
+        <system value="http://va.gov/systems/99VA4"/>
+        <value value="59845-VA660"/>
+      </identifier>
+      <name>
+        <family value="HALL"/>
+        <given value="LISA"/>
+        <given value="V"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="ex-MHV-organization-660"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <text value="FI"/>
+        </type>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="660"/>
+      </identifier>
+      <active value="true"/>
+      <name value="VA SALT LAKE CITY HEALTH CARE SYSTEM (660)"/>
+      <address>
+        <line value="500 FOOTHILL BLVD."/>
+        <city value="SALT LAKE CITY"/>
+        <state value="UT"/>
+        <postalCode value="84148"/>
+        <country value="USA"/>
+      </address>
+    </Organization>
+  </contained>
+  <contained>
     <Observation>
       <id value="ex-MHV-chPanel-1103030001a"/>
       <meta>
@@ -72,7 +136,7 @@
         <reference value="Patient/ex-MHV-patient-942104"/>
       </subject>
       <performer>
-        <reference value="Organization/ex-MHV-organization-660"/>
+        <reference value="#ex-MHV-organization-660"/>
       </performer>
       <valueQuantity>
         <value value="97"/>
@@ -139,13 +203,13 @@
   <effectiveDateTime value="2020-10-29T13:29:52-05:00"/>
   <issued value="2020-10-29T13:29:52-05:00"/>
   <performer>
-    <reference value="Organization/ex-MHV-organization-552"/>
+    <reference value="#ex-MHV-organization-552"/>
   </performer>
   <performer>
-    <reference value="Practitioner/ex-MHV-practitioner-59845-VA660"/>
+    <reference value="#ex-MHV-practitioner-59845-VA660"/>
   </performer>
   <performer>
-    <reference value="Organization/ex-MHV-organization-660"/>
+    <reference value="#ex-MHV-organization-660"/>
   </performer>
   <specimen>
     <reference value="#ex-MHV-chSpecimen-1103030001"/>

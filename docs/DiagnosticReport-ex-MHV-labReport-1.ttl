@@ -49,8 +49,7 @@
      ] ;
      fhir:effective [ fhir:v "1995-08-03T14:49:00Z"^^xsd:dateTime ] ;
      fhir:performer ( [
-       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Organization/ex-MHV-organization-989> ;
-       fhir:reference [ fhir:v "Organization/ex-MHV-organization-989" ]
+       fhir:reference [ fhir:v "#ex-MHV-organization-989" ]
      ] ) ;
      fhir:value [ fhir:v "NO OVA OR PARASITES FOUND" ]
   ] [
@@ -79,6 +78,25 @@
      fhir:collection [
        fhir:collected [ fhir:v "1995-07-30"^^xsd:date ]
      ]
+  ] [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "ex-MHV-organization-989" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "LabSiteTO.989" ]
+     ] [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/us-npi"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "1234" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:name [ fhir:v "Lab Site 989" ]
   ] ) ; # 
   fhir:identifier ( [
      fhir:use [ fhir:v "usual" ] ;
@@ -107,8 +125,7 @@
   fhir:effective [ fhir:v "1995-08-03T14:49:00Z"^^xsd:dateTime] ; # 
   fhir:issued [ fhir:v "1995-08-03T14:49:00Z"^^xsd:dateTime] ; # 
   fhir:performer ( [
-     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Organization/ex-MHV-organization-989> ;
-     fhir:reference [ fhir:v "Organization/ex-MHV-organization-989" ]
+     fhir:reference [ fhir:v "#ex-MHV-organization-989" ]
   ] ) ; # 
   fhir:specimen ( [
      fhir:reference [ fhir:v "#ex-MHV-specimen-1" ]

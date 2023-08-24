@@ -13,6 +13,7 @@ A profile on the Location resource for MHV PHR exposing Location using FHIR API.
 - `identifier`
   - system = urn:oid:2.16.840.1.113883.4.349
 - `name` is the name as known
+- always a contained resource, so not exposed RESTfully
 
 NOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-phr-hospitallocationto).
 """
@@ -24,7 +25,7 @@ NOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.loc
   TOid 1..1
 * identifier[TOid].use = #usual
 * identifier[TOid].system obeys TOid-startswithoid
-* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`HospitalLocationTO` | `.` | {HospitalLocationTO.id}"
 * name 1..1
 * status 0..0
@@ -103,7 +104,7 @@ Instance: ex-MHV-location-984
 InstanceOf: MHVlocation
 Title: "Location DAYTSHR TEST Lab"
 Description: "This example derived off of a mock HospitalLocationTO"
-Usage: #example
+Usage: #inline
 * name = "DAYTSHR TEST LAB"
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.984"
@@ -119,7 +120,7 @@ Instance: ex-MHV-location-552
 InstanceOf: MHVlocation
 Title: "Location DAYTON Lab"
 Description: "This example derived off of a mock NoteTO"
-Usage: #example
+Usage: #inline
 * name = "DAYTON"
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.552"
@@ -135,7 +136,7 @@ Instance: ex-MHV-location-989
 InstanceOf: MHVlocation
 Title: "Location DAYT29 TEST Lab"
 Description: "This example derived off of a mock ClinicalProcedureTO"
-Usage: #example
+Usage: #inline
 * name = "DAYT29 TEST LAB"
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.989"
@@ -151,7 +152,7 @@ Instance: ex-MHV-location-2938
 InstanceOf: MHVlocation
 Title: "Location PCT_O PATIL (F/U)"
 Description: "This example derived off of a mock VitalSignTO"
-Usage: #example
+Usage: #inline
 * name = "PCT_O PATIL (F/U)"
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.2938"

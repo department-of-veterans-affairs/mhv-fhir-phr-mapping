@@ -65,6 +65,7 @@ profile in sushi
 
 ```fs
 * identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`ClinicalProcedureTO` | `.` | {ClinicalProcedureTO.id}"
 ```
@@ -87,6 +88,7 @@ Accession ID will be `use` of `formal`, and identify the `type` as `ACSN`, and t
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = http://terminology.hl7.org/CodeSystem/v2-0203#ACSN
 * identifier[accessionNumber].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[accessionNumber].system obeys TOid-startswithoid
 * identifier[accessionNumber].value ^short = "`Accession` | `.` | {ImagingExamTO.accessionNum}"
 ```
 
@@ -97,6 +99,7 @@ Case Number will be `use` of `secondary`, and use the prefix `CaseNum`
 ```fs
 * identifier[casenum].use = #secondary
 * identifier[casenum].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[casenum].system obeys TOid-startswithoid
 * identifier[casenum].value ^short = "`CaseNum` | `.` | {ImagingExam.casenum}"
 ```
 
@@ -104,17 +107,22 @@ Case Number will be `use` of `secondary`, and use the prefix `CaseNum`
 
 Organization resources are different in that they are defining a facility. So, we use the identifier.system value of the fixed OID, and the value of the station
 
+```fs
+* identifier[TOid].system 1..1
+* identifier[TOid] ^patternIdentifier.system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].value ^short = "{stationNumber} or `LabSiteTO.` + {LabSiteTO.id}"
+* identifier[TOid].use = #usual
+```
+
 #### HospitalLocationTO
 
 HospitalLocationTO will be a `use` of `usual`, and use the prefix `HospitalLocationTO`, but will use the root OID **without the station number**
 
 ```fs
 * identifier[TOid].use = #usual
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value = "`HospitalLocationTO` | `.` | {HospitalLocationTO.id}"
 ```
-
-TODO: possibility we don't need the prefix.
 
 #### HDR orderingFacilityIdentifier
 
@@ -122,10 +130,10 @@ orderingFacilityIdentifier will be a `.use` of `usual`, and use the fixed OID fo
 
 ```fs
 * identifier[TOid].use = #usual
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
 * identifier[TOid].value ^short = "{orderingFacilityIdentifier.identity}"
 ```
 
 #### Patient
 
-I don't know enough about how patient id is managed. I understand that we are just going to use the MHV assigned patient identifier and nothing more.
+I don't know enough about how patient id is managed. I understand that we are just going to use the MHV assigned patient identifier and nothing more. The Patient resource is populated from the MHV eVault patient details.

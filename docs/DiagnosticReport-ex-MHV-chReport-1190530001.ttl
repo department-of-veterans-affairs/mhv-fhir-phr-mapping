@@ -21,6 +21,62 @@
      fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 4548-4}\">HEMOGLOBIN A1C/HEMOGLOBIN.TOTAL:MFR:PT:BLD:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( id: 942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 11:11:33-0500</td></tr><tr><td>Reported</td><td>2019-02-22 11:11:33-0500</td></tr><tr><td>Identifier:</td><td> id: 1190530001 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td></tr><tr><td colspan=\"4\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"4\"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's Test 2/22/19</p></div>"
   ] ; # 
   fhir:contained ( [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "ex-MHV-organization-979" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:type [
+         fhir:text [ fhir:v "FI" ]
+       ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "979" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:name [ fhir:v "Organization 979" ]
+  ] [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "ex-MHV-practitioner-59845-VA660" ] ;
+     fhir:identifier ( [
+       fhir:system [ fhir:v "http://va.gov/systems/99VA4"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "59845-VA660" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:family [ fhir:v "HALL" ] ;
+       fhir:given ( [ fhir:v "LISA" ] [ fhir:v "V" ] )
+     ] )
+  ] [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "ex-MHV-organization-660" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:type [
+         fhir:text [ fhir:v "FI" ]
+       ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "660" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:name [ fhir:v "VA SALT LAKE CITY HEALTH CARE SYSTEM (660)" ] ;
+     fhir:address ( [
+       fhir:line ( [ fhir:v "500 FOOTHILL BLVD." ] ) ;
+       fhir:city [ fhir:v "SALT LAKE CITY" ] ;
+       fhir:state [ fhir:v "UT" ] ;
+       fhir:postalCode [ fhir:v "84148" ] ;
+       fhir:country [ fhir:v "USA" ]
+     ] )
+  ] [
      a fhir:Observation ;
      fhir:id [ fhir:v "ex-MHV-chPanel-1190530001a" ] ;
      fhir:meta [
@@ -88,8 +144,7 @@
        fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
      ] ;
      fhir:performer ( [
-       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Organization/ex-MHV-organization-660> ;
-       fhir:reference [ fhir:v "Organization/ex-MHV-organization-660" ]
+       fhir:reference [ fhir:v "#ex-MHV-organization-660" ]
      ] ) ;
      fhir:value [
        a fhir:Quantity ;
@@ -164,14 +219,11 @@
   fhir:effective [ fhir:v "2019-02-22T11:11:33-05:00"^^xsd:dateTime] ; # 
   fhir:issued [ fhir:v "2019-02-22T11:11:33-05:00"^^xsd:dateTime] ; # 
   fhir:performer ( [
-     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Organization/ex-MHV-organization-979> ;
-     fhir:reference [ fhir:v "Organization/ex-MHV-organization-979" ]
+     fhir:reference [ fhir:v "#ex-MHV-organization-979" ]
   ] [
-     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Organization/ex-MHV-organization-660> ;
-     fhir:reference [ fhir:v "Organization/ex-MHV-organization-660" ]
+     fhir:reference [ fhir:v "#ex-MHV-organization-660" ]
   ] [
-     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Practitioner/ex-MHV-practitioner-59845-VA660> ;
-     fhir:reference [ fhir:v "Practitioner/ex-MHV-practitioner-59845-VA660" ]
+     fhir:reference [ fhir:v "#ex-MHV-practitioner-59845-VA660" ]
   ] ) ; # 
   fhir:specimen ( [
      fhir:reference [ fhir:v "#ex-MHV-chSpecimen-1190530001" ]

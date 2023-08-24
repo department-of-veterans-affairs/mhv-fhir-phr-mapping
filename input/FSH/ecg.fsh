@@ -30,6 +30,7 @@ A profile on the DocumentReference resource for MHV PHR exposing ECG/EKG (Clinic
   TOid 1..1
 * identifier[TOid].use = #usual
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].value ^short = "`ClinicalProcedureTO` | `.` | {ClinicalProcedureTO.id}"
 * context.encounter 0..0
 * content.attachment.creation 0..0

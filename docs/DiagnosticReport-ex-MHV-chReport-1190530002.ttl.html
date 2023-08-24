@@ -67,7 +67,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.2.1 - ci-build
 
 
 
@@ -194,7 +194,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.1). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -279,7 +279,52 @@
 <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
 fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;h2&gt;&lt;span title=\&quot;Codes: \&quot;&gt;CH&lt;/span&gt; (&lt;span title=\&quot;Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\&quot;&gt;Laboratory&lt;/span&gt;, &lt;span title=\&quot;Codes: {http://loinc.org 2345-7}\&quot;&gt;GLUCOSE:MCNC:PT:SER/PLAS:QN:&lt;/span&gt;) &lt;/h2&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;Subject&lt;/td&gt;&lt;td&gt;&lt;b&gt;L MHVSYSTEST &lt;/b&gt; unknown, DoB: 1000-01-01 ( id: 942104 (use: USUAL))&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;When For&lt;/td&gt;&lt;td&gt;2019-02-22 21:12:57-0500&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Reported&lt;/td&gt;&lt;td&gt;2019-02-22 21:12:57-0500&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;Identifier:&lt;/td&gt;&lt;td&gt; id: 1190530002 (use: USUAL)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;Report Details&lt;/b&gt;&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Value&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Reference Range&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=\&quot;3\&quot;&gt;&lt;i&gt;This Observation could not be resolved&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan=\&quot;3\&quot;&gt;&lt;i&gt;This Observation could not be resolved&lt;/i&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;Lisa's test 2/22/19&lt;/p&gt;&lt;/div&gt;&quot;
   ] ; # 
-  <a href="http://hl7.org/fhir/R4/observation.html#Observation">fhir:contained</a> ( [
+  <a href="http://hl7.org/fhir/R4/organization.html#Organization">fhir:contained</a> ( [
+<a href="http://hl7.org/fhir/R4/organization.html">a</a> fhir:Organization ;
+<a href="http://hl7.org/fhir/R4/organization.html#Organization.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;ex-MHV-organization-979&quot; ] ;
+<a href="http://hl7.org/fhir/R4/organization.html#Organization.meta">fhir:meta</a> [
+      ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization&gt;       ] )     ] ;
+    ( <a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">fhir:identifier</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">fhir:use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;usual&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">fhir:type</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;FI&quot; ]       ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:oid:2.16.840.1.113883.4.349&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;979&quot; ]     ] ) ;
+<a href="http://hl7.org/fhir/R4/organization.html#Organization.active">fhir:active</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> &quot;true&quot;^^xsd:boolean ] ;
+<a href="http://hl7.org/fhir/R4/organization.html#Organization.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Organization 979&quot; ]
+  ] [
+<a href="http://hl7.org/fhir/R4/practitioner.html">a</a> fhir:Practitioner ;
+<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ex-MHV-practitioner-59845-VA660&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">fhir:identifier</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;http://va.gov/systems/99VA4&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;59845-VA660&quot; ]     ] ) ;
+    ( <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">fhir:name</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">fhir:family</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;HALL&quot; ] ;
+      ( <a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.given">fhir:given</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;LISA&quot; ] [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;V&quot; ] )     ] )
+  ] [
+<a href="http://hl7.org/fhir/R4/organization.html">a</a> fhir:Organization ;
+<a href="http://hl7.org/fhir/R4/organization.html#Organization.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;ex-MHV-organization-660&quot; ] ;
+<a href="http://hl7.org/fhir/R4/organization.html#Organization.meta">fhir:meta</a> [
+      ( <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">fhir:profile</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#canonical">fhir:v</a> &quot;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization&quot;^^xsd:anyURI ;
+<a href="http://hl7.org/fhir/R4/rdf.html#reference">fhir:link</a> &lt;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization&gt;       ] )     ] ;
+    ( <a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">fhir:identifier</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">fhir:use</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;usual&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.type">fhir:type</a> [
+<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">fhir:text</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;FI&quot; ]       ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">fhir:system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:v</a> &quot;urn:oid:2.16.840.1.113883.4.349&quot;^^xsd:anyURI ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;660&quot; ]     ] ) ;
+<a href="http://hl7.org/fhir/R4/organization.html#Organization.active">fhir:active</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:v</a> &quot;true&quot;^^xsd:boolean ] ;
+<a href="http://hl7.org/fhir/R4/organization.html#Organization.name">fhir:name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;VA SALT LAKE CITY HEALTH CARE SYSTEM (660)&quot; ] ;
+    ( <a href="http://hl7.org/fhir/R4/organization.html#Organization.address">fhir:address</a> [
+      ( <a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.line">fhir:line</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;500 FOOTHILL BLVD.&quot; ] ) ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.city">fhir:city</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;SALT LAKE CITY&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.state">fhir:state</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;UT&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.postalCode">fhir:postalCode</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;84148&quot; ] ;
+<a href="http://hl7.org/fhir/R4/datatypes.html#Address#Address.country">fhir:country</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;USA&quot; ]     ] )
+  ] [
 <a href="http://hl7.org/fhir/R4/observation.html">a</a> fhir:Observation ;
 <a href="http://hl7.org/fhir/R4/observation.html#Observation.id">fhir:id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#id">fhir:v</a> &quot;ex-MHV-chPanel-1190530002a&quot; ] ;
 <a href="http://hl7.org/fhir/R4/observation.html#Observation.meta">fhir:meta</a> [
@@ -328,7 +373,7 @@ a loinc:2345-7 ;
 <a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">fhir:subject</a> [
 <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Patient/ex-MHV-patient-942104&quot; ]     ] ;
     ( <a href="http://hl7.org/fhir/R4/observation.html#Observation.performer">fhir:performer</a> [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Organization/ex-MHV-organization-660&quot; ]     ] ) ;
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;#ex-MHV-organization-660&quot; ]     ] ) ;
 <a href="http://hl7.org/fhir/R4/observation.html#Observation.value[x]">fhir:value</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#Quantity">a</a> fhir:Quantity ;
 <a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">fhir:value</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">fhir:v</a> &quot;90&quot;^^xsd:decimal ] ;
@@ -384,11 +429,11 @@ a loinc:2345-7 ;
   <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.effective[x]">fhir:effective</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">fhir:v</a> &quot;2019-02-22T21:12:57-05:00&quot;^^xsd:dateTime] ; # 
   <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.issued">fhir:issued</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#instant">fhir:v</a> &quot;2019-02-22T21:12:57-05:00&quot;^^xsd:dateTime] ; # 
   <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.performer">fhir:performer</a> ( [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Organization/ex-MHV-organization-979&quot; ]
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;#ex-MHV-organization-979&quot; ]
   ] [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Organization/ex-MHV-organization-660&quot; ]
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;#ex-MHV-organization-660&quot; ]
   ] [
-<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;Practitioner/ex-MHV-practitioner-59845-VA660&quot; ]
+<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;#ex-MHV-practitioner-59845-VA660&quot; ]
   ] ) ; # 
   <a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.specimen">fhir:specimen</a> ( [
 <a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">fhir:reference</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:v</a> &quot;#ex-MHV-chSpecimen-1190530002&quot; ]
@@ -453,7 +498,7 @@ a loinc:2345-7 ;
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

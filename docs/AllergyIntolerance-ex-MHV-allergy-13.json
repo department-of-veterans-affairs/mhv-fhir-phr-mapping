@@ -6,10 +6,27 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"ex-MHV-allergy-13\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;ex-MHV-allergy-13&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.allergyIntolerance.html\">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>identifier</b>: id:\u00a069123\u00a0(use:\u00a0USUAL)</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>category</b>: environment</p><p><b>code</b>: BEE STINGS <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>patient</b>: <a href=\"Patient-ex-MHV-patient-89486.html\">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>onset</b>: 2012-08-24 15:47:00+0000</p><p><b>recorder</b>: <span>??</span></p><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: RESPIRATORY DISTRESS <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (unknown#4637183)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: SWELLING <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (unknown#4637164)</span></p></blockquote></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: AllergyIntolerance</b><a name=\"ex-MHV-allergy-13\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource AllergyIntolerance &quot;ex-MHV-allergy-13&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.allergyIntolerance.html\">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>identifier</b>: id:\u00a069123\u00a0(use:\u00a0OFFICIAL)</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-allergyintolerance-clinical.html\">AllergyIntolerance Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Unconfirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-allergyintolerance-verification.html\">AllergyIntolerance Verification Status</a>#unconfirmed)</span></p><p><b>category</b>: environment</p><p><b>code</b>: BEE STINGS <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>patient</b>: <a href=\"Patient-ex-MHV-patient-89486.html\">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>onset</b>: 2012-08-24 15:47:00+0000</p><p><b>recorder</b>: <span>??</span></p><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: RESPIRATORY DISTRESS <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (unknown#4637183)</span></p></blockquote><blockquote><p><b>reaction</b></p><p><b>manifestation</b>: SWELLING <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (unknown#4637164)</span></p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #ex-MHV-organization-979</b><a name=\"ex-MHV-organization-979\"> </a></p><p><b>identifier</b>: FI:\u00a0979\u00a0(use:\u00a0USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: Organization 979</p></blockquote></div>"
   },
+  "contained" : [{
+    "resourceType" : "Organization",
+    "id" : "ex-MHV-organization-979",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "type" : {
+        "text" : "FI"
+      },
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "979"
+    }],
+    "active" : true,
+    "name" : "Organization 979"
+  }],
   "identifier" : [{
-    "use" : "usual",
+    "use" : "official",
     "system" : "http://va.gov/systems/979_120.8",
     "value" : "69123"
   }],
@@ -37,7 +54,7 @@
     "extension" : [{
       "url" : "http://hl7.org/fhir/StructureDefinition/alternate-reference",
       "valueReference" : {
-        "reference" : "Organization/ex-MHV-organization-979"
+        "reference" : "#ex-MHV-organization-979"
       }
     }]
   },

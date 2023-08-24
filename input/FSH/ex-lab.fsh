@@ -79,6 +79,7 @@ Example from a mock labReportTO
 * result[+] = Reference(ex-MHV-labTest-1)
 * contained[+] = ex-MHV-specimen-1
 * specimen[+] = Reference(ex-MHV-specimen-1)
+* contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
 * conclusion = """
 Accession [UID]: PARAS 95 264 []            Received: Aug 01, 1995@11:02
@@ -234,6 +235,7 @@ Example from a mock labReportTO
 * result[+] = Reference(ex-MHV-labTest-4)
 * contained[+] = ex-MHV-specimen-2
 * specimen[+] = Reference(ex-MHV-specimen-2)
+* contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
 * conclusion = """
 Accession [UID]: PARAS 95 263 []            Received: Aug 01, 1995@11:02
@@ -391,6 +393,7 @@ Example from a mock labReportTO
 * result[+] = Reference(ex-MHV-labTest-7)
 * contained[+] = ex-MHV-specimen-3
 * specimen[+] = Reference(ex-MHV-specimen-3)
+* contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
 * conclusion = """
 Accession [UID]: PARAS 95 262 []            Received: Aug 01, 1995@11:00
@@ -445,6 +448,7 @@ Example from a mock labReportTO
 * identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-4
 * specimen[+] = Reference(ex-MHV-specimen-4)
+* contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
 * conclusion = """
 Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD
@@ -513,6 +517,7 @@ Example from a mock labReportTO
 * identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-5
 * specimen[+] = Reference(ex-MHV-specimen-5)
+* contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
 * conclusion = """
 Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD
@@ -602,6 +607,7 @@ Example from a mock labReportTO
 * identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-6
 * specimen[+] = Reference(ex-MHV-specimen-6)
+* contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
 * conclusion = """
 Date Spec taken: Aug 09, 1999        Pathologist:SEETHA SURYAPRASAD MD
@@ -669,6 +675,7 @@ Example from a mock labReportTO
 * identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-7
 * specimen[+] = Reference(ex-MHV-specimen-7)
+* contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
 * conclusion = """
 Date Spec taken: Sep 08, 1997        Pathologist:JAZBIEH MOEZZI MD
@@ -724,6 +731,7 @@ Example from a mock labReportTO
 * identifier[TOid].use = #usual
 * contained[+] = ex-MHV-specimen-8
 * specimen[+] = Reference(ex-MHV-specimen-8)
+* contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
 * conclusion = """
 Date Spec taken: May 12, 1997        Pathologist:SEETHA SURYAPRASAD MD

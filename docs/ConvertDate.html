@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.2.1 - ci-build
 
 
 
@@ -199,7 +199,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.1). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>ConvertDate()</h2>
   
 
@@ -238,6 +238,20 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 </div>
 <p>There appears to be different formats of timestamps. First is Fileman Date, HL7 date time, and ClinicalProcedureTO.timestamp</p>
+
+<p>For MVP we will focus on “Best Effort” translation into a <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">FHIR DateTime</a> datatype. The specific problem that we have is that often the data comes to us without a TimeZone, and FHIR requires that a timezone is given if a time is given. Within the source Vista it is understood what timezone would be used. Yet even a given timezone for a given Vista is not sufficient given that some Vista servers span timezones.</p>
+
+<ul>
+  <li>We will convert to Date</li>
+  <li>If we are given a timezone, then we will include the time and timezone</li>
+  <li>If we can’t determine the timezone, then will not include the time</li>
+</ul>
+
+<p>Future might be different</p>
+<ul>
+  <li>We do have algorithm in MHV that is used in Appointments, but it is not clear that this fully supports all the timestamps outside of the scope of Appointments. So this would need to be made more robust. Including that this does not yet support fileman format, or proper HL7 v2 format</li>
+  <li>We could implement time conversion as a service. Concern would be on how performant that is.</li>
+</ul>
 
 <h3 id="fileman-date">Fileman Date</h3>
 
@@ -398,7 +412,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

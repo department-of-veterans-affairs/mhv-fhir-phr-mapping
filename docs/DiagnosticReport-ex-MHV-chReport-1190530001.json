@@ -10,6 +10,60 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 4548-4}\">HEMOGLOBIN A1C/HEMOGLOBIN.TOTAL:MFR:PT:BLD:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( id:\u00a0942104\u00a0(use:\u00a0USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 11:11:33-0500</td></tr><tr><td>Reported</td><td>2019-02-22 11:11:33-0500</td></tr><tr><td>Identifier:</td><td> id:\u00a01190530001\u00a0(use:\u00a0USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td></tr><tr><td colspan=\"4\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"4\"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's Test 2/22/19</p></div>"
   },
   "contained" : [{
+    "resourceType" : "Organization",
+    "id" : "ex-MHV-organization-979",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "type" : {
+        "text" : "FI"
+      },
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "979"
+    }],
+    "active" : true,
+    "name" : "Organization 979"
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "ex-MHV-practitioner-59845-VA660",
+    "identifier" : [{
+      "system" : "http://va.gov/systems/99VA4",
+      "value" : "59845-VA660"
+    }],
+    "name" : [{
+      "family" : "HALL",
+      "given" : ["LISA",
+      "V"]
+    }]
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "ex-MHV-organization-660",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "type" : {
+        "text" : "FI"
+      },
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "660"
+    }],
+    "active" : true,
+    "name" : "VA SALT LAKE CITY HEALTH CARE SYSTEM (660)",
+    "address" : [{
+      "line" : ["500 FOOTHILL BLVD."],
+      "city" : "SALT LAKE CITY",
+      "state" : "UT",
+      "postalCode" : "84148",
+      "country" : "USA"
+    }]
+  },
+  {
     "resourceType" : "Observation",
     "id" : "ex-MHV-chPanel-1190530001a",
     "meta" : {
@@ -71,7 +125,7 @@
       "reference" : "Patient/ex-MHV-patient-942104"
     },
     "performer" : [{
-      "reference" : "Organization/ex-MHV-organization-660"
+      "reference" : "#ex-MHV-organization-660"
     }],
     "valueQuantity" : {
       "value" : 29,
@@ -143,13 +197,13 @@
   "effectiveDateTime" : "2019-02-22T11:11:33-05:00",
   "issued" : "2019-02-22T11:11:33-05:00",
   "performer" : [{
-    "reference" : "Organization/ex-MHV-organization-979"
+    "reference" : "#ex-MHV-organization-979"
   },
   {
-    "reference" : "Organization/ex-MHV-organization-660"
+    "reference" : "#ex-MHV-organization-660"
   },
   {
-    "reference" : "Practitioner/ex-MHV-practitioner-59845-VA660"
+    "reference" : "#ex-MHV-practitioner-59845-VA660"
   }],
   "specimen" : [{
     "reference" : "#ex-MHV-chSpecimen-1190530001"

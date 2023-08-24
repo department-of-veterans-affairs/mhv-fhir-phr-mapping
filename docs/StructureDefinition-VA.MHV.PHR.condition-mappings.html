@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.2.1 - ci-build
 
 
 
@@ -196,7 +196,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.1). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -302,7 +302,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Event.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Event.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x]</td><td>Event.occurrence[x]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>Event.occurrence[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;evidence</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>Event.note</td> </tr>
 </table>
@@ -347,7 +346,6 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x]</td><td>PRB-16</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>PRB-16</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>REL-11</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>REL-7.1 identifier + REL-7.12 type code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE child of PRB</td> </tr>
@@ -385,9 +383,7 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>.participation[typeCode=SBJ].role[classCode=PAT]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x]</td><td>.effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;age at onset&quot;].value</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>.effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;age at onset&quot;].value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;abatement[x]</td><td>.effectiveTime.high or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;age at remission&quot;].value or .inboundRelationship[typeCode=SUBJ]source[classCode=CONC, moodCode=EVN].status=completed</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;abatement[x] (abatementDateTime)</td><td>.effectiveTime.high or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=&quot;age at remission&quot;].value or .inboundRelationship[typeCode=SUBJ]source[classCode=CONC, moodCode=EVN].status=completed</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>.participation[typeCode=AUT].time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>.participation[typeCode=INF].role</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;evidence</td><td>.outboundRelationship[typeCode=SPRT].target[classCode=OBS, moodCode=EVN]</td> </tr>
@@ -410,9 +406,7 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;onset[x]</td><td>FiveWs.init</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>FiveWs.init</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;abatement[x]</td><td>FiveWs.done[x]</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;abatement[x] (abatementDateTime)</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>FiveWs.source</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;evidence</td><td></td> </tr>
@@ -437,8 +431,8 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>ICD-9 # ProblemTO.icd</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ProblemTO.type.name</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;onset[x] (onsetDateTime)</td><td>ProblemTO.onsetDate</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;abatement[x] (abatementDateTime)</td><td>ProblemTO.abatementDateTime</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;onset[x]</td><td>ProblemTO.onsetDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;abatement[x]</td><td>ProblemTO.abatementDateTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>ProblemTO.modifiedDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;asserter</td><td>GetPractitioner(ProblemTO.observer)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;evidence</td><td></td> </tr>
@@ -520,7 +514,7 @@ OR &lt; 272379006 |Event|</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

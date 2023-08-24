@@ -317,6 +317,9 @@ Example from a mock labTestPromises (1110200002)
 Lisa's Test 1/20/2021 - Second lab
 Added Potassium test
 """
+* contained[+] = ex-MHV-organization-552
+* contained[+] = ex-MHV-practitioner-14934-VA552
+* contained[+] = ex-MHV-organization-989
 * performer[+] = Reference(Organization/ex-MHV-organization-552)
 * performer[+] = Reference(Practitioner/ex-MHV-practitioner-14934-VA552)
 * performer[+] = Reference(Organization/ex-MHV-organization-989)

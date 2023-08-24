@@ -43,7 +43,7 @@ MODERATE YEAST</p></div>
       </subject>
       <effectiveDateTime value="1995-08-03T14:49:00Z"/>
       <performer>
-        <reference value="Organization/ex-MHV-organization-989"/>
+        <reference value="#ex-MHV-organization-989"/>
       </performer>
       <valueString value="NO OVA OR PARASITES FOUND"/>
     </Observation>
@@ -74,7 +74,7 @@ MODERATE YEAST</p></div>
       </subject>
       <effectiveDateTime value="1995-08-03T14:49:00Z"/>
       <performer>
-        <reference value="Organization/ex-MHV-organization-989"/>
+        <reference value="#ex-MHV-organization-989"/>
       </performer>
       <valueString value="MODERATE WBC'S SEEN"/>
     </Observation>
@@ -105,7 +105,7 @@ MODERATE YEAST</p></div>
       </subject>
       <effectiveDateTime value="1995-08-03T14:49:00Z"/>
       <performer>
-        <reference value="Organization/ex-MHV-organization-989"/>
+        <reference value="#ex-MHV-organization-989"/>
       </performer>
       <valueString value="MODERATE YEAST"/>
     </Observation>
@@ -135,6 +135,25 @@ MODERATE YEAST</p></div>
       </collection>
     </Specimen>
   </contained>
+  <contained>
+    <Organization>
+      <id value="ex-MHV-organization-989"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="LabSiteTO.989"/>
+      </identifier>
+      <identifier>
+        <system value="http://hl7.org/fhir/sid/us-npi"/>
+        <value value="1234"/>
+      </identifier>
+      <active value="true"/>
+      <name value="Lab Site 989"/>
+    </Organization>
+  </contained>
   <identifier>
     <use value="usual"/>
     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
@@ -160,7 +179,7 @@ MODERATE YEAST</p></div>
   <effectiveDateTime value="1995-08-03T14:49:00Z"/>
   <issued value="1995-08-03T14:49:00Z"/>
   <performer>
-    <reference value="Organization/ex-MHV-organization-989"/>
+    <reference value="#ex-MHV-organization-989"/>
   </performer>
   <specimen>
     <reference value="#ex-MHV-specimen-2"/>

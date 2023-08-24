@@ -75,6 +75,9 @@ Example from a mock labTestPromises (1190740001)
 * conclusion = """
 Lisa's 3/15 test
 """
+* contained[+] = ex-MHV-organization-979
+* contained[+] = ex-MHV-practitioner-59845-VA660
+* contained[+] = ex-MHV-organization-660
 * performer[+] = Reference(Organization/ex-MHV-organization-979)
 * performer[+] = Reference(Organization/ex-MHV-organization-660)
 * performer[+] = Reference(Practitioner/ex-MHV-practitioner-59845-VA660)

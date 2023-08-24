@@ -5,6 +5,8 @@ To support functions and resources:
 
 To support the primary FHIR Resources, there are some utility Resources that will be needed. These will be created upon demand, based on available details. Note that when we do not get a source `id` for the object, we will use a `contained` resource with the details we are given. Thus we will use a reference to a resource, that reference will most of the time be to a retrievable resource, but may be to a contained resource.
 
+MVP decision is that these will all be contained. They will not thus be available RESTfully. And thus any references to the following 'functions' are really just processing the contained resource.
+
 #### GetPractitioner()
 
 Note that when we do not get an `id` for the user or author, we will use a `contained` Practitioner resource with the details we are given. The following only applies to cases where we are given an `id`.
@@ -18,20 +20,6 @@ If a Practitioner is not found given the input parameters, then one is created a
 If a Practitioner is found, and the details given are different, then presume parameters are newer and use them to update the found Practitioner Resource.
 
 Profiled [Practitioner](StructureDefinition-VA.MHV.PHR.practitioner.html)
-
-#### GetPatient()
-
-Input: ICN, PatientTO
-
-Return: a Patient resource reference
-
-If a Patient is not found given the input parameters, then one is created and populated with the input parameters.
-
-If a Patient is found, and the details given are different, then presume parameters are newer and use them to update the found Patient Resource.
-
-**QUESTION: Should the patient also be populated with given patient demographics found in eVault?**
-
-Profiled [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
 
 #### GetLocation()
 
@@ -57,6 +45,16 @@ If a Organization is found, and the details given are different, then presume pa
 
 Profiled [Organization](StructureDefinition-VA.MHV.PHR.organization.html)
 
+### GetPatient()
+
+Input: ICN, PatientTO
+
+Return: a Patient resource reference
+
+If a Patient is not found given the input parameters, then one is created and populated with the data in MHV eVault for that Patient.
+
+Profiled [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
+
 ### Conversions
 
 Historic data is using different dataTypes that can be well defined
@@ -67,7 +65,9 @@ see [ConvertDate](ConvertDate.html)
 
 ##### Code Lookup
 
-Most of the historic data just uses strings. Will need some method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a [FHIR ConceptMap](http://hl7.org/fhir/conceptmap.html) resource, thus making maintaining it easy.
+Most of the historic data just uses strings. For MVP we are not converting codes, except for some very specific ones. This is because MHV is not scoped to be improving the quality of the data, and the use of the MHV FHIR API is driven by display use. Thus codes are not important.
+
+Beyond MVP we could look to add a method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a [FHIR ConceptMap](http://hl7.org/fhir/conceptmap.html) resource, thus making maintaining it easy.
 
 ##### Formal code systems of interest
 
@@ -98,7 +98,7 @@ These are systems I have used:
 
 For every context use of a concept encoded as a string, we presume they are unique within that context. The context identifies a specific ConceptMap, and a lookup of the string in that ConceptMap will result in the mapped standard code value.
 
-A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possibily update of the given ConceptMap.
+A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possible update of the given ConceptMap.
 
 ##### UCUM code
 

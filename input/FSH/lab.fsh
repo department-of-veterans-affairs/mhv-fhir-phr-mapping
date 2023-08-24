@@ -74,6 +74,7 @@ A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observ
 * identifier contains
   TOid 1..1
 * identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`LabReportTO` | `.` | {LabReportTO.id}"
 * subject 1..1
@@ -154,6 +155,7 @@ A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API t
 * identifier contains
   TOid 1..1
 * identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`LabTestTO` | `.` | {LabTestTO.id}"
 * code 1..1 MS

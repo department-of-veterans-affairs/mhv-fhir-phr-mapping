@@ -34,7 +34,7 @@
     },
     "effectiveDateTime" : "1995-08-03T14:49:00Z",
     "performer" : [{
-      "reference" : "Organization/ex-MHV-organization-989"
+      "reference" : "#ex-MHV-organization-989"
     }],
     "valueString" : "NO OVA OR PARASITES FOUND"
   },
@@ -61,6 +61,24 @@
     "collection" : {
       "collectedDateTime" : "1995-07-30"
     }
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "ex-MHV-organization-989",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "LabSiteTO.989"
+    },
+    {
+      "system" : "http://hl7.org/fhir/sid/us-npi",
+      "value" : "1234"
+    }],
+    "active" : true,
+    "name" : "Lab Site 989"
   }],
   "identifier" : [{
     "use" : "usual",
@@ -87,7 +105,7 @@
   "effectiveDateTime" : "1995-08-03T14:49:00Z",
   "issued" : "1995-08-03T14:49:00Z",
   "performer" : [{
-    "reference" : "Organization/ex-MHV-organization-989"
+    "reference" : "#ex-MHV-organization-989"
   }],
   "specimen" : [{
     "reference" : "#ex-MHV-specimen-1"

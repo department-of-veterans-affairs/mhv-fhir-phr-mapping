@@ -1,5 +1,15 @@
 There appears to be different formats of timestamps. First is Fileman Date, HL7 date time, and ClinicalProcedureTO.timestamp
 
+For MVP we will focus on "Best Effort" translation into a [FHIR DateTime](http://hl7.org/fhir/R4/datatypes.html#dateTime) datatype. The specific problem that we have is that often the data comes to us without a TimeZone, and FHIR requires that a timezone is given if a time is given. Within the source Vista it is understood what timezone would be used. Yet even a given timezone for a given Vista is not sufficient given that some Vista servers span timezones.
+
+- We will convert to Date
+- If we are given a timezone, then we will include the time and timezone
+- If we can't determine the timezone, then will not include the time
+
+Future might be different
+- We do have algorithm in MHV that is used in Appointments, but it is not clear that this fully supports all the timestamps outside of the scope of Appointments. So this would need to be made more robust. Including that this does not yet support fileman format, or proper HL7 v2 format
+- We could implement time conversion as a service. Concern would be on how performant that is.
+
 ### Fileman Date
 
 Input: Fileman Date

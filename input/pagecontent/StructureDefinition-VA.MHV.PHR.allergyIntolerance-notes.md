@@ -6,6 +6,9 @@
 - [Vivian Allegies](https://vivian.worldvista.org/dox/Global_XkdNUigxMjAuOA==.html)
 - Should be based on US-Core for AllergyIntolerance Resource profile
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile
+- identifier
+  - seems most of the time there is a `intoleranceCondition.recordIdentifier.namespaceId`. this should be used if it is provided
+  - else there is an typical TOid slice with the value prefix of `AllergyTO.`
 - a `clinicalStatus` of the allergy (e.g.,active or resolved)
   - Given that intoleranceCondition.status is unclear; will presume we only see `active`
   - set to `active`
@@ -30,6 +33,8 @@
   - logical to put this into `.recorder`, but that doesn't support a Organization reference
   - use alternate-reference extension on the recorder, with a Organization holding the facilityIdentifier.
     - `http://hl7.org/fhir/StructureDefinition/alternate-reference`
+  - contained Observation
+    - if changed to not contained, in order to support _include, we must define a search parameter against alternate-reference so that can be used in search _include.
 
 #### Mapping Concerns
 

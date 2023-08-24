@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="ba57012b-a609-482f-8d77-c2aeeed9e2f6"/>
+  <id value="3f8ff3df-d8ea-42bf-8833-3d077f7d2d14"/>
   <meta>
-    <lastUpdated value="2023-08-22T16:36:15.342-05:00"/>
+    <lastUpdated value="2023-08-24T09:48:15.102-05:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -15,7 +15,7 @@
           <div xmlns="http://www.w3.org/1999/xhtml">
             <p>This value set contains 3 concepts</p>
             <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
-              <a href="http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html">AllergyIntoleranceCategory v4.0.1 (CodeSystem)</a>
+              <a href="http://hl7.org/fhir/R4/codesystem-allergy-intolerance-category.html">codesystem AllergyIntoleranceCategory v4.0.1 (CodeSystem)</a>
             </p>
             <table class="codes">
               <tr>
@@ -78,12 +78,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/AllergyCategoryVS"/>
-        <version value="0.2.0"/>
+        <version value="0.2.1"/>
         <name value="AllergyCategoryVS"/>
         <title value="Subset of allergy intolerance category"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-22T16:36:15-05:00"/>
+        <date value="2023-08-24T09:48:15-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -91,15 +91,19 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:9af11f96-bb88-4b25-94df-5c90eecc7ff1"/>
-          <timestamp value="2023-08-22T16:43:12-05:00"/>
+          <identifier value="urn:uuid:d415843b-924a-4786-beaf-ec75dd6c3e80"/>
+          <timestamp value="2023-08-24T09:55:44-05:00"/>
           <total value="3"/>
           <parameter>
             <name value="excludeNested"/>
             <valueBoolean value="false"/>
           </parameter>
           <parameter>
-            <name value="version"/>
+            <name value="warning-draft"/>
+            <valueUri value="http://hl7.org/fhir/allergy-intolerance-category|4.0.1"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
             <valueUri value="http://hl7.org/fhir/allergy-intolerance-category|4.0.1"/>
           </parameter>
           <contains>
@@ -130,7 +134,7 @@
           <div xmlns="http://www.w3.org/1999/xhtml">
             <p>This value set contains 2 concepts</p>
             <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
-              <a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus v0.5.0 (CodeSystem)</a>
+              <a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-ver-status.html">codesystem ConditionVerificationStatus v0.5.0 (CodeSystem)</a>
             </p>
             <table class="codes">
               <tr>
@@ -179,12 +183,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionVerificationVS"/>
-        <version value="0.2.0"/>
+        <version value="0.2.1"/>
         <name value="ConditionVerificationVS"/>
         <title value="Subset of condition verification status"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-22T16:36:15-05:00"/>
+        <date value="2023-08-24T09:48:15-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -192,15 +196,19 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:caec0ec3-5c4d-43ad-b1b6-71d1a852ead9"/>
-          <timestamp value="2023-08-22T16:43:13-05:00"/>
+          <identifier value="urn:uuid:c2c54a57-eb62-4e0a-a811-ca5a965081ac"/>
+          <timestamp value="2023-08-24T09:55:44-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
             <valueBoolean value="false"/>
           </parameter>
           <parameter>
-            <name value="version"/>
+            <name value="warning-draft"/>
+            <valueUri value="http://terminology.hl7.org/CodeSystem/condition-ver-status|0.5.0"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
             <valueUri value="http://terminology.hl7.org/CodeSystem/condition-ver-status|0.5.0"/>
           </parameter>
           <contains>
@@ -228,10 +236,10 @@
             <div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">
               <p>Expansion based on: </p>
               <ul>
-                <li>
-                  <a href="ValueSet-NoteTypeVS.html">Known Note types v0.2.0 (ValueSet)</a>
-                </li>
                 <li>Loinc v2.74</li>
+                <li>
+                  <a href="ValueSet-NoteTypeVS.html">valueset Known Note types v0.2.1 (ValueSet)</a>
+                </li>
               </ul>
             </div>
             <table class="codes">
@@ -282,12 +290,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS"/>
-        <version value="0.2.0"/>
+        <version value="0.2.1"/>
         <name value="DocumentReferenceTypeVS"/>
         <title value="Known DocumentReference types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-22T16:36:15-05:00"/>
+        <date value="2023-08-24T09:48:15-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -295,19 +303,19 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:169bf280-39d7-4cb9-90e4-320f2ed13d46"/>
-          <timestamp value="2023-08-22T16:43:13-05:00"/>
+          <identifier value="urn:uuid:8e4175c2-4455-4e27-b8c2-f7e45a0a4906"/>
+          <timestamp value="2023-08-24T09:55:45-05:00"/>
           <total value="4"/>
           <parameter>
             <name value="excludeNested"/>
             <valueBoolean value="false"/>
           </parameter>
           <parameter>
-            <name value="version"/>
-            <valueUri value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.2.0"/>
+            <name value="used-valueset"/>
+            <valueUri value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.2.1"/>
           </parameter>
           <parameter>
-            <name value="version"/>
+            <name value="used-valueset"/>
             <valueUri value="null"/>
           </parameter>
           <parameter>
@@ -387,12 +395,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/LabReportVS"/>
-        <version value="0.2.0"/>
+        <version value="0.2.1"/>
         <name value="LabReportVS"/>
         <title value="Known Lab Report types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-22T16:36:15-05:00"/>
+        <date value="2023-08-24T09:48:15-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -400,15 +408,15 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:8430a612-cec3-4206-a22e-914360e07ecd"/>
-          <timestamp value="2023-08-22T16:43:13-05:00"/>
+          <identifier value="urn:uuid:59dd2d88-e1da-40a5-b37a-bd2d8732c502"/>
+          <timestamp value="2023-08-24T09:55:45-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
             <valueBoolean value="false"/>
           </parameter>
           <parameter>
-            <name value="version"/>
+            <name value="used-valueset"/>
             <valueUri value="null"/>
           </parameter>
           <parameter>
@@ -474,12 +482,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS"/>
-        <version value="0.2.0"/>
+        <version value="0.2.1"/>
         <name value="NoteTypeVS"/>
         <title value="Known Note types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-22T16:36:15-05:00"/>
+        <date value="2023-08-24T09:48:15-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -487,15 +495,15 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:8f09f0c7-6f89-4883-9b4f-ae37586e9d2c"/>
-          <timestamp value="2023-08-22T16:43:13-05:00"/>
+          <identifier value="urn:uuid:4716da17-ee90-4a25-ba4b-f4fe80ffaed9"/>
+          <timestamp value="2023-08-24T09:55:46-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
             <valueBoolean value="false"/>
           </parameter>
           <parameter>
-            <name value="version"/>
+            <name value="used-valueset"/>
             <valueUri value="null"/>
           </parameter>
           <parameter>

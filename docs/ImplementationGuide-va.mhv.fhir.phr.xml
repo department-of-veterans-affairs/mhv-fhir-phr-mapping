@@ -1,0 +1,1870 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="va.mhv.fhir.phr"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml">Placeholder</div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1"/>
+  </extension>
+  <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+  <version value="0.2.1"/>
+  <name value="VAMHVFHIRPHR"/>
+  <title value="MyHealtheVet PHR FHIR API"/>
+  <status value="active"/>
+  <date value="2023-08-24T09:48:15-05:00"/>
+  <publisher value="VA Digital Services"/>
+  <contact>
+    <name value="VA Digital Services"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://va.gov"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <description value="MyHealtheVet exposing PHR using FHIR and Testing Plan."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="va.mhv.fhir.phr"/>
+  <license value="CC-BY-4.0"/>
+  <fhirVersion value="4.0.1"/>
+  <dependsOn id="hl7tx">
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
+      <valueMarkdown value="Automatically added as a dependency - all IGs depend on HL7 Terminology"/>
+    </extension>
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="5.0.0"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_us_core">
+    <uri value="http://fhir.org/packages/hl7.fhir.us.core/ImplementationGuide/hl7.fhir.us.core"/>
+    <packageId value="hl7.fhir.us.core"/>
+    <version value="5.0.x"/>
+  </dependsOn>
+  <dependsOn id="hl7_fhir_uv_extensions">
+    <uri value="http://fhir.org/packages/hl7.fhir.uv.extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
+    <packageId value="hl7.fhir.uv.extensions"/>
+    <version value="1.0.x"/>
+  </dependsOn>
+  <definition>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2022+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="show-inherited-invariants"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="usage-stats-opt-out"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="logging"/>
+      </extension>
+      <extension url="value">
+        <valueString value="progress"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="docs"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludettl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA95.3"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA60"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA64"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/HL70070"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/mpiPID"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/localPID"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA61"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
+      <valueCode value="hl7.fhir.uv.tools#current"/>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="copyrightyear"/>
+      </extension>
+      <extension url="value">
+        <valueString value="2022+"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="releaselabel"/>
+      </extension>
+      <extension url="value">
+        <valueString value="ci-build"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="show-inherited-invariants"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="usage-stats-opt-out"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="logging"/>
+      </extension>
+      <extension url="value">
+        <valueString value="progress"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="shownav"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="active-tables"/>
+      </extension>
+      <extension url="value">
+        <valueString value="false"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-contact"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-jurisdiction"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-publisher"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-version"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="autoload-resources"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-output"/>
+      </extension>
+      <extension url="value">
+        <valueString value="docs"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludettl"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA95.3"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA60"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA64"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/HL70070"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/mpiPID"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/localPID"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="special-url"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://va.gov/systems/99VA61"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-liquid"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/liquid"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-qa"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/qa"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-temp"/>
+      </extension>
+      <extension url="value">
+        <valueString value="temp/pages"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-suppressed-warnings"/>
+      </extension>
+      <extension url="value">
+        <valueString value="input/ignoreWarnings.txt"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="path-history"/>
+      </extension>
+      <extension url="value">
+        <valueString value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-html"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="template-md"/>
+      </extension>
+      <extension url="value">
+        <valueString value="template-page-md.html"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-context"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-copyright"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="fmm-definition"/>
+      </extension>
+      <extension url="value">
+        <valueString value="http://hl7.org/fhir/versions.html#maturity"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="excludelogbinaryformat"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueCode value="tabbed-snapshots"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/images"/>
+      </reference>
+      <name value="Bundle of Radiology results from mock data"/>
+      <description value="An example of a transaction Bundle with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/vitals"/>
+      </reference>
+      <name value="Bundle of Vitals from mock data"/>
+      <description value="An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/vitals.xml) MHV receives."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-ecg-0"/>
+      </reference>
+      <name value="Example 0 of a MHV ECG"/>
+      <description value="Derived from the a mock ClinicalProcedureTO:"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-imaging-0"/>
+      </reference>
+      <name value="Example 0 of a MHV Radiology (Imaging Exam)"/>
+      <description value="Derived from the a mock ImagingExamTO:"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-ecg-1"/>
+      </reference>
+      <name value="Example 1 of a MHV ECG"/>
+      <description value="Derived from the a mock ClinicalProcedureTO:"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-note-1"/>
+      </reference>
+      <name value="Example 1 of a MHV Note"/>
+      <description value="Derived from the a mock NoteTO:"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-1"/>
+      </reference>
+      <name value="Example 1 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 53495 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1"/>
+      </reference>
+      <name value="Example 1 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1110200002)"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-1"/>
+      </reference>
+      <name value="Example 1 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/ex-MHV-immunization-1"/>
+      </reference>
+      <name value="Example 1 of an MHV immunization"/>
+      <description value="Example from a mock ImmunizationTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-labReport-1"/>
+      </reference>
+      <name value="Example 1 of an MHV labReport"/>
+      <description value="Example from a mock labReportTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ex-MHV-vitals-1"/>
+      </reference>
+      <name value="Example 1 of an MHV vital-sign"/>
+      <description value="Example from a mock VitalSignTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-10"/>
+      </reference>
+      <name value="Example 10 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69075 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-10"/>
+      </reference>
+      <name value="Example 10 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-11"/>
+      </reference>
+      <name value="Example 11 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69092 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-11"/>
+      </reference>
+      <name value="Example 11 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1103030001"/>
+      </reference>
+      <name value="Example 1103030001 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1103030001)"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1103030002"/>
+      </reference>
+      <name value="Example 1103030002 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1103030002)"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1190370002"/>
+      </reference>
+      <name value="Example 1190370002 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1190370002)"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1190530001"/>
+      </reference>
+      <name value="Example 1190530001 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1190530001)"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1190530002"/>
+      </reference>
+      <name value="Example 1190530002 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1190530002)"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-chReport-1190740001"/>
+      </reference>
+      <name value="Example 1190740001 of an MHV chReport"/>
+      <description value="Example from a mock labTestPromises (1190740001)"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-12"/>
+      </reference>
+      <name value="Example 12 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69093 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-13"/>
+      </reference>
+      <name value="Example 13 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69123 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-14"/>
+      </reference>
+      <name value="Example 14 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69124 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-15"/>
+      </reference>
+      <name value="Example 15 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69129 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-ecg-2"/>
+      </reference>
+      <name value="Example 2 of a MHV ECG"/>
+      <description value="Derived from the a mock ClinicalProcedureTO:"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-2"/>
+      </reference>
+      <name value="Example 2 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 67933 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-2"/>
+      </reference>
+      <name value="Example 2 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/ex-MHV-immunization-2"/>
+      </reference>
+      <name value="Example 2 of an MHV immunization"/>
+      <description value="Example from a mock ImmunizationTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-labReport-2"/>
+      </reference>
+      <name value="Example 2 of an MHV labReport"/>
+      <description value="Example from a mock labReportTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-ecg-3"/>
+      </reference>
+      <name value="Example 3 of a MHV ECG"/>
+      <description value="Derived from the a mock ClinicalProcedureTO:"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-3"/>
+      </reference>
+      <name value="Example 3 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 67934 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-3"/>
+      </reference>
+      <name value="Example 3 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-labReport-3"/>
+      </reference>
+      <name value="Example 3 of an MHV labReport"/>
+      <description value="Example from a mock labReportTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-ecg-4"/>
+      </reference>
+      <name value="Example 4 of a MHV ECG"/>
+      <description value="Derived from the a mock ClinicalProcedureTO:"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-note-4"/>
+      </reference>
+      <name value="Example 4 of a MHV Note"/>
+      <description value="Derived from the a mock NoteTO:&#xA;&#xA;Note dropped cosigner"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-4"/>
+      </reference>
+      <name value="Example 4 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69066 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-4"/>
+      </reference>
+      <name value="Example 4 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-labReport-4"/>
+      </reference>
+      <name value="Example 4 of an MHV labReport"/>
+      <description value="Example from a mock labReportTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-MHV-ecg-5"/>
+      </reference>
+      <name value="Example 5 of a MHV ECG"/>
+      <description value="Derived from the a mock ClinicalProcedureTO:"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-5"/>
+      </reference>
+      <name value="Example 5 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69067 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-5"/>
+      </reference>
+      <name value="Example 5 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-labReport-5"/>
+      </reference>
+      <name value="Example 5 of an MHV labReport"/>
+      <description value="Example from a mock labReportTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-6"/>
+      </reference>
+      <name value="Example 6 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69071 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-6"/>
+      </reference>
+      <name value="Example 6 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-labReport-6"/>
+      </reference>
+      <name value="Example 6 of an MHV labReport"/>
+      <description value="Example from a mock labReportTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-7"/>
+      </reference>
+      <name value="Example 7 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69072 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-7"/>
+      </reference>
+      <name value="Example 7 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-labReport-7"/>
+      </reference>
+      <name value="Example 7 of an MHV labReport"/>
+      <description value="Example from a mock labReportTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-8"/>
+      </reference>
+      <name value="Example 8 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69073 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-8"/>
+      </reference>
+      <name value="Example 8 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DiagnosticReport"/>
+      </extension>
+      <reference>
+        <reference value="DiagnosticReport/ex-MHV-labReport-8"/>
+      </reference>
+      <name value="Example 8 of an MHV labReport"/>
+      <description value="Example from a mock labReportTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="AllergyIntolerance"/>
+      </extension>
+      <reference>
+        <reference value="AllergyIntolerance/ex-MHV-allergy-9"/>
+      </reference>
+      <name value="Example 9 of an MHV allergy or intolerance"/>
+      <description value="IntoleranceCondition record identity 69074 from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Condition"/>
+      </extension>
+      <reference>
+        <reference value="Condition/ex-MHV-condition-9"/>
+      </reference>
+      <name value="Example 9 of an MHV condition"/>
+      <description value="Example from a mock ProblemTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/ex-MHV-patient-1"/>
+      </reference>
+      <name value="Example DAYSHR from PatientTO"/>
+      <description value="This example is derived off of a mock PatientTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/ex-VIA-patient-0"/>
+      </reference>
+      <name value="Example MHVLISAONE from PatientTO"/>
+      <description value="This example is derived off of a mock PatientTO"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ex-MHV-pain-1"/>
+      </reference>
+      <name value="Example of a MHV pain R4 observation of 10"/>
+      <description value="holding typical values"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Observation"/>
+      </extension>
+      <reference>
+        <reference value="Observation/ex-MHV-heartRate-1"/>
+      </reference>
+      <name value="Example of an MHV heartRate R4 observation"/>
+      <description value="Heart Rate holding typical values"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/ex-MHV-patient-0"/>
+      </reference>
+      <name value="Example of MHV MHVLISAONE"/>
+      <description value="Only values from eVault"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/ex-MHV-patient-2"/>
+      </reference>
+      <name value="Example ROBERT from PatientTO"/>
+      <description value="This example is derived off of a mock PatientTO"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/DocumentReferenceTypeVS"/>
+      </reference>
+      <name value="Known DocumentReference types"/>
+      <description value="DocumentReference types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/LabReportVS"/>
+      </reference>
+      <name value="Known Lab Report types"/>
+      <description value="Lab Report types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/NoteTypeVS"/>
+      </reference>
+      <name value="Known Note types"/>
+      <description value="Note types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CapabilityStatement"/>
+      </extension>
+      <reference>
+        <reference value="CapabilityStatement/MHVcapabilities"/>
+      </reference>
+      <name value="MHVcapabilities"/>
+      <description value="CapabilityStatement prototype for MHV as a FHIR Server exposing PHR data"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/ex-MHV-patient-89486"/>
+      </reference>
+      <name value="Patient MHVASPXXI"/>
+      <description value="This example is derived off of a mock patient"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/ex-MHV-patient-27167"/>
+      </reference>
+      <name value="Patient TESTFIVE"/>
+      <description value="This example is derived off of a mock patient"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/ex-MHV-patient-942104"/>
+      </reference>
+      <name value="Patient TESTFIVE L, MHVSYSTEST"/>
+      <description value="This example is derived off of a mock patient"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AllergyCategoryVS"/>
+      </reference>
+      <name value="Subset of allergy intolerance category"/>
+      <description value="not all of them"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/ConditionVerificationVS"/>
+      </reference>
+      <name value="Subset of condition verification status"/>
+      <description value="not all of them"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.documentReference"/>
+      </reference>
+      <name value="VA MHV All DocumentReference"/>
+      <description value="A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. This includes Physician Notes, Discharge Summary, ECG/EKG, and Imaging reports."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.diagnosticReport"/>
+      </reference>
+      <name value="VA MHV DiagnosticReport"/>
+      <description value="This defines the use for Chem-Hem and &#xA;`DiagnosticReport`, with contained `Observation` and `Specimen` as needed."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+      </reference>
+      <name value="VA MHV PHR Allergy and Intolerance"/>
+      <description value="A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.chTest"/>
+      </reference>
+      <name value="VA MHV PHR CH labTest.chemistryResults"/>
+      <description value="A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.chemistryResults`&#xA;- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- `valueInterpretation` -&gt; `.interpretation` &#xA;  - `L` -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L&#xA;  - 'H' -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H&#xA;- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)&#xA;- `testIdentifier` -&gt; `.code` -- where &quot;LN&quot; is Loinc&#xA;- `referenceRange` -&gt; `.referenceRange.text` -- don't try to break out further as there is little use of this value&#xA;- `labCommentEvents` -&gt; `.note.text`&#xA;- value[x] either String or Quantity with units&#xA;- `observationValue` -&gt; `.valueQuantity.value`&#xA;- `observationUnits.unit` -&gt; `.valueQuantity.unit`&#xA;- `observationUnits.code` -&gt; `.valueQuantity.code` - likely need to adjust some&#xA;- `observationUnits.codingSystem` -&gt; `.valueQuantity.system`&#xA;- `performingOrganization` -&gt; `.performer`&#xA;- given this is contained in the DiagnosticReport, then &#xA;  - effective[x] is presumed from the DiagnosticReport&#xA;  - issued is presumed from the DiagnosticReport&#xA;  - specimen is presumed from the DiagnosticReport&#xA;- will not have a `.hasMember` as this is results not a panel"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.chPanel"/>
+      </reference>
+      <name value="VA MHV PHR CH labTests.orderedTestCode"/>
+      <description value="A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.orderedTestCode`&#xA;- This profile is based Observation, as it is not found in us-core&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- `orderedTestCode -&gt; `.code`&#xA;- Panel is distinguished by &#xA;  - there is no `.value[x]` - as this is just a panel&#xA;  - there is `.hasMember` 1..* - These point at the results observations"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.ecg"/>
+      </reference>
+      <name value="VA MHV PHR ECG"/>
+      <description value="A profile on the DocumentReference resource for MHV PHR exposing ECG/EKG (ClinicalProcedureTO) using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.chSpecimen"/>
+      </reference>
+      <name value="VA MHV PHR HDR CH Specimen"/>
+      <description value="A profile showing how the `labTestPromises.specimen` is mapped into a FHIR Specimen.&#xA;&#xA;- This is usually a contained resource, contained in the Lab Report. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances&#xA;- must have a type &#xA;  - `Specimen.type.text` &lt;- `labTestPromises.specimen.specimenSource`&#xA;- should have a `collectedDateTime` derived from `labTestPromises.specimen.specimenTakenDate`"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.chReport"/>
+      </reference>
+      <name value="VA MHV PHR HDR Chem-Hem Report"/>
+      <description value="Profile on DiagnosticReport for Chem-Hem lab report."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.immunization"/>
+      </reference>
+      <name value="VA MHV PHR Immunization"/>
+      <description value="A profile on the Immunization that declares how MHV will expose PHR immunization."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.immunizationReaction"/>
+      </reference>
+      <name value="VA MHV PHR Immunization Reaction"/>
+      <description value="A profile for the contained Observation indicating an immunization reaction&#xA;&#xA;- status final&#xA;- code.text ImmunizationTO.reaction&#xA;- valueCodeableConcept - SNOMED#401515003 Known present"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.labReport"/>
+      </reference>
+      <name value="VA MHV PHR Lab Report"/>
+      <description value="A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.LabSpecimen"/>
+      </reference>
+      <name value="VA MHV PHR Lab Specimen"/>
+      <description value="A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.&#xA;&#xA;- This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances&#xA;- must have a type &#xA;  - `Specimen.type.text` &lt;- `LabSpecimenTO.name`&#xA;  - type should be a code derived from LabSpecimenTO.name&#xA;- should have a `collectedDateTime` derived from `LabSpecimenTO.collectionDate`&#xA;- may have an `identifier` - `Specimen.identifier` &lt;- `LabSpecimenTO.id`&#xA;  - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained&#xA;- should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`&#xA;&#xA;TODO questions: &#xA;- examples didn't have much populated&#xA;- not clear what site and facility might contain, so can't tell where they would go&#xA;- some examples are likely FHIR Device (old hardware left foot), so this might change"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.labTest"/>
+      </reference>
+      <name value="VA MHV PHR labTest"/>
+      <description value="A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;- This profile is based on US-Core Lab&#xA;- sometimes a contained Specimen is needed"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.location"/>
+      </reference>
+      <name value="VA MHV PHR Location"/>
+      <description value="A profile on the Location resource for MHV PHR exposing Location using FHIR API.&#xA;&#xA;- based on US-Core for Location&#xA;- `identifier`&#xA;  - system = urn:oid:2.16.840.1.113883.4.349&#xA;- `name` is the name as known&#xA;- always a contained resource, so not exposed RESTfully&#xA;&#xA;NOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-phr-hospitallocationto)."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.medicationDispense"/>
+      </reference>
+      <name value="VA MHV PHR medication dispense"/>
+      <description value="A profile on the MedicationDispense resource for MHV PHR exposing current medications dispense using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.medicationTracking"/>
+      </reference>
+      <name value="VA MHV PHR medication dispense tracking"/>
+      <description value="A profile on the SupplyDelivery resource for MHV PHR exposing current medications dispense tracking using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.medicationRequest"/>
+      </reference>
+      <name value="VA MHV PHR medication request"/>
+      <description value="A profile on the MedicationRequest resource for MHV PHR exposing current VA prescribed medications using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.note"/>
+      </reference>
+      <name value="VA MHV PHR Notes"/>
+      <description value="A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.organization"/>
+      </reference>
+      <name value="VA MHV PHR Organization"/>
+      <description value="A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.&#xA;&#xA;- based on US-Core for Organization&#xA;  - must have a status&#xA;  - must have a name&#xA;  - there are other things us-core defines that are not manditory (NPI, CLIA)&#xA;- two identifier types defined TOid and HDRid&#xA;- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)&#xA;- always a contained resource, so not exposed RESTfully&#xA;&#xA;Map to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-phr-labsiteto)&#xA;&#xA;Map to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.patient"/>
+      </reference>
+      <name value="VA MHV PHR Patient"/>
+      <description value="A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.&#xA;&#xA;- based on US-Core for Patient&#xA;- mapping from patient details in eVault (not from VIA/HDR transaction)&#xA;- `identifier`  &#xA;  - `value` = GetPatientId&#xA;  - `system` = `urn:oid:2.16.840.1.113883.4.349`&#xA;  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.&#xA;- `name` - First and Last Name&#xA;- `gender`&#xA;- `birthDate`&#xA;- `active` = true&#xA;&#xA;mapping concerns - JIRA&#xA;- The Identifier for the ICN is still being discussed&#xA;- identifer.use is not being populated&#xA;- name seems to only populate first and last, but puts them both in given&#xA;- populating identifier with GetPatientId(), not sure that is the same as GetIcn()&#xA;- eVault also has, but are not being used in the FHIR Patient&#xA;  - MiddleName&#xA;  - Ssn&#xA;  - Email&#xA;  - Icn &#xA;- set .meta.profile&#xA;- Would be even better if we could use a common Patient registry. &#xA;&#xA;NOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-phr-patientto)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </reference>
+      <name value="VA MHV PHR Practitioner"/>
+      <description value="A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.&#xA;&#xA;- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible&#xA;- used for VIDF UserTO, and AuthorTO&#xA;- used for HDR PractitionerLite&#xA;- might be used for PersonTO or is that RelatedPerson?&#xA;- always a contained resource, so not exposed RESTfully&#xA;&#xA;Mapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)&#xA;&#xA;Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.condition"/>
+      </reference>
+      <name value="VA MHV PHR problems"/>
+      <description value="A profile on the Condition resource for MHV PHR exposing Problems using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.imaging"/>
+      </reference>
+      <name value="VA MHV PHR Radiology"/>
+      <description value="A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.vitals"/>
+      </reference>
+      <name value="VA MHV PHR Vital-Signs"/>
+      <description value="A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.vitalsBP"/>
+      </reference>
+      <name value="VA MHV PHR Vital-Signs for Blood Pressure"/>
+      <description value="A profile on the Observation resource for Blood Pressure"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/VA.MHV.PHR.vitalsPain"/>
+      </reference>
+      <name value="VA MHV PHR Vital-Signs for PAIN"/>
+      <description value="A profile on the Observation resource for Pain"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/ObservationTypeTOVsLoincCode"/>
+      </reference>
+      <name value="Vital Sign ObservationTypeTO.name to Loinc Code"/>
+      <description value="map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <page>
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+        <valueCode value="informative"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+        <valueUrl value="toc.html"/>
+      </extension>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="index.html"/>
+        </extension>
+        <nameUrl value="index.html"/>
+        <title value="Home Page"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="api.html"/>
+        </extension>
+        <nameUrl value="api.html"/>
+        <title value="API"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="background.html"/>
+        </extension>
+        <nameUrl value="background.html"/>
+        <title value="Vista Mapping"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="utility.html"/>
+        </extension>
+        <nameUrl value="utility.html"/>
+        <title value="Utility Functions"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="ConvertDate.html"/>
+        </extension>
+        <nameUrl value="ConvertDate.html"/>
+        <title value="ConvertDate()"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="identifier.html"/>
+        </extension>
+        <nameUrl value="identifier.html"/>
+        <title value="Id vs Identifier"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="testplan.html"/>
+        </extension>
+        <nameUrl value="testplan.html"/>
+        <title value="Test Plan"/>
+        <generation value="markdown"/>
+      </page>
+      <page>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+          <valueCode value="informative"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+          <valueUrl value="downloads.html"/>
+        </extension>
+        <nameUrl value="downloads.html"/>
+        <title value="Downloads"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

@@ -21,6 +21,7 @@ Example from a mock ImmunizationTO
 //* encounter.identifier.value = "6433274"
 * protocolApplied.series = "COMPLETE"
 * protocolApplied.doseNumberString = "COMPLETE"
+* contained[+] = ex-MHV-organization-552
 * performer[+].actor = Reference(ex-MHV-organization-552)
 
 Instance:   ex-MHV-immunization-2
@@ -49,6 +50,7 @@ Example from a mock ImmunizationTO
 * protocolApplied.doseNumberString = "COMPLETE"
 * reaction.detail = Reference(in-reaction-2)
 * contained[+] = in-reaction-2
+* contained[+] = ex-MHV-organization-552
 * performer[+].actor = Reference(ex-MHV-organization-552)
 
 Instance: in-reaction-2

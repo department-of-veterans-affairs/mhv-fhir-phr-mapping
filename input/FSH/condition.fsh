@@ -17,6 +17,7 @@ A profile on the Condition resource for MHV PHR exposing Problems using FHIR API
   TOid 1..
 * identifier[TOid].use = #usual
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].value ^short = "`ProblemTO` | `.` | {ProblemTO.id}"
 * code 1..1 MS
 * code.text 1..1 MS
@@ -24,19 +25,21 @@ A profile on the Condition resource for MHV PHR exposing Problems using FHIR API
 // already limited to us-core patient * subject only Reference(Patient)
 * asserter MS
 * asserter only Reference(Practitioner)
+* asserter ^type.aggregation = #contained
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus from ConditionVerificationVS (required)
 * note MS
 * recordedDate MS
+* onset[x] only dateTime
 * onsetDateTime MS
+* abatement[x] only dateTime
 * abatementDateTime MS
 * evidence.detail MS
+* evidence.detail ^type.aggregation = #contained
 * category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * severity 0..0
 * bodySite 0..0
 * encounter 0..0
-* onset[x] only dateTime
-* abatement[x] only dateTime
 * recorder 0..0
 * stage 0..0
 * evidence.code 0..0

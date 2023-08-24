@@ -1,11 +1,14 @@
 
-Overall test plan leverages the Profiles, and Examples shown on the [Artifacts Summary](artifacts.html). The [Profiles](artifacts.html#structures-resource-profiles) listed are describing the constraints that MHV uses when publishing from the PHR. Thus any Resources that are known to have been published by MHV MUST be conformant to these profiles.
+Overall test plan should leverage the Profiles, and Examples shown on the [Artifacts Summary](artifacts.html). The [Profiles](artifacts.html#structures-resource-profiles) listed are describing the constraints that MHV uses when publishing from the PHR. Thus any Resources that are known to have been published by MHV MUST be conformant to these profiles. The [published package](package.r4.tgz) can be loaded into a test [HAPI server to automatically check conformance](https://hapifhir.io/hapi-fhir/docs/validation/instance_validator.html) on all create/update requests.
+
+All FHIR Resources created/updated should include the profile intended in the `.meta.profile`.
 
 The Examples listed in [Example Instances](artifacts.html#example-example-instances) are example instances that are conformant to the MHV profiles.
 
 See the Test Plan for each Profile to understand the specific expectations for each good, odd, and bad example.
 
 #### Cucumber Actions
+
 The following Actions are defined for use in the Cucumber scripts
 
 SUT - System Under Test -- this is the MyHealtheVet application -- aka MHV

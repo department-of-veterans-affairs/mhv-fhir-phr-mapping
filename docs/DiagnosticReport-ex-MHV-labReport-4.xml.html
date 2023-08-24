@@ -67,7 +67,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.2.1 - ci-build
 
 
 
@@ -194,7 +194,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.1). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -313,6 +313,26 @@ DIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)&lt;/p&gt;&lt;/div&gt;<a name="en
       &lt;/collection&gt;
     &lt;/Specimen&gt;
   &lt;/contained&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization">contained</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization">Organization</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ex-MHV-organization-989&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.meta">meta</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization&quot;/&gt;
+      &lt;/meta&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;usual&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.4.349&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;LabSiteTO.989&quot;/&gt;
+      &lt;/identifier&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/sid/us-npi&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;1234&quot;/&gt;
+      &lt;/identifier&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.active">active</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>=&quot;true&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/organization.html#Organization.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Lab Site 989&quot;/&gt;
+    &lt;/Organization&gt;
+  &lt;/contained&gt;
   &lt;<a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.identifier">identifier</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;usual&quot;/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.4.349.4.989&quot;/&gt;
@@ -338,7 +358,7 @@ DIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)&lt;/p&gt;&lt;/div&gt;<a name="en
   &lt;<a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.effective[x]">effectiveDateTime</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2000-08-10T15:56:00Z&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.issued">issued</a> <a href="http://hl7.org/fhir/R4/datatypes.html#instant">value</a>=&quot;2000-08-10T15:56:00Z&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.performer">performer</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Organization/ex-MHV-organization-989&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;#ex-MHV-organization-989&quot;/&gt;
   &lt;/performer&gt;
   &lt;<a href="http://hl7.org/fhir/R4/diagnosticreport.html#DiagnosticReport.specimen">specimen</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;#ex-MHV-specimen-4&quot;/&gt;
@@ -417,7 +437,7 @@ DIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)&quot;/&gt;
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -2,6 +2,7 @@ Instance:   ex-MHV-practitioner
 InstanceOf: MHVpractitioner
 Title: "Example Practitioner"
 Description:      "holding typical values"
+Usage: #inline
 * name.family = "Practitioner"
 * name.given = "Prancy"
 * identifier[TOid].use = #usual
@@ -24,7 +25,7 @@ Instance: ex-MHV-practitioner-37569
 InstanceOf: MHVpractitioner
 Title: "Example Practitoner 37569"
 Description: "Muazzam Khan"
-Usage: #example
+Usage: #inline
 * name.text = "KHAN,MUAZZAM"
 * name.family = "KHAN"
 * name.given = "MUAZZAM"
@@ -42,7 +43,7 @@ Instance: ex-MHV-practitioner-36556
 InstanceOf: MHVpractitioner
 Title: "Example Practitoner 36556"
 Description: "Maruf Ahmed"
-Usage: #example
+Usage: #inline
 * name.text = "AHMED,MARUF"
 * name.family = "MARUF"
 * name.given = "AHMED"
@@ -61,7 +62,7 @@ Instance: ex-MHV-practitioner-110
 InstanceOf: MHVpractitioner
 Title: "Example Practitoner 110"
 Description: "Phyllis Mangas"
-Usage: #example
+Usage: #inline
 * name.text = "MANGAS,PHYLLIS A"
 * name.family = "MANGAS"
 * name.given[+] = "PHYLLIS"
@@ -81,7 +82,7 @@ Instance: ex-MHV-practitioner-4262
 InstanceOf: MHVpractitioner
 Title: "Example Practitoner 4262"
 Description: "Phyllis Mangas"
-Usage: #example
+Usage: #inline
 * name.text = "PATIL,SARASWATI"
 * name.family = "PATIL"
 * name.given[+] = "SARASWATI"
@@ -100,7 +101,7 @@ Instance: ex-MHV-practitioner-6051
 InstanceOf: MHVpractitioner
 Title: "Example Practitoner 6051"
 Description: "Phyllis Mangas"
-Usage: #example
+Usage: #inline
 * name.text = "BASHIR,CHOWDRY MUJAHID"
 * name.family = "BASHIR"
 * name.given[+] = "CHOWDRY"
@@ -120,7 +121,7 @@ Instance: ex-MHV-practitioner-22572
 InstanceOf: MHVpractitioner
 Title: "Example Practitoner 22572"
 Description: "Phyllis Mangas"
-Usage: #example
+Usage: #inline
 * name.text = "FELKLEY,KENNETH E"
 * name.family = "FELKLEY"
 * name.given[+] = "KENNETH"
@@ -148,7 +149,7 @@ Instance: ex-MHV-practitioner-14934-VA552
 InstanceOf: Practitioner
 Title: "Example Practitoner 14934-VA552"
 Description: "Lisa A Hall"
-Usage: #example
+Usage: #inline
 * name.family = "HALL"
 * name.given[+] = "LISA"
 * name.given[+] = "A"
@@ -174,7 +175,7 @@ Instance: ex-MHV-practitioner-59845-VA660
 InstanceOf: Practitioner
 Title: "Example Practitoner 59845-VA660"
 Description: "Lisa A Hall"
-Usage: #example
+Usage: #inline
 * name.family = "HALL"
 * name.given[+] = "LISA"
 * name.given[+] = "V"

@@ -17,6 +17,7 @@ A profile on the Organization resource for MHV PHR exposing Organization using F
   - there are other things us-core defines that are not manditory (NPI, CLIA)
 - two identifier types defined TOid and HDRid
 - used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)
+- always a contained resource, so not exposed RESTfully
 
 Map to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-phr-labsiteto)
 
@@ -92,7 +93,7 @@ Instance: ex-MHV-organization-989
 InstanceOf: MHVorganization
 Title: "Organization lab site 989"
 Description: "This example derived off of a mock diagnostic report"
-Usage: #example
+Usage: #inline
 * active = true
 * name = "Lab Site 989"
 * identifier[TOid].use = #usual
@@ -126,7 +127,7 @@ Instance: ex-MHV-organization-552
 InstanceOf: MHVorganization
 Title: "Organization HDR Lab 552"
 Description: "This example derived off of a mock HDR Lab report"
-Usage: #example
+Usage: #inline
 * active = true
 * name = "DAYTON, OH VAMC"
 * identifier[TOid].use = #usual
@@ -173,7 +174,7 @@ Instance: ex-MHV-organization-660
 InstanceOf: MHVorganization
 Title: "Organization HDR Lab 660"
 Description: "This example derived off of a mock HDR Lab report"
-Usage: #example
+Usage: #inline
 * active = true
 * name = "VA SALT LAKE CITY HEALTH CARE SYSTEM (660)"
 * identifier[TOid].use = #usual
@@ -198,7 +199,7 @@ Instance: ex-MHV-organization-979
 InstanceOf: MHVorganization
 Title: "Organization HDR Lab 979"
 Description: "This example derived off of a mock HDR Lab report"
-Usage: #example
+Usage: #inline
 * active = true
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "979"

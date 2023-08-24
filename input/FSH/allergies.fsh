@@ -14,10 +14,17 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
 * identifier contains
-  recordIdentifier 1..
-* identifier[recordIdentifier].use = #usual
-* identifier[recordIdentifier].system ^short = "{intoleranceCondition.recordIdentifier.namespaceId}"
+  recordIdentifier 0..1 and
+  TOid 0..1
+* identifier[recordIdentifier].use = #official
+* identifier[recordIdentifier].system ^short = "`http://va.gov/systems/` | {intoleranceCondition.recordIdentifier.namespaceId}"
+* identifier[recordIdentifier].system obeys HDRid-startswithoid
 * identifier[recordIdentifier].value ^short = "{intoleranceCondition.recordIdentifier.identity}"
+* identifier[TOid].use = #usual
+* identifier[TOid].system ^comment = "use when namespaceId is missing"
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].system obeys TOid-startswithoid
+* identifier[TOid].value ^short = "`AllergyTO` | `.` | {intoleranceCondition.recordIdentifier.identity}"
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * verificationStatus 1..1
 * code.text 1..1
@@ -27,8 +34,10 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * category 0..* MS
 * category from AllergyCategoryVS (required)
 * recorder MS
+* recorder ^type.aggregation = #contained
 * recorder.extension contains http://hl7.org/fhir/StructureDefinition/alternate-reference named visn 0..1
 * recorder.extension[visn].valueReference only Reference(Organization)
+* recorder.extension[visn].valueReference ^type.aggregation = #contained
 * reaction 0..* MS
 * reaction.manifestation 1..1
 // reaction.manifestation is either VUID or SNOMED

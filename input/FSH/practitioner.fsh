@@ -14,6 +14,7 @@ A profile on the Practitioner resource for MHV PHR exposing Practitioner using F
 - used for VIDF UserTO, and AuthorTO
 - used for HDR PractitionerLite
 - might be used for PersonTO or is that RelatedPerson?
+- always a contained resource, so not exposed RESTfully
 
 Mapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)
 

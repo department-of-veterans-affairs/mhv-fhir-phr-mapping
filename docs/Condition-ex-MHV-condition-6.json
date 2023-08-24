@@ -7,8 +7,26 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Condition</b><a name=\"ex-MHV-condition-6\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;ex-MHV-condition-6&quot; Updated &quot;2000-07-18 00:00:00+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.condition.html\">VA MHV PHR problems</a></p></div><p><b>identifier</b>: id:\u00a0ProblemTO.98034\u00a0(use:\u00a0USUAL)</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-category.html\">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: ENDOCARDITIS NOS (ICD-9-CM 424.90) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-icd9cm.html\">ICD-9CM</a>#424.90)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-2.html\">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>recordedDate</b>: 2000-07-18</p><p><b>asserter</b>: <a href=\"Practitioner-ex-MHV-practitioner-110.html\">Practitioner/ex-MHV-practitioner-110</a> &quot; MANGAS&quot;</p></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Condition</b><a name=\"ex-MHV-condition-6\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;ex-MHV-condition-6&quot; Updated &quot;2000-07-18 00:00:00+0000&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.condition.html\">VA MHV PHR problems</a></p></div><p><b>identifier</b>: id:\u00a0ProblemTO.98034\u00a0(use:\u00a0USUAL)</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-category.html\">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: ENDOCARDITIS NOS (ICD-9-CM 424.90) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-icd9cm.html\">ICD-9CM</a>#424.90)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-2.html\">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>recordedDate</b>: 2000-07-18</p><p><b>asserter</b>: <a name=\"ex-MHV-practitioner-110\"> </a></p><blockquote><p/><p><a name=\"ex-MHV-practitioner-110\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.110\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: MANGAS,PHYLLIS A</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #ex-MHV-practitioner-110</b><a name=\"ex-MHV-practitioner-110\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.110\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: MANGAS,PHYLLIS A</p></blockquote></div>"
   },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "ex-MHV-practitioner-110",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.110"
+    }],
+    "name" : [{
+      "text" : "MANGAS,PHYLLIS A",
+      "family" : "MANGAS",
+      "given" : ["PHYLLIS",
+      "A"]
+    }]
+  }],
   "identifier" : [{
     "use" : "usual",
     "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
@@ -44,6 +62,6 @@
   },
   "recordedDate" : "2000-07-18",
   "asserter" : {
-    "reference" : "Practitioner/ex-MHV-practitioner-110"
+    "reference" : "#ex-MHV-practitioner-110"
   }
 }

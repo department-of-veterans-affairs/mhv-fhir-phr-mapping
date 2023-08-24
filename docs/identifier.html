@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.2.1 - ci-build
 
 
 
@@ -199,7 +199,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.1). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Id vs Identifier</h2>
   
 
@@ -369,6 +369,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>profile in sushi</p>
 
 <pre><code class="language-fs">* identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`ClinicalProcedureTO` | `.` | {ClinicalProcedureTO.id}"
 </code></pre>
@@ -402,6 +403,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <pre><code class="language-fs">* identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = http://terminology.hl7.org/CodeSystem/v2-0203#ACSN
 * identifier[accessionNumber].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[accessionNumber].system obeys TOid-startswithoid
 * identifier[accessionNumber].value ^short = "`Accession` | `.` | {ImagingExamTO.accessionNum}"
 </code></pre>
 
@@ -411,6 +413,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <pre><code class="language-fs">* identifier[casenum].use = #secondary
 * identifier[casenum].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[casenum].system obeys TOid-startswithoid
 * identifier[casenum].value ^short = "`CaseNum` | `.` | {ImagingExam.casenum}"
 </code></pre>
 
@@ -418,29 +421,33 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Organization resources are different in that they are defining a facility. So, we use the identifier.system value of the fixed OID, and the value of the station</p>
 
+<pre><code class="language-fs">* identifier[TOid].system 1..1
+* identifier[TOid] ^patternIdentifier.system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].value ^short = "{stationNumber} or `LabSiteTO.` + {LabSiteTO.id}"
+* identifier[TOid].use = #usual
+</code></pre>
+
 <h4 id="hospitallocationto">HospitalLocationTO</h4>
 
 <p>HospitalLocationTO will be a <code class="language-plaintext highlighter-rouge">use</code> of <code class="language-plaintext highlighter-rouge">usual</code>, and use the prefix <code class="language-plaintext highlighter-rouge">HospitalLocationTO</code>, but will use the root OID <strong>without the station number</strong></p>
 
 <pre><code class="language-fs">* identifier[TOid].use = #usual
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value = "`HospitalLocationTO` | `.` | {HospitalLocationTO.id}"
 </code></pre>
-
-<p>TODO: possibility we don’t need the prefix.</p>
 
 <h4 id="hdr-orderingfacilityidentifier">HDR orderingFacilityIdentifier</h4>
 
 <p>orderingFacilityIdentifier will be a <code class="language-plaintext highlighter-rouge">.use</code> of <code class="language-plaintext highlighter-rouge">usual</code>, and use the fixed OID for <code class="language-plaintext highlighter-rouge">.system</code>. The orderingFacilityIdentifier has a <code class="language-plaintext highlighter-rouge">.stationNumber</code> element that we will use for the <code class="language-plaintext highlighter-rouge">.value</code>. Since we know this is the station number, we will not add a prefix.</p>
 
 <pre><code class="language-fs">* identifier[TOid].use = #usual
-* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
 * identifier[TOid].value ^short = "{orderingFacilityIdentifier.identity}"
 </code></pre>
 
 <h4 id="patient">Patient</h4>
 
-<p>I don’t know enough about how patient id is managed. I understand that we are just going to use the MHV assigned patient identifier and nothing more.</p>
+<p>I don’t know enough about how patient id is managed. I understand that we are just going to use the MHV assigned patient identifier and nothing more. The Patient resource is populated from the MHV eVault patient details.</p>
 
 
 
@@ -489,7 +496,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -65,7 +65,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.0 - ci-build
+            <span style="display:inline-block;">0.2.1 - ci-build
 
 
 
@@ -199,7 +199,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.0). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.1). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Utility Functions</h2>
   
 
@@ -230,6 +230,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <div class="markdown-toc">
 <ul id="markdown-toc">
   <li><a href="#support-resources" id="markdown-toc-support-resources">Support Resources</a></li>
+  <li><a href="#getpatient" id="markdown-toc-getpatient">GetPatient()</a></li>
   <li><a href="#conversions" id="markdown-toc-conversions">Conversions</a></li>
 </ul>
 
@@ -240,6 +241,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <h3 id="support-resources">Support Resources</h3>
 
 <p>To support the primary FHIR Resources, there are some utility Resources that will be needed. These will be created upon demand, based on available details. Note that when we do not get a source <code class="language-plaintext highlighter-rouge">id</code> for the object, we will use a <code class="language-plaintext highlighter-rouge">contained</code> resource with the details we are given. Thus we will use a reference to a resource, that reference will most of the time be to a retrievable resource, but may be to a contained resource.</p>
+
+<p>MVP decision is that these will all be contained. They will not thus be available RESTfully. And thus any references to the following ‘functions’ are really just processing the contained resource.</p>
 
 <h4 id="getpractitioner">GetPractitioner()</h4>
 
@@ -254,20 +257,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>If a Practitioner is found, and the details given are different, then presume parameters are newer and use them to update the found Practitioner Resource.</p>
 
 <p>Profiled <a href="StructureDefinition-VA.MHV.PHR.practitioner.html">Practitioner</a></p>
-
-<h4 id="getpatient">GetPatient()</h4>
-
-<p>Input: ICN, PatientTO</p>
-
-<p>Return: a Patient resource reference</p>
-
-<p>If a Patient is not found given the input parameters, then one is created and populated with the input parameters.</p>
-
-<p>If a Patient is found, and the details given are different, then presume parameters are newer and use them to update the found Patient Resource.</p>
-
-<p><strong>QUESTION: Should the patient also be populated with given patient demographics found in eVault?</strong></p>
-
-<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.patient.html">Patient</a></p>
 
 <h4 id="getlocation">GetLocation()</h4>
 
@@ -293,6 +282,16 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>Profiled <a href="StructureDefinition-VA.MHV.PHR.organization.html">Organization</a></p>
 
+<h3 id="getpatient">GetPatient()</h3>
+
+<p>Input: ICN, PatientTO</p>
+
+<p>Return: a Patient resource reference</p>
+
+<p>If a Patient is not found given the input parameters, then one is created and populated with the data in MHV eVault for that Patient.</p>
+
+<p>Profiled <a href="StructureDefinition-VA.MHV.PHR.patient.html">Patient</a></p>
+
 <h3 id="conversions">Conversions</h3>
 
 <p>Historic data is using different dataTypes that can be well defined</p>
@@ -303,7 +302,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h5 id="code-lookup">Code Lookup</h5>
 
-<p>Most of the historic data just uses strings. Will need some method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a <a href="http://hl7.org/fhir/conceptmap.html">FHIR ConceptMap</a> resource, thus making maintaining it easy.</p>
+<p>Most of the historic data just uses strings. For MVP we are not converting codes, except for some very specific ones. This is because MHV is not scoped to be improving the quality of the data, and the use of the MHV FHIR API is driven by display use. Thus codes are not important.</p>
+
+<p>Beyond MVP we could look to add a method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a <a href="http://hl7.org/fhir/conceptmap.html">FHIR ConceptMap</a> resource, thus making maintaining it easy.</p>
 
 <h5 id="formal-code-systems-of-interest">Formal code systems of interest</h5>
 
@@ -338,7 +339,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>For every context use of a concept encoded as a string, we presume they are unique within that context. The context identifies a specific ConceptMap, and a lookup of the string in that ConceptMap will result in the mapped standard code value.</p>
 
-<p>A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possibily update of the given ConceptMap.</p>
+<p>A failure to find a ConceptMap can be recorded simply as the given string. These cases should be logged for evaluation and possible update of the given ConceptMap.</p>
 
 <h5 id="ucum-code">UCUM code</h5>
 
@@ -414,7 +415,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 22, 2023 16:36-0500">2023-08-22</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

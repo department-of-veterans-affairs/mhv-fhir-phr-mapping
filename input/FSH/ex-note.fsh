@@ -40,6 +40,8 @@ Derived from the a mock NoteTO:
 * date = 2022-08-05T16:56:00Z
 * content.attachment.title = "Adverse React/Allergy"
 * type = LOINC#11505-5 "Physician procedure note"
+* contained[+] = ex-MHV-practitioner-36556
+* contained[+] = ex-MHV-location-984
 * author = Reference(Practitioner/ex-MHV-practitioner-36556)
 * authenticator = Reference(Practitioner/ex-MHV-practitioner-36556)
 * context.related[+] = Reference(Location/ex-MHV-location-984)
@@ -117,6 +119,8 @@ Note dropped cosigner
 * content.attachment.title = "Discharge Summary"
 * type = LOINC#18842-5 "Discharge summary"
 * type.text = "DISCHARGE SUMMARY"
+* contained[+] = ex-MHV-practitioner-36556
+* contained[+] = ex-MHV-location-552
 * author = Reference(Practitioner/ex-MHV-practitioner-36556)
 * authenticator = Reference(Practitioner/ex-MHV-practitioner-36556)
 * context.related[+] = Reference(Location/ex-MHV-location-552)

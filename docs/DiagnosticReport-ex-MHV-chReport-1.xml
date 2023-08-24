@@ -11,6 +11,64 @@
 Added Potassium test</p></div>
   </text>
   <contained>
+    <Organization>
+      <id value="ex-MHV-organization-552"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <text value="L"/>
+        </type>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="552"/>
+      </identifier>
+      <active value="true"/>
+      <name value="DAYTON, OH VAMC"/>
+      <address>
+        <line value="4100 W. THIRD STREET"/>
+        <city value="DAYTON"/>
+        <state value="OH"/>
+        <postalCode value="45428"/>
+        <country value="USA"/>
+      </address>
+    </Organization>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="ex-MHV-practitioner-14934-VA552"/>
+      <identifier>
+        <system value="http://va.gov/systems/99VA4"/>
+        <value value="14934-VA552"/>
+      </identifier>
+      <name>
+        <family value="HALL"/>
+        <given value="LISA"/>
+        <given value="A"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="ex-MHV-organization-989"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="LabSiteTO.989"/>
+      </identifier>
+      <identifier>
+        <system value="http://hl7.org/fhir/sid/us-npi"/>
+        <value value="1234"/>
+      </identifier>
+      <active value="true"/>
+      <name value="Lab Site 989"/>
+    </Organization>
+  </contained>
+  <contained>
     <Observation>
       <id value="ex-MHV-chPanel-1a"/>
       <meta>
@@ -73,7 +131,7 @@ Added Potassium test</p></div>
         <reference value="Patient/ex-MHV-patient-942104"/>
       </subject>
       <performer>
-        <reference value="Organization/ex-MHV-organization-552"/>
+        <reference value="#ex-MHV-organization-552"/>
       </performer>
       <valueQuantity>
         <value value="3.5"/>
@@ -158,7 +216,7 @@ Added Potassium test</p></div>
         <reference value="Patient/ex-MHV-patient-942104"/>
       </subject>
       <performer>
-        <reference value="Organization/ex-MHV-organization-552"/>
+        <reference value="#ex-MHV-organization-552"/>
       </performer>
       <valueQuantity>
         <value value="138"/>
@@ -240,13 +298,13 @@ Added Potassium test</p></div>
   <effectiveDateTime value="2021-01-21T11:32:47-05:00"/>
   <issued value="2021-01-21T11:32:47-05:00"/>
   <performer>
-    <reference value="Organization/ex-MHV-organization-552"/>
+    <reference value="#ex-MHV-organization-552"/>
   </performer>
   <performer>
-    <reference value="Practitioner/ex-MHV-practitioner-14934-VA552"/>
+    <reference value="#ex-MHV-practitioner-14934-VA552"/>
   </performer>
   <performer>
-    <reference value="Organization/ex-MHV-organization-989"/>
+    <reference value="#ex-MHV-organization-989"/>
   </performer>
   <specimen>
     <reference value="#ex-MHV-chSpecimen-1"/>
