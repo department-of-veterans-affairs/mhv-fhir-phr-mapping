@@ -50,7 +50,7 @@ TODO questions:
 Mapping: Lab-Mapping-LabSpecimenTO
 Source: MHVlabSpecimen
 Target: "LabSpecimen"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "LabSpecimenTO"
 * identifier -> "{StationNbr} and {LabSpecimenTO.id}"
 * accessionIdentifier -> "{StationNbr} and {LabSpecimenTO.accessionNum}"
@@ -120,7 +120,7 @@ Description: "Lab Report types"
 Mapping: Lab-Mapping-LabReportTO
 Source:	MHVlabReport
 Target: "LabReportTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "LabReportTO"
 * category -> "`laboratory`"
 * status -> "`final`"
@@ -168,7 +168,7 @@ A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API t
 Mapping: Lab-Mapping-LabResultTO
 Source:	MHVlabTest
 Target: "LabTestTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "LabTestTO / LabResultTO"
 * specimen -> "Contained Specimen (LabTestTO.specimen.[LabSpecimenTO])"
 * identifier -> "{StationNbr} and {LabTestTO.id}"

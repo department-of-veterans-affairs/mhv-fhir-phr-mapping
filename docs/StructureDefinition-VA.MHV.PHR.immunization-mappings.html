@@ -378,12 +378,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>.participation[typeCode=AUT].time</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>immunization.uncertaintycode (if primary source=false, uncertainty=U)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>.participation[typeCode=LOC].COCT_MT240000UV</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>.identifier</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>.participation[typeCode=CSM].role[classCode=INST].scopedRole.scoper[classCode=ORG]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>.participation[typeCode=CSM].role[classCode=INST].scopedRole.scoper[classCode=MMAT].id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;site</td><td>observation.targetSiteCode</td> </tr>
@@ -448,7 +442,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/consumable/manfacturedProduct/manufacturedMaterial/lotNumberText</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;site</td><td>ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/approachSiteCode/code</td> </tr>
 </table>
-<a name="Immunization-Mapping"> </a><h3>Mappings for VIA to MHV-PHR (ImmunizationTO)</h3><table class="grid">
+<a name="Immunization-Mapping"> </a><h3>Mappings for VIA to mhv-fhir-phr (ImmunizationTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVimmunization</b></td></tr>
  <tr><td>Immunization</td><td>ImmunizationTO</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ImmunizationTO.id}</td> </tr>
@@ -462,14 +456,13 @@
  <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ImmunizationTO.administeredDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>ImmunizationTO.administeredDate</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>`false`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>ImmunizationTO.encounter.location.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>GetLocation(ImmunizationTO.encounter.location)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>ImmunizationTO.manufacture</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>ImmunizationTO.lotNumber</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;site</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.anatomicSurface</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`, GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`, GetOrganization(ImmunizationTO.encounter.facility.name)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`, GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`, GetOrganization(ImmunizationTO.encounter.facility)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.comments</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td> </tr>
@@ -479,6 +472,26 @@
  <tr><td>&nbsp;&nbsp;&nbsp;protocolApplied</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;series</td><td>translation of ImmunizationTO.series</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseNumber[x] (doseNumberString)</td><td>ImmunizationTO.series</td> </tr>
+</table>
+<a name="Immunization-Old-Mapping"> </a><h3>Mappings for eVault-PHR to mhv-fhir-phr (eVaultPHR)</h3><p>Informative map that includes only the elements available in eVault PHR</p><table class="grid">
+ <tr><td colspan="3"><b>MHVimmunization</b></td></tr>
+ <tr><td>Immunization</td><td>ImmunizationTO</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ImmunizationTO.id}</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`completed`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.name</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>patient</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ImmunizationTO.administeredDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>ImmunizationTO.administeredDate</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>`false`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>GetLocation(ImmunizationTO.encounter.location)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>GetOrganization(ImmunizationTO.encounter.facility.name)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.comments</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>contained Observation with ImmunizationTO.reaction</td> </tr>
 </table>
 
 
@@ -555,12 +568,12 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 12:12-0500">2023-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/issues">Issues</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues">Issues</a>
                 
           </span>
         </p>

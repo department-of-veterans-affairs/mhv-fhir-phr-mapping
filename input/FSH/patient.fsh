@@ -33,7 +33,7 @@ mapping concerns - JIRA
 - set .meta.profile
 - Would be even better if we could use a common Patient registry. 
 
-NOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-phr-patientto)
+NOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-fhir-phr-patientto)
 """
 //* extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named religion 0..1
 //* extension contains http://hl7.org/fhir/StructureDefinition/patient-birthPlace named birthPlace 0..1
@@ -92,7 +92,7 @@ PatientTO mapping notes
 Mapping: Patient-Mapping
 Source:	MHVpatient
 Target: "PatientTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "PatientTO"
 * active -> "`true`"
 * identifier -> "ICN"

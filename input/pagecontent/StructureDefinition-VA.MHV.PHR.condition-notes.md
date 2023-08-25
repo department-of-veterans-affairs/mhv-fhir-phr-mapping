@@ -1,7 +1,7 @@
 
-- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/problems.xml) 
+- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/problems.xml) 
 - maps to [ProblemTO](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl) schema. 
-- [mapping to VIA](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-via-to-mhv-phr-problemto)
+- [mapping to VIA](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-via-to-mhv-fhir-phr-problemto)
 - based on US-Core for Condition Resource profile
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition` to indicate the intent to be compliant with this profile
 - Presume we will not expose those that are ProblemTO.removed = true, but we should update our FHIR database in case the previous was recorded.
@@ -17,3 +17,4 @@
 - **are we ever exposed to ProblemTO.removed=true**
 - **what are the other values for ProblemTO.status**
   - how do we handle when a problem is moved from active to not active? Are we made aware of this? Should we delete, mark not active, or mark entered-in-error?
+- noted that VA went to ICD-10. so not clear that we should interpret the <icd> as ICD-9 or ICD-10.. the display text implies 9 in my mock data.

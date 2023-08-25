@@ -1,6 +1,6 @@
 
 - based on US-Core Immunization Resource profile
-  - US-Core already requires: `status`, `vaccineCode`, `patient`, `occurance[x]`, `primarySource`
+  - US-Core already requires: `status`, `vaccineCode`, `patient`, `occurrence[x]`, `primarySource`
 - `patient` is a reference to this patient
 - `status` is `completed`
 - `primarySource` is `false` - the MHV FHIR API should not be seen as the primary source
@@ -10,7 +10,7 @@
   - do not have any other codes available
 - `note.text` may have comments
 - `reaction.detail` may be a contained Observation with reaction detail
-- `occuranceDateTime` when the immunization given
+- `occurrenceDateTime` when the immunization given
 - `recorded` when the immunization was recorded
 - `performer.actor` may be a Practitioner administering (AP) the immunization
 - `performer.actor` may be a Practitioner that ordered (OP)
@@ -20,6 +20,5 @@
 - `manufacture` may be the manufacture of the immunization given
 - `protocolApplied.series` may be derived from the series
 - `protocolApplied.doseNumberString` may be the series
-- `location.display` may be the location where the immunization was given
-- `meta.lastUpdated` will indicate the last time the resource was updated
+- `location` may be the location where the immunization was given
 - no other elements are populated

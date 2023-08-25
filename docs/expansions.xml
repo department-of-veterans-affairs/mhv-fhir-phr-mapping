@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="3f8ff3df-d8ea-42bf-8833-3d077f7d2d14"/>
+  <id value="e7f84473-8a95-41b6-b19c-3b6da34cc04e"/>
   <meta>
-    <lastUpdated value="2023-08-24T09:48:15.102-05:00"/>
+    <lastUpdated value="2023-08-25T12:12:31.396-05:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -83,7 +83,7 @@
         <title value="Subset of allergy intolerance category"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-24T09:48:15-05:00"/>
+        <date value="2023-08-25T12:12:31-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -91,8 +91,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:d415843b-924a-4786-beaf-ec75dd6c3e80"/>
-          <timestamp value="2023-08-24T09:55:44-05:00"/>
+          <identifier value="urn:uuid:776da12e-8b2a-4653-b18e-3b23b8f54bd7"/>
+          <timestamp value="2023-08-25T12:19:52-05:00"/>
           <total value="3"/>
           <parameter>
             <name value="excludeNested"/>
@@ -188,7 +188,7 @@
         <title value="Subset of condition verification status"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-24T09:48:15-05:00"/>
+        <date value="2023-08-25T12:12:31-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -196,8 +196,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:c2c54a57-eb62-4e0a-a811-ca5a965081ac"/>
-          <timestamp value="2023-08-24T09:55:44-05:00"/>
+          <identifier value="urn:uuid:825f8ac9-b54a-4bde-bf20-83c2c03fe45c"/>
+          <timestamp value="2023-08-25T12:19:54-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
@@ -237,6 +237,7 @@
               <p>Expansion based on: </p>
               <ul>
                 <li>Loinc v2.74</li>
+                <li>Loinc v2.74</li>
                 <li>
                   <a href="ValueSet-NoteTypeVS.html">valueset Known Note types v0.2.1 (ValueSet)</a>
                 </li>
@@ -256,19 +257,19 @@
               </tr>
               <tr>
                 <td style="white-space:nowrap">
-                  <a name="http---loinc.org-11505-5"> </a>  
-                  <a href="https://loinc.org/11505-5/">11505-5</a>
-                </td>
-                <td>http://loinc.org</td>
-                <td>Physician procedure note</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
                   <a name="http---loinc.org-18842-5"> </a>  
                   <a href="https://loinc.org/18842-5/">18842-5</a>
                 </td>
                 <td>http://loinc.org</td>
                 <td>Discharge summary</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---loinc.org-11506-3"> </a>  
+                  <a href="https://loinc.org/11506-3/">11506-3</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Progress note</td>
               </tr>
               <tr>
                 <td style="white-space:nowrap">
@@ -295,7 +296,7 @@
         <title value="Known DocumentReference types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-24T09:48:15-05:00"/>
+        <date value="2023-08-25T12:12:31-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -303,8 +304,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:8e4175c2-4455-4e27-b8c2-f7e45a0a4906"/>
-          <timestamp value="2023-08-24T09:55:45-05:00"/>
+          <identifier value="urn:uuid:9c65ae42-877b-4a2c-982d-94bbbd41dd41"/>
+          <timestamp value="2023-08-25T12:19:54-05:00"/>
           <total value="4"/>
           <parameter>
             <name value="excludeNested"/>
@@ -323,6 +324,10 @@
             <valueBoolean value="true"/>
           </parameter>
           <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://loinc.org|2.74"/>
+          </parameter>
+          <parameter>
             <name value="version"/>
             <valueUri value="http://loinc.org|2.74"/>
           </parameter>
@@ -332,13 +337,13 @@
           </parameter>
           <contains>
             <system value="http://loinc.org"/>
-            <code value="11505-5"/>
-            <display value="Physician procedure note"/>
+            <code value="18842-5"/>
+            <display value="Discharge summary"/>
           </contains>
           <contains>
             <system value="http://loinc.org"/>
-            <code value="18842-5"/>
-            <display value="Discharge summary"/>
+            <code value="11506-3"/>
+            <display value="Progress note"/>
           </contains>
           <contains>
             <system value="http://loinc.org"/>
@@ -362,7 +367,13 @@
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">
             <p>This value set contains 2 concepts</p>
-            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on Loinc v2.74</p>
+            <div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">
+              <p>Expansion based on: </p>
+              <ul>
+                <li>Loinc v2.74</li>
+                <li>Loinc v2.74</li>
+              </ul>
+            </div>
             <table class="codes">
               <tr>
                 <td style="white-space:nowrap">
@@ -400,7 +411,7 @@
         <title value="Known Lab Report types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-24T09:48:15-05:00"/>
+        <date value="2023-08-25T12:12:31-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -408,8 +419,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:59dd2d88-e1da-40a5-b37a-bd2d8732c502"/>
-          <timestamp value="2023-08-24T09:55:45-05:00"/>
+          <identifier value="urn:uuid:71b5672f-4158-4909-8d5d-81a2ec3618d7"/>
+          <timestamp value="2023-08-25T12:19:55-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
@@ -422,6 +433,10 @@
           <parameter>
             <name value="limitedExpansion"/>
             <valueBoolean value="true"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://loinc.org|2.74"/>
           </parameter>
           <parameter>
             <name value="version"/>
@@ -449,7 +464,13 @@
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">
             <p>This value set contains 2 concepts</p>
-            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on Loinc v2.74</p>
+            <div style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">
+              <p>Expansion based on: </p>
+              <ul>
+                <li>Loinc v2.74</li>
+                <li>Loinc v2.74</li>
+              </ul>
+            </div>
             <table class="codes">
               <tr>
                 <td style="white-space:nowrap">
@@ -464,19 +485,19 @@
               </tr>
               <tr>
                 <td style="white-space:nowrap">
-                  <a name="http---loinc.org-11505-5"> </a>  
-                  <a href="https://loinc.org/11505-5/">11505-5</a>
-                </td>
-                <td>http://loinc.org</td>
-                <td>Physician procedure note</td>
-              </tr>
-              <tr>
-                <td style="white-space:nowrap">
                   <a name="http---loinc.org-18842-5"> </a>  
                   <a href="https://loinc.org/18842-5/">18842-5</a>
                 </td>
                 <td>http://loinc.org</td>
                 <td>Discharge summary</td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---loinc.org-11506-3"> </a>  
+                  <a href="https://loinc.org/11506-3/">11506-3</a>
+                </td>
+                <td>http://loinc.org</td>
+                <td>Progress note</td>
               </tr>
             </table>
           </div>
@@ -487,7 +508,7 @@
         <title value="Known Note types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-24T09:48:15-05:00"/>
+        <date value="2023-08-25T12:12:31-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -495,8 +516,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:4716da17-ee90-4a25-ba4b-f4fe80ffaed9"/>
-          <timestamp value="2023-08-24T09:55:46-05:00"/>
+          <identifier value="urn:uuid:5054f289-2c2a-4757-8896-0b7aa074ee6a"/>
+          <timestamp value="2023-08-25T12:19:56-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
@@ -511,18 +532,22 @@
             <valueBoolean value="true"/>
           </parameter>
           <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://loinc.org|2.74"/>
+          </parameter>
+          <parameter>
             <name value="version"/>
             <valueUri value="http://loinc.org|2.74"/>
           </parameter>
           <contains>
             <system value="http://loinc.org"/>
-            <code value="11505-5"/>
-            <display value="Physician procedure note"/>
+            <code value="18842-5"/>
+            <display value="Discharge summary"/>
           </contains>
           <contains>
             <system value="http://loinc.org"/>
-            <code value="18842-5"/>
-            <display value="Discharge summary"/>
+            <code value="11506-3"/>
+            <display value="Progress note"/>
           </contains>
         </expansion>
       </ValueSet>

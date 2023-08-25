@@ -14,5 +14,4 @@
 - `onsetDateTime` will hold the onsetDate
 - `abatementDateTime` may hold the abatement date
 - `evidence.detail` may have hospital location detail
-- `meta.lastUpdated` will indicate the last time the resource was updated
 - no other elements are populated

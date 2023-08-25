@@ -7,7 +7,7 @@ MHV requests updates on medications from Vista using HL7 v2 messaging. This requ
 </figure>
 <br clear="all">
 
-- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/SampleMedicationsServResp.json)
+- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/SampleMedicationsServResp.json)
 - This is not a VIA or HDR feed, so there is no schema. There is only the MHV Java Object definition (Note the convention of postfix of `TO` (e.g. MedicationDetail`TO`) is used in the java code object definition, but not an indication of VIA or any externally defined schema).
 The results of the HL7 v2 request is a:
 - the List of Medications is defined by a MedicationDetailTO which may have dispensed information and tracking information)

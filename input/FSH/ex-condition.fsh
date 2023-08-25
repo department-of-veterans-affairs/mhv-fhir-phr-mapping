@@ -19,7 +19,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1995-09-27"
-* meta.lastUpdated = "1995-09-27T00:00:00Z"
+//* meta.lastUpdated = "1995-09-27T00:00:00Z"
 
 Instance:   ex-MHV-condition-2
 InstanceOf: VA.MHV.PHR.condition
@@ -41,7 +41,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1995-09-27"
-* meta.lastUpdated = "1995-09-27T00:00:00Z"
+//* meta.lastUpdated = "1995-09-27T00:00:00Z"
 
 Instance:   ex-MHV-condition-3
 InstanceOf: VA.MHV.PHR.condition
@@ -63,7 +63,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1995-09-27"
-* meta.lastUpdated = "1995-09-27T00:00:00Z"
+//* meta.lastUpdated = "1995-09-27T00:00:00Z"
 
 Instance:   ex-MHV-condition-4
 InstanceOf: VA.MHV.PHR.condition
@@ -85,7 +85,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1997-12-08"
-* meta.lastUpdated = "1997-12-08T00:00:00Z"
+//* meta.lastUpdated = "1997-12-08T00:00:00Z"
 
 Instance:   ex-MHV-condition-5
 InstanceOf: VA.MHV.PHR.condition
@@ -107,7 +107,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1997-12-08"
-* meta.lastUpdated = "1997-12-08T00:00:00Z"
+//* meta.lastUpdated = "1997-12-08T00:00:00Z"
 
 Instance:   ex-MHV-condition-6
 InstanceOf: VA.MHV.PHR.condition
@@ -129,7 +129,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2000-07-18"
-* meta.lastUpdated = "2000-07-18T00:00:00Z"
+//* meta.lastUpdated = "2000-07-18T00:00:00Z"
 
 Instance:   ex-MHV-condition-7
 InstanceOf: VA.MHV.PHR.condition
@@ -151,7 +151,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2001-03-22"
-* meta.lastUpdated = "2001-03-22T00:00:00Z"
+//* meta.lastUpdated = "2001-03-22T00:00:00Z"
 
 Instance:   ex-MHV-condition-8
 InstanceOf: VA.MHV.PHR.condition
@@ -173,7 +173,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2001-07-06"
-* meta.lastUpdated = "2001-07-06T00:00:00Z"
+//* meta.lastUpdated = "2001-07-06T00:00:00Z"
 
 Instance:   ex-MHV-condition-9
 InstanceOf: VA.MHV.PHR.condition
@@ -195,7 +195,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2001-07-06"
-* meta.lastUpdated = "2001-07-06T00:00:00Z"
+//* meta.lastUpdated = "2001-07-06T00:00:00Z"
 
 Instance:   ex-MHV-condition-10
 InstanceOf: VA.MHV.PHR.condition
@@ -217,7 +217,7 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2004-01-21"
-* meta.lastUpdated = "2004-01-21T00:00:00Z"
+//* meta.lastUpdated = "2004-01-21T00:00:00Z"
 
 
 Instance:   ex-MHV-condition-11
@@ -240,6 +240,6 @@ Example from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2004-09-24"
-* meta.lastUpdated = "2004-09-24T00:00:00Z"
+//* meta.lastUpdated = "2004-09-24T00:00:00Z"
 
 

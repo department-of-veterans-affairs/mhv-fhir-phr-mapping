@@ -15,7 +15,7 @@ A profile on the Location resource for MHV PHR exposing Location using FHIR API.
 - `name` is the name as known
 - always a contained resource, so not exposed RESTfully
 
-NOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-phr-hospitallocationto).
+NOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-fhir-phr-hospitallocationto).
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -86,7 +86,7 @@ NOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.loc
 Mapping: Location-Mapping
 Source:	MHVlocation
 Target: "HospitalLocationTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "HospitalLocationTO"
 * identifier -> "HospitalLocationTO.ids"
 * name -> "HospitalLocationTO.name"

@@ -1,8 +1,8 @@
 
-- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/allergies.xml) 
+- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/allergies.xml) 
 - Received from HDR
 - maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
-- [mapping to HDR](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-hdr-allergy-to-mhv-phr-intolerancecondition)
+- [mapping to HDR](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-hdr-allergy-to-mhv-fhir-phr-intolerancecondition)
 - [Vivian Allegies](https://vivian.worldvista.org/dox/Global_XkdNUigxMjAuOA==.html)
 - Should be based on US-Core for AllergyIntolerance Resource profile
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile
@@ -43,6 +43,7 @@
   - Carnetta expresses that it is possible HDR and VIA are filtering out non-current data. If this is the case, then we will need HDR and VIA to stop filtering, and we will might need to have our PHR code more defensive.
   - If we are told, would we delete our instance of that allergy, or mark it inactive, or mark it entered-in-error?
 - not clear if we are getting full `allergyType` details. HL7 v2 uses [two character codes](https://terminology.hl7.org/2.1.0/CodeSystem-v2-0127.html), but it seems we are getting just single character codes. It may not matter as [there is HL7 guidance](https://confluence.hl7.org/pages/viewpage.action?pageId=44499731) that only uses the three categories in FHIR. [HL7 v2 to FHIR IG](https://hl7.org/fhir/uv/v2mappings/2020sep/ConceptMap-table-hl70127-to-allergy-intolerance-type.html)
+- not preserving `recordUpdateTime`. The FHIR meta.lastUpdated is always overwritten by the HAPI server
 
 #### code inspection concerns
 

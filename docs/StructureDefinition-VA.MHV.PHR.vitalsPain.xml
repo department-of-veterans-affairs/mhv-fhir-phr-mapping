@@ -24,7 +24,7 @@
   <name value="MHVvitalsPain"/>
   <title value="VA MHV PHR Vital-Signs for PAIN"/>
   <status value="active"/>
-  <date value="2023-08-24T09:48:15-05:00"/>
+  <date value="2023-08-25T12:12:31-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -85,12 +85,12 @@
   <mapping>
     <identity value="VitalsPain-Mapping"/>
     <uri value="MHVvitalsPain"/>
-    <name value="VIA to MHV-PHR"/>
+    <name value="VIA to mhv-fhir-phr"/>
   </mapping>
   <mapping>
     <identity value="Vitals-Mapping"/>
     <uri value="VitalSignTO"/>
-    <name value="VIA to MHV-PHR"/>
+    <name value="VIA to mhv-fhir-phr"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -1653,10 +1653,6 @@
         <map value="116680003 |Is a|"/>
       </mapping>
       <mapping>
-        <identity value="Vitals-Mapping"/>
-        <map value="VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"/>
-      </mapping>
-      <mapping>
         <identity value="VitalsPain-Mapping"/>
         <map value="VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"/>
       </mapping>
@@ -1773,6 +1769,14 @@
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
+      <mapping>
+        <identity value="Vitals-Mapping"/>
+        <map value="VitalSignTO.type.id if 7 digits then use as VUID"/>
+      </mapping>
+      <mapping>
+        <identity value="Vitals-Mapping"/>
+        <map value="VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"/>
+      </mapping>
     </element>
     <element id="Observation.code.text">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
@@ -1815,6 +1819,10 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
+      </mapping>
+      <mapping>
+        <identity value="Vitals-Mapping"/>
+        <map value="VitalSignTO.type.name"/>
       </mapping>
     </element>
     <element id="Observation.subject">

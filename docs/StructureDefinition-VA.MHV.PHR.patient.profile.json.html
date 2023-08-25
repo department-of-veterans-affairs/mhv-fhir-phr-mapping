@@ -337,7 +337,7 @@
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.name">name</a>" : "MHVpatient",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.title">title</a>" : "VA MHV PHR Patient",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.status">status</a>" : "active",
-  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2023-08-24T09:48:15-05:00",
+  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.date">date</a>" : "2023-08-25T12:12:31-05:00",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.publisher">publisher</a>" : "VA Digital Services",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.contact">contact</a>" : [
     {
@@ -363,7 +363,7 @@
       ]
     }
   ],
-  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.description">description</a>" : "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- mapping from patient details in eVault (not from VIA/HDR transaction)\n- `identifier`  \n  - `value` = GetPatientId\n  - `system` = `urn:oid:2.16.840.1.113883.4.349`\n  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.\n- `name` - First and Last Name\n- `gender`\n- `birthDate`\n- `active` = true\n\nmapping concerns - JIRA\n- The Identifier for the ICN is still being discussed\n- identifer.use is not being populated\n- name seems to only populate first and last, but puts them both in given\n- populating identifier with GetPatientId(), not sure that is the same as GetIcn()\n- eVault also has, but are not being used in the FHIR Patient\n  - MiddleName\n  - Ssn\n  - Email\n  - Icn \n- set .meta.profile\n- Would be even better if we could use a common Patient registry. \n\nNOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-phr-patientto)",
+  "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.description">description</a>" : "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- mapping from patient details in eVault (not from VIA/HDR transaction)\n- `identifier`  \n  - `value` = GetPatientId\n  - `system` = `urn:oid:2.16.840.1.113883.4.349`\n  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.\n- `name` - First and Last Name\n- `gender`\n- `birthDate`\n- `active` = true\n\nmapping concerns - JIRA\n- The Identifier for the ICN is still being discussed\n- identifer.use is not being populated\n- name seems to only populate first and last, but puts them both in given\n- populating identifier with GetPatientId(), not sure that is the same as GetIcn()\n- eVault also has, but are not being used in the FHIR Patient\n  - MiddleName\n  - Ssn\n  - Email\n  - Icn \n- set .meta.profile\n- Would be even better if we could use a common Patient registry. \n\nNOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-fhir-phr-patientto)",
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.jurisdiction">jurisdiction</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>" : [
@@ -404,7 +404,7 @@
     {
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.identity">identity</a>" : "Patient-Mapping",
       "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.uri">uri</a>" : "PatientTO",
-      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "VIA to MHV-PHR"
+      "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.mapping.name">name</a>" : "VIA to mhv-fhir-phr"
     }
   ],
   "<a href="http://hl7.org/fhir/R4/structuredefinition.html#StructureDefinition.kind">kind</a>" : "resource",
@@ -5504,12 +5504,12 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 12:12-0500">2023-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/issues">Issues</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues">Issues</a>
                 
           </span>
         </p>

@@ -45,11 +45,13 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 Mapping: Vitals-Mapping
 Source:	MHVvitals
 Target: "VitalSignTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "VitalSignTO"
 * status -> "`final`"
 * category -> "`vital-signs`"
-* code -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
+* code.text -> "VitalSignTO.type.name"
+* code.coding -> "VitalSignTO.type.id if 7 digits then use as VUID"
+* code.coding -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
 * subject -> "patient"
 * effectiveDateTime -> "VitalSignTO.timestamp"
 * value[x] -> "VitalSignTO.value1 and VitalSignTO.units"
@@ -76,7 +78,7 @@ A profile on the Observation resource for Pain
 Mapping: VitalsPain-Mapping
 Source:	MHVvitalsPain
 Target: "MHVvitalsPain"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "VitalSignTO Pain"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -132,14 +134,13 @@ A profile on the Observation resource for Blood Pressure
 * referenceRange 0..0
 * hasMember 0..0
 * derivedFrom 0..0
-* component MS
 * value[x] 0..0
-* component 2..2
+// leveraging that US-Core has already defined the component
 
 Mapping: VitalsBP-Mapping
 Source:	MHVvitalsBP
 Target: "MHVvitalsBP"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "VitalSignTO BP"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -218,101 +219,113 @@ Title: "VIA to MHV-PHR"
 Instance:   ObservationTypeTOVsLoincCode
 InstanceOf: ConceptMap
 Title:      "Vital Sign ObservationTypeTO.name to Loinc Code"
-Description: "map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code."
+Description: "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code."
 Usage: #definition
 * url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/ObservationTypeTOVsLoincCode"
 * name =  "ObservationTypeTOVsLoincCode"
 * title = "Vital Sign ObservationTypeTO.name to Loinc Code"
 * experimental = false
 * status = #active
-* date = 2023-03-29
-* publisher = "John Moehrke (himself)"
-* description = "Map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code."
+* date = 2023-08-25
+* publisher = "VA KBS"
+* description = "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code."
 * purpose = "To be able to use proper LOINC code in the FHIR Observation"
-* group.source = "http://service.via.med.va.gov/ObservationTypeTO"
+* group.source = VUID
 * group.target = LOINC
-* group.element[+].code = #"ABDMONAL GIRTH"
+* group.element[+].code = #unknown
+* group.element[=].display = "ABDMONAL GIRTH"
 * group.element[=].target.equivalence = #equivalent
 * group.element[=].target.code = #LP31969-6
 * group.element[=].target.display = "Abdominal circumference"
 * group.element[=].target.comment = "seems like possible match"
-* group.element[+].code = #AUDIOMETRY
-* group.element[=].target.equivalence = #wider
-* group.element[=].target.code = #89015-2
-* group.element[=].target.display = "Pure tone threshold audiometry panel"
-* group.element[=].target.comment = "seems like possible match"
-* group.element[+].code = #"BLOOD PRESSURE"
+* group.element[+].code = #4688718 
+* group.element[=].display = "AUDIOMETRY"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #28615-3
+* group.element[=].target.display = "Audiology study"
+* group.element[+].code = #4500634 
+* group.element[=].display = "BLOOD PRESSURE"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #85354-9
 * group.element[=].target.display = "Blood pressure panel with all children optional"
-* group.element[+].code = #TEMPERATURE
+* group.element[+].code = #4500638 
+* group.element[=].display = "TEMPERATURE"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #8310-5
 * group.element[=].target.display = "Body temperature"
-* group.element[+].code = #"CENTRAL VENOUS PRESSURE"
-* group.element[=].target.equivalence = #equivalent
+* group.element[+].code = #4688719 
+* group.element[=].display = "CENTRAL VENOUS PRESSURE"
+* group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #8591-0
 * group.element[=].target.display = "Central venous pressure (CVP) Mean"
-* group.element[=].target.comment = "seems like possible match"
-* group.element[+].code = #CIRCUMFERENCE%2FGIRTH
-* group.element[=].target.equivalence = #equivalent
-* group.element[=].target.code = #56086-2
-* group.element[=].target.display = "Adult Waist Circumference Protocol"
-* group.element[=].target.comment = "seems like possible match"
-* group.element[+].code = #"FETAL HEART TONES"
-* group.element[=].target.equivalence = #inexact
-* group.element[=].target.code = #55283-6
-* group.element[=].target.display = "Fetal Heart rate"
-* group.element[=].target.comment = "Not likely correct as tones vs rate"
-* group.element[+].code = #"FUNDAL HEIGHT"
+* group.element[+].code = #4688720 
+* group.element[=].display = "CIRCUMFERENCE%2FGIRTH"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #9844-2
+* group.element[=].target.display = "Body region Circumference"
+* group.element[+].code = #4688721 
+* group.element[=].display = "FETAL HEART TONES"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #11616-0
+* group.element[=].target.display = "Fetal Heart Narrative Activity US"
+* group.element[+].code = #4688722 
+* group.element[=].display = "FUNDAL HEIGHT"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #11881-0
 * group.element[=].target.display = "Uterus Fundal height Tape measure"
-* group.element[+].code = #"HEADCIRCUMFERENCE"
-* group.element[=].target.equivalence = #equal
+* group.element[+].code = #unknown
+* group.element[=].display = "HEAD CIRCUMFERENCE"
+* group.element[=].target.equivalence = #equivalent
 * group.element[=].target.code = #9843-4
 * group.element[=].target.display = "Head Occipital-frontal circumference"
-* group.element[+].code = #HEARING
-* group.element[=].target.equivalence = #inexact
-* group.element[=].target.code = #58232-0
-* group.element[=].target.display = "Hearing loss risk indicators [Identifier]"
-* group.element[=].target.comment = "Not clear if this is Hearing Loss"
-* group.element[+].code = #HEIGHT
+* group.element[=].target.comment = "seems like possible match"
+* group.element[+].code = #4688723
+* group.element[=].display = "HEARING"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #32437-6
+* group.element[=].target.display = "Physical findings of Hearing"
+* group.element[+].code = #4688724
+* group.element[=].display = "HEIGHT"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #8302-2
 * group.element[=].target.display = "Body height"
-* group.element[+].code = #PAIN
+* group.element[+].code = #4500635
+* group.element[=].display = "PAIN"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #72514-3
 * group.element[=].target.display = "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
-* group.element[+].code = #"PULSE OXIMETRY"
+* group.element[+].code = #4500637
+* group.element[=].display = "PULSE OXIMETRY"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #2708-6
 * group.element[=].target.display = "Oxygen saturation in Arterial blood"
-* group.element[+].code = #PULSE
+* group.element[+].code = #4500636
+* group.element[=].display = "PULSE"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #8867-4
 * group.element[=].target.display = "Heart rate"
-* group.element[+].code = #RESPIRATION
+* group.element[+].code = #4688725
+* group.element[=].display = "RESPIRATION"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #9279-1
 * group.element[=].target.display = "Respiratory Rate"
-* group.element[+].code = #TONOMETRY
-* group.element[=].target.equivalence = #equivalent
-* group.element[=].target.code = #LP76227-5
-* group.element[=].target.display = "Tonometry"
-* group.element[=].target.comment = "seems like possible match"
-* group.element[+].code = #"VISION CORRECTED"
-* group.element[=].target.equivalence = #unmatched
-* group.element[=].target.code = #unknown
-* group.element[=].target.display = "unknown"
-* group.element[=].target.comment = "no clear match"
-* group.element[+].code = #"VISION UNCORRECTED"
-* group.element[=].target.equivalence = #unmatched
-* group.element[=].target.code = #unknown
-* group.element[=].target.display = "unknown"
-* group.element[=].target.comment = "no clear match"
-* group.element[+].code = #WEIGHT
+* group.element[+].code = #4688726
+* group.element[=].display = "TONOMETRY"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #28630-2
+* group.element[=].target.display = "Tonometry study"
+* group.element[+].code = #4688727
+* group.element[=].display = "VISION CORRECTED"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #70936-0
+* group.element[=].target.display = "Vision testing Narrative"
+* group.element[+].code = #4688728
+* group.element[=].display = "VISION UNCORRECTED"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #70936-0
+* group.element[=].target.display = "Vision testing Narrative"
+* group.element[+].code = #4500639
+* group.element[=].display = "WEIGHT"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #29463-7
 * group.element[=].target.display = "Body weight"

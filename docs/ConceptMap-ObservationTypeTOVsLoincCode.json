@@ -31,7 +31,7 @@
   "title" : "Vital Sign ObservationTypeTO.name to Loinc Code",
   "status" : "active",
   "experimental" : false,
-  "date" : "2023-03-29",
+  "date" : "2023-08-25",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -51,7 +51,7 @@
       "value" : "JohnMoehrke@gmail.com"
     }]
   }],
-  "description" : "Map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code.",
+  "description" : "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code.",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -60,10 +60,11 @@
   }],
   "purpose" : "To be able to use proper LOINC code in the FHIR Observation",
   "group" : [{
-    "source" : "http://service.via.med.va.gov/ObservationTypeTO",
+    "source" : "urn:oid:2.16.840.1.113883.6.233",
     "target" : "http://loinc.org",
     "element" : [{
-      "code" : "ABDMONAL GIRTH",
+      "code" : "unknown",
+      "display" : "ABDMONAL GIRTH",
       "target" : [{
         "code" : "LP31969-6",
         "display" : "Abdominal circumference",
@@ -72,16 +73,17 @@
       }]
     },
     {
-      "code" : "AUDIOMETRY",
+      "code" : "4688718",
+      "display" : "AUDIOMETRY",
       "target" : [{
-        "code" : "89015-2",
-        "display" : "Pure tone threshold audiometry panel",
-        "equivalence" : "wider",
-        "comment" : "seems like possible match"
+        "code" : "28615-3",
+        "display" : "Audiology study",
+        "equivalence" : "equal"
       }]
     },
     {
-      "code" : "BLOOD PRESSURE",
+      "code" : "4500634",
+      "display" : "BLOOD PRESSURE",
       "target" : [{
         "code" : "85354-9",
         "display" : "Blood pressure panel with all children optional",
@@ -89,7 +91,8 @@
       }]
     },
     {
-      "code" : "TEMPERATURE",
+      "code" : "4500638",
+      "display" : "TEMPERATURE",
       "target" : [{
         "code" : "8310-5",
         "display" : "Body temperature",
@@ -97,34 +100,35 @@
       }]
     },
     {
-      "code" : "CENTRAL VENOUS PRESSURE",
+      "code" : "4688719",
+      "display" : "CENTRAL VENOUS PRESSURE",
       "target" : [{
         "code" : "8591-0",
         "display" : "Central venous pressure (CVP) Mean",
-        "equivalence" : "equivalent",
-        "comment" : "seems like possible match"
+        "equivalence" : "equal"
       }]
     },
     {
-      "code" : "CIRCUMFERENCE%2FGIRTH",
+      "code" : "4688720",
+      "display" : "CIRCUMFERENCE%2FGIRTH",
       "target" : [{
-        "code" : "56086-2",
-        "display" : "Adult Waist Circumference Protocol",
-        "equivalence" : "equivalent",
-        "comment" : "seems like possible match"
+        "code" : "9844-2",
+        "display" : "Body region Circumference",
+        "equivalence" : "equal"
       }]
     },
     {
-      "code" : "FETAL HEART TONES",
+      "code" : "4688721",
+      "display" : "FETAL HEART TONES",
       "target" : [{
-        "code" : "55283-6",
-        "display" : "Fetal Heart rate",
-        "equivalence" : "inexact",
-        "comment" : "Not likely correct as tones vs rate"
+        "code" : "11616-0",
+        "display" : "Fetal Heart Narrative Activity US",
+        "equivalence" : "equal"
       }]
     },
     {
-      "code" : "FUNDAL HEIGHT",
+      "code" : "4688722",
+      "display" : "FUNDAL HEIGHT",
       "target" : [{
         "code" : "11881-0",
         "display" : "Uterus Fundal height Tape measure",
@@ -132,24 +136,27 @@
       }]
     },
     {
-      "code" : "HEADCIRCUMFERENCE",
+      "code" : "unknown",
+      "display" : "HEAD CIRCUMFERENCE",
       "target" : [{
         "code" : "9843-4",
         "display" : "Head Occipital-frontal circumference",
+        "equivalence" : "equivalent",
+        "comment" : "seems like possible match"
+      }]
+    },
+    {
+      "code" : "4688723",
+      "display" : "HEARING",
+      "target" : [{
+        "code" : "32437-6",
+        "display" : "Physical findings of Hearing",
         "equivalence" : "equal"
       }]
     },
     {
-      "code" : "HEARING",
-      "target" : [{
-        "code" : "58232-0",
-        "display" : "Hearing loss risk indicators [Identifier]",
-        "equivalence" : "inexact",
-        "comment" : "Not clear if this is Hearing Loss"
-      }]
-    },
-    {
-      "code" : "HEIGHT",
+      "code" : "4688724",
+      "display" : "HEIGHT",
       "target" : [{
         "code" : "8302-2",
         "display" : "Body height",
@@ -157,7 +164,8 @@
       }]
     },
     {
-      "code" : "PAIN",
+      "code" : "4500635",
+      "display" : "PAIN",
       "target" : [{
         "code" : "72514-3",
         "display" : "Pain severity - 0-10 verbal numeric rating [Score] - Reported",
@@ -165,7 +173,8 @@
       }]
     },
     {
-      "code" : "PULSE OXIMETRY",
+      "code" : "4500637",
+      "display" : "PULSE OXIMETRY",
       "target" : [{
         "code" : "2708-6",
         "display" : "Oxygen saturation in Arterial blood",
@@ -173,7 +182,8 @@
       }]
     },
     {
-      "code" : "PULSE",
+      "code" : "4500636",
+      "display" : "PULSE",
       "target" : [{
         "code" : "8867-4",
         "display" : "Heart rate",
@@ -181,7 +191,8 @@
       }]
     },
     {
-      "code" : "RESPIRATION",
+      "code" : "4688725",
+      "display" : "RESPIRATION",
       "target" : [{
         "code" : "9279-1",
         "display" : "Respiratory Rate",
@@ -189,28 +200,35 @@
       }]
     },
     {
-      "code" : "TONOMETRY",
+      "code" : "4688726",
+      "display" : "TONOMETRY",
       "target" : [{
-        "code" : "LP76227-5",
-        "display" : "Tonometry",
-        "equivalence" : "equivalent",
-        "comment" : "seems like possible match"
+        "code" : "28630-2",
+        "display" : "Tonometry study",
+        "equivalence" : "equal"
       }]
     },
     {
-      "code" : "VISION CORRECTED",
+      "code" : "4688727",
+      "display" : "VISION CORRECTED",
       "target" : [{
-        "equivalence" : "unmatched"
+        "code" : "70936-0",
+        "display" : "Vision testing Narrative",
+        "equivalence" : "equal"
       }]
     },
     {
-      "code" : "VISION UNCORRECTED",
+      "code" : "4688728",
+      "display" : "VISION UNCORRECTED",
       "target" : [{
-        "equivalence" : "unmatched"
+        "code" : "70936-0",
+        "display" : "Vision testing Narrative",
+        "equivalence" : "equal"
       }]
     },
     {
-      "code" : "WEIGHT",
+      "code" : "4500639",
+      "display" : "WEIGHT",
       "target" : [{
         "code" : "29463-7",
         "display" : "Body weight",

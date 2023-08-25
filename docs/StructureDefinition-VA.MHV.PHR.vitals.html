@@ -340,9 +340,10 @@
   <li><code class="language-plaintext highlighter-rouge">subject</code> is a reference to this patient</li>
   <li><code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">final</code></li>
   <li><code class="language-plaintext highlighter-rouge">category</code> code of <code class="language-plaintext highlighter-rouge">vital-signs</code></li>
-  <li><code class="language-plaintext highlighter-rouge">code.text</code> the original vital-sign type
+  <li><code class="language-plaintext highlighter-rouge">code.text</code> the original vital-sign type name
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">code</code> should be LOINC if available
+      <li><code class="language-plaintext highlighter-rouge">coding</code> may be a VUID if id was a 7 digit number</li>
+      <li><code class="language-plaintext highlighter-rouge">coding</code> may be LOINC if available
         <ul>
           <li><a href="ConceptMap-ObservationTypeTOVsLoincCode.html">Concept Map from VitalSignTO.type.name to LOINC code</a></li>
         </ul>
@@ -357,10 +358,9 @@
       <li>Those with units use <code class="language-plaintext highlighter-rouge">.valueQuantity</code> else <code class="language-plaintext highlighter-rouge">.valueString</code></li>
     </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">effectiveDateTime</code> vital-sign timestamp</li>
+  <li><code class="language-plaintext highlighter-rouge">effectiveDateTime</code> vital-sign timestamp of when observed</li>
   <li><code class="language-plaintext highlighter-rouge">performer</code> recorder and/or observer</li>
   <li><code class="language-plaintext highlighter-rouge">note.text</code> comment from vital-sign</li>
-  <li><code class="language-plaintext highlighter-rouge">meta.lastUpdated</code> will indicate the last time the resource was updated</li>
   <li>no other elements are populated</li>
   <li>Most <a href="Bundle-vitals.html">examples are within a Bundle</a>, which does not exposed each vital sign.</li>
 </ul>
@@ -429,7 +429,7 @@
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="text-decoration:line-through">partOf</span><a name="Observation.partOf"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="text-decoration:line-through"/><span style="text-decoration:line-through">0</span><span style="text-decoration:line-through">..</span><span style="text-decoration:line-through">0</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.status">status</a><a name="Observation.status"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">registered | preliminary | final | amended +</span><br/><span style="font-weight:bold">Required Pattern: </span><span style="color: darkgreen">final</span></td></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.category">category</a><a name="Observation.category"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Classification of  type of observation</span></td></tr>
-<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.code">code</a><a name="Observation.code"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Coded Responses from C-CDA Vital Sign Results</span></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.code">code</a><a name="Observation.code"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.code.coding">coding</a><a name="Observation.code.coding"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="This element must be supported">S</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Code defined by a terminology system</span></td></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.code.text">text</a><a name="Observation.code.text"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="This element must be supported">S</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Plain text representation of the concept</span></td></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.subject">subject</a><a name="Observation.subject"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a style="opacity: 0.5" href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-patient.html">US Core Patient Profile</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Who and/or what the observation is about</span></td></tr>
@@ -796,7 +796,7 @@ Summary
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <span style="text-decoration:line-through">partOf</span><a name="Observation.partOf"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="text-decoration:line-through"/><span style="text-decoration:line-through">0</span><span style="text-decoration:line-through">..</span><span style="text-decoration:line-through">0</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.status">status</a><a name="Observation.status"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#code">code</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">registered | preliminary | final | amended +</span><br/><span style="font-weight:bold">Required Pattern: </span><span style="color: darkgreen">final</span></td></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.category">category</a><a name="Observation.category"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Classification of  type of observation</span></td></tr>
-<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.code">code</a><a name="Observation.code"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept">CodeableConcept</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Coded Responses from C-CDA Vital Sign Results</span></td></tr>
+<tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck11.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.code">code</a><a name="Observation.code"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck110.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.code.coding">coding</a><a name="Observation.code.coding"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="This element must be supported">S</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">*</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#Coding">Coding</a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Code defined by a terminology system</span></td></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white"><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck100.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vline.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin_end.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: white; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.code.text">text</a><a name="Observation.code.text"> </a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red" title="This element must be supported">S</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">0</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a style="opacity: 0.5" href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td style="vertical-align: top; text-align : left; background-color: white; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Plain text representation of the concept</span></td></tr>
 <tr style="border: 0px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7"><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck10.png)" class="hierarchy"><img src="tbl_spacer.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="tbl_vjoin.png" alt="." style="background-color: inherit" class="hierarchy"/><img src="icon_element.gif" alt="." style="background-color: #F7F7F7; background-color: inherit" title="Element" class="hierarchy"/> <a no-external="true" href="StructureDefinition-VA.MHV.PHR.vitals-definitions.html#diff_Observation.subject">subject</a><a name="Observation.subject"> </a></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"/><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">1</span><span style="opacity: 0.5">..</span><span style="opacity: 0.5">1</span></td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><a href="http://hl7.org/fhir/R4/references.html">Reference</a>(<a style="opacity: 0.5" href="http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-patient.html">US Core Patient Profile</a>)</td><td style="vertical-align: top; text-align : left; background-color: #F7F7F7; border: 0px #F0F0F0 solid; padding:0px 4px 0px 4px" class="hierarchy"><span style="opacity: 0.5">Who and/or what the observation is about</span></td></tr>
@@ -1156,9 +1156,9 @@ Summary
 <div style="display:inline-block" markdown="1">
 
 <ul>
-  <li>The <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/vitals.xml">mock example</a></li>
+  <li>The <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml">mock example</a></li>
   <li>maps to <a href="https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl">VitalSignTO</a> schema.</li>
-  <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.vitals-mappings.html#mappings-for-via-to-mhv-phr-vitalsignto">VitalSignTo</a></li>
+  <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.vitals-mappings.html#mappings-for-via-to-mhv-fhir-phr-vitalsignto">VitalSignTo</a></li>
   <li>based on US-Core for Vital-Signs Observation Resource
     <ul>
       <li>Blood-Pressure is based off of the Blood-Pressure profile</li>
@@ -1175,7 +1175,8 @@ Summary
   <li><code class="language-plaintext highlighter-rouge">category</code> code of <code class="language-plaintext highlighter-rouge">vital-signs</code></li>
   <li><code class="language-plaintext highlighter-rouge">code.text</code> the original <code class="language-plaintext highlighter-rouge">VitalSignTO.type.name</code>
     <ul>
-      <li><code class="language-plaintext highlighter-rouge">code</code> should be LOINC if available
+      <li><code class="language-plaintext highlighter-rouge">coding</code> is VUID if the id was 7 digits</li>
+      <li><code class="language-plaintext highlighter-rouge">coding</code> should be LOINC if available
         <ul>
           <li><a href="ConceptMap-ObservationTypeTOVsLoincCode.html">Concept Map from VitalSignTO.type.name to LOINC code</a></li>
         </ul>
@@ -1215,6 +1216,7 @@ Summary
     </ul>
   </li>
   <li>populate <code class="language-plaintext highlighter-rouge">effectiveDateTime</code>, <code class="language-plaintext highlighter-rouge">performer</code>, and <code class="language-plaintext highlighter-rouge">note.text</code> as mapped</li>
+  <li>timestamp is confirmed to be date taken</li>
   <li>Most <a href="Bundle-vitals.html">examples are within a Bundle</a>, which does not exposed each vital sign.</li>
 </ul>
 
@@ -1241,7 +1243,7 @@ Summary
       <li>CIRCUMFERENCE%2FGIRTH</li>
       <li>FETAL HEART TONES</li>
       <li>FUNDAL HEIGHT</li>
-      <li>HEADCIRCUMFERENCE</li>
+      <li>HEAD CIRCUMFERENCE</li>
       <li>HEARING</li>
       <li>PULSE OXIMETRY</li>
       <li>RESPIRATION</li>
@@ -1299,342 +1301,6 @@ Summary
   <li>lines 301-310, This is code to just throw a warning if we see data we did not have a map to. Should this code go to production, or be disablable in production? It might be useful to detect information we don’t have a map for.</li>
   <li>line 312 has “DocumentReference” but surely this is wrong, I guess this should be “Observation”?</li>
 </ul>
-
-<h4 id="xsl-transform">xsl transform</h4>
-
-<p>Simple (not fully functional) xslt from SOAP response with VitalSignTO to FHIR Bundle with Observation:</p>
-
-<ul>
-  <li>uses a fixed Patient resource</li>
-  <li>uses fixed site values for identifiers</li>
-  <li>does not lookup location or practitioner resources, just uses the identifier</li>
-</ul>
-
-<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span>
-<span class="nt">&lt;xsl:transform</span> <span class="na">xmlns:xsl=</span><span class="s">"http://www.w3.org/1999/XSL/Transform"</span> <span class="na">version=</span><span class="s">"2.0"</span> 
-<span class="na">xmlns:soap=</span><span class="s">"http://schemas.xmlsoap.org/soap/envelope/"</span>  
-<span class="na">xmlns:ns2=</span><span class="s">"http://service.via.med.va.gov/"</span>
-<span class="na">xmlns:saxon=</span><span class="s">"http://saxon.sf.net/"</span> 
-<span class="na">xmlns:uuid=</span><span class="s">"java:java.util.UUID"</span>
-<span class="na">exclude-result-prefixes=</span><span class="s">"soap ns2 uuid saxon"</span>
-<span class="nt">&gt;</span>
-<span class="nt">&lt;xsl:import</span> <span class="na">href=</span><span class="s">"fileman-to-datetime.xslt"</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;xsl:output</span> <span class="na">method=</span><span class="s">"xml"</span> <span class="na">encoding=</span><span class="s">"UTF-8"</span> <span class="na">indent=</span><span class="s">"yes"</span> <span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;xsl:template</span> <span class="na">match=</span><span class="s">"/"</span><span class="nt">&gt;</span>
-
-    <span class="nt">&lt;Bundle</span> <span class="na">xmlns=</span><span class="s">"http://hl7.org/fhir"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;id</span> <span class="na">value=</span><span class="s">"vitals"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;type</span> <span class="na">value=</span><span class="s">"transaction"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;timestamp&gt;</span>
-        <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"current-dateTime()"</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;/xsl:attribute&gt;</span>
-    <span class="nt">&lt;/timestamp&gt;</span>
-    <span class="c">&lt;!-- TODO: should find a FHIR Patient given the PatientTO details GetPatient() --&gt;</span>
-      <span class="nt">&lt;xsl:for-each</span> <span class="na">select=</span><span class="s">"soap:Envelope/soap:Body/ns2:getDataResponse/ns2:PatientMedicalRecordTO/vitals/arrays/taggedVitalSignArray/vitals/vitalSignTO"</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"boolean(type/id) and boolean(value1)"</span><span class="nt">&gt;</span>  <span class="c">&lt;!-- ignore those that have no id or value1, which should just be the fractional BP --&gt;</span>
-        <span class="nt">&lt;entry&gt;</span>
-           <span class="nt">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">"fullUrl"</span> <span class="na">select=</span><span class="s">"uuid:randomUUID()"</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;fullUrl&gt;</span>
-                <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"concat('urn:uuid:', $fullUrl)"</span><span class="nt">/&gt;</span>
-                <span class="nt">&lt;/xsl:attribute&gt;</span>
-            <span class="nt">&lt;/fullUrl&gt;</span>
-            <span class="nt">&lt;resource&gt;</span>
-                <span class="nt">&lt;Observation&gt;</span>
-                <span class="nt">&lt;id&gt;</span>
-                  <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"$fullUrl"</span><span class="nt">/&gt;</span>                  
-                  <span class="nt">&lt;/xsl:attribute&gt;</span>
-                <span class="nt">&lt;/id&gt;</span>
-
-                <span class="nt">&lt;meta&gt;</span>
-                   <span class="nt">&lt;xsl:choose&gt;</span>
-                    <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'BLOOD PRESSURE'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;profile</span> <span class="na">value=</span><span class="s">"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP"</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/xsl:when&gt;</span>
-                    <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'PAIN'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;profile</span> <span class="na">value=</span><span class="s">"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/xsl:when&gt;</span>
-                    <span class="nt">&lt;xsl:otherwise&gt;</span>
-                        <span class="nt">&lt;profile</span> <span class="na">value=</span><span class="s">"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/xsl:otherwise&gt;</span>
-                    <span class="nt">&lt;/xsl:choose&gt;</span>
-                <span class="nt">&lt;/meta&gt;</span>
-
-                <span class="nt">&lt;identifier&gt;</span>
-                    <span class="nt">&lt;use</span> <span class="na">value=</span><span class="s">"usual"</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"urn:oid:2.16.840.1.113883.4.349.4.989"</span><span class="nt">/&gt;</span>  <span class="c">&lt;!-- TODO: system should be derived from Vista site --&gt;</span>
-                    <span class="nt">&lt;value&gt;</span>
-                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"concat('VitalSignTO.', type/id)"</span> <span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/xsl:attribute&gt;</span>
-                    <span class="nt">&lt;/value&gt;</span>
-                <span class="nt">&lt;/identifier&gt;</span>
-
-                <span class="nt">&lt;status</span> <span class="na">value=</span><span class="s">"final"</span><span class="nt">/&gt;</span>
-
-                <span class="nt">&lt;category&gt;</span>
-                    <span class="nt">&lt;coding&gt;</span>
-                    <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://terminology.hl7.org/CodeSystem/observation-category"</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"vital-signs"</span><span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/coding&gt;</span>
-                <span class="nt">&lt;/category&gt;</span>
-
-                <span class="nt">&lt;code&gt;</span>
-                   <span class="nt">&lt;xsl:choose&gt;</span>
-                    <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'BLOOD PRESSURE'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;coding&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://loinc.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"85354-9"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;display</span> <span class="na">value=</span><span class="s">"Blood pressure panel with all children optional"</span><span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/coding&gt;</span>
-                     <span class="nt">&lt;/xsl:when&gt;</span>
-                     <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'HEIGHT'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;coding&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://loinc.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"8302-2"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;display</span> <span class="na">value=</span><span class="s">"Body height"</span><span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/coding&gt;</span>
-                     <span class="nt">&lt;/xsl:when&gt;</span>
-                     <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'WEIGHT'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;coding&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://loinc.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"29463-7"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;display</span> <span class="na">value=</span><span class="s">"Body weight"</span><span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/coding&gt;</span>
-                     <span class="nt">&lt;/xsl:when&gt;</span>
-                     <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'PULSE'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;coding&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://loinc.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"8867-4"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;display</span> <span class="na">value=</span><span class="s">"Heart rate"</span><span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/coding&gt;</span>
-                     <span class="nt">&lt;/xsl:when&gt;</span>
-                     <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'PAIN'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;coding&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://loinc.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"72514-3"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;display</span> <span class="na">value=</span><span class="s">"Pain severity - 0-10 verbal numeric rating [Score] - Reported"</span><span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/coding&gt;</span>
-                     <span class="nt">&lt;/xsl:when&gt;</span>
-                     <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'RESPIRATION'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;coding&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://loinc.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"9279-1"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;display</span> <span class="na">value=</span><span class="s">"Respiratory Rate"</span><span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/coding&gt;</span>
-                     <span class="nt">&lt;/xsl:when&gt;</span>
-                     <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'TEMPERATURE'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;coding&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://loinc.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"8310-5"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;display</span> <span class="na">value=</span><span class="s">"Body temperature"</span><span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/coding&gt;</span>
-                     <span class="nt">&lt;/xsl:when&gt;</span>
-                    <span class="nt">&lt;/xsl:choose&gt;</span>
-                    <span class="nt">&lt;text&gt;</span>
-                    <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"type/name"</span> <span class="nt">/&gt;</span>
-                    <span class="nt">&lt;/xsl:attribute&gt;</span>
-                    <span class="nt">&lt;/text&gt;</span>
-                <span class="nt">&lt;/code&gt;</span>
-
-                <span class="nt">&lt;subject&gt;</span>
-                    <span class="nt">&lt;reference</span> <span class="na">value=</span><span class="s">"Patient/ex-MHV-patient-2"</span><span class="nt">/&gt;</span>  <span class="c">&lt;!-- TODO: patient should come from patient lookup --&gt;</span>
-                <span class="nt">&lt;/subject&gt;</span>
-
-                <span class="nt">&lt;effectiveDateTime&gt;</span>
-                  <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;xsl:variable</span> <span class="na">name=</span><span class="s">"datetime"</span><span class="nt">&gt;</span>
-                      <span class="nt">&lt;xsl:call-template</span> <span class="na">name=</span><span class="s">"fileman-to-datetime"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;xsl:with-param</span> <span class="na">name=</span><span class="s">"fileman-date"</span> <span class="na">select=</span><span class="s">"timestamp"</span> <span class="nt">/&gt;</span>
-                      <span class="nt">&lt;/xsl:call-template&gt;</span>
-                    <span class="nt">&lt;/xsl:variable&gt;</span>
-                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"$datetime"</span> <span class="nt">/&gt;</span> 
-                  <span class="nt">&lt;/xsl:attribute&gt;</span>
-                <span class="nt">&lt;/effectiveDateTime&gt;</span>
-
-                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"boolean(recorder)"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;performer&gt;</span>
-                    <span class="nt">&lt;identifier&gt;</span>
-                        <span class="nt">&lt;value&gt;</span>
-                            <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"recorder/id"</span> <span class="nt">/&gt;</span> 
-                            <span class="nt">&lt;/xsl:attribute&gt;</span>                
-                        <span class="nt">&lt;/value&gt;</span>
-                    <span class="nt">&lt;/identifier&gt;</span>
-                    <span class="nt">&lt;display&gt;</span>
-                        <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"recorder/name"</span> <span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/xsl:attribute&gt;</span>                 
-                    <span class="nt">&lt;/display&gt;</span>
-                <span class="nt">&lt;/performer&gt;</span>
-                <span class="nt">&lt;/xsl:if&gt;</span>
-                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"boolean(observer)"</span><span class="nt">&gt;</span>
-                <span class="nt">&lt;performer&gt;</span>
-                    <span class="nt">&lt;identifier&gt;</span>
-                        <span class="nt">&lt;value&gt;</span>
-                            <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"observer/id"</span> <span class="nt">/&gt;</span>
-                            <span class="nt">&lt;/xsl:attribute&gt;</span>                 
-                        <span class="nt">&lt;/value&gt;</span>
-                    <span class="nt">&lt;/identifier&gt;</span>
-                    <span class="nt">&lt;display&gt;</span>
-                        <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"observer/name"</span> <span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/xsl:attribute&gt;</span>                 
-                    <span class="nt">&lt;/display&gt;</span>
-                <span class="nt">&lt;/performer&gt;</span>
-                <span class="nt">&lt;/xsl:if&gt;</span>
-
-                <span class="nt">&lt;xsl:choose&gt;</span>
-                    <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'BLOOD PRESSURE'"</span><span class="nt">&gt;</span>
-                        <span class="c">&lt;!-- no value[x] --&gt;</span>
-                    <span class="nt">&lt;/xsl:when&gt;</span>
-                    <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"
-                     (type/name = 'HEIGHT') or
-                     (type/name = 'WEIGHT') or
-                     (type/name = 'PULSE') or
-                     (type/name = 'RESPIRATION') or
-                     (type/name = 'TEMPERATURE')
-                     "</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;valueQuantity&gt;</span>
-                            <span class="nt">&lt;value&gt;</span>
-                                <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"value1"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;/xsl:attribute&gt;</span>
-                            <span class="nt">&lt;/value&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://unitsofmeasure.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;xsl:choose&gt;</span> <span class="c">&lt;!-- some vista ucum units are not proper --&gt;</span>
-                            <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"units = 'in'"</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"[in_i]"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;/xsl:when&gt;</span>
-                            <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"units = 'lb'"</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"[lb_av]"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;/xsl:when&gt;</span>
-                            <span class="nt">&lt;xsl:otherwise&gt;</span>
-                                <span class="nt">&lt;code&gt;</span>
-                                  <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                      <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"units"</span><span class="nt">/&gt;</span>
-                                  <span class="nt">&lt;/xsl:attribute&gt;</span>
-                                <span class="nt">&lt;/code&gt;</span>
-                            <span class="nt">&lt;/xsl:otherwise&gt;</span>
-                            <span class="nt">&lt;/xsl:choose&gt;</span>
-                        <span class="nt">&lt;/valueQuantity&gt;</span>
-                    <span class="nt">&lt;/xsl:when&gt;</span>
-                    <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"type/name = 'PAIN'"</span><span class="nt">&gt;</span>
-                        <span class="nt">&lt;valueQuantity&gt;</span>
-                            <span class="nt">&lt;value&gt;</span>
-                                <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"value1"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;/xsl:attribute&gt;</span>
-                            <span class="nt">&lt;/value&gt;</span>
-                        <span class="nt">&lt;/valueQuantity&gt;</span>
-                    <span class="nt">&lt;/xsl:when&gt;</span>
-                    <span class="nt">&lt;xsl:otherwise&gt;</span>
-                        <span class="nt">&lt;xsl:choose&gt;</span>
-                            <span class="nt">&lt;xsl:when</span> <span class="na">test=</span><span class="s">"units != ''"</span><span class="nt">&gt;</span>
-                                <span class="nt">&lt;valueQuantity&gt;</span>
-                                    <span class="nt">&lt;value&gt;</span>
-                                        <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"value1"</span><span class="nt">/&gt;</span>
-                                        <span class="nt">&lt;/xsl:attribute&gt;</span>
-                                    <span class="nt">&lt;/value&gt;</span>
-                                    <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://unitsofmeasure.org"</span><span class="nt">/&gt;</span>
-                                    <span class="nt">&lt;code&gt;</span>
-                                        <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"units"</span><span class="nt">/&gt;</span>
-                                        <span class="nt">&lt;/xsl:attribute&gt;</span>
-                                    <span class="nt">&lt;/code&gt;</span>
-                                <span class="nt">&lt;/valueQuantity&gt;</span>   
-                            <span class="nt">&lt;/xsl:when&gt;</span>   
-                            <span class="nt">&lt;xsl:otherwise&gt;</span>
-                                <span class="nt">&lt;valueString&gt;</span>
-                                <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"value1"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;/xsl:attribute&gt;</span>
-                                <span class="nt">&lt;/valueString&gt;</span>
-                            <span class="nt">&lt;/xsl:otherwise&gt;</span>
-                        <span class="nt">&lt;/xsl:choose&gt;</span>
-                    <span class="nt">&lt;/xsl:otherwise&gt;</span>
-                <span class="nt">&lt;/xsl:choose&gt;</span>
-
-                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"boolean(comments)"</span><span class="nt">&gt;</span>
-                  <span class="nt">&lt;note&gt;</span>
-                    <span class="nt">&lt;text&gt;</span>
-                        <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                            <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"comments"</span> <span class="nt">/&gt;</span>
-                        <span class="nt">&lt;/xsl:attribute&gt;</span>        
-                    <span class="nt">&lt;/text&gt;</span>
-                  <span class="nt">&lt;/note&gt;</span>
-                <span class="nt">&lt;/xsl:if&gt;</span>
-
-                <span class="nt">&lt;xsl:if</span> <span class="na">test=</span><span class="s">"type/name = 'BLOOD PRESSURE'"</span><span class="nt">&gt;</span>
-                    <span class="nt">&lt;component&gt;</span>
-                        <span class="nt">&lt;code&gt;</span>
-                            <span class="nt">&lt;coding&gt;</span>
-                                <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://loinc.org"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"8480-6"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;display</span> <span class="na">value=</span><span class="s">"Systolic blood pressure"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;/coding&gt;</span>
-                        <span class="nt">&lt;/code&gt;</span>
-                        <span class="nt">&lt;valueQuantity&gt;</span>
-                            <span class="nt">&lt;value&gt;</span>
-                                <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"substring-before(value1, '/')"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;/xsl:attribute&gt;</span>
-                            <span class="nt">&lt;/value&gt;</span>
-                            <span class="nt">&lt;unit</span> <span class="na">value=</span><span class="s">"mmHg"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://unitsofmeasure.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;code&gt;</span>
-                                <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"units"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;/xsl:attribute&gt;</span>
-                            <span class="nt">&lt;/code&gt;</span>
-                        <span class="nt">&lt;/valueQuantity&gt;</span>
-                    <span class="nt">&lt;/component&gt;</span>
-                    <span class="nt">&lt;component&gt;</span>
-                        <span class="nt">&lt;code&gt;</span>
-                            <span class="nt">&lt;coding&gt;</span>
-                                <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://loinc.org"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;code</span> <span class="na">value=</span><span class="s">"8462-4"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;display</span> <span class="na">value=</span><span class="s">"Diastolic blood pressure"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;/coding&gt;</span>
-                        <span class="nt">&lt;/code&gt;</span>
-                        <span class="nt">&lt;valueQuantity&gt;</span>
-                            <span class="nt">&lt;value&gt;</span>
-                                <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"substring-after(value1, '/')"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;/xsl:attribute&gt;</span>
-                            <span class="nt">&lt;/value&gt;</span>
-                            <span class="nt">&lt;unit</span> <span class="na">value=</span><span class="s">"mmHg"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;system</span> <span class="na">value=</span><span class="s">"http://unitsofmeasure.org"</span><span class="nt">/&gt;</span>
-                            <span class="nt">&lt;code&gt;</span>
-                                <span class="nt">&lt;xsl:attribute</span> <span class="na">name=</span><span class="s">"value"</span><span class="nt">&gt;</span>
-                                    <span class="nt">&lt;xsl:value-of</span> <span class="na">select=</span><span class="s">"units"</span><span class="nt">/&gt;</span>
-                                <span class="nt">&lt;/xsl:attribute&gt;</span>
-                            <span class="nt">&lt;/code&gt;</span>
-                        <span class="nt">&lt;/valueQuantity&gt;</span>
-                    <span class="nt">&lt;/component&gt;</span>
-                <span class="nt">&lt;/xsl:if&gt;</span>
-
-                <span class="nt">&lt;/Observation&gt;</span>
-            <span class="nt">&lt;/resource&gt;</span>
-            <span class="nt">&lt;request&gt;</span>
-                <span class="nt">&lt;method</span> <span class="na">value=</span><span class="s">"POST"</span><span class="nt">/&gt;</span>
-                <span class="nt">&lt;url</span> <span class="na">value=</span><span class="s">"Observation"</span><span class="nt">/&gt;</span>
-            <span class="nt">&lt;/request&gt;</span>
-        <span class="nt">&lt;/entry&gt;</span>  
-        <span class="nt">&lt;/xsl:if&gt;</span>
-      <span class="nt">&lt;/xsl:for-each&gt;</span>
-
-      <span class="nt">&lt;/Bundle&gt;</span>
-    <span class="nt">&lt;/xsl:template&gt;</span>
-<span class="nt">&lt;/xsl:transform&gt;</span>
-</code></pre></div></div>
 
 
 </div>
@@ -1710,12 +1376,12 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 12:12-0500">2023-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/issues">Issues</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues">Issues</a>
                 
           </span>
         </p>

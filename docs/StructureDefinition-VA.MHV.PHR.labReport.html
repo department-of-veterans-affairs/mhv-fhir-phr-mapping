@@ -1097,17 +1097,17 @@ Summary
 <div style="display:inline-block" markdown="1">
 
 <ul>
-  <li>The <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/labs.xml">mock example 1</a></li>
+  <li>The <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/labs.xml">mock example 1</a></li>
   <li>maps to <a href="https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl">LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO</a> schema.</li>
-  <li><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-via-to-mhv-phr-labreportto">Mapping from VIA - LabReportTO +</a></li>
+  <li><a href="StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto">Mapping from VIA - LabReportTO +</a></li>
   <li><a href="StructureDefinition-VA.MHV.PHR.labReport-examples.html">Examples</a></li>
   <li>should be based on US-Core for DiagnosticReport
     <ul>
       <li>This profile is <strong>not</strong> based on <a href="https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html">US-Core DiagnosticReport profile for Laboratory Results Reporting</a> and lab Observations. That profile requires use of us-core Practitioner that I can’t extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.</li>
     </ul>
   </li>
-  <li>The LabTestTO plus LabResultTO are combined and mapped onto a FHIR <a href="StructureDefinition-VA.MHV.PHR.labTest.html">Observation for laboratory result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-via-to-mhv-phr-labtestto">VIA LabTestTO and LabResultTO</a>.</li>
-  <li>The LabSpecimen is mapped into a <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-via-to-mhv-phr-labspecimen">VIA LabSpecimenTO</a>.</li>
+  <li>The LabTestTO plus LabResultTO are combined and mapped onto a FHIR <a href="StructureDefinition-VA.MHV.PHR.labTest.html">Observation for laboratory result</a> that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-via-to-mhv-fhir-phr-labtestto">VIA LabTestTO and LabResultTO</a>.</li>
+  <li>The LabSpecimen is mapped into a <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen.html">Specimen</a> resource that is contained in the DiagnosticReport. The map to <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-via-to-mhv-fhir-phr-labspecimen">VIA LabSpecimenTO</a>.</li>
   <li>The use of contained means that we do not need to de-duplicate the lab tests or specimen. Note that means that the specimen and observations are no individually findable or referenceable.</li>
   <li>should have <code class="language-plaintext highlighter-rouge">meta.profile</code> set to <code class="language-plaintext highlighter-rouge">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport</code> to indicate the intent to be compliant with this profile</li>
   <li><code class="language-plaintext highlighter-rouge">code.text</code> contains the original <code class="language-plaintext highlighter-rouge">labReportTO.title</code>
@@ -1203,12 +1203,12 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 12:12-0500">2023-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/issues">Issues</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues">Issues</a>
                 
           </span>
         </p>

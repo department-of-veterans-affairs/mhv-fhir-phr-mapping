@@ -43,7 +43,7 @@
   fhir:title [ fhir:v "Vital Sign ObservationTypeTO.name to Loinc Code"] ; # 
   fhir:status [ fhir:v "active"] ; # 
   fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
-  fhir:date [ fhir:v "2023-03-29"^^xsd:date] ; # 
+  fhir:date [ fhir:v "2023-08-25"^^xsd:date] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -61,7 +61,7 @@
        fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "Map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code."] ; # 
+  fhir:description [ fhir:v "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code."] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
@@ -70,10 +70,11 @@
   ] ) ; # 
   fhir:purpose [ fhir:v "To be able to use proper LOINC code in the FHIR Observation"] ; # 
   fhir:group ( [
-     fhir:source [ fhir:v "http://service.via.med.va.gov/ObservationTypeTO"^^xsd:anyURI ] ;
+     fhir:source [ fhir:v "urn:oid:2.16.840.1.113883.6.233"^^xsd:anyURI ] ;
      fhir:target [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
      fhir:element ( [
-       fhir:code [ fhir:v "ABDMONAL GIRTH" ] ;
+       fhir:code [ fhir:v "unknown" ] ;
+       fhir:display [ fhir:v "ABDMONAL GIRTH" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "LP31969-6" ] ;
          fhir:display [ fhir:v "Abdominal circumference" ] ;
@@ -81,128 +82,145 @@
          fhir:comment [ fhir:v "seems like possible match" ]
        ] )
      ] [
-       fhir:code [ fhir:v "AUDIOMETRY" ] ;
+       fhir:code [ fhir:v "4688718" ] ;
+       fhir:display [ fhir:v "AUDIOMETRY" ] ;
        fhir:target ( [
-         fhir:code [ fhir:v "89015-2" ] ;
-         fhir:display [ fhir:v "Pure tone threshold audiometry panel" ] ;
-         fhir:equivalence [ fhir:v "wider" ] ;
-         fhir:comment [ fhir:v "seems like possible match" ]
+         fhir:code [ fhir:v "28615-3" ] ;
+         fhir:display [ fhir:v "Audiology study" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "BLOOD PRESSURE" ] ;
+       fhir:code [ fhir:v "4500634" ] ;
+       fhir:display [ fhir:v "BLOOD PRESSURE" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "85354-9" ] ;
          fhir:display [ fhir:v "Blood pressure panel with all children optional" ] ;
          fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "TEMPERATURE" ] ;
+       fhir:code [ fhir:v "4500638" ] ;
+       fhir:display [ fhir:v "TEMPERATURE" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "8310-5" ] ;
          fhir:display [ fhir:v "Body temperature" ] ;
          fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "CENTRAL VENOUS PRESSURE" ] ;
+       fhir:code [ fhir:v "4688719" ] ;
+       fhir:display [ fhir:v "CENTRAL VENOUS PRESSURE" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "8591-0" ] ;
          fhir:display [ fhir:v "Central venous pressure (CVP) Mean" ] ;
-         fhir:equivalence [ fhir:v "equivalent" ] ;
-         fhir:comment [ fhir:v "seems like possible match" ]
+         fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "CIRCUMFERENCE%2FGIRTH" ] ;
+       fhir:code [ fhir:v "4688720" ] ;
+       fhir:display [ fhir:v "CIRCUMFERENCE%2FGIRTH" ] ;
        fhir:target ( [
-         fhir:code [ fhir:v "56086-2" ] ;
-         fhir:display [ fhir:v "Adult Waist Circumference Protocol" ] ;
-         fhir:equivalence [ fhir:v "equivalent" ] ;
-         fhir:comment [ fhir:v "seems like possible match" ]
+         fhir:code [ fhir:v "9844-2" ] ;
+         fhir:display [ fhir:v "Body region Circumference" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "FETAL HEART TONES" ] ;
+       fhir:code [ fhir:v "4688721" ] ;
+       fhir:display [ fhir:v "FETAL HEART TONES" ] ;
        fhir:target ( [
-         fhir:code [ fhir:v "55283-6" ] ;
-         fhir:display [ fhir:v "Fetal Heart rate" ] ;
-         fhir:equivalence [ fhir:v "inexact" ] ;
-         fhir:comment [ fhir:v "Not likely correct as tones vs rate" ]
+         fhir:code [ fhir:v "11616-0" ] ;
+         fhir:display [ fhir:v "Fetal Heart Narrative Activity US" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "FUNDAL HEIGHT" ] ;
+       fhir:code [ fhir:v "4688722" ] ;
+       fhir:display [ fhir:v "FUNDAL HEIGHT" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "11881-0" ] ;
          fhir:display [ fhir:v "Uterus Fundal height Tape measure" ] ;
          fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "HEADCIRCUMFERENCE" ] ;
+       fhir:code [ fhir:v "unknown" ] ;
+       fhir:display [ fhir:v "HEAD CIRCUMFERENCE" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "9843-4" ] ;
          fhir:display [ fhir:v "Head Occipital-frontal circumference" ] ;
+         fhir:equivalence [ fhir:v "equivalent" ] ;
+         fhir:comment [ fhir:v "seems like possible match" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688723" ] ;
+       fhir:display [ fhir:v "HEARING" ] ;
+       fhir:target ( [
+         fhir:code [ fhir:v "32437-6" ] ;
+         fhir:display [ fhir:v "Physical findings of Hearing" ] ;
          fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "HEARING" ] ;
-       fhir:target ( [
-         fhir:code [ fhir:v "58232-0" ] ;
-         fhir:display [ fhir:v "Hearing loss risk indicators [Identifier]" ] ;
-         fhir:equivalence [ fhir:v "inexact" ] ;
-         fhir:comment [ fhir:v "Not clear if this is Hearing Loss" ]
-       ] )
-     ] [
-       fhir:code [ fhir:v "HEIGHT" ] ;
+       fhir:code [ fhir:v "4688724" ] ;
+       fhir:display [ fhir:v "HEIGHT" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "8302-2" ] ;
          fhir:display [ fhir:v "Body height" ] ;
          fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "PAIN" ] ;
+       fhir:code [ fhir:v "4500635" ] ;
+       fhir:display [ fhir:v "PAIN" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "72514-3" ] ;
          fhir:display [ fhir:v "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ] ;
          fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "PULSE OXIMETRY" ] ;
+       fhir:code [ fhir:v "4500637" ] ;
+       fhir:display [ fhir:v "PULSE OXIMETRY" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "2708-6" ] ;
          fhir:display [ fhir:v "Oxygen saturation in Arterial blood" ] ;
          fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "PULSE" ] ;
+       fhir:code [ fhir:v "4500636" ] ;
+       fhir:display [ fhir:v "PULSE" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "8867-4" ] ;
          fhir:display [ fhir:v "Heart rate" ] ;
          fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "RESPIRATION" ] ;
+       fhir:code [ fhir:v "4688725" ] ;
+       fhir:display [ fhir:v "RESPIRATION" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "9279-1" ] ;
          fhir:display [ fhir:v "Respiratory Rate" ] ;
          fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "TONOMETRY" ] ;
+       fhir:code [ fhir:v "4688726" ] ;
+       fhir:display [ fhir:v "TONOMETRY" ] ;
        fhir:target ( [
-         fhir:code [ fhir:v "LP76227-5" ] ;
-         fhir:display [ fhir:v "Tonometry" ] ;
-         fhir:equivalence [ fhir:v "equivalent" ] ;
-         fhir:comment [ fhir:v "seems like possible match" ]
+         fhir:code [ fhir:v "28630-2" ] ;
+         fhir:display [ fhir:v "Tonometry study" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "VISION CORRECTED" ] ;
+       fhir:code [ fhir:v "4688727" ] ;
+       fhir:display [ fhir:v "VISION CORRECTED" ] ;
        fhir:target ( [
-         fhir:equivalence [ fhir:v "unmatched" ]
+         fhir:code [ fhir:v "70936-0" ] ;
+         fhir:display [ fhir:v "Vision testing Narrative" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "VISION UNCORRECTED" ] ;
+       fhir:code [ fhir:v "4688728" ] ;
+       fhir:display [ fhir:v "VISION UNCORRECTED" ] ;
        fhir:target ( [
-         fhir:equivalence [ fhir:v "unmatched" ]
+         fhir:code [ fhir:v "70936-0" ] ;
+         fhir:display [ fhir:v "Vision testing Narrative" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
        ] )
      ] [
-       fhir:code [ fhir:v "WEIGHT" ] ;
+       fhir:code [ fhir:v "4500639" ] ;
+       fhir:display [ fhir:v "WEIGHT" ] ;
        fhir:target ( [
          fhir:code [ fhir:v "29463-7" ] ;
          fhir:display [ fhir:v "Body weight" ] ;

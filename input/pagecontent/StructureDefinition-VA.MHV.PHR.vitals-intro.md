@@ -4,17 +4,17 @@
 - `subject` is a reference to this patient
 - `status` is `final`
 - `category` code of `vital-signs`
-- `code.text` the original vital-sign type
-  - `code` should be LOINC if available
+- `code.text` the original vital-sign type name
+  - `coding` may be a VUID if id was a 7 digit number
+  - `coding` may be LOINC if available
     - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)
 - `identifier` will have cross reference to original source
 - value
   - Blood Pressure - no `.value[x]`, but has `.component`
   - Pain - `.valueQuantity`
   - Those with units use `.valueQuantity` else `.valueString`
-- `effectiveDateTime` vital-sign timestamp
+- `effectiveDateTime` vital-sign timestamp of when observed
 - `performer` recorder and/or observer
 - `note.text` comment from vital-sign
-- `meta.lastUpdated` will indicate the last time the resource was updated
 - no other elements are populated
 - Most [examples are within a Bundle](Bundle-vitals.html), which does not exposed each vital sign.

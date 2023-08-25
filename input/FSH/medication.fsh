@@ -18,7 +18,7 @@ A profile on the MedicationRequest resource for MHV PHR exposing current VA pres
 Mapping: MedicationRequest-Mapping
 Source:	MHVmedicationRequest
 Target: "Vista"
-Title: "Vista to MHV-PHR"
+Title: "Vista to mhv-fhir-phr"
 * -> "Medication"
 
 
@@ -93,7 +93,7 @@ A profile on the MedicationDispense resource for MHV PHR exposing current medica
 Mapping: MedicationDispense-Mapping
 Source:	MHVmedicationDispense
 Target: "Vista"
-Title: "Vista to MHV-PHR"
+Title: "Vista to mhv-fhir-phr"
 * -> "Medication"
 
 
@@ -121,7 +121,7 @@ A profile on the SupplyDelivery resource for MHV PHR exposing current medication
 Mapping: MedicationTracking-Mapping
 Source:	MHVmedicationTracking
 Target: "Vista"
-Title: "Vista to MHV-PHR"
+Title: "Vista to mhv-fhir-phr"
 * -> "MedicationTracking"
 
 

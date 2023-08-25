@@ -42,7 +42,7 @@
   fhir:name [ fhir:v "MHVpractitioner"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Practitioner"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-24T09:48:15-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-25T12:12:31-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -60,7 +60,7 @@
        fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible\n- used for VIDF UserTO, and AuthorTO\n- used for HDR PractitionerLite\n- might be used for PersonTO or is that RelatedPerson?\n- always a contained resource, so not exposed RESTfully\n\nMapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)\n\nMapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)"] ; # 
+  fhir:description [ fhir:v "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible\n- used for VIDF UserTO, and AuthorTO\n- used for HDR PractitionerLite\n- might be used for PersonTO or is that RelatedPerson?\n- always a contained resource, so not exposed RESTfully\n\nMapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-authorto)\n\nMapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-practitionerlite)"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
@@ -87,15 +87,15 @@
   ] [
      fhir:identity [ fhir:v "Practitioner-UserTO" ] ;
      fhir:uri [ fhir:v "UserTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to MHV-PHR" ]
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
   ] [
      fhir:identity [ fhir:v "Practitioner-AuthorTO" ] ;
      fhir:uri [ fhir:v "AuthorTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to MHV-PHR" ]
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
   ] [
      fhir:identity [ fhir:v "Practitioner-PractitionerLite" ] ;
      fhir:uri [ fhir:v "PractitionerLite"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "HDR to MHV-PHR" ]
+     fhir:name [ fhir:v "HDR to mhv-fhir-phr" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 

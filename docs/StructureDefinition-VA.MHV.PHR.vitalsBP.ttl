@@ -43,7 +43,7 @@
   fhir:name [ fhir:v "MHVvitalsBP"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Vital-Signs for Blood Pressure"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-24T09:48:15-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-25T12:12:31-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -96,7 +96,7 @@
   ] [
      fhir:identity [ fhir:v "VitalsBP-Mapping" ] ;
      fhir:uri [ fhir:v "MHVvitalsBP"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to MHV-PHR" ]
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
@@ -3481,7 +3481,7 @@
        fhir:comment [ fhir:v "For a discussion on the ways Observations can be assembled in groups together see [Notes](http://hl7.org/fhir/observation.html#notes) below." ] ;
        fhir:requirements [ fhir:v "Component observations share the same attributes in the Observation resource as the primary observation and are always treated a part of a single observation (they are not separable).   However, the reference range for the primary observation value is not inherited by the component values and is required when appropriate for each component observation." ] ;
        fhir:min [ fhir:v "2"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "2" ] ;
+       fhir:max [ fhir:v "*" ] ;
        fhir:base [
          fhir:path [ fhir:v "Observation.component" ] ;
          fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
@@ -5522,7 +5522,6 @@
      ] [
        fhir:id [ fhir:v "Observation.component" ] ;
        fhir:path [ fhir:v "Observation.component" ] ;
-       fhir:max [ fhir:v "2" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "VitalsBP-Mapping" ] ;
          fhir:map [ fhir:v "For BP is used for value1 parsed out to systolic and diastolic" ]

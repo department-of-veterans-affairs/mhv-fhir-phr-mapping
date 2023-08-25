@@ -1,7 +1,7 @@
 
-- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/immunization.xml) 
+- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/immunization.xml) 
 - maps to [ImmunizationTO](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl) schema.
-- Mapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-via-to-mhv-phr-immunizationto)
+- Mapping from [ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-via-to-mhv-fhir-phr-immunizationto)
 - [Vivian Immunization](https://vivian.worldvista.org/dox/Global_XkFVUE5WSU1N.html)
 - Derived off of US-Core Immunization
   - US-Core already requires: `status`, `vaccineCode`, `patient`, `occurrence[x]`, `primarySource`
@@ -78,9 +78,4 @@ did find
 - patient
 - reaction.detail
 - occurrenceDateTime
-
-should handle Organization and Location the same way everywhere.
-
-- Should this be just .display, .identifier, contained .reference, or reference to a server managed resource?
-- Looks like .location is implemented as a reference, logical id?
 

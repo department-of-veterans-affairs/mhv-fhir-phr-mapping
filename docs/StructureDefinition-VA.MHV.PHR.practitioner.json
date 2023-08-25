@@ -30,7 +30,7 @@
   "name" : "MHVpractitioner",
   "title" : "VA MHV PHR Practitioner",
   "status" : "active",
-  "date" : "2023-08-24T09:48:15-05:00",
+  "date" : "2023-08-25T12:12:31-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -50,7 +50,7 @@
       "value" : "JohnMoehrke@gmail.com"
     }]
   }],
-  "description" : "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible\n- used for VIDF UserTO, and AuthorTO\n- used for HDR PractitionerLite\n- might be used for PersonTO or is that RelatedPerson?\n- always a contained resource, so not exposed RESTfully\n\nMapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)\n\nMapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)",
+  "description" : "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible\n- used for VIDF UserTO, and AuthorTO\n- used for HDR PractitionerLite\n- might be used for PersonTO or is that RelatedPerson?\n- always a contained resource, so not exposed RESTfully\n\nMapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-authorto)\n\nMapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-practitionerlite)",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",
@@ -81,17 +81,17 @@
   {
     "identity" : "Practitioner-UserTO",
     "uri" : "UserTO",
-    "name" : "VIA to MHV-PHR"
+    "name" : "VIA to mhv-fhir-phr"
   },
   {
     "identity" : "Practitioner-AuthorTO",
     "uri" : "AuthorTO",
-    "name" : "VIA to MHV-PHR"
+    "name" : "VIA to mhv-fhir-phr"
   },
   {
     "identity" : "Practitioner-PractitionerLite",
     "uri" : "PractitionerLite",
-    "name" : "HDR to MHV-PHR"
+    "name" : "HDR to mhv-fhir-phr"
   }],
   "kind" : "resource",
   "abstract" : false,

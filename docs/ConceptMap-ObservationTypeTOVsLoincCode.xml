@@ -25,7 +25,7 @@
   <title value="Vital Sign ObservationTypeTO.name to Loinc Code"/>
   <status value="active"/>
   <experimental value="false"/>
-  <date value="2023-03-29"/>
+  <date value="2023-08-25"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -45,7 +45,7 @@
       <value value="JohnMoehrke@gmail.com"/>
     </telecom>
   </contact>
-  <description value="Map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code."/>
+  <description value="Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code."/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -54,10 +54,11 @@
   </jurisdiction>
   <purpose value="To be able to use proper LOINC code in the FHIR Observation"/>
   <group>
-    <source value="http://service.via.med.va.gov/ObservationTypeTO"/>
+    <source value="urn:oid:2.16.840.1.113883.6.233"/>
     <target value="http://loinc.org"/>
     <element>
-      <code value="ABDMONAL GIRTH"/>
+      <code value="unknown"/>
+      <display value="ABDMONAL GIRTH"/>
       <target>
         <code value="LP31969-6"/>
         <display value="Abdominal circumference"/>
@@ -66,16 +67,17 @@
       </target>
     </element>
     <element>
-      <code value="AUDIOMETRY"/>
+      <code value="4688718"/>
+      <display value="AUDIOMETRY"/>
       <target>
-        <code value="89015-2"/>
-        <display value="Pure tone threshold audiometry panel"/>
-        <equivalence value="wider"/>
-        <comment value="seems like possible match"/>
+        <code value="28615-3"/>
+        <display value="Audiology study"/>
+        <equivalence value="equal"/>
       </target>
     </element>
     <element>
-      <code value="BLOOD PRESSURE"/>
+      <code value="4500634"/>
+      <display value="BLOOD PRESSURE"/>
       <target>
         <code value="85354-9"/>
         <display value="Blood pressure panel with all children optional"/>
@@ -83,7 +85,8 @@
       </target>
     </element>
     <element>
-      <code value="TEMPERATURE"/>
+      <code value="4500638"/>
+      <display value="TEMPERATURE"/>
       <target>
         <code value="8310-5"/>
         <display value="Body temperature"/>
@@ -91,34 +94,35 @@
       </target>
     </element>
     <element>
-      <code value="CENTRAL VENOUS PRESSURE"/>
+      <code value="4688719"/>
+      <display value="CENTRAL VENOUS PRESSURE"/>
       <target>
         <code value="8591-0"/>
         <display value="Central venous pressure (CVP) Mean"/>
-        <equivalence value="equivalent"/>
-        <comment value="seems like possible match"/>
+        <equivalence value="equal"/>
       </target>
     </element>
     <element>
-      <code value="CIRCUMFERENCE%2FGIRTH"/>
+      <code value="4688720"/>
+      <display value="CIRCUMFERENCE%2FGIRTH"/>
       <target>
-        <code value="56086-2"/>
-        <display value="Adult Waist Circumference Protocol"/>
-        <equivalence value="equivalent"/>
-        <comment value="seems like possible match"/>
+        <code value="9844-2"/>
+        <display value="Body region Circumference"/>
+        <equivalence value="equal"/>
       </target>
     </element>
     <element>
-      <code value="FETAL HEART TONES"/>
+      <code value="4688721"/>
+      <display value="FETAL HEART TONES"/>
       <target>
-        <code value="55283-6"/>
-        <display value="Fetal Heart rate"/>
-        <equivalence value="inexact"/>
-        <comment value="Not likely correct as tones vs rate"/>
+        <code value="11616-0"/>
+        <display value="Fetal Heart Narrative Activity US"/>
+        <equivalence value="equal"/>
       </target>
     </element>
     <element>
-      <code value="FUNDAL HEIGHT"/>
+      <code value="4688722"/>
+      <display value="FUNDAL HEIGHT"/>
       <target>
         <code value="11881-0"/>
         <display value="Uterus Fundal height Tape measure"/>
@@ -126,24 +130,27 @@
       </target>
     </element>
     <element>
-      <code value="HEADCIRCUMFERENCE"/>
+      <code value="unknown"/>
+      <display value="HEAD CIRCUMFERENCE"/>
       <target>
         <code value="9843-4"/>
         <display value="Head Occipital-frontal circumference"/>
+        <equivalence value="equivalent"/>
+        <comment value="seems like possible match"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688723"/>
+      <display value="HEARING"/>
+      <target>
+        <code value="32437-6"/>
+        <display value="Physical findings of Hearing"/>
         <equivalence value="equal"/>
       </target>
     </element>
     <element>
-      <code value="HEARING"/>
-      <target>
-        <code value="58232-0"/>
-        <display value="Hearing loss risk indicators [Identifier]"/>
-        <equivalence value="inexact"/>
-        <comment value="Not clear if this is Hearing Loss"/>
-      </target>
-    </element>
-    <element>
-      <code value="HEIGHT"/>
+      <code value="4688724"/>
+      <display value="HEIGHT"/>
       <target>
         <code value="8302-2"/>
         <display value="Body height"/>
@@ -151,7 +158,8 @@
       </target>
     </element>
     <element>
-      <code value="PAIN"/>
+      <code value="4500635"/>
+      <display value="PAIN"/>
       <target>
         <code value="72514-3"/>
         <display value="Pain severity - 0-10 verbal numeric rating [Score] - Reported"/>
@@ -159,7 +167,8 @@
       </target>
     </element>
     <element>
-      <code value="PULSE OXIMETRY"/>
+      <code value="4500637"/>
+      <display value="PULSE OXIMETRY"/>
       <target>
         <code value="2708-6"/>
         <display value="Oxygen saturation in Arterial blood"/>
@@ -167,7 +176,8 @@
       </target>
     </element>
     <element>
-      <code value="PULSE"/>
+      <code value="4500636"/>
+      <display value="PULSE"/>
       <target>
         <code value="8867-4"/>
         <display value="Heart rate"/>
@@ -175,7 +185,8 @@
       </target>
     </element>
     <element>
-      <code value="RESPIRATION"/>
+      <code value="4688725"/>
+      <display value="RESPIRATION"/>
       <target>
         <code value="9279-1"/>
         <display value="Respiratory Rate"/>
@@ -183,28 +194,35 @@
       </target>
     </element>
     <element>
-      <code value="TONOMETRY"/>
+      <code value="4688726"/>
+      <display value="TONOMETRY"/>
       <target>
-        <code value="LP76227-5"/>
-        <display value="Tonometry"/>
-        <equivalence value="equivalent"/>
-        <comment value="seems like possible match"/>
+        <code value="28630-2"/>
+        <display value="Tonometry study"/>
+        <equivalence value="equal"/>
       </target>
     </element>
     <element>
-      <code value="VISION CORRECTED"/>
+      <code value="4688727"/>
+      <display value="VISION CORRECTED"/>
       <target>
-        <equivalence value="unmatched"/>
+        <code value="70936-0"/>
+        <display value="Vision testing Narrative"/>
+        <equivalence value="equal"/>
       </target>
     </element>
     <element>
-      <code value="VISION UNCORRECTED"/>
+      <code value="4688728"/>
+      <display value="VISION UNCORRECTED"/>
       <target>
-        <equivalence value="unmatched"/>
+        <code value="70936-0"/>
+        <display value="Vision testing Narrative"/>
+        <equivalence value="equal"/>
       </target>
     </element>
     <element>
-      <code value="WEIGHT"/>
+      <code value="4500639"/>
+      <display value="WEIGHT"/>
       <target>
         <code value="29463-7"/>
         <display value="Body weight"/>

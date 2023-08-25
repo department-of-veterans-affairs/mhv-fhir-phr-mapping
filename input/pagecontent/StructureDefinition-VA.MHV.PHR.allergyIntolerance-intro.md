@@ -15,5 +15,4 @@
   - may have `.coding.code` but no system is known
 - `note.text` will hold comments
   - `note.time` will hold the date of the comment
-- `meta.lastUpdated` will indicate the last time the resource was updated
 - no other elements are populated

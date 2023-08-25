@@ -22,7 +22,8 @@ IntoleranceCondition record identity 53495 from a mock ProblemTO
 * note.time = 2004-07-24T18:29:07Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
 
 Instance:   ex-MHV-allergy-2
 InstanceOf: VA.MHV.PHR.allergyIntolerance
@@ -46,7 +47,9 @@ IntoleranceCondition record identity 67933 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4691091
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 
@@ -71,7 +74,9 @@ IntoleranceCondition record identity 67934 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4691091
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-4
@@ -98,7 +103,9 @@ IntoleranceCondition record identity 69066 from a mock ProblemTO
 * note.time = 2011-02-16T14:33:26Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-5
@@ -124,7 +131,9 @@ IntoleranceCondition record identity 69067 from a mock ProblemTO
 * note.time = 2011-02-16T14:34:18Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-6
@@ -149,7 +158,9 @@ IntoleranceCondition record identity 69071 from a mock ProblemTO
 * note.time = 2011-02-21T08:09:01Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-7
@@ -179,7 +190,9 @@ IntoleranceCondition record identity 69072 from a mock ProblemTO
 * note.time = 2011-02-21T08:09:43Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-8
@@ -207,7 +220,9 @@ IntoleranceCondition record identity 69073 from a mock ProblemTO
 * note.time = 2011-02-21T08:11:42Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-9
@@ -238,7 +253,9 @@ IntoleranceCondition record identity 69074 from a mock ProblemTO
 * note.time = 2011-02-21T08:16:49Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-10
@@ -264,7 +281,9 @@ IntoleranceCondition record identity 69075 from a mock ProblemTO
 * note.time = 2011-02-21T08:57:54Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-11
@@ -293,7 +312,9 @@ IntoleranceCondition record identity 69092 from a mock ProblemTO
 * note.time = 2011-02-28T18:11:47Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-12
@@ -322,7 +343,9 @@ IntoleranceCondition record identity 69093 from a mock ProblemTO
 * note.time = 2011-02-28T18:12:40Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-13
@@ -347,7 +370,9 @@ IntoleranceCondition record identity 69123 from a mock ProblemTO
 * reaction[=].manifestation.coding = VUID#4637164
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#unconfirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-14
@@ -376,7 +401,9 @@ IntoleranceCondition record identity 69124 from a mock ProblemTO
 * note.time = 2013-05-13T17:38:22Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 
 
 Instance:   ex-MHV-allergy-15
@@ -413,5 +440,7 @@ see if it shows up on the Report. SSC TEST 8/25/2014 "
 * note.time = 2014-08-25T17:13:24Z
 * verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#confirmed
 * contained[+] = ex-MHV-organization-979
-* recorder.extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 

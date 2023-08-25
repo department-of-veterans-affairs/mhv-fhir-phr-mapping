@@ -30,7 +30,7 @@
   "name" : "MHVvitals",
   "title" : "VA MHV PHR Vital-Signs",
   "status" : "active",
-  "date" : "2023-08-24T09:48:15-05:00",
+  "date" : "2023-08-25T12:12:31-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -91,7 +91,7 @@
   {
     "identity" : "Vitals-Mapping",
     "uri" : "VitalSignTO",
-    "name" : "VIA to MHV-PHR"
+    "name" : "VIA to mhv-fhir-phr"
   }],
   "kind" : "resource",
   "abstract" : false,
@@ -1690,10 +1690,6 @@
       {
         "identity" : "sct-attr",
         "map" : "116680003 |Is a|"
-      },
-      {
-        "identity" : "Vitals-Mapping",
-        "map" : "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
       }]
     },
     {
@@ -1811,6 +1807,14 @@
       {
         "identity" : "orim",
         "map" : "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"
+      },
+      {
+        "identity" : "Vitals-Mapping",
+        "map" : "VitalSignTO.type.id if 7 digits then use as VUID"
+      },
+      {
+        "identity" : "Vitals-Mapping",
+        "map" : "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
       }]
     },
     {
@@ -1856,6 +1860,10 @@
       {
         "identity" : "orim",
         "map" : "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"
+      },
+      {
+        "identity" : "Vitals-Mapping",
+        "map" : "VitalSignTO.type.name"
       }]
     },
     {
@@ -3821,22 +3829,26 @@
       }]
     },
     {
-      "id" : "Observation.code",
-      "path" : "Observation.code",
+      "id" : "Observation.code.coding",
+      "path" : "Observation.code.coding",
+      "mustSupport" : true,
       "mapping" : [{
+        "identity" : "Vitals-Mapping",
+        "map" : "VitalSignTO.type.id if 7 digits then use as VUID"
+      },
+      {
         "identity" : "Vitals-Mapping",
         "map" : "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
       }]
     },
     {
-      "id" : "Observation.code.coding",
-      "path" : "Observation.code.coding",
-      "mustSupport" : true
-    },
-    {
       "id" : "Observation.code.text",
       "path" : "Observation.code.text",
-      "mustSupport" : true
+      "mustSupport" : true,
+      "mapping" : [{
+        "identity" : "Vitals-Mapping",
+        "map" : "VitalSignTO.type.name"
+      }]
     },
     {
       "id" : "Observation.subject",

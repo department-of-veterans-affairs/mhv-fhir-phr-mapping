@@ -40,7 +40,7 @@ A profile on the DocumentReference resource for MHV PHR exposing ECG/EKG (Clinic
 Mapping: Ecg-Mapping
 Source:	MHVecg
 Target: "ClinicalProcedureTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "ClinicalProcedureTO"
 * category -> "`clinical-note` and Cardiology (LP29708-2)"
 * status -> "`current`"

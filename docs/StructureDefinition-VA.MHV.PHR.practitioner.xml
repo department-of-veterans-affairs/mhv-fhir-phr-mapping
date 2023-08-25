@@ -24,7 +24,7 @@
   <name value="MHVpractitioner"/>
   <title value="VA MHV PHR Practitioner"/>
   <status value="active"/>
-  <date value="2023-08-24T09:48:15-05:00"/>
+  <date value="2023-08-25T12:12:31-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -44,7 +44,7 @@
       <value value="JohnMoehrke@gmail.com"/>
     </telecom>
   </contact>
-  <description value="A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.&#xA;&#xA;- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible&#xA;- used for VIDF UserTO, and AuthorTO&#xA;- used for HDR PractitionerLite&#xA;- might be used for PersonTO or is that RelatedPerson?&#xA;- always a contained resource, so not exposed RESTfully&#xA;&#xA;Mapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)&#xA;&#xA;Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)"/>
+  <description value="A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.&#xA;&#xA;- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible&#xA;- used for VIDF UserTO, and AuthorTO&#xA;- used for HDR PractitionerLite&#xA;- might be used for PersonTO or is that RelatedPerson?&#xA;- always a contained resource, so not exposed RESTfully&#xA;&#xA;Mapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-authorto)&#xA;&#xA;Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-practitionerlite)"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>
@@ -75,17 +75,17 @@
   <mapping>
     <identity value="Practitioner-UserTO"/>
     <uri value="UserTO"/>
-    <name value="VIA to MHV-PHR"/>
+    <name value="VIA to mhv-fhir-phr"/>
   </mapping>
   <mapping>
     <identity value="Practitioner-AuthorTO"/>
     <uri value="AuthorTO"/>
-    <name value="VIA to MHV-PHR"/>
+    <name value="VIA to mhv-fhir-phr"/>
   </mapping>
   <mapping>
     <identity value="Practitioner-PractitionerLite"/>
     <uri value="PractitionerLite"/>
-    <name value="HDR to MHV-PHR"/>
+    <name value="HDR to mhv-fhir-phr"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>

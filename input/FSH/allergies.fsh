@@ -34,6 +34,7 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * category 0..* MS
 * category from AllergyCategoryVS (required)
 * recorder MS
+* recorder.display MS
 * recorder ^type.aggregation = #contained
 * recorder.extension contains http://hl7.org/fhir/StructureDefinition/alternate-reference named visn 0..1
 * recorder.extension[visn].valueReference only Reference(Organization)
@@ -50,7 +51,6 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * note.text 1..1 MS
 * note.time 0..1 MS
 * note.author[x] 0..0
-* meta.lastUpdated MS
 * criticality 0..0
 * encounter 0..0
 * recordedDate 0..0
@@ -75,7 +75,7 @@ Description: "not all of them"
 Mapping: AllergyIntolerance-Mapping
 Source:	MHVallergyIntolerance
 Target: "intoleranceCondition"
-Title: "HDR Allergy to MHV-PHR"
+Title: "HDR Allergy to mhv-fhir-phr"
 * -> "HDR Allergy"
 * identifier -> "intoleranceCondition.recordIdentifer"
 * code.text -> "intoleranceCondition.agent.code"
@@ -91,9 +91,44 @@ Title: "HDR Allergy to MHV-PHR"
 * note -> "intoleranceCondition.commentEvents"
 * note.text -> "intoleranceCondition.commentEvents.comment"
 * note.time -> "~intoleranceCondition.commentEvents.date.literal"
-* meta.lastUpdated -> "intoleranceCondition.recordUpdateTime"
 * verificationStatus -> "intoleranceCondition.informationSourceCategory: `OBSERVED` -> `confirmed`;  `HISTORICAL` -> `unconfirmed`"
 * recorder.extension[visn] -> "Organization(intoleranceCondition.facilityIdentifier)"
+
+
+Mapping: AllergyIntolerance-Old-Mapping
+Source:	MHVallergyIntolerance
+Target: "eVaultPHR"
+Title: "eVault-PHR to mhv-fhir-phr"
+Description: "Informative map that includes only the elements available in eVault PHR
+
+PHR_ALLERGIES | Vista Field name in 120.8
+--------------|-------------
+DATE_ENTERED | ORIGINAL DATE/TIME 
+ALLERGEN | REACTANT 
+ALLERGY_TYPE | ALLERGY TYPE 
+VA_DRUG_CLASS | VA_DRUG_CLASS 
+OBSERVED_HISTORIAL_IND | OBSERVED/HISTOICAL 
+IEN 
+COMMENTS | COMMENTS 
+COMMENTS_DATE | DATE/TIME COMMENT ENTERED 
+REACTIONS | REACTION 
+
+Informative"
+* -> "HDR Allergy"
+* identifier -> "intoleranceCondition.recordIdentifer"
+* code.text -> "intoleranceCondition.agent.code"
+* patient -> "GetPatient(intoleranceCondition.patient)"
+* clinicalStatus -> "`active`"
+* onsetDateTime -> "~intoleranceCondition.observationTime.literal"
+* category -> "~intoleranceCondition.allergyType.code"
+* reaction.manifestation -> "intoleranceCondition.reaction.reaction"
+* reaction.manifestation.text -> "intoleranceCondition.reaction.reaction.displayText"
+* note -> "intoleranceCondition.commentEvents"
+* note.text -> "intoleranceCondition.commentEvents.comment"
+* note.time -> "~intoleranceCondition.commentEvents.date.literal"
+* verificationStatus -> "intoleranceCondition.informationSourceCategory: `OBSERVED` -> `confirmed`;  `HISTORICAL` -> `unconfirmed`"
+* recorder.extension[visn] -> "Organization(intoleranceCondition.facilityIdentifier)"
+
 
 /* 
 <?xml version="1.0" encoding="UTF-8"?>

@@ -48,13 +48,13 @@
   <patient>
       <reference value="Patient/ex-MHV-patient-1"/>
   </patient>
-  <occurenceDateTime>
+  <occurrenceDateTime>
     <value>
       <xsl:attribute name="value">
         <xsl:value-of select="administeredDate" />
       </xsl:attribute>
     </value>
-  </occurenceDateTime>
+  </occurrenceDateTime>
   <recorded>
     <value>
       <xsl:attribute name="value">

@@ -39,7 +39,7 @@ Derived from the a mock NoteTO:
 * identifier[TOid].use = #usual
 * date = 2022-08-05T16:56:00Z
 * content.attachment.title = "Adverse React/Allergy"
-* type = LOINC#11505-5 "Physician procedure note"
+* type = LOINC#11506-3 "Progress note"
 * contained[+] = ex-MHV-practitioner-36556
 * contained[+] = ex-MHV-location-984
 * author = Reference(Practitioner/ex-MHV-practitioner-36556)

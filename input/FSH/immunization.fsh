@@ -26,7 +26,8 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * reaction.detail.display ^short = "may be `YES (DO NOT REPEAT THIS VACCINE)`"
 * reaction.detail ^type.aggregation = #contained
 * reaction.detail only Reference(MHVimmunizationReaction)
-* location.display MS
+* location MS
+* location ^type.aggregation = #contained
 * manufacturer MS
 * lotNumber MS
 * performer MS
@@ -59,7 +60,7 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 Mapping: Immunization-Mapping
 Source:	MHVimmunization
 Target: "ImmunizationTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "ImmunizationTO"
 * vaccineCode.text -> "ImmunizationTO.name"
 * note.text -> "ImmunizationTO.comments"
@@ -72,8 +73,8 @@ Title: "VIA to MHV-PHR"
 * site.text -> "ImmunizationTO.anatomicSurface"
 * vaccineCode.coding.code -> "ImmunizationTO.cptCode.id"
 * vaccineCode.coding.display -> "ImmunizationTO.cptCode.name"
-* location.display -> "ImmunizationTO.encounter.location.name"
-* performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility.name)"
+* location -> "GetLocation(ImmunizationTO.encounter.location)"
+* performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility)"
 * identifier -> "{StationNbr} and {ImmunizationTO.id}"
 * lotNumber -> "ImmunizationTO.lotNumber"
 * manufacturer -> "ImmunizationTO.manufacture"
@@ -82,6 +83,25 @@ Title: "VIA to MHV-PHR"
 * patient -> "patient"
 * status -> "`completed`"
 * primarySource -> "`false`"
+
+Mapping: Immunization-Old-Mapping
+Source:	MHVimmunization
+Target: "eVaultPHR"
+Title: "eVault-PHR to mhv-fhir-phr"
+Description: "Informative map that includes only the elements available in eVault PHR"
+* -> "ImmunizationTO"
+* location -> "GetLocation(ImmunizationTO.encounter.location)"
+* vaccineCode.text -> "ImmunizationTO.name"
+* note.text -> "ImmunizationTO.comments"
+* patient -> "patient"
+* status -> "`completed`"
+* primarySource -> "`false`"
+* reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction"
+* recorded -> "ImmunizationTO.administeredDate"
+* occurrenceDateTime -> "ImmunizationTO.administeredDate"
+* performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility.name)"
+* identifier -> "{StationNbr} and {ImmunizationTO.id}"
+
 
 
 /* 
@@ -155,7 +175,7 @@ A profile for the contained Observation indicating an immunization reaction
 Mapping: ImmunizationReaction-Mapping
 Source:	MHVimmunizationReaction
 Target: "Immunization.reaction"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "ImmunizationTO"
 * status -> "`final`"
 * code.text -> "ImmunizationTO.reaction"

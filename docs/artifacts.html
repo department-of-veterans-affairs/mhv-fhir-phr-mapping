@@ -480,7 +480,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>always a contained resource, so not exposed RESTfully</li>
 </ul>
 
-<p>NOT USING Mapping to <a href="StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-phr-hospitallocationto">VIA HospitalLocationTO</a>.</p>
+<p>NOT USING Mapping to <a href="StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-fhir-phr-hospitallocationto">VIA HospitalLocationTO</a>.</p>
 </td>
             </tr>
             <tr>
@@ -513,9 +513,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>always a contained resource, so not exposed RESTfully</li>
 </ul>
 
-<p>Map to <a href="StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-phr-labsiteto">VIA labSiteID</a></p>
+<p>Map to <a href="StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-fhir-phr-labsiteto">VIA labSiteID</a></p>
 
-<p>Map to <a href="StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization">HDR PerformingOrganization</a></p>
+<p>Map to <a href="StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-performingorganization">HDR PerformingOrganization</a></p>
 </td>
             </tr>
             <tr>
@@ -560,7 +560,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Would be even better if we could use a common Patient registry.</li>
 </ul>
 
-<p>NOT USING Mapping to <a href="StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-phr-patientto">VIA PatientTO</a></p>
+<p>NOT USING Mapping to <a href="StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-fhir-phr-patientto">VIA PatientTO</a></p>
 </td>
             </tr>
             <tr>
@@ -579,9 +579,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>always a contained resource, so not exposed RESTfully</li>
 </ul>
 
-<p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto">VIA UserTO</a> and <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto">VIA AuthorTO</a></p>
+<p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-userto">VIA UserTO</a> and <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-authorto">VIA AuthorTO</a></p>
 
-<p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite">HDR PractitionerLite</a></p>
+<p>Mapping to <a href="StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-practitionerlite">HDR PractitionerLite</a></p>
 </td>
             </tr>
             <tr>
@@ -743,7 +743,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                      title="ConceptMap/ObservationTypeTOVsLoincCode">Vital Sign ObservationTypeTO.name to Loinc Code</a>
                </td>
                <td>
-<p>map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code.</p>
+<p>Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code.</p>
 </td>
             </tr>
          </tbody>
@@ -763,7 +763,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   <a href="Bundle-images.html" title="Bundle/images">Bundle of Radiology results from mock data</a>
                </td>
                <td>
-<p>An example of a transaction Bundle with many image reports as DocumentReference. This was <a href="StructureDefinition-VA.MHV.PHR.imaging.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/radiology.xml">mock sample SOAP message</a> MHV receives.</p>
+<p>An example of a transaction Bundle with many image reports as DocumentReference. This was <a href="StructureDefinition-VA.MHV.PHR.imaging.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/radiology.xml">mock sample SOAP message</a> MHV receives.</p>
 </td>
             </tr>
             <tr>
@@ -771,7 +771,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   <a href="Bundle-vitals.html" title="Bundle/vitals">Bundle of Vitals from mock data</a>
                </td>
                <td>
-<p>An example of a transaction Bundle with many vitals reports as Observation This was <a href="StructureDefinition-VA.MHV.PHR.vitals.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/vitals.xml">mock sample SOAP message</a> MHV receives.</p>
+<p>An example of a transaction Bundle with many vitals reports as Observation This was <a href="StructureDefinition-VA.MHV.PHR.vitals.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml">mock sample SOAP message</a> MHV receives.</p>
 </td>
             </tr>
             <tr>
@@ -1378,12 +1378,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 24, 2023 09:48-0500">2023-08-24</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 12:12-0500">2023-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
-                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/issues">Issues</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues">Issues</a>
                 
           </span>
         </p>

@@ -26,16 +26,16 @@ Title: "Known Note types"
 Description: "Note types"
 * ^experimental = false
 //* LOINC#83320-2 "Allergy and Immunology Adverse event note"
-* LOINC#11505-5 "Physician procedure note"
+//* LOINC#11505-5 "Physician procedure note"
 * LOINC#18842-5 "Discharge summary"
-//* LOINC#11506-3 "Progress note"
+* LOINC#11506-3 "Progress note"
 
 
 
 Mapping: Notes-Mapping
 Source:	MHVnote
 Target: "NoteTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "NoteTO"
 * category -> "`clinical-note`"
 * author -> "GetPractitioner(NoteTO.author.[AuthorTO])"

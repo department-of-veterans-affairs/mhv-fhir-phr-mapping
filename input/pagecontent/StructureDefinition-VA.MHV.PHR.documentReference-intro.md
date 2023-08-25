@@ -8,7 +8,7 @@
   - [ECG/EKG (11524-6)](https://loinc.org/11524-6/)
   - [Imaging (18748-4)](https://loinc.org/18748-4/)
     - may have a CPT code
-  - [Physician Procedure Note (11505-5)](https://loinc.org/11505-5/)
+  - [Progress note (11506-3)](https://loinc.org/11506-3/)
   - [Discharge Summary (18842-5)](https://loinc.org/18842-5/)
 - `subject` is a reference to this patient
 - `status` is `current`
@@ -29,5 +29,4 @@
 - `content.attachment.creation` may be the Radiology report timestamp
 - `content.attachment.contentType` will be `text/plain`
 - `content.attachment.data` the report text in base64 encoding
-- `meta.lastUpdated` will indicate the last time the resource was updated
 - no other elements are populated

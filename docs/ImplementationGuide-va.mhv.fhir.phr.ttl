@@ -24,7 +24,7 @@
   fhir:name [ fhir:v "VAMHVFHIRPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-24T09:48:15-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-25T12:12:31-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -744,7 +744,7 @@
          fhir:reference [ fhir:v "Bundle/images" ]
        ] ;
        fhir:name [ fhir:v "Bundle of Radiology results from mock data" ] ;
-       fhir:description [ fhir:v "An example of a transaction Bundle with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives." ] ;
+       fhir:description [ fhir:v "An example of a transaction Bundle with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/radiology.xml) MHV receives." ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -756,7 +756,7 @@
          fhir:reference [ fhir:v "Bundle/vitals" ]
        ] ;
        fhir:name [ fhir:v "Bundle of Vitals from mock data" ] ;
-       fhir:description [ fhir:v "An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/vitals.xml) MHV receives." ] ;
+       fhir:description [ fhir:v "An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml) MHV receives." ] ;
        fhir:example [ fhir:v "true"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1923,7 +1923,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.location" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Location" ] ;
-       fhir:description [ fhir:v "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n- `identifier`\n  - system = urn:oid:2.16.840.1.113883.4.349\n- `name` is the name as known\n- always a contained resource, so not exposed RESTfully\n\nNOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-phr-hospitallocationto)." ] ;
+       fhir:description [ fhir:v "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n- `identifier`\n  - system = urn:oid:2.16.840.1.113883.4.349\n- `name` is the name as known\n- always a contained resource, so not exposed RESTfully\n\nNOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-fhir-phr-hospitallocationto)." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1983,7 +1983,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.organization" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Organization" ] ;
-       fhir:description [ fhir:v "A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.\n\n- based on US-Core for Organization\n  - must have a status\n  - must have a name\n  - there are other things us-core defines that are not manditory (NPI, CLIA)\n- two identifier types defined TOid and HDRid\n- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)\n- always a contained resource, so not exposed RESTfully\n\nMap to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-phr-labsiteto)\n\nMap to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)" ] ;
+       fhir:description [ fhir:v "A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.\n\n- based on US-Core for Organization\n  - must have a status\n  - must have a name\n  - there are other things us-core defines that are not manditory (NPI, CLIA)\n- two identifier types defined TOid and HDRid\n- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)\n- always a contained resource, so not exposed RESTfully\n\nMap to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-fhir-phr-labsiteto)\n\nMap to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-performingorganization)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -1995,7 +1995,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.patient" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Patient" ] ;
-       fhir:description [ fhir:v "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- mapping from patient details in eVault (not from VIA/HDR transaction)\n- `identifier`  \n  - `value` = GetPatientId\n  - `system` = `urn:oid:2.16.840.1.113883.4.349`\n  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.\n- `name` - First and Last Name\n- `gender`\n- `birthDate`\n- `active` = true\n\nmapping concerns - JIRA\n- The Identifier for the ICN is still being discussed\n- identifer.use is not being populated\n- name seems to only populate first and last, but puts them both in given\n- populating identifier with GetPatientId(), not sure that is the same as GetIcn()\n- eVault also has, but are not being used in the FHIR Patient\n  - MiddleName\n  - Ssn\n  - Email\n  - Icn \n- set .meta.profile\n- Would be even better if we could use a common Patient registry. \n\nNOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-phr-patientto)" ] ;
+       fhir:description [ fhir:v "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- mapping from patient details in eVault (not from VIA/HDR transaction)\n- `identifier`  \n  - `value` = GetPatientId\n  - `system` = `urn:oid:2.16.840.1.113883.4.349`\n  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.\n- `name` - First and Last Name\n- `gender`\n- `birthDate`\n- `active` = true\n\nmapping concerns - JIRA\n- The Identifier for the ICN is still being discussed\n- identifer.use is not being populated\n- name seems to only populate first and last, but puts them both in given\n- populating identifier with GetPatientId(), not sure that is the same as GetIcn()\n- eVault also has, but are not being used in the FHIR Patient\n  - MiddleName\n  - Ssn\n  - Email\n  - Icn \n- set .meta.profile\n- Would be even better if we could use a common Patient registry. \n\nNOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-fhir-phr-patientto)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2007,7 +2007,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.practitioner" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Practitioner" ] ;
-       fhir:description [ fhir:v "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible\n- used for VIDF UserTO, and AuthorTO\n- used for HDR PractitionerLite\n- might be used for PersonTO or is that RelatedPerson?\n- always a contained resource, so not exposed RESTfully\n\nMapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)\n\nMapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)" ] ;
+       fhir:description [ fhir:v "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible\n- used for VIDF UserTO, and AuthorTO\n- used for HDR PractitionerLite\n- might be used for PersonTO or is that RelatedPerson?\n- always a contained resource, so not exposed RESTfully\n\nMapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-authorto)\n\nMapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-practitionerlite)" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2079,7 +2079,7 @@
          fhir:reference [ fhir:v "ConceptMap/ObservationTypeTOVsLoincCode" ]
        ] ;
        fhir:name [ fhir:v "Vital Sign ObservationTypeTO.name to Loinc Code" ] ;
-       fhir:description [ fhir:v "map between VitalSignTO.type(ObservationTypeTO.name) string and LOINC code." ] ;
+       fhir:description [ fhir:v "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [

@@ -42,7 +42,7 @@
   fhir:name [ fhir:v "MHVvitalsPain"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Vital-Signs for PAIN"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-24T09:48:15-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-25T12:12:31-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -95,11 +95,11 @@
   ] [
      fhir:identity [ fhir:v "VitalsPain-Mapping" ] ;
      fhir:uri [ fhir:v "MHVvitalsPain"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to MHV-PHR" ]
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
   ] [
      fhir:identity [ fhir:v "Vitals-Mapping" ] ;
      fhir:uri [ fhir:v "VitalSignTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to MHV-PHR" ]
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
@@ -1780,9 +1780,6 @@
          fhir:identity [ fhir:v "sct-attr" ] ;
          fhir:map [ fhir:v "116680003 |Is a|" ]
        ] [
-         fhir:identity [ fhir:v "Vitals-Mapping" ] ;
-         fhir:map [ fhir:v "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode" ]
-       ] [
          fhir:identity [ fhir:v "VitalsPain-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode" ]
        ] )
@@ -1904,6 +1901,12 @@
        ] [
          fhir:identity [ fhir:v "orim" ] ;
          fhir:map [ fhir:v "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" ]
+       ] [
+         fhir:identity [ fhir:v "Vitals-Mapping" ] ;
+         fhir:map [ fhir:v "VitalSignTO.type.id if 7 digits then use as VUID" ]
+       ] [
+         fhir:identity [ fhir:v "Vitals-Mapping" ] ;
+         fhir:map [ fhir:v "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.code.text" ] ;
@@ -1949,6 +1952,9 @@
        ] [
          fhir:identity [ fhir:v "orim" ] ;
          fhir:map [ fhir:v "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" ]
+       ] [
+         fhir:identity [ fhir:v "Vitals-Mapping" ] ;
+         fhir:map [ fhir:v "VitalSignTO.type.name" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.subject" ] ;

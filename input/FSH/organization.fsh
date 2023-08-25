@@ -19,9 +19,9 @@ A profile on the Organization resource for MHV PHR exposing Organization using F
 - used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)
 - always a contained resource, so not exposed RESTfully
 
-Map to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-phr-labsiteto)
+Map to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-fhir-phr-labsiteto)
 
-Map to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)
+Map to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-performingorganization)
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -37,7 +37,7 @@ Map to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-
 Mapping: Organization-LabSiteTO
 Source:	MHVorganization
 Target: "labSiteTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "labSiteTO"
 * identifier.use -> "`usual`"
 * identifier.system -> "`urn:oid:2.16.840.1.113883.4.349`"
@@ -77,7 +77,7 @@ Title: "VIA to MHV-PHR"
 Mapping: Organization-performingOrganization
 Source: MHVorganization
 Target: "PerformingOrganization"
-Title: "HDR to MHV-PHR"
+Title: "HDR to mhv-fhir-phr"
 * -> "PerformingOrganization"
 * identifier.use -> "`usual`"
 * identifier.system -> "`urn:oid:2.16.840.1.113883.4.349`"

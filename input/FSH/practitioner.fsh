@@ -16,9 +16,9 @@ A profile on the Practitioner resource for MHV PHR exposing Practitioner using F
 - might be used for PersonTO or is that RelatedPerson?
 - always a contained resource, so not exposed RESTfully
 
-Mapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-phr-authorto)
+Mapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-authorto)
 
-Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-phr-practitionerlite)
+Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-practitionerlite)
 """
 * name MS
 * identifier 1..
@@ -83,7 +83,7 @@ Expression: "value.startsWith('http://va.gov/systems/')"
 Mapping: Practitioner-UserTO
 Source:	MHVpractitioner
 Target: "UserTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "UserTO"
 * identifier.use -> "`usual`"
 * identifier.value -> "`UserTO` + {UserTO.id}"
@@ -112,7 +112,7 @@ Title: "VIA to MHV-PHR"
 Mapping: Practitioner-AuthorTO
 Source:	MHVpractitioner
 Target: "AuthorTO"
-Title: "VIA to MHV-PHR"
+Title: "VIA to mhv-fhir-phr"
 * -> "AuthorTO"
 * identifier.use -> "`usual`"
 * identifier.value -> "`AuthorTO.` + {AuthorTO.id}"
@@ -179,7 +179,7 @@ Title: "VIA to MHV-PHR"
 Mapping: Practitioner-PractitionerLite
 Source:	MHVpractitioner
 Target: "PractitionerLite"
-Title: "HDR to MHV-PHR"
+Title: "HDR to mhv-fhir-phr"
 * -> "PractitionerLite"
 * identifier.use -> "`secondary`"
 * identifier.value -> "identifier.identity"

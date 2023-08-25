@@ -2,8 +2,8 @@
 - maps to [imagingExamTO](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
 - An example of a [transaction Bundle](Bundle-images.html) with many image reports as DocumentReference.
   - This was transformed using the included XSLT below
-  - from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PHR/blob/main/mocks/radiology.xml) MHV receives.
-- [mapping to VIA](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-via-to-mhv-phr-imagingexamto)
+  - from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/radiology.xml) MHV receives.
+- [mapping to VIA](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-via-to-mhv-fhir-phr-imagingexamto)
 - based on US-Core for Clinical Notes
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging` to indicate the intent to be compliant with this profile
 - `type` is LOINC#18748-4 `Diagnostic imaging study`

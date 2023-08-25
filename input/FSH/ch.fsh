@@ -37,7 +37,7 @@ A profile showing how the `labTestPromises.specimen` is mapped into a FHIR Speci
 Mapping: CH-Mapping-labTestPromiseSpecimen
 Source: MHVchSpecimen
 Target: "labTestPromises.specimen"
-Title: "HDR labTestPromises.specimen to MHV-PHR"
+Title: "HDR labTestPromises.specimen to mhv-fhir-phr"
 * -> "labTestPromises.specimen"
 * status -> "`available`"
 * type -> "labTestPromises.specimen.specimenSource"
@@ -96,7 +96,7 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 Mapping: CH-Mapping-labTestPromises
 Source:	MHVchReport
 Target: "labTestPromises"
-Title: "HDR to MHV-PHR"
+Title: "HDR to mhv-fhir-phr"
 * -> "HDR labTestPromises"
 * category -> "`LAB`"
 * category -> "all codes from contained labTests"
@@ -111,7 +111,7 @@ Title: "HDR to MHV-PHR"
 * performer -> "GetLocation(labTestPromises.recordSource)"
 * result -> "Contained Observation(labTestPromises.labTests)"
 * specimen -> "Contained Specimen (labTestPromises.specimen)"
-* meta.lastUpdated -> "ConvertDate(labTestPromises.recordUpdateTime)"
+//* meta.lastUpdated -> "ConvertDate(labTestPromises.recordUpdateTime)"
 
 
 Profile:        MHVchPanel
@@ -177,7 +177,7 @@ One Observation holds one `labTests.orderedTestCode`
 Mapping: CH-Mapping-labPanel
 Source:	MHVchPanel
 Target: "labTestPromises.labTests.orderedTestCode"
-Title: "HDR labTests Panel to MHV-PHR"
+Title: "HDR labTests Panel to mhv-fhir-phr"
 * -> "HDR labTests.orderedTestCode"
 * code -> "orderedTestCode"
 * code.text -> "displayText"
@@ -267,7 +267,7 @@ One Observation holds one `labTests.chemistryResults`
 Mapping: CH-Mapping-labTests
 Source:	MHVchTest
 Target: "labTestPromises.labTests"
-Title: "HDR labTests to MHV-PHR"
+Title: "HDR labTests to mhv-fhir-phr"
 * -> "HDR labTests"
 * code -> "testIdentifier"
 * code.text -> "testIdentifier.displayText"

@@ -42,7 +42,7 @@
   fhir:name [ fhir:v "MHVorganization"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Organization"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-24T09:48:15-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-25T12:12:31-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -60,7 +60,7 @@
        fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.\n\n- based on US-Core for Organization\n  - must have a status\n  - must have a name\n  - there are other things us-core defines that are not manditory (NPI, CLIA)\n- two identifier types defined TOid and HDRid\n- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)\n- always a contained resource, so not exposed RESTfully\n\nMap to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-phr-labsiteto)\n\nMap to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-phr-performingorganization)"] ; # 
+  fhir:description [ fhir:v "A profile on the Organization resource for MHV PHR exposing Organization using FHIR API.\n\n- based on US-Core for Organization\n  - must have a status\n  - must have a name\n  - there are other things us-core defines that are not manditory (NPI, CLIA)\n- two identifier types defined TOid and HDRid\n- used for Lab Site. In FHIR R4, the Lab site needs to go into .performer which can't take a Location. (TechnicalDebt)\n- always a contained resource, so not exposed RESTfully\n\nMap to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-fhir-phr-labsiteto)\n\nMap to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-performingorganization)"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
@@ -87,11 +87,11 @@
   ] [
      fhir:identity [ fhir:v "Organization-LabSiteTO" ] ;
      fhir:uri [ fhir:v "labSiteTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to MHV-PHR" ]
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
   ] [
      fhir:identity [ fhir:v "Organization-performingOrganization" ] ;
      fhir:uri [ fhir:v "PerformingOrganization"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "HDR to MHV-PHR" ]
+     fhir:name [ fhir:v "HDR to mhv-fhir-phr" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 

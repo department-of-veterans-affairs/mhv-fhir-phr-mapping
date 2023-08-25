@@ -42,7 +42,7 @@
   fhir:name [ fhir:v "MHVimmunization"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Immunization"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-24T09:48:15-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-25T12:12:31-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -91,7 +91,12 @@
   ] [
      fhir:identity [ fhir:v "Immunization-Mapping" ] ;
      fhir:uri [ fhir:v "ImmunizationTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to MHV-PHR" ]
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
+  ] [
+     fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+     fhir:uri [ fhir:v "eVaultPHR"^^xsd:anyURI ] ;
+     fhir:name [ fhir:v "eVault-PHR to mhv-fhir-phr" ] ;
+     fhir:comment [ fhir:v "Informative map that includes only the elements available in eVault PHR" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
@@ -207,6 +212,9 @@
          fhir:map [ fhir:v "Immunization" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO" ]
        ] )
      ] [
@@ -536,6 +544,9 @@
          fhir:map [ fhir:v "ClinicalDocument/component/StructuredBody/component/section/entry/substanceAdministration/id" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "{StationNbr} and {ImmunizationTO.id}" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "{StationNbr} and {ImmunizationTO.id}" ]
        ] )
      ] [
@@ -991,6 +1002,9 @@
          fhir:map [ fhir:v "Immunization.status" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "`completed`" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "`completed`" ]
        ] )
      ] [
@@ -1548,6 +1562,9 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.name" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO.name" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.patient" ] ;
@@ -1606,6 +1623,9 @@
          fhir:map [ fhir:v "Immunization.patient" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "patient" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "patient" ]
        ] )
      ] [
@@ -1714,6 +1734,9 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.administeredDate" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO.administeredDate" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.recorded" ] ;
@@ -1752,6 +1775,9 @@
          fhir:map [ fhir:v ".participation[typeCode=AUT].time" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO.administeredDate" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.administeredDate" ]
        ] )
      ] [
@@ -1802,6 +1828,9 @@
          fhir:map [ fhir:v "Immunization.reported" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "`false`" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "`false`" ]
        ] )
      ] [
@@ -1872,243 +1901,8 @@
          fhir:targetProfile ( [
            fhir:v "http://hl7.org/fhir/StructureDefinition/Location"^^xsd:anyURI ;
            fhir:link <http://hl7.org/fhir/StructureDefinition/Location>
-         ] )
-       ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:mapping ( [
-         fhir:identity [ fhir:v "workflow" ] ;
-         fhir:map [ fhir:v "Event.location" ]
-       ] [
-         fhir:identity [ fhir:v "w5" ] ;
-         fhir:map [ fhir:v "FiveWs.where[x]" ]
-       ] [
-         fhir:identity [ fhir:v "v2" ] ;
-         fhir:map [ fhir:v "RXA-27  (or RXA-11, deprecated as of v2.7)" ]
-       ] [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v ".participation[typeCode=LOC].COCT_MT240000UV" ]
-       ] )
-     ] [
-       fhir:id [ fhir:v "Immunization.location.id" ] ;
-       fhir:path [ fhir:v "Immunization.location.id" ] ;
-       fhir:representation ( [ fhir:v "xmlAttr" ] ) ;
-       fhir:short [ fhir:v "Unique id for inter-element referencing" ] ;
-       fhir:definition [ fhir:v "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces." ] ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "1" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "Element.id" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "1" ]
-       ] ;
-       fhir:type ( [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "string"^^xsd:anyURI ]
          ] ) ;
-         fhir:code [ fhir:v "http://hl7.org/fhirpath/System.String"^^xsd:anyURI ]
-       ] ) ;
-       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] )
-     ] [
-       fhir:id [ fhir:v "Immunization.location.extension" ] ;
-       fhir:path [ fhir:v "Immunization.location.extension" ] ;
-       fhir:slicing [
-         fhir:discriminator ( [
-           fhir:type [ fhir:v "value" ] ;
-           fhir:path [ fhir:v "url" ]
-         ] ) ;
-         fhir:description [ fhir:v "Extensions are always sliced by (at least) url" ] ;
-         fhir:rules [ fhir:v "open" ]
-       ] ;
-       fhir:short [ fhir:v "Additional content defined by implementations" ] ;
-       fhir:definition [ fhir:v "May be used to represent additional information that is not part of the basic definition of the element. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension." ] ;
-       fhir:comment [ fhir:v "There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone." ] ;
-       fhir:alias ( [ fhir:v "extensions" ] [ fhir:v "user content" ] ) ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "*" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "Element.extension" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "*" ]
-       ] ;
-       fhir:type ( [
-         fhir:code [ fhir:v "Extension"^^xsd:anyURI ]
-       ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] [
-         fhir:key [ fhir:v "ext-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "Must have either extensions or value[x], not both" ] ;
-         fhir:expression [ fhir:v "extension.exists() != value.exists()" ] ;
-         fhir:xpath [ fhir:v "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Extension"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Extension>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "n/a" ]
-       ] )
-     ] [
-       fhir:id [ fhir:v "Immunization.location.reference" ] ;
-       fhir:path [ fhir:v "Immunization.location.reference" ] ;
-       fhir:short [ fhir:v "Literal reference, Relative, internal or absolute URL" ] ;
-       fhir:definition [ fhir:v "A reference to a location at which the other resource is found. The reference may be a relative reference, in which case it is relative to the service base URL, or an absolute URL that resolves to the location where the resource is found. The reference may be version specific or not. If the reference is not to a FHIR RESTful server, then it should be assumed to be version specific. Internal fragment references (start with '#') refer to contained resources." ] ;
-       fhir:comment [ fhir:v "Using absolute URLs provides a stable scalable approach suitable for a cloud/web context, while using relative/logical references provides a flexible approach suitable for use when trading across closed eco-system boundaries.   Absolute URLs do not need to point to a FHIR RESTful server, though this is the preferred approach. If the URL conforms to the structure \"/[type]/[id]\" then it should be assumed that the reference is to a FHIR RESTful server." ] ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "1" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "Reference.reference" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "1" ]
-       ] ;
-       fhir:type ( [
-         fhir:code [ fhir:v "string"^^xsd:anyURI ]
-       ] ) ;
-       fhir:condition ( [ fhir:v "ref-1" ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
-       fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "N/A" ]
-       ] )
-     ] [
-       fhir:id [ fhir:v "Immunization.location.type" ] ;
-       fhir:path [ fhir:v "Immunization.location.type" ] ;
-       fhir:short [ fhir:v "Type the reference refers to (e.g. \"Patient\")" ] ;
-       fhir:definition [ fhir:v "The expected type of the target of the reference. If both Reference.type and Reference.reference are populated and Reference.reference is a FHIR URL, both SHALL be consistent.\n\nThe type is the Canonical URL of Resource Definition that is the type this reference refers to. References are URLs that are relative to http://hl7.org/fhir/StructureDefinition/ e.g. \"Patient\" is a reference to http://hl7.org/fhir/StructureDefinition/Patient. Absolute URLs are only allowed for logical models (and can only be used in references in logical models, not resources)." ] ;
-       fhir:comment [ fhir:v "This element is used to indicate the type of  the target of the reference. This may be used which ever of the other elements are populated (or not). In some cases, the type of the target may be determined by inspection of the reference (e.g. a RESTful URL) or by resolving the target of the reference; if both the type and a reference is provided, the reference SHALL resolve to a resource of the same type as that specified." ] ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "1" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "Reference.type" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "1" ]
-       ] ;
-       fhir:type ( [
-         fhir:code [ fhir:v "uri"^^xsd:anyURI ]
-       ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
-       fhir:binding [
-         fhir:extension ( [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "FHIRResourceTypeExt" ]
-         ] ) ;
-         fhir:strength [ fhir:v "extensible" ] ;
-         fhir:description [ fhir:v "Aa resource (or, for logical models, the URI of the logical model)." ] ;
-         fhir:valueSet [
-           fhir:v "http://hl7.org/fhir/ValueSet/resource-types"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/ValueSet/resource-types>
-         ]
-       ] ;
-       fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "N/A" ]
-       ] )
-     ] [
-       fhir:id [ fhir:v "Immunization.location.identifier" ] ;
-       fhir:path [ fhir:v "Immunization.location.identifier" ] ;
-       fhir:short [ fhir:v "Logical reference, when literal reference is not known" ] ;
-       fhir:definition [ fhir:v "An identifier for the target resource. This is used when there is no way to reference the other resource directly, either because the entity it represents is not available through a FHIR server, or because there is no way for the author of the resource to convert a known identifier to an actual location. There is no requirement that a Reference.identifier point to something that is actually exposed as a FHIR instance, but it SHALL point to a business concept that would be expected to be exposed as a FHIR instance, and that instance would need to be of a FHIR resource type allowed by the reference." ] ;
-       fhir:comment [ fhir:v "When an identifier is provided in place of a reference, any system processing the reference will only be able to resolve the identifier to a reference if it understands the business context in which the identifier is used. Sometimes this is global (e.g. a national identifier) but often it is not. For this reason, none of the useful mechanisms described for working with references (e.g. chaining, includes) are possible, nor should servers be expected to be able resolve the reference. Servers may accept an identifier based reference untouched, resolve it, and/or reject it - see CapabilityStatement.rest.resource.referencePolicy. \n\nWhen both an identifier and a literal reference are provided, the literal reference is preferred. Applications processing the resource are allowed - but not required - to check that the identifier matches the literal reference\n\nApplications converting a logical reference to a literal reference may choose to leave the logical reference present, or remove it.\n\nReference is intended to point to a structure that can potentially be expressed as a FHIR resource, though there is no need for it to exist as an actual FHIR resource instance - except in as much as an application wishes to actual find the target of the reference. The content referred to be the identifier must meet the logical constraints implied by any limitations on what resource types are permitted for the reference.  For example, it would not be legitimate to send the identifier for a drug prescription if the type were Reference(Observation|DiagnosticReport).  One of the use-cases for Reference.identifier is the situation where no FHIR representation exists (where the type is Reference (Any)." ] ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "1" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "Reference.identifier" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "1" ]
-       ] ;
-       fhir:type ( [
-         fhir:code [ fhir:v "Identifier"^^xsd:anyURI ]
-       ] ) ;
-       fhir:constraint ( [
-         fhir:key [ fhir:v "ele-1" ] ;
-         fhir:severity [ fhir:v "error" ] ;
-         fhir:human [ fhir:v "All FHIR elements must have a @value or children" ] ;
-         fhir:expression [ fhir:v "hasValue() or (children().count() > id.count())" ] ;
-         fhir:xpath [ fhir:v "@value|f:*|h:div" ] ;
-         fhir:source [
-           fhir:v "http://hl7.org/fhir/StructureDefinition/Element"^^xsd:anyURI ;
-           fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
-         ]
-       ] ) ;
-       fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
-       fhir:mapping ( [
-         fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v ".identifier" ]
-       ] )
-     ] [
-       fhir:id [ fhir:v "Immunization.location.display" ] ;
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "true"^^xsd:boolean ]
-       ] ) ;
-       fhir:path [ fhir:v "Immunization.location.display" ] ;
-       fhir:short [ fhir:v "Text alternative for the resource" ] ;
-       fhir:definition [ fhir:v "Plain text narrative that identifies the resource in addition to the resource reference." ] ;
-       fhir:comment [ fhir:v "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it." ] ;
-       fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "1" ] ;
-       fhir:base [
-         fhir:path [ fhir:v "Reference.display" ] ;
-         fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-         fhir:max [ fhir:v "1" ]
-       ] ;
-       fhir:type ( [
-         fhir:code [ fhir:v "string"^^xsd:anyURI ]
+         fhir:aggregation ( [ fhir:v "contained" ] )
        ] ) ;
        fhir:constraint ( [
          fhir:key [ fhir:v "ele-1" ] ;
@@ -2123,13 +1917,25 @@
        ] ) ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
-       fhir:isSummary [ fhir:v "true"^^xsd:boolean ] ;
+       fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
+         fhir:identity [ fhir:v "workflow" ] ;
+         fhir:map [ fhir:v "Event.location" ]
+       ] [
+         fhir:identity [ fhir:v "w5" ] ;
+         fhir:map [ fhir:v "FiveWs.where[x]" ]
+       ] [
+         fhir:identity [ fhir:v "v2" ] ;
+         fhir:map [ fhir:v "RXA-27  (or RXA-11, deprecated as of v2.7)" ]
+       ] [
          fhir:identity [ fhir:v "rim" ] ;
-         fhir:map [ fhir:v "N/A" ]
+         fhir:map [ fhir:v ".participation[typeCode=LOC].COCT_MT240000UV" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
-         fhir:map [ fhir:v "ImmunizationTO.encounter.location.name" ]
+         fhir:map [ fhir:v "GetLocation(ImmunizationTO.encounter.location)" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetLocation(ImmunizationTO.encounter.location)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.manufacturer" ] ;
@@ -2816,6 +2622,9 @@
          fhir:map [ fhir:v "GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "GetOrganization(ImmunizationTO.encounter.facility)" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "GetOrganization(ImmunizationTO.encounter.facility.name)" ]
        ] )
      ] [
@@ -3057,6 +2866,9 @@
          fhir:map [ fhir:v "Act.text" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO.comments" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.comments" ]
        ] )
      ] [
@@ -3960,6 +3772,9 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "contained Observation with ImmunizationTO.reaction" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "contained Observation with ImmunizationTO.reaction" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.reaction.detail.type" ] ;
@@ -4539,6 +4354,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.identifier" ] ;
@@ -4554,6 +4372,9 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "{StationNbr} and {ImmunizationTO.id}" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "{StationNbr} and {ImmunizationTO.id}" ]
        ] )
      ] [
@@ -4592,6 +4413,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "`completed`" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "`completed`" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.statusReason" ] ;
@@ -4617,12 +4441,18 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.name" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO.name" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.patient" ] ;
        fhir:path [ fhir:v "Immunization.patient" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "patient" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "patient" ]
        ] )
      ] [
@@ -4642,6 +4472,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.administeredDate" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO.administeredDate" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.recorded" ] ;
@@ -4651,6 +4484,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.administeredDate" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO.administeredDate" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.primarySource" ] ;
@@ -4659,18 +4495,32 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "`false`" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "`false`" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.reportOrigin" ] ;
        fhir:path [ fhir:v "Immunization.reportOrigin" ] ;
        fhir:max [ fhir:v "0" ]
      ] [
-       fhir:id [ fhir:v "Immunization.location.display" ] ;
-       fhir:path [ fhir:v "Immunization.location.display" ] ;
+       fhir:id [ fhir:v "Immunization.location" ] ;
+       fhir:path [ fhir:v "Immunization.location" ] ;
+       fhir:type ( [
+         fhir:code [ fhir:v "Reference"^^xsd:anyURI ] ;
+         fhir:targetProfile ( [
+           fhir:v "http://hl7.org/fhir/StructureDefinition/Location"^^xsd:anyURI ;
+           fhir:link <http://hl7.org/fhir/StructureDefinition/Location>
+         ] ) ;
+         fhir:aggregation ( [ fhir:v "contained" ] )
+       ] ) ;
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
-         fhir:map [ fhir:v "ImmunizationTO.encounter.location.name" ]
+         fhir:map [ fhir:v "GetLocation(ImmunizationTO.encounter.location)" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetLocation(ImmunizationTO.encounter.location)" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.manufacturer" ] ;
@@ -4722,6 +4572,9 @@
          fhir:map [ fhir:v "GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "GetOrganization(ImmunizationTO.encounter.facility)" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "GetOrganization(ImmunizationTO.encounter.facility.name)" ]
        ] )
      ] [
@@ -4734,6 +4587,9 @@
        fhir:path [ fhir:v "Immunization.note.text" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "ImmunizationTO.comments" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.comments" ]
        ] )
      ] [
@@ -4780,6 +4636,9 @@
        fhir:path [ fhir:v "Immunization.reaction.detail.reference" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
+         fhir:map [ fhir:v "contained Observation with ImmunizationTO.reaction" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "contained Observation with ImmunizationTO.reaction" ]
        ] )
      ] [

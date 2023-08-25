@@ -24,7 +24,7 @@
   <name value="MHVvitals"/>
   <title value="VA MHV PHR Vital-Signs"/>
   <status value="active"/>
-  <date value="2023-08-24T09:48:15-05:00"/>
+  <date value="2023-08-25T12:12:31-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -85,7 +85,7 @@
   <mapping>
     <identity value="Vitals-Mapping"/>
     <uri value="VitalSignTO"/>
-    <name value="VIA to MHV-PHR"/>
+    <name value="VIA to mhv-fhir-phr"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -1631,10 +1631,6 @@
         <identity value="sct-attr"/>
         <map value="116680003 |Is a|"/>
       </mapping>
-      <mapping>
-        <identity value="Vitals-Mapping"/>
-        <map value="VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"/>
-      </mapping>
     </element>
     <element id="Observation.code.id">
       <path value="Observation.code.id"/>
@@ -1748,6 +1744,14 @@
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding"/>
       </mapping>
+      <mapping>
+        <identity value="Vitals-Mapping"/>
+        <map value="VitalSignTO.type.id if 7 digits then use as VUID"/>
+      </mapping>
+      <mapping>
+        <identity value="Vitals-Mapping"/>
+        <map value="VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"/>
+      </mapping>
     </element>
     <element id="Observation.code.text">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
@@ -1790,6 +1794,10 @@
       <mapping>
         <identity value="orim"/>
         <map value="fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText"/>
+      </mapping>
+      <mapping>
+        <identity value="Vitals-Mapping"/>
+        <map value="VitalSignTO.type.name"/>
       </mapping>
     </element>
     <element id="Observation.subject">
@@ -3687,20 +3695,25 @@
         <map value="`vital-signs`"/>
       </mapping>
     </element>
-    <element id="Observation.code">
-      <path value="Observation.code"/>
+    <element id="Observation.code.coding">
+      <path value="Observation.code.coding"/>
+      <mustSupport value="true"/>
+      <mapping>
+        <identity value="Vitals-Mapping"/>
+        <map value="VitalSignTO.type.id if 7 digits then use as VUID"/>
+      </mapping>
       <mapping>
         <identity value="Vitals-Mapping"/>
         <map value="VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"/>
       </mapping>
     </element>
-    <element id="Observation.code.coding">
-      <path value="Observation.code.coding"/>
-      <mustSupport value="true"/>
-    </element>
     <element id="Observation.code.text">
       <path value="Observation.code.text"/>
       <mustSupport value="true"/>
+      <mapping>
+        <identity value="Vitals-Mapping"/>
+        <map value="VitalSignTO.type.name"/>
+      </mapping>
     </element>
     <element id="Observation.subject">
       <path value="Observation.subject"/>
