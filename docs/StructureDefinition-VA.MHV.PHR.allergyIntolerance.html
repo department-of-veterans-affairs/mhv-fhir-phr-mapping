@@ -69,7 +69,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.1 - ci-build
+            <span style="display:inline-block;">0.2.2 - ci-build
 
 
 
@@ -196,7 +196,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.1). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.2). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -280,7 +280,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.2.1<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.2.1"/></span>
+      <span class="copy-text">0.2.2<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.2.2"/></span>
       </td>
     </tr>
 
@@ -1435,45 +1435,12 @@ Summary
     </ul>
   </li>
   <li>not clear if we are getting full <code class="language-plaintext highlighter-rouge">allergyType</code> details. HL7 v2 uses <a href="https://terminology.hl7.org/2.1.0/CodeSystem-v2-0127.html">two character codes</a>, but it seems we are getting just single character codes. It may not matter as <a href="https://confluence.hl7.org/pages/viewpage.action?pageId=44499731">there is HL7 guidance</a> that only uses the three categories in FHIR. <a href="https://hl7.org/fhir/uv/v2mappings/2020sep/ConceptMap-table-hl70127-to-allergy-intolerance-type.html">HL7 v2 to FHIR IG</a></li>
-  <li>not preserving <code class="language-plaintext highlighter-rouge">recordUpdateTime</code>. The FHIR meta.lastUpdated is always overwritten by the HAPI server</li>
 </ul>
 
 <h4 id="code-inspection-concerns">code inspection concerns</h4>
 
 <ul>
-  <li>need to handle when an allergy is both a medication and environment and observation. Today no all combinations are supported.
-    <ul>
-      <li>medication should be set if EITHER ‘D’ or a drugClass</li>
-    </ul>
-  </li>
-  <li>The reactant we are given is not always snomed.
-    <ul>
-      <li>if it is a 7 digit number, then it is a VUID and system=<code class="language-plaintext highlighter-rouge">urn:oid:2.16.840.1.113883.6.233</code></li>
-      <li>else it is likely a SNOMED system=<code class="language-plaintext highlighter-rouge">http://snomed.info/sct</code></li>
-    </ul>
-  </li>
-  <li>should have <code class="language-plaintext highlighter-rouge">meta.profile</code> set to <code class="language-plaintext highlighter-rouge">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance</code> to indicate the intent to be compliant with this profile</li>
-  <li><code class="language-plaintext highlighter-rouge">informationSourceCategory</code> contains one of two values
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">OBSERVED</code> shall be mapped to .verificationStatus=<code class="language-plaintext highlighter-rouge">confirmed</code></li>
-      <li><code class="language-plaintext highlighter-rouge">HISTORICAL</code> shall be mapped to .verificationStatus=<code class="language-plaintext highlighter-rouge">unconfirmed</code></li>
-    </ul>
-  </li>
-  <li>what are other status values besides <code class="language-plaintext highlighter-rouge">F</code>? Would these other status values need to result in updates to the data in our FHIR server? e.g. entered-in-error, resolved, etc.</li>
-  <li>only those with <code class="language-plaintext highlighter-rouge">facilityIdentifier</code> are processed (is this just robustness, or is there a reason?)</li>
-  <li>I am unclear on the existing .identifier logic results
-    <ul>
-      <li>line 312</li>
-      <li>This does not follow the pattern</li>
-    </ul>
-  </li>
-  <li>I am unclear on what the logic around <code class="language-plaintext highlighter-rouge">getInformationSourceCategory</code> is. You seem to have some logic for handling HISTORIC and OBSERVED, but I can’t understand the logic.
-    <ul>
-      <li>line 224</li>
-      <li>This seems to not result in anything.</li>
-      <li>I was wondering if there was some value to the InformationSourceCategory values.</li>
-    </ul>
-  </li>
+  <li>need to handle when an allergy is any combination of medication, environment, and observation. Today no all combinations are supported.</li>
 </ul>
 
 
@@ -1550,7 +1517,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 12:12-0500">2023-08-25</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 14:41-0500">2023-08-25</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
