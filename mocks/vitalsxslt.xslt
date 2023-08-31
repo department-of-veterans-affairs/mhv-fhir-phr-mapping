@@ -52,15 +52,53 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     </xsl:choose>
                 </meta>
 
+                <xsl:if test="boolean(location)">
+                <contained>
+                    <Location>
+                    <id value="location-0"/>
+                    <identifier>
+                        <use value="usual"/>
+                        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!-- hack for station 989 -->
+                        <value>
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="concat('HospitalLocationTO.', location/id)" />
+                        </xsl:attribute>
+                        </value>
+                    </identifier>
+                    <name>
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="location/name" />
+                        </xsl:attribute>                 
+                    </name>
+                    </Location>
+                </contained>
+                </xsl:if>
+
+
+<extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
+<valueString>
+  <xsl:attribute name="value">
+    <xsl:value-of select="type/name" />
+  </xsl:attribute>
+</valueString>
+</extension>
+<extension url="http://hl7.org/fhir/StructureDefinition/artifact-description">
+<valueMarkdown>
+  <xsl:attribute name="value">
+      <xsl:value-of select="type/id" />
+    </xsl:attribute>
+</valueMarkdown>
+</extension>
                 <identifier>
                     <use value="usual"/>
-                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!-- TODO: system should be derived from Vista site -->
+                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!-- hack for station 989 -->
                     <value>
                     <xsl:attribute name="value">
                         <xsl:value-of select="concat('VitalSignTO.', type/id)" />
                     </xsl:attribute>
                     </value>
                 </identifier>
+
 
                 <status value="final"/>
 
@@ -73,6 +111,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
 
                 <code>
                    <xsl:choose>
+                   <!-- this is a subset of values known to be in initial data -->
                     <xsl:when test="type/name = 'BLOOD PRESSURE'">
                         <coding>
                             <system value="http://loinc.org"/>
@@ -147,6 +186,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
 
                 <xsl:if test="boolean(recorder)">
                 <performer>
+                    <type value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
                     <identifier>
                         <value>
                             <xsl:attribute name="value">
@@ -163,6 +203,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </xsl:if>
                 <xsl:if test="boolean(observer)">
                 <performer>
+                    <type value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
                     <identifier>
                         <value>
                             <xsl:attribute name="value">
@@ -176,6 +217,20 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                         </xsl:attribute>                 
                     </display>
                 </performer>
+                </xsl:if>
+                <xsl:if test="boolean(location)">
+                    <performer>
+                        <extension url="http://hl7.org/fhir/StructureDefinition/alternate-reference">
+                        <valueReference>
+                            <reference value="#location-0"/>
+                        </valueReference>
+                        </extension>
+                        <display>
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="location/name" />
+                            </xsl:attribute>                 
+                        </display>
+                    </performer>
                 </xsl:if>
 
                 <xsl:choose>
@@ -312,8 +367,12 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </Observation>
             </resource>
             <request>
-                <method value="POST"/>
-                <url value="Observation"/>
+                <method value="PUT"/>
+                <url>
+                    <xsl:attribute name="value">
+                        <xsl:value-of select="concat('Observation?urn:oid:2.16.840.1.113883.4.349.4.989|VitalSignTO.', type/id)" />
+                    </xsl:attribute>
+                </url>
             </request>
         </entry>  
         </xsl:if>

@@ -20,11 +20,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
-  <version value="0.2.2"/>
+  <version value="0.2.3"/>
   <name value="MHVimmunization"/>
   <title value="VA MHV PHR Immunization"/>
   <status value="active"/>
-  <date value="2023-08-25T14:41:58-05:00"/>
+  <date value="2023-08-31T15:33:32-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -85,7 +85,7 @@
   <mapping>
     <identity value="Immunization-Old-Mapping"/>
     <uri value="eVaultPHR"/>
-    <name value="eVault-PHR to mhv-fhir-phr"/>
+    <name value="eVault-PHR to MHV-PHR"/>
     <comment value="Informative map that includes only the elements available in eVault PHR"/>
   </mapping>
   <kind value="resource"/>
@@ -189,6 +189,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO"/>
+        <comment value="FileMan"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
@@ -499,10 +500,6 @@
       </mapping>
       <mapping>
         <identity value="Immunization-Mapping"/>
-        <map value="{StationNbr} and {ImmunizationTO.id}"/>
-      </mapping>
-      <mapping>
-        <identity value="Immunization-Old-Mapping"/>
         <map value="{StationNbr} and {ImmunizationTO.id}"/>
       </mapping>
     </element>
@@ -1341,6 +1338,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.cptCode.id"/>
+        <comment value="9000010.11.13 CREATED BY V CPT ENTRY"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode.coding.display">
@@ -1471,10 +1469,12 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.name"/>
+        <comment value="9000010.11.01 IMMUNIZATION"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
         <map value="ImmunizationTO.name"/>
+        <comment value="9000010.11.01 IMMUNIZATION"/>
       </mapping>
     </element>
     <element id="Immunization.patient">
@@ -1535,6 +1535,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="patient"/>
+        <comment value="9000010.11.02 PATIENT"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
@@ -1646,10 +1647,12 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.administeredDate"/>
+        <comment value="9000010.11.1201 EVENT DATE AND TIME"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
         <map value="ImmunizationTO.administeredDate"/>
+        <comment value="9000010.11.1201 EVENT DATE AND TIME"/>
       </mapping>
     </element>
     <element id="Immunization.recorded">
@@ -1687,11 +1690,8 @@
       </mapping>
       <mapping>
         <identity value="Immunization-Mapping"/>
-        <map value="ImmunizationTO.administeredDate"/>
-      </mapping>
-      <mapping>
-        <identity value="Immunization-Old-Mapping"/>
-        <map value="ImmunizationTO.administeredDate"/>
+        <map value="ImmunizationTO.timestamp"/>
+        <comment value="9000010.11.1205 DATE/TIME RECORDED"/>
       </mapping>
     </element>
     <element id="Immunization.primarySource">
@@ -1842,10 +1842,12 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="GetLocation(ImmunizationTO.encounter.location)"/>
+        <comment value="9000010.11.1215 ORDERING LOCATION"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
         <map value="GetLocation(ImmunizationTO.encounter.location)"/>
+        <comment value="9000010.11.1215 ORDERING LOCATION"/>
       </mapping>
     </element>
     <element id="Immunization.manufacturer">
@@ -1931,6 +1933,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.lotNumber"/>
+        <comment value="9000010.11.05 LOT"/>
       </mapping>
     </element>
     <element id="Immunization.expirationDate">
@@ -2167,6 +2170,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.anatomicSurface"/>
+        <comment value="9000010.11.09 INJECTION SITE"/>
       </mapping>
     </element>
     <element id="Immunization.route">
@@ -2489,7 +2493,7 @@
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
-        <map value="GetOrganization(ImmunizationTO.encounter.facility.name)"/>
+        <map value="GetOrganization(ImmunizationTO.encounter.facility)"/>
       </mapping>
     </element>
     <element id="Immunization.note">
@@ -2712,6 +2716,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.comments"/>
+        <comment value="9000010.11.1101 REMARKS"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
@@ -3535,10 +3540,12 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="contained Observation with ImmunizationTO.reaction"/>
+        <comment value="9000010.11.06 REACTION"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
         <map value="contained Observation with ImmunizationTO.reaction"/>
+        <comment value="9000010.11.06 REACTION"/>
       </mapping>
     </element>
     <element id="Immunization.reaction.detail.type">
@@ -3645,6 +3652,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`"/>
+        <comment value="9000010.11.07 CONTRAINDICATED"/>
       </mapping>
     </element>
     <element id="Immunization.reaction.reported">
@@ -3850,6 +3858,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="translation of ImmunizationTO.series"/>
+        <comment value="9000010.11.04 SERIES"/>
       </mapping>
     </element>
     <element id="Immunization.protocolApplied.authority">
@@ -3994,6 +4003,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.series"/>
+        <comment value="9000010.11.04 SERIES"/>
       </mapping>
     </element>
     <element id="Immunization.protocolApplied.doseNumber[x]:doseNumberPositiveInt">
@@ -4067,6 +4077,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO"/>
+        <comment value="FileMan"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
@@ -4086,10 +4097,6 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="Immunization-Mapping"/>
-        <map value="{StationNbr} and {ImmunizationTO.id}"/>
-      </mapping>
-      <mapping>
-        <identity value="Immunization-Old-Mapping"/>
         <map value="{StationNbr} and {ImmunizationTO.id}"/>
       </mapping>
     </element>
@@ -4140,6 +4147,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.cptCode.id"/>
+        <comment value="9000010.11.13 CREATED BY V CPT ENTRY"/>
       </mapping>
     </element>
     <element id="Immunization.vaccineCode.coding.display">
@@ -4154,10 +4162,12 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.name"/>
+        <comment value="9000010.11.01 IMMUNIZATION"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
         <map value="ImmunizationTO.name"/>
+        <comment value="9000010.11.01 IMMUNIZATION"/>
       </mapping>
     </element>
     <element id="Immunization.patient">
@@ -4165,6 +4175,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="patient"/>
+        <comment value="9000010.11.02 PATIENT"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
@@ -4186,10 +4197,12 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.administeredDate"/>
+        <comment value="9000010.11.1201 EVENT DATE AND TIME"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
         <map value="ImmunizationTO.administeredDate"/>
+        <comment value="9000010.11.1201 EVENT DATE AND TIME"/>
       </mapping>
     </element>
     <element id="Immunization.recorded">
@@ -4198,11 +4211,8 @@
       <mustSupport value="true"/>
       <mapping>
         <identity value="Immunization-Mapping"/>
-        <map value="ImmunizationTO.administeredDate"/>
-      </mapping>
-      <mapping>
-        <identity value="Immunization-Old-Mapping"/>
-        <map value="ImmunizationTO.administeredDate"/>
+        <map value="ImmunizationTO.timestamp"/>
+        <comment value="9000010.11.1205 DATE/TIME RECORDED"/>
       </mapping>
     </element>
     <element id="Immunization.primarySource">
@@ -4232,10 +4242,12 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="GetLocation(ImmunizationTO.encounter.location)"/>
+        <comment value="9000010.11.1215 ORDERING LOCATION"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
         <map value="GetLocation(ImmunizationTO.encounter.location)"/>
+        <comment value="9000010.11.1215 ORDERING LOCATION"/>
       </mapping>
     </element>
     <element id="Immunization.manufacturer">
@@ -4252,6 +4264,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.lotNumber"/>
+        <comment value="9000010.11.05 LOT"/>
       </mapping>
     </element>
     <element id="Immunization.expirationDate">
@@ -4263,6 +4276,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.anatomicSurface"/>
+        <comment value="9000010.11.09 INJECTION SITE"/>
       </mapping>
     </element>
     <element id="Immunization.route">
@@ -4293,7 +4307,7 @@
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
-        <map value="GetOrganization(ImmunizationTO.encounter.facility.name)"/>
+        <map value="GetOrganization(ImmunizationTO.encounter.facility)"/>
       </mapping>
     </element>
     <element id="Immunization.note">
@@ -4306,6 +4320,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.comments"/>
+        <comment value="9000010.11.1101 REMARKS"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
@@ -4353,10 +4368,12 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="contained Observation with ImmunizationTO.reaction"/>
+        <comment value="9000010.11.06 REACTION"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
         <map value="contained Observation with ImmunizationTO.reaction"/>
+        <comment value="9000010.11.06 REACTION"/>
       </mapping>
     </element>
     <element id="Immunization.reaction.detail.identifier">
@@ -4370,6 +4387,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`"/>
+        <comment value="9000010.11.07 CONTRAINDICATED"/>
       </mapping>
     </element>
     <element id="Immunization.reaction.reported">
@@ -4386,6 +4404,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="translation of ImmunizationTO.series"/>
+        <comment value="9000010.11.04 SERIES"/>
       </mapping>
     </element>
     <element id="Immunization.protocolApplied.authority">
@@ -4419,6 +4438,7 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="ImmunizationTO.series"/>
+        <comment value="9000010.11.04 SERIES"/>
       </mapping>
     </element>
     <element id="Immunization.protocolApplied.doseNumber[x]:doseNumberPositiveInt">

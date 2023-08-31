@@ -14,7 +14,7 @@ IntoleranceCondition record identity 53495 from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * onsetDateTime = 2002-06-03T09:44:00Z
 * code.text = "CONTRAST MEDIA, OTHER"
-* code.coding[+].display = "CONTRAST MEDIA, OTHER"
+//* code.coding[+].display = "CONTRAST MEDIA, OTHER"
 * category = #medication
 * reaction[+].manifestation.text = "RESPIRATORY DISTRESS"
 * reaction[=].manifestation.coding = VUID#4637183
@@ -40,8 +40,8 @@ IntoleranceCondition record identity 67933 from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * onsetDateTime = 2006-02-01T13:57:00Z
 * code.text = "TYLENOL"
-* code.coding[+].display = "NON-OPIOID ANALGESICS"
-* code.coding[+].display = "PHARMACEUTICAL AIDS/REAGENTS"
+//* code.coding[+].display = "NON-OPIOID ANALGESICS"
+//* code.coding[+].display = "PHARMACEUTICAL AIDS/REAGENTS"
 * category = #medication
 * reaction[+].manifestation.text = "NAUSEA AND VOMITING"
 * reaction[=].manifestation.coding = VUID#4691091
@@ -68,7 +68,7 @@ IntoleranceCondition record identity 67934 from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * onsetDateTime = 2006-02-01T13:58:00Z
 * code.text = "LORTAB"
-* code.coding[+].display = "OPIOID ANALGESICS"
+//* code.coding[+].display = "OPIOID ANALGESICS"
 * category = #medication
 * reaction[+].manifestation.text = "NAUSEA AND VOMITING"
 * reaction[=].manifestation.coding = VUID#4691091
@@ -94,7 +94,7 @@ IntoleranceCondition record identity 69066 from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * onsetDateTime = 2011-02-16T14:32:00Z
 * code.text = "ASPIRIN"
-* code.coding[+].display = "SALICYLATES,ANTIRHEUMATIC"
+//* code.coding[+].display = "SALICYLATES,ANTIRHEUMATIC"
 * category[+] = #medication
 * category[+] = #food
 * reaction[+].manifestation.text = "RASH"
@@ -123,7 +123,7 @@ IntoleranceCondition record identity 69067 from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * onsetDateTime = 2011-02-16T14:33:00Z
 * code.text = "BALSALAZIDE"
-* code.coding[+].display = "GASTRIC MEDICATIONS,OTHER"
+//* code.coding[+].display = "GASTRIC MEDICATIONS,OTHER"
 * category[+] = #medication
 * reaction[+].manifestation.text = "DELIRIUM"
 * reaction[=].manifestation.coding = VUID#4637015
@@ -178,11 +178,11 @@ IntoleranceCondition record identity 69072 from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * onsetDateTime = 2011-02-21T08:09:00Z
 * code.text = "PENICILLIN"
-* code.coding[+].display = "(INACTIVE) PENICILLINS"
-* code.coding[+].display = "PENICILLIN-G RELATED PENICILLINS"
-* code.coding[+].display = "PENICILLINS,AMINO DERIVATIVES"
-* code.coding[+].display = "PENICILLINASE-RESISTANT PENICILLINS"
-* code.coding[+].display = "EXTENDED SPECTRUM PENICILLINS"
+//* code.coding[+].display = "(INACTIVE) PENICILLINS"
+//* code.coding[+].display = "PENICILLIN-G RELATED PENICILLINS"
+//* code.coding[+].display = "PENICILLINS,AMINO DERIVATIVES"
+//* code.coding[+].display = "PENICILLINASE-RESISTANT PENICILLINS"
+//* code.coding[+].display = "EXTENDED SPECTRUM PENICILLINS"
 * category[+] = #medication
 * reaction[+].manifestation.text = "SWELLING"
 * reaction[=].manifestation.coding = VUID#4637164
@@ -273,7 +273,7 @@ IntoleranceCondition record identity 69075 from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * onsetDateTime = 2011-02-21T08:57:00Z
 * code.text = "NAMENDA"
-* code.coding[+].display = "CNS MEDICATIONS,OTHER"
+//* code.coding[+].display = "CNS MEDICATIONS,OTHER"
 * category[+] = #medication
 * reaction[+].manifestation.text = "SWELLING"
 * reaction[=].manifestation.coding = VUID#4637164
@@ -301,7 +301,7 @@ IntoleranceCondition record identity 69092 from a mock ProblemTO
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * onsetDateTime = 2011-02-28T18:11:00Z
 * code.text = "MALTOSE"
-* code.coding[+].display = "CNS MEDICATIONS,OTHER"
+//* code.coding[+].display = "CNS MEDICATIONS,OTHER"
 * category[+] = #food
 * category[+] = #medication
 * reaction[+].manifestation.text = "SEDATED"

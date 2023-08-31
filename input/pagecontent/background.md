@@ -172,6 +172,19 @@ General Pattern
 3. When one item is found, we compare the data we have with the data we were given. If no change, then nothing more is done. If there is a difference, then we update our data.
 4. When creating a new instance, or updating an existing instance, create a Provenance instance to track what was imported, from what, to what, when, and given some detail to indicate the translation used.
 
+### Entered-in-Error
+
+Before Production use there must be a permanent solution. The solution needs address some update problems (e.g. entered-in-error).  The following are potential candidates
+
+1. Flush the patient's Observations and write new Observations from the VIA refresh -- similar to eVault PHR today.
+1. Get VIA updated
+1. Get VDIF to expose their data
+1. Get VDIF to expose their data in FHIR form
+1. Use Lighthouse FHIR, and thus have the 24 hour problem
+1. Use Lighthouse FHIR, and use a hack for short-term data. Where we only add vitals seen in VIA in the last 24 hours (or some timeframe).
+1. Use HDR
+1. Use CDW somehow
+
 ### References
 
 Source of data received from VIA using a SOAP xml schema that might be from one of:

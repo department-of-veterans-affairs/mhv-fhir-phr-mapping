@@ -28,7 +28,7 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * verificationStatus 1..1
 * code.text 1..1
-* code 1..1
+* code.coding 0..0
 * patient 1..1 MS
 * onsetDateTime MS
 * category 0..* MS
@@ -83,7 +83,7 @@ Title: "HDR Allergy to mhv-fhir-phr"
 * clinicalStatus -> "`active`"
 * onsetDateTime -> "~intoleranceCondition.observationTime.literal"
 * category -> "~intoleranceCondition.allergyType.code"
-* code.coding.display -> "intoleranceCondition.drugClass.code"
+//* code.coding.display -> "intoleranceCondition.drugClass.code"
 * reaction.manifestation -> "intoleranceCondition.reaction.reaction"
 * reaction.manifestation.text -> "intoleranceCondition.reaction.reaction.displayText"
 * reaction.manifestation.coding.code -> "intoleranceCondition.reaction.reaction.code"
@@ -98,22 +98,8 @@ Title: "HDR Allergy to mhv-fhir-phr"
 Mapping: AllergyIntolerance-Old-Mapping
 Source:	MHVallergyIntolerance
 Target: "eVaultPHR"
-Title: "eVault-PHR to mhv-fhir-phr"
-Description: "Informative map that includes only the elements available in eVault PHR
-
-PHR_ALLERGIES | Vista Field name in 120.8
---------------|-------------
-DATE_ENTERED | ORIGINAL DATE/TIME 
-ALLERGEN | REACTANT 
-ALLERGY_TYPE | ALLERGY TYPE 
-VA_DRUG_CLASS | VA_DRUG_CLASS 
-OBSERVED_HISTORIAL_IND | OBSERVED/HISTOICAL 
-IEN 
-COMMENTS | COMMENTS 
-COMMENTS_DATE | DATE/TIME COMMENT ENTERED 
-REACTIONS | REACTION 
-
-Informative"
+Title: "eVault-PHR to MHV-PHR"
+Description: "Informative map that includes only the elements available in eVault PHR"
 * -> "HDR Allergy"
 * identifier -> "intoleranceCondition.recordIdentifer"
 * code.text -> "intoleranceCondition.agent.code"

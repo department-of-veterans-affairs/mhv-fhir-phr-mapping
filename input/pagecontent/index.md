@@ -14,3 +14,7 @@ The main sections of this IG are:
 - [Downloads](downloads.html)
 
 All MHV profiles are based on [HL7 FHIR US-Core](http://hl7.org/fhir/us/core/STU5.0.1/index.html) implementation guide, which provides guidance to the USA marketplace that VHA participates within.  Deeper explanation is provided in the US-Core specification.
+
+### Changes
+
+Changes are noted in GitHub, and a human readable summary is in the [Github Readme](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping#readme)

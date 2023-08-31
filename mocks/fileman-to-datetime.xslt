@@ -35,6 +35,7 @@
       </xsl:choose>
     </xsl:variable>
     <xsl:value-of select="concat($year, '-', $month, '-', $day, 'T', $time, 'Z')" />
+    <!-- presumes timezone of UTC (Z), which should actually be based on the Location -->
   </xsl:otherwise>
   </xsl:choose>
 </xsl:template>

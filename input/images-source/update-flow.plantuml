@@ -5,7 +5,7 @@ title Update mhv-fhir-phr
 start
 : triggered by API request for a given Patient;
 
-: read data VIA
+: read data VIA(VPR) and HDR
 receive a multiple entry SOAP message
 with current information;
 
@@ -14,19 +14,23 @@ if (found?) then (yes)
   : update if needed;
 else (no)
   : create new
-  may use PHR Patient content;
+  may use MHV-PHR Patient content;
 endif 
 
-repeat
-  : convert data;
-  : convert VIA **.id** to FHIR **.identifier**;
-  : Add to FHIR Bundle;
-repeat while (more data?) is (yes)
+repeat 
+  repeat
+    : convert data;
+    : convert VIA **.id** to FHIR **.identifier**;
+    : Add to FHIR Bundle;
+  repeat while (more data?) is (yes)
+  ->no;
+  : Submit Transaction Bundle to FHIR
+  FHIR server will match each entry on **.identifier** 
+  and update or create new;
+
+repeat while (more domains?) is (yes)
 ->no;
 
-: Submit Transaction Bundle to FHIR
-FHIR server will match each entry on **.identifier** 
-and update or create new;
 
 stop
 

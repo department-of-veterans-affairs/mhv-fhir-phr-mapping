@@ -22,15 +22,7 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
 <link href="assets/css/vha-ig-template.css" rel="stylesheet"/>
-<!-- Global site tag (gtag.js) - Google Analytics - Moehrke-Research-IGs -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLTM76GD7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-GTLTM76GD7');
-</script>
 
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -58,8 +50,8 @@
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 
-<div id="jfm-nav"> 
-     <a id="jfm-logo" no-external="true" href="https://johnmoehrke.github.io">
+<div id="va-nav"> 
+     <a id="va-logo" no-external="true" href="https://va.gov">
      <img height="50" alt="VA Organization" src="assets/images/va-header-logo.png"/>
      </a>
 	 </div>
@@ -67,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.2 - ci-build
+            <span style="display:inline-block;">0.2.3 - ci-build
 
 
 
@@ -194,7 +186,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.2). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.3). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -267,10 +259,27 @@
   &lt;/meta&gt;
   &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Observation&lt;/b&gt;&lt;a name=&quot;ex-MHV-pain-1&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Resource Observation &amp;quot;ex-MHV-pain-1&amp;quot; &lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-VA.MHV.PHR.vitalsPain.html&quot;&gt;VA MHV PHR Vital-Signs for PAIN&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: ?ngen-9? (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Vital Signs &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html&quot;&gt;Observation Category Codes&lt;/a&gt;#vital-signs)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: PAIN &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;https://loinc.org/&quot;&gt;LOINC&lt;/a&gt;#72514-3 &amp;quot;Pain severity - 0-10 verbal numeric rating [Score] - Reported&amp;quot;)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=&quot;Patient-ex-MHV-patient-2.html&quot;&gt;Patient/ex-MHV-patient-2&lt;/a&gt; &amp;quot; MHVLISAONE&amp;quot;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 2004-12-25 23:50:50-0500&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 10&lt;/p&gt;&lt;p&gt;&lt;b&gt;note&lt;/b&gt;: Oh, scream in pain&lt;/p&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Observation&lt;/b&gt;&lt;a name=&quot;ex-MHV-pain-1&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Resource Observation &amp;quot;ex-MHV-pain-1&amp;quot; &lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-VA.MHV.PHR.vitalsPain.html&quot;&gt;VA MHV PHR Vital-Signs for PAIN&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: VitalSignTO.6003505 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: final&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Vital Signs &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html&quot;&gt;Observation Category Codes&lt;/a&gt;#vital-signs)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: PAIN &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;https://loinc.org/&quot;&gt;LOINC&lt;/a&gt;#72514-3 &amp;quot;Pain severity - 0-10 verbal numeric rating [Score] - Reported&amp;quot;; unknown#4500635)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=&quot;Patient-ex-MHV-patient-2.html&quot;&gt;Patient/ex-MHV-patient-2&lt;/a&gt; &amp;quot; MHVLISAONE&amp;quot;&lt;/p&gt;&lt;p&gt;&lt;b&gt;effective&lt;/b&gt;: 2004-09-24 10:32:00-0500&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;span&gt;: Location 2938&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;value&lt;/b&gt;: 5&lt;/p&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Location #ex-MHV-location-2938&lt;/b&gt;&lt;a name=&quot;ex-MHV-location-2938&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: HospitalLocationTO.2938 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PCT_O PATIL (F/U)&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/location.html#Location">contained</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/location.html#Location">Location</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;ex-MHV-location-2938&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.meta">meta</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location&quot;/&gt;
+      &lt;/meta&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;usual&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.4.349.4.989&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;HospitalLocationTO.2938&quot;/&gt;
+      &lt;/identifier&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PCT_O PATIL (F/U)&quot;/&gt;
+    &lt;/Location&gt;
+  &lt;/contained&gt;
   &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.identifier">identifier</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;usual&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.4.349.4.989&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;VitalSignTO.6003505&quot;/&gt;
   &lt;/identifier&gt;
   &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;final&quot;/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.category">category</a>&gt;
@@ -287,18 +296,29 @@
       &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a>
                <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Pain severity - 0-10 verbal numeric rating [Score] - Reported&quot;/&gt;
     &lt;/coding&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.6.233&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;4500635&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PAIN&quot;/&gt;
+    &lt;/coding&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PAIN&quot;/&gt;
   &lt;/code&gt;
   &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.subject">subject</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/ex-MHV-patient-2&quot;/&gt;
   &lt;/subject&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.effective[x]">effectiveDateTime</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2004-12-25T23:50:50-05:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.effective[x]">effectiveDateTime</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2004-09-24T10:32:00-05:00&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.performer">performer</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.extension">extension</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;http://hl7.org/fhir/StructureDefinition/alternate-reference&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueReference</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;#ex-MHV-location-2938&quot;/&gt;
+      &lt;/valueReference&gt;
+    &lt;/extension&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Location 2938&quot;/&gt;
+  &lt;/performer&gt;
   &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.value[x]">valueQuantity</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;10&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Quantity#Quantity.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#decimal">value</a>=&quot;5&quot;/&gt;
   &lt;/valueQuantity&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/observation.html#Observation.note">note</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Annotation#Annotation.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>=&quot;Oh, scream in pain&quot;/&gt;
-  &lt;/note&gt;
 &lt;/Observation&gt;</code></pre>
 
 
@@ -351,7 +371,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 14:41-0500">2023-08-25</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 31, 2023 15:33-0500">2023-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

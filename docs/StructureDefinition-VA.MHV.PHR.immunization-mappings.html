@@ -24,15 +24,7 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
 <link href="assets/css/vha-ig-template.css" rel="stylesheet"/>
-<!-- Global site tag (gtag.js) - Google Analytics - Moehrke-Research-IGs -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLTM76GD7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-GTLTM76GD7');
-</script>
 
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -60,8 +52,8 @@
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 
-<div id="jfm-nav"> 
-     <a id="jfm-logo" no-external="true" href="https://johnmoehrke.github.io">
+<div id="va-nav"> 
+     <a id="va-logo" no-external="true" href="https://va.gov">
      <img height="50" alt="VA Organization" src="assets/images/va-header-logo.png"/>
      </a>
 	 </div>
@@ -69,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.2 - ci-build
+            <span style="display:inline-block;">0.2.3 - ci-build
 
 
 
@@ -196,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.2). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.3). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -444,54 +436,70 @@
 </table>
 <a name="Immunization-Mapping"> </a><h3>Mappings for VIA to mhv-fhir-phr (ImmunizationTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVimmunization</b></td></tr>
- <tr><td>Immunization</td><td>ImmunizationTO</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ImmunizationTO.id}</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`completed`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>ImmunizationTO.cptCode.id</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>ImmunizationTO.cptCode.name</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.name</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>patient</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ImmunizationTO.administeredDate</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>ImmunizationTO.administeredDate</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>`false`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>GetLocation(ImmunizationTO.encounter.location)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>ImmunizationTO.manufacture</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>ImmunizationTO.lotNumber</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;site</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.anatomicSurface</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`, GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`, GetOrganization(ImmunizationTO.encounter.facility)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.comments</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>contained Observation with ImmunizationTO.reaction</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;protocolApplied</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;series</td><td>translation of ImmunizationTO.series</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseNumber[x] (doseNumberString)</td><td>ImmunizationTO.series</td> </tr>
+ <tr><td>Immunization</td><td>ImmunizationTO</td><td><p>FileMan</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ImmunizationTO.id}</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`completed`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>ImmunizationTO.cptCode.id</td><td><p>9000010.11.13 CREATED BY V CPT ENTRY</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>ImmunizationTO.cptCode.name</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.name</td><td><p>9000010.11.01 IMMUNIZATION</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>patient</td><td><p>9000010.11.02 PATIENT</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ImmunizationTO.administeredDate</td><td><p>9000010.11.1201 EVENT DATE AND TIME</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>ImmunizationTO.timestamp</td><td><p>9000010.11.1205 DATE/TIME RECORDED</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>`false`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>GetLocation(ImmunizationTO.encounter.location)</td><td><p>9000010.11.1215 ORDERING LOCATION</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;manufacturer</td><td>ImmunizationTO.manufacture</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;lotNumber</td><td>ImmunizationTO.lotNumber</td><td><p>9000010.11.05 LOT</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;site</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.anatomicSurface</td><td><p>9000010.11.09 INJECTION SITE</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`, GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`, GetOrganization(ImmunizationTO.encounter.facility)</td><td>, , </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.comments</td><td><p>9000010.11.1101 REMARKS</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>contained Observation with ImmunizationTO.reaction</td><td><p>9000010.11.06 REACTION</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`</td><td><p>9000010.11.07 CONTRAINDICATED</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;protocolApplied</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;series</td><td>translation of ImmunizationTO.series</td><td><p>9000010.11.04 SERIES</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;doseNumber[x] (doseNumberString)</td><td>ImmunizationTO.series</td><td><p>9000010.11.04 SERIES</p>
+</td> </tr>
 </table>
-<a name="Immunization-Old-Mapping"> </a><h3>Mappings for eVault-PHR to mhv-fhir-phr (eVaultPHR)</h3><p>Informative map that includes only the elements available in eVault PHR</p><table class="grid">
+<a name="Immunization-Old-Mapping"> </a><h3>Mappings for eVault-PHR to MHV-PHR (eVaultPHR)</h3><p>Informative map that includes only the elements available in eVault PHR</p><table class="grid">
  <tr><td colspan="3"><b>MHVimmunization</b></td></tr>
- <tr><td>Immunization</td><td>ImmunizationTO</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ImmunizationTO.id}</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`completed`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.name</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>patient</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ImmunizationTO.administeredDate</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recorded</td><td>ImmunizationTO.administeredDate</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>`false`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>GetLocation(ImmunizationTO.encounter.location)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>GetOrganization(ImmunizationTO.encounter.facility.name)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.comments</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>contained Observation with ImmunizationTO.reaction</td> </tr>
+ <tr><td>Immunization</td><td>ImmunizationTO</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`completed`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;vaccineCode</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.name</td><td><p>9000010.11.01 IMMUNIZATION</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>patient</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;occurrence[x]</td><td>ImmunizationTO.administeredDate</td><td><p>9000010.11.1201 EVENT DATE AND TIME</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;primarySource</td><td>`false`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;location</td><td>GetLocation(ImmunizationTO.encounter.location)</td><td><p>9000010.11.1215 ORDERING LOCATION</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actor</td><td>GetOrganization(ImmunizationTO.encounter.facility)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ImmunizationTO.comments</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>contained Observation with ImmunizationTO.reaction</td><td><p>9000010.11.06 REACTION</p>
+</td> </tr>
 </table>
 
 
@@ -568,7 +576,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 14:41-0500">2023-08-25</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 31, 2023 15:33-0500">2023-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

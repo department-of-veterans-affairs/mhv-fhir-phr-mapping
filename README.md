@@ -6,6 +6,23 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 ## Version History
 
+### 0.2.3
+
+- add link to this readme.md from the index.html
+- changed patient-0 to us-core so that it does have some profile. This example is not intended to express typical or even possible. It is informative only.
+- allergy - add old maps with details into eVault PHR element, and FileMan element (guess)
+- allergy - do not populate .code.coding with drugClass, as this data is not appropriate in FHIR (Jay)
+- condition - add old maps with details into eVault PHR element, and FileMan element (guess)
+- conditions - algorithm for <icd> to determine if it is ICD-9 or ICD-10
+- vitals - put location into extension on performer
+- vitals - add old maps with details into eVault PHR element, and FileMan element (guess)
+- vitals - express each example outside the bundle
+- vitals - update the bundle to include location, and use conditional update similar to code
+- immunizations - add old maps with only the elements eVault PHR preserved
+  - added column to maps to show the eVault PHR element name and FileMan element (guess)
+- (guess) note that the mapping to FileMan element is informed guessing
+- removed MoehrkeResearch google analytics
+
 ### 0.2.2
 
 - not using meta.lastUpdated for any mapping as HAPI overwrites it
@@ -36,5 +53,5 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 ### Prior to 0.2.0
 
-- this was managed on John Moehrke github as a non recognized project
+- this was managed on John Moehrke github as a non recognized project, all changes are reflected in github change tracking
 

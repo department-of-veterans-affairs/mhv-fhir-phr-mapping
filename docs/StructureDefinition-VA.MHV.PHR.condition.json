@@ -26,11 +26,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition",
-  "version" : "0.2.2",
+  "version" : "0.2.3",
   "name" : "MHVcondition",
   "title" : "VA MHV PHR problems",
   "status" : "active",
-  "date" : "2023-08-25T14:41:58-05:00",
+  "date" : "2023-08-31T15:33:32-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -92,6 +92,11 @@
     "identity" : "Condition-Mapping",
     "uri" : "ProblemTO",
     "name" : "VIA to mhv-fhir-phr"
+  },
+  {
+    "identity" : "Condition-Old-Mapping",
+    "uri" : "ProblemTO",
+    "name" : "eVault-PHR to MHV-PHR"
   }],
   "kind" : "resource",
   "abstract" : false,
@@ -222,6 +227,11 @@
       {
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO",
+        "comment" : "eVault"
       }]
     },
     {
@@ -1033,6 +1043,11 @@
       {
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo",
+        "comment" : "STATUS"
       }]
     },
     {
@@ -1173,6 +1188,10 @@
       },
       {
         "identity" : "Condition-Mapping",
+        "map" : "`problem-list-item`"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
         "map" : "`problem-list-item`"
       }]
     },
@@ -1571,6 +1590,11 @@
       {
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO.type.name"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO.type.name",
+        "comment" : "PROBLEM"
       }]
     },
     {
@@ -1676,6 +1700,10 @@
       },
       {
         "identity" : "Condition-Mapping",
+        "map" : "patient"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
         "map" : "patient"
       }]
     },
@@ -1869,6 +1897,11 @@
       {
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO.modifiedDate"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO.modifiedDate",
+        "comment" : "EVENT_TIME"
       }]
     },
     {
@@ -1952,6 +1985,11 @@
       {
         "identity" : "Condition-Mapping",
         "map" : "GetPractitioner(ProblemTO.observer)"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "GetPractitioner(ProblemTO.observer)",
+        "comment" : "PROVIDER"
       }]
     },
     {
@@ -2515,6 +2553,11 @@
       {
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO.comments + ProblemTO.comment"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO.comments",
+        "comment" : "COMMENTS"
       }]
     }]
   },
@@ -2525,6 +2568,11 @@
       "mapping" : [{
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO",
+        "comment" : "eVault"
       }]
     },
     {
@@ -2585,6 +2633,11 @@
       "mapping" : [{
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo",
+        "comment" : "STATUS"
       }]
     },
     {
@@ -2610,6 +2663,10 @@
       },
       "mapping" : [{
         "identity" : "Condition-Mapping",
+        "map" : "`problem-list-item`"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
         "map" : "`problem-list-item`"
       }]
     },
@@ -2637,6 +2694,11 @@
       "mapping" : [{
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO.type.name"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO.type.name",
+        "comment" : "PROBLEM"
       }]
     },
     {
@@ -2649,6 +2711,10 @@
       "path" : "Condition.subject",
       "mapping" : [{
         "identity" : "Condition-Mapping",
+        "map" : "patient"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
         "map" : "patient"
       }]
     },
@@ -2693,6 +2759,11 @@
       "mapping" : [{
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO.modifiedDate"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO.modifiedDate",
+        "comment" : "EVENT_TIME"
       }]
     },
     {
@@ -2712,6 +2783,11 @@
       "mapping" : [{
         "identity" : "Condition-Mapping",
         "map" : "GetPractitioner(ProblemTO.observer)"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "GetPractitioner(ProblemTO.observer)",
+        "comment" : "PROVIDER"
       }]
     },
     {
@@ -2749,6 +2825,11 @@
       "mapping" : [{
         "identity" : "Condition-Mapping",
         "map" : "ProblemTO.comments + ProblemTO.comment"
+      },
+      {
+        "identity" : "Condition-Old-Mapping",
+        "map" : "ProblemTO.comments",
+        "comment" : "COMMENTS"
       }]
     }]
   }

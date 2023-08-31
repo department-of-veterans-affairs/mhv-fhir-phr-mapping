@@ -24,15 +24,7 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
 <link href="assets/css/vha-ig-template.css" rel="stylesheet"/>
-<!-- Global site tag (gtag.js) - Google Analytics - Moehrke-Research-IGs -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLTM76GD7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-GTLTM76GD7');
-</script>
 
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -60,8 +52,8 @@
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 
-<div id="jfm-nav"> 
-     <a id="jfm-logo" no-external="true" href="https://johnmoehrke.github.io">
+<div id="va-nav"> 
+     <a id="va-logo" no-external="true" href="https://va.gov">
      <img height="50" alt="VA Organization" src="assets/images/va-header-logo.png"/>
      </a>
 	 </div>
@@ -69,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.2 - ci-build
+            <span style="display:inline-block;">0.2.3 - ci-build
 
 
 
@@ -196,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.2). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.3). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -390,6 +382,16 @@
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>effectiveTime</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>participation[typeCode=PRF]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (site)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;reference</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;identifier</td><td>.identifier</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -431,29 +433,37 @@
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {VitalSignTO.type.id}</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.type.name</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>VitalSignTO.timestamp</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>VitalSignTO.recorder and VitalSignTO.observer</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (site)</td><td>Organization(VitalSignTO.location)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>VitalSignTO.value1 and VitalSignTO.units</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.comments</td> </tr>
 </table>
 <a name="Vitals-Mapping"> </a><h3>Mappings for VIA to mhv-fhir-phr (VitalSignTO)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVvitalsPain</b></td></tr>
- <tr><td>Observation</td><td>VitalSignTO</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {VitalSignTO.type.id}</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>VitalSignTO.type.id if 7 digits then use as VUID, VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.type.name</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>VitalSignTO.timestamp</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>contained VitalSignTO.recorder and VitalSignTO.observer</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>VitalSignTO.value1 and VitalSignTO.units</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.comments</td> </tr>
+ <tr><td>Observation</td><td>VitalSignTO</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {VitalSignTO.type.id}</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.type.name</td><td><p>VITAL_TYPE - 120.5.03 VITAL TYPE</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td><td><p>PATIENT - 120.5.02 PATIENT</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>VitalSignTO.timestamp</td><td><p>DATE_TIME_TAKEN - 120.5.01 Date/Time Vitals Taken</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>contained VitalSignTO.recorder, contained VitalSignTO.observer</td><td><p>.06 ENTERED BY</p>
+, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>VitalSignTO.value1 and VitalSignTO.units</td><td><p>MEASUREMENT - 120.5.1.2 RATE</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.comments</td><td></td> </tr>
 </table>
 
 
@@ -530,7 +540,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 14:41-0500">2023-08-25</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 31, 2023 15:33-0500">2023-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

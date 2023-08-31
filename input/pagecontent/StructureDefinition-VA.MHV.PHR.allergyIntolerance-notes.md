@@ -3,7 +3,7 @@
 - Received from HDR
 - maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
 - [mapping to HDR](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-hdr-allergy-to-mhv-fhir-phr-intolerancecondition)
-- [Vivian Allegies](https://vivian.worldvista.org/dox/Global_XkdNUigxMjAuOA==.html)
+- [Vivian Allergy 120.8](https://vivian.worldvista.org/dox/Global_XkdNUigxMjAuOA==.html)
 - Should be based on US-Core for AllergyIntolerance Resource profile
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile
 - identifier
@@ -13,11 +13,7 @@
   - Given that intoleranceCondition.status is unclear; will presume we only see `active`
   - set to `active`
   - if we receive indications of not active, we should update our data to remove (or set `inactive` or `entered-in-error`) the AllergyIntolerance if we had previously recorded it
-- a `code` which tells you what the patient is allergic to
-  - at least `code.text`
-  - would be good to have a coding, but there does not appear to be any source for that
-- if `drugClass` is indicated then the `category` should be #medication
-  - `drugClass.code.displayText` -> `.code.coding.display`
+- a `code.text` which tells you what the patient is allergic to
 - `category` derived from `.allergyType`
   - `D` -> #medication
   - `F` -> #food
@@ -42,8 +38,11 @@
   - are those `status` that are not `F` changes that we should track in FHIR?
   - Carnetta expresses that it is possible HDR and VIA are filtering out non-current data. If this is the case, then we will need HDR and VIA to stop filtering, and we will might need to have our PHR code more defensive.
   - If we are told, would we delete our instance of that allergy, or mark it inactive, or mark it entered-in-error?
-- not clear if we are getting full `allergyType` details. HL7 v2 uses [two character codes](https://terminology.hl7.org/2.1.0/CodeSystem-v2-0127.html), but it seems we are getting just single character codes. It may not matter as [there is HL7 guidance](https://confluence.hl7.org/pages/viewpage.action?pageId=44499731) that only uses the three categories in FHIR. [HL7 v2 to FHIR IG](https://hl7.org/fhir/uv/v2mappings/2020sep/ConceptMap-table-hl70127-to-allergy-intolerance-type.html)
+- confirmed vs unconfirmed is using observed vs historical. This is historically the way MHV worked, but KMS indicates it is not correct. (Jay)
+- might want to put observationalTime into recordedDate. (Jay)
 
 #### code inspection concerns
 
-- need to handle when an allergy is any combination of medication, environment, and observation. Today no all combinations are supported.
+2023-08-31
+- do NOT map the drugClass.code
+- do NOT use drugClass to set category

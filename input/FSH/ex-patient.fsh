@@ -17,13 +17,13 @@ Usage: #example
 
 
 Instance: ex-VIA-patient-0
-InstanceOf: Patient
+InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
 Title: "Example MHVLISAONE from PatientTO"
 Description: """
-This example is derived off of a mock PatientTO
+This example is derived off of a mock PatientTO. It shows where everything that could be in a VIA PatientTO could go. This is not an example of what MHV will populate the Patient like.
 """
 Usage: #example
-* extension[religion].valueCodeableConcept.text = "PROTESTANT, NO DENOMINATION"
+* extension[http://hl7.org/fhir/StructureDefinition/patient-religion].valueCodeableConcept.text = "PROTESTANT, NO DENOMINATION"
 * name[+].use = #usual
 * name[=].family = "MHVLISAONE"
 * name[=].given[+] = "ROBERT"
@@ -45,8 +45,8 @@ Usage: #example
 * address[=].state = "INDIANA"
 * address[=].postalCode = "47394"
 * address[=].country = "USA"
-* extension[birthPlace].valueAddress.city = "BOONE COUNTY"
-* extension[birthPlace].valueAddress.state = "KENTUCKY"
+* extension[http://hl7.org/fhir/StructureDefinition/patient-birthPlace].valueAddress.city = "BOONE COUNTY"
+* extension[http://hl7.org/fhir/StructureDefinition/patient-birthPlace].valueAddress.state = "KENTUCKY"
 * telecom[+].use = #home
 * telecom[=].value = "765-555-6688"
 * telecom[=].system = #phone

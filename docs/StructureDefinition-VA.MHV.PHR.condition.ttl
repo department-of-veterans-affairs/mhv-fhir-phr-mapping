@@ -38,11 +38,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.2"] ; # 
+  fhir:version [ fhir:v "0.2.3"] ; # 
   fhir:name [ fhir:v "MHVcondition"] ; # 
   fhir:title [ fhir:v "VA MHV PHR problems"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-25T14:41:58-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-08-31T15:33:32-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -96,6 +96,10 @@
      fhir:identity [ fhir:v "Condition-Mapping" ] ;
      fhir:uri [ fhir:v "ProblemTO"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
+  ] [
+     fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+     fhir:uri [ fhir:v "ProblemTO"^^xsd:anyURI ] ;
+     fhir:name [ fhir:v "eVault-PHR to MHV-PHR" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
@@ -238,6 +242,10 @@
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO" ] ;
+         fhir:comment [ fhir:v "eVault" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.id" ] ;
@@ -1079,6 +1087,10 @@
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" ] ;
+         fhir:comment [ fhir:v "STATUS" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.verificationStatus" ] ;
@@ -1217,6 +1229,9 @@
          fhir:map [ fhir:v "Condition.category" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
+         fhir:map [ fhir:v "`problem-list-item`" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "`problem-list-item`" ]
        ] )
      ] [
@@ -1620,6 +1635,10 @@
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.type.name" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO.type.name" ] ;
+         fhir:comment [ fhir:v "PROBLEM" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.bodySite" ] ;
@@ -1727,6 +1746,9 @@
          fhir:map [ fhir:v "Condition.patient" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
+         fhir:map [ fhir:v "patient" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "patient" ]
        ] )
      ] [
@@ -1917,6 +1939,10 @@
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.modifiedDate" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO.modifiedDate" ] ;
+         fhir:comment [ fhir:v "EVENT_TIME" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.recorder" ] ;
@@ -2012,6 +2038,10 @@
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ] ;
+         fhir:comment [ fhir:v "PROVIDER" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.stage" ] ;
@@ -2611,6 +2641,10 @@
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.comments + ProblemTO.comment" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO.comments" ] ;
+         fhir:comment [ fhir:v "COMMENTS" ]
        ] )
      ] )
   ] ; # 
@@ -2621,6 +2655,10 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO" ] ;
+         fhir:comment [ fhir:v "eVault" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.identifier" ] ;
@@ -2679,6 +2717,10 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" ] ;
+         fhir:comment [ fhir:v "STATUS" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.verificationStatus" ] ;
@@ -2707,6 +2749,9 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "`problem-list-item`" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "`problem-list-item`" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.severity" ] ;
@@ -2730,6 +2775,10 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.type.name" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO.type.name" ] ;
+         fhir:comment [ fhir:v "PROBLEM" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.bodySite" ] ;
@@ -2740,6 +2789,9 @@
        fhir:path [ fhir:v "Condition.subject" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
+         fhir:map [ fhir:v "patient" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "patient" ]
        ] )
      ] [
@@ -2780,6 +2832,10 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.modifiedDate" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO.modifiedDate" ] ;
+         fhir:comment [ fhir:v "EVENT_TIME" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.recorder" ] ;
@@ -2800,6 +2856,10 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ] ;
+         fhir:comment [ fhir:v "PROVIDER" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.stage" ] ;
@@ -2835,6 +2895,10 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.comments + ProblemTO.comment" ]
+       ] [
+         fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ProblemTO.comments" ] ;
+         fhir:comment [ fhir:v "COMMENTS" ]
        ] )
      ] )
   ] . # 

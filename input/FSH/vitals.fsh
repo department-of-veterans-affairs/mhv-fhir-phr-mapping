@@ -7,6 +7,7 @@ Title:          "VA MHV PHR Vital-Signs"
 Description:    """
 A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.
 """
+// TODO this timestamp solution is not sustainable
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -16,23 +17,28 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * identifier[TOid].use = #usual
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
-* identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.id}"
+* identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.type.id}"
 * status = #final
 * category MS
 * code.text MS
 * code.coding MS
+* subject 1..1
+* effectiveDateTime 1..1
+* performer MS
+* performer ^type.aggregation = #contained
+* performer.extension contains http://hl7.org/fhir/StructureDefinition/alternate-reference named site 0..1
+* performer.extension[site].valueReference only Reference(Location)
+* performer.extension[site].valueReference ^type.aggregation = #contained
+* value[x] MS
+* note MS 
+
 * basedOn 0..0
 * partOf 0..0
-* subject 1..1
 * focus 0..0
 * encounter 0..0
-* effectiveDateTime 1..1
 * issued 0..0
-* performer MS
-* value[x] MS
 * dataAbsentReason 0..0
 * interpretation 0..0
-* note MS 
 * bodySite 0..0
 * method 0..0
 * specimen 0..0
@@ -49,16 +55,30 @@ Title: "VIA to mhv-fhir-phr"
 * -> "VitalSignTO"
 * status -> "`final`"
 * category -> "`vital-signs`"
-* code.text -> "VitalSignTO.type.name"
-* code.coding -> "VitalSignTO.type.id if 7 digits then use as VUID"
+* code.text -> "VitalSignTO.type.name" "VITAL_TYPE - 120.5.03 VITAL TYPE"
 * code.coding -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
-* subject -> "patient"
-* effectiveDateTime -> "VitalSignTO.timestamp"
-* value[x] -> "VitalSignTO.value1 and VitalSignTO.units"
-* component -> "For BP is used for value1"
+* subject -> "patient" "PATIENT - 120.5.02 PATIENT"
+* effectiveDateTime -> "VitalSignTO.timestamp" "DATE_TIME_TAKEN - 120.5.01 Date/Time Vitals Taken"
+* value[x] -> "VitalSignTO.value1 and VitalSignTO.units" "MEASUREMENT - 120.5.1.2 RATE"
+* component -> "Used for BP"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
-* performer -> "contained VitalSignTO.recorder and VitalSignTO.observer"
-* note.text -> "VitalSignTO.comments"
+* performer -> "contained VitalSignTO.recorder" ".06 ENTERED BY"
+* performer -> "contained VitalSignTO.observer" ""
+* performer.extension[site] -> "Organization(VitalSignTO.location)" ".05 HOSPITAL LOCATION"
+* note.text -> "VitalSignTO.comments" ""
+
+Mapping: Vitals-Old-Mapping
+Source:	MHVvitals
+Target: "VitalSignTO"
+Title: "eVault-PHR to MHV-PHR"
+* -> "VitalSignTO" "eVault"
+* status -> "`final`"
+* category -> "`vital-signs`"
+* code.text -> "VitalSignTO.type.name" "VITAL_TYPE - 120.5.03 VITAL TYPE"
+* subject -> "patient" "patient - 120.5.02 Patient"
+* effectiveDateTime -> "VitalSignTO.timestamp" "DATE_TIME_TAKEN - 120.5.01 Date/Time Vitals Taken"
+* value[x] -> "VitalSignTO.value1 and VitalSignTO.units" "MEASUREMENT - 120.5.1.2 RATE"
+
 
 
 
@@ -82,12 +102,14 @@ Title: "VIA to mhv-fhir-phr"
 * -> "VitalSignTO Pain"
 * status -> "`final`"
 * category -> "`vital-signs`"
-* code -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
+* code.text -> "VitalSignTO.type.name"
+* code.coding -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
 * subject -> "patient"
 * effectiveDateTime -> "VitalSignTO.timestamp"
 * value[x] -> "VitalSignTO.value1 and VitalSignTO.units"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "VitalSignTO.recorder and VitalSignTO.observer"
+* performer.extension[site] -> "Organization(VitalSignTO.location)"
 * note.text -> "VitalSignTO.comments"
 
 
@@ -109,24 +131,29 @@ A profile on the Observation resource for Blood Pressure
 * identifier[TOid].use = #usual
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
-* identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.id}"
+* identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.type.id}"
 * status = #final
 * code.text MS
 * code.coding MS
 * category MS
 * code.text MS
 * code.coding MS
+* subject 1..1
+* effectiveDateTime 1..1
+* performer MS
+* performer ^type.aggregation = #contained
+* performer.extension contains http://hl7.org/fhir/StructureDefinition/alternate-reference named site 0..1
+* performer.extension[site].valueReference only Reference(Location)
+* performer.extension[site].valueReference ^type.aggregation = #contained
+* note MS 
+
 * basedOn 0..0
 * partOf 0..0
-* subject 1..1
 * focus 0..0
 * encounter 0..0
-* effectiveDateTime 1..1
 * issued 0..0
-* performer MS
 * dataAbsentReason 0..0
 * interpretation 0..0
-* note MS 
 * bodySite 0..0
 * method 0..0
 * specimen 0..0
@@ -144,12 +171,14 @@ Title: "VIA to mhv-fhir-phr"
 * -> "VitalSignTO BP"
 * status -> "`final`"
 * category -> "`vital-signs`"
-* code -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
+* code.text -> "VitalSignTO.type.name"
+* code.coding -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
 * subject -> "patient"
 * effectiveDateTime -> "VitalSignTO.timestamp"
 * component -> "For BP is used for value1 parsed out to systolic and diastolic"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "VitalSignTO.recorder and VitalSignTO.observer"
+* performer.extension[site] -> "Organization(VitalSignTO.location)"
 * note.text -> "VitalSignTO.comments"
 
 

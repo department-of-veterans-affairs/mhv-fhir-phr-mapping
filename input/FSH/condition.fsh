@@ -75,6 +75,20 @@ Title: "VIA to mhv-fhir-phr"
 * subject -> "patient"
 * category -> "`problem-list-item`"
 
+Mapping: Condition-Old-Mapping
+Source:	MHVcondition
+Target: "ProblemTO"
+Title: "eVault-PHR to MHV-PHR"
+* -> "ProblemTO" "eVault"
+* code.text -> "ProblemTO.type.name" "PROBLEM"
+* asserter -> "GetPractitioner(ProblemTO.observer)" "PROVIDER"
+* clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" "STATUS"
+* note -> "ProblemTO.comments" "COMMENTS"
+* recordedDate -> "ProblemTO.modifiedDate" "EVENT_TIME"
+* subject -> "patient"
+* category -> "`problem-list-item`"
+//"ProblemTO.Acuity.text" "ACUITY"
+
 
 
 /* 

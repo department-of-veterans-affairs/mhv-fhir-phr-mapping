@@ -22,6 +22,10 @@
   - see table below for how to set `.protocolApplied.series`
   - put the `series` into `.protocolApplied.doseNumberString`
   - note not using doseNumberPositiveInt as this element is removed in future versions of FHIR so it seems string is more future proof
+- Not mapped due to lack of clarity on what the value is and if it will ever be populated
+  - `shortName`
+  - `encounterProvider`
+  - `orderingProvider`
 
 | `series` |  FHIR `.protocolApplied.series` |
 |--------|------|
@@ -40,10 +44,6 @@
 #### Mapping Concerns
 
 - Updates must be supported somehow. Fixing the status at completed will only work if data never changes.
-- Not mapped due to lack of clarity on what the value is and if it will ever be populated
-  - `shortName`
-  - `encounterProvider`
-  - `orderingProvider`
 
 #### change 2023-07-20
 
@@ -65,17 +65,8 @@ didn't find the following implemented
 - recorded
 - should set the .meta.profile to the profile so that automatic validation can be done
 
-did find
+need to fix
 
-- occurrenceDateTime
-- vaccineCode.text (name)
-- vaccineCode.coding (ICD)
-- location
-- note.text
 - identifier (OID+'.4.349', stationNumber + '.' + id)
-  - need to fix
-- status=completed
-- patient
-- reaction.detail
-- occurrenceDateTime
-
+- add series -> protocolApplied.series
+- add contraindicated as additional reaction.detail.display

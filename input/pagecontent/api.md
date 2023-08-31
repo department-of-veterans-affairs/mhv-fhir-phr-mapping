@@ -24,7 +24,7 @@ The MHV FHIR Server would have a similar [CapabilityStatement](CapabilityStateme
     - [Examples](StructureDefinition-VA.MHV.PHR.vitalsBP-examples.html)
   - Additional specifics for [Pain Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsPain.html)
     - [Examples](StructureDefinition-VA.MHV.PHR.vitalsPain-examples.html)
-  - Most [examples are within a Bundle](Bundle-vitals.html), which does not exposed each vital sign.
+  - [Examples](StructureDefinition-VA.MHV.PHR.vitals-examples.html)
 
 ### Patient
 

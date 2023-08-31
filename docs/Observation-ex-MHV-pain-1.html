@@ -20,15 +20,7 @@
   	<link href="assets/css/prism.css" rel="stylesheet" />
     <!-- Placeholder for child template CSS declarations -->
 <link href="assets/css/vha-ig-template.css" rel="stylesheet"/>
-<!-- Global site tag (gtag.js) - Google Analytics - Moehrke-Research-IGs -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GTLTM76GD7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-GTLTM76GD7');
-</script>
 
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
@@ -56,8 +48,8 @@
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
 
-<div id="jfm-nav"> 
-     <a id="jfm-logo" no-external="true" href="https://johnmoehrke.github.io">
+<div id="va-nav"> 
+     <a id="va-logo" no-external="true" href="https://va.gov">
      <img height="50" alt="VA Organization" src="assets/images/va-header-logo.png"/>
      </a>
 	 </div>
@@ -65,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.2 - ci-build
+            <span style="display:inline-block;">0.2.3 - ci-build
 
 
 
@@ -192,7 +184,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.2). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.3). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
   
 
@@ -256,7 +248,35 @@
 
 
 
-  <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="ex-MHV-pain-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;ex-MHV-pain-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.vitalsPain.html">VA MHV PHR Vital-Signs for PAIN</a></p></div><p><b>identifier</b>: id: ?ngen-9? (use: USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: PAIN <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#72514-3 &quot;Pain severity - 0-10 verbal numeric rating [Score] - Reported&quot;)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-2.html">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>effective</b>: 2004-12-25 23:50:50-0500</p><p><b>value</b>: 10</p><p><b>note</b>: Oh, scream in pain</p></div>
+<div style="display:inline-block" markdown="1">
+
+<p>Example from a mock VitalSignTO</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;vitalSignTO&gt;</span>
+    <span class="nt">&lt;type&gt;</span>
+        <span class="nt">&lt;id&gt;</span>6003505<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;category/&gt;</span>
+        <span class="nt">&lt;name&gt;</span>PAIN<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+    <span class="nt">&lt;value1&gt;</span>5<span class="nt">&lt;/value1&gt;</span>
+    <span class="nt">&lt;low/&gt;</span>
+    <span class="nt">&lt;high/&gt;</span>
+    <span class="nt">&lt;timestamp&gt;</span>3040924.1032<span class="nt">&lt;/timestamp&gt;</span>
+    <span class="nt">&lt;location&gt;</span>
+        <span class="nt">&lt;id&gt;</span>2938<span class="nt">&lt;/id&gt;</span>
+        <span class="nt">&lt;name&gt;</span>PCT_O PATIL (F/U)<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;/location&gt;</span>
+    <span class="nt">&lt;units/&gt;</span>
+<span class="nt">&lt;/vitalSignTO&gt;</span>
+</code></pre></div></div>
+
+
+</div>
+
+
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="ex-MHV-pain-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;ex-MHV-pain-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.vitalsPain.html">VA MHV PHR Vital-Signs for PAIN</a></p></div><p><b>identifier</b>: id: VitalSignTO.6003505 (use: USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: PAIN <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#72514-3 &quot;Pain severity - 0-10 verbal numeric rating [Score] - Reported&quot;; unknown#4500635)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-2.html">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>effective</b>: 2004-09-24 10:32:00-0500</p><p><b>performer</b>: <span>: Location 2938</span></p><p><b>value</b>: 5</p><hr/><blockquote><p><b>Generated Narrative: Location #ex-MHV-location-2938</b><a name="ex-MHV-location-2938"> </a></p><p><b>identifier</b>: id: HospitalLocationTO.2938 (use: USUAL)</p><p><b>name</b>: PCT_O PATIL (F/U)</p></blockquote></div>
 
   
 
@@ -309,7 +329,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Aug 25, 2023 14:41-0500">2023-08-25</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Aug 31, 2023 15:33-0500">2023-08-31</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

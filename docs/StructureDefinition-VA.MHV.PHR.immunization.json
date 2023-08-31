@@ -26,11 +26,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization",
-  "version" : "0.2.2",
+  "version" : "0.2.3",
   "name" : "MHVimmunization",
   "title" : "VA MHV PHR Immunization",
   "status" : "active",
-  "date" : "2023-08-25T14:41:58-05:00",
+  "date" : "2023-08-31T15:33:32-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -91,7 +91,7 @@
   {
     "identity" : "Immunization-Old-Mapping",
     "uri" : "eVaultPHR",
-    "name" : "eVault-PHR to mhv-fhir-phr",
+    "name" : "eVault-PHR to MHV-PHR",
     "comment" : "Informative map that includes only the elements available in eVault PHR"
   }],
   "kind" : "resource",
@@ -198,7 +198,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO"
+        "map" : "ImmunizationTO",
+        "comment" : "FileMan"
       },
       {
         "identity" : "Immunization-Old-Mapping",
@@ -522,10 +523,6 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "{StationNbr} and {ImmunizationTO.id}"
-      },
-      {
-        "identity" : "Immunization-Old-Mapping",
         "map" : "{StationNbr} and {ImmunizationTO.id}"
       }]
     },
@@ -1389,7 +1386,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.cptCode.id"
+        "map" : "ImmunizationTO.cptCode.id",
+        "comment" : "9000010.11.13 CREATED BY V CPT ENTRY"
       }]
     },
     {
@@ -1524,11 +1522,13 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.name"
+        "map" : "ImmunizationTO.name",
+        "comment" : "9000010.11.01 IMMUNIZATION"
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "ImmunizationTO.name"
+        "map" : "ImmunizationTO.name",
+        "comment" : "9000010.11.01 IMMUNIZATION"
       }]
     },
     {
@@ -1589,7 +1589,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "patient"
+        "map" : "patient",
+        "comment" : "9000010.11.02 PATIENT"
       },
       {
         "identity" : "Immunization-Old-Mapping",
@@ -1704,11 +1705,13 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.administeredDate"
+        "map" : "ImmunizationTO.administeredDate",
+        "comment" : "9000010.11.1201 EVENT DATE AND TIME"
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "ImmunizationTO.administeredDate"
+        "map" : "ImmunizationTO.administeredDate",
+        "comment" : "9000010.11.1201 EVENT DATE AND TIME"
       }]
     },
     {
@@ -1747,11 +1750,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.administeredDate"
-      },
-      {
-        "identity" : "Immunization-Old-Mapping",
-        "map" : "ImmunizationTO.administeredDate"
+        "map" : "ImmunizationTO.timestamp",
+        "comment" : "9000010.11.1205 DATE/TIME RECORDED"
       }]
     },
     {
@@ -1905,11 +1905,13 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "GetLocation(ImmunizationTO.encounter.location)"
+        "map" : "GetLocation(ImmunizationTO.encounter.location)",
+        "comment" : "9000010.11.1215 ORDERING LOCATION"
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "GetLocation(ImmunizationTO.encounter.location)"
+        "map" : "GetLocation(ImmunizationTO.encounter.location)",
+        "comment" : "9000010.11.1215 ORDERING LOCATION"
       }]
     },
     {
@@ -1996,7 +1998,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.lotNumber"
+        "map" : "ImmunizationTO.lotNumber",
+        "comment" : "9000010.11.05 LOT"
       }]
     },
     {
@@ -2241,7 +2244,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.anatomicSurface"
+        "map" : "ImmunizationTO.anatomicSurface",
+        "comment" : "9000010.11.09 INJECTION SITE"
       }]
     },
     {
@@ -2575,7 +2579,7 @@
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "GetOrganization(ImmunizationTO.encounter.facility.name)"
+        "map" : "GetOrganization(ImmunizationTO.encounter.facility)"
       }]
     },
     {
@@ -2804,7 +2808,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.comments"
+        "map" : "ImmunizationTO.comments",
+        "comment" : "9000010.11.1101 REMARKS"
       },
       {
         "identity" : "Immunization-Old-Mapping",
@@ -3657,11 +3662,13 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "contained Observation with ImmunizationTO.reaction"
+        "map" : "contained Observation with ImmunizationTO.reaction",
+        "comment" : "9000010.11.06 REACTION"
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "contained Observation with ImmunizationTO.reaction"
+        "map" : "contained Observation with ImmunizationTO.reaction",
+        "comment" : "9000010.11.06 REACTION"
       }]
     },
     {
@@ -3772,7 +3779,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`"
+        "map" : "if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`",
+        "comment" : "9000010.11.07 CONTRAINDICATED"
       }]
     },
     {
@@ -3984,7 +3992,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "translation of ImmunizationTO.series"
+        "map" : "translation of ImmunizationTO.series",
+        "comment" : "9000010.11.04 SERIES"
       }]
     },
     {
@@ -4133,7 +4142,8 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.series"
+        "map" : "ImmunizationTO.series",
+        "comment" : "9000010.11.04 SERIES"
       }]
     },
     {
@@ -4209,7 +4219,8 @@
       "path" : "Immunization",
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO"
+        "map" : "ImmunizationTO",
+        "comment" : "FileMan"
       },
       {
         "identity" : "Immunization-Old-Mapping",
@@ -4230,10 +4241,6 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "{StationNbr} and {ImmunizationTO.id}"
-      },
-      {
-        "identity" : "Immunization-Old-Mapping",
         "map" : "{StationNbr} and {ImmunizationTO.id}"
       }]
     },
@@ -4290,7 +4297,8 @@
       "path" : "Immunization.vaccineCode.coding.code",
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.cptCode.id"
+        "map" : "ImmunizationTO.cptCode.id",
+        "comment" : "9000010.11.13 CREATED BY V CPT ENTRY"
       }]
     },
     {
@@ -4306,11 +4314,13 @@
       "path" : "Immunization.vaccineCode.text",
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.name"
+        "map" : "ImmunizationTO.name",
+        "comment" : "9000010.11.01 IMMUNIZATION"
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "ImmunizationTO.name"
+        "map" : "ImmunizationTO.name",
+        "comment" : "9000010.11.01 IMMUNIZATION"
       }]
     },
     {
@@ -4318,7 +4328,8 @@
       "path" : "Immunization.patient",
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "patient"
+        "map" : "patient",
+        "comment" : "9000010.11.02 PATIENT"
       },
       {
         "identity" : "Immunization-Old-Mapping",
@@ -4342,11 +4353,13 @@
       }],
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.administeredDate"
+        "map" : "ImmunizationTO.administeredDate",
+        "comment" : "9000010.11.1201 EVENT DATE AND TIME"
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "ImmunizationTO.administeredDate"
+        "map" : "ImmunizationTO.administeredDate",
+        "comment" : "9000010.11.1201 EVENT DATE AND TIME"
       }]
     },
     {
@@ -4356,11 +4369,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.administeredDate"
-      },
-      {
-        "identity" : "Immunization-Old-Mapping",
-        "map" : "ImmunizationTO.administeredDate"
+        "map" : "ImmunizationTO.timestamp",
+        "comment" : "9000010.11.1205 DATE/TIME RECORDED"
       }]
     },
     {
@@ -4392,11 +4402,13 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "GetLocation(ImmunizationTO.encounter.location)"
+        "map" : "GetLocation(ImmunizationTO.encounter.location)",
+        "comment" : "9000010.11.1215 ORDERING LOCATION"
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "GetLocation(ImmunizationTO.encounter.location)"
+        "map" : "GetLocation(ImmunizationTO.encounter.location)",
+        "comment" : "9000010.11.1215 ORDERING LOCATION"
       }]
     },
     {
@@ -4414,7 +4426,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.lotNumber"
+        "map" : "ImmunizationTO.lotNumber",
+        "comment" : "9000010.11.05 LOT"
       }]
     },
     {
@@ -4427,7 +4440,8 @@
       "path" : "Immunization.site.text",
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.anatomicSurface"
+        "map" : "ImmunizationTO.anatomicSurface",
+        "comment" : "9000010.11.09 INJECTION SITE"
       }]
     },
     {
@@ -4462,7 +4476,7 @@
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "GetOrganization(ImmunizationTO.encounter.facility.name)"
+        "map" : "GetOrganization(ImmunizationTO.encounter.facility)"
       }]
     },
     {
@@ -4476,7 +4490,8 @@
       "path" : "Immunization.note.text",
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.comments"
+        "map" : "ImmunizationTO.comments",
+        "comment" : "9000010.11.1101 REMARKS"
       },
       {
         "identity" : "Immunization-Old-Mapping",
@@ -4532,11 +4547,13 @@
       "path" : "Immunization.reaction.detail.reference",
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "contained Observation with ImmunizationTO.reaction"
+        "map" : "contained Observation with ImmunizationTO.reaction",
+        "comment" : "9000010.11.06 REACTION"
       },
       {
         "identity" : "Immunization-Old-Mapping",
-        "map" : "contained Observation with ImmunizationTO.reaction"
+        "map" : "contained Observation with ImmunizationTO.reaction",
+        "comment" : "9000010.11.06 REACTION"
       }]
     },
     {
@@ -4551,7 +4568,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`"
+        "map" : "if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`",
+        "comment" : "9000010.11.07 CONTRAINDICATED"
       }]
     },
     {
@@ -4570,7 +4588,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "translation of ImmunizationTO.series"
+        "map" : "translation of ImmunizationTO.series",
+        "comment" : "9000010.11.04 SERIES"
       }]
     },
     {
@@ -4607,7 +4626,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "ImmunizationTO.series"
+        "map" : "ImmunizationTO.series",
+        "comment" : "9000010.11.04 SERIES"
       }]
     },
     {

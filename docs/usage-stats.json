@@ -1,6 +1,6 @@
 {
   "package": "va.mhv.fhir.phr",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [],
@@ -100,7 +100,15 @@
   },
   "usage": {
     "http://hl7.org/fhir/StructureDefinition/alternate-reference": [
-      "AllergyIntolerance.recorder"
+      "AllergyIntolerance.recorder",
+      "Bundle.entry.resource.performer",
+      "Observation.performer"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-description": [
+      "Bundle.entry.resource"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/artifact-title": [
+      "Bundle.entry.resource"
     ],
     "http://hl7.org/fhir/StructureDefinition/condition-assertedDate": [
       "Condition"
