@@ -14,28 +14,24 @@
     "valueInteger" : 1
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr",
-  "version" : "0.2.3",
+  "version" : "0.2.4",
   "name" : "VAMHVFHIRPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-08-31T15:33:32-05:00",
+  "date" : "2023-09-22T11:03:56-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
     "telecom" : [{
       "system" : "url",
       "value" : "http://va.gov"
-    },
-    {
-      "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
     }]
   },
   {
     "name" : "John Moehrke (himself)",
     "telecom" : [{
       "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
+      "value" : "John.Moehrke@va.gov"
     }]
   }],
   "description" : "MyHealtheVet exposing PHR using FHIR and Testing Plan.",
@@ -56,7 +52,7 @@
     }],
     "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
     "packageId" : "hl7.terminology.r4",
-    "version" : "5.0.0"
+    "version" : "5.3.0"
   },
   {
     "id" : "hl7_fhir_us_core",
@@ -416,6 +412,17 @@
       "extension" : [{
         "url" : "code",
         "valueString" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
       },
       {
         "url" : "value",
@@ -826,6 +833,17 @@
     {
       "extension" : [{
         "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
         "valueCode" : "fmm-definition"
       },
       {
@@ -868,6 +886,42 @@
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     }],
     "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/allergyObservedHistoric"
+      },
+      "name" : "Allergy Observed vs Historic",
+      "description" : "Maps to Vista 120.8 (Allergy) - (6) OBSERVED/HISTORICAL\n'o' FOR OBSERVED;\n'h' FOR HISTORICAL;\nLAST EDITED:  DEC 07, 1990\nDESCRIPTION:  \nIndicates whether this allergy/adverse reaction has been observed by some personnel, or if it is historical data gathered about the patient.\nRECORD INDEXES:  AHDR (#482)",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/AllergyObservedHistoricCS"
+      },
+      "name" : "Allergy Observed vs Historic CodeSystem",
+      "description" : "The codes for Allergy Observed vs Historic",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AllergyObservedHistoricVS"
+      },
+      "name" : "Allergy Observed vs Historic ValueSet",
+      "description" : "The codes for Allergy Observed vs Historic",
+      "exampleBoolean" : false
+    },
+    {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Bundle"

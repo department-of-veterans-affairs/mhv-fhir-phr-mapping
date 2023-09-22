@@ -1,9 +1,17 @@
 {
   "package": "va.mhv.fhir.phr",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
-  "extensions": [],
+  "extensions": [
+    {
+      "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric",
+      "title": "Allergy Observed vs Historic",
+      "types": [
+        "code"
+      ]
+    }
+  ],
   "profiles": {
     "Specimen": [
       {
@@ -113,6 +121,9 @@
     "http://hl7.org/fhir/StructureDefinition/condition-assertedDate": [
       "Condition"
     ],
+    "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "Immunization.primarySource"
+    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
       "StructureDefinition.snapshot.element.constraint"
     ],
@@ -142,6 +153,9 @@
     "http://hl7.org/fhir/StructureDefinition/patient-religion": [
       "Patient"
     ],
+    "http://hl7.org/fhir/StructureDefinition/regex": [
+      "StructureDefinition.snapshot.element.type"
+    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
       "StructureDefinition.snapshot.element"
     ],
@@ -153,6 +167,7 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm": [
       "CapabilityStatement",
+      "CodeSystem",
       "ConceptMap",
       "ImplementationGuide",
       "StructureDefinition",
@@ -163,6 +178,7 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
       "CapabilityStatement",
+      "CodeSystem",
       "ConceptMap",
       "ImplementationGuide",
       "ImplementationGuide.definition.page",
@@ -198,6 +214,9 @@
     ],
     "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race": [
       "Patient"
+    ],
+    "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric": [
+      "AllergyIntolerance"
     ]
   }
 }

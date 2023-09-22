@@ -25,12 +25,14 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].value ^short = "`AllergyTO` | `.` | {intoleranceCondition.recordIdentifier.identity}"
-* clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
-* verificationStatus 1..1
+* clinicalStatus MS
+* verificationStatus MS
+* verificationStatus ^short = "May indicate entered-in-error"
 * code.text 1..1
 * code.coding 0..0
 * patient 1..1 MS
-* onsetDateTime MS
+
+* recordedDate MS
 * category 0..* MS
 * category from AllergyCategoryVS (required)
 * recorder MS
@@ -41,6 +43,8 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * recorder.extension[visn].valueReference ^type.aggregation = #contained
 * reaction 0..* MS
 * reaction.manifestation 1..1
+* extension contains AllergyObservedHistoric named observedHistoric 0..1 MS
+
 // reaction.manifestation is either VUID or SNOMED
 * reaction.substance 0..0
 * reaction.description 0..0
@@ -53,7 +57,6 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * note.author[x] 0..0
 * criticality 0..0
 * encounter 0..0
-* recordedDate 0..0
 * asserter 0..0
 * lastOccurrence 0..0
 * reaction.substance 0..0
@@ -63,6 +66,8 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * reaction.exposureRoute 0..0
 * reaction.note 0..0
 
+* onsetDateTime 0..0
+
 ValueSet: AllergyCategoryVS
 Title: "Subset of allergy intolerance category"
 Description: "not all of them"
@@ -70,6 +75,41 @@ Description: "not all of them"
 * http://hl7.org/fhir/allergy-intolerance-category#food
 * http://hl7.org/fhir/allergy-intolerance-category#medication
 * http://hl7.org/fhir/allergy-intolerance-category#environment
+
+Extension: AllergyObservedHistoric
+Id: allergyObservedHistoric
+Title: "Allergy Observed vs Historic"
+Description: """
+Maps to Vista 120.8 (Allergy) - (6) OBSERVED/HISTORICAL
+'o' FOR OBSERVED;
+'h' FOR HISTORICAL;
+LAST EDITED:  DEC 07, 1990
+DESCRIPTION:  
+Indicates whether this allergy/adverse reaction has been observed by some personnel, or if it is historical data gathered about the patient.
+RECORD INDEXES:  AHDR (#482)
+"""
+* ^context[+].type = #element
+* ^context[=].expression = "AllergyIntolerance"
+* value[x] only code
+* valueCode from 	AllergyObservedHistoricVS (preferred)
+* valueCode 1..1
+
+
+CodeSystem:  AllergyObservedHistoricCS
+Title: "Allergy Observed vs Historic CodeSystem"
+Description:  "The codes for Allergy Observed vs Historic"
+* ^caseSensitive = true
+* ^experimental = false
+* #o "OBSERVED" "observed by some personnel"
+* #h "HISTORICAL" "historical data gathered about the patient"
+
+ValueSet: AllergyObservedHistoricVS
+Title: "Allergy Observed vs Historic ValueSet"
+Description:  "The codes for Allergy Observed vs Historic"
+* ^experimental = false
+* codes from system AllergyObservedHistoricCS
+
+
 
 
 Mapping: AllergyIntolerance-Mapping
@@ -80,8 +120,9 @@ Title: "HDR Allergy to mhv-fhir-phr"
 * identifier -> "intoleranceCondition.recordIdentifer"
 * code.text -> "intoleranceCondition.agent.code"
 * patient -> "GetPatient(intoleranceCondition.patient)"
-* clinicalStatus -> "`active`"
-* onsetDateTime -> "~intoleranceCondition.observationTime.literal"
+* clinicalStatus -> "`active` if not entered-in-error"
+* verificationStatus -> "would indicate `entered-in-error`"
+* recordedDate -> "~intoleranceCondition.observationTime.literal"
 * category -> "~intoleranceCondition.allergyType.code"
 //* code.coding.display -> "intoleranceCondition.drugClass.code"
 * reaction.manifestation -> "intoleranceCondition.reaction.reaction"
@@ -91,7 +132,7 @@ Title: "HDR Allergy to mhv-fhir-phr"
 * note -> "intoleranceCondition.commentEvents"
 * note.text -> "intoleranceCondition.commentEvents.comment"
 * note.time -> "~intoleranceCondition.commentEvents.date.literal"
-* verificationStatus -> "intoleranceCondition.informationSourceCategory: `OBSERVED` -> `confirmed`;  `HISTORICAL` -> `unconfirmed`"
+* extension[observedHistoric] -> "intoleranceCondition.informationSourceCategory"
 * recorder.extension[visn] -> "Organization(intoleranceCondition.facilityIdentifier)"
 
 
@@ -104,15 +145,16 @@ Description: "Informative map that includes only the elements available in eVaul
 * identifier -> "intoleranceCondition.recordIdentifer"
 * code.text -> "intoleranceCondition.agent.code"
 * patient -> "GetPatient(intoleranceCondition.patient)"
-* clinicalStatus -> "`active`"
-* onsetDateTime -> "~intoleranceCondition.observationTime.literal"
+* clinicalStatus -> "`active` if not entered-in-error"
+* verificationStatus -> "would indicate `entered-in-error`"
+* recordedDate -> "~intoleranceCondition.observationTime.literal"
 * category -> "~intoleranceCondition.allergyType.code"
 * reaction.manifestation -> "intoleranceCondition.reaction.reaction"
 * reaction.manifestation.text -> "intoleranceCondition.reaction.reaction.displayText"
 * note -> "intoleranceCondition.commentEvents"
 * note.text -> "intoleranceCondition.commentEvents.comment"
 * note.time -> "~intoleranceCondition.commentEvents.date.literal"
-* verificationStatus -> "intoleranceCondition.informationSourceCategory: `OBSERVED` -> `confirmed`;  `HISTORICAL` -> `unconfirmed`"
+* extension[observedHistoric] -> "intoleranceCondition.informationSourceCategory"
 * recorder.extension[visn] -> "Organization(intoleranceCondition.facilityIdentifier)"
 
 

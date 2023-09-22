@@ -12,11 +12,11 @@
     <valueInteger value="1"/>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
-  <version value="0.2.3"/>
+  <version value="0.2.4"/>
   <name value="VAMHVFHIRPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-08-31T15:33:32-05:00"/>
+  <date value="2023-09-22T11:03:56-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -24,16 +24,12 @@
       <system value="url"/>
       <value value="http://va.gov"/>
     </telecom>
-    <telecom>
-      <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
-    </telecom>
   </contact>
   <contact>
     <name value="John Moehrke (himself)"/>
     <telecom>
       <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
+      <value value="John.Moehrke@va.gov"/>
     </telecom>
   </contact>
   <description value="MyHealtheVet exposing PHR using FHIR and Testing Plan."/>
@@ -52,7 +48,7 @@
     </extension>
     <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
     <packageId value="hl7.terminology.r4"/>
-    <version value="5.0.0"/>
+    <version value="5.3.0"/>
   </dependsOn>
   <dependsOn id="hl7_fhir_us_core">
     <uri value="http://fhir.org/packages/hl7.fhir.us.core/ImplementationGuide/hl7.fhir.us.core"/>
@@ -316,6 +312,14 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
         <valueString value="apply-license"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="apply-wg"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>
@@ -614,6 +618,14 @@
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
+        <valueCode value="apply-wg"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
         <valueCode value="fmm-definition"/>
       </extension>
       <extension url="value">
@@ -644,6 +656,39 @@
         <valueString value="true"/>
       </extension>
     </extension>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/allergyObservedHistoric"/>
+      </reference>
+      <name value="Allergy Observed vs Historic"/>
+      <description value="Maps to Vista 120.8 (Allergy) - (6) OBSERVED/HISTORICAL&#xA;'o' FOR OBSERVED;&#xA;'h' FOR HISTORICAL;&#xA;LAST EDITED:  DEC 07, 1990&#xA;DESCRIPTION:  &#xA;Indicates whether this allergy/adverse reaction has been observed by some personnel, or if it is historical data gathered about the patient.&#xA;RECORD INDEXES:  AHDR (#482)"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/AllergyObservedHistoricCS"/>
+      </reference>
+      <name value="Allergy Observed vs Historic CodeSystem"/>
+      <description value="The codes for Allergy Observed vs Historic"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AllergyObservedHistoricVS"/>
+      </reference>
+      <name value="Allergy Observed vs Historic ValueSet"/>
+      <description value="The codes for Allergy Observed vs Historic"/>
+      <exampleBoolean value="false"/>
+    </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Bundle"/>

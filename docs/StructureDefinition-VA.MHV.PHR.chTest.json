@@ -26,28 +26,24 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest",
-  "version" : "0.2.3",
+  "version" : "0.2.4",
   "name" : "MHVchTest",
   "title" : "VA MHV PHR CH labTest.chemistryResults",
   "status" : "active",
-  "date" : "2023-08-31T15:33:32-05:00",
+  "date" : "2023-09-22T11:03:56-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
     "telecom" : [{
       "system" : "url",
       "value" : "http://va.gov"
-    },
-    {
-      "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
     }]
   },
   {
     "name" : "John Moehrke (himself)",
     "telecom" : [{
       "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
+      "value" : "John.Moehrke@va.gov"
     }]
   }],
   "description" : "A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests.chemistryResults`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n\t- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n- `.subject` must be the patient from the DiagnosticReport\n- `valueInterpretation` -> `.interpretation` \n  - `L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L\n  - 'H' -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H\n- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n- `testIdentifier` -> `.code` -- where \"LN\" is Loinc\n- `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value\n- `labCommentEvents` -> `.note.text`\n- value[x] either String or Quantity with units\n- `observationValue` -> `.valueQuantity.value`\n- `observationUnits.unit` -> `.valueQuantity.unit`\n- `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n- `observationUnits.codingSystem` -> `.valueQuantity.system`\n- `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n  - specimen is presumed from the DiagnosticReport\n- will not have a `.hasMember` as this is results not a panel",

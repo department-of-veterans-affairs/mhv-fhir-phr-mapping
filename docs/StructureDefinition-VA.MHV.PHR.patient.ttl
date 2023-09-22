@@ -38,26 +38,23 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.3"] ; # 
+  fhir:version [ fhir:v "0.2.4"] ; # 
   fhir:name [ fhir:v "MHVpatient"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Patient"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-31T15:33:32-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-09-22T11:03:56-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
        fhir:value [ fhir:v "http://va.gov" ]
-     ] [
-       fhir:system [ fhir:v "email" ] ;
-       fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
      ] )
   ] [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "email" ] ;
-       fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
+       fhir:value [ fhir:v "John.Moehrke@va.gov" ]
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- mapping from patient details in eVault (not from VIA/HDR transaction)\n- `identifier`  \n  - `value` = GetPatientId\n  - `system` = `urn:oid:2.16.840.1.113883.4.349`\n  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.\n- `name` - First and Last Name\n- `gender`\n- `birthDate`\n- `active` = true\n\nmapping concerns - JIRA\n- The Identifier for the ICN is still being discussed\n- identifer.use is not being populated\n- name seems to only populate first and last, but puts them both in given\n- populating identifier with GetPatientId(), not sure that is the same as GetIcn()\n- eVault also has, but are not being used in the FHIR Patient\n  - MiddleName\n  - Ssn\n  - Email\n  - Icn \n- set .meta.profile\n- Would be even better if we could use a common Patient registry. \n\nNOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-fhir-phr-patientto)"] ; # 

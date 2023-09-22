@@ -26,28 +26,24 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel",
-  "version" : "0.2.3",
+  "version" : "0.2.4",
   "name" : "MHVchPanel",
   "title" : "VA MHV PHR CH labTests.orderedTestCode",
   "status" : "active",
-  "date" : "2023-08-31T15:33:32-05:00",
+  "date" : "2023-09-22T11:03:56-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
     "telecom" : [{
       "system" : "url",
       "value" : "http://va.gov"
-    },
-    {
-      "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
     }]
   },
   {
     "name" : "John Moehrke (himself)",
     "telecom" : [{
       "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
+      "value" : "John.Moehrke@va.gov"
     }]
   }],
   "description" : "A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests.orderedTestCode`\n- This profile is based Observation, as it is not found in us-core\n\t- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n- `.subject` must be the patient from the DiagnosticReport\n- `orderedTestCode -> `.code`\n- Panel is distinguished by \n  - there is no `.value[x]` - as this is just a panel\n  - there is `.hasMember` 1..* - These point at the results observations",

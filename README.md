@@ -6,6 +6,20 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 ## Version History
 
+### 0.2.4
+
+- Allergies
+  - do not put observationTime into onsetDateTime, but rather recordedDate
+  - do not populate verificationStatus with informationSourceCategory
+    - do set verificationStatus to entered-in-error if the status is `E`
+  - put the informationSourceCategory into extension[observedHistoric].valueCode
+  - set clinicalStatus to `active` when not entered-in-error
+    - must remove it when changing to entered-in-error
+- Immunization
+  - do NOT populate primarySource (previously were setting this to false),
+    - add extension on primarySource so that can indicate Data-Absent-Reason of unknown (given that us-core requires this be populated)
+  - do not preserve contraindicated
+
 ### 0.2.3
 
 - add link to this readme.md from the index.html

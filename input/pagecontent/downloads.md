@@ -5,7 +5,7 @@ You can download:
 - the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), or
 - the example resources in [json](examples.json.zip), or [xml](examples.xml.zip)
 
-The source code for this Implementation Guide can be found on John Moehrke GitHub [https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PGHD](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PGHD).
+The source code for this Implementation Guide can be found on Department of Veterans Affairs GitHub [https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PGHD](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/MHV-PGHD).
 
 #### Cross Version Analysis
 

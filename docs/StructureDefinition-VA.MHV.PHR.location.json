@@ -26,28 +26,24 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location",
-  "version" : "0.2.3",
+  "version" : "0.2.4",
   "name" : "MHVlocation",
   "title" : "VA MHV PHR Location",
   "status" : "active",
-  "date" : "2023-08-31T15:33:32-05:00",
+  "date" : "2023-09-22T11:03:56-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
     "telecom" : [{
       "system" : "url",
       "value" : "http://va.gov"
-    },
-    {
-      "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
     }]
   },
   {
     "name" : "John Moehrke (himself)",
     "telecom" : [{
       "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
+      "value" : "John.Moehrke@va.gov"
     }]
   }],
   "description" : "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n- `identifier`\n  - system = urn:oid:2.16.840.1.113883.4.349\n- `name` is the name as known\n- always a contained resource, so not exposed RESTfully\n\nNOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-fhir-phr-hospitallocationto).",

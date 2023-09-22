@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="a9e25b59-600f-4fee-a0a3-443a8169c886"/>
+  <id value="56fd7f76-d343-4342-bfe0-d6988396ad98"/>
   <meta>
-    <lastUpdated value="2023-08-31T15:33:32.017-05:00"/>
+    <lastUpdated value="2023-09-22T11:03:56.330-05:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -78,12 +78,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/AllergyCategoryVS"/>
-        <version value="0.2.3"/>
+        <version value="0.2.4"/>
         <name value="AllergyCategoryVS"/>
         <title value="Subset of allergy intolerance category"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-31T15:33:32-05:00"/>
+        <date value="2023-09-22T11:03:56-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -91,8 +91,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:252de75c-58d9-4798-a3e7-00771bf477fc"/>
-          <timestamp value="2023-08-31T15:40:47-05:00"/>
+          <identifier value="urn:uuid:b86eeedf-d3b5-4179-8d85-efb210a3df5d"/>
+          <timestamp value="2023-09-22T11:06:43-05:00"/>
           <total value="3"/>
           <parameter>
             <name value="excludeNested"/>
@@ -126,6 +126,102 @@
     </resource>
   </entry>
   <entry>
+    <fullUrl value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/AllergyObservedHistoricVS"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 2 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="CodeSystem-AllergyObservedHistoricCS.html">codesystem Allergy Observed vs Historic CodeSystem v0.2.4 (CodeSystem)</a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---department-of-veterans-affairs.github.io-mhv-fhir-phr-mapping-CodeSystem-AllergyObservedHistoricCS-o"> </a>  
+                  <a href="CodeSystem-AllergyObservedHistoricCS.html#AllergyObservedHistoricCS-o">o</a>
+                </td>
+                <td>https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS</td>
+                <td>OBSERVED</td>
+                <td>
+                  <div>
+                    <p>observed by some personnel</p>
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="https---department-of-veterans-affairs.github.io-mhv-fhir-phr-mapping-CodeSystem-AllergyObservedHistoricCS-h"> </a>  
+                  <a href="CodeSystem-AllergyObservedHistoricCS.html#AllergyObservedHistoricCS-h">h</a>
+                </td>
+                <td>https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS</td>
+                <td>HISTORICAL</td>
+                <td>
+                  <div>
+                    <p>historical data gathered about the patient</p>
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/AllergyObservedHistoricVS"/>
+        <version value="0.2.4"/>
+        <name value="AllergyObservedHistoricVS"/>
+        <title value="Allergy Observed vs Historic ValueSet"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2023-09-22T11:03:56-05:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:935f4cec-0023-4761-ab50-d2cd1641de0e"/>
+          <timestamp value="2023-09-22T11:06:43-05:00"/>
+          <total value="2"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS|0.2.4"/>
+          </parameter>
+          <contains>
+            <system value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS"/>
+            <code value="o"/>
+            <display value="OBSERVED"/>
+          </contains>
+          <contains>
+            <system value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS"/>
+            <code value="h"/>
+            <display value="HISTORICAL"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
     <fullUrl value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionVerificationVS"/>
     <resource>
       <ValueSet>
@@ -134,7 +230,7 @@
           <div xmlns="http://www.w3.org/1999/xhtml">
             <p>This value set contains 2 concepts</p>
             <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
-              <a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-ver-status.html">codesystem ConditionVerificationStatus v0.5.0 (CodeSystem)</a>
+              <a href="http://terminology.hl7.org/5.3.0/CodeSystem-condition-ver-status.html">codesystem ConditionVerificationStatus v1.0.0 (CodeSystem)</a>
             </p>
             <table class="codes">
               <tr>
@@ -154,13 +250,13 @@
               <tr>
                 <td style="white-space:nowrap">
                   <a name="http---terminology.hl7.org-CodeSystem-condition-ver-status-confirmed"> </a>  
-                  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-ver-status.html#condition-ver-status-confirmed">confirmed</a>
+                  <a href="http://terminology.hl7.org/5.3.0/CodeSystem-condition-ver-status.html#condition-ver-status-confirmed">confirmed</a>
                 </td>
                 <td>http://terminology.hl7.org/CodeSystem/condition-ver-status</td>
                 <td>Confirmed</td>
                 <td>
                   <div>
-                    <p>There is sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</p>
+                    <p>There is sufficient evidence to assert the presence of the subject's condition.</p>
 
                   </div>
                 </td>
@@ -168,13 +264,13 @@
               <tr>
                 <td style="white-space:nowrap">
                   <a name="http---terminology.hl7.org-CodeSystem-condition-ver-status-unconfirmed"> </a>  
-                  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-ver-status.html#condition-ver-status-unconfirmed">unconfirmed</a>
+                  <a href="http://terminology.hl7.org/5.3.0/CodeSystem-condition-ver-status.html#condition-ver-status-unconfirmed">unconfirmed</a>
                 </td>
                 <td>http://terminology.hl7.org/CodeSystem/condition-ver-status</td>
                 <td>Unconfirmed</td>
                 <td>
                   <div>
-                    <p>There is not sufficient diagnostic and/or clinical evidence to treat this as a confirmed condition.</p>
+                    <p>There is not sufficient evidence to assert the presence of the subject's condition.</p>
 
                   </div>
                 </td>
@@ -183,12 +279,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionVerificationVS"/>
-        <version value="0.2.3"/>
+        <version value="0.2.4"/>
         <name value="ConditionVerificationVS"/>
         <title value="Subset of condition verification status"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-31T15:33:32-05:00"/>
+        <date value="2023-09-22T11:03:56-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -196,8 +292,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:a5c45b9f-9207-48e3-be8e-c3f17c98456f"/>
-          <timestamp value="2023-08-31T15:40:47-05:00"/>
+          <identifier value="urn:uuid:881a4dc7-737e-44c7-ac77-2a6cdab5d39d"/>
+          <timestamp value="2023-09-22T11:06:44-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
@@ -205,11 +301,11 @@
           </parameter>
           <parameter>
             <name value="warning-draft"/>
-            <valueUri value="http://terminology.hl7.org/CodeSystem/condition-ver-status|0.5.0"/>
+            <valueUri value="http://terminology.hl7.org/CodeSystem/condition-ver-status|1.0.0"/>
           </parameter>
           <parameter>
             <name value="used-codesystem"/>
-            <valueUri value="http://terminology.hl7.org/CodeSystem/condition-ver-status|0.5.0"/>
+            <valueUri value="http://terminology.hl7.org/CodeSystem/condition-ver-status|1.0.0"/>
           </parameter>
           <contains>
             <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
@@ -239,7 +335,7 @@
                 <li>Loinc v2.74</li>
                 <li>Loinc v2.74</li>
                 <li>
-                  <a href="ValueSet-NoteTypeVS.html">valueset Known Note types v0.2.3 (ValueSet)</a>
+                  <a href="ValueSet-NoteTypeVS.html">valueset Known Note types v0.2.4 (ValueSet)</a>
                 </li>
               </ul>
             </div>
@@ -291,12 +387,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS"/>
-        <version value="0.2.3"/>
+        <version value="0.2.4"/>
         <name value="DocumentReferenceTypeVS"/>
         <title value="Known DocumentReference types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-31T15:33:32-05:00"/>
+        <date value="2023-09-22T11:03:56-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -304,8 +400,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:8042a6ab-c889-4383-ba93-15bba72fefd8"/>
-          <timestamp value="2023-08-31T15:40:48-05:00"/>
+          <identifier value="urn:uuid:472a974f-c17d-4fa6-b87d-7c4cd1b778cb"/>
+          <timestamp value="2023-09-22T11:06:44-05:00"/>
           <total value="4"/>
           <parameter>
             <name value="excludeNested"/>
@@ -313,7 +409,7 @@
           </parameter>
           <parameter>
             <name value="used-valueset"/>
-            <valueUri value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.2.3"/>
+            <valueUri value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.2.4"/>
           </parameter>
           <parameter>
             <name value="used-valueset"/>
@@ -406,12 +502,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/LabReportVS"/>
-        <version value="0.2.3"/>
+        <version value="0.2.4"/>
         <name value="LabReportVS"/>
         <title value="Known Lab Report types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-31T15:33:32-05:00"/>
+        <date value="2023-09-22T11:03:56-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -419,8 +515,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:99c4a624-5da1-4b3e-82b0-95ee0ec10f18"/>
-          <timestamp value="2023-08-31T15:40:48-05:00"/>
+          <identifier value="urn:uuid:6953280d-bb4a-48af-a3a7-cabb74ec68ec"/>
+          <timestamp value="2023-09-22T11:06:44-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>
@@ -503,12 +599,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS"/>
-        <version value="0.2.3"/>
+        <version value="0.2.4"/>
         <name value="NoteTypeVS"/>
         <title value="Known Note types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2023-08-31T15:33:32-05:00"/>
+        <date value="2023-09-22T11:03:56-05:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -516,8 +612,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:34e36468-5e5a-4f4f-aadf-25276a2d9237"/>
-          <timestamp value="2023-08-31T15:40:48-05:00"/>
+          <identifier value="urn:uuid:d3beb6e3-8fac-4d1d-9f04-4f2843b844b1"/>
+          <timestamp value="2023-09-22T11:06:44-05:00"/>
           <total value="2"/>
           <parameter>
             <name value="excludeNested"/>

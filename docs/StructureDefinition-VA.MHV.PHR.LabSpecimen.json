@@ -26,28 +26,24 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen",
-  "version" : "0.2.3",
+  "version" : "0.2.4",
   "name" : "MHVlabSpecimen",
   "title" : "VA MHV PHR Lab Specimen",
   "status" : "active",
-  "date" : "2023-08-31T15:33:32-05:00",
+  "date" : "2023-09-22T11:03:56-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
     "telecom" : [{
       "system" : "url",
       "value" : "http://va.gov"
-    },
-    {
-      "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
     }]
   },
   {
     "name" : "John Moehrke (himself)",
     "telecom" : [{
       "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
+      "value" : "John.Moehrke@va.gov"
     }]
   }],
   "description" : "A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.\n\n- This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - `Specimen.type.text` <- `LabSpecimenTO.name`\n  - type should be a code derived from LabSpecimenTO.name\n- should have a `collectedDateTime` derived from `LabSpecimenTO.collectionDate`\n- may have an `identifier` - `Specimen.identifier` <- `LabSpecimenTO.id`\n  - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained\n- should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`\n\nTODO questions: \n- examples didn't have much populated\n- not clear what site and facility might contain, so can't tell where they would go\n- some examples are likely FHIR Device (old hardware left foot), so this might change",

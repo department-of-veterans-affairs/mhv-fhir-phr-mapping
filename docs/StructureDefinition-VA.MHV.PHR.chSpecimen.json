@@ -26,28 +26,24 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chSpecimen",
-  "version" : "0.2.3",
+  "version" : "0.2.4",
   "name" : "MHVchSpecimen",
   "title" : "VA MHV PHR HDR CH Specimen",
   "status" : "active",
-  "date" : "2023-08-31T15:33:32-05:00",
+  "date" : "2023-09-22T11:03:56-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
     "telecom" : [{
       "system" : "url",
       "value" : "http://va.gov"
-    },
-    {
-      "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
     }]
   },
   {
     "name" : "John Moehrke (himself)",
     "telecom" : [{
       "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
+      "value" : "John.Moehrke@va.gov"
     }]
   }],
   "description" : "A profile showing how the `labTestPromises.specimen` is mapped into a FHIR Specimen.\n\n- This is usually a contained resource, contained in the Lab Report. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - `Specimen.type.text` <- `labTestPromises.specimen.specimenSource`\n- should have a `collectedDateTime` derived from `labTestPromises.specimen.specimenTakenDate`",

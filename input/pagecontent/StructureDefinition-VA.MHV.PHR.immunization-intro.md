@@ -3,7 +3,7 @@
   - US-Core already requires: `status`, `vaccineCode`, `patient`, `occurrence[x]`, `primarySource`
 - `patient` is a reference to this patient
 - `status` is `completed`
-- `primarySource` is `false` - the MHV FHIR API should not be seen as the primary source
+- `primarySource` is not populated as it is unknown
 - `identifier` will hold the record identifier from Vista
 - `vaccineCode.text` and/or
   - `vaccineCode.coding` may be a CPT coding

@@ -20,11 +20,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
-  <version value="0.2.3"/>
+  <version value="0.2.4"/>
   <name value="MHVallergyIntolerance"/>
   <title value="VA MHV PHR Allergy and Intolerance"/>
   <status value="active"/>
-  <date value="2023-08-31T15:33:32-05:00"/>
+  <date value="2023-09-22T11:03:56-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -32,16 +32,12 @@
       <system value="url"/>
       <value value="http://va.gov"/>
     </telecom>
-    <telecom>
-      <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
-    </telecom>
   </contact>
   <contact>
     <name value="John Moehrke (himself)"/>
     <telecom>
       <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
+      <value value="John.Moehrke@va.gov"/>
     </telecom>
   </contact>
   <description value="A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API."/>
@@ -359,11 +355,16 @@
     </element>
     <element id="AllergyIntolerance.extension">
       <path value="AllergyIntolerance.extension"/>
-      <short value="Additional content defined by implementations"/>
-      <definition value="May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension."/>
-      <comment value="There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone."/>
-      <alias value="extensions"/>
-      <alias value="user content"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Extension"/>
+      <definition value="An Extension"/>
       <min value="0"/>
       <max value="*"/>
       <base>
@@ -392,9 +393,49 @@
       </constraint>
       <isModifier value="false"/>
       <isSummary value="false"/>
+    </element>
+    <element id="AllergyIntolerance.extension:observedHistoric">
+      <path value="AllergyIntolerance.extension"/>
+      <sliceName value="observedHistoric"/>
+      <short value="Allergy Observed vs Historic"/>
+      <definition value="Maps to Vista 120.8 (Allergy) - (6) OBSERVED/HISTORICAL&#xA;'o' FOR OBSERVED;&#xA;'h' FOR HISTORICAL;&#xA;LAST EDITED:  DEC 07, 1990&#xA;DESCRIPTION:  &#xA;Indicates whether this allergy/adverse reaction has been observed by some personnel, or if it is historical data gathered about the patient.&#xA;RECORD INDEXES:  AHDR (#482)"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="DomainResource.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <mustSupport value="true"/>
+      <isModifier value="false"/>
       <mapping>
-        <identity value="rim"/>
-        <map value="N/A"/>
+        <identity value="AllergyIntolerance-Mapping"/>
+        <map value="intoleranceCondition.informationSourceCategory"/>
+      </mapping>
+      <mapping>
+        <identity value="AllergyIntolerance-Old-Mapping"/>
+        <map value="intoleranceCondition.informationSourceCategory"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.modifierExtension">
@@ -1252,12 +1293,6 @@
       <type>
         <code value="CodeableConcept"/>
       </type>
-      <patternCodeableConcept>
-        <coding>
-          <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
-          <code value="active"/>
-        </coding>
-      </patternCodeableConcept>
       <condition value="ait-1"/>
       <condition value="ait-2"/>
       <constraint>
@@ -1290,19 +1325,19 @@
       </mapping>
       <mapping>
         <identity value="AllergyIntolerance-Mapping"/>
-        <map value="`active`"/>
+        <map value="`active` if not entered-in-error"/>
       </mapping>
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
-        <map value="`active`"/>
+        <map value="`active` if not entered-in-error"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.verificationStatus">
       <path value="AllergyIntolerance.verificationStatus"/>
-      <short value="unconfirmed | confirmed | refuted | entered-in-error"/>
+      <short value="May indicate entered-in-error"/>
       <definition value="Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product)."/>
       <comment value="The data type is CodeableConcept because verificationStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity."/>
-      <min value="1"/>
+      <min value="0"/>
       <max value="1"/>
       <base>
         <path value="AllergyIntolerance.verificationStatus"/>
@@ -1344,11 +1379,11 @@
       </mapping>
       <mapping>
         <identity value="AllergyIntolerance-Mapping"/>
-        <map value="intoleranceCondition.informationSourceCategory: `OBSERVED` -&gt; `confirmed`;  `HISTORICAL` -&gt; `unconfirmed`"/>
+        <map value="would indicate `entered-in-error`"/>
       </mapping>
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
-        <map value="intoleranceCondition.informationSourceCategory: `OBSERVED` -&gt; `confirmed`;  `HISTORICAL` -&gt; `unconfirmed`"/>
+        <map value="would indicate `entered-in-error`"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.type">
@@ -1863,9 +1898,42 @@
       <short value="When allergy or intolerance was identified"/>
       <definition value="Estimated or actual date,  date-time, or age when allergy or intolerance was identified."/>
       <min value="0"/>
-      <max value="1"/>
+      <max value="0"/>
       <base>
         <path value="AllergyIntolerance.onset[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="dateTime"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="w5"/>
+        <map value="FiveWs.init"/>
+      </mapping>
+      <mapping>
+        <identity value="rim"/>
+        <map value="effectiveTime.low"/>
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.recordedDate">
+      <path value="AllergyIntolerance.recordedDate"/>
+      <short value="Date first version of the resource instance was recorded"/>
+      <definition value="The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="AllergyIntolerance.recordedDate"/>
         <min value="0"/>
         <max value="1"/>
       </base>
@@ -1885,47 +1953,6 @@
       <isSummary value="false"/>
       <mapping>
         <identity value="w5"/>
-        <map value="FiveWs.init"/>
-      </mapping>
-      <mapping>
-        <identity value="rim"/>
-        <map value="effectiveTime.low"/>
-      </mapping>
-      <mapping>
-        <identity value="AllergyIntolerance-Mapping"/>
-        <map value="~intoleranceCondition.observationTime.literal"/>
-      </mapping>
-      <mapping>
-        <identity value="AllergyIntolerance-Old-Mapping"/>
-        <map value="~intoleranceCondition.observationTime.literal"/>
-      </mapping>
-    </element>
-    <element id="AllergyIntolerance.recordedDate">
-      <path value="AllergyIntolerance.recordedDate"/>
-      <short value="Date first version of the resource instance was recorded"/>
-      <definition value="The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date."/>
-      <min value="0"/>
-      <max value="0"/>
-      <base>
-        <path value="AllergyIntolerance.recordedDate"/>
-        <min value="0"/>
-        <max value="1"/>
-      </base>
-      <type>
-        <code value="dateTime"/>
-      </type>
-      <constraint>
-        <key value="ele-1"/>
-        <severity value="error"/>
-        <human value="All FHIR elements must have a @value or children"/>
-        <expression value="hasValue() or (children().count() &gt; id.count())"/>
-        <xpath value="@value|f:*|h:div"/>
-        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
-      </constraint>
-      <isModifier value="false"/>
-      <isSummary value="false"/>
-      <mapping>
-        <identity value="w5"/>
         <map value="FiveWs.recorded"/>
       </mapping>
       <mapping>
@@ -1935,6 +1962,14 @@
       <mapping>
         <identity value="rim"/>
         <map value=".participation[typeCode=AUT].time"/>
+      </mapping>
+      <mapping>
+        <identity value="AllergyIntolerance-Mapping"/>
+        <map value="~intoleranceCondition.observationTime.literal"/>
+      </mapping>
+      <mapping>
+        <identity value="AllergyIntolerance-Old-Mapping"/>
+        <map value="~intoleranceCondition.observationTime.literal"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.recorder">
@@ -3508,6 +3543,36 @@
         <map value="HDR Allergy"/>
       </mapping>
     </element>
+    <element id="AllergyIntolerance.extension">
+      <path value="AllergyIntolerance.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+    </element>
+    <element id="AllergyIntolerance.extension:observedHistoric">
+      <path value="AllergyIntolerance.extension"/>
+      <sliceName value="observedHistoric"/>
+      <min value="0"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric"/>
+      </type>
+      <mustSupport value="true"/>
+      <mapping>
+        <identity value="AllergyIntolerance-Mapping"/>
+        <map value="intoleranceCondition.informationSourceCategory"/>
+      </mapping>
+      <mapping>
+        <identity value="AllergyIntolerance-Old-Mapping"/>
+        <map value="intoleranceCondition.informationSourceCategory"/>
+      </mapping>
+    </element>
     <element id="AllergyIntolerance.identifier">
       <path value="AllergyIntolerance.identifier"/>
       <slicing>
@@ -3582,31 +3647,25 @@
     </element>
     <element id="AllergyIntolerance.clinicalStatus">
       <path value="AllergyIntolerance.clinicalStatus"/>
-      <patternCodeableConcept>
-        <coding>
-          <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
-          <code value="active"/>
-        </coding>
-      </patternCodeableConcept>
       <mapping>
         <identity value="AllergyIntolerance-Mapping"/>
-        <map value="`active`"/>
+        <map value="`active` if not entered-in-error"/>
       </mapping>
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
-        <map value="`active`"/>
+        <map value="`active` if not entered-in-error"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.verificationStatus">
       <path value="AllergyIntolerance.verificationStatus"/>
-      <min value="1"/>
+      <short value="May indicate entered-in-error"/>
       <mapping>
         <identity value="AllergyIntolerance-Mapping"/>
-        <map value="intoleranceCondition.informationSourceCategory: `OBSERVED` -&gt; `confirmed`;  `HISTORICAL` -&gt; `unconfirmed`"/>
+        <map value="would indicate `entered-in-error`"/>
       </mapping>
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
-        <map value="intoleranceCondition.informationSourceCategory: `OBSERVED` -&gt; `confirmed`;  `HISTORICAL` -&gt; `unconfirmed`"/>
+        <map value="would indicate `entered-in-error`"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.category">
@@ -3675,10 +3734,13 @@
       <path value="AllergyIntolerance.onset[x]"/>
       <sliceName value="onsetDateTime"/>
       <min value="0"/>
-      <max value="1"/>
+      <max value="0"/>
       <type>
         <code value="dateTime"/>
       </type>
+    </element>
+    <element id="AllergyIntolerance.recordedDate">
+      <path value="AllergyIntolerance.recordedDate"/>
       <mustSupport value="true"/>
       <mapping>
         <identity value="AllergyIntolerance-Mapping"/>
@@ -3688,10 +3750,6 @@
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="~intoleranceCondition.observationTime.literal"/>
       </mapping>
-    </element>
-    <element id="AllergyIntolerance.recordedDate">
-      <path value="AllergyIntolerance.recordedDate"/>
-      <max value="0"/>
     </element>
     <element id="AllergyIntolerance.recorder">
       <path value="AllergyIntolerance.recorder"/>

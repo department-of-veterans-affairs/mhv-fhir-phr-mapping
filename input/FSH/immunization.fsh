@@ -10,7 +10,8 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * occurrence[x] only dateTime
 * occurrence[x] 1..1 MS
 * recorded 1..1 MS
-* primarySource = false
+* primarySource.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named dar 1..1
+* primarySource.extension[dar].valueCode = #unknown
 * identifier 1.. MS
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -22,8 +23,7 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`ImmunizationTO` | `.` | {ImmunizationTO.id}"
 * note 0..1 MS
-* reaction.detail.display MS
-* reaction.detail.display ^short = "may be `YES (DO NOT REPEAT THIS VACCINE)`"
+* reaction.detail.display 0..0
 * reaction.detail ^type.aggregation = #contained
 * reaction.detail only Reference(MHVimmunizationReaction)
 * location MS
@@ -64,7 +64,6 @@ Title: "VIA to mhv-fhir-phr"
 * -> "ImmunizationTO" "FileMan"
 * vaccineCode.text -> "ImmunizationTO.name" "9000010.11.01 IMMUNIZATION"
 * note.text -> "ImmunizationTO.comments" "9000010.11.1101 REMARKS"
-* reaction.detail.display -> "if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`" "9000010.11.07 CONTRAINDICATED"
 * reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11.06 REACTION"
 * occurrenceDateTime -> "ImmunizationTO.administeredDate" "9000010.11.1201 EVENT DATE AND TIME"
 * recorded -> "ImmunizationTO.timestamp" "9000010.11.1205 DATE/TIME RECORDED"
@@ -73,7 +72,7 @@ Title: "VIA to mhv-fhir-phr"
 * site.text -> "ImmunizationTO.anatomicSurface" "9000010.11.09 INJECTION SITE"
 * vaccineCode.coding.code -> "ImmunizationTO.cptCode.id" "9000010.11.13 CREATED BY V CPT ENTRY"
 * vaccineCode.coding.display -> "ImmunizationTO.cptCode.name"
-* location -> "GetLocation(ImmunizationTO.encounter.location)" "9000010.11.1215 ORDERING LOCATION"
+* location -> "GetLocation(ImmunizationTO.encounter.location)"
 * performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility)"
 * identifier -> "{StationNbr} and {ImmunizationTO.id}"
 * lotNumber -> "ImmunizationTO.lotNumber" "9000010.11.05 LOT"
@@ -82,7 +81,7 @@ Title: "VIA to mhv-fhir-phr"
 * protocolApplied.doseNumberString -> "ImmunizationTO.series" "9000010.11.04 SERIES"
 * patient -> "patient" "9000010.11.02 PATIENT"
 * status -> "`completed`"
-* primarySource -> "`false`"
+* primarySource -> "Data Absent Reason - unknown"
 
 Mapping: Immunization-Old-Mapping
 Source:	MHVimmunization
@@ -95,7 +94,6 @@ Description: "Informative map that includes only the elements available in eVaul
 * note.text -> "ImmunizationTO.comments"
 * patient -> "patient"
 * status -> "`completed`"
-* primarySource -> "`false`"
 * reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11.06 REACTION"
 * occurrenceDateTime -> "ImmunizationTO.administeredDate" "9000010.11.1201 EVENT DATE AND TIME"
 * performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility)"

@@ -20,11 +20,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chSpecimen"/>
-  <version value="0.2.3"/>
+  <version value="0.2.4"/>
   <name value="MHVchSpecimen"/>
   <title value="VA MHV PHR HDR CH Specimen"/>
   <status value="active"/>
-  <date value="2023-08-31T15:33:32-05:00"/>
+  <date value="2023-09-22T11:03:56-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -32,16 +32,12 @@
       <system value="url"/>
       <value value="http://va.gov"/>
     </telecom>
-    <telecom>
-      <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
-    </telecom>
   </contact>
   <contact>
     <name value="John Moehrke (himself)"/>
     <telecom>
       <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
+      <value value="John.Moehrke@va.gov"/>
     </telecom>
   </contact>
   <description value="A profile showing how the `labTestPromises.specimen` is mapped into a FHIR Specimen.&#xA;&#xA;- This is usually a contained resource, contained in the Lab Report. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances&#xA;- must have a type &#xA;  - `Specimen.type.text` &lt;- `labTestPromises.specimen.specimenSource`&#xA;- should have a `collectedDateTime` derived from `labTestPromises.specimen.specimenTakenDate`"/>

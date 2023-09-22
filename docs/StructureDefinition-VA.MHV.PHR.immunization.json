@@ -26,28 +26,24 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization",
-  "version" : "0.2.3",
+  "version" : "0.2.4",
   "name" : "MHVimmunization",
   "title" : "VA MHV PHR Immunization",
   "status" : "active",
-  "date" : "2023-08-31T15:33:32-05:00",
+  "date" : "2023-09-22T11:03:56-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
     "telecom" : [{
       "system" : "url",
       "value" : "http://va.gov"
-    },
-    {
-      "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
     }]
   },
   {
     "name" : "John Moehrke (himself)",
     "telecom" : [{
       "system" : "email",
-      "value" : "JohnMoehrke@gmail.com"
+      "value" : "John.Moehrke@va.gov"
     }]
   }],
   "description" : "A profile on the Immunization that declares how MHV will expose PHR immunization.",
@@ -1770,7 +1766,6 @@
       "type" : [{
         "code" : "boolean"
       }],
-      "patternBoolean" : false,
       "constraint" : [{
         "key" : "ele-1",
         "severity" : "error",
@@ -1804,12 +1799,282 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "`false`"
+        "map" : "Data Absent Reason - unknown"
+      }]
+    },
+    {
+      "id" : "Immunization.primarySource.id",
+      "path" : "Immunization.primarySource.id",
+      "representation" : ["xmlAttr"],
+      "short" : "xml:id (or equivalent in JSON)",
+      "definition" : "unique id for the element within a resource (for internal references)",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "Immunization.primarySource.extension",
+      "path" : "Immunization.primarySource.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 1,
+      "max" : "*",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       },
       {
-        "identity" : "Immunization-Old-Mapping",
-        "map" : "`false`"
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "Immunization.primarySource.extension:dar",
+      "path" : "Immunization.primarySource.extension",
+      "sliceName" : "dar",
+      "short" : "unknown | asked | temp | notasked | masked | unsupported | astext | error",
+      "definition" : "Provides a reason why the expected value or elements in the element that is extended are missing.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/data-absent-reason"]
+      }],
+      "condition" : ["ele-1"],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "ANY.nullFlavor"
       }]
+    },
+    {
+      "id" : "Immunization.primarySource.extension:dar.id",
+      "path" : "Immunization.primarySource.extension.id",
+      "representation" : ["xmlAttr"],
+      "short" : "Unique id for inter-element referencing",
+      "definition" : "Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "Element.id",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "string"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "n/a"
+      }]
+    },
+    {
+      "id" : "Immunization.primarySource.extension:dar.extension",
+      "path" : "Immunization.primarySource.extension.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "description" : "Extensions are always sliced by (at least) url",
+        "rules" : "open"
+      },
+      "short" : "Extension",
+      "definition" : "An Extension",
+      "min" : 0,
+      "max" : "0",
+      "base" : {
+        "path" : "Element.extension",
+        "min" : 0,
+        "max" : "*"
+      },
+      "type" : [{
+        "code" : "Extension"
+      }],
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      },
+      {
+        "key" : "ext-1",
+        "severity" : "error",
+        "human" : "Must have either extensions or value[x], not both",
+        "expression" : "extension.exists() != value.exists()",
+        "xpath" : "exists(f:extension)!=exists(f:*[starts-with(local-name(.), \"value\")])",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Extension"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
+    },
+    {
+      "id" : "Immunization.primarySource.extension:dar.url",
+      "path" : "Immunization.primarySource.extension.url",
+      "representation" : ["xmlAttr"],
+      "short" : "identifies the meaning of the extension",
+      "definition" : "Source of the definition for the extension code - a logical name or a URL.",
+      "comment" : "The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.url",
+        "min" : 1,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "uri"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.String"
+      }],
+      "fixedUri" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+      "isModifier" : false,
+      "isSummary" : false,
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "Immunization.primarySource.extension:dar.value[x]",
+      "path" : "Immunization.primarySource.extension.value[x]",
+      "short" : "Value of extension",
+      "definition" : "Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).",
+      "min" : 1,
+      "max" : "1",
+      "base" : {
+        "path" : "Extension.value[x]",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "code" : "code"
+      }],
+      "patternCode" : "unknown",
+      "constraint" : [{
+        "key" : "ele-1",
+        "severity" : "error",
+        "human" : "All FHIR elements must have a @value or children",
+        "expression" : "hasValue() or (children().count() > id.count())",
+        "xpath" : "@value|f:*|h:div",
+        "source" : "http://hl7.org/fhir/StructureDefinition/Element"
+      }],
+      "isModifier" : false,
+      "isSummary" : false,
+      "binding" : {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+          "valueString" : "DataAbsentReason"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
+          "valueBoolean" : true
+        }],
+        "strength" : "required",
+        "description" : "Used to specify why the normally expected content of the data element is missing.",
+        "valueSet" : "http://hl7.org/fhir/ValueSet/data-absent-reason|4.0.1"
+      },
+      "mapping" : [{
+        "identity" : "rim",
+        "map" : "N/A"
+      }]
+    },
+    {
+      "id" : "Immunization.primarySource.value",
+      "path" : "Immunization.primarySource.value",
+      "representation" : ["xmlAttr"],
+      "short" : "Primitive value for boolean",
+      "definition" : "The actual value",
+      "min" : 0,
+      "max" : "1",
+      "base" : {
+        "path" : "boolean.value",
+        "min" : 0,
+        "max" : "1"
+      },
+      "type" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type",
+          "valueUrl" : "boolean"
+        },
+        {
+          "url" : "http://hl7.org/fhir/StructureDefinition/regex",
+          "valueString" : "true|false"
+        }],
+        "code" : "http://hl7.org/fhirpath/System.Boolean"
+      }],
+      "isModifier" : false,
+      "isSummary" : false
     },
     {
       "id" : "Immunization.reportOrigin",
@@ -1905,8 +2170,7 @@
       },
       {
         "identity" : "Immunization-Mapping",
-        "map" : "GetLocation(ImmunizationTO.encounter.location)",
-        "comment" : "9000010.11.1215 ORDERING LOCATION"
+        "map" : "GetLocation(ImmunizationTO.encounter.location)"
       },
       {
         "identity" : "Immunization-Old-Mapping",
@@ -3749,11 +4013,11 @@
         "valueBoolean" : true
       }],
       "path" : "Immunization.reaction.detail.display",
-      "short" : "may be `YES (DO NOT REPEAT THIS VACCINE)`",
+      "short" : "Text alternative for the resource",
       "definition" : "Plain text narrative that identifies the resource in addition to the resource reference.",
       "comment" : "This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.",
       "min" : 0,
-      "max" : "1",
+      "max" : "0",
       "base" : {
         "path" : "Reference.display",
         "min" : 0,
@@ -3770,17 +4034,11 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : true,
       "mapping" : [{
         "identity" : "rim",
         "map" : "N/A"
-      },
-      {
-        "identity" : "Immunization-Mapping",
-        "map" : "if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`",
-        "comment" : "9000010.11.07 CONTRAINDICATED"
       }]
     },
     {
@@ -4376,15 +4634,39 @@
     {
       "id" : "Immunization.primarySource",
       "path" : "Immunization.primarySource",
-      "patternBoolean" : false,
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "`false`"
-      },
-      {
-        "identity" : "Immunization-Old-Mapping",
-        "map" : "`false`"
+        "map" : "Data Absent Reason - unknown"
       }]
+    },
+    {
+      "id" : "Immunization.primarySource.extension",
+      "path" : "Immunization.primarySource.extension",
+      "slicing" : {
+        "discriminator" : [{
+          "type" : "value",
+          "path" : "url"
+        }],
+        "ordered" : false,
+        "rules" : "open"
+      },
+      "min" : 1
+    },
+    {
+      "id" : "Immunization.primarySource.extension:dar",
+      "path" : "Immunization.primarySource.extension",
+      "sliceName" : "dar",
+      "min" : 1,
+      "max" : "1",
+      "type" : [{
+        "code" : "Extension",
+        "profile" : ["http://hl7.org/fhir/StructureDefinition/data-absent-reason"]
+      }]
+    },
+    {
+      "id" : "Immunization.primarySource.extension:dar.value[x]",
+      "path" : "Immunization.primarySource.extension.value[x]",
+      "patternCode" : "unknown"
     },
     {
       "id" : "Immunization.reportOrigin",
@@ -4402,8 +4684,7 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Immunization-Mapping",
-        "map" : "GetLocation(ImmunizationTO.encounter.location)",
-        "comment" : "9000010.11.1215 ORDERING LOCATION"
+        "map" : "GetLocation(ImmunizationTO.encounter.location)"
       },
       {
         "identity" : "Immunization-Old-Mapping",
@@ -4564,13 +4845,7 @@
     {
       "id" : "Immunization.reaction.detail.display",
       "path" : "Immunization.reaction.detail.display",
-      "short" : "may be `YES (DO NOT REPEAT THIS VACCINE)`",
-      "mustSupport" : true,
-      "mapping" : [{
-        "identity" : "Immunization-Mapping",
-        "map" : "if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`",
-        "comment" : "9000010.11.07 CONTRAINDICATED"
-      }]
+      "max" : "0"
     },
     {
       "id" : "Immunization.reaction.reported",

@@ -38,26 +38,23 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.3"] ; # 
+  fhir:version [ fhir:v "0.2.4"] ; # 
   fhir:name [ fhir:v "MHVpractitioner"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Practitioner"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-08-31T15:33:32-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-09-22T11:03:56-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "url" ] ;
        fhir:value [ fhir:v "http://va.gov" ]
-     ] [
-       fhir:system [ fhir:v "email" ] ;
-       fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
      ] )
   ] [
      fhir:name [ fhir:v "John Moehrke (himself)" ] ;
      fhir:telecom ( [
        fhir:system [ fhir:v "email" ] ;
-       fhir:value [ fhir:v "JohnMoehrke@gmail.com" ]
+       fhir:value [ fhir:v "John.Moehrke@va.gov" ]
      ] )
   ] ) ; # 
   fhir:description [ fhir:v "A profile on the Practitioner resource for MHV PHR exposing Practitioner using FHIR API.\n\n- NOT based on US-Core for Practitioner, as that makes slicing on VA OID pattern impossible\n- used for VIDF UserTO, and AuthorTO\n- used for HDR PractitionerLite\n- might be used for PersonTO or is that RelatedPerson?\n- always a contained resource, so not exposed RESTfully\n\nMapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-userto) and [VIA AuthorTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-authorto)\n\nMapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-practitionerlite)"] ; # 

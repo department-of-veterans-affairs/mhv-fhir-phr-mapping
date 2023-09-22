@@ -33,7 +33,7 @@ Example from a mock intoleranceConditions
                 <code>4500975</code>
                 <displayText>HISTORICAL</displayText>
             </informationSourceCategory>
-            <status>F</status>
+            <status>E</status>
             <reaction>
                 <reaction>
                     <code>4691091</code>

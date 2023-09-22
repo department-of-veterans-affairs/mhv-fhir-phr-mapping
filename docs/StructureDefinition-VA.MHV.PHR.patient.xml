@@ -20,11 +20,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"/>
-  <version value="0.2.3"/>
+  <version value="0.2.4"/>
   <name value="MHVpatient"/>
   <title value="VA MHV PHR Patient"/>
   <status value="active"/>
-  <date value="2023-08-31T15:33:32-05:00"/>
+  <date value="2023-09-22T11:03:56-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -32,16 +32,12 @@
       <system value="url"/>
       <value value="http://va.gov"/>
     </telecom>
-    <telecom>
-      <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
-    </telecom>
   </contact>
   <contact>
     <name value="John Moehrke (himself)"/>
     <telecom>
       <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
+      <value value="John.Moehrke@va.gov"/>
     </telecom>
   </contact>
   <description value="A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.&#xA;&#xA;- based on US-Core for Patient&#xA;- mapping from patient details in eVault (not from VIA/HDR transaction)&#xA;- `identifier`  &#xA;  - `value` = GetPatientId&#xA;  - `system` = `urn:oid:2.16.840.1.113883.4.349`&#xA;  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.&#xA;- `name` - First and Last Name&#xA;- `gender`&#xA;- `birthDate`&#xA;- `active` = true&#xA;&#xA;mapping concerns - JIRA&#xA;- The Identifier for the ICN is still being discussed&#xA;- identifer.use is not being populated&#xA;- name seems to only populate first and last, but puts them both in given&#xA;- populating identifier with GetPatientId(), not sure that is the same as GetIcn()&#xA;- eVault also has, but are not being used in the FHIR Patient&#xA;  - MiddleName&#xA;  - Ssn&#xA;  - Email&#xA;  - Icn &#xA;- set .meta.profile&#xA;- Would be even better if we could use a common Patient registry. &#xA;&#xA;NOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-fhir-phr-patientto)"/>

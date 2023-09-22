@@ -21,10 +21,20 @@ htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 "AllergyIntolerance.contained","AllergyIntolerance.contained","","inline resources
 anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"","","N/A"
-"AllergyIntolerance.extension","AllergyIntolerance.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
+"AllergyIntolerance.extension","AllergyIntolerance.extension","","","",0,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"AllergyIntolerance.extension:observedHistoric","AllergyIntolerance.extension","observedHistoric","","",0,1,"Y","","","Extension {[CanonicalType[https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric]]} {[]}
+","Allergy Observed vs Historic","Maps to Vista 120.8 (Allergy) - (6) OBSERVED/HISTORICAL
+'o' FOR OBSERVED;
+'h' FOR HISTORICAL;
+LAST EDITED:  DEC 07, 1990
+DESCRIPTION:  
+Indicates whether this allergy/adverse reaction has been observed by some personnel, or if it is historical data gathered about the patient.
+RECORD INDEXES:  AHDR (#482)","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","intoleranceCondition.informationSourceCategory","intoleranceCondition.informationSourceCategory"
 "AllergyIntolerance.modifierExtension","AllergyIntolerance.modifierExtension","","extensions
 user content","",0,*,"","Y","","Extension {[]} {[]}
 ","Extensions that cannot be ignored","May be used to represent additional information that is not part of the basic definition of the resource and that modifies the understanding of the element that contains it and/or the understanding of the containing element's descendants. Usually modifier elements provide negation or qualification. To make the use of extensions safe and manageable, there is a strict set of governance applied to the definition and use of extensions. Though any implementer is allowed to define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension. Applications processing a resource are required to check for modifier extensions.
@@ -93,18 +103,13 @@ TOid-startswithoid:ID system must start with urn:oid:2.16.840.1.113883.4.349.4. 
 ","II.assigningAuthorityName but note that this is an improper use by the definition of the field.  Also Role.scoper","CX.4 / (CX.4,CX.9,CX.10)"
 "AllergyIntolerance.clinicalStatus","AllergyIntolerance.clinicalStatus","","","",0,1,"Y","Y","Y","CodeableConcept {[]} {[]}
 ","active | inactive | resolved","The clinical status of the allergy or intolerance.","Refer to [discussion](http://hl7.org/fhir/R4/extensibility.html#Special-Case) if clincalStatus is missing data.
-The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
-  <coding>
-    <system value=""http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical""/>
-    <code value=""active""/>
-  </coding>
-</valueCodeableConcept>","","","",,"required","","http://hl7.org/fhir/ValueSet/allergyintolerance-clinical","",,,,"AllergyIntolerance.clinicalStatus",0,1,"ait-1
+The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/allergyintolerance-clinical","",,,,"AllergyIntolerance.clinicalStatus",0,1,"ait-1
 ait-2","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Observation ACT .inboundRelationship[typeCode=COMP].source[classCode=OBS, code=""clinicalStatus"", moodCode=EVN].value","FiveWs.status","`active`","`active`"
-"AllergyIntolerance.verificationStatus","AllergyIntolerance.verificationStatus","","","",1,1,"Y","Y","Y","CodeableConcept {[]} {[]}
-","unconfirmed | confirmed | refuted | entered-in-error","Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).","The data type is CodeableConcept because verificationStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/allergyintolerance-verification","",,,,"AllergyIntolerance.verificationStatus",0,1,"ait-1
+","Observation ACT .inboundRelationship[typeCode=COMP].source[classCode=OBS, code=""clinicalStatus"", moodCode=EVN].value","FiveWs.status","`active` if not entered-in-error","`active` if not entered-in-error"
+"AllergyIntolerance.verificationStatus","AllergyIntolerance.verificationStatus","","","",0,1,"Y","Y","Y","CodeableConcept {[]} {[]}
+","May indicate entered-in-error","Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).","The data type is CodeableConcept because verificationStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/allergyintolerance-verification","",,,,"AllergyIntolerance.verificationStatus",0,1,"ait-1
 ait-2","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Observation ACT .inboundRelationship[typeCode=COMP].source[classCode=OBS, code=""verificationStatus"", moodCode=EVN].value","FiveWs.status","intoleranceCondition.informationSourceCategory: `OBSERVED` -> `confirmed`;  `HISTORICAL` -> `unconfirmed`","intoleranceCondition.informationSourceCategory: `OBSERVED` -> `confirmed`;  `HISTORICAL` -> `unconfirmed`"
+","Observation ACT .inboundRelationship[typeCode=COMP].source[classCode=OBS, code=""verificationStatus"", moodCode=EVN].value","FiveWs.status","would indicate `entered-in-error`","would indicate `entered-in-error`"
 "AllergyIntolerance.type","AllergyIntolerance.type","","Category
 Class","",0,1,"","","Y","code {[]} {[]}
 ","allergy | intolerance - Underlying mechanism (if known)","Identification of the underlying physiological mechanism for the reaction risk.","Allergic (typically immune-mediated) reactions have been traditionally regarded as an indicator for potential escalation to significant future risk. Contemporary knowledge suggests that some reactions previously thought to be immune-mediated are, in fact, non-immune, but in some cases can still pose a life threatening risk. It is acknowledged that many clinicians might not be in a position to distinguish the mechanism of a particular reaction. Often the term ""allergy"" is used rather generically and may overlap with the use of ""intolerance"" - in practice the boundaries between these two concepts might not be well-defined or understood. This data element is included nevertheless, because many legacy systems have captured this attribute. Immunologic testing may provide supporting evidence for the basis of the reaction and the causative substance, but no tests are 100% sensitive or specific for sensitivity to a particular substance. If, as is commonly the case, it is unclear whether the reaction is due to an allergy or an intolerance, then the type element should be omitted from the resource.","","","","","","","","",,"required","Identification of the underlying physiological mechanism for a Reaction Risk.","http://hl7.org/fhir/ValueSet/allergy-intolerance-type|4.0.1","",,,,"AllergyIntolerance.type",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
@@ -145,12 +150,12 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 Age {[]} {[]}Period {[]} {[]}Range {[]} {[]}string {[]} {[]}","When allergy or intolerance was identified","Estimated or actual date,  date-time, or age when allergy or intolerance was identified.","","","","","","","","","",,,,,"","type:$this}
 ","",,"open","AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","effectiveTime.low","FiveWs.init"
-"AllergyIntolerance.onset[x]:onsetDateTime","AllergyIntolerance.onset[x]","onsetDateTime","","",0,1,"Y","","","dateTime {[]} {[]}
+"AllergyIntolerance.onset[x]:onsetDateTime","AllergyIntolerance.onset[x]","onsetDateTime","","",0,0,"","","","dateTime {[]} {[]}
 ","When allergy or intolerance was identified","Estimated or actual date,  date-time, or age when allergy or intolerance was identified.","","","","","","","","","",,,,,"",,,,"AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","effectiveTime.low","FiveWs.init","~intoleranceCondition.observationTime.literal","~intoleranceCondition.observationTime.literal"
-"AllergyIntolerance.recordedDate","AllergyIntolerance.recordedDate","","","",0,0,"","","","dateTime {[]} {[]}
+","effectiveTime.low","FiveWs.init"
+"AllergyIntolerance.recordedDate","AllergyIntolerance.recordedDate","","","",0,1,"Y","","","dateTime {[]} {[]}
 ","Date first version of the resource instance was recorded","The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date.","","","","","","","","","",,,,,"",,,,"AllergyIntolerance.recordedDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-",".participation[typeCode=AUT].time","FiveWs.recorded","IAM-13"
+",".participation[typeCode=AUT].time","FiveWs.recorded","IAM-13","~intoleranceCondition.observationTime.literal","~intoleranceCondition.observationTime.literal"
 "AllergyIntolerance.recorder","AllergyIntolerance.recorder","","Author
 ","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Practitioner], CanonicalType[http://hl7.org/fhir/StructureDefinition/PractitionerRole], CanonicalType[http://hl7.org/fhir/StructureDefinition/Patient], CanonicalType[http://hl7.org/fhir/StructureDefinition/RelatedPerson]]} (contained
 )

@@ -12,7 +12,7 @@ Example from a mock ImmunizationTO
 * patient = Reference(Patient/ex-MHV-patient-1)
 * occurrenceDateTime = 2022-08-08T11:15:28Z
 * recorded = 2022-08-08T11:15:28Z
-* primarySource = false
+* primarySource.extension[dar].valueCode = #unknown
 * identifier[TOid].value = "ImmunizationTO.124684" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
@@ -39,7 +39,7 @@ Example from a mock ImmunizationTO
 * patient = Reference(Patient/ex-MHV-patient-1)
 * occurrenceDateTime = 2022-08-05T16:56:38Z
 * recorded = 2022-08-05T16:56:38Z
-* primarySource = false
+* primarySource.extension[dar].valueCode = #unknown
 * identifier[TOid].value = "ImmunizationTO.124685" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual

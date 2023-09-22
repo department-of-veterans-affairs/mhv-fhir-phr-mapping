@@ -7,17 +7,16 @@
   - US-Core already requires: `status`, `vaccineCode`, `patient`, `occurrence[x]`, `primarySource`
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization` to indicate the intent to be compliant with this profile
 - must have `identifier` as cross reference to original source
-- must be indicated this data are not official record (`primarySource`=false)
+- US-Core requires that this be populated, but we don't get this details
   - Given that the field is not used by UX, it does not matter what the value is
-  - should change when US-Core 6+ allows the element to be empty
+  - do not populate, but add to the element the Data Absent Reason extension
 - any reaction is recorded as a contained `Observation`. This Observation is simply
   - status of final
   - code.text from ImmunizationTo.reaction
   - valueCodeableConcept of SNOMED#401515003 Known present
   - see [Immunization Reaction Profile of Observation](StructureDefinition-VA.MHV.PHR.immunizationReaction.html)
 - `contraindicated` - '1' for Yes (do not repeat this vaccine), '0' for no (okay to use in the future)
-  - when `contraindicated` is '1' then set `.reaction.detail.display` = `YES (DO NOT REPEAT THIS VACCINE)`
-  - else .reaction is not populated
+  - no clear place to record this in FHIR and no need for the data, so do not preserve
 - `series` - series of the immunization type was given to the patient
   - see table below for how to set `.protocolApplied.series`
   - put the `series` into `.protocolApplied.doseNumberString`
@@ -49,7 +48,6 @@
 
 - defined the specifics of the Contained Observation for the reaction
 - added `series` handling
-- added `contraindicated` handling
 
 ##### code inspection concerns
 
@@ -69,4 +67,9 @@ need to fix
 
 - identifier (OID+'.4.349', stationNumber + '.' + id)
 - add series -> protocolApplied.series
-- add contraindicated as additional reaction.detail.display
+
+#### change 2023-09-22 
+
+- do NOT populate primarySource (previously were setting this to false), 
+  - add extension on primarySource so that can indicate Data-Absent-Reason of unknown (given that us-core requires this be populated)
+- do not preserve contraindicated

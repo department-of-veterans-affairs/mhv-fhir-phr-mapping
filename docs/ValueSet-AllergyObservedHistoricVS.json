@@ -1,0 +1,62 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "AllergyObservedHistoricVS",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\">Placeholder</div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 1,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  }],
+  "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/AllergyObservedHistoricVS",
+  "version" : "0.2.4",
+  "name" : "AllergyObservedHistoricVS",
+  "title" : "Allergy Observed vs Historic ValueSet",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-09-22T11:03:56-05:00",
+  "publisher" : "VA Digital Services",
+  "contact" : [{
+    "name" : "VA Digital Services",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://va.gov"
+    }]
+  },
+  {
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "John.Moehrke@va.gov"
+    }]
+  }],
+  "description" : "The codes for Allergy Observed vs Historic",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS"
+    }]
+  }
+}

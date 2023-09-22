@@ -1,4 +1,25 @@
 "Profile","Id","Path","Slice Name","Alias(s)","Label","Min","Max","Must Support?","Is Modifier?","Is Summary?","Type(s)","Short","Definition","Comments","Requirements","Default Value","Meaning When Missing","Fixed Value","Pattern","Example","Minimum Value","Maximum Value","Maximum Length","Binding Strength","Binding Description","Binding Value Set","Code","Slicing Discriminator","Slicing Description","Slicing Ordered","Slicing Rules","Base Path","Base Min","Base Max","Condition(s)","Constraint(s)"
+"allergyObservedHistoric","Extension","Extension","","","",0,*,"","","","null {[]} {[]}
+","Allergy Observed vs Historic","Maps to Vista 120.8 (Allergy) - (6) OBSERVED/HISTORICAL
+'o' FOR OBSERVED;
+'h' FOR HISTORICAL;
+LAST EDITED:  DEC 07, 1990
+DESCRIPTION:  
+Indicates whether this allergy/adverse reaction has been observed by some personnel, or if it is historical data gathered about the patient.
+RECORD INDEXES:  AHDR (#482)","","","","","","","","","",,,,,"",,,,"Extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"allergyObservedHistoric","Extension.id","Extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"allergyObservedHistoric","Extension.extension","Extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"allergyObservedHistoric","Extension.url","Extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"allergyObservedHistoric","Extension.value[x]","Extension.value[x]","","","",1,1,"","","","code {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/R4/extensibility.html) for a list).","","","","","","","","","",,"preferred","","https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/AllergyObservedHistoricVS","",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
 "VA.MHV.PHR.allergyIntolerance","AllergyIntolerance","AllergyIntolerance","","Allergy
 IntoleranceAdverse Reaction","",0,*,"","","","null {[]} {[]}
 ","Allergy or Intolerance (generally: Risk of adverse reaction to a substance)","\-","\-","","","","","","","","",,,,,"",,,,"AllergyIntolerance",0,*,"","ait-1:AllergyIntolerance.clinicalStatus SHALL be present if verificationStatus is not entered-in-error. {verificationStatus.coding.where(system = 'http://terminology.hl7.org/CodeSystem/allergyintolerance-verification' and code = 'entered-in-error').exists() or clinicalStatus.exists()}
@@ -21,9 +42,19 @@ htmlxhtmldisplay","",0,1,"","","","Narrative {[]} {[]}
 "VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.contained","AllergyIntolerance.contained","","inline resources
 anonymous resourcescontained resources","",0,*,"","","","Resource {[]} {[]}
 ","Contained, inline Resources","These resources do not have an independent existence apart from the resource that contains them - they cannot be identified independently, and nor can they have their own independent transaction scope.","This should never be done when the content can be identified properly, as once identification is lost, it is extremely difficult (and context dependent) to restore it again. Contained resources may have profiles and tags In their meta elements, but SHALL NOT have security labels.","","","","","","","","",,,,,"",,,,"DomainResource.contained",0,*,"",""
-"VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.extension","AllergyIntolerance.extension","","extensions
-user content","",0,*,"","","","Extension {[]} {[]}
-","Additional content defined by implementations","May be used to represent additional information that is not part of the basic definition of the resource. To make the use of extensions safe and manageable, there is a strict set of governance  applied to the definition and use of extensions. Though any implementer can define an extension, there is a set of requirements that SHALL be met as part of the definition of the extension.","There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.extension","AllergyIntolerance.extension","","","",0,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","DomainResource.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.extension:observedHistoric","AllergyIntolerance.extension","observedHistoric","","",0,1,"Y","","","Extension {[CanonicalType[https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric]]} {[]}
+","Allergy Observed vs Historic","Maps to Vista 120.8 (Allergy) - (6) OBSERVED/HISTORICAL
+'o' FOR OBSERVED;
+'h' FOR HISTORICAL;
+LAST EDITED:  DEC 07, 1990
+DESCRIPTION:  
+Indicates whether this allergy/adverse reaction has been observed by some personnel, or if it is historical data gathered about the patient.
+RECORD INDEXES:  AHDR (#482)","","","","","","","","","",,,,,"",,,,"DomainResource.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
 "VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.modifierExtension","AllergyIntolerance.modifierExtension","","extensions
 user content","",0,*,"","Y","","Extension {[]} {[]}
@@ -93,16 +124,11 @@ TOid-startswithoid:ID system must start with urn:oid:2.16.840.1.113883.4.349.4. 
 "
 "VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.clinicalStatus","AllergyIntolerance.clinicalStatus","","","",0,1,"Y","Y","Y","CodeableConcept {[]} {[]}
 ","active | inactive | resolved","The clinical status of the allergy or intolerance.","Refer to [discussion](http://hl7.org/fhir/R4/extensibility.html#Special-Case) if clincalStatus is missing data.
-The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","<valueCodeableConcept xmlns=""http://hl7.org/fhir"">
-  <coding>
-    <system value=""http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical""/>
-    <code value=""active""/>
-  </coding>
-</valueCodeableConcept>","","","",,"required","","http://hl7.org/fhir/ValueSet/allergyintolerance-clinical","",,,,"AllergyIntolerance.clinicalStatus",0,1,"ait-1
+The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/allergyintolerance-clinical","",,,,"AllergyIntolerance.clinicalStatus",0,1,"ait-1
 ait-2","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.verificationStatus","AllergyIntolerance.verificationStatus","","","",1,1,"Y","Y","Y","CodeableConcept {[]} {[]}
-","unconfirmed | confirmed | refuted | entered-in-error","Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).","The data type is CodeableConcept because verificationStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/allergyintolerance-verification","",,,,"AllergyIntolerance.verificationStatus",0,1,"ait-1
+"VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.verificationStatus","AllergyIntolerance.verificationStatus","","","",0,1,"Y","Y","Y","CodeableConcept {[]} {[]}
+","May indicate entered-in-error","Assertion about certainty associated with the propensity, or potential risk, of a reaction to the identified substance (including pharmaceutical product).","The data type is CodeableConcept because verificationStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.","","","","","","","","",,"required","","http://hl7.org/fhir/ValueSet/allergyintolerance-verification","",,,,"AllergyIntolerance.verificationStatus",0,1,"ait-1
 ait-2","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.type","AllergyIntolerance.type","","Category
@@ -145,10 +171,10 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 Age {[]} {[]}Period {[]} {[]}Range {[]} {[]}string {[]} {[]}","When allergy or intolerance was identified","Estimated or actual date,  date-time, or age when allergy or intolerance was identified.","","","","","","","","","",,,,,"","type:$this}
 ","",,"open","AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.onset[x]:onsetDateTime","AllergyIntolerance.onset[x]","onsetDateTime","","",0,1,"Y","","","dateTime {[]} {[]}
+"VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.onset[x]:onsetDateTime","AllergyIntolerance.onset[x]","onsetDateTime","","",0,0,"","","","dateTime {[]} {[]}
 ","When allergy or intolerance was identified","Estimated or actual date,  date-time, or age when allergy or intolerance was identified.","","","","","","","","","",,,,,"",,,,"AllergyIntolerance.onset[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.recordedDate","AllergyIntolerance.recordedDate","","","",0,0,"","","","dateTime {[]} {[]}
+"VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.recordedDate","AllergyIntolerance.recordedDate","","","",0,1,"Y","","","dateTime {[]} {[]}
 ","Date first version of the resource instance was recorded","The recordedDate represents when this particular AllergyIntolerance record was created in the system, which is often a system-generated date.","","","","","","","","","",,,,,"",,,,"AllergyIntolerance.recordedDate",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "VA.MHV.PHR.allergyIntolerance","AllergyIntolerance.recorder","AllergyIntolerance.recorder","","Author
@@ -2345,8 +2371,31 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","When the immunization was first captured in the subject's record","The date the occurrence of the immunization was first captured in the record - potentially significantly after the occurrence of the event.","","","","","","","","","",,,,,"",,,,"Immunization.recorded",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "VA.MHV.PHR.immunization","Immunization.primarySource","Immunization.primarySource","","","",1,1,"Y","","Y","boolean {[]} {[]}
-","Indicates context the data was recorded in","An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.","Reflects the “reliability” of the content.","","","","","<valueBoolean xmlns=""http://hl7.org/fhir"" value=""false""/>","","","",,,,,"",,,,"Immunization.primarySource",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+","Indicates context the data was recorded in","An indication that the content of the record is based on information from the person who administered the vaccine. This reflects the context under which the data was originally recorded.","Reflects the “reliability” of the content.","","","","","","","","",,,,,"",,,,"Immunization.primarySource",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
+"VA.MHV.PHR.immunization","Immunization.primarySource.id","Immunization.primarySource.id","","","",0,1,"","","","string {[]} {[]}
+","xml:id (or equivalent in JSON)","unique id for the element within a resource (for internal references)","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"VA.MHV.PHR.immunization","Immunization.primarySource.extension","Immunization.primarySource.extension","","","",1,*,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"VA.MHV.PHR.immunization","Immunization.primarySource.extension:dar","Immunization.primarySource.extension","dar","","",1,1,"","","","Extension {[CanonicalType[http://hl7.org/fhir/StructureDefinition/data-absent-reason]]} {[]}
+","unknown | asked | temp | notasked | masked | unsupported | astext | error","Provides a reason why the expected value or elements in the element that is extended are missing.","","","","","","","","","",,,,,"",,,,"Element.extension",0,*,"ele-1
+","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"VA.MHV.PHR.immunization","Immunization.primarySource.extension:dar.id","Immunization.primarySource.extension.id","","","",0,1,"","","","string {[]} {[]}
+","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"",""
+"VA.MHV.PHR.immunization","Immunization.primarySource.extension:dar.extension","Immunization.primarySource.extension.extension","","","",0,0,"","","","Extension {[]} {[]}
+","Extension","An Extension","","","","","","","","","",,,,,"","value:url}
+","Extensions are always sliced by (at least) url",,"open","Element.extension",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}"
+"VA.MHV.PHR.immunization","Immunization.primarySource.extension:dar.url","Immunization.primarySource.extension.url","","","",1,1,"","","","uri {[]} {[]}
+","identifies the meaning of the extension","Source of the definition for the extension code - a logical name or a URL.","The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension.","","","","<valueUri xmlns=""http://hl7.org/fhir"" value=""http://hl7.org/fhir/StructureDefinition/data-absent-reason""/>","","","","",,,,,"",,,,"Extension.url",1,1,"",""
+"VA.MHV.PHR.immunization","Immunization.primarySource.extension:dar.value[x]","Immunization.primarySource.extension.value[x]","","","",1,1,"","","","code {[]} {[]}
+","Value of extension","Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list).","","","","","","<valueCode xmlns=""http://hl7.org/fhir"" value=""unknown""/>","","","",,"required","Used to specify why the normally expected content of the data element is missing.","http://hl7.org/fhir/ValueSet/data-absent-reason|4.0.1","",,,,"Extension.value[x]",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"
+"VA.MHV.PHR.immunization","Immunization.primarySource.value","Immunization.primarySource.value","","","",0,1,"","","","boolean {[]} {[]}
+","Primitive value for boolean","The actual value","","","","","","","","","",,,,,"",,,,"boolean.value",0,1,"",""
 "VA.MHV.PHR.immunization","Immunization.reportOrigin","Immunization.reportOrigin","","","",0,0,"","","","CodeableConcept {[]} {[]}
 ","Indicates the source of a secondarily reported record","The source of the data when the report of the immunization event is not based on information from the person who administered the vaccine.","Should not be populated if primarySource = True, not required even if primarySource = False.","","","","","","","","",,"example","The source of the data for a record which is not from a primary source.","http://hl7.org/fhir/ValueSet/immunization-origin","",,,,"Immunization.reportOrigin",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
@@ -2517,8 +2566,8 @@ Applications converting a logical reference to a literal reference may choose to
 
 Reference is intended to point to a structure that can potentially be expressed as a FHIR resource, though there is no need for it to exist as an actual FHIR resource instance - except in as much as an application wishes to actual find the target of the reference. The content referred to be the identifier must meet the logical constraints implied by any limitations on what resource types are permitted for the reference.  For example, it would not be legitimate to send the identifier for a drug prescription if the type were Reference(Observation|DiagnosticReport).  One of the use-cases for Reference.identifier is the situation where no FHIR representation exists (where the type is Reference (Any).","","","","","","","","",,,,,"",,,,"Reference.identifier",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
-"VA.MHV.PHR.immunization","Immunization.reaction.detail.display","Immunization.reaction.detail.display","","","",0,1,"Y","","Y","string {[]} {[]}
-","may be `YES (DO NOT REPEAT THIS VACCINE)`","Plain text narrative that identifies the resource in addition to the resource reference.","This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.","","","","","","","","",,,,,"",,,,"Reference.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
+"VA.MHV.PHR.immunization","Immunization.reaction.detail.display","Immunization.reaction.detail.display","","","",0,0,"","","Y","string {[]} {[]}
+","Text alternative for the resource","Plain text narrative that identifies the resource in addition to the resource reference.","This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.","","","","","","","","",,,,,"",,,,"Reference.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 "
 "VA.MHV.PHR.immunization","Immunization.reaction.reported","Immunization.reaction.reported","","","",0,0,"","","","boolean {[]} {[]}
 ","Indicates self-reported reaction","Self-reported indicator.","","","","","","","","","",,,,,"",,,,"Immunization.reaction.reported",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}

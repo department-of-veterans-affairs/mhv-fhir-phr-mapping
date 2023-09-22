@@ -184,6 +184,8 @@ Before Production use there must be a permanent solution. The solution needs add
 1. Use Lighthouse FHIR, and use a hack for short-term data. Where we only add vitals seen in VIA in the last 24 hours (or some timeframe).
 1. Use HDR
 1. Use CDW somehow
+2. new event service? slack #ves-event-bus
+3. track updates, and notice when a VIA update does not include a record we previously had. This would be very expensive and memory intensive. Thus might be something we do only occationally at low compute time.
 
 ### References
 

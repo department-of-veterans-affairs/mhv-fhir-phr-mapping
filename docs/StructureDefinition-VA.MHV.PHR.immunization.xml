@@ -20,11 +20,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
-  <version value="0.2.3"/>
+  <version value="0.2.4"/>
   <name value="MHVimmunization"/>
   <title value="VA MHV PHR Immunization"/>
   <status value="active"/>
-  <date value="2023-08-31T15:33:32-05:00"/>
+  <date value="2023-09-22T11:03:56-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -32,16 +32,12 @@
       <system value="url"/>
       <value value="http://va.gov"/>
     </telecom>
-    <telecom>
-      <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
-    </telecom>
   </contact>
   <contact>
     <name value="John Moehrke (himself)"/>
     <telecom>
       <system value="email"/>
-      <value value="JohnMoehrke@gmail.com"/>
+      <value value="John.Moehrke@va.gov"/>
     </telecom>
   </contact>
   <description value="A profile on the Immunization that declares how MHV will expose PHR immunization."/>
@@ -1709,7 +1705,6 @@
       <type>
         <code value="boolean"/>
       </type>
-      <patternBoolean value="false"/>
       <constraint>
         <key value="ele-1"/>
         <severity value="error"/>
@@ -1743,12 +1738,267 @@
       </mapping>
       <mapping>
         <identity value="Immunization-Mapping"/>
-        <map value="`false`"/>
+        <map value="Data Absent Reason - unknown"/>
       </mapping>
+    </element>
+    <element id="Immunization.primarySource.id">
+      <path value="Immunization.primarySource.id"/>
+      <representation value="xmlAttr"/>
+      <short value="xml:id (or equivalent in JSON)"/>
+      <definition value="unique id for the element within a resource (for internal references)"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="Immunization.primarySource.extension">
+      <path value="Immunization.primarySource.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Extension"/>
+      <definition value="An Extension"/>
+      <min value="1"/>
+      <max value="*"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="Immunization.primarySource.extension:dar">
+      <path value="Immunization.primarySource.extension"/>
+      <sliceName value="dar"/>
+      <short value="unknown | asked | temp | notasked | masked | unsupported | astext | error"/>
+      <definition value="Provides a reason why the expected value or elements in the element that is extended are missing."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
+      </type>
+      <condition value="ele-1"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), 'value')])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
       <mapping>
-        <identity value="Immunization-Old-Mapping"/>
-        <map value="`false`"/>
+        <identity value="rim"/>
+        <map value="ANY.nullFlavor"/>
       </mapping>
+    </element>
+    <element id="Immunization.primarySource.extension:dar.id">
+      <path value="Immunization.primarySource.extension.id"/>
+      <representation value="xmlAttr"/>
+      <short value="Unique id for inter-element referencing"/>
+      <definition value="Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces."/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="Element.id"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="string"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="n/a"/>
+      </mapping>
+    </element>
+    <element id="Immunization.primarySource.extension:dar.extension">
+      <path value="Immunization.primarySource.extension.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <description value="Extensions are always sliced by (at least) url"/>
+        <rules value="open"/>
+      </slicing>
+      <short value="Extension"/>
+      <definition value="An Extension"/>
+      <min value="0"/>
+      <max value="0"/>
+      <base>
+        <path value="Element.extension"/>
+        <min value="0"/>
+        <max value="*"/>
+      </base>
+      <type>
+        <code value="Extension"/>
+      </type>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <constraint>
+        <key value="ext-1"/>
+        <severity value="error"/>
+        <human value="Must have either extensions or value[x], not both"/>
+        <expression value="extension.exists() != value.exists()"/>
+        <xpath value="exists(f:extension)!=exists(f:*[starts-with(local-name(.), &quot;value&quot;)])"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Extension"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+    </element>
+    <element id="Immunization.primarySource.extension:dar.url">
+      <path value="Immunization.primarySource.extension.url"/>
+      <representation value="xmlAttr"/>
+      <short value="identifies the meaning of the extension"/>
+      <definition value="Source of the definition for the extension code - a logical name or a URL."/>
+      <comment value="The definition may point directly to a computable or human-readable definition of the extensibility codes, or it may be a logical URI as declared in some other specification. The definition SHALL be a URI for the Structure Definition defining the extension."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="Extension.url"/>
+        <min value="1"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="uri"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.String"/>
+      </type>
+      <fixedUri value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="Immunization.primarySource.extension:dar.value[x]">
+      <path value="Immunization.primarySource.extension.value[x]"/>
+      <short value="Value of extension"/>
+      <definition value="Value of extension - must be one of a constrained set of the data types (see [Extensibility](http://hl7.org/fhir/extensibility.html) for a list)."/>
+      <min value="1"/>
+      <max value="1"/>
+      <base>
+        <path value="Extension.value[x]"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <code value="code"/>
+      </type>
+      <patternCode value="unknown"/>
+      <constraint>
+        <key value="ele-1"/>
+        <severity value="error"/>
+        <human value="All FHIR elements must have a @value or children"/>
+        <expression value="hasValue() or (children().count() &gt; id.count())"/>
+        <xpath value="@value|f:*|h:div"/>
+        <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
+      </constraint>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="DataAbsentReason"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
+          <valueBoolean value="true"/>
+        </extension>
+        <strength value="required"/>
+        <description value="Used to specify why the normally expected content of the data element is missing."/>
+        <valueSet value="http://hl7.org/fhir/ValueSet/data-absent-reason|4.0.1"/>
+      </binding>
+      <mapping>
+        <identity value="rim"/>
+        <map value="N/A"/>
+      </mapping>
+    </element>
+    <element id="Immunization.primarySource.value">
+      <path value="Immunization.primarySource.value"/>
+      <representation value="xmlAttr"/>
+      <short value="Primitive value for boolean"/>
+      <definition value="The actual value"/>
+      <min value="0"/>
+      <max value="1"/>
+      <base>
+        <path value="boolean.value"/>
+        <min value="0"/>
+        <max value="1"/>
+      </base>
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type">
+          <valueUrl value="boolean"/>
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/regex">
+          <valueString value="true|false"/>
+        </extension>
+        <code value="http://hl7.org/fhirpath/System.Boolean"/>
+      </type>
+      <isModifier value="false"/>
+      <isSummary value="false"/>
     </element>
     <element id="Immunization.reportOrigin">
       <path value="Immunization.reportOrigin"/>
@@ -1842,7 +2092,6 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="GetLocation(ImmunizationTO.encounter.location)"/>
-        <comment value="9000010.11.1215 ORDERING LOCATION"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
@@ -3621,11 +3870,11 @@
         <valueBoolean value="true"/>
       </extension>
       <path value="Immunization.reaction.detail.display"/>
-      <short value="may be `YES (DO NOT REPEAT THIS VACCINE)`"/>
+      <short value="Text alternative for the resource"/>
       <definition value="Plain text narrative that identifies the resource in addition to the resource reference."/>
       <comment value="This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it."/>
       <min value="0"/>
-      <max value="1"/>
+      <max value="0"/>
       <base>
         <path value="Reference.display"/>
         <min value="0"/>
@@ -3642,17 +3891,11 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="true"/>
       <mapping>
         <identity value="rim"/>
         <map value="N/A"/>
-      </mapping>
-      <mapping>
-        <identity value="Immunization-Mapping"/>
-        <map value="if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`"/>
-        <comment value="9000010.11.07 CONTRAINDICATED"/>
       </mapping>
     </element>
     <element id="Immunization.reaction.reported">
@@ -4217,15 +4460,36 @@
     </element>
     <element id="Immunization.primarySource">
       <path value="Immunization.primarySource"/>
-      <patternBoolean value="false"/>
       <mapping>
         <identity value="Immunization-Mapping"/>
-        <map value="`false`"/>
+        <map value="Data Absent Reason - unknown"/>
       </mapping>
-      <mapping>
-        <identity value="Immunization-Old-Mapping"/>
-        <map value="`false`"/>
-      </mapping>
+    </element>
+    <element id="Immunization.primarySource.extension">
+      <path value="Immunization.primarySource.extension"/>
+      <slicing>
+        <discriminator>
+          <type value="value"/>
+          <path value="url"/>
+        </discriminator>
+        <ordered value="false"/>
+        <rules value="open"/>
+      </slicing>
+      <min value="1"/>
+    </element>
+    <element id="Immunization.primarySource.extension:dar">
+      <path value="Immunization.primarySource.extension"/>
+      <sliceName value="dar"/>
+      <min value="1"/>
+      <max value="1"/>
+      <type>
+        <code value="Extension"/>
+        <profile value="http://hl7.org/fhir/StructureDefinition/data-absent-reason"/>
+      </type>
+    </element>
+    <element id="Immunization.primarySource.extension:dar.value[x]">
+      <path value="Immunization.primarySource.extension.value[x]"/>
+      <patternCode value="unknown"/>
     </element>
     <element id="Immunization.reportOrigin">
       <path value="Immunization.reportOrigin"/>
@@ -4242,7 +4506,6 @@
       <mapping>
         <identity value="Immunization-Mapping"/>
         <map value="GetLocation(ImmunizationTO.encounter.location)"/>
-        <comment value="9000010.11.1215 ORDERING LOCATION"/>
       </mapping>
       <mapping>
         <identity value="Immunization-Old-Mapping"/>
@@ -4382,13 +4645,7 @@
     </element>
     <element id="Immunization.reaction.detail.display">
       <path value="Immunization.reaction.detail.display"/>
-      <short value="may be `YES (DO NOT REPEAT THIS VACCINE)`"/>
-      <mustSupport value="true"/>
-      <mapping>
-        <identity value="Immunization-Mapping"/>
-        <map value="if a ImmunizationTO.contraindicated=1 and no ImmunizationTo.reaction, then `YES (DO NOT REPEAT THIS VACCINE)`"/>
-        <comment value="9000010.11.07 CONTRAINDICATED"/>
-      </mapping>
+      <max value="0"/>
     </element>
     <element id="Immunization.reaction.reported">
       <path value="Immunization.reaction.reported"/>
