@@ -6,7 +6,7 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 ## Version History
 
-The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/packages)
+The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages)
 
 ### 0.2.5
 
@@ -20,7 +20,7 @@ The notes below for each release. Archive of [released packages](https://github.
 - Radiology Imaging Reports
   - made explicit examples from the imaging Bundle as full exposed examples (keeping bundle too)
   - researching CPT errors that may be simply caused by the Validator not knowing about deprecated codes
-- start [archiving previous package](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/packages) in a version folder starting with 0.2.4
+- start [archiving previous package](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages) in a version folder starting with 0.2.4
 - production validation or not:
   - asked [on hapi zulip chat](https://chat.fhir.org/#narrow/stream/179167-hapi/topic/validation.20performance.20impact)
 
