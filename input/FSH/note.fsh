@@ -5,6 +5,7 @@ Title:          "VA MHV PHR Notes"
 Description:    """
 A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.
 """
+* ^extension[$fmm].valueInteger = 1
 // Most criteria come from the MHV documentReference
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"

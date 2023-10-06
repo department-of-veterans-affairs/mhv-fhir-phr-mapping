@@ -40,7 +40,23 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 <meta>
                     <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
                 </meta>
-
+<!-- The following two extensions are used to enable the conversion to FSH resources - see mock-images.fsh -->
+<!--
+<extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
+    <valueString>
+        <xsl:attribute name="value">
+            <xsl:value-of select="concat('Radiology: ',id)" />
+        </xsl:attribute>
+    </valueString>
+</extension>
+<extension url="http://hl7.org/fhir/StructureDefinition/artifact-description">
+    <valueMarkdown>
+        <xsl:attribute name="value">
+            <xsl:value-of select="name" /> 
+        </xsl:attribute>
+    </valueMarkdown>
+</extension>
+-->
                 <identifier>
                     <use value="usual"/>
                     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>   <!-- TODO: should be derived from Vista site, using 989 -->

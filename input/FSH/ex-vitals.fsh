@@ -124,6 +124,3 @@ Description:      "Heart Rate holding typical values"
 * performer[=].display = "Location 2938"
 
 
-
-//////////////////////////////// the following is converted using FSH Online from the xslt translated mock data
-// then all the Vital-Signs are made into examples, and the Bundle is removed.

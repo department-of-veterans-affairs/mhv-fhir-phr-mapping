@@ -17,6 +17,7 @@ A profile on the Location resource for MHV PHR exposing Location using FHIR API.
 
 NOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-fhir-phr-hospitallocationto).
 """
+* ^extension[$fmm].valueInteger = 1
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -157,3 +158,64 @@ Usage: #inline
 * identifier[TOid].use = #usual
 * identifier[TOid].value = "HospitalLocationTO.2938"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+
+Instance: location-2901
+InstanceOf: MHVlocation
+Usage: #inline
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "HospitalLocationTO.2901"
+* name = "REHAB-SCI MD"
+
+Instance: location-1921
+InstanceOf: MHVlocation
+Usage: #inline
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "HospitalLocationTO.1921"
+* name = "PCT_G"
+
+
+
+Instance: location-2171
+InstanceOf: MHVlocation
+Usage: #inline
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "HospitalLocationTO.2171"
+* name = "ZZZHEMATOLOGY II"
+
+
+Instance: location-3318
+InstanceOf: MHVlocation
+Usage: #inline
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "HospitalLocationTO.3318"
+* name = "GI APPALANENI"
+
+
+Instance: location-1439
+InstanceOf: MHVlocation
+Usage: #inline
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "HospitalLocationTO.1439"
+* name = "ZZZPCT_G MANGAS P.(HYP)"
+
+
+Instance: location-1920
+InstanceOf: MHVlocation
+Usage: #inline
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "HospitalLocationTO.1920"
+* name = "PCT_O"
+
+Instance: location-1148
+InstanceOf: MHVlocation
+Usage: #inline
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "HospitalLocationTO.1148"
+* name = "SLEEP F/U 2"

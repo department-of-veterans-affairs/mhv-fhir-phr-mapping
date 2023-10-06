@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="e59516e9-9f8d-4277-8ba3-a0e4c3e14756"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="e59516e9-9f8d-4277-8ba3-a0e4c3e14756"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;e59516e9-9f8d-4277-8ba3-a0e4c3e14756&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.vitals.html">VA MHV PHR Vital-Signs</a></p></div><p><b>identifier</b>: id: VitalSignTO.2807288 (use: USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: HEIGHT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#8302-2 &quot;Body height&quot;)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-2.html">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>effective</b>: 2000-07-18 13:21:00+0000</p><p><b>performer</b>: <span>: Location 1439</span></p><p><b>value</b>: 71 [in_i]<span style="background: LightGoldenRodYellow"> (Details: UCUM code [in_i] = '[in_i]')</span></p><hr/><blockquote><p><b>Generated Narrative: Location #location-1439</b><a name="location-1439"> </a></p><p><b>identifier</b>: id: HospitalLocationTO.1439 (use: USUAL)</p><p><b>name</b>: ZZZPCT_G MANGAS P.(HYP)</p></blockquote></div>
+  </text>
+  <contained>
+    <Location>
+      <id value="location-1439"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="HospitalLocationTO.1439"/>
+      </identifier>
+      <name value="ZZZPCT_G MANGAS P.(HYP)"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="VitalSignTO.2807288"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="8302-2"/>
+      <display value="Body height"/>
+    </coding>
+    <text value="HEIGHT"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-2"/>
+  </subject>
+  <effectiveDateTime value="2000-07-18T13:21:00Z"/>
+  <performer>
+    <extension url="http://hl7.org/fhir/StructureDefinition/alternate-reference">
+      <valueReference>
+        <reference value="#location-1439"/>
+      </valueReference>
+    </extension>
+    <display value="Location 1439"/>
+  </performer>
+  <valueQuantity>
+    <value value="71"/>
+    <system value="http://unitsofmeasure.org"/>
+    <code value="[in_i]"/>
+  </valueQuantity>
+</Observation>

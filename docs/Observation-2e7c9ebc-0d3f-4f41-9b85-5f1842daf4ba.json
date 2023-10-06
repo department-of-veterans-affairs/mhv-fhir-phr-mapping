@@ -1,0 +1,62 @@
+{
+  "resourceType" : "Observation",
+  "id" : "2e7c9ebc-0d3f-4f41-9b85-5f1842daf4ba",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"2e7c9ebc-0d3f-4f41-9b85-5f1842daf4ba\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;2e7c9ebc-0d3f-4f41-9b85-5f1842daf4ba&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.vitals.html\">VA MHV PHR Vital-Signs</a></p></div><p><b>identifier</b>: id:\u00a0VitalSignTO.2866197\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: HEIGHT <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#8302-2 &quot;Body height&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-2.html\">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>effective</b>: 2000-09-11 13:29:00+0000</p><p><b>performer</b>: <span>: Location 3318</span></p><p><b>value</b>: 71 [in_i]<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code [in_i] = '[in_i]')</span></p><hr/><blockquote><p><b>Generated Narrative: Location #location-3318</b><a name=\"location-3318\"> </a></p><p><b>identifier</b>: id:\u00a0HospitalLocationTO.3318\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: GI APPALANENI</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Location",
+    "id" : "location-3318",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "HospitalLocationTO.3318"
+    }],
+    "name" : "GI APPALANENI"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "VitalSignTO.2866197"
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "vital-signs"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "8302-2",
+      "display" : "Body height"
+    }],
+    "text" : "HEIGHT"
+  },
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-2"
+  },
+  "effectiveDateTime" : "2000-09-11T13:29:00Z",
+  "performer" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/alternate-reference",
+      "valueReference" : {
+        "reference" : "#location-3318"
+      }
+    }],
+    "display" : "Location 3318"
+  }],
+  "valueQuantity" : {
+    "value" : 71,
+    "system" : "http://unitsofmeasure.org",
+    "code" : "[in_i]"
+  }
+}

@@ -10,6 +10,7 @@ Title:          "VA MHV PHR medication request"
 Description:    """
 A profile on the MedicationRequest resource for MHV PHR exposing current VA prescribed medications using FHIR API.
 """
+* ^extension[$fmm].valueInteger = 0
 
 
 
@@ -85,6 +86,7 @@ Title:          "VA MHV PHR medication dispense"
 Description:    """
 A profile on the MedicationDispense resource for MHV PHR exposing current medications dispense using FHIR API.
 """
+* ^extension[$fmm].valueInteger = 0
 
 
 
@@ -113,6 +115,7 @@ Title:          "VA MHV PHR medication dispense tracking"
 Description:    """
 A profile on the SupplyDelivery resource for MHV PHR exposing current medications dispense tracking using FHIR API.
 """
+* ^extension[$fmm].valueInteger = 0
 
 
 

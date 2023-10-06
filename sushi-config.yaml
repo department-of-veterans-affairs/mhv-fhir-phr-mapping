@@ -8,7 +8,7 @@ name: VAMHVFHIRPHR
 title: "MyHealtheVet PHR FHIR API"
 description: "MyHealtheVet exposing PHR using FHIR and Testing Plan."
 status: active
-version: 0.2.4
+version: 0.2.5
 fhirVersion: 4.0.1
 copyrightyear: '2022+'
 #date: 2022-04-14
@@ -55,7 +55,7 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/C
   apply-version: 'true'
   autoload-resources: 'true'
   path-output: docs
- # fmm-definition: other.html#maturity-levels
+  fmm-definition: maturity.html
   excludettl: 'true'
   special-url: 
     - http://va.gov/systems/99VA95.3
@@ -103,7 +103,9 @@ pages:
   downloads.md:
     title: Downloads
     generation: markdown
-
+  maturity.md:
+    title: Maturity Definitions
+    generation: markdown
 
 
 menu:

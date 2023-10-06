@@ -1,10 +1,28 @@
 Implementation Guide defining structureDefinition profiles, examples, and testing for how MyHealtheVet publishes the PHR using FHIR as an API.
 
-This is not part of the continuous build to keep visibility low. 
+This is not part of the continuous build to keep visibility low.
 
 The [latest build publication](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/) using Github 'pages'
 
 ## Version History
+
+The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/packages)
+
+### 0.2.5
+
+- maturity declared for each profile
+  - There is now a maturity definition, and each profile has a maturity number relative to that definition
+- Allergies
+  - when possible (especially Allergy) will populate the name of the Organization from the - MHV FACILITY_INFO table {FACILITY_INFO.NAME}
+  - add guidance on Allergy query to recommend searching for those entries not entered-in-error
+- Vital Signs
+  - made explicit examples from the vitals Bundle as full exposed examples (keeping bundle too)
+- Radiology Imaging Reports
+  - made explicit examples from the imaging Bundle as full exposed examples (keeping bundle too)
+  - researching CPT errors that may be simply caused by the Validator not knowing about deprecated codes
+- start [archiving previous package](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/packages) in a version folder starting with 0.2.4
+- production validation or not:
+  - asked [on hapi zulip chat](https://chat.fhir.org/#narrow/stream/179167-hapi/topic/validation.20performance.20impact)
 
 ### 0.2.4
 

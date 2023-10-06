@@ -7,7 +7,7 @@ Title:          "VA MHV PHR Vital-Signs"
 Description:    """
 A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.
 """
-// TODO this timestamp solution is not sustainable
+* ^extension[$fmm].valueInteger = 3
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -64,7 +64,7 @@ Title: "VIA to mhv-fhir-phr"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "contained VitalSignTO.recorder" ".06 ENTERED BY"
 * performer -> "contained VitalSignTO.observer" ""
-* performer.extension[site] -> "Organization(VitalSignTO.location)" ".05 HOSPITAL LOCATION"
+* performer.extension[site] -> "Location(VitalSignTO.location)" ".05 HOSPITAL LOCATION"
 * note.text -> "VitalSignTO.comments" ""
 
 Mapping: Vitals-Old-Mapping
@@ -109,7 +109,7 @@ Title: "VIA to mhv-fhir-phr"
 * value[x] -> "VitalSignTO.value1 and VitalSignTO.units"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "VitalSignTO.recorder and VitalSignTO.observer"
-* performer.extension[site] -> "Organization(VitalSignTO.location)"
+* performer.extension[site] -> "Location(VitalSignTO.location)"
 * note.text -> "VitalSignTO.comments"
 
 
@@ -255,18 +255,12 @@ Usage: #definition
 * title = "Vital Sign ObservationTypeTO.name to Loinc Code"
 * experimental = false
 * status = #active
-* date = 2023-08-25
+* date = 2023-10-05
 * publisher = "VA KBS"
 * description = "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code."
 * purpose = "To be able to use proper LOINC code in the FHIR Observation"
 * group.source = VUID
 * group.target = LOINC
-* group.element[+].code = #unknown
-* group.element[=].display = "ABDMONAL GIRTH"
-* group.element[=].target.equivalence = #equivalent
-* group.element[=].target.code = #LP31969-6
-* group.element[=].target.display = "Abdominal circumference"
-* group.element[=].target.comment = "seems like possible match"
 * group.element[+].code = #4688718 
 * group.element[=].display = "AUDIOMETRY"
 * group.element[=].target.equivalence = #equal
@@ -302,12 +296,6 @@ Usage: #definition
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #11881-0
 * group.element[=].target.display = "Uterus Fundal height Tape measure"
-* group.element[+].code = #unknown
-* group.element[=].display = "HEAD CIRCUMFERENCE"
-* group.element[=].target.equivalence = #equivalent
-* group.element[=].target.code = #9843-4
-* group.element[=].target.display = "Head Occipital-frontal circumference"
-* group.element[=].target.comment = "seems like possible match"
 * group.element[+].code = #4688723
 * group.element[=].display = "HEARING"
 * group.element[=].target.equivalence = #equal
@@ -359,3 +347,21 @@ Usage: #definition
 * group.element[=].target.code = #29463-7
 * group.element[=].target.display = "Body weight"
 
+/*
+
+KBS action: Removed these from the map as they are not found in the vista data, and there is no good loinc map
+
+* group.element[+].code = #unknown
+* group.element[=].display = "ABDMONAL GIRTH"
+* group.element[=].target.equivalence = #equivalent
+* group.element[=].target.code = #LP31969-6
+* group.element[=].target.display = "Abdominal circumference"
+* group.element[=].target.comment = "seems like possible match, no data in vista"
+* group.element[+].code = #unknown
+* group.element[=].display = "HEAD CIRCUMFERENCE"
+* group.element[=].target.equivalence = #equivalent
+* group.element[=].target.code = #9843-4
+* group.element[=].target.display = "Head Occipital-frontal circumference"
+* group.element[=].target.comment = "seems like possible match, no data in vista"
+
+*/

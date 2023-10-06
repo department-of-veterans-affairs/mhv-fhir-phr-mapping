@@ -58,4 +58,3 @@ InstanceOf: MHVimmunizationReaction
 Usage: #inline
 * status = #final
 * code.text = "FEVER"
-* valueCodeableConcept = SCT#410515003

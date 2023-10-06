@@ -6,6 +6,7 @@ Description:    """
 A profile on the DocumentReference resource for MHV PHR exposing ECG/EKG (ClinicalProcedureTO) using FHIR API.
 """
 // Most criteria come from the MHV documentReference
+* ^extension[$fmm].valueInteger = 1
 * category 2..
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"

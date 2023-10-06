@@ -10,6 +10,7 @@ Description: """
 This defines the use for Chem-Hem and 
 `DiagnosticReport`, with contained `Observation` and `Specimen` as needed.
 """
+* ^extension[$fmm].valueInteger = 1
 * identifier 1..
 * subject 1..1
 * code 1..1 MS

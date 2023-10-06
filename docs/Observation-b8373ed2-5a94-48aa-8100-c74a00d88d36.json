@@ -1,0 +1,62 @@
+{
+  "resourceType" : "Observation",
+  "id" : "b8373ed2-5a94-48aa-8100-c74a00d88d36",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"b8373ed2-5a94-48aa-8100-c74a00d88d36\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;b8373ed2-5a94-48aa-8100-c74a00d88d36&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.vitals.html\">VA MHV PHR Vital-Signs</a></p></div><p><b>identifier</b>: id:\u00a0VitalSignTO.4218364\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: RESPIRATION <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#9279-1 &quot;Respiratory Rate&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-2.html\">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>effective</b>: 2002-09-23 10:01:00+0000</p><p><b>performer</b>: <span>: Location 2938</span></p><p><b>value</b>: 16 /min<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code /min = '/min')</span></p><hr/><blockquote><p><b>Generated Narrative: Location #ex-MHV-location-2938</b><a name=\"ex-MHV-location-2938\"> </a></p><p><b>identifier</b>: id:\u00a0HospitalLocationTO.2938\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PCT_O PATIL (F/U)</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Location",
+    "id" : "ex-MHV-location-2938",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "HospitalLocationTO.2938"
+    }],
+    "name" : "PCT_O PATIL (F/U)"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "VitalSignTO.4218364"
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+      "code" : "vital-signs"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "9279-1",
+      "display" : "Respiratory Rate"
+    }],
+    "text" : "RESPIRATION"
+  },
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-2"
+  },
+  "effectiveDateTime" : "2002-09-23T10:01:00Z",
+  "performer" : [{
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/StructureDefinition/alternate-reference",
+      "valueReference" : {
+        "reference" : "#ex-MHV-location-2938"
+      }
+    }],
+    "display" : "Location 2938"
+  }],
+  "valueQuantity" : {
+    "value" : 16,
+    "system" : "http://unitsofmeasure.org",
+    "code" : "/min"
+  }
+}

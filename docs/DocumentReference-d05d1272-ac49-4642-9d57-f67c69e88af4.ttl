@@ -1,0 +1,101 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/d05d1272-ac49-4642-9d57-f67c69e88af4> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "d05d1272-ac49-4642-9d57-f67c69e88af4"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"d05d1272-ac49-4642-9d57-f67c69e88af4\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;d05d1272-ac49-4642-9d57-f67c69e88af4&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.imaging.html\">VA MHV PHR Radiology</a></p></div><p><b>identifier</b>: id: ImagingExamTO.6989573.8892-2 (use: USUAL), Accession ID: Accession..042601-1519 (use: OFFICIAL), id: CaseNum.1519 (use: SECONDARY)</p><p><b>status</b>: current</p><p><b>type</b>: PROVISION OF DIAGNOSTIC RADIOPHARMACEUTICAL(S) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#18748-4; <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html\">Current Procedural Terminology (CPT®)</a>#78990)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Apr 26, 2001, 6:07:00 AM</p><p><b>author</b>: </p><ul><li><span>: KATZ,NEIL</span></li><li><span>: DAYT29 TEST LAB</span></li></ul><p><b>custodian</b>: <span>: NUCLEAR MEDICINE</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 2194 bytes)</td><td>#PROVISION OF DIAGNOSTIC RADIONUCLIDES</td><td>2001-04-26 11:07:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Encounter</b></td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><span>id: 3278625</span></td><td><span>: MYOCARDIAL PERFUSION, PHARMACOLOGICAL STRESS P/D</span></td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ImagingExamTO.6989573.8892-2" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ACSN" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Accession..042601-1519" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "CaseNum.1519" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:18748-4 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "18748-4" ]
+     ] [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "78990" ] ;
+       fhir:display [ fhir:v "PROVISION OF DIAGNOSTIC RADIOPHARMACEUTICAL(S)" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:date [ fhir:v "2001-04-26T11:07:00Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:display [ fhir:v "KATZ,NEIL" ]
+  ] [
+     fhir:identifier [
+       fhir:value [ fhir:v "989" ]
+     ] ;
+     fhir:display [ fhir:v "DAYT29 TEST LAB" ]
+  ] ) ; # 
+  fhir:custodian [
+     fhir:identifier [
+       fhir:value [ fhir:v "273" ]
+     ] ;
+     fhir:display [ fhir:v "NUCLEAR MEDICINE" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "I1BST1ZJU0lPTiBPRiBESUFHTk9TVElDIFJBRElPTlVDTElERVMKICAgClByb2MgT3JkOiBNWU9DQVJESUFMIFBFUkZVU0lPTiwgUEhBUk1BQ09MT0dJQ0FMIFNUUkVTUyBQL0QKRXhtIERhdGU6IEFQUiAyNiwgMjAwMUAxMTowNwpSZXEgUGh5czogUEFUSUwsU0FSQVNXQVRJICAgICAgICAgICAgICAgIFBhdCBMb2M6IFBDVF9PIFBBVElMIChGL1UpIChSZXEnZyBMb2MpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgSW1nIExvYzogTlVDTEVBUiBNRURJQ0lORQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNlcnZpY2U6IFVua25vd24KCiAKCihDYXNlIDE1MTYgQ09NUExFVEUpIE1ZT0NBUkRJQUwgUEVSRlVTSU9OIChTUEVDVCksIEVYLyhOTSAgIERldGFpbGVkKSBDUFQ6Nzg0NjUKCihDYXNlIDE1MTkgQ09NUExFVEUpICNQUk9WSVNJT04gT0YgRElBR05PU1RJQyBSQURJT05VQyhOTSAgIERldGFpbGVkKSBDUFQ6Nzg5OTAKCihDYXNlIDE1MjAgQ09NUExFVEUpIE1ZT0NBUkRJQUwgUEVSRlVTSU9OIFNUVURZIFdJVEggRShOTSAgIERldGFpbGVkKSBDUFQ6Nzg0ODAKCiggICAgICAgNHggICAgICAgICApIEoxMjQ1IERJUFlSSURBTU9MRSBJTkpFQ1RJT04gICAgIChOTSAgIERldGFpbGVkKSBDUFQ6SjEyNDUKCiggICAgICAgM3ggICAgICAgICApIEE5NTA1IFRIQUxMT1VTIENITE9SSURFIFRMIDIwMS9NQyhOTSAgIERldGFpbGVkKSBDUFQ6QTk1MDUKCihDYXNlIDE1MzYgQ09NUExFVEUpIE1ZT0NBUkRJQUwgUEVSRlVTSU9OIFNUVURZIFdJVEggVyhOTSAgIERldGFpbGVkKSBDUFQ6Nzg0NzgKCihDYXNlIDE1NDQgQ09NUExFVEUpIENBUkRJT1ZBU0NVTEFSIFNUUkVTUyBURVNUIChURUNIKShOTSAgIERldGFpbGVkKSBDUFQ6OTMwMTUKCiAgICBDbGluaWNhbCBIaXN0b3J5OgogICAgICBQVCBDL08gQy5QIE9OICYgT0ZGLE9MRCBNSSwgRkFNSUxZIEgvTyBIRUFSVCBBVFRBQ0suICBSL08gQ0FEIAoKICAgIFJlcG9ydCBTdGF0dXM6IFZlcmlmaWVkICAgICAgICAgICAgICAgICAgIERhdGUgUmVwb3J0ZWQ6IEFQUiAyNiwgMjAwMQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRGF0ZSBWZXJpZmllZDogQVBSIDI3LCAyMDAxCiAgICBWZXJpZmllciBFLVNpZzovRVMvTkVJTCBLQVRaLCBNRAoKICAgIFJlcG9ydDoKICAgICAgUkVQT1JUOiAgNC8yNi8wMSAgQU5UUkFTLCBKLiAjNjI2NyAgNDEuNCBtZyBEaXB5cmlkYW1vbGUgSVYKICAgICAgaW5qZWN0ZWQgaW4gcmlnaHQgYXJtIGF0IDA5NTgtMTAwMiBob3VycyBieSBEci4gS2F0ei4gIDMuMTYgbUNpCiAgICAgIFRsLjIwMSBDaGxvcmlkZSBpbmplY3RlZCBJViBpbiByaWdodCBhcm0gYXQgMTAwNSBob3VycyBieSBBLgogICAgICBCZW5kZXIuICAKICAgICAgIAogICAgICAgCiAgICAgIElOVFJBVkVOT1VTIERJUFlSSURBTU9MRSBTVFJFU1MgVEhBTExJVU0gTVlPQ0FSRElBTCBTQ0FOLVNQRUNUOiAKICAgICAgIAogICAgICBUaGUgZGlweXJpZGFtb2xlIHN0cmVzcyB0ZXN0IHdhcyBwZXJmb3JtZWQgaW4gdGhlIE5NUy4gCiAgICAgICAKICAgICAgQm90aCBzdHJlc3MgYW5kIHJlc3QgaW1hZ2VzIHJldmVhbCBtaWxkIGRlY3JlYXNlZCBhY3Rpdml0eSBpbiB0aGUKICAgICAgaW5mZXJpb3Igd2FsbC4gIEhvd2V2ZXIsIGdhdGVkIGltYWdlcyByZXZlYWwgbm9ybWFsIHdhbGwgbW90aW9uCiAgICAgIGluIHRoaXMgYXJlYS4gIAogICAgICAgCiAgICAgIFRoZXJlIGlzIGEgcG9zdC1EaXB5cmlkYW1vbGUgdGhhbGxpdW0gbGVmdCB2ZW50cmljdWxhciBlamVjdGlvbgogICAgICBmcmFjdGlvbiBvZiA3MyUuICAgICAgCgogICAgSW1wcmVzc2lvbjoKICAgICAgTm8gZXZpZGVuY2UgZm9yIHJldmVyc2libGUgaXNjaGVtaWEuICBUaGUgbWlsZCBwZXJzaXN0ZW50CiAgICAgIGRlY3JlYXNlZCBhY3Rpdml0eSBpbiB0aGUgaW5mZXJpb3Igd2FsbCBtYXkgYmUgc2Vjb25kYXJ5IHRvIHNvZnQKICAgICAgdGlzc3VlIGF0dGVudWF0aW9uLCBlc3BlY2lhbGx5IHNpbmNlIHRoZSB3YWxsIG1vdGlvbiBpcyBub3JtYWwgaW4KICAgICAgdGhpcyBhcmVhLiAgCgogICAgUHJpbWFyeSBEaWFnbm9zdGljIENvZGU6IAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgTkVJTCBLQVRaLCBDSElFRiwgTk1TIChWZXJpZmllcikKL01BQw=="^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "#PROVISION OF DIAGNOSTIC RADIONUCLIDES" ] ;
+       fhir:creation [ fhir:v "2001-04-26T11:07:00Z"^^xsd:dateTime ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:encounter ( [
+       fhir:identifier [
+         fhir:value [ fhir:v "3278625" ]
+       ]
+     ] ) ;
+     fhir:related ( [
+       fhir:identifier [
+         fhir:value [ fhir:v "7379950" ]
+       ] ;
+       fhir:display [ fhir:v "MYOCARDIAL PERFUSION, PHARMACOLOGICAL STRESS P/D" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

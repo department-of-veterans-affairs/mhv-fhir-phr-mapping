@@ -5,6 +5,7 @@ Title:          "VA MHV PHR Radiology"
 Description:    """
 A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.
 """
+* ^extension[$fmm].valueInteger = 1
 // Most criteria come from the MHV documentReference
 * type.coding 1..2
 * type.coding ^slicing.discriminator.type = #pattern

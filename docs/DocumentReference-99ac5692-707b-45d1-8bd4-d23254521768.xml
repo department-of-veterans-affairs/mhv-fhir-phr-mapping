@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="99ac5692-707b-45d1-8bd4-d23254521768"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="99ac5692-707b-45d1-8bd4-d23254521768"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;99ac5692-707b-45d1-8bd4-d23254521768&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.imaging.html">VA MHV PHR Radiology</a></p></div><p><b>identifier</b>: id: ImagingExamTO.6999268.8371-1 (use: USUAL), Accession ID: Accession..073100-312 (use: OFFICIAL), id: CaseNum.312 (use: SECONDARY)</p><p><b>status</b>: current</p><p><b>type</b>: RADIOLOGIC EXAMINATION, CHEST, 2 VIEWS, FRONTAL AND LATERAL; <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#18748-4; <a href="http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#71020)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Jul 31, 2000, 11:28:00 AM</p><p><b>author</b>: </p><ul><li><span>: VARMA,HEMANK</span></li><li><span>: DAYT29 TEST LAB</span></li></ul><p><b>custodian</b>: <span>: RADIOLOGY</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style="display: none">*</td><td>text/plain</td><td>(base64 data - 2999 bytes)</td><td>CHEST 2 VIEWS PA&amp;LAT</td><td>2000-07-31 16:28:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Encounter</b></td><td><b>Related</b></td></tr><tr><td style="display: none">*</td><td><span>id: 2853075</span></td><td><span>: CHEST 2 VIEWS PA&amp;LAT</span></td></tr></table></div>
+  </text>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.6999268.8371-1"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession..073100-312"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.312"/>
+  </identifier>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="18748-4"/>
+    </coding>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="71020"/>
+      <display value="RADIOLOGIC EXAMINATION, CHEST, 2 VIEWS, FRONTAL AND LATERAL;"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
+      <code value="clinical-note"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <date value="2000-07-31T16:28:00Z"/>
+  <author>
+    <display value="VARMA,HEMANK"/>
+  </author>
+  <author>
+    <identifier>
+      <value value="989"/>
+    </identifier>
+    <display value="DAYT29 TEST LAB"/>
+  </author>
+  <custodian>
+    <identifier>
+      <value value="2267"/>
+    </identifier>
+    <display value="RADIOLOGY"/>
+  </custodian>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <data value="Q0hFU1QgMiBWSUVXUyBQQSZMQVQKICAgCkV4bSBEYXRlOiBKVUwgMzEsIDIwMDBAMTY6MjgKUmVxIFBoeXM6IEhPTEdBRE8sUk9OQUxEICAgICAgICAgICAgICAgICBQYXQgTG9jOiBPVVRQVC8gUFJFLU9QIFRFU1RJTkcgKFJlcSdnIEwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAzMTIgQ09NUExFVEUpICBDSEVTVCAyIFZJRVdTIFBBJkxBVCAgICAgICAgICAgICAoUkFEICBEZXRhaWxlZCkgQ1BUOjcxMDIwCgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgc2NoZWR1bGVkIGZvciBsdC4gZm9vdCBzdXJnZXJ5IG9uIDgtOS0wMCBuZWVkcyBwcmUgb3AgY3hyIAoKICAgIFJlcG9ydCBTdGF0dXM6IFZlcmlmaWVkICAgICAgICAgICAgICAgICAgIERhdGUgUmVwb3J0ZWQ6IEFVRyAwMSwgMjAwMAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRGF0ZSBWZXJpZmllZDogQVVHIDAyLCAyMDAwCiAgICBWZXJpZmllciBFLVNpZzovRVMvSEVNQU5LIFZBUk1BCgogICAgUmVwb3J0OgogICAgICBDSEVTVCwgUEEgQU5EIExBVEVSQUw6ICA3LTMxLTAwOiAgCiAgICAgICAKICAgICAgVGhlIGNvbXBhcmlzb24gZXhhbSBpcyBmcm9tIDQtOC05OC4gIAogICAgICAgCiAgICAgIFRoZSBjaGVzdCBhcHBlYXJhbmNlIGlzIGNvbnNpc3RlbnQgd2l0aCBDT1BEIGFuZCBvbGQgaGVhbGVkCiAgICAgIGdyYW51bG9tYXRvdXMgZGlzZWFzZS4gIAogICAgICAgCiAgICAgIFRoZXJlIGlzIHZvbHVtZSBsb3NzIGluIGJvdGggbG93ZXIgbG9iZXMuICBTb21lIGRpbGF0ZWQKICAgICAgYnJvbmNoaW9sZXMgYXJlIG5vdGljZWQgaW4gdGhlIHVwcGVyIGxvYmVzIGJpbGF0ZXJhbGx5LiAgVGhlc2UKICAgICAgZmluZGluZ3Mgd2VyZSBzZWVuIGluIHRoZSBwcmV2aW91cyBleGFtaW5hdGlvbi4gIEkgY2Fubm90IHNlZSB0aGUKICAgICAgc29mdCB0aXNzdWUgbm9kdWxhciBkZW5zaXR5IHdoaWNoIHdhcyBzZWVuIGluIHRoZSBsZWZ0IHVwcGVyIGxvYmUKICAgICAgaW4gdGhlIHByZXZpb3VzIGV4YW1pbmF0aW9uLiAgVGhpcyBjb3VsZCBiZSBkdWUgdG8gZGlmZmVyZW5jZSBpbgogICAgICBwb3NpdGlvbmluZy4gIFRoZXJlIGlzIHNvbWUgaWxsLWRlZmluZWQgZGVuc2l0eSBwcm9qZWN0ZWQgb3ZlcgogICAgICB0aGUgbGVmdCBhbnRlcmlvciBzZWNvbmQgcmliIGJ1dCBpdCBtYXkgcmVwcmVzZW50IG9sZCBoIGVhbGVkCiAgICAgIGdyYW51bG9tYXRvdXMgZGlzZWFzZSBhbmQgZGlsYXRlZCBicm9uY2hpb2xlcy4gIEhvd2V2ZXIsCiAgICAgIGZvbGxvdy11cCBleGFtaW5hdGlvbiBhbmQsIGlmIG5lZWRlZCwgZnVydGhlciB0ZXN0aW5nIG1heSBiZSBkb25lCiAgICAgIGZvciBldmFsdWF0aW9uIG9mIGFueSBuZW9wbGFzdGljIHByb2Nlc3MgYXMgdGhlIHNvZnQgdGlzc3VlCiAgICAgIG5vZHVsYXIgZGVuc2l0eSB3YXMgbm90aWNlZCBpbiB0aGUgcHJldmlvdXMgZXhhbWluYXRpb24uIAogICAgICBPdGhlcndpc2UsIEkgd291bGQgdGhpbmsgdGhhdCBwcm9iYWJseSB0aGVzZSBjaGFuZ2VzIG1heSBiZQogICAgICByZWxhdGVkIHRvIG9sZCBoZWFsZWQgZ3JhbnVsb21hdG91cyBkaXNlYXNlLiAgVGhlcmUgaXMgYmlsYXRlcmFsCiAgICAgIGFwaWNhbCBwbGV1cmFsIHRoaWNrZW5pbmcuICAKICAgICAgIAogICAgICBJbnRlcnN0aXRpYWwgY2hhbmdlcyBhcmUgbm90aWNlZCBpbiB0aGUgbHVuZ3MuICAKICAgICAgIAogICAgICBOb2R1bGFyIGRlbnNpdGllcyBhcmUgbm90aWNlZCBpbiBib3RoIGx1bmcgZmllbGRzIHdoaWNoIEkgdGhpbmsKICAgICAgd291bGQgcmVwcmVzZW50IG9sZCBoZWFsZWQgZ3JhbnVsb21hdG91cyBkaXNlYXNlLiAgCiAgICAgICAKICAgICAgT2xkIGhlYWxlZCBmcmFjdHVyZXMgb2YgbXVsdGlwbGUgcmlnaHQgcmlicyBhcmUgbm90aWNlZC4gIAogICAgICAgCiAgICAgIFNsaWdodCBjZW50cmFsIGNvbXByZXNzaW9uIG9mIHNvbWUgb2YgdGhlIG1pZCB0aG9yYWNpYyB2ZXJ0ZWJyYWwKICAgICAgYm9kaWVzIGlzIG5vdGljZWQuICAKICAgICAgIAogICAgICBUaGUgQ1AgYW5nbGVzIGFyZSBjbGVhci4gIAoKICAgIEltcHJlc3Npb246CiAgICAgIFZvbHVtZSBsb3NzIGluIGJvdGggdXBwZXIgbG9iZXMgd2l0aCBkaWxhdGVkIGJyb25jaGlvbGVzIGFuZAogICAgICBwZXJpYnJvbmNoaWFsIHRoaWNrZW5pbmcuICAKICAgICAgIAogICAgICBDT1BEIGFuZCBub2R1bGFyIGRlbnNpdGllcyBpbiB0aGUgbHVuZ3Mgd2l0aCBiaWxhdGVyYWwgYXBpY2FsCiAgICAgIHBsZXVyYWwgdGhpY2tlbmluZy4gIAogICAgICAgCiAgICAgIFJpZ2h0IHVwcGVyIGxvYmUgc29mdCB0aXNzdWUgbm9kdWxhciBkZW5zaXR5IGlzIGFnYWluIG5vdGljZWQKICAgICAgcHJvamVjdGVkIGJldHdlZW4gdGhlIHJpZ2h0IHBvc3RlcmlvciB0aGlyZCBhbmQgZm91cnRoIHJpYnMgYnV0IEkKICAgICAgY2Fubm90IHNlZSB0aGUgbGVmdCB1cHBlciBsb2JlIGRlbnNpdHkgd2hpY2ggd2FzIHNlZW4gaW4gdGhlCiAgICAgIHByZXZpb3VzIGV4YW1pbmF0aW9uLiAgCiAgICAgICAKICAgICAgVGhlIG9sZCBleGFtIG9mIDE5OTQgYWxzbyBzaG93ZWQgY2hhbmdlcyBpbiBib3RoIHVwcGVyIGxvYmVzLAogICAgICB0aGVyZWZvcmUsIEkgdGhpbmsgbW9zdCBsaWtlbHkgdGhleSByZXByZXNlbnQgb2xkIGhlYWxlZAogICAgICBncmFudWxvbWF0b3VzIGRpc2Vhc2UuICBUaGVyZSBtYXkgYmUgc29tZSBlbGVtZW50IG9mCiAgICAgIGJyb25jaGllY3Rhc2lzLiAgRm9sbG93LXVwIGV4YW1pbmF0aW9uIG1heSBiZSBoZWxwZnVsLiAgCgogICAgUHJpbWFyeSBEaWFnbm9zdGljIENvZGU6IAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgSEVNQU5LIFZBUk1BLCBSYWRpb2xvZ2lzdCAoVmVyaWZpZXIpCi9SU0M="/>
+      <title value="CHEST 2 VIEWS PA&amp;LAT"/>
+      <creation value="2000-07-31T16:28:00Z"/>
+    </attachment>
+  </content>
+  <context>
+    <encounter>
+      <identifier>
+        <value value="2853075"/>
+      </identifier>
+    </encounter>
+    <related>
+      <identifier>
+        <value value="6600282"/>
+      </identifier>
+      <display value="CHEST 2 VIEWS PA&amp;LAT"/>
+    </related>
+  </context>
+</DocumentReference>

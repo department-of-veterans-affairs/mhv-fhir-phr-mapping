@@ -1,0 +1,80 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Observation/f4a6730f-860e-4264-afc8-97aa9119957b> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "f4a6730f-860e-4264-afc8-97aa9119957b"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"f4a6730f-860e-4264-afc8-97aa9119957b\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;f4a6730f-860e-4264-afc8-97aa9119957b&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.vitalsPain.html\">VA MHV PHR Vital-Signs for PAIN</a></p></div><p><b>identifier</b>: id: VitalSignTO.2449384 (use: USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: PAIN <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#72514-3 &quot;Pain severity - 0-10 verbal numeric rating [Score] - Reported&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-2.html\">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>effective</b>: 1999-08-09 13:13:00+0000</p><p><b>performer</b>: <span>: Location 1920</span></p><p><b>value</b>: 0</p><hr/><blockquote><p><b>Generated Narrative: Location #location-1920</b><a name=\"location-1920\"> </a></p><p><b>identifier</b>: id: HospitalLocationTO.1920 (use: USUAL)</p><p><b>name</b>: PCT_O</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Location ;
+     fhir:id [ fhir:v "location-1920" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "HospitalLocationTO.1920" ]
+     ] ) ;
+     fhir:name [ fhir:v "PCT_O" ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "VitalSignTO.2449384" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:72514-3 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "72514-3" ] ;
+       fhir:display [ fhir:v "Pain severity - 0-10 verbal numeric rating [Score] - Reported" ]
+     ] ) ;
+     fhir:text [ fhir:v "PAIN" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-2> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-2" ]
+  ] ; # 
+  fhir:effective [ fhir:v "1999-08-09T13:13:00Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/alternate-reference"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Reference ;
+         fhir:reference [ fhir:v "#location-1920" ]
+       ]
+     ] ) ;
+     fhir:display [ fhir:v "Location 1920" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "0"^^xsd:decimal ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

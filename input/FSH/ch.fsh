@@ -52,6 +52,7 @@ Title: "VA MHV PHR HDR Chem-Hem Report"
 Description: """
 Profile on DiagnosticReport for Chem-Hem lab report.
 """
+* ^extension[$fmm].valueInteger = 1
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"

@@ -22,7 +22,11 @@ A profile on the Organization resource for MHV PHR exposing Organization using F
 Map to [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-fhir-phr-labsiteto)
 
 Map to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-performingorganization)
+
+HDR IntoleranceCondition has an element `recordSource` with the identifier of the facility the allergy was recorded.  Given that this does not include a friendly name, but MHV has a manually managed table with this, then we will
+populate the Organization.name with the value from that table (when it is available) - MHV FACILITY_INFO table {FACILITY_INFO.NAME}
 """
+* ^extension[$fmm].valueInteger = 3
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "$this"
@@ -32,7 +36,7 @@ Map to [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-
 * identifier[TOid] ^patternIdentifier.system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[TOid].value ^short = "{stationNumber} or `LabSiteTO.` + {LabSiteTO.id}"
 * identifier[TOid].use = #usual
-
+* name MS
 
 Mapping: Organization-LabSiteTO
 Source:	MHVorganization
@@ -187,6 +191,38 @@ Usage: #inline
 * address.country = "USA"
 * address.state = "UT"
 
+
+
+/*
+HDR IntoleranceCondition has an element `recordSource` with the identifier of the facility the allergy was recorded
+
+	<xsd:complexType name="HL72FacilityIdentifier">
+		<xsd:sequence>
+			<xsd:element name="namespaceId" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="universalId" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="universalIdType" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+Given that this does not include a friendly name, but MHV has a manually managed table with this, then we will
+populate the Organization.name with the value from that table (when it is available)
+>  MHV FACILITY_INFO table {FACILITY_INFO.NAME}
+
+Note that since this table MHV is manually managed, this still justification for this being a contained Organization.
+
+*/
+
+Mapping: Organization-recordSource
+Source: MHVorganization
+Target: "recordSource"
+Title: "HDR to mhv-fhir-phr"
+* -> "recordSource"
+* identifier.use -> "`usual`"
+* identifier.system -> "`urn:oid:2.16.840.1.113883.4.349`"
+* identifier.value -> "{identifier.universalId}"
+* name -> "MHV FACILITY_INFO table {FACILITY_INFO.NAME}"
+* active -> "`true`"
+
 /*
 from HDR example
          <recordSource>
@@ -198,7 +234,7 @@ from HDR example
 Instance: ex-MHV-organization-979
 InstanceOf: MHVorganization
 Title: "Organization HDR Lab 979"
-Description: "This example derived off of a mock HDR Lab report"
+Description: "This example derived off of a mock HDR Lab report. The name is simulated to be populated from MHV table."
 Usage: #inline
 * active = true
 * identifier[TOid].use = #usual

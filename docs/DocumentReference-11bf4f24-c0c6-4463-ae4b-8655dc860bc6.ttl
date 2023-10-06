@@ -1,0 +1,88 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/11bf4f24-c0c6-4463-ae4b-8655dc860bc6> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "11bf4f24-c0c6-4463-ae4b-8655dc860bc6"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"11bf4f24-c0c6-4463-ae4b-8655dc860bc6\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;11bf4f24-c0c6-4463-ae4b-8655dc860bc6&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.imaging.html\">VA MHV PHR Radiology</a></p></div><p><b>identifier</b>: id: ImagingExamTO.7078984.8943-1 (use: USUAL), Accession ID: Accession..101592-1172 (use: OFFICIAL), id: CaseNum.1172 (use: SECONDARY)</p><p><b>status</b>: current</p><p><b>type</b>: UROGRAPHY, INFUSION, DRIP TECHNIQUE AND/OR BOLUS TECHNIQUE; WITH NEPHROTOMOGRAPHY <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#18748-4; <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html\">Current Procedural Terminology (CPT®)</a>#74415)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Oct 15, 1992, 5:56:00 AM</p><p><b>author</b>: </p><ul><li><span>: BAUMANN,BERTA H</span></li><li><span>: DAYT29 TEST LAB</span></li></ul><p><b>custodian</b>: <span>: INPATIENT RADIOLOGY</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 870 bytes)</td><td>UROGRAM IV W NEPHROTOMOGRAMS</td><td>1992-10-15 10:56:00+0000</td></tr></table></blockquote></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ImagingExamTO.7078984.8943-1" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ACSN" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Accession..101592-1172" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "CaseNum.1172" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:18748-4 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "18748-4" ]
+     ] [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "74415" ] ;
+       fhir:display [ fhir:v "UROGRAPHY, INFUSION, DRIP TECHNIQUE AND/OR BOLUS TECHNIQUE; WITH NEPHROTOMOGRAPHY" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:date [ fhir:v "1992-10-15T10:56:00Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:display [ fhir:v "BAUMANN,BERTA H" ]
+  ] [
+     fhir:identifier [
+       fhir:value [ fhir:v "989" ]
+     ] ;
+     fhir:display [ fhir:v "DAYT29 TEST LAB" ]
+  ] ) ; # 
+  fhir:custodian [
+     fhir:identifier [
+       fhir:value [ fhir:v "704" ]
+     ] ;
+     fhir:display [ fhir:v "INPATIENT RADIOLOGY" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "VVJPR1JBTSBJViBXIE5FUEhST1RPTU9HUkFNUwogICAKUHJvYyBPcmQ6IFVua25vd24KRXhtIERhdGU6IE9DVCAxNSwgMTk5MkAxMDo1NgpSZXEgUGh5czogQkFTVVJBWSxCSVNXQSBOQVRIICAgICAgICAgICAgIFBhdCBMb2M6IE9QIFVua25vd24vMDktMDctMjAyMkAxNjoxNAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEltZyBMb2M6IElOUEFUSUVOVCBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAxMTcyIENPTVBMRVRFKSBVUk9HUkFNIElWIFcgTkVQSFJPVE9NT0dSQU1TICAgICAoUkFEICBEZXRhaWxlZCkgQ1BUOjc0NDE1CgogICAgQ2xpbmljYWwgSGlzdG9yeToKCiAgICBSZXBvcnQgU3RhdHVzOiBWZXJpZmllZCAgICAgICAgICAgICAgICAgICBEYXRlIFJlcG9ydGVkOiBPQ1QgMTYsIDE5OTIKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGUgVmVyaWZpZWQ6IE5PViAwNCwgMTk5MgogICAgVmVyaWZpZXIgRS1TaWc6CgogICAgUmVwb3J0OgoKICAgIEltcHJlc3Npb246CiAgICAgIDEuICBTcGxheWluZyBvZiBpbmZ1bmRpYnVsYSBkaWZmdXNlbHkgYmlsYXRlcmFsbHktc3VnZ2VzdCByZW5hbAogICAgICBwZWx2aWMgbGlwb21vdG9zaXMgYXMgbW9zdCBjb21tb24gZXRpb2xvZ3ktbm8gZXZpZGVuY2Ugb2YKICAgICAgb2JzdHJ1Y3Rpb24uICAKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIEJFUlRBIEggQkFVTUFOTiwgUmFkaW9sb2dpc3QKICAgICAgICAgIFZlcmlmaWVkIGJ5IHRyYW5zY3JpcHRpb25pc3QgZm9yIEJFUlRBIEggQkFVTUFOTgovSkdC"^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "UROGRAM IV W NEPHROTOMOGRAMS" ] ;
+       fhir:creation [ fhir:v "1992-10-15T10:56:00Z"^^xsd:dateTime ]
+     ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

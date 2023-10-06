@@ -124,6 +124,8 @@ HospitalLocationTO will be a `use` of `usual`, and use the prefix `HospitalLocat
 * identifier[TOid].value = "`HospitalLocationTO` | `.` | {HospitalLocationTO.id}"
 ```
 
+see mapping [VIA labSiteID](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-via-to-mhv-fhir-phr-labsiteto)
+
 #### HDR orderingFacilityIdentifier
 
 orderingFacilityIdentifier will be a `.use` of `usual`, and use the fixed OID for `.system`. The orderingFacilityIdentifier has a `.stationNumber` element that we will use for the `.value`. Since we know this is the station number, we will not add a prefix.
@@ -133,6 +135,8 @@ orderingFacilityIdentifier will be a `.use` of `usual`, and use the fixed OID fo
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4"
 * identifier[TOid].value ^short = "{orderingFacilityIdentifier.identity}"
 ```
+
+see mapping [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organization-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-performingorganization)
 
 #### Patient
 

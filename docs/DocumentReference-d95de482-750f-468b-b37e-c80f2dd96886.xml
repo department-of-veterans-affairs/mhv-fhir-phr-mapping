@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="d95de482-750f-468b-b37e-c80f2dd96886"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="d95de482-750f-468b-b37e-c80f2dd96886"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;d95de482-750f-468b-b37e-c80f2dd96886&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.imaging.html">VA MHV PHR Radiology</a></p></div><p><b>identifier</b>: id: ImagingExamTO.6979076.8862-2 (use: USUAL), Accession ID: Accession..092302-363 (use: OFFICIAL), id: CaseNum.363 (use: SECONDARY)</p><p><b>status</b>: current</p><p><b>type</b>: RADIOLOGIC EXAMINATION, SPINE, LUMBOSACRAL; 2 OR 3 VIEWS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#18748-4; <a href="http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#72100)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Sep 23, 2002, 6:37:00 AM</p><p><b>author</b>: </p><ul><li><span>: SUTTON,JOSEPH</span></li><li><span>: DAYT29 TEST LAB</span></li></ul><p><b>custodian</b>: <span>: RADIOLOGY</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style="display: none">*</td><td>text/plain</td><td>(base64 data - 1035 bytes)</td><td>SPINE LUMBOSACRAL MIN 2 VIEWS</td><td>2002-09-23 11:37:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Encounter</b></td><td><b>Related</b></td></tr><tr><td style="display: none">*</td><td><span>id: 4183065</span></td><td><span>: SPINE LUMBOSACRAL MIN 2 VIEWS</span></td></tr></table></div>
+  </text>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.6979076.8862-2"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession..092302-363"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.363"/>
+  </identifier>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="18748-4"/>
+    </coding>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="72100"/>
+      <display value="RADIOLOGIC EXAMINATION, SPINE, LUMBOSACRAL; 2 OR 3 VIEWS"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
+      <code value="clinical-note"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <date value="2002-09-23T11:37:00Z"/>
+  <author>
+    <display value="SUTTON,JOSEPH"/>
+  </author>
+  <author>
+    <identifier>
+      <value value="989"/>
+    </identifier>
+    <display value="DAYT29 TEST LAB"/>
+  </author>
+  <custodian>
+    <identifier>
+      <value value="2267"/>
+    </identifier>
+    <display value="RADIOLOGY"/>
+  </custodian>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <data value="U1BJTkUgTFVNQk9TQUNSQUwgTUlOIDIgVklFV1MKICAgCkV4bSBEYXRlOiBTRVAgMjMsIDIwMDJAMTE6MzcKUmVxIFBoeXM6IFBBVElMLFNBUkFTV0FUSSAgICAgICAgICAgICAgICBQYXQgTG9jOiBQQ1RfTyBQQVRJTCAoRi9VKSAoUmVxJ2cgTG9jKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEltZyBMb2M6IFJBRElPTE9HWQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNlcnZpY2U6IFVua25vd24KCiAKCihDYXNlIDM2MyBDT01QTEVURSkgIFNQSU5FIExVTUJPU0FDUkFMIE1JTiAyIFZJRVdTICAgIChSQUQgIERldGFpbGVkKSBDUFQ6NzIxMDAKCiAgICBDbGluaWNhbCBIaXN0b3J5OgogICAgICBwdCBjL28gcGFpbiBpbiBsb3dlciBiYWNrID8gcHVsbGVkIG11c2NsZS4gIHIvbyBkaXNjIGRpc2Vhc2UuICAKCiAgICBSZXBvcnQgU3RhdHVzOiBWZXJpZmllZCAgICAgICAgICAgICAgICAgICBEYXRlIFJlcG9ydGVkOiBTRVAgMjUsIDIwMDIKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGUgVmVyaWZpZWQ6IFNFUCAyNiwgMjAwMgogICAgVmVyaWZpZXIgRS1TaWc6L0VTL0ouRS4gU3V0dG9uLCBNLkQuCgogICAgUmVwb3J0OgogICAgICBBbiBvbGQgY29tcHJlc3Npb24gZnJhY3R1cmUgb2YgTDIgaXMgb2JzZXJ2ZWQuICBUaGUgcGVkaWNsZXMgYXJlCiAgICAgIGludGFjdCBhbmQgZGlzYyBzcGFjZXMgYXJlIHdlbGwgbWFpbnRhaW5lZC4gIENoYW5nZXMgb2YKICAgICAgc3BvbmR5bG9zaXMgYXJlIHNlZW4gYXQgTDMsIEw0IGFuZCBMNS4gIAoKICAgIEltcHJlc3Npb246CiAgICAgIDEuICBMdW1iYXIgc3BvbmR5bG9zaXMgaXMgc2VlbiBhbmQgdGhlcmUgaXMgYW4gb2xkIGNvbXByZXNzaW9uCiAgICAgIGZyYWN0dXJlIG9mIEwyLiAgCgogICAgUHJpbWFyeSBEaWFnbm9zdGljIENvZGU6IAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgSk9TRVBIIFNVVFRPTiwgUmFkaW9sb2dpc3QgKFZlcmlmaWVyKQovR0VH"/>
+      <title value="SPINE LUMBOSACRAL MIN 2 VIEWS"/>
+      <creation value="2002-09-23T11:37:00Z"/>
+    </attachment>
+  </content>
+  <context>
+    <encounter>
+      <identifier>
+        <value value="4183065"/>
+      </identifier>
+    </encounter>
+    <related>
+      <identifier>
+        <value value="9343153"/>
+      </identifier>
+      <display value="SPINE LUMBOSACRAL MIN 2 VIEWS"/>
+    </related>
+  </context>
+</DocumentReference>

@@ -74,14 +74,13 @@ The value '1000-01-01' is outside the range of reasonable years - check for data
 
 # info messages when using draft resources, like valueSets from THO 
 Reference to draft item http://hl7.org/fhir/allergy-intolerance-category|4.0.1
-Reference to draft item http://terminology.hl7.org/CodeSystem/condition-ver-status|0.5.0
+Reference to draft item http://terminology.hl7.org/CodeSystem/condition-ver-status|1.0.0
 Reference to draft item http://terminology.hl7.org/CodeSystem/condition-category|0.5.0
 
 # Organization, Practitioner, and Location are now contained, so there is no examples formally recognized by validator
 The Implementation Guide contains no explicitly linked examples for this profile
 
 # Vital-Sign concepts are mapped from VUID
-Unknown Source Code System urn:oid:2.16.840.1.113883.6.233, so the source codes cannot be checked
 WARNING: ConceptMap/ObservationTypeTOVsLoincCode: ConceptMap.group[0].source: The Source Code System urn:oid:2.16.840.1.113883.6.233 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
 Code System URI 'urn:oid:2.16.840.1.113883.6.233' is unknown so the code cannot be validated
 
@@ -89,33 +88,51 @@ Code System URI 'urn:oid:2.16.840.1.113883.6.233' is unknown so the code cannot 
 INFORMATION: Patient/ex-VIA-patient-0: Patient.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|5.0.1
 INFORMATION: Patient/ex-VIA-patient-0: Patient.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|5.0.1
 
-# Yes I know I am using a non-normative resource
-Reference to draft item http://terminology.hl7.org/CodeSystem/condition-ver-status|1.0.0
-
 # Minimally populated Observation that is contained. I have no details more.
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1a*/: All observations should have a performer
+WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1a*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[5]/*Observation/ex-MHV-chPanel-1b*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[5]/*Observation/ex-MHV-chPanel-1b*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[6]/*Observation/ex-MHV-chTest-1b*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1103030001a*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1103030001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1103030001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1103030002a*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1103030002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1103030002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190370002a*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190370002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1190370002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530001a*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1190530001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530002a*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1190530002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190740001a*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190740001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
+WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1190740001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[5]/*Observation/ex-MHV-chPanel-1b*/: All observations should have a performer
 WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[5]/*Observation/ex-MHV-chPanel-1b*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1103030001a*/: All observations should have a performer
 WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1103030001a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1103030002a*/: All observations should have a performer
 WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1103030002a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190370002a*/: All observations should have a performer
 WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190370002a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530001a*/: All observations should have a performer
 WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530001a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530002a*/: All observations should have a performer
 WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530002a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190740001a*/: All observations should have a performer
 WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190740001a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: All observations should have a subject
-WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: All observations should have a performer
-WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: All observations should have an effectiveDateTime or an effectivePeriod
+WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: Best Practice Recommendation: In general, all observations should have a subject
+WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 
 # This is declared as a CPT in the source, I can't magically change it. Seems it was a proper CPT at one time.
 ERROR: DocumentReference/ex-MHV-imaging-0: DocumentReference.type.coding[1]: Code '72100' not found in CPT; Unknown Code '72100' in the system 'http://www.ama-assn.org/go/cpt'; The provided code 'http://www.ama-assn.org/go/cpt#72100' is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server) for 'http://www.ama-assn.org/go/cpt#72100'
 ERROR: Immunization/ex-MHV-immunization-2: Immunization.vaccineCode.coding[0]: Code '90688' not found in CPT; Unknown Code '90688' in the system 'http://www.ama-assn.org/go/cpt'; The provided code 'http://www.ama-assn.org/go/cpt#90688' is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server) for 'http://www.ama-assn.org/go/cpt#90688'
+
+# Jay checked these. Were valid, but are now retired
+ERROR: Bundle/images: Bundle.entry[1].resource/*DocumentReference/f9b042f3-24c2-4fee-8205-ad781d98ac23*/.type: Code '71020' not found in CPT; Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#71020' is not in the value set 'http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1' (from Tx-Server)
+ERROR: Bundle/images: Bundle.entry[3].resource/*DocumentReference/d7b8e992-c9d2-40f6-9acd-a18ed1a24f27*/.type: Code '78465' not found in CPT; Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78465' is not in the value set 'http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1' (from Tx-Server)
+
 
 # These are the ucum values given in the source data feed.
 WARNING: StructureDefinition/VA.MHV.PHR.vitalsPain: StructureDefinition.snapshot.element[61].minValue.ofType(Quantity): UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked, and the Quantity.unit SHOULD contain the annotation

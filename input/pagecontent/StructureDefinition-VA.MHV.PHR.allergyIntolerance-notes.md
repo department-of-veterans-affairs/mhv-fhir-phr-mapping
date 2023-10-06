@@ -27,28 +27,18 @@
   - logical to put this into `.recorder`, but that doesn't support a Organization reference
   - use alternate-reference extension on the recorder, with a Organization holding the facilityIdentifier.
     - `http://hl7.org/fhir/StructureDefinition/alternate-reference`
-  - contained Observation
+  - populate the Organization.name from internal MHV table that is manually managed to hold human readable names given a DNS style identifier that we get in the HDR feed.
+  - contained Organization
     - if changed to not contained, in order to support _include, we must define a search parameter against alternate-reference so that can be used in search _include.
 
 #### Mapping Concerns
 
 - confirmed vs unconfirmed
   - Vista has a "VERIFIED" but this does not come thru HDR.
-
-#### Changes
-
-2023-09-22
-
-- do not put observationTime into onsetDateTime, but rather recordedDate
-- do not populate verificationStatus with informationSourceCategory
-  - do set verificationStatus to entered-in-error if the status is `E`
-- put the informationSourceCategory into extension[observedHistoric].valueCode
-- set clinicalStatus to `active` when not entered-in-error
-  - must remove it when changing to entered-in-error
+- will we always get an observed vs historic? or will this sometimes not be populated (Leaf Request #51)
 
 #### code inspection concerns
 
 2023-08-31
 
-- do NOT map the drugClass.code
 - do NOT use drugClass to set category

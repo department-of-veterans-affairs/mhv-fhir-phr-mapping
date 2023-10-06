@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="fe96e785-bf91-4f76-9ece-d55c6ac1d406"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="fe96e785-bf91-4f76-9ece-d55c6ac1d406"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;fe96e785-bf91-4f76-9ece-d55c6ac1d406&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.imaging.html">VA MHV PHR Radiology</a></p></div><p><b>identifier</b>: id: ImagingExamTO.7029188.8771-1 (use: USUAL), Accession ID: Accession..081197-354 (use: OFFICIAL), id: CaseNum.354 (use: SECONDARY)</p><p><b>status</b>: current</p><p><b>type</b>: RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#18748-4; <a href="http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#73630)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Aug 11, 1997, 7:28:00 AM</p><p><b>author</b>: </p><ul><li><span>: SUTTON,JOSEPH</span></li><li><span>: DAYT29 TEST LAB</span></li></ul><p><b>custodian</b>: <span>: RADIOLOGY</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style="display: none">*</td><td>text/plain</td><td>(base64 data - 1336 bytes)</td><td>FOOT 3 OR MORE VIEWS</td><td>1997-08-11 12:28:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Encounter</b></td></tr><tr><td style="display: none">*</td><td><span>id: 600682</span></td></tr></table></div>
+  </text>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.7029188.8771-1"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession..081197-354"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.354"/>
+  </identifier>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="18748-4"/>
+    </coding>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="73630"/>
+      <display value="RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
+      <code value="clinical-note"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <date value="1997-08-11T12:28:00Z"/>
+  <author>
+    <display value="SUTTON,JOSEPH"/>
+  </author>
+  <author>
+    <identifier>
+      <value value="989"/>
+    </identifier>
+    <display value="DAYT29 TEST LAB"/>
+  </author>
+  <custodian>
+    <identifier>
+      <value value="2267"/>
+    </identifier>
+    <display value="RADIOLOGY"/>
+  </custodian>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <data value="Rk9PVCAzIE9SIE1PUkUgVklFV1MKICAgClByb2MgT3JkOiBVbmtub3duCkV4bSBEYXRlOiBBVUcgMTEsIDE5OTdAMTI6MjgKUmVxIFBoeXM6IEhPTEdBRE8sUk9OQUxEICAgICAgICAgICAgICAgICBQYXQgTG9jOiBPUCBVbmtub3duLzA5LTA3LTIwMjJAMTY6MTQKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAzNTQgQ09NUExFVEUpICBGT09UIDMgT1IgTU9SRSBWSUVXUyAgICAgICAgICAgICAoUkFEICBEZXRhaWxlZCkgQ1BUOjczNjMwCiAgICAgUHJvYyBNb2RpZmllcnMgOiBMRUZUCgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgTEVGVCAzIFZJRVdTIExFRlQgRk9PVCxBS0lOIE9TQUNPVE9NWSAKCiAgICBSZXBvcnQgU3RhdHVzOiBWZXJpZmllZCAgICAgICAgICAgICAgICAgICBEYXRlIFJlcG9ydGVkOiBBVUcgMjEsIDE5OTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGUgVmVyaWZpZWQ6IEFVRyAyMSwgMTk5NwogICAgVmVyaWZpZXIgRS1TaWc6L0VTL0ouRS5TVVRUT04sTS5ELgoKICAgIFJlcG9ydDoKICAgICAgTEVGVCBGT09UOiAgOC8xMS85NzogCiAgICAgICAKICAgICAgQSByZXBlYXQgZXhhbWluYXRpb24gb2YgdGhlIGxlZnQgZm9vdCBpcyBtYWRlIGFmdGVyIGFuIGludGVydmFsCiAgICAgIG9mIDcgd2Vla3MuICBPbiB0b2RheSdzIGV4YW1pbmF0aW9uLCB0aGUgcHJlc2VuY2Ugb2YgYSB3YWxraW5nCiAgICAgIGNhc3QgaXMgb2JzZXJ2ZWQuICBJbiBhZGRpdGlvbiB0byB0aGUgc2NyZXdzIGFuZCB3aXJlcyBpbiB0aGUgMXN0CiAgICAgIG1ldGF0YXJzYWwgd2hpY2ggd2VyZSBwcmVzZW50IHByZXZpb3VzbHksIHRoZXJlIGFyZSBub3cgMiB3aXJlcwogICAgICBpbiB0aGUgcHJveGltYWwgcGhhbGFueCBvZiB0aGUgZ3JlYXQgdG9lLCBwcmVzdW1hYmx5IHRyYW5zZml4aW5nCiAgICAgIGFuIG9zdGVvdG9teS4gIEZpbG1zIGFyZSBhdmFpbGFibGUgZm9yIHJldmlldyBieSBwb2RpYXRyeS4gIAoKICAgIEltcHJlc3Npb246CiAgICAgIDEuICBJbnRlcnZhbCBzdXJnZXJ5IG9uIHRoZSBwcm94aW1hbCBwaGFsYW54IG9mIHRoZSBncmVhdCB0b2UgYW5kIAogICAgICBhcHBsaWNhdGlvbiBvZiBhIHdhbGtpbmcgY2FzdC4gIAoKICAgIFByaW1hcnkgRGlhZ25vc3RpYyBDb2RlOiAKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIEpPU0VQSCBTVVRUT04sIFJhZGlvbG9naXN0IChWZXJpZmllcikKL0dFRw=="/>
+      <title value="FOOT 3 OR MORE VIEWS"/>
+      <creation value="1997-08-11T12:28:00Z"/>
+    </attachment>
+  </content>
+  <context>
+    <encounter>
+      <identifier>
+        <value value="600682"/>
+      </identifier>
+    </encounter>
+  </context>
+</DocumentReference>

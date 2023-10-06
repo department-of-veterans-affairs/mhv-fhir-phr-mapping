@@ -1,0 +1,97 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/0ff1ab63-b77c-4bc6-93d8-b244dc8d0714> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "0ff1ab63-b77c-4bc6-93d8-b244dc8d0714"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"0ff1ab63-b77c-4bc6-93d8-b244dc8d0714\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;0ff1ab63-b77c-4bc6-93d8-b244dc8d0714&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.imaging.html\">VA MHV PHR Radiology</a></p></div><p><b>identifier</b>: id: ImagingExamTO.6989573.8892-4 (use: USUAL), Accession ID: Accession..042601-1530 (use: OFFICIAL), id: CaseNum.1530 (use: SECONDARY)</p><p><b>status</b>: current</p><p><b>type</b>: 18748-4 <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#18748-4)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Apr 26, 2001, 6:07:00 AM</p><p><b>author</b>: </p><ul><li><span>: KATZ,NEIL</span></li><li><span>: DAYT29 TEST LAB</span></li></ul><p><b>custodian</b>: <span>: NUCLEAR MEDICINE</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 2184 bytes)</td><td>J1245 DIPYRIDAMOLE INJECTION</td><td>2001-04-26 11:07:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Encounter</b></td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><span>id: 3278625</span></td><td><span>: MYOCARDIAL PERFUSION, PHARMACOLOGICAL STRESS P/D</span></td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ImagingExamTO.6989573.8892-4" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ACSN" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Accession..042601-1530" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "CaseNum.1530" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:18748-4 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "18748-4" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:date [ fhir:v "2001-04-26T11:07:00Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:display [ fhir:v "KATZ,NEIL" ]
+  ] [
+     fhir:identifier [
+       fhir:value [ fhir:v "989" ]
+     ] ;
+     fhir:display [ fhir:v "DAYT29 TEST LAB" ]
+  ] ) ; # 
+  fhir:custodian [
+     fhir:identifier [
+       fhir:value [ fhir:v "273" ]
+     ] ;
+     fhir:display [ fhir:v "NUCLEAR MEDICINE" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "SjEyNDUgRElQWVJJREFNT0xFIElOSkVDVElPTgogICAKUHJvYyBPcmQ6IE1ZT0NBUkRJQUwgUEVSRlVTSU9OLCBQSEFSTUFDT0xPR0lDQUwgU1RSRVNTIFAvRApFeG0gRGF0ZTogQVBSIDI2LCAyMDAxQDExOjA3ClJlcSBQaHlzOiBQQVRJTCxTQVJBU1dBVEkgICAgICAgICAgICAgICAgUGF0IExvYzogUENUX08gUEFUSUwgKEYvVSkgKFJlcSdnIExvYykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBOVUNMRUFSIE1FRElDSU5FCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU2VydmljZTogVW5rbm93bgoKIAoKKENhc2UgMTUxNiBDT01QTEVURSkgTVlPQ0FSRElBTCBQRVJGVVNJT04gKFNQRUNUKSwgRVgvKE5NICAgRGV0YWlsZWQpIENQVDo3ODQ2NQoKKENhc2UgMTUxOSBDT01QTEVURSkgI1BST1ZJU0lPTiBPRiBESUFHTk9TVElDIFJBRElPTlVDKE5NICAgRGV0YWlsZWQpIENQVDo3ODk5MAoKKENhc2UgMTUyMCBDT01QTEVURSkgTVlPQ0FSRElBTCBQRVJGVVNJT04gU1RVRFkgV0lUSCBFKE5NICAgRGV0YWlsZWQpIENQVDo3ODQ4MAoKKCAgICAgICA0eCAgICAgICAgICkgSjEyNDUgRElQWVJJREFNT0xFIElOSkVDVElPTiAgICAgKE5NICAgRGV0YWlsZWQpIENQVDpKMTI0NQoKKCAgICAgICAzeCAgICAgICAgICkgQTk1MDUgVEhBTExPVVMgQ0hMT1JJREUgVEwgMjAxL01DKE5NICAgRGV0YWlsZWQpIENQVDpBOTUwNQoKKENhc2UgMTUzNiBDT01QTEVURSkgTVlPQ0FSRElBTCBQRVJGVVNJT04gU1RVRFkgV0lUSCBXKE5NICAgRGV0YWlsZWQpIENQVDo3ODQ3OAoKKENhc2UgMTU0NCBDT01QTEVURSkgQ0FSRElPVkFTQ1VMQVIgU1RSRVNTIFRFU1QgKFRFQ0gpKE5NICAgRGV0YWlsZWQpIENQVDo5MzAxNQoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIFBUIEMvTyBDLlAgT04gJiBPRkYsT0xEIE1JLCBGQU1JTFkgSC9PIEhFQVJUIEFUVEFDSy4gIFIvTyBDQUQgCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogQVBSIDI2LCAyMDAxCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBBUFIgMjcsIDIwMDEKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9ORUlMIEtBVFosIE1ECgogICAgUmVwb3J0OgogICAgICBSRVBPUlQ6ICA0LzI2LzAxICBBTlRSQVMsIEouICM2MjY3ICA0MS40IG1nIERpcHlyaWRhbW9sZSBJVgogICAgICBpbmplY3RlZCBpbiByaWdodCBhcm0gYXQgMDk1OC0xMDAyIGhvdXJzIGJ5IERyLiBLYXR6LiAgMy4xNiBtQ2kKICAgICAgVGwuMjAxIENobG9yaWRlIGluamVjdGVkIElWIGluIHJpZ2h0IGFybSBhdCAxMDA1IGhvdXJzIGJ5IEEuCiAgICAgIEJlbmRlci4gIAogICAgICAgCiAgICAgICAKICAgICAgSU5UUkFWRU5PVVMgRElQWVJJREFNT0xFIFNUUkVTUyBUSEFMTElVTSBNWU9DQVJESUFMIFNDQU4tU1BFQ1Q6IAogICAgICAgCiAgICAgIFRoZSBkaXB5cmlkYW1vbGUgc3RyZXNzIHRlc3Qgd2FzIHBlcmZvcm1lZCBpbiB0aGUgTk1TLiAKICAgICAgIAogICAgICBCb3RoIHN0cmVzcyBhbmQgcmVzdCBpbWFnZXMgcmV2ZWFsIG1pbGQgZGVjcmVhc2VkIGFjdGl2aXR5IGluIHRoZQogICAgICBpbmZlcmlvciB3YWxsLiAgSG93ZXZlciwgZ2F0ZWQgaW1hZ2VzIHJldmVhbCBub3JtYWwgd2FsbCBtb3Rpb24KICAgICAgaW4gdGhpcyBhcmVhLiAgCiAgICAgICAKICAgICAgVGhlcmUgaXMgYSBwb3N0LURpcHlyaWRhbW9sZSB0aGFsbGl1bSBsZWZ0IHZlbnRyaWN1bGFyIGVqZWN0aW9uCiAgICAgIGZyYWN0aW9uIG9mIDczJS4gICAgICAKCiAgICBJbXByZXNzaW9uOgogICAgICBObyBldmlkZW5jZSBmb3IgcmV2ZXJzaWJsZSBpc2NoZW1pYS4gIFRoZSBtaWxkIHBlcnNpc3RlbnQKICAgICAgZGVjcmVhc2VkIGFjdGl2aXR5IGluIHRoZSBpbmZlcmlvciB3YWxsIG1heSBiZSBzZWNvbmRhcnkgdG8gc29mdAogICAgICB0aXNzdWUgYXR0ZW51YXRpb24sIGVzcGVjaWFsbHkgc2luY2UgdGhlIHdhbGwgbW90aW9uIGlzIG5vcm1hbCBpbgogICAgICB0aGlzIGFyZWEuICAKCiAgICBQcmltYXJ5IERpYWdub3N0aWMgQ29kZTogCgpQcmltYXJ5IEludGVycHJldGluZyBTdGFmZjoKICBORUlMIEtBVFosIENISUVGLCBOTVMgKFZlcmlmaWVyKQovTUFD"^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "J1245 DIPYRIDAMOLE INJECTION" ] ;
+       fhir:creation [ fhir:v "2001-04-26T11:07:00Z"^^xsd:dateTime ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:encounter ( [
+       fhir:identifier [
+         fhir:value [ fhir:v "3278625" ]
+       ]
+     ] ) ;
+     fhir:related ( [
+       fhir:identifier [
+         fhir:value [ fhir:v "7379950" ]
+       ] ;
+       fhir:display [ fhir:v "MYOCARDIAL PERFUSION, PHARMACOLOGICAL STRESS P/D" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

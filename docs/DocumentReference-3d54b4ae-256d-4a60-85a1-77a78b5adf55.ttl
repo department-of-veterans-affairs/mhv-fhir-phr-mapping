@@ -1,0 +1,101 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/3d54b4ae-256d-4a60-85a1-77a78b5adf55> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "3d54b4ae-256d-4a60-85a1-77a78b5adf55"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"3d54b4ae-256d-4a60-85a1-77a78b5adf55\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;3d54b4ae-256d-4a60-85a1-77a78b5adf55&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.imaging.html\">VA MHV PHR Radiology</a></p></div><p><b>identifier</b>: id: ImagingExamTO.6999281.8373-1 (use: USUAL), Accession ID: Accession..071800-616 (use: OFFICIAL), id: CaseNum.616 (use: SECONDARY)</p><p><b>status</b>: current</p><p><b>type</b>: RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#18748-4; <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html\">Current Procedural Terminology (CPT®)</a>#73630)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Jul 18, 2000, 11:26:00 AM</p><p><b>author</b>: </p><ul><li><span>: NGUYEN,THONG</span></li><li><span>: DAYT29 TEST LAB</span></li></ul><p><b>custodian</b>: <span>: RADIOLOGY</span></p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 1749 bytes)</td><td>FOOT 3 OR MORE VIEWS</td><td>2000-07-18 16:26:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Encounter</b></td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><span>id: 2836334</span></td><td><span>: FOOT 3 OR MORE VIEWS</span></td></tr></table></div>"
+  ] ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ImagingExamTO.6999281.8373-1" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ACSN" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Accession..071800-616" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "CaseNum.616" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:18748-4 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "18748-4" ]
+     ] [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "73630" ] ;
+       fhir:display [ fhir:v "RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:date [ fhir:v "2000-07-18T16:26:00Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:display [ fhir:v "NGUYEN,THONG" ]
+  ] [
+     fhir:identifier [
+       fhir:value [ fhir:v "989" ]
+     ] ;
+     fhir:display [ fhir:v "DAYT29 TEST LAB" ]
+  ] ) ; # 
+  fhir:custodian [
+     fhir:identifier [
+       fhir:value [ fhir:v "2267" ]
+     ] ;
+     fhir:display [ fhir:v "RADIOLOGY" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "Rk9PVCAzIE9SIE1PUkUgVklFV1MKICAgCkV4bSBEYXRlOiBKVUwgMTgsIDIwMDBAMTY6MjYKUmVxIFBoeXM6IEhZREUsVEFMSUEgICAgICAgICAgICAgICAgICAgICBQYXQgTG9jOiBaWlpQT0RJQVRSWSBDQVNUSU5HIChSZXEnZyBMb2MKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSA2MTYgQ09NUExFVEUpICBGT09UIDMgT1IgTU9SRSBWSUVXUyAgICAgICAgICAgICAoUkFEICBEZXRhaWxlZCkgQ1BUOjczNjMwCiAgICAgUHJvYyBNb2RpZmllcnMgOiBMRUZUCgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgNzEgeWVhciBvbGQgcHJpb3IgaGlzdG9yeSBvZiByIDFzdCBtZXRhdGFyc2FsIG9wZXJhdGlvbi4gIAogICAgICBDb21wbGFpbmluZyBvZiBwcm9taW5lbnQgaGFyZHdhcmUuICBQbGVhc2UgZXZhbHVhdGUuICBUaGFuayB5b3UgCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogSlVMIDE5LCAyMDAwCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBKVUwgMjQsIDIwMDAKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9USE9ORyBOR1VZRU4KCiAgICBSZXBvcnQ6CiAgICAgIExFRlQgRk9PVDogCiAgICAgICAKICAgICAgRXhhbWluYXRpb24gb2YgdGhlIGxlZnQgZm9vdCBieSBtdWx0aXBsZSB2aWV3cyBzaG93ZWQgdGhyZWUKICAgICAgbWV0YWxsaWMgc2NyZXdzIGFuZCB0d28gZml4YXRpb24gcGlucyBhdCB0aGUgbGVmdCBmaXJzdAogICAgICBtZXRhdGFyc2FsLiAgVHdvIGludHJhbWVkdWxsYXJ5IGZpeGF0aW9uIHBpbiBzZWVuIGF0IHRoZSBwcm94aW1hbAogICAgICBwaGFsYW54IG9mIHRoZSBsZWZ0IGdyZWF0IHRvZS4gIFRoZSBoYXJkd2FyZSBzZWVuIGF0IHRoZSBsZXZlbCBvZgogICAgICB0aGUgbGVmdCBmaXJzdCBtZXRhdGFyc2FsIGFyZSBhbHNvIHByZXZpb3VzIHNlZW4gYXQgdGhlIHN0dWR5CiAgICAgIGRhdGVkIDYvMjMvOTcuICBUaGUgdHdvIG5ldyBmaXhhdGlvbiBwaW5zIGF0IHRoZSBwcm94aW1hbCBwaGFsYW54CiAgICAgIG9mIHRoZSBsZWZ0IGdyZWF0IHRvZSBhcmUgbmV3LiAgVGhlIGhhcmR3YXJlIGF0IHRoZSBsZWZ0IGZpcnN0CiAgICAgIG1ldGF0YXJzYWwgcHJvYmFibHkgYXJlIHVzZWQgZm9yIHRyYW5zZml4aW5nIHRoZSBmcmFjdHVyZSBhdCB0aGUKICAgICAgYmFzZSBvZiB0aGUgbWV0YXJ0YXJzYWwuICBUaGUgcHVycG9zZSBvZiB0aGUgdHdvIG5ldyBwaW4gYXQgdGhlIAogICAgICBwcm94aW1hbCBwaGFsYW54IG9mIHRoZSBsZWZ0IGdyZWF0IHRvZSB3ZXJlIG5vdCBnaXZlbi4gIAoKICAgIEltcHJlc3Npb246CiAgICAgIE1ldGFsbGljIHNjcmV3IGFuZCBmaXhhdGlvbiBwaW4gYXQgdGhlIGxlZnQgZmlyc3QgbWV0YXRhcnNhbCBhbmQKICAgICAgcHJveGltYWwgcGhhbGFueCBub3RlZC4gCiAgICAgICAKICAgICAgUGVyc29uYWwgZXZhbHVhdGlvbiBvZiB0aGUgcmFkaW9ncmFwaCBieSB0aGUgY2xpbmljaWFuIGlzCiAgICAgIGFkdmlzZWQuIAoKICAgIFByaW1hcnkgRGlhZ25vc3RpYyBDb2RlOiAKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIFRIT05HIE5HVVlFTiwgUmFkaW9sb2dpc3QvQ2hpZWYgKFZlcmlmaWVyKQovUlND"^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "FOOT 3 OR MORE VIEWS" ] ;
+       fhir:creation [ fhir:v "2000-07-18T16:26:00Z"^^xsd:dateTime ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:encounter ( [
+       fhir:identifier [
+         fhir:value [ fhir:v "2836334" ]
+       ]
+     ] ) ;
+     fhir:related ( [
+       fhir:identifier [
+         fhir:value [ fhir:v "6561011" ]
+       ] ;
+       fhir:display [ fhir:v "FOOT 3 OR MORE VIEWS" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

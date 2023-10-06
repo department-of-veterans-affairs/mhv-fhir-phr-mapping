@@ -9,8 +9,12 @@
 - `recordedDate` may hold the observed time
 - extension[observedHistoric] will hold observed vs historical
 - `recorder` may have an extension `alternate-reference` that points to an Organization resource identifying the VAMC where the allergy was first recorded
+  - the Organization.name is a friendly name populated from MHV internal table
 - `reaction.manifestation` may have `.text`
   - may have `.coding.code` but no system is known
 - `note.text` will hold comments
   - `note.time` will hold the date of the comment
 - no other elements are populated
+
+Should search for entries that do not have verificationStatus=entered-in-error
+> GET {path}/AllergyIntolerance?patient={patient}&verification-status:not!=entered-in-error

@@ -74,7 +74,8 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </contained>
                 </xsl:if>
 
-
+<!-- The following two extensions are used to enable the conversion to FSH resources - see mock-images.fsh -->
+<!--
 <extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
 <valueString>
   <xsl:attribute name="value">
@@ -89,6 +90,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
     </xsl:attribute>
 </valueMarkdown>
 </extension>
+-->
                 <identifier>
                     <use value="usual"/>
                     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!-- hack for station 989 -->

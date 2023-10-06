@@ -21,6 +21,12 @@
     - impression
     - imagingExamTO
     - reportId
+- Validation does not like some of our CPT codes. These might be deprecated codes, that the codeSystem that the validator is using does not include. These might also be mistakes or test data.
+  - (Leaf Request #52)
+  - Jay confirmed these are good, but deprecated: 71020, 78465
+  - Not yet confirmed: 78478, 78990
+  - unclear what other codes may come to us from Vista
+  - see [zulip chat with terminology](https://chat.fhir.org/#narrow/stream/179202-terminology/topic/CPT.20code.20not.20found)
 
 #### xsl transform
 

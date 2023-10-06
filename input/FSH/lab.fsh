@@ -67,6 +67,7 @@ Title: "VA MHV PHR Lab Report"
 Description: """
 A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.
 """
+* ^extension[$fmm].valueInteger = 1
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"

@@ -23,6 +23,7 @@
   - Pain - `.valueQuantity`
     - Additional specifics for [Pain Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsPain.html)
       - [Examples](StructureDefinition-VA.MHV.PHR.vitalsPain-examples.html)
+      - rational for model, esp use of quantity - [LOINC 72514-3](https://loinc.org/72514-3/)
   - Those with units use `.valueQuantity` else `.valueString`
 - value units
   - There is a units within the data, and it seems mostly to be the proper code from the proper code system UCUM
@@ -34,7 +35,7 @@
   - contained Practitioner(`VitalSignTO.recorder`)
   - contained Practitioner(`VitalSignTO.observer`)
 - timestamp is confirmed to be date taken
-- Most [examples are within a Bundle](Bundle-vitals.html), which does not exposed each vital sign.
+- [Examples are within a Bundle](Bundle-vitals.html)
 - There are examples, all of which have been converted into [FHIR resources](Bundle-vitals.html)
   - BLOOD PRESSURE (SYSTOLIC BLOOD PRESSURE, DIASTOLIC BLOOD PRESSURE) = 26 (26, 26)
   - HEIGHT = 12
@@ -56,7 +57,10 @@
   - seems likely that VIA filters these out
 - QUALIFIER (5) was preserved by eVault PHR. Not clear what it is. Not clear where this comes from in VIA
 - SUPPLEMENTAL_O2 (1.4) is preserved by eVault PHR. Not clear what this is.
-
+- should we take the location (a location IEN) and figure out which site (Organization) manages that location (institution) so that we can have an Organization rather than just Location.  (CDW does this)
+  - or should we do a lookup in MHV similar to what we did with allergies.
+- should really have bodySite, device, method; but these don't come to us in VIA
+- should likely have a pulse-OX, but don't have this currently and it is not clear this will come in VIA
 
 #### code review
 
@@ -78,5 +82,9 @@ august 21, 2023
 - lines 301-310, This is code to just throw a warning if we see data we did not have a map to. Should this code go to production, or be disabled in production? It might be useful to detect information we don't have a map for.
 - line 312 has "DocumentReference" but surely this is wrong, I guess this should be "Observation"?
 
-- preserve location
+also:
 
+- preserve location in an extension/contained
+- the code should be defensive for anything beyond the 6 defined domains, such as a robust map anything else generally to valueString or valueQuantity
+- code mapping may need to be confirmed that the code/map is doing what is defined here.
+- need to implement solution for entered-in-error, which might be hack #1 that deletes current before refreshing with VIA data.
