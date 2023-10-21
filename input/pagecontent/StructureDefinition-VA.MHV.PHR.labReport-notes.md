@@ -18,3 +18,7 @@
 
 - Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports.
 - I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
+- Specimen examples didn't have much populated
+  - not clear what site and facility might contain, so can't tell where they would go
+  - some examples are likely FHIR Device (old hardware left foot), so this might change
+

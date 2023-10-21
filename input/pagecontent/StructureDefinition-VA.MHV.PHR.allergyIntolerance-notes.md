@@ -9,8 +9,8 @@
 - identifier
   - seems most of the time there is a `intoleranceCondition.recordIdentifier.namespaceId`. this should be used if it is provided
   - else there is an typical TOid slice with the value prefix of `AllergyTO.`
-- a `verificationStatus` will be set to `entered-in-error` when status is `F`
-- a `clinicalStatus` will be set to `active`
+- a `verificationStatus` will be set to `entered-in-error` when `status` is `E`
+- a `clinicalStatus` will be set to `active` if the `status` is `F`
 - a `code.text` which tells you what the patient is allergic to
 - `category` derived from `.allergyType`
   - `D` -> #medication
@@ -29,13 +29,13 @@
     - `http://hl7.org/fhir/StructureDefinition/alternate-reference`
   - populate the Organization.name from internal MHV table that is manually managed to hold human readable names given a DNS style identifier that we get in the HDR feed.
   - contained Organization
-    - if changed to not contained, in order to support _include, we must define a search parameter against alternate-reference so that can be used in search _include.
+    - if changed to not contained, in order to support _include, we must define a search parameter against alternate-reference so that can be used in search `_include`.
+- do not map `drugClass`
 
 #### Mapping Concerns
 
 - confirmed vs unconfirmed
   - Vista has a "VERIFIED" but this does not come thru HDR.
-- will we always get an observed vs historic? or will this sometimes not be populated (Leaf Request #51)
 
 #### code inspection concerns
 

@@ -125,14 +125,18 @@ WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observat
 WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: Best Practice Recommendation: In general, all observations should have a performer
 WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 
-# This is declared as a CPT in the source, I can't magically change it. Seems it was a proper CPT at one time.
-ERROR: DocumentReference/ex-MHV-imaging-0: DocumentReference.type.coding[1]: Code '72100' not found in CPT; Unknown Code '72100' in the system 'http://www.ama-assn.org/go/cpt'; The provided code 'http://www.ama-assn.org/go/cpt#72100' is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server) for 'http://www.ama-assn.org/go/cpt#72100'
-ERROR: Immunization/ex-MHV-immunization-2: Immunization.vaccineCode.coding[0]: Code '90688' not found in CPT; Unknown Code '90688' in the system 'http://www.ama-assn.org/go/cpt'; The provided code 'http://www.ama-assn.org/go/cpt#90688' is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server) for 'http://www.ama-assn.org/go/cpt#90688'
-
-# Jay checked these. Were valid, but are now retired
-ERROR: Bundle/images: Bundle.entry[1].resource/*DocumentReference/f9b042f3-24c2-4fee-8205-ad781d98ac23*/.type: Code '71020' not found in CPT; Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#71020' is not in the value set 'http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1' (from Tx-Server)
-ERROR: Bundle/images: Bundle.entry[3].resource/*DocumentReference/d7b8e992-c9d2-40f6-9acd-a18ed1a24f27*/.type: Code '78465' not found in CPT; Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78465' is not in the value set 'http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1' (from Tx-Server)
-
+# Jay checked these. Were valid, but are now retired. Do we just accept validation errors, or do we put defensive code into MHV to not use the code, but just use the old display?
+# 71020 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/71020
+# 78465 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78465
+# 78990 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78990
+# 78480 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78480
+# 78478 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78478
+# old codes that the current CPT valueSet does not include as deprecated codes
+Code '71020' not found in CPT; Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#71020' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.6' (from Tx-Server)
+Code '78465' not found in CPT; Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78465' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.6' (from Tx-Server)
+Code '78990' not found in CPT; Unknown Code '78990' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78990' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.6' (from Tx-Server)
+Code '78480' not found in CPT; Unknown Code '78480' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78480' is not in the value set 'http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1' (from Tx-Server)
+Code '78478' not found in CPT; Unknown Code '78478' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78478' is not in the value set 'http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1' (from Tx-Server)
 
 # These are the ucum values given in the source data feed.
 WARNING: StructureDefinition/VA.MHV.PHR.vitalsPain: StructureDefinition.snapshot.element[61].minValue.ofType(Quantity): UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked, and the Quantity.unit SHOULD contain the annotation

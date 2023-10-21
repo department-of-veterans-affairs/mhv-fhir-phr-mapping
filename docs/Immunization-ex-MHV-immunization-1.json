@@ -9,6 +9,11 @@
     "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"ex-MHV-immunization-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;ex-MHV-immunization-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.immunization.html\">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id:\u00a0ImmunizationTO.124684\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> ()</span></p><p><b>patient</b>: <a href=\"Patient-ex-MHV-patient-1.html\">Patient/ex-MHV-patient-1</a> &quot; DAYTSHR&quot;</p><p><b>occurrence</b>: 2022-08-08 11:15:28+0000</p><p><b>recorded</b>: 2022-08-08 11:15:28+0000</p><p><b>primarySource</b>: </p><p><b style=\"color: maroon\">Exception generating Narrative: Cannot invoke &quot;java.lang.Boolean.toString()&quot; because the return value of &quot;org.hl7.fhir.r5.model.BooleanType.getValue()&quot; is null</b></p></div>"
   },
   "contained" : [{
+    "resourceType" : "Location",
+    "id" : "in-location-1",
+    "name" : "23 HOUR OBSERVATION"
+  },
+  {
     "resourceType" : "Organization",
     "id" : "ex-MHV-organization-552",
     "meta" : {
@@ -53,7 +58,7 @@
     }]
   },
   "location" : {
-    "display" : "23 HOUR OBSERVATION"
+    "reference" : "#in-location-1"
   },
   "performer" : [{
     "actor" : {
@@ -65,6 +70,6 @@
   }],
   "protocolApplied" : [{
     "series" : "COMPLETE",
-    "doseNumberString" : "COMPLETE"
+    "doseNumberString" : "C"
   }]
 }

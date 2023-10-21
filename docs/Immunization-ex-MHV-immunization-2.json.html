@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Example 2 of an MHV immunization - JSON Representation - MyHealtheVet PHR FHIR API v0.2.5</title>
+    <title>Example 2 of an MHV immunization - JSON Representation - MyHealtheVet PHR FHIR API v0.2.6</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -59,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.5 - ci-build
+            <span style="display:inline-block;">0.2.6 - ci-build
 
 
 
@@ -186,7 +186,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.5). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.6). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -262,7 +262,12 @@
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "generated",
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Immunization&lt;/b&gt;&lt;a name=\&quot;ex-MHV-immunization-2\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource Immunization &amp;quot;ex-MHV-immunization-2&amp;quot; &lt;/p&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-VA.MHV.PHR.immunization.html\&quot;&gt;VA MHV PHR Immunization&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id:\u00a0ImmunizationTO.124685\u00a0(use:\u00a0USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: completed&lt;/p&gt;&lt;p&gt;&lt;b&gt;vaccineCode&lt;/b&gt;: INFLUENZA, INJECTABLE, QUADRIVALENT &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html\&quot;&gt;Current Procedural Terminology (CPT®)&lt;/a&gt;#90688 &amp;quot;IIV4 VACCINE SPLT 0.5 ML IM&amp;quot;)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;patient&lt;/b&gt;: &lt;a href=\&quot;Patient-ex-MHV-patient-1.html\&quot;&gt;Patient/ex-MHV-patient-1&lt;/a&gt; &amp;quot; DAYTSHR&amp;quot;&lt;/p&gt;&lt;p&gt;&lt;b&gt;occurrence&lt;/b&gt;: 2022-08-05 16:56:38+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;recorded&lt;/b&gt;: 2022-08-05 16:56:38+0000&lt;/p&gt;&lt;p&gt;&lt;b&gt;primarySource&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b style=\&quot;color: maroon\&quot;&gt;Exception generating Narrative: Cannot invoke &amp;quot;java.lang.Boolean.toString()&amp;quot; because the return value of &amp;quot;org.hl7.fhir.r5.model.BooleanType.getValue()&amp;quot; is null&lt;/b&gt;&lt;/p&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
   },
-  "<a href="http://hl7.org/fhir/R4/observation.html#Observation">contained</a>" : [
+  "<a href="http://hl7.org/fhir/R4/location.html#Location">contained</a>" : [
+    {
+      "<a href="http://hl7.org/fhir/R4/location.html">resourceType</a>" : "Location",
+      "<a href="http://hl7.org/fhir/R4/location.html#Location.id">id</a>" : "in-location-2",
+      "<a href="http://hl7.org/fhir/R4/location.html#Location.name">name</a>" : "ADTP BURNETT"
+    },
     {
       "<a href="http://hl7.org/fhir/R4/observation.html">resourceType</a>" : "Observation",
       "<a href="http://hl7.org/fhir/R4/observation.html#Observation.id">id</a>" : "in-reaction-2",
@@ -341,7 +346,7 @@
     ]
   },
   "<a href="http://hl7.org/fhir/R4/immunization.html#Immunization.location">location</a>" : {
-    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.display">display</a>" : "ADTP BURNETT"
+    "<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a>" : "#in-location-2"
   },
   "<a href="http://hl7.org/fhir/R4/immunization.html#Immunization.performer">performer</a>" : [
     {
@@ -365,7 +370,7 @@
   "<a href="http://hl7.org/fhir/R4/immunization.html#Immunization.protocolApplied">protocolApplied</a>" : [
     {
       "<a href="http://hl7.org/fhir/R4/immunization.html#Immunization.protocolApplied.series">series</a>" : "COMPLETE",
-      "<a href="http://hl7.org/fhir/R4/immunization.html#Immunization.protocolApplied.doseNumber[x]">doseNumberString</a>" : "COMPLETE"
+      "<a href="http://hl7.org/fhir/R4/immunization.html#Immunization.protocolApplied.doseNumber[x]">doseNumberString</a>" : "C"
     }
   ]
 }</code></pre>
@@ -420,7 +425,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 6, 2023 11:35-0500">2023-10-06</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 10:16-0500">2023-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

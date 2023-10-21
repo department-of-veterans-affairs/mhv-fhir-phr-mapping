@@ -35,9 +35,10 @@ mapping concerns - JIRA
 
 NOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-fhir-phr-patientto)
 """
+* ^extension[$fmm].valueInteger = 3
 //* extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named religion 0..1
 //* extension contains http://hl7.org/fhir/StructureDefinition/patient-birthPlace named birthPlace 0..1
-// TODO: could define some slices for the various names, addresses, telecom, and contact
+// could define some slices for the various names, addresses, telecom, and contact
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"

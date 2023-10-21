@@ -13,11 +13,6 @@ A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.
 - may have an `identifier` - `Specimen.identifier` <- `LabSpecimenTO.id`
   - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained
 - should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`
-
-TODO questions: 
-- examples didn't have much populated
-- not clear what site and facility might contain, so can't tell where they would go
-- some examples are likely FHIR Device (old hardware left foot), so this might change
 """
 * receivedTime 0..0
 * parent 0..0

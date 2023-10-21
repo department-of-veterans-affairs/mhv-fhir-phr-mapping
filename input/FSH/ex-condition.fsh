@@ -15,7 +15,7 @@ Example from a mock ProblemTO
 * code.text = "Hypertension (ICD-9-CM 401.9)"
 * code.coding = ICD#401.9
 * contained[+] = ex-MHV-practitioner-110
-* asserter = Reference(Practitioner/ex-MHV-practitioner-110)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-110)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1995-09-27"
@@ -37,7 +37,7 @@ Example from a mock ProblemTO
 * code.text = "Anxiety Neuroses (ICD-9-CM 300.00)"
 * code.coding = ICD#300.00
 * contained[+] = ex-MHV-practitioner-110
-* asserter = Reference(Practitioner/ex-MHV-practitioner-110)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-110)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1995-09-27"
@@ -59,7 +59,7 @@ Example from a mock ProblemTO
 * code.text = "Glaucoma (ICD-9-CM 365.9)"
 * code.coding = ICD#365.9
 * contained[+] = ex-MHV-practitioner-110
-* asserter = Reference(Practitioner/ex-MHV-practitioner-110)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-110)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1995-09-27"
@@ -81,7 +81,7 @@ Example from a mock ProblemTO
 * code.text = "SCREENING FOR ALCOHOLISM (ICD-9-CM V79.1)"
 * code.coding = ICD#V79.1
 * contained[+] = ex-MHV-practitioner-110
-* asserter = Reference(Practitioner/ex-MHV-practitioner-110)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-110)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1997-12-08"
@@ -103,7 +103,7 @@ Example from a mock ProblemTO
 * code.text = "SCREENING FOR OTHER SPECIFIED MENTAL DISORDERS AND DEVELOPMENTAL HANDICAPS (ICD-9-CM V79.8)"
 * code.coding = ICD#V79.8
 * contained[+] = ex-MHV-practitioner-110
-* asserter = Reference(Practitioner/ex-MHV-practitioner-110)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-110)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
 * recordedDate = "1997-12-08"
@@ -125,7 +125,7 @@ Example from a mock ProblemTO
 * code.text = "ENDOCARDITIS NOS (ICD-9-CM 424.90)"
 * code.coding = ICD#424.90
 * contained[+] = ex-MHV-practitioner-110
-* asserter = Reference(Practitioner/ex-MHV-practitioner-110)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-110)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2000-07-18"
@@ -147,7 +147,7 @@ Example from a mock ProblemTO
 * code.text = "COR ATHEROSCL UNSP TYP-VES (ICD-9-CM 414.00)"
 * code.coding = ICD#414.00
 * contained[+] = ex-MHV-practitioner-4262
-* asserter = Reference(Practitioner/ex-MHV-practitioner-4262)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-4262)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2001-03-22"
@@ -169,7 +169,7 @@ Example from a mock ProblemTO
 * code.text = "Restless Legs (ICD-9-CM 333.99)"
 * code.coding = ICD#333.99
 * contained[+] = ex-MHV-practitioner-6051
-* asserter = Reference(Practitioner/ex-MHV-practitioner-6051)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-6051)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2001-07-06"
@@ -191,7 +191,7 @@ Example from a mock ProblemTO
 * code.text = "Benign Prostatic Hypertrophy (ICD-9-CM 799.9)"
 * code.coding = ICD#799.9
 * contained[+] = ex-MHV-practitioner-4262
-* asserter = Reference(Practitioner/ex-MHV-practitioner-4262)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-4262)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2001-07-06"
@@ -213,7 +213,7 @@ Example from a mock ProblemTO
 * code.text = "Hypertrophy (Benign) of Prostate without Urinary obstruction (ICD-9-CM 600.00)"
 * code.coding = ICD#600.00
 * contained[+] = ex-MHV-practitioner-4262
-* asserter = Reference(Practitioner/ex-MHV-practitioner-4262)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-4262)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2004-01-21"
@@ -236,7 +236,7 @@ Example from a mock ProblemTO
 * code.text = "Lumbago (ICD-9-CM 724.2)"
 * code.coding = ICD#724.2
 * contained[+] = ex-MHV-practitioner-22572
-* asserter = Reference(Practitioner/ex-MHV-practitioner-22572)
+* recorder = Reference(Practitioner/ex-MHV-practitioner-22572)
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * recordedDate = "2004-09-24"

@@ -46,11 +46,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen"/>
-  <version value="0.2.5"/>
+  <version value="0.2.6"/>
   <name value="MHVlabSpecimen"/>
   <title value="VA MHV PHR Lab Specimen"/>
   <status value="active"/>
-  <date value="2023-10-06T11:35:14-05:00"/>
+  <date value="2023-10-20T10:16:33-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -66,7 +66,7 @@
       <value value="John.Moehrke@va.gov"/>
     </telecom>
   </contact>
-  <description value="A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.&#xA;&#xA;- This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances&#xA;- must have a type &#xA;  - `Specimen.type.text` &lt;- `LabSpecimenTO.name`&#xA;  - type should be a code derived from LabSpecimenTO.name&#xA;- should have a `collectedDateTime` derived from `LabSpecimenTO.collectionDate`&#xA;- may have an `identifier` - `Specimen.identifier` &lt;- `LabSpecimenTO.id`&#xA;  - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained&#xA;- should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`&#xA;&#xA;TODO questions: &#xA;- examples didn't have much populated&#xA;- not clear what site and facility might contain, so can't tell where they would go&#xA;- some examples are likely FHIR Device (old hardware left foot), so this might change"/>
+  <description value="A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.&#xA;&#xA;- This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances&#xA;- must have a type &#xA;  - `Specimen.type.text` &lt;- `LabSpecimenTO.name`&#xA;  - type should be a code derived from LabSpecimenTO.name&#xA;- should have a `collectedDateTime` derived from `LabSpecimenTO.collectionDate`&#xA;- may have an `identifier` - `Specimen.identifier` &lt;- `LabSpecimenTO.id`&#xA;  - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained&#xA;- should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`"/>
   <jurisdiction>
     <coding>
       <system value="urn:iso:std:iso:3166"/>

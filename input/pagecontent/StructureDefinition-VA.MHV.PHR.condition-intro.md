@@ -7,7 +7,7 @@
   - `code.coding` may be populated with an ICD-9 code
   - do not have any other codes available
 - a `clinicalStatus` of `active`
-- `asserter` the clinician
+- `recorder` the clinician
 - `verificationStatus` only `confirmed` or `unconfirmed`
 - `note` may have notes
 - `recordedDate` indicate last modified date on Vista

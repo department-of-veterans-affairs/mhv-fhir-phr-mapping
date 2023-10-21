@@ -17,7 +17,7 @@ A profile on the Location resource for MHV PHR exposing Location using FHIR API.
 
 NOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-fhir-phr-hospitallocationto).
 """
-* ^extension[$fmm].valueInteger = 1
+* ^extension[$fmm].valueInteger = 3
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"

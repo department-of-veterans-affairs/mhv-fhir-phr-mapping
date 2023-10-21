@@ -29,9 +29,12 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * reaction.detail only Reference(MHVimmunizationReaction)
 * location MS
 * location ^type.aggregation = #contained
+* location.display 0..0
 * manufacturer MS
 * lotNumber MS
 * performer MS
+* performer.actor ^type.aggregation = #contained
+* performer.actor.display 0..0
 * protocolApplied MS
 * protocolApplied.series MS
 * protocolApplied.doseNumberString MS
@@ -63,24 +66,24 @@ Source:	MHVimmunization
 Target: "ImmunizationTO"
 Title: "VIA to mhv-fhir-phr"
 * -> "ImmunizationTO" "FileMan"
-* vaccineCode.text -> "ImmunizationTO.name" "9000010.11.01 IMMUNIZATION"
-* note.text -> "ImmunizationTO.comments" "9000010.11.1101 REMARKS"
-* reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11.06 REACTION"
-* occurrenceDateTime -> "ImmunizationTO.administeredDate" "9000010.11.1201 EVENT DATE AND TIME"
-* recorded -> "ImmunizationTO.timestamp" "9000010.11.1205 DATE/TIME RECORDED"
+* vaccineCode.text -> "ImmunizationTO.name" "9000010.11-.01 IMMUNIZATION"
+* note.text -> "ImmunizationTO.comments" "9000010.11-.1101 REMARKS"
+* reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11-.06 REACTION"
+* occurrenceDateTime -> "ImmunizationTO.administeredDate" "9000010.11-.1201 EVENT DATE AND TIME"
+* recorded -> "ImmunizationTO.timestamp" "9000010.11-.1205 DATE/TIME RECORDED"
 * performer.actor -> "GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`"
 * performer.actor -> "GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`"
-* site.text -> "ImmunizationTO.anatomicSurface" "9000010.11.09 INJECTION SITE"
-* vaccineCode.coding.code -> "ImmunizationTO.cptCode.id" "9000010.11.13 CREATED BY V CPT ENTRY"
+* site.text -> "ImmunizationTO.anatomicSurface" "9000010.11-.09 INJECTION SITE"
+* vaccineCode.coding.code -> "ImmunizationTO.cptCode.id" "9000010.11-.13 CREATED BY V CPT ENTRY"
 * vaccineCode.coding.display -> "ImmunizationTO.cptCode.name"
 * location -> "GetLocation(ImmunizationTO.encounter.location)"
 * performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility)"
 * identifier -> "{StationNbr} and {ImmunizationTO.id}"
-* lotNumber -> "ImmunizationTO.lotNumber" "9000010.11.05 LOT"
+* lotNumber -> "ImmunizationTO.lotNumber" "9000010.11-.05 LOT"
 * manufacturer -> "ImmunizationTO.manufacture"
-* protocolApplied.series -> "translation of ImmunizationTO.series" "9000010.11.04 SERIES"
-* protocolApplied.doseNumberString -> "ImmunizationTO.series" "9000010.11.04 SERIES"
-* patient -> "patient" "9000010.11.02 PATIENT"
+* protocolApplied.series -> "translation of ImmunizationTO.series" "9000010.11-.04 SERIES"
+* protocolApplied.doseNumberString -> "ImmunizationTO.series" "9000010.11-.04 SERIES"
+* patient -> "patient" "9000010.11-.02 PATIENT"
 * status -> "`completed`"
 * primarySource -> "Data Absent Reason - unknown"
 
@@ -90,13 +93,13 @@ Target: "eVaultPHR"
 Title: "eVault-PHR to MHV-PHR"
 Description: "Informative map that includes only the elements available in eVault PHR"
 * -> "ImmunizationTO"
-* location -> "GetLocation(ImmunizationTO.encounter.location)" "9000010.11.1215 ORDERING LOCATION"
-* vaccineCode.text -> "ImmunizationTO.name" "9000010.11.01 IMMUNIZATION"
+* location -> "GetLocation(ImmunizationTO.encounter.location)" "9000010.11-.1215 ORDERING LOCATION"
+* vaccineCode.text -> "ImmunizationTO.name" "9000010.11-.01 IMMUNIZATION"
 * note.text -> "ImmunizationTO.comments"
 * patient -> "patient"
 * status -> "`completed`"
-* reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11.06 REACTION"
-* occurrenceDateTime -> "ImmunizationTO.administeredDate" "9000010.11.1201 EVENT DATE AND TIME"
+* reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11-.06 REACTION"
+* occurrenceDateTime -> "ImmunizationTO.administeredDate" "9000010.11-.1201 EVENT DATE AND TIME"
 * performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility)"
 
 

@@ -38,11 +38,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.5"] ; # 
+  fhir:version [ fhir:v "0.2.6"] ; # 
   fhir:name [ fhir:v "MHVlabSpecimen"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Lab Specimen"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-10-06T11:35:14-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-10-20T10:16:33-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -57,7 +57,7 @@
        fhir:value [ fhir:v "John.Moehrke@va.gov" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.\n\n- This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - `Specimen.type.text` <- `LabSpecimenTO.name`\n  - type should be a code derived from LabSpecimenTO.name\n- should have a `collectedDateTime` derived from `LabSpecimenTO.collectionDate`\n- may have an `identifier` - `Specimen.identifier` <- `LabSpecimenTO.id`\n  - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained\n- should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`\n\nTODO questions: \n- examples didn't have much populated\n- not clear what site and facility might contain, so can't tell where they would go\n- some examples are likely FHIR Device (old hardware left foot), so this might change"] ; # 
+  fhir:description [ fhir:v "A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.\n\n- This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - `Specimen.type.text` <- `LabSpecimenTO.name`\n  - type should be a code derived from LabSpecimenTO.name\n- should have a `collectedDateTime` derived from `LabSpecimenTO.collectionDate`\n- may have an `identifier` - `Specimen.identifier` <- `LabSpecimenTO.id`\n  - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained\n- should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;

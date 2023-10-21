@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR Allergy and Intolerance - MyHealtheVet PHR FHIR API v0.2.5</title>
+    <title>VA MHV PHR Allergy and Intolerance - MyHealtheVet PHR FHIR API v0.2.6</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.5 - ci-build
+            <span style="display:inline-block;">0.2.6 - ci-build
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.5). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.6). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -272,7 +272,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.2.5<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.2.5"/></span>
+      <span class="copy-text">0.2.6<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.2.6"/></span>
       </td>
     </tr>
 
@@ -295,7 +295,7 @@
       </td>
 
       <td>
-        <a href="maturity.html">Maturity Level</a>: 3
+        <a href="maturity.html">Maturity Level</a>: 4
         
       </td>
 
@@ -841,7 +841,7 @@ Summary
 
 </ul>
 
-<p><b><a class="fmm" href="http://hl7.org/fhir/versions.html#maturity" title="Maturity Level">Maturity</a></b>: 3</p>
+<p><b><a class="fmm" href="http://hl7.org/fhir/versions.html#maturity" title="Maturity Level">Maturity</a></b>: 4</p>
 
         </div>
       </div>
@@ -1282,7 +1282,7 @@ Summary
 
 </ul>
 
-<p><b><a class="fmm" href="http://hl7.org/fhir/versions.html#maturity" title="Maturity Level">Maturity</a></b>: 3</p>
+<p><b><a class="fmm" href="http://hl7.org/fhir/versions.html#maturity" title="Maturity Level">Maturity</a></b>: 4</p>
 
         </div>
       </div>
@@ -1317,8 +1317,8 @@ Summary
       <li>else there is an typical TOid slice with the value prefix of <code class="language-plaintext highlighter-rouge">AllergyTO.</code></li>
     </ul>
   </li>
-  <li>a <code class="language-plaintext highlighter-rouge">verificationStatus</code> will be set to <code class="language-plaintext highlighter-rouge">entered-in-error</code> when status is <code class="language-plaintext highlighter-rouge">F</code></li>
-  <li>a <code class="language-plaintext highlighter-rouge">clinicalStatus</code> will be set to <code class="language-plaintext highlighter-rouge">active</code></li>
+  <li>a <code class="language-plaintext highlighter-rouge">verificationStatus</code> will be set to <code class="language-plaintext highlighter-rouge">entered-in-error</code> when <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">E</code></li>
+  <li>a <code class="language-plaintext highlighter-rouge">clinicalStatus</code> will be set to <code class="language-plaintext highlighter-rouge">active</code> if the <code class="language-plaintext highlighter-rouge">status</code> is <code class="language-plaintext highlighter-rouge">F</code></li>
   <li>a <code class="language-plaintext highlighter-rouge">code.text</code> which tells you what the patient is allergic to</li>
   <li><code class="language-plaintext highlighter-rouge">category</code> derived from <code class="language-plaintext highlighter-rouge">.allergyType</code>
     <ul>
@@ -1351,11 +1351,12 @@ Summary
       <li>populate the Organization.name from internal MHV table that is manually managed to hold human readable names given a DNS style identifier that we get in the HDR feed.</li>
       <li>contained Organization
         <ul>
-          <li>if changed to not contained, in order to support _include, we must define a search parameter against alternate-reference so that can be used in search _include.</li>
+          <li>if changed to not contained, in order to support _include, we must define a search parameter against alternate-reference so that can be used in search <code class="language-plaintext highlighter-rouge">_include</code>.</li>
         </ul>
       </li>
     </ul>
   </li>
+  <li>do not map <code class="language-plaintext highlighter-rouge">drugClass</code></li>
 </ul>
 
 <h4 id="mapping-concerns">Mapping Concerns</h4>
@@ -1366,7 +1367,6 @@ Summary
       <li>Vista has a “VERIFIED” but this does not come thru HDR.</li>
     </ul>
   </li>
-  <li>will we always get an observed vs historic? or will this sometimes not be populated (Leaf Request #51)</li>
 </ul>
 
 <h4 id="code-inspection-concerns">code inspection concerns</h4>
@@ -1451,7 +1451,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 6, 2023 11:35-0500">2023-10-06</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 10:16-0500">2023-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

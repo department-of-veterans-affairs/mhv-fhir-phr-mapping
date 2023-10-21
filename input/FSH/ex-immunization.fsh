@@ -17,12 +17,21 @@ Example from a mock ImmunizationTO
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * note[0].text = "test"
-* location.display = "23 HOUR OBSERVATION"
+* contained[+] = in-location-1
+* location = Reference(in-location-1)
 //* encounter.identifier.value = "6433274"
 * protocolApplied.series = "COMPLETE"
-* protocolApplied.doseNumberString = "COMPLETE"
+* protocolApplied.doseNumberString = "C"
 * contained[+] = ex-MHV-organization-552
 * performer[+].actor = Reference(ex-MHV-organization-552)
+
+Instance: in-location-1
+InstanceOf: Location
+Usage: #inline
+* name =  "23 HOUR OBSERVATION"
+
+
+
 
 Instance:   ex-MHV-immunization-2
 InstanceOf: VA.MHV.PHR.immunization
@@ -44,10 +53,11 @@ Example from a mock ImmunizationTO
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * note.text = "test comment"
-* location.display = "ADTP BURNETT"
+* contained[+] = in-location-2
+* location = Reference(in-location-2)
 //* encounter.identifier.value = "6433261"
 * protocolApplied.series = "COMPLETE"
-* protocolApplied.doseNumberString = "COMPLETE"
+* protocolApplied.doseNumberString = "C"
 * reaction.detail = Reference(in-reaction-2)
 * contained[+] = in-reaction-2
 * contained[+] = ex-MHV-organization-552
@@ -58,3 +68,11 @@ InstanceOf: MHVimmunizationReaction
 Usage: #inline
 * status = #final
 * code.text = "FEVER"
+
+Instance: in-location-2
+InstanceOf: Location
+Usage: #inline
+* name =  "ADTP BURNETT"
+
+
+

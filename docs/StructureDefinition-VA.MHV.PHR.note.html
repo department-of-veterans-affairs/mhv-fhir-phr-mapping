@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR Notes - MyHealtheVet PHR FHIR API v0.2.5</title>
+    <title>VA MHV PHR Notes - MyHealtheVet PHR FHIR API v0.2.6</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.5 - ci-build
+            <span style="display:inline-block;">0.2.6 - ci-build
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.5). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.6). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -272,7 +272,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.2.5<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note|0.2.5"/></span>
+      <span class="copy-text">0.2.6<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note|0.2.6"/></span>
       </td>
     </tr>
 
@@ -1083,7 +1083,13 @@ Summary
 <div style="display:inline-block" markdown="1">
 
 <ul>
-  <li>The <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/notes.xml">mock example 1</a> and <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/note2.xml">mock example 2</a></li>
+  <li>The mock data I have
+    <ul>
+      <li><a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/notes.xml">mock example 1</a></li>
+      <li><a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/note2.xml">mock example 2</a></li>
+      <li><a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/discharge.xml">mock discharge</a></li>
+    </ul>
+  </li>
   <li>maps to <a href="https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl">NoteTO</a> schema.</li>
   <li><a href="StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-via-to-mhv-fhir-phr-noteto">Mapping from VIA - NoteTO</a></li>
   <li><a href="StructureDefinition-VA.MHV.PHR.note-examples.html">Examples</a></li>
@@ -1092,7 +1098,7 @@ Summary
   <li><code class="language-plaintext highlighter-rouge">type</code> seems to hold an enum (PN, DS).
     <ul>
       <li><code class="language-plaintext highlighter-rouge">DS</code> - LOINC#18842-5 "Discharge summary"</li>
-      <li><code class="language-plaintext highlighter-rouge">PN</code> - LOINC#11506 "Progress Note"</li>
+      <li><code class="language-plaintext highlighter-rouge">PN</code> - LOINC#11506-3 "Progress Note"</li>
       <li>anything else should be logged as not yet understood</li>
     </ul>
   </li>
@@ -1112,9 +1118,15 @@ Summary
   <li>ADT feed discharge summary do not have an <code class="language-plaintext highlighter-rouge">id</code> so it is not clear how we would keep from duplicating
     <ul>
       <li>discharge summary in the notes feed do have an <code class="language-plaintext highlighter-rouge">id</code></li>
+      <li>why do we need to watch the discharge feed? What does it give us that we don’t get with the notes?</li>
+      <li>could we just de-duplicate only based on timestamp? If so, does that do anything useful?</li>
     </ul>
   </li>
-  <li>is <code class="language-plaintext highlighter-rouge">standardTitle</code> or <code class="language-plaintext highlighter-rouge">type</code> used to differentiate between various note types?</li>
+  <li>is <code class="language-plaintext highlighter-rouge">standardTitle</code> or <code class="language-plaintext highlighter-rouge">type</code> used to differentiate between various note types?
+    <ul>
+      <li>note that KBS has a cross-walk from standard titles to loinc.</li>
+    </ul>
+  </li>
   <li><code class="language-plaintext highlighter-rouge">status</code> might be derived from <code class="language-plaintext highlighter-rouge">NoteTO.status</code>, but at this point I presume we are only told about completed notes, we have a business rule to ignore all others, and I don’t know what other <code class="language-plaintext highlighter-rouge">NoteTO.status</code> values might happen</li>
   <li>what other <code class="language-plaintext highlighter-rouge">type</code> values might we see?</li>
   <li>some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can’t tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
@@ -1211,7 +1223,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 6, 2023 11:35-0500">2023-10-06</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 10:16-0500">2023-10-20</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

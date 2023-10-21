@@ -23,4 +23,14 @@
 - **are we ever exposed to ProblemTO.removed=true**
 - **what are the other values for ProblemTO.status**
   - how do we handle when a problem is moved from active to not active? Are we made aware of this? Should we delete, mark not active, or mark entered-in-error?
-- noted that VA went to ICD-10. so not clear that we should interpret the <icd> as ICD-9 or ICD-10.. the display text implies 9 in my mock data.
+
+#### 2023-10-12
+
+change:
+- use .recorder not .asserter
+
+TODO
+- look at VIA mapping. Are we specifically getting Problems table
+- can .status other than "ACTIVE". Might it be "INACTIVE" being a map to .12
+- verificationStatus - might turn into a don't map as we are unclear
+- is the modifiedDate the right one to keep? as KBS seems to think this is a last updated concept, not when it was first recorded.

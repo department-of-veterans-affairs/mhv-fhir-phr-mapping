@@ -20,6 +20,7 @@ Mapping to [VIA UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.htm
 
 Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-practitionerlite)
 """
+* ^extension[$fmm].valueInteger = 3
 * name MS
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -121,7 +122,7 @@ Title: "VIA to mhv-fhir-phr"
 
 
 
-/* TODO??? PersonTO as Practitioner or RelatedPerson ???
+/* PersonTO as Practitioner or RelatedPerson ???
 
       <s:complexType name="PersonTO">
         <s:complexContent mixed="false">

@@ -11,7 +11,7 @@ Our FHIR database will track linkages to source objects using the FHIR resource 
 8. [OID assigned to VA](https://oidref.com/2.16.840.1.113883.4.349) `urn:oid:2.16.840.1.113883.4.349`
 9. OID pattern for facilities is at `.4.{station number}`. There is a spreadsheet tracking all of the facility OIDs.
 
-**TODO Concerns from Jay Lyle discussion 7/18/2023**
+**Concerns from Jay Lyle discussion 7/18/2023**
 
 - Concern with pattern in 9 above using `.4.`.
 - currently am slicing on `.use`; but might be better to slice on `.type` and define types.

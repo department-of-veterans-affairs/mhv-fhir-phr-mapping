@@ -29,11 +29,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.5"] ; # 
+  fhir:version [ fhir:v "0.2.6"] ; # 
   fhir:name [ fhir:v "MHVvitals"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Vital-Signs"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-10-06T11:35:14-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-10-20T10:16:33-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -1935,11 +1935,11 @@
        ] [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.type.name" ] ;
-         fhir:comment [ fhir:v "VITAL_TYPE - 120.5.03 VITAL TYPE" ]
+         fhir:comment [ fhir:v "VITAL_TYPE - 120.5-.03 VITAL TYPE" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Old-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.type.name" ] ;
-         fhir:comment [ fhir:v "VITAL_TYPE - 120.5.03 VITAL TYPE" ]
+         fhir:comment [ fhir:v "VITAL_TYPE - 120.5-.03 VITAL TYPE" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.subject" ] ;
@@ -1994,11 +1994,11 @@
        ] [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "patient" ] ;
-         fhir:comment [ fhir:v "PATIENT - 120.5.02 PATIENT" ]
+         fhir:comment [ fhir:v "PATIENT - 120.5-.02 PATIENT" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Old-Mapping" ] ;
          fhir:map [ fhir:v "patient" ] ;
-         fhir:comment [ fhir:v "patient - 120.5.02 Patient" ]
+         fhir:comment [ fhir:v "patient - 120.5-.02 Patient" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.focus" ] ;
@@ -2228,11 +2228,11 @@
        ] [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.timestamp" ] ;
-         fhir:comment [ fhir:v "DATE_TIME_TAKEN - 120.5.01 Date/Time Vitals Taken" ]
+         fhir:comment [ fhir:v "DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Old-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.timestamp" ] ;
-         fhir:comment [ fhir:v "DATE_TIME_TAKEN - 120.5.01 Date/Time Vitals Taken" ]
+         fhir:comment [ fhir:v "DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.issued" ] ;
@@ -2338,7 +2338,7 @@
        ] [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "contained VitalSignTO.recorder" ] ;
-         fhir:comment [ fhir:v ".06 ENTERED BY" ]
+         fhir:comment [ fhir:v "120.5-.06 ENTERED BY" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "contained VitalSignTO.observer" ]
@@ -2468,7 +2468,7 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "Location(VitalSignTO.location)" ] ;
-         fhir:comment [ fhir:v ".05 HOSPITAL LOCATION" ]
+         fhir:comment [ fhir:v "120.5-.05 HOSPITAL LOCATION" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.performer.extension:site.id" ] ;
@@ -2834,11 +2834,11 @@
        ] [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.value1 and VitalSignTO.units" ] ;
-         fhir:comment [ fhir:v "MEASUREMENT - 120.5.1.2 RATE" ]
+         fhir:comment [ fhir:v "MEASUREMENT - 120.5-.1.2 RATE" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Old-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.value1 and VitalSignTO.units" ] ;
-         fhir:comment [ fhir:v "MEASUREMENT - 120.5.1.2 RATE" ]
+         fhir:comment [ fhir:v "MEASUREMENT - 120.5-.1.2 RATE" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.dataAbsentReason" ] ;
@@ -4441,11 +4441,11 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.type.name" ] ;
-         fhir:comment [ fhir:v "VITAL_TYPE - 120.5.03 VITAL TYPE" ]
+         fhir:comment [ fhir:v "VITAL_TYPE - 120.5-.03 VITAL TYPE" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Old-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.type.name" ] ;
-         fhir:comment [ fhir:v "VITAL_TYPE - 120.5.03 VITAL TYPE" ]
+         fhir:comment [ fhir:v "VITAL_TYPE - 120.5-.03 VITAL TYPE" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.subject" ] ;
@@ -4453,11 +4453,11 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "patient" ] ;
-         fhir:comment [ fhir:v "PATIENT - 120.5.02 PATIENT" ]
+         fhir:comment [ fhir:v "PATIENT - 120.5-.02 PATIENT" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Old-Mapping" ] ;
          fhir:map [ fhir:v "patient" ] ;
-         fhir:comment [ fhir:v "patient - 120.5.02 Patient" ]
+         fhir:comment [ fhir:v "patient - 120.5-.02 Patient" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.focus" ] ;
@@ -4494,11 +4494,11 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.timestamp" ] ;
-         fhir:comment [ fhir:v "DATE_TIME_TAKEN - 120.5.01 Date/Time Vitals Taken" ]
+         fhir:comment [ fhir:v "DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Old-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.timestamp" ] ;
-         fhir:comment [ fhir:v "DATE_TIME_TAKEN - 120.5.01 Date/Time Vitals Taken" ]
+         fhir:comment [ fhir:v "DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.issued" ] ;
@@ -4534,7 +4534,7 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "contained VitalSignTO.recorder" ] ;
-         fhir:comment [ fhir:v ".06 ENTERED BY" ]
+         fhir:comment [ fhir:v "120.5-.06 ENTERED BY" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "contained VitalSignTO.observer" ]
@@ -4555,7 +4555,7 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "Location(VitalSignTO.location)" ] ;
-         fhir:comment [ fhir:v ".05 HOSPITAL LOCATION" ]
+         fhir:comment [ fhir:v "120.5-.05 HOSPITAL LOCATION" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.performer.extension:site.value[x]" ] ;
@@ -4574,11 +4574,11 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Vitals-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.value1 and VitalSignTO.units" ] ;
-         fhir:comment [ fhir:v "MEASUREMENT - 120.5.1.2 RATE" ]
+         fhir:comment [ fhir:v "MEASUREMENT - 120.5-.1.2 RATE" ]
        ] [
          fhir:identity [ fhir:v "Vitals-Old-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.value1 and VitalSignTO.units" ] ;
-         fhir:comment [ fhir:v "MEASUREMENT - 120.5.1.2 RATE" ]
+         fhir:comment [ fhir:v "MEASUREMENT - 120.5-.1.2 RATE" ]
        ] )
      ] [
        fhir:id [ fhir:v "Observation.dataAbsentReason" ] ;

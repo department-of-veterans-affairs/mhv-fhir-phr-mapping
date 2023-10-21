@@ -120,8 +120,4 @@ Experience with the production system there are many other date/time formats we 
 
 ### when no timezone
 
-TODO: Likely when there is no timezone, it was local time for that Vista.
-
-- should just drop the time, keeping only the date.
-- presume eastern time.
-- lookup in a table what timezone that vista lives in.
+When there is no timezone, it was local time for that station on that Vista. Use the algorithm that MHV has used for many years. Based on the station, if it is known. Based on the Vista if the station is not known.

@@ -24,9 +24,9 @@ A profile on the Condition resource for MHV PHR exposing Problems using FHIR API
 * code.text 1..1 MS
 * code.coding 1..1 MS
 // already limited to us-core patient * subject only Reference(Patient)
-* asserter MS
-* asserter only Reference(Practitioner)
-* asserter ^type.aggregation = #contained
+* recorder MS
+* recorder only Reference(Practitioner)
+* recorder ^type.aggregation = #contained
 * clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
 * verificationStatus from ConditionVerificationVS (required)
 * note MS
@@ -41,7 +41,7 @@ A profile on the Condition resource for MHV PHR exposing Problems using FHIR API
 * severity 0..0
 * bodySite 0..0
 * encounter 0..0
-* recorder 0..0
+* asserter 0..0
 * stage 0..0
 * evidence.code 0..0
 
@@ -62,7 +62,7 @@ Title: "VIA to mhv-fhir-phr"
 * -> "ProblemTO"
 * identifier -> "{StationNbr} and {ProblemTO.id}"
 * code.text -> "ProblemTO.type.name"
-* asserter -> "GetPractitioner(ProblemTO.observer)"
+* recorder -> "GetPractitioner(ProblemTO.observer)"
 * clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo"
 * verificationStatus -> "ProblemTO.verified ? `#confirmed` : `#unconfirmed`"
 * note -> "ProblemTO.comments + ProblemTO.comment"
@@ -82,7 +82,7 @@ Target: "ProblemTO"
 Title: "eVault-PHR to MHV-PHR"
 * -> "ProblemTO" "eVault"
 * code.text -> "ProblemTO.type.name" "PROBLEM"
-* asserter -> "GetPractitioner(ProblemTO.observer)" "PROVIDER"
+* recorder -> "GetPractitioner(ProblemTO.observer)" "PROVIDER"
 * clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" "STATUS"
 * note -> "ProblemTO.comments" "COMMENTS"
 * recordedDate -> "ProblemTO.modifiedDate" "EVENT_TIME"

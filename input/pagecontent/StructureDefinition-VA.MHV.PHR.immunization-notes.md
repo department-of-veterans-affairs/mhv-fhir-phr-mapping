@@ -17,14 +17,14 @@
   - see [Immunization Reaction Profile of Observation](StructureDefinition-VA.MHV.PHR.immunizationReaction.html)
 - `contraindicated` - '1' for Yes (do not repeat this vaccine), '0' for no (okay to use in the future)
   - no clear place to record this in FHIR and no need for the data, so do not preserve
-- `series` - series of the immunization type was given to the patient
-  - see table below for how to set `.protocolApplied.series`
-  - put the `series` into `.protocolApplied.doseNumberString`
-  - note not using doseNumberPositiveInt as this element is removed in future versions of FHIR so it seems string is more future proof
 - Not mapped due to lack of clarity on what the value is and if it will ever be populated
   - `shortName`
   - `encounterProvider`
   - `orderingProvider`
+- `series` - series of the immunization type was given to the patient
+  - see table below for how to set `.protocolApplied.series`
+  - put the `series` into `.protocolApplied.doseNumberString`
+  - note not using doseNumberPositiveInt as this element is removed in future versions of FHIR so it seems string is more future proof
 
 | `series` |  FHIR `.protocolApplied.series` |
 |--------|------|
@@ -39,7 +39,8 @@
 | '6' | SERIES 6 |
 | '7' | SERIES 7 |
 | '8' | SERIES 8 |
-  
+{:.grid}
+
 #### Mapping Concerns
 
 - Updates must be supported somehow. Fixing the status at completed will only work if data never changes.
@@ -68,8 +69,16 @@ need to fix
 - identifier (OID+'.4.349', stationNumber + '.' + id)
 - add series -> protocolApplied.series
 
-#### change 2023-09-22 
+#### change 2023-09-22
 
 - do NOT populate primarySource (previously were setting this to false), 
   - add extension on primarySource so that can indicate Data-Absent-Reason of unknown (given that us-core requires this be populated)
 - do not preserve contraindicated
+
+#### question 2023-10-12
+
+TODO KBS question
+- why both location and performer from the encounter?
+  - encounter.facility vs encounter.location
+  - in MHV we look at which ever is populated starting with performer as preferred 
+  - Thus it seems we should convert both the way defined. (JFM 10/20/2023)

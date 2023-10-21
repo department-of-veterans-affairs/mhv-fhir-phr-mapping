@@ -8,6 +8,37 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages)
 
+### 0.2.6
+
+This is mostly cleanup of documentation:
+
+- Allergies
+  - no technical changes, just documentation of changes in 0.2.5
+  - moved maturity up to 4 to indicate now in production
+  - clarify the rule around interpreting the `status` value of `F` as active, and `E` as entered-in-error
+  - clarify that drugClass is not to be mapped
+  - removed a mapping concern that was decided in 0.2.5, clarify that we are putting observed vs historic in an extension
+- Immunization
+  - changed the look of the references to Vista file and field (added a dash rather than just a period)
+  - force contained Location, and change examples to that (was using location.display)
+  - force contained performed.actor
+- Vitals
+  - changed the look of the references to Vista file and field (added a dash rather than just a period)
+- Condition
+  - populate .recorder not .asserter
+  - TODO questions with KBS
+- labs
+  - moved mapping concerns to one place
+- Imaging
+  - removed xml transform as it is not part of the documentation
+  - note that it is known that many CPT codes are used in the mock data that are no longer allowed and thus errors are thrown in the IG Build QA. There is efforts to get CPT to include deprecated codes to recognize historic data.
+- Notes
+  - clarify the PN is loinc 11506-3 (narrative missed the -3)
+  - TODO questions with KBS -
+    - why are we pulling Discharge Summary from the ADT feed, especially since that feed does not have id that would enable de-duplication on notes feed updates from the of that Discharge Summary.
+    - KBS has a table that could be used to get code given most standard titles. This might be a good future improvement.
+- convert date - clarified this is decided to use the date conversion algorithm that MHV has used for a long time. This is notionally the same as Lighthouse is using.
+
 ### 0.2.5
 
 - maturity declared for each profile
@@ -16,6 +47,7 @@ The notes below for each release. Archive of [released packages](https://github.
   - when possible (especially Allergy) will populate the name of the Organization from the - MHV FACILITY_INFO table {FACILITY_INFO.NAME}
   - add guidance on Allergy query to recommend searching for those entries not entered-in-error
 - Vital Signs
+  - remove from concept map some types of vital-signs that do not exist in vista and don't have good loinc
   - made explicit examples from the vitals Bundle as full exposed examples (keeping bundle too)
 - Radiology Imaging Reports
   - made explicit examples from the imaging Bundle as full exposed examples (keeping bundle too)

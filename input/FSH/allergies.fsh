@@ -9,7 +9,7 @@ Title:          "VA MHV PHR Allergy and Intolerance"
 Description:    """
 A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies using FHIR API.
 """
-* ^extension[$fmm].valueInteger = 3
+* ^extension[$fmm].valueInteger = 4
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
