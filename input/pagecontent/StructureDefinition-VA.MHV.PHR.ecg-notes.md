@@ -11,4 +11,4 @@
 
 #### Mapping Concerns
 
-- none
+- MHV is no longer pulling ECG because the only thing we get is historic, all current ECG just give us the date only.

@@ -1,0 +1,723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="8647883f-2316-48a1-9437-fdbe628f24ec"/>
+  <meta>
+    <lastUpdated value="2023-11-14T12:57:59.958-05:00"/>
+  </meta>
+  <type value="searchset"/>
+  <total value="9"/>
+  <link>
+    <relation value="self"/>
+    <url value="http://localhost:8081/fhir/Immunization?patient=27659"/>
+  </link>
+  <entry>
+    <fullUrl value="http://localhost:8081/fhir/Immunization/27654"/>
+    <resource>
+      <Immunization>
+        <id value="27654"/>
+        <meta>
+          <versionId value="29"/>
+          <lastUpdated value="2023-11-14T12:55:38.977-05:00"/>
+          <source value="#qRLn7DXPxLrg5fzq"/>
+          <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="27654"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;27654&quot; Version &quot;29&quot; Updated &quot;2023-11-14 12:55:38-0500&quot; </p><p style="margin-bottom: 0px">Information Source: #qRLn7DXPxLrg5fzq!</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.125285 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: YELLOW FEVER <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#90717 &quot;YELLOW FEVER VACCINE SUBQ&quot;)</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2023-10-13 10:49:00-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="Location-0"> </a></p><blockquote><p/><p><a name="Location-0"> </a></p><p><b>name</b>: ADULT DAY HEALTH CARE</p></blockquote><blockquote><p><b>performer</b></p><p><b>actor</b>: <a name="Organization-0"> </a></p><blockquote><p/><p><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></blockquote><blockquote><p><b>performer</b></p><p><b>function</b>: Administering Provider <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0443.html">providerRole</a>#AP)</span></p><p><b>actor</b>: <a name="Provider-0"> </a></p><blockquote><p/><p><a name="Provider-0"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: KHAN,MUAZZAM</p></blockquote></blockquote><p><b>note</b>: Yellow </p><h3>ProtocolApplieds</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Series</b></td><td><b>DoseNumber[x]</b></td></tr><tr><td style="display: none">*</td><td>COMPLETE</td><td>C</td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-0</b><a name="Location-0"> </a></p><p><b>name</b>: ADULT DAY HEALTH CARE</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #Provider-0</b><a name="Provider-0"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: KHAN,MUAZZAM</p></blockquote></div>
+        </text>
+        <contained>
+          <Location>
+            <id value="Location-0"/>
+            <name value="ADULT DAY HEALTH CARE"/>
+          </Location>
+        </contained>
+        <contained>
+          <Organization>
+            <id value="Organization-0"/>
+            <meta>
+              <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+            </meta>
+            <identifier>
+              <use value="usual"/>
+              <type>
+                <text value="L"/>
+              </type>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="984"/>
+            </identifier>
+            <active value="true"/>
+            <name value="DAYTSHR TEST LAB"/>
+          </Organization>
+        </contained>
+        <contained>
+          <Practitioner>
+            <id value="Provider-0"/>
+            <identifier>
+              <use value="usual"/>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="0"/>
+            </identifier>
+            <name>
+              <text value="KHAN,MUAZZAM"/>
+            </name>
+          </Practitioner>
+        </contained>
+        <identifier>
+          <use value="usual"/>
+          <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+          <value value="ImmunizationTO.125285"/>
+        </identifier>
+        <status value="completed"/>
+        <vaccineCode>
+          <coding>
+            <system value="http://www.ama-assn.org/go/cpt"/>
+            <code value="90717"/>
+            <display value="YELLOW FEVER VACCINE SUBQ"/>
+          </coding>
+          <text value="YELLOW FEVER"/>
+        </vaccineCode>
+        <patient>
+          <reference value="Patient/27659"/>
+        </patient>
+        <occurrenceDateTime value="2023-10-13T10:49:00-04:00"/>
+        <primarySource>
+          <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="unknown"/>
+          </extension>
+        </primarySource>
+        <location>
+          <reference value="#Location-0"/>
+        </location>
+        <performer>
+          <actor>
+            <reference value="#Organization-0"/>
+          </actor>
+        </performer>
+        <performer>
+          <function>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0443"/>
+              <code value="AP"/>
+            </coding>
+          </function>
+          <actor>
+            <reference value="#Provider-0"/>
+          </actor>
+        </performer>
+        <note>
+          <text value="Yellow "/>
+        </note>
+        <protocolApplied>
+          <series value="COMPLETE"/>
+          <doseNumberString value="C"/>
+        </protocolApplied>
+      </Immunization>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://localhost:8081/fhir/Immunization/27657"/>
+    <resource>
+      <Immunization>
+        <id value="27657"/>
+        <meta>
+          <versionId value="29"/>
+          <lastUpdated value="2023-11-14T12:55:38.977-05:00"/>
+          <source value="#qRLn7DXPxLrg5fzq"/>
+          <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="27657"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;27657&quot; Version &quot;29&quot; Updated &quot;2023-11-14 12:55:38-0500&quot; </p><p style="margin-bottom: 0px">Information Source: #qRLn7DXPxLrg5fzq!</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.124696 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: MMR <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#90707 &quot;MMR VACCINE SC&quot;)</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2022-08-18 16:29:23-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="Location-0"> </a></p><blockquote><p/><p><a name="Location-0"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><h3>Performers</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td></tr><tr><td style="display: none">*</td><td><a name="Organization-0"> </a><blockquote><p/><p><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-0</b><a name="Location-0"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON</p></blockquote></div>
+        </text>
+        <contained>
+          <Location>
+            <id value="Location-0"/>
+            <name value="ADMISSIONS (LOC)"/>
+          </Location>
+        </contained>
+        <contained>
+          <Organization>
+            <id value="Organization-0"/>
+            <meta>
+              <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+            </meta>
+            <identifier>
+              <use value="usual"/>
+              <type>
+                <text value="L"/>
+              </type>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="552"/>
+            </identifier>
+            <active value="true"/>
+            <name value="DAYTON"/>
+          </Organization>
+        </contained>
+        <identifier>
+          <use value="usual"/>
+          <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+          <value value="ImmunizationTO.124696"/>
+        </identifier>
+        <status value="completed"/>
+        <vaccineCode>
+          <coding>
+            <system value="http://www.ama-assn.org/go/cpt"/>
+            <code value="90707"/>
+            <display value="MMR VACCINE SC"/>
+          </coding>
+          <text value="MMR"/>
+        </vaccineCode>
+        <patient>
+          <reference value="Patient/27659"/>
+        </patient>
+        <occurrenceDateTime value="2022-08-18T16:29:23-04:00"/>
+        <primarySource>
+          <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="unknown"/>
+          </extension>
+        </primarySource>
+        <location>
+          <reference value="#Location-0"/>
+        </location>
+        <performer>
+          <actor>
+            <reference value="#Organization-0"/>
+          </actor>
+        </performer>
+      </Immunization>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://localhost:8081/fhir/Immunization/27656"/>
+    <resource>
+      <Immunization>
+        <id value="27656"/>
+        <meta>
+          <versionId value="29"/>
+          <lastUpdated value="2023-11-14T12:55:38.977-05:00"/>
+          <source value="#qRLn7DXPxLrg5fzq"/>
+          <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="27656"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;27656&quot; Version &quot;29&quot; Updated &quot;2023-11-14 12:55:38-0500&quot; </p><p style="margin-bottom: 0px">Information Source: #qRLn7DXPxLrg5fzq!</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.124695 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: DENGUE FEVER TETRAVALENT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2022-08-18 16:29:23-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="Location-0"> </a></p><blockquote><p/><p><a name="Location-0"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><h3>Performers</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td></tr><tr><td style="display: none">*</td><td><a name="Organization-0"> </a><blockquote><p/><p><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-0</b><a name="Location-0"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON</p></blockquote></div>
+        </text>
+        <contained>
+          <Location>
+            <id value="Location-0"/>
+            <name value="ADMISSIONS (LOC)"/>
+          </Location>
+        </contained>
+        <contained>
+          <Organization>
+            <id value="Organization-0"/>
+            <meta>
+              <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+            </meta>
+            <identifier>
+              <use value="usual"/>
+              <type>
+                <text value="L"/>
+              </type>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="552"/>
+            </identifier>
+            <active value="true"/>
+            <name value="DAYTON"/>
+          </Organization>
+        </contained>
+        <identifier>
+          <use value="usual"/>
+          <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+          <value value="ImmunizationTO.124695"/>
+        </identifier>
+        <status value="completed"/>
+        <vaccineCode>
+          <text value="DENGUE FEVER TETRAVALENT"/>
+        </vaccineCode>
+        <patient>
+          <reference value="Patient/27659"/>
+        </patient>
+        <occurrenceDateTime value="2022-08-18T16:29:23-04:00"/>
+        <primarySource>
+          <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="unknown"/>
+          </extension>
+        </primarySource>
+        <location>
+          <reference value="#Location-0"/>
+        </location>
+        <performer>
+          <actor>
+            <reference value="#Organization-0"/>
+          </actor>
+        </performer>
+      </Immunization>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://localhost:8081/fhir/Immunization/27658"/>
+    <resource>
+      <Immunization>
+        <id value="27658"/>
+        <meta>
+          <versionId value="29"/>
+          <lastUpdated value="2023-11-14T12:55:38.977-05:00"/>
+          <source value="#qRLn7DXPxLrg5fzq"/>
+          <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="27658"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;27658&quot; Version &quot;29&quot; Updated &quot;2023-11-14 12:55:38-0500&quot; </p><p style="margin-bottom: 0px">Information Source: #qRLn7DXPxLrg5fzq!</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.124697 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: HEP B, ADULT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2022-08-18 16:29:23-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="Location-0"> </a></p><blockquote><p/><p><a name="Location-0"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><h3>Performers</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td></tr><tr><td style="display: none">*</td><td><a name="Organization-0"> </a><blockquote><p/><p><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-0</b><a name="Location-0"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON</p></blockquote></div>
+        </text>
+        <contained>
+          <Location>
+            <id value="Location-0"/>
+            <name value="ADMISSIONS (LOC)"/>
+          </Location>
+        </contained>
+        <contained>
+          <Organization>
+            <id value="Organization-0"/>
+            <meta>
+              <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+            </meta>
+            <identifier>
+              <use value="usual"/>
+              <type>
+                <text value="L"/>
+              </type>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="552"/>
+            </identifier>
+            <active value="true"/>
+            <name value="DAYTON"/>
+          </Organization>
+        </contained>
+        <identifier>
+          <use value="usual"/>
+          <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+          <value value="ImmunizationTO.124697"/>
+        </identifier>
+        <status value="completed"/>
+        <vaccineCode>
+          <text value="HEP B, ADULT"/>
+        </vaccineCode>
+        <patient>
+          <reference value="Patient/27659"/>
+        </patient>
+        <occurrenceDateTime value="2022-08-18T16:29:23-04:00"/>
+        <primarySource>
+          <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="unknown"/>
+          </extension>
+        </primarySource>
+        <location>
+          <reference value="#Location-0"/>
+        </location>
+        <performer>
+          <actor>
+            <reference value="#Organization-0"/>
+          </actor>
+        </performer>
+      </Immunization>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://localhost:8081/fhir/Immunization/27655"/>
+    <resource>
+      <Immunization>
+        <id value="27655"/>
+        <meta>
+          <versionId value="29"/>
+          <lastUpdated value="2023-11-14T12:55:38.977-05:00"/>
+          <source value="#qRLn7DXPxLrg5fzq"/>
+          <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="27655"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;27655&quot; Version &quot;29&quot; Updated &quot;2023-11-14 12:55:38-0500&quot; </p><p style="margin-bottom: 0px">Information Source: #qRLn7DXPxLrg5fzq!</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.124694 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2022-08-18 16:29:23-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="Location-0"> </a></p><blockquote><p/><p><a name="Location-0"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><h3>Performers</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td></tr><tr><td style="display: none">*</td><td><a name="Organization-0"> </a><blockquote><p/><p><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-0</b><a name="Location-0"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON</p></blockquote></div>
+        </text>
+        <contained>
+          <Location>
+            <id value="Location-0"/>
+            <name value="ADMISSIONS (LOC)"/>
+          </Location>
+        </contained>
+        <contained>
+          <Organization>
+            <id value="Organization-0"/>
+            <meta>
+              <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+            </meta>
+            <identifier>
+              <use value="usual"/>
+              <type>
+                <text value="L"/>
+              </type>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="552"/>
+            </identifier>
+            <active value="true"/>
+            <name value="DAYTON"/>
+          </Organization>
+        </contained>
+        <identifier>
+          <use value="usual"/>
+          <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+          <value value="ImmunizationTO.124694"/>
+        </identifier>
+        <status value="completed"/>
+        <vaccineCode>
+          <text value="COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE"/>
+        </vaccineCode>
+        <patient>
+          <reference value="Patient/27659"/>
+        </patient>
+        <occurrenceDateTime value="2022-08-18T16:29:23-04:00"/>
+        <primarySource>
+          <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="unknown"/>
+          </extension>
+        </primarySource>
+        <location>
+          <reference value="#Location-0"/>
+        </location>
+        <performer>
+          <actor>
+            <reference value="#Organization-0"/>
+          </actor>
+        </performer>
+      </Immunization>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://localhost:8081/fhir/Immunization/27653"/>
+    <resource>
+      <Immunization>
+        <id value="27653"/>
+        <meta>
+          <versionId value="29"/>
+          <lastUpdated value="2023-11-14T12:55:38.977-05:00"/>
+          <source value="#qRLn7DXPxLrg5fzq"/>
+          <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="27653"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;27653&quot; Version &quot;29&quot; Updated &quot;2023-11-14 12:55:38-0500&quot; </p><p style="margin-bottom: 0px">Information Source: #qRLn7DXPxLrg5fzq!</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.125286 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: ZOSTER RECOMBINANT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#90750 &quot;HZV VACC RECOMBINANT IM&quot;)</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2023-10-13 11:15:00-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="Location-0"> </a></p><blockquote><p/><p><a name="Location-0"> </a></p><p><b>name</b>: AUDIOLOGY FELLOW (PM)</p></blockquote><blockquote><p><b>performer</b></p><p><b>actor</b>: <a name="Organization-0"> </a></p><blockquote><p/><p><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></blockquote><blockquote><p><b>performer</b></p><p><b>function</b>: Administering Provider <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0443.html">providerRole</a>#AP)</span></p><p><b>actor</b>: <a name="Provider-0"> </a></p><blockquote><p/><p><a name="Provider-0"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: KHAN,MUAZZAM</p></blockquote></blockquote><p><b>note</b>: test series 1</p><h3>ProtocolApplieds</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Series</b></td><td><b>DoseNumber[x]</b></td></tr><tr><td style="display: none">*</td><td>SERIES 1</td><td>1</td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-0</b><a name="Location-0"> </a></p><p><b>name</b>: AUDIOLOGY FELLOW (PM)</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #Provider-0</b><a name="Provider-0"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: KHAN,MUAZZAM</p></blockquote></div>
+        </text>
+        <contained>
+          <Location>
+            <id value="Location-0"/>
+            <name value="AUDIOLOGY FELLOW (PM)"/>
+          </Location>
+        </contained>
+        <contained>
+          <Organization>
+            <id value="Organization-0"/>
+            <meta>
+              <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+            </meta>
+            <identifier>
+              <use value="usual"/>
+              <type>
+                <text value="L"/>
+              </type>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="984"/>
+            </identifier>
+            <active value="true"/>
+            <name value="DAYTSHR TEST LAB"/>
+          </Organization>
+        </contained>
+        <contained>
+          <Practitioner>
+            <id value="Provider-0"/>
+            <identifier>
+              <use value="usual"/>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="0"/>
+            </identifier>
+            <name>
+              <text value="KHAN,MUAZZAM"/>
+            </name>
+          </Practitioner>
+        </contained>
+        <identifier>
+          <use value="usual"/>
+          <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+          <value value="ImmunizationTO.125286"/>
+        </identifier>
+        <status value="completed"/>
+        <vaccineCode>
+          <coding>
+            <system value="http://www.ama-assn.org/go/cpt"/>
+            <code value="90750"/>
+            <display value="HZV VACC RECOMBINANT IM"/>
+          </coding>
+          <text value="ZOSTER RECOMBINANT"/>
+        </vaccineCode>
+        <patient>
+          <reference value="Patient/27659"/>
+        </patient>
+        <occurrenceDateTime value="2023-10-13T11:15:00-04:00"/>
+        <primarySource>
+          <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="unknown"/>
+          </extension>
+        </primarySource>
+        <location>
+          <reference value="#Location-0"/>
+        </location>
+        <performer>
+          <actor>
+            <reference value="#Organization-0"/>
+          </actor>
+        </performer>
+        <performer>
+          <function>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0443"/>
+              <code value="AP"/>
+            </coding>
+          </function>
+          <actor>
+            <reference value="#Provider-0"/>
+          </actor>
+        </performer>
+        <note>
+          <text value="test series 1"/>
+        </note>
+        <protocolApplied>
+          <series value="SERIES 1"/>
+          <doseNumberString value="1"/>
+        </protocolApplied>
+      </Immunization>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://localhost:8081/fhir/Immunization/28653"/>
+    <resource>
+      <Immunization>
+        <id value="28653"/>
+        <meta>
+          <versionId value="15"/>
+          <lastUpdated value="2023-11-14T12:55:38.977-05:00"/>
+          <source value="#qRLn7DXPxLrg5fzq"/>
+          <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="28653"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;28653&quot; Version &quot;15&quot; Updated &quot;2023-11-14 12:55:38-0500&quot; </p><p style="margin-bottom: 0px">Information Source: #qRLn7DXPxLrg5fzq!</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.125308 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: HPV9 <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#90651 &quot;9VHPV VACCINE 2/3 DOSE IM&quot;)</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2023-10-31 13:16:00-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="Location-0"> </a></p><blockquote><p/><p><a name="Location-0"> </a></p><p><b>name</b>: 23 HOUR OBSERVATION</p></blockquote><blockquote><p><b>performer</b></p><p><b>actor</b>: <a name="Organization-0"> </a></p><blockquote><p/><p><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></blockquote><blockquote><p><b>performer</b></p><p><b>function</b>: Administering Provider <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0443.html">providerRole</a>#AP)</span></p><p><b>actor</b>: <a name="Provider-0"> </a></p><blockquote><p/><p><a name="Provider-0"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: KHAN,MUAZZAM</p></blockquote></blockquote><p><b>note</b>: Entered Booster as series </p><h3>ProtocolApplieds</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Series</b></td><td><b>DoseNumber[x]</b></td></tr><tr><td style="display: none">*</td><td>BOOSTER</td><td>B</td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-0</b><a name="Location-0"> </a></p><p><b>name</b>: 23 HOUR OBSERVATION</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #Provider-0</b><a name="Provider-0"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: KHAN,MUAZZAM</p></blockquote></div>
+        </text>
+        <contained>
+          <Location>
+            <id value="Location-0"/>
+            <name value="23 HOUR OBSERVATION"/>
+          </Location>
+        </contained>
+        <contained>
+          <Organization>
+            <id value="Organization-0"/>
+            <meta>
+              <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+            </meta>
+            <identifier>
+              <use value="usual"/>
+              <type>
+                <text value="L"/>
+              </type>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="984"/>
+            </identifier>
+            <active value="true"/>
+            <name value="DAYTSHR TEST LAB"/>
+          </Organization>
+        </contained>
+        <contained>
+          <Practitioner>
+            <id value="Provider-0"/>
+            <identifier>
+              <use value="usual"/>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="0"/>
+            </identifier>
+            <name>
+              <text value="KHAN,MUAZZAM"/>
+            </name>
+          </Practitioner>
+        </contained>
+        <identifier>
+          <use value="usual"/>
+          <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+          <value value="ImmunizationTO.125308"/>
+        </identifier>
+        <status value="completed"/>
+        <vaccineCode>
+          <coding>
+            <system value="http://www.ama-assn.org/go/cpt"/>
+            <code value="90651"/>
+            <display value="9VHPV VACCINE 2/3 DOSE IM"/>
+          </coding>
+          <text value="HPV9"/>
+        </vaccineCode>
+        <patient>
+          <reference value="Patient/27659"/>
+        </patient>
+        <occurrenceDateTime value="2023-10-31T13:16:00-04:00"/>
+        <primarySource>
+          <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="unknown"/>
+          </extension>
+        </primarySource>
+        <location>
+          <reference value="#Location-0"/>
+        </location>
+        <performer>
+          <actor>
+            <reference value="#Organization-0"/>
+          </actor>
+        </performer>
+        <performer>
+          <function>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0443"/>
+              <code value="AP"/>
+            </coding>
+          </function>
+          <actor>
+            <reference value="#Provider-0"/>
+          </actor>
+        </performer>
+        <note>
+          <text value="Entered Booster as series "/>
+        </note>
+        <protocolApplied>
+          <series value="BOOSTER"/>
+          <doseNumberString value="B"/>
+        </protocolApplied>
+      </Immunization>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+  <entry>
+    <fullUrl value="http://localhost:8081/fhir/Immunization/29652"/>
+    <resource>
+      <Immunization>
+        <id value="29652"/>
+        <meta>
+          <versionId value="1"/>
+          <lastUpdated value="2023-11-14T12:55:38.977-05:00"/>
+          <source value="#qRLn7DXPxLrg5fzq"/>
+          <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+        </meta>
+        <text>
+          <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="29652"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;29652&quot; Version &quot;1&quot; Updated &quot;2023-11-14 12:55:38-0500&quot; </p><p style="margin-bottom: 0px">Information Source: #qRLn7DXPxLrg5fzq!</p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.125310 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: MENINGOCOCCAL CONJUGATE QUADRIVALENT, MENACWY-TT (MCV4) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#90619 &quot;MENACWY-TT VACCINE IM&quot;)</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2023-10-27 10:00:00-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="Location-0"> </a></p><blockquote><p/><p><a name="Location-0"> </a></p><p><b>name</b>: ADTP BURNETT</p></blockquote><blockquote><p><b>performer</b></p><p><b>actor</b>: <a name="Organization-0"> </a></p><blockquote><p/><p><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></blockquote><blockquote><p><b>performer</b></p><p><b>function</b>: Administering Provider <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0443.html">providerRole</a>#AP)</span></p><p><b>actor</b>: <a name="Provider-0"> </a></p><blockquote><p/><p><a name="Provider-0"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote></blockquote><p><b>note</b>: MENINGOCOCCAL CONJUGATE QUADRIVALENT, MENACWY-TT (MCV4) TEST</p><h3>ProtocolApplieds</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Series</b></td><td><b>DoseNumber[x]</b></td></tr><tr><td style="display: none">*</td><td>SERIES 1</td><td>1</td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-0</b><a name="Location-0"> </a></p><p><b>name</b>: ADTP BURNETT</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #Provider-0</b><a name="Provider-0"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote></div>
+        </text>
+        <contained>
+          <Location>
+            <id value="Location-0"/>
+            <name value="ADTP BURNETT"/>
+          </Location>
+        </contained>
+        <contained>
+          <Organization>
+            <id value="Organization-0"/>
+            <meta>
+              <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+            </meta>
+            <identifier>
+              <use value="usual"/>
+              <type>
+                <text value="L"/>
+              </type>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="984"/>
+            </identifier>
+            <active value="true"/>
+            <name value="DAYTSHR TEST LAB"/>
+          </Organization>
+        </contained>
+        <contained>
+          <Practitioner>
+            <id value="Provider-0"/>
+            <identifier>
+              <use value="usual"/>
+              <system value="urn:oid:2.16.840.1.113883.4.349"/>
+              <value value="0"/>
+            </identifier>
+            <name>
+              <text value="AHMED,MARUF"/>
+            </name>
+          </Practitioner>
+        </contained>
+        <identifier>
+          <use value="usual"/>
+          <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+          <value value="ImmunizationTO.125310"/>
+        </identifier>
+        <status value="completed"/>
+        <vaccineCode>
+          <coding>
+            <system value="http://www.ama-assn.org/go/cpt"/>
+            <code value="90619"/>
+            <display value="MENACWY-TT VACCINE IM"/>
+          </coding>
+          <text value="MENINGOCOCCAL CONJUGATE QUADRIVALENT, MENACWY-TT (MCV4)"/>
+        </vaccineCode>
+        <patient>
+          <reference value="Patient/27659"/>
+        </patient>
+        <occurrenceDateTime value="2023-10-27T10:00:00-04:00"/>
+        <primarySource>
+          <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+            <valueCode value="unknown"/>
+          </extension>
+        </primarySource>
+        <location>
+          <reference value="#Location-0"/>
+        </location>
+        <performer>
+          <actor>
+            <reference value="#Organization-0"/>
+          </actor>
+        </performer>
+        <performer>
+          <function>
+            <coding>
+              <system value="http://terminology.hl7.org/CodeSystem/v2-0443"/>
+              <code value="AP"/>
+            </coding>
+          </function>
+          <actor>
+            <reference value="#Provider-0"/>
+          </actor>
+        </performer>
+        <note>
+          <text value="MENINGOCOCCAL CONJUGATE QUADRIVALENT, MENACWY-TT (MCV4) TEST"/>
+        </note>
+        <protocolApplied>
+          <series value="SERIES 1"/>
+          <doseNumberString value="1"/>
+        </protocolApplied>
+      </Immunization>
+    </resource>
+    <search>
+      <mode value="match"/>
+    </search>
+  </entry>
+</Bundle>

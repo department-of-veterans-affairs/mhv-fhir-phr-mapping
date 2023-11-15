@@ -26,11 +26,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain",
-  "version" : "0.2.6",
+  "version" : "0.2.7",
   "name" : "MHVvitalsPain",
   "title" : "VA MHV PHR Vital-Signs for PAIN",
   "status" : "active",
-  "date" : "2023-10-20T10:16:33-05:00",
+  "date" : "2023-11-15T14:14:41-06:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -336,10 +336,6 @@
         {
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "Language"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "preferred",
         "description" : "A human language.",
@@ -747,10 +743,6 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "IdentifierType"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "extensible",
         "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
@@ -2103,7 +2095,7 @@
         "key" : "vs-1",
         "severity" : "error",
         "human" : "if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day",
-        "expression" : "($this as dateTime).toString().length() >= 8",
+        "expression" : "$this is dateTime implies $this.toString().length() >= 10",
         "xpath" : "f:effectiveDateTime[matches(@value, '^\\d{4}-\\d{2}-\\d{2}')]",
         "source" : "http://hl7.org/fhir/StructureDefinition/vitalsigns"
       }],
@@ -2171,7 +2163,7 @@
         "key" : "vs-1",
         "severity" : "error",
         "human" : "if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day",
-        "expression" : "($this as dateTime).toString().length() >= 8",
+        "expression" : "$this is dateTime implies $this.toString().length() >= 10",
         "xpath" : "f:effectiveDateTime[matches(@value, '^\\d{4}-\\d{2}-\\d{2}')]",
         "source" : "http://hl7.org/fhir/StructureDefinition/vitalsigns"
       }],
@@ -3159,7 +3151,7 @@
       "comment" : "May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.",
       "requirements" : "Need to be able to provide free text additional information.",
       "min" : 0,
-      "max" : "*",
+      "max" : "0",
       "base" : {
         "path" : "Observation.note",
         "min" : 0,
@@ -3176,7 +3168,6 @@
         "xpath" : "@value|f:*|h:div",
         "source" : "http://hl7.org/fhir/StructureDefinition/Element"
       }],
-      "mustSupport" : true,
       "isModifier" : false,
       "isSummary" : false,
       "mapping" : [{
@@ -3372,10 +3363,6 @@
       {
         "identity" : "rim",
         "map" : "Act.text"
-      },
-      {
-        "identity" : "Vitals-Mapping",
-        "map" : "VitalSignTO.comments"
       },
       {
         "identity" : "VitalsPain-Mapping",

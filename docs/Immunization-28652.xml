@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Immunization xmlns="http://hl7.org/fhir">
+  <id value="28652"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="28652"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;28652&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.125307 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: PNEUMOCOCCAL POLYSACCHARIDE PPV23 <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html">Current Procedural Terminology (CPT®)</a>#90732 &quot;PPSV23 VACC 2 YRS+ SUBQ/IM&quot;)</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2023-10-27 10:00:00-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="in-location-2"> </a></p><blockquote><p/><p><a name="in-location-2"> </a></p><p><b>identifier</b>: id: ?ngen-9? (use: USUAL)</p><p><b>name</b>: ADTP BURNETT</p></blockquote><blockquote><p><b>performer</b></p><p><b>function</b>: Administering Provider <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-v2-0443.html">providerRole</a>#AP)</span></p><p><b>actor</b>: <a name="Provider-1"> </a></p><blockquote><p/><p><a name="Provider-1"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote></blockquote><blockquote><p><b>performer</b></p><p><b>actor</b>: <a name="Organization-0"> </a></p><blockquote><p/><p><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></blockquote><p><b>note</b>: Immunization test with Muazzam Khan</p><h3>ProtocolApplieds</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Series</b></td><td><b>DoseNumber[x]</b></td></tr><tr><td style="display: none">*</td><td>SERIES 4</td><td>4</td></tr></table><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name="Organization-0"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #Provider-1</b><a name="Provider-1"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #in-location-2</b><a name="in-location-2"> </a></p><p><b>identifier</b>: id: ?ngen-9? (use: USUAL)</p><p><b>name</b>: ADTP BURNETT</p></blockquote></div>
+  </text>
+  <contained>
+    <Organization>
+      <id value="Organization-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <text value="L"/>
+        </type>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="984"/>
+      </identifier>
+      <active value="true"/>
+      <name value="DAYTSHR TEST LAB"/>
+    </Organization>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="Provider-1"/>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="0"/>
+      </identifier>
+      <name>
+        <text value="AHMED,MARUF"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Location>
+      <id value="in-location-2"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+      </identifier>
+      <name value="ADTP BURNETT"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+    <value value="ImmunizationTO.125307"/>
+  </identifier>
+  <status value="completed"/>
+  <vaccineCode>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="90732"/>
+      <display value="PPSV23 VACC 2 YRS+ SUBQ/IM"/>
+    </coding>
+    <text value="PNEUMOCOCCAL POLYSACCHARIDE PPV23"/>
+  </vaccineCode>
+  <patient>
+    <reference value="Patient/27659"/>
+  </patient>
+  <occurrenceDateTime value="2023-10-27T10:00:00-04:00"/>
+  <primarySource>
+    <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+      <valueCode value="unknown"/>
+    </extension>
+  </primarySource>
+  <location>
+    <reference value="#in-location-2"/>
+  </location>
+  <performer>
+    <function>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0443"/>
+        <code value="AP"/>
+      </coding>
+    </function>
+    <actor>
+      <reference value="#Provider-1"/>
+    </actor>
+  </performer>
+  <performer>
+    <actor>
+      <reference value="#Organization-0"/>
+    </actor>
+  </performer>
+  <note>
+    <text value="Immunization test with Muazzam Khan"/>
+  </note>
+  <protocolApplied>
+    <series value="SERIES 4"/>
+    <doseNumberString value="4"/>
+  </protocolApplied>
+</Immunization>

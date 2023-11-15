@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Immunization xmlns="http://hl7.org/fhir">
+  <id value="27658"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Immunization</b><a name="27658"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Immunization &quot;27658&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.immunization.html">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.124697 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: HEP B, ADULT <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>patient</b>: <a href="Patient-27659.html">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2022-08-18 16:29:23-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name="Location-1"> </a></p><blockquote><p/><p><a name="Location-1"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><h3>Performers</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Actor</b></td></tr><tr><td style="display: none">*</td><td><a name="ex-MHV-organization-552"> </a><blockquote><p/><p><a name="ex-MHV-organization-552"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON, OH VAMC</p><p><b>address</b>: 4100 W. THIRD STREET DAYTON OH 45428 USA </p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-1</b><a name="Location-1"> </a></p><p><b>name</b>: ADMISSIONS (LOC)</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #ex-MHV-organization-552</b><a name="ex-MHV-organization-552"> </a></p><p><b>identifier</b>: L: 552 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTON, OH VAMC</p><p><b>address</b>: 4100 W. THIRD STREET DAYTON OH 45428 USA </p></blockquote></div>
+  </text>
+  <contained>
+    <Location>
+      <id value="Location-1"/>
+      <name value="ADMISSIONS (LOC)"/>
+    </Location>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="ex-MHV-organization-552"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <text value="L"/>
+        </type>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="552"/>
+      </identifier>
+      <active value="true"/>
+      <name value="DAYTON, OH VAMC"/>
+      <address>
+        <line value="4100 W. THIRD STREET"/>
+        <city value="DAYTON"/>
+        <state value="OH"/>
+        <postalCode value="45428"/>
+        <country value="USA"/>
+      </address>
+    </Organization>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+    <value value="ImmunizationTO.124697"/>
+  </identifier>
+  <status value="completed"/>
+  <vaccineCode>
+    <text value="HEP B, ADULT"/>
+  </vaccineCode>
+  <patient>
+    <reference value="Patient/27659"/>
+  </patient>
+  <occurrenceDateTime value="2022-08-18T16:29:23-04:00"/>
+  <primarySource>
+    <extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+      <valueCode value="unknown"/>
+    </extension>
+  </primarySource>
+  <location>
+    <reference value="#Location-1"/>
+  </location>
+  <performer>
+    <actor>
+      <reference value="#ex-MHV-organization-552"/>
+    </actor>
+  </performer>
+</Immunization>

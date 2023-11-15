@@ -45,11 +45,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
-  <version value="0.2.6"/>
+  <version value="0.2.7"/>
   <name value="MHVnote"/>
   <title value="VA MHV PHR Notes"/>
   <status value="active"/>
-  <date value="2023-10-20T10:16:33-05:00"/>
+  <date value="2023-11-15T14:14:41-06:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -112,6 +112,12 @@
     <identity value="Notes-Mapping"/>
     <uri value="NoteTO"/>
     <name value="VIA to mhv-fhir-phr"/>
+  </mapping>
+  <mapping>
+    <identity value="Notes-Old-Mapping"/>
+    <uri value="eVaultPHR"/>
+    <name value="eVault-PHR to mhv-fhir-phr"/>
+    <comment value="Informative map to include only the elements available in eVault PHR"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>
@@ -202,6 +208,10 @@
       </mapping>
       <mapping>
         <identity value="Notes-Mapping"/>
+        <map value="NoteTO"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
         <map value="NoteTO"/>
       </mapping>
     </element>
@@ -309,9 +319,6 @@
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="Language"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-          <valueBoolean value="true"/>
         </extension>
         <strength value="preferred"/>
         <description value="A human language."/>
@@ -570,6 +577,10 @@
         <identity value="Notes-Mapping"/>
         <map value="NoteTO.id"/>
       </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="NoteTO.id"/>
+      </mapping>
     </element>
     <element id="DocumentReference.identifier:TOid">
       <path value="DocumentReference.identifier"/>
@@ -765,9 +776,6 @@
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="IdentifierType"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-          <valueBoolean value="true"/>
         </extension>
         <strength value="extensible"/>
         <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
@@ -1005,6 +1013,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="`current`"/>
+        <comment value="8925-.05 - STATUS"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="`current`"/>
+        <comment value="8925-.05 - STATUS"/>
       </mapping>
     </element>
     <element id="DocumentReference.docStatus">
@@ -1230,6 +1244,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="NoteTO.type{PN, DS, ?}"/>
+        <comment value="8928-.01 - DOCUMENT TYPE"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="NoteTO.type{PN, DS, ?}"/>
+        <comment value="8928-.01 - DOCUMENT TYPE"/>
       </mapping>
     </element>
     <element id="DocumentReference.type.text">
@@ -1276,6 +1296,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="NoteTO.standardTitle"/>
+        <comment value="? 8925-89261 - VHA ENTERPRISE STANDARD TITLE"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="NoteTO.standardTitle"/>
+        <comment value="? 8925-89261 - VHA ENTERPRISE STANDARD TITLE"/>
       </mapping>
     </element>
     <element id="DocumentReference.category">
@@ -1342,6 +1368,10 @@
       </mapping>
       <mapping>
         <identity value="Notes-Mapping"/>
+        <map value="`clinical-note`"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
         <map value="`clinical-note`"/>
       </mapping>
     </element>
@@ -1461,6 +1491,10 @@
         <identity value="Notes-Mapping"/>
         <map value="GetPatient()"/>
       </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="GetPatient()"/>
+      </mapping>
     </element>
     <element id="DocumentReference.date">
       <path value="DocumentReference.date"/>
@@ -1508,6 +1542,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="ConvertDate(NoteTO.timestamp)"/>
+        <comment value="? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..."/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="ConvertDate(NoteTO.timestamp)"/>
+        <comment value="? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..."/>
       </mapping>
     </element>
     <element id="DocumentReference.author">
@@ -1593,6 +1633,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="GetPractitioner(NoteTO.author.[AuthorTO])"/>
+        <comment value="? 8925-1202 - AUTHOR/DICTATOR"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="GetPractitioner(NoteTO.author.[AuthorTO])"/>
+        <comment value="? 8925-1202 - AUTHOR/DICTATOR"/>
       </mapping>
     </element>
     <element id="DocumentReference.authenticator">
@@ -1654,7 +1700,13 @@
       </mapping>
       <mapping>
         <identity value="Notes-Mapping"/>
-        <map value="GetPractitioner(NoteTO.approvedBy)"/>
+        <map value="GetPractitioner(NoteTO.approvedBy.[AuthorTO])"/>
+        <comment value="? 8925-1502 - SIGNED BY"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="GetPractitioner(NoteTO.approvedBy.[AuthorTO])"/>
+        <comment value="? 8925-1502 - SIGNED BY"/>
       </mapping>
     </element>
     <element id="DocumentReference.custodian">
@@ -1997,9 +2049,6 @@
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="SecurityLabels"/>
         </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-          <valueBoolean value="true"/>
-        </extension>
         <strength value="extensible"/>
         <description value="Security Labels from the Healthcare Privacy and Security Classification System."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/security-labels"/>
@@ -2328,9 +2377,6 @@
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="MimeType"/>
         </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-          <valueBoolean value="true"/>
-        </extension>
         <strength value="required"/>
         <description value="The mime type of an attachment. Any valid mime type is allowed."/>
         <valueSet value="http://hl7.org/fhir/ValueSet/mimetypes|4.0.1"/>
@@ -2345,6 +2391,10 @@
       </mapping>
       <mapping>
         <identity value="Notes-Mapping"/>
+        <map value="`text/plain`"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
         <map value="`text/plain`"/>
       </mapping>
     </element>
@@ -2383,9 +2433,6 @@
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="Language"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-          <valueBoolean value="true"/>
         </extension>
         <strength value="preferred"/>
         <description value="A human language."/>
@@ -2435,6 +2482,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="base64(NoteTO.text)"/>
+        <comment value="8925-.2 - REPORT TEXT"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="base64(NoteTO.text)"/>
+        <comment value="8925-.2 - REPORT TEXT"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.url">
@@ -2580,6 +2633,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="NoteTO.localTitle"/>
+        <comment value="???"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="NoteTO.localTitle"/>
+        <comment value="???"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.creation">
@@ -3040,6 +3099,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="ConvertDate(NoteTO.admitTimestamp)"/>
+        <comment value="8925-.07 - EPISODE BEGIN DATE/TIME"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="ConvertDate(NoteTO.admitTimestamp)"/>
+        <comment value="8925-.07 - EPISODE BEGIN DATE/TIME"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.period.end">
@@ -3080,6 +3145,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="ConvertDate(NoteTO.dischargeTimestamp)"/>
+        <comment value="8925-.08 - EPISODE END DATE/TIME"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="ConvertDate(NoteTO.dischargeTimestamp)"/>
+        <comment value="8925-.08 - EPISODE END DATE/TIME"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.facilityType">
@@ -3270,6 +3341,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="GetLocation(NoteTO.location.[HospitalLocationTO])"/>
+        <comment value="8928-1211 - VISIT LOCATION"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="GetLocation(NoteTO.location.[HospitalLocationTO])"/>
+        <comment value="8928-1211 - VISIT LOCATION"/>
       </mapping>
     </element>
   </snapshot>
@@ -3278,6 +3355,10 @@
       <path value="DocumentReference"/>
       <mapping>
         <identity value="Notes-Mapping"/>
+        <map value="NoteTO"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
         <map value="NoteTO"/>
       </mapping>
     </element>
@@ -3292,6 +3373,10 @@
       </slicing>
       <mapping>
         <identity value="Notes-Mapping"/>
+        <map value="NoteTO.id"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
         <map value="NoteTO.id"/>
       </mapping>
     </element>
@@ -3326,6 +3411,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="`current`"/>
+        <comment value="8925-.05 - STATUS"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="`current`"/>
+        <comment value="8925-.05 - STATUS"/>
       </mapping>
     </element>
     <element id="DocumentReference.type">
@@ -3340,6 +3431,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="NoteTO.type{PN, DS, ?}"/>
+        <comment value="8928-.01 - DOCUMENT TYPE"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="NoteTO.type{PN, DS, ?}"/>
+        <comment value="8928-.01 - DOCUMENT TYPE"/>
       </mapping>
     </element>
     <element id="DocumentReference.type.text">
@@ -3347,12 +3444,22 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="NoteTO.standardTitle"/>
+        <comment value="? 8925-89261 - VHA ENTERPRISE STANDARD TITLE"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="NoteTO.standardTitle"/>
+        <comment value="? 8925-89261 - VHA ENTERPRISE STANDARD TITLE"/>
       </mapping>
     </element>
     <element id="DocumentReference.category">
       <path value="DocumentReference.category"/>
       <mapping>
         <identity value="Notes-Mapping"/>
+        <map value="`clinical-note`"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
         <map value="`clinical-note`"/>
       </mapping>
     </element>
@@ -3362,12 +3469,22 @@
         <identity value="Notes-Mapping"/>
         <map value="GetPatient()"/>
       </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="GetPatient()"/>
+      </mapping>
     </element>
     <element id="DocumentReference.date">
       <path value="DocumentReference.date"/>
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="ConvertDate(NoteTO.timestamp)"/>
+        <comment value="? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..."/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="ConvertDate(NoteTO.timestamp)"/>
+        <comment value="? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..."/>
       </mapping>
     </element>
     <element id="DocumentReference.author">
@@ -3375,13 +3492,25 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="GetPractitioner(NoteTO.author.[AuthorTO])"/>
+        <comment value="? 8925-1202 - AUTHOR/DICTATOR"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="GetPractitioner(NoteTO.author.[AuthorTO])"/>
+        <comment value="? 8925-1202 - AUTHOR/DICTATOR"/>
       </mapping>
     </element>
     <element id="DocumentReference.authenticator">
       <path value="DocumentReference.authenticator"/>
       <mapping>
         <identity value="Notes-Mapping"/>
-        <map value="GetPractitioner(NoteTO.approvedBy)"/>
+        <map value="GetPractitioner(NoteTO.approvedBy.[AuthorTO])"/>
+        <comment value="? 8925-1502 - SIGNED BY"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="GetPractitioner(NoteTO.approvedBy.[AuthorTO])"/>
+        <comment value="? 8925-1502 - SIGNED BY"/>
       </mapping>
     </element>
     <element id="DocumentReference.custodian">
@@ -3398,12 +3527,22 @@
         <identity value="Notes-Mapping"/>
         <map value="`text/plain`"/>
       </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="`text/plain`"/>
+      </mapping>
     </element>
     <element id="DocumentReference.content.attachment.data">
       <path value="DocumentReference.content.attachment.data"/>
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="base64(NoteTO.text)"/>
+        <comment value="8925-.2 - REPORT TEXT"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="base64(NoteTO.text)"/>
+        <comment value="8925-.2 - REPORT TEXT"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.title">
@@ -3411,6 +3550,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="NoteTO.localTitle"/>
+        <comment value="???"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="NoteTO.localTitle"/>
+        <comment value="???"/>
       </mapping>
     </element>
     <element id="DocumentReference.content.attachment.creation">
@@ -3426,6 +3571,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="ConvertDate(NoteTO.admitTimestamp)"/>
+        <comment value="8925-.07 - EPISODE BEGIN DATE/TIME"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="ConvertDate(NoteTO.admitTimestamp)"/>
+        <comment value="8925-.07 - EPISODE BEGIN DATE/TIME"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.period.end">
@@ -3433,6 +3584,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="ConvertDate(NoteTO.dischargeTimestamp)"/>
+        <comment value="8925-.08 - EPISODE END DATE/TIME"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="ConvertDate(NoteTO.dischargeTimestamp)"/>
+        <comment value="8925-.08 - EPISODE END DATE/TIME"/>
       </mapping>
     </element>
     <element id="DocumentReference.context.related">
@@ -3440,6 +3597,12 @@
       <mapping>
         <identity value="Notes-Mapping"/>
         <map value="GetLocation(NoteTO.location.[HospitalLocationTO])"/>
+        <comment value="8928-1211 - VISIT LOCATION"/>
+      </mapping>
+      <mapping>
+        <identity value="Notes-Old-Mapping"/>
+        <map value="GetLocation(NoteTO.location.[HospitalLocationTO])"/>
+        <comment value="8928-1211 - VISIT LOCATION"/>
       </mapping>
     </element>
   </differential>

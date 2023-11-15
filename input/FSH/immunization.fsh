@@ -10,7 +10,8 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * status = #completed
 * occurrence[x] only dateTime
 * occurrence[x] 1..1 MS
-* recorded 1..1 MS
+* recorded MS
+* vaccineCode.text 1..1
 * primarySource.extension contains http://hl7.org/fhir/StructureDefinition/data-absent-reason named dar 1..1
 * primarySource.extension[dar].valueCode = #unknown
 * identifier 1.. MS
@@ -26,19 +27,32 @@ A profile on the Immunization that declares how MHV will expose PHR immunization
 * note 0..1 MS
 * reaction.detail.display 0..0
 * reaction.detail ^type.aggregation = #contained
-* reaction.detail only Reference(MHVimmunizationReaction)
+* reaction.detail only Reference(MHVimmunizationReaction or Observation)
 * location MS
 * location ^type.aggregation = #contained
+* location only Reference(MHVlocation or Location)
 * location.display 0..0
-* manufacturer MS
-* lotNumber MS
 * performer MS
 * performer.actor ^type.aggregation = #contained
 * performer.actor.display 0..0
+* performer ^slicing.discriminator.type = #pattern
+* performer ^slicing.discriminator.path = "function"
+* performer ^slicing.rules = #closed
+* performer contains
+  AP 0..* and
+  @default 0..*
+* performer[AP].function = http://terminology.hl7.org/CodeSystem/v2-0443#AP
+* performer[AP].actor only Reference(MHVpractitioner or Practitioner)
+* performer[@default].function 0..0
+* performer[@default].actor only Reference(MHVorganization or Organization)
+* performer.function MS
 * protocolApplied MS
 * protocolApplied.series MS
 * protocolApplied.doseNumberString MS
 // not allowed
+* site 0..0
+* lotNumber 0..0
+* manufacturer 0..0
 * route 0..0
 * statusReason 0..0
 * reportOrigin 0..0
@@ -70,19 +84,20 @@ Title: "VIA to mhv-fhir-phr"
 * note.text -> "ImmunizationTO.comments" "9000010.11-.1101 REMARKS"
 * reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11-.06 REACTION"
 * occurrenceDateTime -> "ImmunizationTO.administeredDate" "9000010.11-.1201 EVENT DATE AND TIME"
-* recorded -> "ImmunizationTO.timestamp" "9000010.11-.1205 DATE/TIME RECORDED"
-* performer.actor -> "GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`"
-* performer.actor -> "GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`"
-* site.text -> "ImmunizationTO.anatomicSurface" "9000010.11-.09 INJECTION SITE"
+* recorded -> "ImmunizationTO.dateTime" "9000010.11-.1205 DATE/TIME RECORDED"
+* performer -> "GetPractitioner(ImmunizationTO.encounter.provider) | `AP`"
+//* performer -> "GetPractitioner(ImmunizationTO.administrator.[UserTO]) | `AP`"
+//* performer -> "GetPractitioner(ImmunizationTO.orderedBy.[UserTO]) | `OP`"
+//* site.text -> "ImmunizationTO.anatomicSurface" "9000010.11-.09 INJECTION SITE"
 * vaccineCode.coding.code -> "ImmunizationTO.cptCode.id" "9000010.11-.13 CREATED BY V CPT ENTRY"
 * vaccineCode.coding.display -> "ImmunizationTO.cptCode.name"
 * location -> "GetLocation(ImmunizationTO.encounter.location)"
-* performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility)"
+* performer -> "GetOrganization(ImmunizationTO.encounter.facility)"
 * identifier -> "{StationNbr} and {ImmunizationTO.id}"
-* lotNumber -> "ImmunizationTO.lotNumber" "9000010.11-.05 LOT"
-* manufacturer -> "ImmunizationTO.manufacture"
+//* lotNumber -> "ImmunizationTO.lotNumber" "9000010.11-.05 LOT"
+//* manufacturer -> "ImmunizationTO.manufacture"
 * protocolApplied.series -> "translation of ImmunizationTO.series" "9000010.11-.04 SERIES"
-* protocolApplied.doseNumberString -> "ImmunizationTO.series" "9000010.11-.04 SERIES"
+* protocolApplied.doseNumberString -> "number from ImmunizationTO.series" "9000010.11-.04 SERIES"
 * patient -> "patient" "9000010.11-.02 PATIENT"
 * status -> "`completed`"
 * primarySource -> "Data Absent Reason - unknown"
@@ -100,7 +115,7 @@ Description: "Informative map that includes only the elements available in eVaul
 * status -> "`completed`"
 * reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11-.06 REACTION"
 * occurrenceDateTime -> "ImmunizationTO.administeredDate" "9000010.11-.1201 EVENT DATE AND TIME"
-* performer.actor -> "GetOrganization(ImmunizationTO.encounter.facility)"
+* performer -> "GetOrganization(ImmunizationTO.encounter.facility)"
 
 
 
@@ -146,20 +161,24 @@ A profile for the contained Observation indicating an immunization reaction
 - status final
 - code.text ImmunizationTO.reaction
 - valueCodeableConcept - SNOMED#401515003 Known present
+- effectiveDateTime from ImmunizationTO.administeredDate if known
+- subject - the patient
+- performer - migth come from ImmunizationTO.encounter.provider but can't have contained resources in a resource that will be contained. 
 """
 * status = #final
 * code.text 1..1
+* valueCodeableConcept 1..1
 * valueCodeableConcept = SCT#410515003
+* effectiveDateTime MS
+//* performer MS
+* subject MS
 * category 0..0
 * code.coding 0..0
 * basedOn 0..0
 * partOf 0..0
-* subject 0..0
 * focus 0..0
 * encounter 0..0
-* effectiveDateTime 0..0
 * issued 0..0
-* performer 0..0
 * dataAbsentReason 0..0
 * interpretation 0..0
 * note 0..0

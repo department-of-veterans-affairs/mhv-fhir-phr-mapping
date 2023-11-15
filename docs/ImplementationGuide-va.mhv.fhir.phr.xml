@@ -13,11 +13,11 @@
     <valueInteger value="1"/>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
-  <version value="0.2.6"/>
+  <version value="0.2.7"/>
   <name value="VAMHVFHIRPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2023-10-20T10:16:33-05:00"/>
+  <date value="2023-11-15T14:14:41-06:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -659,6 +659,16 @@
     </extension>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Bundle"/>
+      </extension>
+      <reference>
+        <reference value="Bundle/8647883f-2316-48a1-9437-fdbe628f24ec"/>
+      </reference>
+      <name value="8647883f-2316-48a1-9437-fdbe628f24ec"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="StructureDefinition:extension"/>
       </extension>
       <reference>
@@ -989,17 +999,6 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Bundle"/>
-      </extension>
-      <reference>
-        <reference value="Bundle/vitals"/>
-      </reference>
-      <name value="Bundle of Vitals from mock data"/>
-      <description value="An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml) MHV receives."/>
-      <exampleBoolean value="true"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="DocumentReference"/>
       </extension>
       <reference>
@@ -1074,17 +1073,6 @@
       <name value="Example 1 of an MHV condition"/>
       <description value="Example from a mock ProblemTO"/>
       <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Immunization"/>
-      </extension>
-      <reference>
-        <reference value="Immunization/ex-MHV-immunization-1"/>
-      </reference>
-      <name value="Example 1 of an MHV immunization"/>
-      <description value="Example from a mock ImmunizationTO"/>
-      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1294,17 +1282,6 @@
       <name value="Example 2 of an MHV condition"/>
       <description value="Example from a mock ProblemTO"/>
       <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
-    </resource>
-    <resource>
-      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
-        <valueString value="Immunization"/>
-      </extension>
-      <reference>
-        <reference value="Immunization/ex-MHV-immunization-2"/>
-      </reference>
-      <name value="Example 2 of an MHV immunization"/>
-      <description value="Example from a mock ImmunizationTO"/>
-      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -1781,6 +1758,116 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/27653"/>
+      </reference>
+      <name value="Immunication 27653"/>
+      <description value="ImmunizationTO.125286"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/27654"/>
+      </reference>
+      <name value="Immunication 27654"/>
+      <description value="ImmunizationTO.125285"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/27655"/>
+      </reference>
+      <name value="Immunication 27655"/>
+      <description value="ImmunizationTO.124694"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/27656"/>
+      </reference>
+      <name value="Immunication 27656"/>
+      <description value="ImmunizationTO.124695"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/27657"/>
+      </reference>
+      <name value="Immunication 27657"/>
+      <description value="ImmunizationTO.124696"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/27658"/>
+      </reference>
+      <name value="Immunication 27658"/>
+      <description value="ImmunizationTO.124697"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/28652"/>
+      </reference>
+      <name value="Immunication 28652"/>
+      <description value="ImmunizationTO.125307"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/28653"/>
+      </reference>
+      <name value="Immunication 28653"/>
+      <description value="ImmunizationTO.125308"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/ex-MHV-immunization-1"/>
+      </reference>
+      <name value="Immunization 1"/>
+      <description value="ImmunizationTO.124684"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Immunization"/>
+      </extension>
+      <reference>
+        <reference value="Immunization/ex-MHV-immunization-2"/>
+      </reference>
+      <name value="Immunization 2"/>
+      <description value="ImmunizationTO.124685"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="ValueSet"/>
       </extension>
       <reference>
@@ -1987,6 +2074,17 @@
       <name value="PAIN"/>
       <description value="2449384"/>
       <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/27659"/>
+      </reference>
+      <name value="Patient for testing environment"/>
+      <description value="Used in testing environment"/>
+      <exampleCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"/>
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
@@ -3052,7 +3150,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.immunizationReaction"/>
       </reference>
       <name value="VA MHV PHR Immunization Reaction"/>
-      <description value="A profile for the contained Observation indicating an immunization reaction&#xA;&#xA;- status final&#xA;- code.text ImmunizationTO.reaction&#xA;- valueCodeableConcept - SNOMED#401515003 Known present"/>
+      <description value="A profile for the contained Observation indicating an immunization reaction&#xA;&#xA;- status final&#xA;- code.text ImmunizationTO.reaction&#xA;- valueCodeableConcept - SNOMED#401515003 Known present&#xA;- effectiveDateTime from ImmunizationTO.administeredDate if known&#xA;- subject - the patient&#xA;- performer - migth come from ImmunizationTO.encounter.provider but can't have contained resources in a resource that will be contained."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "1"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.6"] ; # 
+  fhir:version [ fhir:v "0.2.7"] ; # 
   fhir:name [ fhir:v "VAMHVFHIRPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-10-20T10:16:33-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-15T14:14:41-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -752,6 +752,17 @@
      fhir:resource ( [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Bundle" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Bundle/8647883f-2316-48a1-9437-fdbe628f24ec> ;
+         fhir:reference [ fhir:v "Bundle/8647883f-2316-48a1-9437-fdbe628f24ec" ]
+       ] ;
+       fhir:name [ fhir:v "8647883f-2316-48a1-9437-fdbe628f24ec" ] ;
+       fhir:example [ fhir:v "true"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
        ] ) ;
        fhir:reference [
@@ -1190,18 +1201,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Bundle" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Bundle/vitals> ;
-         fhir:reference [ fhir:v "Bundle/vitals" ]
-       ] ;
-       fhir:name [ fhir:v "Bundle of Vitals from mock data" ] ;
-       fhir:description [ fhir:v "An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml) MHV receives." ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "DocumentReference" ]
        ] ) ;
        fhir:reference [
@@ -1303,21 +1302,6 @@
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Immunization" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/ex-MHV-immunization-1> ;
-         fhir:reference [ fhir:v "Immunization/ex-MHV-immunization-1" ]
-       ] ;
-       fhir:name [ fhir:v "Example 1 of an MHV immunization" ] ;
-       fhir:description [ fhir:v "Example from a mock ImmunizationTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
        ]
      ] [
        fhir:extension ( [
@@ -1603,21 +1587,6 @@
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Immunization" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/ex-MHV-immunization-2> ;
-         fhir:reference [ fhir:v "Immunization/ex-MHV-immunization-2" ]
-       ] ;
-       fhir:name [ fhir:v "Example 2 of an MHV immunization" ] ;
-       fhir:description [ fhir:v "Example from a mock ImmunizationTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
        ]
      ] [
        fhir:extension ( [
@@ -2264,6 +2233,156 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/27653> ;
+         fhir:reference [ fhir:v "Immunization/27653" ]
+       ] ;
+       fhir:name [ fhir:v "Immunication 27653" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.125286" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/27654> ;
+         fhir:reference [ fhir:v "Immunization/27654" ]
+       ] ;
+       fhir:name [ fhir:v "Immunication 27654" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.125285" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/27655> ;
+         fhir:reference [ fhir:v "Immunization/27655" ]
+       ] ;
+       fhir:name [ fhir:v "Immunication 27655" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.124694" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/27656> ;
+         fhir:reference [ fhir:v "Immunization/27656" ]
+       ] ;
+       fhir:name [ fhir:v "Immunication 27656" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.124695" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/27657> ;
+         fhir:reference [ fhir:v "Immunization/27657" ]
+       ] ;
+       fhir:name [ fhir:v "Immunication 27657" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.124696" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/27658> ;
+         fhir:reference [ fhir:v "Immunization/27658" ]
+       ] ;
+       fhir:name [ fhir:v "Immunication 27658" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.124697" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/28652> ;
+         fhir:reference [ fhir:v "Immunization/28652" ]
+       ] ;
+       fhir:name [ fhir:v "Immunication 28652" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.125307" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/28653> ;
+         fhir:reference [ fhir:v "Immunization/28653" ]
+       ] ;
+       fhir:name [ fhir:v "Immunication 28653" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.125308" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/ex-MHV-immunization-1> ;
+         fhir:reference [ fhir:v "Immunization/ex-MHV-immunization-1" ]
+       ] ;
+       fhir:name [ fhir:v "Immunization 1" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.124684" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/ex-MHV-immunization-2> ;
+         fhir:reference [ fhir:v "Immunization/ex-MHV-immunization-2" ]
+       ] ;
+       fhir:name [ fhir:v "Immunization 2" ] ;
+       fhir:description [ fhir:v "ImmunizationTO.124685" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
@@ -2536,6 +2655,21 @@
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/27659> ;
+         fhir:reference [ fhir:v "Patient/27659" ]
+       ] ;
+       fhir:name [ fhir:v "Patient for testing environment" ] ;
+       fhir:description [ fhir:v "Used in testing environment" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient>
        ]
      ] [
        fhir:extension ( [
@@ -3951,7 +4085,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.immunizationReaction" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Immunization Reaction" ] ;
-       fhir:description [ fhir:v "A profile for the contained Observation indicating an immunization reaction\n\n- status final\n- code.text ImmunizationTO.reaction\n- valueCodeableConcept - SNOMED#401515003 Known present" ] ;
+       fhir:description [ fhir:v "A profile for the contained Observation indicating an immunization reaction\n\n- status final\n- code.text ImmunizationTO.reaction\n- valueCodeableConcept - SNOMED#401515003 Known present\n- effectiveDateTime from ImmunizationTO.administeredDate if known\n- subject - the patient\n- performer - migth come from ImmunizationTO.encounter.provider but can't have contained resources in a resource that will be contained." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

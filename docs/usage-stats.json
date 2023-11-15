@@ -1,6 +1,6 @@
 {
   "package": "va.mhv.fhir.phr",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -112,13 +112,13 @@
     ],
     "http://hl7.org/fhir/StructureDefinition/alternate-reference": [
       "AllergyIntolerance.recorder",
-      "Bundle.entry.resource.performer",
       "Observation.performer"
     ],
     "http://hl7.org/fhir/StructureDefinition/condition-assertedDate": [
       "Condition"
     ],
     "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
+      "Bundle.entry.resource.primarySource",
       "Immunization.primarySource"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
@@ -128,9 +128,6 @@
       "StructureDefinition.snapshot.element.constraint"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
-      "StructureDefinition.snapshot.element.binding"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding": [
       "StructureDefinition.snapshot.element.binding"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
@@ -156,9 +153,6 @@
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-display-hint": [
       "StructureDefinition.snapshot.element"
     ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name": [
-      "StructureDefinition.snapshot.element"
-    ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
     ],
@@ -181,7 +175,6 @@
       "ImplementationGuide.definition.page",
       "ImplementationGuide.definition.page.page",
       "StructureDefinition",
-      "StructureDefinition.snapshot.element",
       "ValueSet"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [

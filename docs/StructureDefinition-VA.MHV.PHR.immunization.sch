@@ -14,9 +14,11 @@
     <sch:rule context="f:Immunization">
       <sch:assert test="count(f:statusReason) &lt;= 0">statusReason: maximum cardinality of 'statusReason' is 0</sch:assert>
       <sch:assert test="count(f:encounter) &lt;= 0">encounter: maximum cardinality of 'encounter' is 0</sch:assert>
-      <sch:assert test="count(f:recorded) &gt;= 1">recorded: minimum cardinality of 'recorded' is 1</sch:assert>
       <sch:assert test="count(f:reportOrigin) &lt;= 0">reportOrigin: maximum cardinality of 'reportOrigin' is 0</sch:assert>
+      <sch:assert test="count(f:manufacturer) &lt;= 0">manufacturer: maximum cardinality of 'manufacturer' is 0</sch:assert>
+      <sch:assert test="count(f:lotNumber) &lt;= 0">lotNumber: maximum cardinality of 'lotNumber' is 0</sch:assert>
       <sch:assert test="count(f:expirationDate) &lt;= 0">expirationDate: maximum cardinality of 'expirationDate' is 0</sch:assert>
+      <sch:assert test="count(f:site) &lt;= 0">site: maximum cardinality of 'site' is 0</sch:assert>
       <sch:assert test="count(f:route) &lt;= 0">route: maximum cardinality of 'route' is 0</sch:assert>
       <sch:assert test="count(f:doseQuantity) &lt;= 0">doseQuantity: maximum cardinality of 'doseQuantity' is 0</sch:assert>
       <sch:assert test="count(f:note) &lt;= 1">note: maximum cardinality of 'note' is 1</sch:assert>
@@ -45,6 +47,7 @@
     <sch:title>f:Immunization/f:vaccineCode</sch:title>
     <sch:rule context="f:Immunization/f:vaccineCode">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:text) &gt;= 1">text: minimum cardinality of 'text' is 1</sch:assert>
       <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
@@ -89,13 +92,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:title>f:Immunization/f:site</sch:title>
-    <sch:rule context="f:Immunization/f:site">
-      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
-      <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:title>f:Immunization/f:performer/f:actor</sch:title>
     <sch:rule context="f:Immunization/f:performer/f:actor">
       <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
@@ -103,6 +99,13 @@
       <sch:assert test="count(f:type) &lt;= 1">type: maximum cardinality of 'type' is 1</sch:assert>
       <sch:assert test="count(f:identifier) &lt;= 1">identifier: maximum cardinality of 'identifier' is 1</sch:assert>
       <sch:assert test="count(f:display) &lt;= 0">display: maximum cardinality of 'display' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Immunization/f:performer</sch:title>
+    <sch:rule context="f:Immunization/f:performer">
+      <sch:assert test="count(f:function) &gt;= 1">function: minimum cardinality of 'function' is 1</sch:assert>
+      <sch:assert test="count(f:function) &lt;= 0">function: maximum cardinality of 'function' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

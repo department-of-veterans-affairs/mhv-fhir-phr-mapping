@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR Notes - MyHealtheVet PHR FHIR API v0.2.6</title>
+    <title>VA MHV PHR Notes - MyHealtheVet PHR FHIR API v0.2.7</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.6 - ci-build
+            <span style="display:inline-block;">0.2.7 - ci-build
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.6). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.7). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -272,7 +272,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.2.6<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note|0.2.6"/></span>
+      <span class="copy-text">0.2.7<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note|0.2.7"/></span>
       </td>
     </tr>
 
@@ -1093,6 +1093,7 @@ Summary
   <li>maps to <a href="https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl">NoteTO</a> schema.</li>
   <li><a href="StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-via-to-mhv-fhir-phr-noteto">Mapping from VIA - NoteTO</a></li>
   <li><a href="StructureDefinition-VA.MHV.PHR.note-examples.html">Examples</a></li>
+  <li><a href="https://vivian.worldvista.org/dox/Global_XlRJVSg4OTI1.html">Vivian TIU Document</a></li>
   <li>based on US-Core for Clinical Notes</li>
   <li>should have <code class="language-plaintext highlighter-rouge">meta.profile</code> set to <code class="language-plaintext highlighter-rouge">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note</code> to indicate the intent to be compliant with this profile</li>
   <li><code class="language-plaintext highlighter-rouge">type</code> seems to hold an enum (PN, DS).
@@ -1100,6 +1101,17 @@ Summary
       <li><code class="language-plaintext highlighter-rouge">DS</code> - LOINC#18842-5 "Discharge summary"</li>
       <li><code class="language-plaintext highlighter-rouge">PN</code> - LOINC#11506-3 "Progress Note"</li>
       <li>anything else should be logged as not yet understood</li>
+      <li><a href="https://vivian.worldvista.org/dox/Global_XlRJVSg4OTI1LjE=.html">Vivian Document type definitions</a> - 289 types of documents – should we support any of these?
+        <ul>
+          <li>note that this says that Discharge Summary is “DCS” not “DS”. Progress Notes is “PN”
+            <ul>
+              <li>Note that PN has a <a href="https://vivian.worldvista.org/vivian-data/8925_1/8925.1-3.html">list of 20 sub titles</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>“A” records seem to come thru (Allergy &amp; Immunology Adverse Event Note). Not clear we kept these in the past.</li>
+      <li>eVault/PHR doesn’t seem to look at the type, so that leads me to believe that VIA is filtering out to only DS and PN.</li>
     </ul>
   </li>
   <li>This also includes the (NoteTO) received on the ‘Admission and Discharge’ feed which holds a Discharge Summary without an id.</li>
@@ -1127,8 +1139,13 @@ Summary
       <li>note that KBS has a cross-walk from standard titles to loinc.</li>
     </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">status</code> might be derived from <code class="language-plaintext highlighter-rouge">NoteTO.status</code>, but at this point I presume we are only told about completed notes, we have a business rule to ignore all others, and I don’t know what other <code class="language-plaintext highlighter-rouge">NoteTO.status</code> values might happen</li>
-  <li>what other <code class="language-plaintext highlighter-rouge">type</code> values might we see?</li>
+  <li><code class="language-plaintext highlighter-rouge">status</code> might be derived from <code class="language-plaintext highlighter-rouge">NoteTO.status</code>, but at this point I presume we are only told about completed notes (“COMPLETE”, “COMPLETED” and “AMENDED”), we have a business rule to ignore all others, and I don’t know what other <code class="language-plaintext highlighter-rouge">NoteTO.status</code> values might happen
+    <ul>
+      <li>according to <a href="https://vivian.worldvista.org/dox/Global_XlRJVSg4OTI1LjY=.html">Vivian TIU Status</a> there is a purged, deleted, retracted, and inactive.- what other <code class="language-plaintext highlighter-rouge">type</code> values might we see?</li>
+      <li>should we use .docStatus to represent final(completed) vs amended?</li>
+    </ul>
+  </li>
+  <li>should we use Binary and .url? Today I am recommending using .data.</li>
   <li>some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can’t tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.
     <ul>
       <li>serviceCategory</li>
@@ -1144,9 +1161,37 @@ Summary
       <li>prfId</li>
       <li>parentId</li>
       <li>procTimestamp</li>
-      <li>subject</li>
     </ul>
   </li>
+  <li>unclear which date we are getting in VIA as timestamp</li>
+  <li>unclear where localTitle comes from</li>
+  <li>unclear where VIA gets approvedBy, presumed signed by because the VIA structure includes a signature block.</li>
+</ul>
+
+<h5 id="code-review">code review</h5>
+
+<p>2023-11-14</p>
+
+<ul>
+  <li>does cover all the elements mapped</li>
+  <li>add Profile</li>
+  <li>set lastUpdated?</li>
+  <li>consistent id handling</li>
+  <li>should we convert “A” records? are there other types of notes?</li>
+  <li>using wrong LOINC code for “PN”</li>
+  <li>setSubject looks different than allergy</li>
+  <li>date/time needs to use the right date/time logic</li>
+  <li>author needs to be a contained resource, as is now using display text</li>
+  <li>authenticator needs to be a contained resource, as is now using display text</li>
+  <li>content. is decodeHTMLEncodedCharacters needed?</li>
+  <li>is AdmitTimestamp and DischargeTimestamp handled properly relative to TZ?</li>
+  <li>location needs to be a contained resource,</li>
+  <li>debugging statements for any element in the schema that is not handled?</li>
+  <li>C&amp;P hold check?  what is this? Is this doing anything?</li>
+  <li>should we not process those that are not signed? Seems MHV/evault did ignore non signed.</li>
+  <li>Are there other business rules in the MHV/evault that we need to replicate?</li>
+  <li>seems to be a business rule on hold date?</li>
+  <li>old code looks at status for “COMPLETE”, “COMPLETED” and “AMENDED” –&gt; completed, else not completed boolean is set.</li>
 </ul>
 
 
@@ -1223,7 +1268,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 10:16-0500">2023-10-20</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.7 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 14:14-0600">2023-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

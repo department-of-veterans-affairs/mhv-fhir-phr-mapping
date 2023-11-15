@@ -29,11 +29,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.6"] ; # 
+  fhir:version [ fhir:v "0.2.7"] ; # 
   fhir:name [ fhir:v "MHVnote"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Notes"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-10-20T10:16:33-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-15T14:14:41-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -88,6 +88,11 @@
      fhir:identity [ fhir:v "Notes-Mapping" ] ;
      fhir:uri [ fhir:v "NoteTO"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
+  ] [
+     fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+     fhir:uri [ fhir:v "eVaultPHR"^^xsd:anyURI ] ;
+     fhir:name [ fhir:v "eVault-PHR to mhv-fhir-phr" ] ;
+     fhir:comment [ fhir:v "Informative map to include only the elements available in eVault PHR" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
@@ -189,6 +194,9 @@
          fhir:map [ fhir:v "when describing a CDA" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
          fhir:map [ fhir:v "NoteTO" ]
        ] )
      ] [
@@ -310,9 +318,6 @@
          ] [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "Language" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "preferred" ] ;
          fhir:description [ fhir:v "A human language." ] ;
@@ -574,6 +579,9 @@
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
          fhir:map [ fhir:v "NoteTO.id" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO.id" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.identifier:TOid" ] ;
@@ -784,9 +792,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "IdentifierType" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "extensible" ] ;
          fhir:description [ fhir:v "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose." ] ;
@@ -1035,7 +1040,12 @@
          fhir:map [ fhir:v "DocumentEntry.availabilityStatus" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "`current`" ]
+         fhir:map [ fhir:v "`current`" ] ;
+         fhir:comment [ fhir:v "8925-.05 - STATUS" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "`current`" ] ;
+         fhir:comment [ fhir:v "8925-.05 - STATUS" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.docStatus" ] ;
@@ -1269,7 +1279,12 @@
          fhir:map [ fhir:v "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "NoteTO.type{PN, DS, ?}" ]
+         fhir:map [ fhir:v "NoteTO.type{PN, DS, ?}" ] ;
+         fhir:comment [ fhir:v "8928-.01 - DOCUMENT TYPE" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO.type{PN, DS, ?}" ] ;
+         fhir:comment [ fhir:v "8928-.01 - DOCUMENT TYPE" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.type.text" ] ;
@@ -1316,7 +1331,12 @@
          fhir:map [ fhir:v "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "NoteTO.standardTitle" ]
+         fhir:map [ fhir:v "NoteTO.standardTitle" ] ;
+         fhir:comment [ fhir:v "? 8925-89261 - VHA ENTERPRISE STANDARD TITLE" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO.standardTitle" ] ;
+         fhir:comment [ fhir:v "? 8925-89261 - VHA ENTERPRISE STANDARD TITLE" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.category" ] ;
@@ -1385,6 +1405,9 @@
          fhir:map [ fhir:v "Derived from a mapping of /ClinicalDocument/code/@code to an Affinity Domain specified coded value to use and coding system. Affinity Domains are encouraged to use the appropriate value for Type of Service, based on the LOINC Type of Service (see Page 53 of the LOINC User's Manual). Must be consistent with /ClinicalDocument/code/@code" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
+         fhir:map [ fhir:v "`clinical-note`" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
          fhir:map [ fhir:v "`clinical-note`" ]
        ] )
      ] [
@@ -1503,6 +1526,9 @@
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
          fhir:map [ fhir:v "GetPatient()" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetPatient()" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.date" ] ;
@@ -1549,7 +1575,12 @@
          fhir:map [ fhir:v ".availabilityTime[type=\"TS\"]" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "ConvertDate(NoteTO.timestamp)" ]
+         fhir:map [ fhir:v "ConvertDate(NoteTO.timestamp)" ] ;
+         fhir:comment [ fhir:v "? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..." ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ConvertDate(NoteTO.timestamp)" ] ;
+         fhir:comment [ fhir:v "? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..." ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.author" ] ;
@@ -1644,7 +1675,12 @@
          fhir:map [ fhir:v "ClinicalDocument/author" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "GetPractitioner(NoteTO.author.[AuthorTO])" ]
+         fhir:map [ fhir:v "GetPractitioner(NoteTO.author.[AuthorTO])" ] ;
+         fhir:comment [ fhir:v "? 8925-1202 - AUTHOR/DICTATOR" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetPractitioner(NoteTO.author.[AuthorTO])" ] ;
+         fhir:comment [ fhir:v "? 8925-1202 - AUTHOR/DICTATOR" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.authenticator" ] ;
@@ -1709,7 +1745,12 @@
          fhir:map [ fhir:v "ClinicalDocument/legalAuthenticator" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "GetPractitioner(NoteTO.approvedBy)" ]
+         fhir:map [ fhir:v "GetPractitioner(NoteTO.approvedBy.[AuthorTO])" ] ;
+         fhir:comment [ fhir:v "? 8925-1502 - SIGNED BY" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetPractitioner(NoteTO.approvedBy.[AuthorTO])" ] ;
+         fhir:comment [ fhir:v "? 8925-1502 - SIGNED BY" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.custodian" ] ;
@@ -2078,9 +2119,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "SecurityLabels" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "extensible" ] ;
          fhir:description [ fhir:v "Security Labels from the Healthcare Privacy and Security Classification System." ] ;
@@ -2428,9 +2466,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "MimeType" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "required" ] ;
          fhir:description [ fhir:v "The mime type of an attachment. Any valid mime type is allowed." ] ;
@@ -2447,6 +2482,9 @@
          fhir:map [ fhir:v "./mediaType, ./charset" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
+         fhir:map [ fhir:v "`text/plain`" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
          fhir:map [ fhir:v "`text/plain`" ]
        ] )
      ] [
@@ -2492,9 +2530,6 @@
          ] [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "Language" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "preferred" ] ;
          fhir:description [ fhir:v "A human language." ] ;
@@ -2547,7 +2582,12 @@
          fhir:map [ fhir:v "./data" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "base64(NoteTO.text)" ]
+         fhir:map [ fhir:v "base64(NoteTO.text)" ] ;
+         fhir:comment [ fhir:v "8925-.2 - REPORT TEXT" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "base64(NoteTO.text)" ] ;
+         fhir:comment [ fhir:v "8925-.2 - REPORT TEXT" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.content.attachment.url" ] ;
@@ -2703,7 +2743,12 @@
          fhir:map [ fhir:v "./title/data" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "NoteTO.localTitle" ]
+         fhir:map [ fhir:v "NoteTO.localTitle" ] ;
+         fhir:comment [ fhir:v "???" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO.localTitle" ] ;
+         fhir:comment [ fhir:v "???" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.content.attachment.creation" ] ;
@@ -3194,7 +3239,12 @@
          fhir:map [ fhir:v "./low" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "ConvertDate(NoteTO.admitTimestamp)" ]
+         fhir:map [ fhir:v "ConvertDate(NoteTO.admitTimestamp)" ] ;
+         fhir:comment [ fhir:v "8925-.07 - EPISODE BEGIN DATE/TIME" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ConvertDate(NoteTO.admitTimestamp)" ] ;
+         fhir:comment [ fhir:v "8925-.07 - EPISODE BEGIN DATE/TIME" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.context.period.end" ] ;
@@ -3235,7 +3285,12 @@
          fhir:map [ fhir:v "./high" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "ConvertDate(NoteTO.dischargeTimestamp)" ]
+         fhir:map [ fhir:v "ConvertDate(NoteTO.dischargeTimestamp)" ] ;
+         fhir:comment [ fhir:v "8925-.08 - EPISODE END DATE/TIME" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ConvertDate(NoteTO.dischargeTimestamp)" ] ;
+         fhir:comment [ fhir:v "8925-.08 - EPISODE END DATE/TIME" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.context.facilityType" ] ;
@@ -3438,7 +3493,12 @@
          fhir:map [ fhir:v "ClinicalDocument/relatedDocument" ]
        ] [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "GetLocation(NoteTO.location.[HospitalLocationTO])" ]
+         fhir:map [ fhir:v "GetLocation(NoteTO.location.[HospitalLocationTO])" ] ;
+         fhir:comment [ fhir:v "8928-1211 - VISIT LOCATION" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetLocation(NoteTO.location.[HospitalLocationTO])" ] ;
+         fhir:comment [ fhir:v "8928-1211 - VISIT LOCATION" ]
        ] )
      ] )
   ] ; # 
@@ -3448,6 +3508,9 @@
        fhir:path [ fhir:v "DocumentReference" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
          fhir:map [ fhir:v "NoteTO" ]
        ] )
      ] [
@@ -3462,6 +3525,9 @@
        ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO.id" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
          fhir:map [ fhir:v "NoteTO.id" ]
        ] )
      ] [
@@ -3498,7 +3564,12 @@
        fhir:path [ fhir:v "DocumentReference.status" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "`current`" ]
+         fhir:map [ fhir:v "`current`" ] ;
+         fhir:comment [ fhir:v "8925-.05 - STATUS" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "`current`" ] ;
+         fhir:comment [ fhir:v "8925-.05 - STATUS" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.type" ] ;
@@ -3515,20 +3586,33 @@
        fhir:path [ fhir:v "DocumentReference.type.coding" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "NoteTO.type{PN, DS, ?}" ]
+         fhir:map [ fhir:v "NoteTO.type{PN, DS, ?}" ] ;
+         fhir:comment [ fhir:v "8928-.01 - DOCUMENT TYPE" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO.type{PN, DS, ?}" ] ;
+         fhir:comment [ fhir:v "8928-.01 - DOCUMENT TYPE" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.type.text" ] ;
        fhir:path [ fhir:v "DocumentReference.type.text" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "NoteTO.standardTitle" ]
+         fhir:map [ fhir:v "NoteTO.standardTitle" ] ;
+         fhir:comment [ fhir:v "? 8925-89261 - VHA ENTERPRISE STANDARD TITLE" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO.standardTitle" ] ;
+         fhir:comment [ fhir:v "? 8925-89261 - VHA ENTERPRISE STANDARD TITLE" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.category" ] ;
        fhir:path [ fhir:v "DocumentReference.category" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
+         fhir:map [ fhir:v "`clinical-note`" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
          fhir:map [ fhir:v "`clinical-note`" ]
        ] )
      ] [
@@ -3537,27 +3621,45 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
          fhir:map [ fhir:v "GetPatient()" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetPatient()" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.date" ] ;
        fhir:path [ fhir:v "DocumentReference.date" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "ConvertDate(NoteTO.timestamp)" ]
+         fhir:map [ fhir:v "ConvertDate(NoteTO.timestamp)" ] ;
+         fhir:comment [ fhir:v "? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..." ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ConvertDate(NoteTO.timestamp)" ] ;
+         fhir:comment [ fhir:v "? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..." ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.author" ] ;
        fhir:path [ fhir:v "DocumentReference.author" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "GetPractitioner(NoteTO.author.[AuthorTO])" ]
+         fhir:map [ fhir:v "GetPractitioner(NoteTO.author.[AuthorTO])" ] ;
+         fhir:comment [ fhir:v "? 8925-1202 - AUTHOR/DICTATOR" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetPractitioner(NoteTO.author.[AuthorTO])" ] ;
+         fhir:comment [ fhir:v "? 8925-1202 - AUTHOR/DICTATOR" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.authenticator" ] ;
        fhir:path [ fhir:v "DocumentReference.authenticator" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "GetPractitioner(NoteTO.approvedBy)" ]
+         fhir:map [ fhir:v "GetPractitioner(NoteTO.approvedBy.[AuthorTO])" ] ;
+         fhir:comment [ fhir:v "? 8925-1502 - SIGNED BY" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetPractitioner(NoteTO.approvedBy.[AuthorTO])" ] ;
+         fhir:comment [ fhir:v "? 8925-1502 - SIGNED BY" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.custodian" ] ;
@@ -3573,20 +3675,33 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
          fhir:map [ fhir:v "`text/plain`" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "`text/plain`" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.content.attachment.data" ] ;
        fhir:path [ fhir:v "DocumentReference.content.attachment.data" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "base64(NoteTO.text)" ]
+         fhir:map [ fhir:v "base64(NoteTO.text)" ] ;
+         fhir:comment [ fhir:v "8925-.2 - REPORT TEXT" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "base64(NoteTO.text)" ] ;
+         fhir:comment [ fhir:v "8925-.2 - REPORT TEXT" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.content.attachment.title" ] ;
        fhir:path [ fhir:v "DocumentReference.content.attachment.title" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "NoteTO.localTitle" ]
+         fhir:map [ fhir:v "NoteTO.localTitle" ] ;
+         fhir:comment [ fhir:v "???" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "NoteTO.localTitle" ] ;
+         fhir:comment [ fhir:v "???" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.content.attachment.creation" ] ;
@@ -3601,21 +3716,36 @@
        fhir:path [ fhir:v "DocumentReference.context.period.start" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "ConvertDate(NoteTO.admitTimestamp)" ]
+         fhir:map [ fhir:v "ConvertDate(NoteTO.admitTimestamp)" ] ;
+         fhir:comment [ fhir:v "8925-.07 - EPISODE BEGIN DATE/TIME" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ConvertDate(NoteTO.admitTimestamp)" ] ;
+         fhir:comment [ fhir:v "8925-.07 - EPISODE BEGIN DATE/TIME" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.context.period.end" ] ;
        fhir:path [ fhir:v "DocumentReference.context.period.end" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "ConvertDate(NoteTO.dischargeTimestamp)" ]
+         fhir:map [ fhir:v "ConvertDate(NoteTO.dischargeTimestamp)" ] ;
+         fhir:comment [ fhir:v "8925-.08 - EPISODE END DATE/TIME" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "ConvertDate(NoteTO.dischargeTimestamp)" ] ;
+         fhir:comment [ fhir:v "8925-.08 - EPISODE END DATE/TIME" ]
        ] )
      ] [
        fhir:id [ fhir:v "DocumentReference.context.related" ] ;
        fhir:path [ fhir:v "DocumentReference.context.related" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Notes-Mapping" ] ;
-         fhir:map [ fhir:v "GetLocation(NoteTO.location.[HospitalLocationTO])" ]
+         fhir:map [ fhir:v "GetLocation(NoteTO.location.[HospitalLocationTO])" ] ;
+         fhir:comment [ fhir:v "8928-1211 - VISIT LOCATION" ]
+       ] [
+         fhir:identity [ fhir:v "Notes-Old-Mapping" ] ;
+         fhir:map [ fhir:v "GetLocation(NoteTO.location.[HospitalLocationTO])" ] ;
+         fhir:comment [ fhir:v "8928-1211 - VISIT LOCATION" ]
        ] )
      ] )
   ] . # 

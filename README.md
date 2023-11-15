@@ -8,7 +8,35 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages)
 
+### 0.2.7
+
+2023-11-15
+
+- Immunization
+  - do not map site or lot as VIA does not give us values even if Vista has them
+  - do not mandate .recorded as it is not always provided
+  - mandate vaccineCode.text
+  - define profile for contained resources
+  - require performer.function be populated for administered provider
+  - do not map site, lotNumber, manufacture, administrator, and orderedBy as VIA does not pass these to us
+  - confirmed that contraindicated should be ignored
+  - confirmed that VIA simply stops telling us about Immunizations that have been removed, so will need to use wipe-and-replace strategy.
+  - add 8 more examples
+- vitals
+  - do not include the note as there is no place this could come from
+  - add the units of measure display `.unit`
+- allergies
+  - some examples didn't have the VUID system clearly indicated
+- notes
+  - add mapping to Vista fileman
+  - add old mapping representing eVault/PHR -- note no less elements at this point
+  - add links to various Vivian tables
+  - identify various elements that are unknown where they come from for experimentation to determine.
+  - include source code review for potential deviations or improvements
+
 ### 0.2.6
+
+2023-10-20
 
 This is mostly cleanup of documentation:
 
@@ -41,6 +69,8 @@ This is mostly cleanup of documentation:
 
 ### 0.2.5
 
+2023-10-06
+
 - maturity declared for each profile
   - There is now a maturity definition, and each profile has a maturity number relative to that definition
 - Allergies
@@ -58,6 +88,8 @@ This is mostly cleanup of documentation:
 
 ### 0.2.4
 
+2023-09-22
+
 - Allergies
   - do not put observationTime into onsetDateTime, but rather recordedDate
   - do not populate verificationStatus with informationSourceCategory
@@ -71,6 +103,8 @@ This is mostly cleanup of documentation:
   - do not preserve contraindicated
 
 ### 0.2.3
+
+2023-08-31
 
 - add link to this readme.md from the index.html
 - changed patient-0 to us-core so that it does have some profile. This example is not intended to express typical or even possible. It is informative only.

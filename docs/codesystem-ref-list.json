@@ -1,0 +1,54 @@
+{
+  "codeSystems" : [
+    {
+      "url" : "http://hl7.org/fhir/allergy-intolerance-category",
+      "version" : "4.0.1",
+      "status" : "draft",
+      "name" : "AllergyIntoleranceCategory",
+      "title" : "AllergyIntoleranceCategory",
+      "description" : "Category of an identified substance associated with allergies or intolerances.",
+      "oids" : ["2.16.840.1.113883.4.642.4.134"],
+      "uses" : {
+      },
+      "ValueSet-AllergyCategoryVS.html" : "Subset of allergy intolerance category"
+    },
+    {
+      "url" : "http://loinc.org",
+      "version" : "3.1.0",
+      "status" : "active",
+      "name" : "LOINC",
+      "title" : "Logical Observation Identifiers, Names and Codes (LOINC)",
+      "description" : "LOINC provides a set of universal names and ID codes for identifying laboratory and clinical test results.1,2 LOINC facilitates the exchange and pooling of results, such as blood hemoglobin, serum potassium, or vital signs, for clinical care, outcomes management, and research. LOINC's universal identifiers (names and codes) can be used in the context of order and observation exchanges between information systems that use syntax standards such as HL73, CEN TC251, ISO TC215, ASTM4, and DICOM. Specifically, the identifier can be used as the coded value for an observation in any other standard that uses the observation/observation value paradigm, whether messages, documents, application programming interface (API), etc. For example, LOINC codes are used widely in the OBX segment Observation Identifier field (OBX-3) of an ORU HL7 (HL7 version 2.x or ASTM 1238-9410) message that may be sent between a Clinical Laboratory Information Management Systems (LIMS) and Electronic Health Record Systems (EHR).5, 6 In this way, LOINC codes provide universal identifiers that allow the exchange of clinical data between heterogeneous computing environments.",
+      "oids" : ["2.16.840.1.113883.6.1"],
+      "uses" : {
+      },
+      "ValueSet-DocumentReferenceTypeVS.html" : "Known DocumentReference types",
+      "ValueSet-NoteTypeVS.html" : "Known Note types",
+      "ValueSet-LabReportVS.html" : "Known Lab Report types",
+      "ConceptMap-ObservationTypeTOVsLoincCode.html" : "Vital Sign ObservationTypeTO.name to Loinc Code"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+      "version" : "1.0.0",
+      "status" : "draft",
+      "name" : "ConditionVerificationStatus",
+      "title" : "ConditionVerificationStatus",
+      "description" : "The verification status to support or decline the clinical status of the condition or diagnosis.",
+      "oids" : ["2.16.840.1.113883.4.642.1.1075"],
+      "uses" : {
+      },
+      "ValueSet-ConditionVerificationVS.html" : "Subset of condition verification status"
+    },
+    {
+      "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS",
+      "version" : "0.2.7",
+      "status" : "active",
+      "name" : "AllergyObservedHistoricCS",
+      "title" : "Allergy Observed vs Historic CodeSystem",
+      "description" : "The codes for Allergy Observed vs Historic",
+      "uses" : {
+      },
+      "ValueSet-AllergyObservedHistoricVS.html" : "Allergy Observed vs Historic ValueSet"
+    }
+  ]
+}

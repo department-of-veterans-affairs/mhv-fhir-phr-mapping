@@ -14,6 +14,5 @@
 - `effectiveDateTime` vital-sign timestamp of when observed
 - `performer` may have contained recorder, and/or observer
   - may have an extension `alternate-reference` that points to an Location resource identifying the VAMC where the vital-sign was first recorded
-- `note.text` comment from vital-sign
 - `identifier` will hold the record identifier from Vista
 - no other elements are populated

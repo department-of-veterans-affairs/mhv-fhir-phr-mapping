@@ -30,7 +30,6 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * performer.extension[site].valueReference only Reference(Location)
 * performer.extension[site].valueReference ^type.aggregation = #contained
 * value[x] MS
-* note MS 
 
 * basedOn 0..0
 * partOf 0..0
@@ -47,6 +46,7 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * hasMember 0..0
 * derivedFrom 0..0
 * component 0..0
+* note 0..0 
 
 Mapping: Vitals-Mapping
 Source:	MHVvitals
@@ -65,7 +65,7 @@ Title: "VIA to mhv-fhir-phr"
 * performer -> "contained VitalSignTO.recorder" "120.5-.06 ENTERED BY"
 * performer -> "contained VitalSignTO.observer" ""
 * performer.extension[site] -> "Location(VitalSignTO.location)" "120.5-.05 HOSPITAL LOCATION"
-* note.text -> "VitalSignTO.comments" ""
+//* note.text -> "VitalSignTO.comments" ""
 
 Mapping: Vitals-Old-Mapping
 Source:	MHVvitals

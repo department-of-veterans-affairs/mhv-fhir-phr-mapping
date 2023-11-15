@@ -20,11 +20,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note",
-  "version" : "0.2.6",
+  "version" : "0.2.7",
   "name" : "MHVnote",
   "title" : "VA MHV PHR Notes",
   "status" : "active",
-  "date" : "2023-10-20T10:16:33-05:00",
+  "date" : "2023-11-15T14:14:41-06:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -87,6 +87,12 @@
     "identity" : "Notes-Mapping",
     "uri" : "NoteTO",
     "name" : "VIA to mhv-fhir-phr"
+  },
+  {
+    "identity" : "Notes-Old-Mapping",
+    "uri" : "eVaultPHR",
+    "name" : "eVault-PHR to mhv-fhir-phr",
+    "comment" : "Informative map to include only the elements available in eVault PHR"
   }],
   "kind" : "resource",
   "abstract" : false,
@@ -180,6 +186,10 @@
       },
       {
         "identity" : "Notes-Mapping",
+        "map" : "NoteTO"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
         "map" : "NoteTO"
       }]
     },
@@ -294,10 +304,6 @@
         {
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "Language"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "preferred",
         "description" : "A human language.",
@@ -561,6 +567,10 @@
       {
         "identity" : "Notes-Mapping",
         "map" : "NoteTO.id"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "NoteTO.id"
       }]
     },
     {
@@ -765,10 +775,6 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "IdentifierType"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "extensible",
         "description" : "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose.",
@@ -1010,7 +1016,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "`current`"
+        "map" : "`current`",
+        "comment" : "8925-.05 - STATUS"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "`current`",
+        "comment" : "8925-.05 - STATUS"
       }]
     },
     {
@@ -1242,7 +1254,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "NoteTO.type{PN, DS, ?}"
+        "map" : "NoteTO.type{PN, DS, ?}",
+        "comment" : "8928-.01 - DOCUMENT TYPE"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "NoteTO.type{PN, DS, ?}",
+        "comment" : "8928-.01 - DOCUMENT TYPE"
       }]
     },
     {
@@ -1290,7 +1308,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "NoteTO.standardTitle"
+        "map" : "NoteTO.standardTitle",
+        "comment" : "? 8925-89261 - VHA ENTERPRISE STANDARD TITLE"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "NoteTO.standardTitle",
+        "comment" : "? 8925-89261 - VHA ENTERPRISE STANDARD TITLE"
       }]
     },
     {
@@ -1359,6 +1383,10 @@
       },
       {
         "identity" : "Notes-Mapping",
+        "map" : "`clinical-note`"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
         "map" : "`clinical-note`"
       }]
     },
@@ -1479,6 +1507,10 @@
       {
         "identity" : "Notes-Mapping",
         "map" : "GetPatient()"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "GetPatient()"
       }]
     },
     {
@@ -1527,7 +1559,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "ConvertDate(NoteTO.timestamp)"
+        "map" : "ConvertDate(NoteTO.timestamp)",
+        "comment" : "? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..."
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "ConvertDate(NoteTO.timestamp)",
+        "comment" : "? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..."
       }]
     },
     {
@@ -1625,7 +1663,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "GetPractitioner(NoteTO.author.[AuthorTO])"
+        "map" : "GetPractitioner(NoteTO.author.[AuthorTO])",
+        "comment" : "? 8925-1202 - AUTHOR/DICTATOR"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "GetPractitioner(NoteTO.author.[AuthorTO])",
+        "comment" : "? 8925-1202 - AUTHOR/DICTATOR"
       }]
     },
     {
@@ -1688,7 +1732,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "GetPractitioner(NoteTO.approvedBy)"
+        "map" : "GetPractitioner(NoteTO.approvedBy.[AuthorTO])",
+        "comment" : "? 8925-1502 - SIGNED BY"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "GetPractitioner(NoteTO.approvedBy.[AuthorTO])",
+        "comment" : "? 8925-1502 - SIGNED BY"
       }]
     },
     {
@@ -2042,10 +2092,6 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "SecurityLabels"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "extensible",
         "description" : "Security Labels from the Healthcare Privacy and Security Classification System.",
@@ -2385,10 +2431,6 @@
         "extension" : [{
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "MimeType"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "required",
         "description" : "The mime type of an attachment. Any valid mime type is allowed.",
@@ -2404,6 +2446,10 @@
       },
       {
         "identity" : "Notes-Mapping",
+        "map" : "`text/plain`"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
         "map" : "`text/plain`"
       }]
     },
@@ -2445,10 +2491,6 @@
         {
           "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
           "valueString" : "Language"
-        },
-        {
-          "url" : "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
-          "valueBoolean" : true
         }],
         "strength" : "preferred",
         "description" : "A human language.",
@@ -2498,7 +2540,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "base64(NoteTO.text)"
+        "map" : "base64(NoteTO.text)",
+        "comment" : "8925-.2 - REPORT TEXT"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "base64(NoteTO.text)",
+        "comment" : "8925-.2 - REPORT TEXT"
       }]
     },
     {
@@ -2648,7 +2696,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "NoteTO.localTitle"
+        "map" : "NoteTO.localTitle",
+        "comment" : "???"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "NoteTO.localTitle",
+        "comment" : "???"
       }]
     },
     {
@@ -3123,7 +3177,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "ConvertDate(NoteTO.admitTimestamp)"
+        "map" : "ConvertDate(NoteTO.admitTimestamp)",
+        "comment" : "8925-.07 - EPISODE BEGIN DATE/TIME"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "ConvertDate(NoteTO.admitTimestamp)",
+        "comment" : "8925-.07 - EPISODE BEGIN DATE/TIME"
       }]
     },
     {
@@ -3164,7 +3224,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "ConvertDate(NoteTO.dischargeTimestamp)"
+        "map" : "ConvertDate(NoteTO.dischargeTimestamp)",
+        "comment" : "8925-.08 - EPISODE END DATE/TIME"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "ConvertDate(NoteTO.dischargeTimestamp)",
+        "comment" : "8925-.08 - EPISODE END DATE/TIME"
       }]
     },
     {
@@ -3360,7 +3426,13 @@
       },
       {
         "identity" : "Notes-Mapping",
-        "map" : "GetLocation(NoteTO.location.[HospitalLocationTO])"
+        "map" : "GetLocation(NoteTO.location.[HospitalLocationTO])",
+        "comment" : "8928-1211 - VISIT LOCATION"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "GetLocation(NoteTO.location.[HospitalLocationTO])",
+        "comment" : "8928-1211 - VISIT LOCATION"
       }]
     }]
   },
@@ -3370,6 +3442,10 @@
       "path" : "DocumentReference",
       "mapping" : [{
         "identity" : "Notes-Mapping",
+        "map" : "NoteTO"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
         "map" : "NoteTO"
       }]
     },
@@ -3385,6 +3461,10 @@
       },
       "mapping" : [{
         "identity" : "Notes-Mapping",
+        "map" : "NoteTO.id"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
         "map" : "NoteTO.id"
       }]
     },
@@ -3423,7 +3503,13 @@
       "path" : "DocumentReference.status",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "`current`"
+        "map" : "`current`",
+        "comment" : "8925-.05 - STATUS"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "`current`",
+        "comment" : "8925-.05 - STATUS"
       }]
     },
     {
@@ -3439,7 +3525,13 @@
       "path" : "DocumentReference.type.coding",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "NoteTO.type{PN, DS, ?}"
+        "map" : "NoteTO.type{PN, DS, ?}",
+        "comment" : "8928-.01 - DOCUMENT TYPE"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "NoteTO.type{PN, DS, ?}",
+        "comment" : "8928-.01 - DOCUMENT TYPE"
       }]
     },
     {
@@ -3447,7 +3539,13 @@
       "path" : "DocumentReference.type.text",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "NoteTO.standardTitle"
+        "map" : "NoteTO.standardTitle",
+        "comment" : "? 8925-89261 - VHA ENTERPRISE STANDARD TITLE"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "NoteTO.standardTitle",
+        "comment" : "? 8925-89261 - VHA ENTERPRISE STANDARD TITLE"
       }]
     },
     {
@@ -3455,6 +3553,10 @@
       "path" : "DocumentReference.category",
       "mapping" : [{
         "identity" : "Notes-Mapping",
+        "map" : "`clinical-note`"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
         "map" : "`clinical-note`"
       }]
     },
@@ -3464,6 +3566,10 @@
       "mapping" : [{
         "identity" : "Notes-Mapping",
         "map" : "GetPatient()"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "GetPatient()"
       }]
     },
     {
@@ -3471,7 +3577,13 @@
       "path" : "DocumentReference.date",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "ConvertDate(NoteTO.timestamp)"
+        "map" : "ConvertDate(NoteTO.timestamp)",
+        "comment" : "? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..."
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "ConvertDate(NoteTO.timestamp)",
+        "comment" : "? 8925-.1201 - ENTRY DATE/TIME, .1301 - REFERENCE DATE, etc..."
       }]
     },
     {
@@ -3479,7 +3591,13 @@
       "path" : "DocumentReference.author",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "GetPractitioner(NoteTO.author.[AuthorTO])"
+        "map" : "GetPractitioner(NoteTO.author.[AuthorTO])",
+        "comment" : "? 8925-1202 - AUTHOR/DICTATOR"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "GetPractitioner(NoteTO.author.[AuthorTO])",
+        "comment" : "? 8925-1202 - AUTHOR/DICTATOR"
       }]
     },
     {
@@ -3487,7 +3605,13 @@
       "path" : "DocumentReference.authenticator",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "GetPractitioner(NoteTO.approvedBy)"
+        "map" : "GetPractitioner(NoteTO.approvedBy.[AuthorTO])",
+        "comment" : "? 8925-1502 - SIGNED BY"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "GetPractitioner(NoteTO.approvedBy.[AuthorTO])",
+        "comment" : "? 8925-1502 - SIGNED BY"
       }]
     },
     {
@@ -3506,6 +3630,10 @@
       "mapping" : [{
         "identity" : "Notes-Mapping",
         "map" : "`text/plain`"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "`text/plain`"
       }]
     },
     {
@@ -3513,7 +3641,13 @@
       "path" : "DocumentReference.content.attachment.data",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "base64(NoteTO.text)"
+        "map" : "base64(NoteTO.text)",
+        "comment" : "8925-.2 - REPORT TEXT"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "base64(NoteTO.text)",
+        "comment" : "8925-.2 - REPORT TEXT"
       }]
     },
     {
@@ -3521,7 +3655,13 @@
       "path" : "DocumentReference.content.attachment.title",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "NoteTO.localTitle"
+        "map" : "NoteTO.localTitle",
+        "comment" : "???"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "NoteTO.localTitle",
+        "comment" : "???"
       }]
     },
     {
@@ -3539,7 +3679,13 @@
       "path" : "DocumentReference.context.period.start",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "ConvertDate(NoteTO.admitTimestamp)"
+        "map" : "ConvertDate(NoteTO.admitTimestamp)",
+        "comment" : "8925-.07 - EPISODE BEGIN DATE/TIME"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "ConvertDate(NoteTO.admitTimestamp)",
+        "comment" : "8925-.07 - EPISODE BEGIN DATE/TIME"
       }]
     },
     {
@@ -3547,7 +3693,13 @@
       "path" : "DocumentReference.context.period.end",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "ConvertDate(NoteTO.dischargeTimestamp)"
+        "map" : "ConvertDate(NoteTO.dischargeTimestamp)",
+        "comment" : "8925-.08 - EPISODE END DATE/TIME"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "ConvertDate(NoteTO.dischargeTimestamp)",
+        "comment" : "8925-.08 - EPISODE END DATE/TIME"
       }]
     },
     {
@@ -3555,7 +3707,13 @@
       "path" : "DocumentReference.context.related",
       "mapping" : [{
         "identity" : "Notes-Mapping",
-        "map" : "GetLocation(NoteTO.location.[HospitalLocationTO])"
+        "map" : "GetLocation(NoteTO.location.[HospitalLocationTO])",
+        "comment" : "8928-1211 - VISIT LOCATION"
+      },
+      {
+        "identity" : "Notes-Old-Mapping",
+        "map" : "GetLocation(NoteTO.location.[HospitalLocationTO])",
+        "comment" : "8928-1211 - VISIT LOCATION"
       }]
     }]
   }

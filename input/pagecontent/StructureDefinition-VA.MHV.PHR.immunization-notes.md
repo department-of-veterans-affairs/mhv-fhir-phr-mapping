@@ -10,75 +10,81 @@
 - US-Core requires that this be populated, but we don't get this details
   - Given that the field is not used by UX, it does not matter what the value is
   - do not populate, but add to the element the Data Absent Reason extension
-- any reaction is recorded as a contained `Observation`. This Observation is simply
+- any `reaction` is recorded as a contained `Observation`. This Observation is simply
   - status of final
   - code.text from ImmunizationTo.reaction
   - valueCodeableConcept of SNOMED#401515003 Known present
   - see [Immunization Reaction Profile of Observation](StructureDefinition-VA.MHV.PHR.immunizationReaction.html)
 - `contraindicated` - '1' for Yes (do not repeat this vaccine), '0' for no (okay to use in the future)
-  - no clear place to record this in FHIR and no need for the data, so do not preserve
+  - KBS indicates that there is a very small fragment that have this set.
+  - KBS discussion, we will follow the definition of the element.  Meaning we presume tha the immunization was given. This could be recorded as a FHIR Immunization with `.status=not-done`.
+    - Thus we ignore this element.
+  - Some in KBS discussion were pointing out that medically something 'contraindicated' would not be executed. But this understanding does not seem to align with recording an Immunization and indicating contraindicated, but would be recorded as a stopping of the order to give immunization.
 - Not mapped due to lack of clarity on what the value is and if it will ever be populated
   - `shortName`
   - `encounterProvider`
   - `orderingProvider`
+- Based on experimentation, VIA does not provide the following even if they are populated in vista
+  - `site`
+  - `lotNumber`
+  - `administrator`
+  - `orderedBy`
+  - `manufacture`
+- Updates
+  - VIA hides deleted, or removed immunizations (proven with experimentation)
+  - Thus we will be using [Wipe-and-replace hack](background.html#entered-in-error)
 - `series` - series of the immunization type was given to the patient
   - see table below for how to set `.protocolApplied.series`
-  - put the `series` into `.protocolApplied.doseNumberString`
+  - single character `series` into `.protocolApplied.doseNumberString`
   - note not using doseNumberPositiveInt as this element is removed in future versions of FHIR so it seems string is more future proof
 
-| `series` |  FHIR `.protocolApplied.series` |
-|--------|------|
-| 'P' | PARTIALLY COMPLETE |
-| 'C' | COMPLETE |
-| 'B' | BOOSTER |
-| '1' | SERIES 1 |
-| '2' | SERIES 2 |
-| '3' | SERIES 3 |
-| '4' | SERIES 4 |
-| '5' | SERIES 5 |
-| '6' | SERIES 6 |
-| '7' | SERIES 7 |
-| '8' | SERIES 8 |
+**Table: `series`, VIA converts the series code to the string defined in Vista**
+
+| code |  text |
+|------|------|
+| P | PARTIALLY COMPLETE |
+| C | COMPLETE |
+| B | BOOSTER |
+| 1 | SERIES 1 |
+| 2 | SERIES 2 |
+| 3 | SERIES 3 |
+| 4 | SERIES 4 |
+| 5 | SERIES 5 |
+| 6 | SERIES 6 |
+| 7 | SERIES 7 |
+| 8 | SERIES 8 |
+{:.grid}
+
+**Table: `reaction` VIA converts the reaction number found in Vista to the text string defined Vista:**
+
+| num | text    | potential SNOMED |
+|-----|---------|-----------------|
+| 1 | FEVER | 38666106 |
+| 2 | IRRITABILITY | 55929007 |
+| 3 | LOCAL REACTION OR SWELLING |
+| 4 | VOMITING | 422400008 |
+| 5 | RASH OR ITCHING |
+| 6 | LETHARGY | 214264003 |
+| 7 | CONVULSIONS | 91175000 |
+| 8 | ARTHRITIS OR ARTHRALGIAS |
+| 9 | ANAPHYLAXIS OR COLLAPSE |
+| 10 | RESPIRATORY DISTRESS | 271825005 |
+| 11 | OTHER |
+| 0 | NONE |
 {:.grid}
 
 #### Mapping Concerns
 
-- Updates must be supported somehow. Fixing the status at completed will only work if data never changes.
+- codes for protocolApplied.series and translation of `series` to a code for protocolApplied -- TODO Leaf 62
+  - not a priority as current text is sufficient for now.
+- codes for reaction -- TODO Leaf 60
+  - not a priority as current text is sufficient for now.
+  - some of the codes can be mapped, but others are multiple things in an OR relationship
+- does not appear that we receive recorded -> "ImmunizationTO.dateTime"
+- need to learn how to enter immunizations with reactions
+  - do we get reactions
+- need to learn how to enter an immunization without an order?
 
-#### change 2023-07-20
+#### changes needed
 
-- defined the specifics of the Contained Observation for the reaction
-- added `series` handling
-
-##### code inspection concerns
-
-didn't find the following implemented
-
-- recorded
-- performer
-- site
-- lotNumber
-- doseNumberString
-- manufacture
-- primarySource
-- recorded
-- should set the .meta.profile to the profile so that automatic validation can be done
-
-need to fix
-
-- identifier (OID+'.4.349', stationNumber + '.' + id)
-- add series -> protocolApplied.series
-
-#### change 2023-09-22
-
-- do NOT populate primarySource (previously were setting this to false), 
-  - add extension on primarySource so that can indicate Data-Absent-Reason of unknown (given that us-core requires this be populated)
-- do not preserve contraindicated
-
-#### question 2023-10-12
-
-TODO KBS question
-- why both location and performer from the encounter?
-  - encounter.facility vs encounter.location
-  - in MHV we look at which ever is populated starting with performer as preferred 
-  - Thus it seems we should convert both the way defined. (JFM 10/20/2023)
+currently working as expected

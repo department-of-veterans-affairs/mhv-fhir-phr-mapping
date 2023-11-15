@@ -1,3 +1,1428 @@
 <html><head><title>Terminology Server Log</title></head><body><h2>Terminology Server Log</h2><pre>
 
+</pre><hr/>
+<a name="l1"> </a><h3>1</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"79381-0"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/LabReportVS--0","version":"0.2.7","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"79381-0","display":"Gastrointestinal pathogens panel - Stool by NAA with probe detection"},{"code":"60567-5","display":"Comprehensive pathology report panel"}]}]}}},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:335
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:38 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087434
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "79381-0"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Gastrointestinal pathogens panel - Stool by NAA with probe detection"}]}
+
+</pre><hr/>
+<a name="l2"> </a><h3>2</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"60567-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/LabReportVS--0|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:303
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:38 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087435
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "60567-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Comprehensive pathology report panel"}]}
+
+</pre><hr/>
+<a name="l3"> </a><h3>3</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0","version":"0.2.7","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"18842-5","display":"Discharge summary"},{"code":"11506-3","display":"Progress note"}]}]}}},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:692
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:38 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087437
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "version","valueString" : "2.74"},{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "The provided code 'http://loinc.org#18748-4' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://loinc.org#18748-4' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+</pre><hr/>
+<a name="l4"> </a><h3>4</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS--1","version":"0.2.7","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11524-6"},{"code":"18748-4"}]}]}}},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:38 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087438
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18748-4"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Diagnostic imaging study"}]}
+
+</pre><hr/>
+<a name="l5"> </a><h3>5</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"DocumentReferenceTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href=\"ValueSet-NoteTypeVS.html\">Known Note types</a></li><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/11524-6/\">11524-6</a></td><td style=\"color: #cccccc\">EKG study</td></tr><tr><td><a href=\"https://loinc.org/18748-4/\">18748-4</a></td><td style=\"color: #cccccc\">Diagnostic imaging study</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"}]}}],"url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS","version":"0.2.7","name":"DocumentReferenceTypeVS","title":"Known DocumentReference types","status":"active","experimental":false,"date":"2023-11-15T14:14:41-06:00","publisher":"VA Digital Services","contact":[{"name":"VA Digital Services","telecom":[{"system":"url","value":"http://va.gov"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"John.Moehrke@va.gov"}]}],"description":"DocumentReference types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"valueSet":["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS"]},{"system":"http://loinc.org","concept":[{"code":"11524-6"},{"code":"18748-4"}]}]}}},{"name":"tx-resource","resource":{"resourceType":"ValueSet","id":"NoteTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>Discharge summary</td></tr><tr><td><a href=\"https://loinc.org/11506-3/\">11506-3</a></td><td>Progress note</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"}]}}],"url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS","version":"0.2.7","name":"NoteTypeVS","title":"Known Note types","status":"active","experimental":false,"date":"2023-11-15T14:14:41-06:00","publisher":"VA Digital Services","contact":[{"name":"VA Digital Services","telecom":[{"system":"url","value":"http://va.gov"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"John.Moehrke@va.gov"}]}],"description":"Note types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"18842-5","display":"Discharge summary"},{"code":"11506-3","display":"Progress note"}]}]}}},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087440
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18748-4"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Diagnostic imaging study"}]}
+
+</pre><hr/>
+<a name="l6"> </a><h3>6</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"73630","display":"RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:337
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:39 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087441
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "73630"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Radiologic examination, foot; complete, minimum of 3 views"}]}
+
+</pre><hr/>
+<a name="l7"> </a><h3>7</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"74415","display":"UROGRAPHY, INFUSION, DRIP TECHNIQUE AND/OR BOLUS TECHNIQUE; WITH NEPHROTOMOGRAPHY"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:360
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:39 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087443
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "74415"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Urography, infusion, drip technique and/or bolus technique; with nephrotomography"}]}
+
+</pre><hr/>
+<a name="l8"> </a><h3>8</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"71020","display":"RADIOLOGIC EXAMINATION, CHEST, 2 VIEWS, FRONTAL AND LATERAL;"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:39 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087446
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '71020' not found in CPT; Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#71020' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '71020' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#71020' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+</pre><hr/>
+<a name="l9"> </a><h3>9</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"72100","display":"RADIOLOGIC EXAMINATION, SPINE, LUMBOSACRAL; 2 OR 3 VIEWS"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:335
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:39 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087449
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "72100"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Radiologic examination, spine, lumbosacral; 2 or 3 views"}]}
+
+</pre><hr/>
+<a name="l10"> </a><h3>10</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"71111","display":"RADIOLOGIC EXAMINATION, RIBS, BILATERAL; INCLUDING POSTEROANTERIOR CHEST, MINIMUM OF 4 VIEWS"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:371
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:40 GMT
+last-modified:Wed, 15 Nov 2023 20:15:40 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087450
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "71111"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Radiologic examination, ribs, bilateral; including posteroanterior chest, minimum of 4 views"}]}
+
+</pre><hr/>
+<a name="l11"> </a><h3>11</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"78478","display":"MYOCARDIAL PERFUSION STUDY WITH WALL MOTION, QUALITATIVE OR QUANTITATIVE STUDY (LIST SEPARATELY IN ADDITION TO CODE FOR PRIMARY PROCEDURE)"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:40 GMT
+last-modified:Wed, 15 Nov 2023 20:15:40 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087455
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '78478' not found in CPT; Unknown Code '78478' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78478' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '78478' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '78478' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '78478' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#78478' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+</pre><hr/>
+<a name="l12"> </a><h3>12</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"93015","display":"CARDIOVASCULAR STRESS TEST USING MAXIMAL OR SUBMAXIMAL TREADMILL OR BICYCLE EXERCISE, CONTINUOUS ELECTROCARDIOGRAPHIC MONITORING, AND/OR PHARMACOLOGICAL STRESS; WITH SUPERVISION, INTERPRETATION AND REPORT"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:483
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:40 GMT
+last-modified:Wed, 15 Nov 2023 20:15:40 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087456
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "93015"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Cardiovascular stress test using maximal or submaximal treadmill or bicycle exercise, continuous electrocardiographic monitoring, and/or pharmacological stress; with supervision, interpretation and report"}]}
+
+</pre><hr/>
+<a name="l13"> </a><h3>13</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"78480","display":"MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION (LIST SEPARATELY IN ADDITION TO CODE FOR PRIMARY PROCEDURE)"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087458
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '78480' not found in CPT; Unknown Code '78480' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78480' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '78480' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '78480' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '78480' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#78480' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+</pre><hr/>
+<a name="l14"> </a><h3>14</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"71260","display":"COMPUTED TOMOGRAPHY, THORAX, DIAGNOSTIC; WITH CONTRAST MATERIAL(S)"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:345
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087460
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "71260"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Computed tomography, thorax, diagnostic; with contrast material(s)"}]}
+
+</pre><hr/>
+<a name="l15"> </a><h3>15</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"78465","display":"MYOCARDIAL PERFUSION IMAGING; TOMOGRAPHIC (SPECT), MULTIPLE STUDIES (INCLUDING ATTENUATION CORRECTION WHEN PERFORMED), AT REST AND/OR STRESS (EXERCISE AND/OR PHARMACOLOGIC) AND REDISTRIBUTION AND/OR REST INJECTION, WITH OR WITHOUT QUANTIFICATION"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087462
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '78465' not found in CPT; Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78465' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '78465' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#78465' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+</pre><hr/>
+<a name="l16"> </a><h3>16</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"78990","display":"PROVISION OF DIAGNOSTIC RADIOPHARMACEUTICAL(S)"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087464
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '78990' not found in CPT; Unknown Code '78990' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78990' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '78990' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '78990' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '78990' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#78990' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+</pre><hr/>
+<a name="l17"> </a><h3>17</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:692
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087466
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "version","valueString" : "2.74"},{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "The provided code 'http://loinc.org#11524-6' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://loinc.org#11524-6' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+</pre><hr/>
+<a name="l18"> </a><h3>18</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS--1|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:276
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087467
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11524-6"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "EKG study"}]}
+
+</pre><hr/>
+<a name="l19"> </a><h3>19</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:276
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087468
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11524-6"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "EKG study"}]}
+
+</pre><hr/>
+<a name="l20"> </a><h3>20</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11506-3"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:280
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:42 GMT
+last-modified:Wed, 15 Nov 2023 20:15:42 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087471
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11506-3"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Progress note"}]}
+
+</pre><hr/>
+<a name="l21"> </a><h3>21</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11506-3","display":"Progress note"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:280
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:42 GMT
+last-modified:Wed, 15 Nov 2023 20:15:42 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087472
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11506-3"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Progress note"}]}
+
+</pre><hr/>
+<a name="l22"> </a><h3>22</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18842-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:284
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:42 GMT
+last-modified:Wed, 15 Nov 2023 20:15:42 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087474
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18842-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Discharge summary"}]}
+
+</pre><hr/>
+<a name="l23"> </a><h3>23</h3>
+<pre>
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18842-5","display":"Discharge summary"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:284
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:42 GMT
+last-modified:Wed, 15 Nov 2023 20:15:42 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087475
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18842-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Discharge summary"}]}
+
+--- 1 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"79381-0"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/LabReportVS--0","version":"0.2.7","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"79381-0","display":"Gastrointestinal pathogens panel - Stool by NAA with probe detection"},{"code":"60567-5","display":"Comprehensive pathology report panel"}]}]}}},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:335
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:38 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087434
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "79381-0"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Gastrointestinal pathogens panel - Stool by NAA with probe detection"}]}
+
+--- 2 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"60567-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/LabReportVS--0|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:303
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:38 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087435
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "60567-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Comprehensive pathology report panel"}]}
+
+--- 3 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0","version":"0.2.7","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"18842-5","display":"Discharge summary"},{"code":"11506-3","display":"Progress note"}]}]}}},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:692
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:38 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087437
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "version","valueString" : "2.74"},{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "The provided code 'http://loinc.org#18748-4' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://loinc.org#18748-4' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+--- 4 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS--1","version":"0.2.7","status":"active","compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"11524-6"},{"code":"18748-4"}]}]}}},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:38 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087438
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18748-4"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Diagnostic imaging study"}]}
+
+--- 5 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18748-4"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"valueSet","resource":{"resourceType":"ValueSet","id":"DocumentReferenceTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Import all the codes that are contained in <a href=\"ValueSet-NoteTypeVS.html\">Known Note types</a></li><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/11524-6/\">11524-6</a></td><td style=\"color: #cccccc\">EKG study</td></tr><tr><td><a href=\"https://loinc.org/18748-4/\">18748-4</a></td><td style=\"color: #cccccc\">Diagnostic imaging study</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"}]}}],"url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS","version":"0.2.7","name":"DocumentReferenceTypeVS","title":"Known DocumentReference types","status":"active","experimental":false,"date":"2023-11-15T14:14:41-06:00","publisher":"VA Digital Services","contact":[{"name":"VA Digital Services","telecom":[{"system":"url","value":"http://va.gov"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"John.Moehrke@va.gov"}]}],"description":"DocumentReference types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"valueSet":["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS"]},{"system":"http://loinc.org","concept":[{"code":"11524-6"},{"code":"18748-4"}]}]}}},{"name":"tx-resource","resource":{"resourceType":"ValueSet","id":"NoteTypeVS","text":{"status":"generated","div":"<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://loinc.org\"><code>http://loinc.org</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"https://loinc.org/18842-5/\">18842-5</a></td><td>Discharge summary</td></tr><tr><td><a href=\"https://loinc.org/11506-3/\">11506-3</a></td><td>Progress note</td></tr></table></li></ul></div>"},"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm","valueInteger":1,"_valueInteger":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"}]}},{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status","valueCode":"trial-use","_valueCode":{"extension":[{"url":"http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom","valueCanonical":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"}]}}],"url":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS","version":"0.2.7","name":"NoteTypeVS","title":"Known Note types","status":"active","experimental":false,"date":"2023-11-15T14:14:41-06:00","publisher":"VA Digital Services","contact":[{"name":"VA Digital Services","telecom":[{"system":"url","value":"http://va.gov"}]},{"name":"John Moehrke (himself)","telecom":[{"system":"email","value":"John.Moehrke@va.gov"}]}],"description":"Note types","jurisdiction":[{"coding":[{"system":"urn:iso:std:iso:3166","code":"US"}]}],"compose":{"include":[{"system":"http://loinc.org","concept":[{"code":"18842-5","display":"Discharge summary"},{"code":"11506-3","display":"Progress note"}]}]}}},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:291
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:38 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087440
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18748-4"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Diagnostic imaging study"}]}
+
+--- 6 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"73630","display":"RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:337
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:39 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087441
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "73630"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Radiologic examination, foot; complete, minimum of 3 views"}]}
+
+--- 7 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"74415","display":"UROGRAPHY, INFUSION, DRIP TECHNIQUE AND/OR BOLUS TECHNIQUE; WITH NEPHROTOMOGRAPHY"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:360
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:39 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087443
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "74415"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Urography, infusion, drip technique and/or bolus technique; with nephrotomography"}]}
+
+--- 8 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"71020","display":"RADIOLOGIC EXAMINATION, CHEST, 2 VIEWS, FRONTAL AND LATERAL;"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:39 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087446
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '71020' not found in CPT; Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#71020' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '71020' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#71020' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+--- 9 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"72100","display":"RADIOLOGIC EXAMINATION, SPINE, LUMBOSACRAL; 2 OR 3 VIEWS"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:335
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:39 GMT
+last-modified:Wed, 15 Nov 2023 20:15:39 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087449
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "72100"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Radiologic examination, spine, lumbosacral; 2 or 3 views"}]}
+
+--- 10 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"71111","display":"RADIOLOGIC EXAMINATION, RIBS, BILATERAL; INCLUDING POSTEROANTERIOR CHEST, MINIMUM OF 4 VIEWS"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:371
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:40 GMT
+last-modified:Wed, 15 Nov 2023 20:15:40 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087450
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "71111"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Radiologic examination, ribs, bilateral; including posteroanterior chest, minimum of 4 views"}]}
+
+--- 11 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"78478","display":"MYOCARDIAL PERFUSION STUDY WITH WALL MOTION, QUALITATIVE OR QUANTITATIVE STUDY (LIST SEPARATELY IN ADDITION TO CODE FOR PRIMARY PROCEDURE)"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:40 GMT
+last-modified:Wed, 15 Nov 2023 20:15:40 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087455
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '78478' not found in CPT; Unknown Code '78478' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78478' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '78478' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '78478' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '78478' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#78478' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+--- 12 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"93015","display":"CARDIOVASCULAR STRESS TEST USING MAXIMAL OR SUBMAXIMAL TREADMILL OR BICYCLE EXERCISE, CONTINUOUS ELECTROCARDIOGRAPHIC MONITORING, AND/OR PHARMACOLOGICAL STRESS; WITH SUPERVISION, INTERPRETATION AND REPORT"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:483
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:40 GMT
+last-modified:Wed, 15 Nov 2023 20:15:40 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087456
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "93015"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Cardiovascular stress test using maximal or submaximal treadmill or bicycle exercise, continuous electrocardiographic monitoring, and/or pharmacological stress; with supervision, interpretation and report"}]}
+
+--- 13 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"78480","display":"MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION (LIST SEPARATELY IN ADDITION TO CODE FOR PRIMARY PROCEDURE)"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087458
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '78480' not found in CPT; Unknown Code '78480' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78480' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '78480' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '78480' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '78480' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#78480' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+--- 14 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"71260","display":"COMPUTED TOMOGRAPHY, THORAX, DIAGNOSTIC; WITH CONTRAST MATERIAL(S)"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:345
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087460
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://www.ama-assn.org/go/cpt"},{"name" : "code","valueCode" : "71260"},{"name" : "version","valueString" : "2023"},{"name" : "display","valueString" : "Computed tomography, thorax, diagnostic; with contrast material(s)"}]}
+
+--- 15 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"78465","display":"MYOCARDIAL PERFUSION IMAGING; TOMOGRAPHIC (SPECT), MULTIPLE STUDIES (INCLUDING ATTENUATION CORRECTION WHEN PERFORMED), AT REST AND/OR STRESS (EXERCISE AND/OR PHARMACOLOGIC) AND REDISTRIBUTION AND/OR REST INJECTION, WITH OR WITHOUT QUANTIFICATION"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087462
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '78465' not found in CPT; Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78465' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '78465' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#78465' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+--- 16 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://www.ama-assn.org/go/cpt","code":"78990","display":"PROVISION OF DIAGNOSTIC RADIOPHARMACEUTICAL(S)"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:1271
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087464
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "Code '78990' not found in CPT; Unknown Code '78990' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78990' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "warning","code" : "not-found","details" : {"text" : "Unknown Code '78990' in the system 'http://www.ama-assn.org/go/cpt'"},"location" : ["Coding.code"]},{"severity" : "information","code" : "code-invalid","details" : {"text" : "Code '78990' not found in CPT"},"location" : ["Coding"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "Unknown Code '78990' in the system 'http://www.ama-assn.org/go/cpt|2023'"},"location" : ["Coding.code"]},{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://www.ama-assn.org/go/cpt#78990' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+--- 17 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:692
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087466
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "version","valueString" : "2.74"},{"name" : "result","valueBoolean" : false},{"name" : "message","valueString" : "The provided code 'http://loinc.org#11524-6' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7'"},{"name" : "issues","resource" : {"resourceType" : "OperationOutcome","issue" : [{"severity" : "error","code" : "code-invalid","details" : {"text" : "The provided code 'http://loinc.org#11524-6' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7'"},"location" : ["Coding"]}]}}]}
+
+--- 18 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS--1|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:276
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087467
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11524-6"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "EKG study"}]}
+
+--- 19 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11524-6"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:276
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:41 GMT
+last-modified:Wed, 15 Nov 2023 20:15:41 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087468
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11524-6"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "EKG study"}]}
+
+--- 20 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11506-3"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:280
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:42 GMT
+last-modified:Wed, 15 Nov 2023 20:15:42 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087471
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11506-3"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Progress note"}]}
+
+--- 21 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"11506-3","display":"Progress note"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:280
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:42 GMT
+last-modified:Wed, 15 Nov 2023 20:15:42 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087472
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "11506-3"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Progress note"}]}
+
+--- 22 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18842-5"}},{"name":"valueSetMode","valueString":"CHECK_MEMERSHIP_ONLY"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS--0|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:284
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:42 GMT
+last-modified:Wed, 15 Nov 2023 20:15:42 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087474
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18842-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Discharge summary"}]}
+
+--- 23 -----------------
+Request: 
+
+POST http://tx.fhir.org/r4/ValueSet/$validate-code? HTTP/1.0
+User-Agent: hapi-fhir-tooling-client
+Accept-Charset: UTF-8
+Accept: application/fhir+json
+Content-Type: application/fhir+json;charset=UTF-8
+
+{"resourceType":"Parameters","parameter":[{"name":"coding","valueCoding":{"system":"http://loinc.org","code":"18842-5","display":"Discharge summary"}},{"name":"valueSetMode","valueString":"NO_MEMBERSHIP_CHECK"},{"name":"default-to-latest-version","valueBoolean":true},{"name":"url","valueUri":"https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.2.7"},{"name":"cache-id","valueId":"734381ce-c39f-4aaa-8f9b-f65ce26bc99f"},{"name":"x-system-cache-id","valueString":"dc8fd4bc-091a-424a-8a3b-6198ef146891"}]}
+
+
+Response: 
+
+200
+access-control-allow-methods:GET, POST, PUT, PATCH, DELETE
+access-control-allow-origin:*
+access-control-expose-headers:Content-Location, Location
+cache-control:public, max-age=600
+connection:keep-alive
+content-length:284
+content-type:application/fhir+json
+date:Wed, 15 Nov 2023 20:15:42 GMT
+last-modified:Wed, 15 Nov 2023 20:15:42 GMT
+pragma:no-cache
+server:nginx
+x-request-id:35-7087475
+
+{"resourceType" : "Parameters","parameter" : [{"name" : "result","valueBoolean" : true},{"name" : "system","valueUri" : "http://loinc.org"},{"name" : "code","valueCode" : "18842-5"},{"name" : "version","valueString" : "2.74"},{"name" : "display","valueString" : "Discharge summary"}]}
 </pre></head></html>

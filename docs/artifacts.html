@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.2.6</title>
+    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.2.7</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.6 - ci-build
+            <span style="display:inline-block;">0.2.7 - ci-build
 
 
 
@@ -191,7 +191,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.6). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.7). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -407,6 +407,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>status final</li>
   <li>code.text ImmunizationTO.reaction</li>
   <li>valueCodeableConcept - SNOMED#401515003 Known present</li>
+  <li>effectiveDateTime from ImmunizationTO.administeredDate if known</li>
+  <li>subject - the patient</li>
+  <li>performer - migth come from ImmunizationTO.encounter.provider but can’t have contained resources in a resource that will be contained.</li>
 </ul>
 </td>
          </tr>
@@ -784,6 +787,15 @@ RECORD INDEXES:  AHDR (#482)</p>
       <tbody>
          <tr>
             <td style="column-width:30%">
+               <a href="Bundle-8647883f-2316-48a1-9437-fdbe628f24ec.html"
+                  title="Bundle/8647883f-2316-48a1-9437-fdbe628f24ec">8647883f-2316-48a1-9437-fdbe628f24ec</a>
+            </td>
+            <td>
+
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-00c13a47-333e-4f69-a764-ebd7e609cfa7.html"
                   title="Observation/00c13a47-333e-4f69-a764-ebd7e609cfa7">BLOOD PRESSURE</a>
             </td>
@@ -1026,14 +1038,6 @@ RECORD INDEXES:  AHDR (#482)</p>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Bundle-vitals.html" title="Bundle/vitals">Bundle of Vitals from mock data</a>
-            </td>
-            <td>
-<p>An example of a transaction Bundle with many vitals reports as Observation This was <a href="StructureDefinition-VA.MHV.PHR.vitals.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml">mock sample SOAP message</a> MHV receives.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="DocumentReference-ex-MHV-ecg-0.html"
                   title="DocumentReference/ex-MHV-ecg-0">Example 0 of a MHV ECG</a>
             </td>
@@ -1093,15 +1097,6 @@ RECORD INDEXES:  AHDR (#482)</p>
             </td>
             <td>
 <p>Example from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Immunization-ex-MHV-immunization-1.html"
-                  title="Immunization/ex-MHV-immunization-1">Example 1 of an MHV immunization</a>
-            </td>
-            <td>
-<p>Example from a mock ImmunizationTO</p>
 </td>
          </tr>
          <tr>
@@ -1273,15 +1268,6 @@ RECORD INDEXES:  AHDR (#482)</p>
             </td>
             <td>
 <p>Example from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Immunization-ex-MHV-immunization-2.html"
-                  title="Immunization/ex-MHV-immunization-2">Example 2 of an MHV immunization</a>
-            </td>
-            <td>
-<p>Example from a mock ImmunizationTO</p>
 </td>
          </tr>
          <tr>
@@ -1670,6 +1656,88 @@ RECORD INDEXES:  AHDR (#482)</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Immunization-27653.html" title="Immunization/27653">Immunication 27653</a>
+            </td>
+            <td>
+<p>ImmunizationTO.125286</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-27654.html" title="Immunization/27654">Immunication 27654</a>
+            </td>
+            <td>
+<p>ImmunizationTO.125285</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-27655.html" title="Immunization/27655">Immunication 27655</a>
+            </td>
+            <td>
+<p>ImmunizationTO.124694</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-27656.html" title="Immunization/27656">Immunication 27656</a>
+            </td>
+            <td>
+<p>ImmunizationTO.124695</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-27657.html" title="Immunization/27657">Immunication 27657</a>
+            </td>
+            <td>
+<p>ImmunizationTO.124696</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-27658.html" title="Immunization/27658">Immunication 27658</a>
+            </td>
+            <td>
+<p>ImmunizationTO.124697</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-28652.html" title="Immunization/28652">Immunication 28652</a>
+            </td>
+            <td>
+<p>ImmunizationTO.125307</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-28653.html" title="Immunization/28653">Immunication 28653</a>
+            </td>
+            <td>
+<p>ImmunizationTO.125308</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-ex-MHV-immunization-1.html"
+                  title="Immunization/ex-MHV-immunization-1">Immunization 1</a>
+            </td>
+            <td>
+<p>ImmunizationTO.124684</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-ex-MHV-immunization-2.html"
+                  title="Immunization/ex-MHV-immunization-2">Immunization 2</a>
+            </td>
+            <td>
+<p>ImmunizationTO.124685</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-1b8bc2ff-17cb-4c61-b736-3e67d2f6b25c.html"
                   title="Observation/1b8bc2ff-17cb-4c61-b736-3e67d2f6b25c">PAIN</a>
             </td>
@@ -2017,6 +2085,14 @@ RECORD INDEXES:  AHDR (#482)</p>
             </td>
             <td>
 <p>This example is derived off of a mock patient</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-27659.html" title="Patient/27659">Patient for testing environment</a>
+            </td>
+            <td>
+<p>Used in testing environment</p>
 </td>
          </tr>
          <tr>
@@ -2796,7 +2872,7 @@ RECORD INDEXES:  AHDR (#482)</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 10:16-0500">2023-10-20</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.7 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 14:14-0600">2023-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

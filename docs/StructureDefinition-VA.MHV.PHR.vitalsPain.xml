@@ -35,11 +35,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
-  <version value="0.2.6"/>
+  <version value="0.2.7"/>
   <name value="MHVvitalsPain"/>
   <title value="VA MHV PHR Vital-Signs for PAIN"/>
   <status value="active"/>
-  <date value="2023-10-20T10:16:33-05:00"/>
+  <date value="2023-11-15T14:14:41-06:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -335,9 +335,6 @@
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="Language"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-          <valueBoolean value="true"/>
         </extension>
         <strength value="preferred"/>
         <description value="A human language."/>
@@ -732,9 +729,6 @@
       <binding>
         <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
           <valueString value="IdentifierType"/>
-        </extension>
-        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
-          <valueBoolean value="true"/>
         </extension>
         <strength value="extensible"/>
         <description value="A coded type for an identifier that can be used to determine which identifier to use for a specific purpose."/>
@@ -2047,7 +2041,7 @@
         <key value="vs-1"/>
         <severity value="error"/>
         <human value="if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day"/>
-        <expression value="($this as dateTime).toString().length() &gt;= 8"/>
+        <expression value="$this is dateTime implies $this.toString().length() &gt;= 10"/>
         <xpath value="f:effectiveDateTime[matches(@value, '^\d{4}-\d{2}-\d{2}')]"/>
         <source value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
       </constraint>
@@ -2111,7 +2105,7 @@
         <key value="vs-1"/>
         <severity value="error"/>
         <human value="if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day"/>
-        <expression value="($this as dateTime).toString().length() &gt;= 8"/>
+        <expression value="$this is dateTime implies $this.toString().length() &gt;= 10"/>
         <xpath value="f:effectiveDateTime[matches(@value, '^\d{4}-\d{2}-\d{2}')]"/>
         <source value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
       </constraint>
@@ -3063,7 +3057,7 @@
       <comment value="May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation."/>
       <requirements value="Need to be able to provide free text additional information."/>
       <min value="0"/>
-      <max value="*"/>
+      <max value="0"/>
       <base>
         <path value="Observation.note"/>
         <min value="0"/>
@@ -3080,7 +3074,6 @@
         <xpath value="@value|f:*|h:div"/>
         <source value="http://hl7.org/fhir/StructureDefinition/Element"/>
       </constraint>
-      <mustSupport value="true"/>
       <isModifier value="false"/>
       <isSummary value="false"/>
       <mapping>
@@ -3270,10 +3263,6 @@
       <mapping>
         <identity value="rim"/>
         <map value="Act.text"/>
-      </mapping>
-      <mapping>
-        <identity value="Vitals-Mapping"/>
-        <map value="VitalSignTO.comments"/>
       </mapping>
       <mapping>
         <identity value="VitalsPain-Mapping"/>

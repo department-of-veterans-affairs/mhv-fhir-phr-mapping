@@ -214,7 +214,7 @@ IntoleranceCondition record identity 69073 from a mock ProblemTO
 * category[+] = #medication
 * category[+] = #food
 * reaction[+].manifestation.text = "RASH"
-* reaction[=].manifestation.coding.code = #4538635
+* reaction[=].manifestation.coding = VUID#4538635
 * reaction[+].manifestation.text = "SEDATED"
 * reaction[=].manifestation.coding = VUID#4637177
 * note.text = "test data"

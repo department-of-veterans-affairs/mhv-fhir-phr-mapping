@@ -276,3 +276,20 @@ Usage: #example
 * identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[PatientId].value = "942104"
 * identifier[PatientId].use = #usual
+
+/* Often used in testing */
+
+Instance: 27659
+InstanceOf: MHVpatient
+Title: "Patient for testing environment"
+Description: """
+Used in testing environment
+"""
+Usage: #example
+* name.given[+] = "unknown"
+* name.family = "test"
+* birthDate = "1000-01-01"
+* gender = #unknown
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "27659"
+* identifier[PatientId].use = #usual

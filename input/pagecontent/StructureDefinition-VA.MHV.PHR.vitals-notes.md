@@ -28,15 +28,16 @@
 - value units
   - There is a units within the data, and it seems mostly to be the proper code from the proper code system UCUM
   - some units are not proper formal UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)
-- populate `effectiveDateTime`, and `note.text` as mapped
+  - populate the valueQuantity.units with the value from VIA feed
+  - populate the valueQuantity.code with corrected ucum code value
+- populate `effectiveDateTime`
 - populate `performer`
   - contained Location(`VitalSignTO.location`)
     - mock data is all 4 digit location.id values
   - contained Practitioner(`VitalSignTO.recorder`)
   - contained Practitioner(`VitalSignTO.observer`)
 - timestamp is confirmed to be date taken
-- [Examples are within a Bundle](Bundle-vitals.html)
-- There are examples, all of which have been converted into [FHIR resources](Bundle-vitals.html)
+- There are examples, all of which have been converted into 
   - BLOOD PRESSURE (SYSTOLIC BLOOD PRESSURE, DIASTOLIC BLOOD PRESSURE) = 26 (26, 26)
   - HEIGHT = 12
   - WEIGHT = 20
@@ -50,7 +51,8 @@
   - value2
   - facility
   - qualifiers, qualifierItems
-  
+- the `VitalSignTO.comments` has no source in Visa, so even if something comes on the VIA feed we should drop it.
+
 #### Mapping Concerns
 
 - Not clear how we learn of previously good vitals that should be changed and marked as entered-in-error
@@ -61,6 +63,7 @@
   - or should we do a lookup in MHV similar to what we did with allergies.
 - should really have bodySite, device, method; but these don't come to us in VIA
 - should likely have a pulse-OX, but don't have this currently and it is not clear this will come in VIA
+- is there a known set of *ucum* codes that we might see and the translation to formal `ucum` code?
 
 #### code review
 
@@ -88,3 +91,8 @@ also:
 - the code should be defensive for anything beyond the 6 defined domains, such as a robust map anything else generally to valueString or valueQuantity
 - code mapping may need to be confirmed that the code/map is doing what is defined here.
 - need to implement solution for entered-in-error, which might be hack #1 that deletes current before refreshing with VIA data.
+
+#### Business
+
+TODO: PulseOX is needed. We need examples as no current data has pulseOX. Not clear that MHV evault PHR supported this.
+

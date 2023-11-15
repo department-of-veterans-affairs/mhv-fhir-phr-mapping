@@ -38,11 +38,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.6"] ; # 
+  fhir:version [ fhir:v "0.2.7"] ; # 
   fhir:name [ fhir:v "MHVvitalsPain"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Vital-Signs for PAIN"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-10-20T10:16:33-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-15T14:14:41-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -356,9 +356,6 @@
          ] [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "Language" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "preferred" ] ;
          fhir:description [ fhir:v "A human language." ] ;
@@ -775,9 +772,6 @@
          fhir:extension ( [
            fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName"^^xsd:anyURI ] ;
            fhir:value [ fhir:v "IdentifierType" ]
-         ] [
-           fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding"^^xsd:anyURI ] ;
-           fhir:value [ fhir:v "true"^^xsd:boolean ]
          ] ) ;
          fhir:strength [ fhir:v "extensible" ] ;
          fhir:description [ fhir:v "A coded type for an identifier that can be used to determine which identifier to use for a specific purpose." ] ;
@@ -2169,7 +2163,7 @@
          fhir:key [ fhir:v "vs-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day" ] ;
-         fhir:expression [ fhir:v "($this as dateTime).toString().length() >= 8" ] ;
+         fhir:expression [ fhir:v "$this is dateTime implies $this.toString().length() >= 10" ] ;
          fhir:xpath [ fhir:v "f:effectiveDateTime[matches(@value, '^\\d{4}-\\d{2}-\\d{2}')]" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/vitalsigns"^^xsd:anyURI ;
@@ -2236,7 +2230,7 @@
          fhir:key [ fhir:v "vs-1" ] ;
          fhir:severity [ fhir:v "error" ] ;
          fhir:human [ fhir:v "if Observation.effective[x] is dateTime and has a value then that value shall be precise to the day" ] ;
-         fhir:expression [ fhir:v "($this as dateTime).toString().length() >= 8" ] ;
+         fhir:expression [ fhir:v "$this is dateTime implies $this.toString().length() >= 10" ] ;
          fhir:xpath [ fhir:v "f:effectiveDateTime[matches(@value, '^\\d{4}-\\d{2}-\\d{2}')]" ] ;
          fhir:source [
            fhir:v "http://hl7.org/fhir/StructureDefinition/vitalsigns"^^xsd:anyURI ;
@@ -3270,7 +3264,7 @@
        fhir:comment [ fhir:v "May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation." ] ;
        fhir:requirements [ fhir:v "Need to be able to provide free text additional information." ] ;
        fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
-       fhir:max [ fhir:v "*" ] ;
+       fhir:max [ fhir:v "0" ] ;
        fhir:base [
          fhir:path [ fhir:v "Observation.note" ] ;
          fhir:min [ fhir:v "0"^^xsd:nonNegativeInteger ] ;
@@ -3290,7 +3284,6 @@
            fhir:link <http://hl7.org/fhir/StructureDefinition/Element>
          ]
        ] ) ;
-       fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:isSummary [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
@@ -3498,9 +3491,6 @@
        ] [
          fhir:identity [ fhir:v "rim" ] ;
          fhir:map [ fhir:v "Act.text" ]
-       ] [
-         fhir:identity [ fhir:v "Vitals-Mapping" ] ;
-         fhir:map [ fhir:v "VitalSignTO.comments" ]
        ] [
          fhir:identity [ fhir:v "VitalsPain-Mapping" ] ;
          fhir:map [ fhir:v "VitalSignTO.comments" ]

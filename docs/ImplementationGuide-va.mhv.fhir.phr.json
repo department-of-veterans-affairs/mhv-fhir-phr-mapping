@@ -14,11 +14,11 @@
     "valueInteger" : 1
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr",
-  "version" : "0.2.6",
+  "version" : "0.2.7",
   "name" : "VAMHVFHIRPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-10-20T10:16:33-05:00",
+  "date" : "2023-11-15T14:14:41-06:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -888,6 +888,17 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Bundle"
+      }],
+      "reference" : {
+        "reference" : "Bundle/8647883f-2316-48a1-9437-fdbe628f24ec"
+      },
+      "name" : "8647883f-2316-48a1-9437-fdbe628f24ec",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1248,18 +1259,6 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/vitals"
-      },
-      "name" : "Bundle of Vitals from mock data",
-      "description" : "An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml) MHV receives.",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "DocumentReference"
       }],
       "reference" : {
@@ -1340,18 +1339,6 @@
       "name" : "Example 1 of an MHV condition",
       "description" : "Example from a mock ProblemTO",
       "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Immunization"
-      }],
-      "reference" : {
-        "reference" : "Immunization/ex-MHV-immunization-1"
-      },
-      "name" : "Example 1 of an MHV immunization",
-      "description" : "Example from a mock ImmunizationTO",
-      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
     },
     {
       "extension" : [{
@@ -1580,18 +1567,6 @@
       "name" : "Example 2 of an MHV condition",
       "description" : "Example from a mock ProblemTO",
       "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Immunization"
-      }],
-      "reference" : {
-        "reference" : "Immunization/ex-MHV-immunization-2"
-      },
-      "name" : "Example 2 of an MHV immunization",
-      "description" : "Example from a mock ImmunizationTO",
-      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
     },
     {
       "extension" : [{
@@ -2112,6 +2087,126 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/27653"
+      },
+      "name" : "Immunication 27653",
+      "description" : "ImmunizationTO.125286",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/27654"
+      },
+      "name" : "Immunication 27654",
+      "description" : "ImmunizationTO.125285",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/27655"
+      },
+      "name" : "Immunication 27655",
+      "description" : "ImmunizationTO.124694",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/27656"
+      },
+      "name" : "Immunication 27656",
+      "description" : "ImmunizationTO.124695",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/27657"
+      },
+      "name" : "Immunication 27657",
+      "description" : "ImmunizationTO.124696",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/27658"
+      },
+      "name" : "Immunication 27658",
+      "description" : "ImmunizationTO.124697",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/28652"
+      },
+      "name" : "Immunication 28652",
+      "description" : "ImmunizationTO.125307",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/28653"
+      },
+      "name" : "Immunication 28653",
+      "description" : "ImmunizationTO.125308",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/ex-MHV-immunization-1"
+      },
+      "name" : "Immunization 1",
+      "description" : "ImmunizationTO.124684",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/ex-MHV-immunization-2"
+      },
+      "name" : "Immunization 2",
+      "description" : "ImmunizationTO.124685",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -2336,6 +2431,18 @@
       "name" : "PAIN",
       "description" : "2449384",
       "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/27659"
+      },
+      "name" : "Patient for testing environment",
+      "description" : "Used in testing environment",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"
     },
     {
       "extension" : [{
@@ -3498,7 +3605,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.immunizationReaction"
       },
       "name" : "VA MHV PHR Immunization Reaction",
-      "description" : "A profile for the contained Observation indicating an immunization reaction\n\n- status final\n- code.text ImmunizationTO.reaction\n- valueCodeableConcept - SNOMED#401515003 Known present",
+      "description" : "A profile for the contained Observation indicating an immunization reaction\n\n- status final\n- code.text ImmunizationTO.reaction\n- valueCodeableConcept - SNOMED#401515003 Known present\n- effectiveDateTime from ImmunizationTO.administeredDate if known\n- subject - the patient\n- performer - migth come from ImmunizationTO.encounter.provider but can't have contained resources in a resource that will be contained.",
       "exampleBoolean" : false
     },
     {

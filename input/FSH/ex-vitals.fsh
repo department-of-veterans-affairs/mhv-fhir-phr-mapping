@@ -118,7 +118,7 @@ Description:      "Heart Rate holding typical values"
 * code.text = "PULSE"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = 2004-09-24T10:32:00-05:00
-* valueQuantity = 83 '/min' 
+* valueQuantity = 83 '/min' "per min"
 * contained[+] = ex-MHV-location-2938
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"

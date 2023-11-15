@@ -1,0 +1,108 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/27654> a fhir:Immunization ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "27654"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Immunization</b><a name=\"27654\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Immunization &quot;27654&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.immunization.html\">VA MHV PHR Immunization</a></p></div><p><b>identifier</b>: id: ImmunizationTO.125285 (use: USUAL)</p><p><b>status</b>: completed</p><p><b>vaccineCode</b>: YELLOW FEVER <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-CPT.html\">Current Procedural Terminology (CPT®)</a>#90717 &quot;YELLOW FEVER VACCINE SUBQ&quot;)</span></p><p><b>patient</b>: <a href=\"Patient-27659.html\">Patient/27659</a> &quot; TEST&quot;</p><p><b>occurrence</b>: 2023-10-13 10:49:00-0400</p><p><b>primarySource</b>: Absent because : <code>unknown</code></p><p><b>location</b>: <a name=\"Location-0\"> </a></p><blockquote><p/><p><a name=\"Location-0\"> </a></p><p><b>name</b>: ADULT DAY HEALTH CARE</p></blockquote><blockquote><p><b>performer</b></p><p><b>function</b>: Administering Provider <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0443.html\">providerRole</a>#AP)</span></p><p><b>actor</b>: <a name=\"Provider-0\"> </a></p><blockquote><p/><p><a name=\"Provider-0\"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: KHAN,MUAZZAM</p></blockquote></blockquote><blockquote><p><b>performer</b></p><p><b>actor</b>: <a name=\"Organization-0\"> </a></p><blockquote><p/><p><a name=\"Organization-0\"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></blockquote><p><b>note</b>: Yellow </p><h3>ProtocolApplieds</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Series</b></td><td><b>DoseNumber[x]</b></td></tr><tr><td style=\"display: none\">*</td><td>COMPLETE</td><td>C</td></tr></table><hr/><blockquote><p><b>Generated Narrative: Location #Location-0</b><a name=\"Location-0\"> </a></p><p><b>name</b>: ADULT DAY HEALTH CARE</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Organization #Organization-0</b><a name=\"Organization-0\"> </a></p><p><b>identifier</b>: L: 984 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #Provider-0</b><a name=\"Provider-0\"> </a></p><p><b>identifier</b>: id: 0 (use: USUAL)</p><p><b>name</b>: KHAN,MUAZZAM</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Location ;
+     fhir:id [ fhir:v "Location-0" ] ;
+     fhir:name [ fhir:v "ADULT DAY HEALTH CARE" ]
+  ] [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "Organization-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:type [
+         fhir:text [ fhir:v "L" ]
+       ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "984" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:name [ fhir:v "DAYTSHR TEST LAB" ]
+  ] [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "Provider-0" ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "0" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "KHAN,MUAZZAM" ]
+     ] )
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.984"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ImmunizationTO.125285" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "completed"] ; # 
+  fhir:vaccineCode [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "90717" ] ;
+       fhir:display [ fhir:v "YELLOW FEVER VACCINE SUBQ" ]
+     ] ) ;
+     fhir:text [ fhir:v "YELLOW FEVER" ]
+  ] ; # 
+  fhir:patient [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/27659> ;
+     fhir:reference [ fhir:v "Patient/27659" ]
+  ] ; # 
+  fhir:occurrence [ fhir:v "2023-10-13T10:49:00-04:00"^^xsd:dateTime] ; # 
+  fhir:primarySource [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/data-absent-reason"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "unknown" ]
+     ] )
+  ] ; # 
+  fhir:location [
+     fhir:reference [ fhir:v "#Location-0" ]
+  ] ; # 
+  fhir:performer ( [
+     fhir:function [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0443"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "AP" ]
+       ] )
+     ] ;
+     fhir:actor [
+       fhir:reference [ fhir:v "#Provider-0" ]
+     ]
+  ] [
+     fhir:actor [
+       fhir:reference [ fhir:v "#Organization-0" ]
+     ]
+  ] ) ; # 
+  fhir:note ( [
+     fhir:text [ fhir:v "Yellow " ]
+  ] ) ; # 
+  fhir:protocolApplied ( [
+     fhir:series [ fhir:v "COMPLETE" ] ;
+     fhir:doseNumber [ fhir:v "C" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

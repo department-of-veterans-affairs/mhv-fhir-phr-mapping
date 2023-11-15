@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Vista Mapping - MyHealtheVet PHR FHIR API v0.2.6</title>
+    <title>Vista Mapping - MyHealtheVet PHR FHIR API v0.2.7</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.6 - ci-build
+            <span style="display:inline-block;">0.2.7 - ci-build
 
 
 
@@ -191,7 +191,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.6). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.7). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Vista Mapping</h2>
   
 
@@ -274,7 +274,19 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h3 id="mapping-clinical-resources">mapping Clinical Resources</h3>
 
-<p>This section is dedicated to instructions on how MHV will transition the data we receive into FHIR format.</p>
+<p>This section is dedicated to instructions on how MHV will transition the data we receive into FHIR format. The priority order is:</p>
+
+<ol>
+  <li>Allergy</li>
+  <li>Immunization</li>
+  <li>Notes</li>
+  <li>Radiology Report</li>
+  <li>Vitals</li>
+  <li>Conditions</li>
+  <li>Chem-Hem</li>
+  <li>Micro / Path Lab Reports</li>
+  <li>EKG/ECG - not likely to continue as no longer get useful reports</li>
+</ol>
 
 <h4 id="allergy">Allergy</h4>
 
@@ -396,7 +408,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </ul>
   </li>
   <li>other <a href="StructureDefinition-VA.MHV.PHR.vitals-examples.html">Examples</a></li>
-  <li>Also <a href="Bundle-vitals.html">examples are within a Bundle</a></li>
 </ul>
 
 <h4 id="in-progress">in progress</h4>
@@ -488,7 +499,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Before Production use there must be a permanent solution. The solution needs address some update problems (e.g. entered-in-error).  The following are potential candidates</p>
 
 <ol>
-  <li>Flush the patient’s Observations and write new Observations from the VIA refresh – similar to eVault PHR today.</li>
+  <li>Wipe-and-Replace: Delete the patient’s specific Resource (e.g. delete all the Immunizations for this patient) and write using update current data from the VIA refresh – similar to eVault PHR today. The HAPI server notices an update, by business identifier, of a previously deleted resource, so it brings it back to non-deleted. Thus after a VIA refresh, only current resources are not-deleted. The drawback is that this keeps historic versions, with two versions per refresh, and _lastUpdated is always the refresh time. Also, the ones removed are not marked as entered-in-error.</li>
   <li>Get VIA updated</li>
   <li>Get VDIF to expose their data</li>
   <li>Get VDIF to expose their data in FHIR form</li>
@@ -568,7 +579,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Oct 20, 2023 10:16-0500">2023-10-20</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.7 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 14:14-0600">2023-11-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
