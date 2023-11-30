@@ -18,7 +18,10 @@
   - may hold case number
 - `date` the report date
 - `author` the report author
+  - In a Discharge Summary the `author` would have historically been known as the Discharge Physician
+  - In a Discharge Summary historically the Admitting Physician is harvested from the content body from `ATTENDING:`
 - `authenticator` may hold the approver of the report
+- `authenticator.extension[when]` may hold the time approved
 - `custodian` may hold the imaging study location
 - `description` may hold the imaging interpretation
 - `context.period` may hold the admit time and discharge time

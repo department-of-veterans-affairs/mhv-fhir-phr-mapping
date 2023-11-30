@@ -1,6 +1,6 @@
 {
   "package": "va.mhv.fhir.phr",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -9,6 +9,13 @@
       "title": "Allergy Observed vs Historic",
       "types": [
         "code"
+      ]
+    },
+    {
+      "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen",
+      "title": "When the authentication happened",
+      "types": [
+        "dateTime"
       ]
     }
   ],
@@ -118,7 +125,6 @@
       "Condition"
     ],
     "http://hl7.org/fhir/StructureDefinition/data-absent-reason": [
-      "Bundle.entry.resource.primarySource",
       "Immunization.primarySource"
     ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bestpractice": [
@@ -207,6 +213,9 @@
     ],
     "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric": [
       "AllergyIntolerance"
+    ],
+    "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen": [
+      "DocumentReference.authenticator"
     ]
   }
 }

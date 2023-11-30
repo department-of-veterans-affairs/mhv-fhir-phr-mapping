@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Vista Mapping - MyHealtheVet PHR FHIR API v0.2.7</title>
+    <title>Vista Mapping - MyHealtheVet PHR FHIR API v0.2.8</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.7 - ci-build
+            <span style="display:inline-block;">0.2.8 - ci-build
 
 
 
@@ -191,7 +191,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.7). See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.8) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Vista Mapping</h2>
   
 
@@ -223,8 +223,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul id="markdown-toc">
   <li><a href="#utility-resources" id="markdown-toc-utility-resources">Utility Resources</a></li>
   <li><a href="#mapping-clinical-resources" id="markdown-toc-mapping-clinical-resources">mapping Clinical Resources</a></li>
-  <li><a href="#data-input-processing" id="markdown-toc-data-input-processing">Data input processing</a></li>
-  <li><a href="#general-processing-of-clinical-resources" id="markdown-toc-general-processing-of-clinical-resources">General Processing of clinical resources</a></li>
+  <li><a href="#in-progress" id="markdown-toc-in-progress">in progress</a></li>
+  <li><a href="#data-input-processing" id="markdown-toc-data-input-processing">Data input processing</a>    <ul>
+      <li><a href="#general-processing-of-clinical-resources" id="markdown-toc-general-processing-of-clinical-resources">General Processing of clinical resources</a></li>
+    </ul>
+  </li>
   <li><a href="#entered-in-error" id="markdown-toc-entered-in-error">Entered-in-Error</a></li>
   <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
@@ -410,7 +413,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>other <a href="StructureDefinition-VA.MHV.PHR.vitals-examples.html">Examples</a></li>
 </ul>
 
-<h4 id="in-progress">in progress</h4>
+<h3 id="in-progress">in progress</h3>
 
 <ul>
   <li>Medications
@@ -423,22 +426,6 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>Should support Cerner in the future.</li>
       <li>non-VA meds is not in scope</li>
       <li>PGHD meds is not in scope</li>
-    </ul>
-  </li>
-  <li>Revisions of artifacts. Unclear how this comes to us via the feeds. Specifically we need to know how we ask for these, vs today just getting current. And what the vocabulary are to support changes
-    <ul>
-      <li>IntoleranceCondition (allergies) could have the status change</li>
-      <li>problemTO (conditions) could be removed or not active</li>
-      <li>imagingExamTO.status</li>
-      <li>noteTO – there is also discussion of notes being amended, appended, and rescinded</li>
-      <li>some artifacts don’t seem to have a status in the schema api
-        <ul>
-          <li>clinicalProcedureTO (ECG)</li>
-          <li>immunizationTO</li>
-          <li>labReportTO</li>
-          <li>vitalSignTO</li>
-        </ul>
-      </li>
     </ul>
   </li>
   <li>Enforcement of Business rules: Today this is enforced as data comes into the PHR, the data that should not be seen is not persisted. This works as the PHR is refreshed often. But with FHIR server we are persisting, and thus the business rule such as a timeframe to wait before showing the patient would need to be enforced on the FHIR API, not on the data feed.</li>
@@ -467,7 +454,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <p>The use of FHIR AuditEvent should be used to track all uses of the FHIR API. This is a base configuration of the HAPI FHIR Server. See IHE Implementation Guide on the use of <a href="https://profiles.ihe.net/ITI/BALP/index.html">Basic Audit Log Patterns</a></p>
 
-<h3 id="data-input-processing">Data input processing</h3>
+<h2 id="data-input-processing">Data input processing</h2>
 
 <p>General Pattern</p>
 
@@ -494,7 +481,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>When creating a new instance, or updating an existing instance, create a Provenance instance to track what was imported, from what, to what, when, and given some detail to indicate the translation used.</li>
 </ol>
 
-<h3 id="entered-in-error">Entered-in-Error</h3>
+<h2 id="entered-in-error">Entered-in-Error</h2>
 
 <p>Before Production use there must be a permanent solution. The solution needs address some update problems (e.g. entered-in-error).  The following are potential candidates</p>
 
@@ -511,7 +498,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>track updates, and notice when a VIA update does not include a record we previously had. This would be very expensive and memory intensive. Thus might be something we do only occationally at low compute time.</li>
 </ol>
 
-<h3 id="references">References</h3>
+<h2 id="references">References</h2>
 
 <p>Source of data received from VIA using a SOAP xml schema that might be from one of:</p>
 
@@ -579,7 +566,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.7 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Nov 15, 2023 14:14-0600">2023-11-15</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.8 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 30, 2023 14:00-0600">2023-11-30</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

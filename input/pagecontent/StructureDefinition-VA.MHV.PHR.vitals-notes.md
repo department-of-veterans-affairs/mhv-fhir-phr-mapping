@@ -63,6 +63,7 @@
   - or should we do a lookup in MHV similar to what we did with allergies.
 - should really have bodySite, device, method; but these don't come to us in VIA
 - should likely have a pulse-OX, but don't have this currently and it is not clear this will come in VIA
+  - Can enter it, so need to see what it looks like in VIA
 - is there a known set of *ucum* codes that we might see and the translation to formal `ucum` code?
 
 #### code review
@@ -94,5 +95,9 @@ also:
 
 #### Business
 
-TODO: PulseOX is needed. We need examples as no current data has pulseOX. Not clear that MHV evault PHR supported this.
+TODO: 
+- PulseOX is needed. We need examples as no current data has pulseOX. Not clear that MHV evault PHR supported this.
+  - can and have now pulseOx data in our vista. Need to see it in VIA
+- is CVP (Central Venous Pressure) needed?
+- Need examples for Blood Sugar, Cholesterol, and INR
 

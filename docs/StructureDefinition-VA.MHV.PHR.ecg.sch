@@ -50,6 +50,12 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
+    <sch:title>f:DocumentReference/f:authenticator</sch:title>
+    <sch:rule context="f:DocumentReference/f:authenticator">
+      <sch:assert test="count(f:extension[@url = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen']) &lt;= 1">extension with URL = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
     <sch:title>f:DocumentReference/f:content/f:attachment</sch:title>
     <sch:rule context="f:DocumentReference/f:content/f:attachment">
       <sch:assert test="count(f:creation) &lt;= 0">creation: maximum cardinality of 'creation' is 0</sch:assert>

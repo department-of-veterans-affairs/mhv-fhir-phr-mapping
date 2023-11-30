@@ -80,10 +80,8 @@
 - codes for reaction -- TODO Leaf 60
   - not a priority as current text is sufficient for now.
   - some of the codes can be mapped, but others are multiple things in an OR relationship
-- does not appear that we receive recorded -> "ImmunizationTO.dateTime"
-- need to learn how to enter immunizations with reactions
-  - do we get reactions
-- need to learn how to enter an immunization without an order?
+- need to learn how to enter an immunization without an order? --- works on one of our vista sites, not on another.
+  -  TODO: Data has been entered, need to get copy
 
 #### changes needed
 

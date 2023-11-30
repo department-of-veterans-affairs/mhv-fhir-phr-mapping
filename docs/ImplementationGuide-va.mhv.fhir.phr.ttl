@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "1"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.7"] ; # 
+  fhir:version [ fhir:v "0.2.8"] ; # 
   fhir:name [ fhir:v "VAMHVFHIRPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-11-15T14:14:41-06:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-11-30T14:00:30-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -750,17 +750,6 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] ) ;
      fhir:resource ( [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Bundle" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Bundle/8647883f-2316-48a1-9437-fdbe628f24ec> ;
-         fhir:reference [ fhir:v "Bundle/8647883f-2316-48a1-9437-fdbe628f24ec" ]
-       ] ;
-       fhir:name [ fhir:v "8647883f-2316-48a1-9437-fdbe628f24ec" ] ;
-       fhir:example [ fhir:v "true"^^xsd:boolean ]
-     ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
@@ -1756,6 +1745,21 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DocumentReference" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/ex-MHV-note-5> ;
+         fhir:reference [ fhir:v "DocumentReference/ex-MHV-note-5" ]
+       ] ;
+       fhir:name [ fhir:v "Example 5 of a MHV Note" ] ;
+       fhir:description [ fhir:v "Derived from the a mock NoteTO:\n\nNote has an unsigned addenda" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "AllergyIntolerance" ]
        ] ) ;
        fhir:reference [
@@ -1797,6 +1801,21 @@
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DocumentReference" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/ex-MHV-note-6> ;
+         fhir:reference [ fhir:v "DocumentReference/ex-MHV-note-6" ]
+       ] ;
+       fhir:name [ fhir:v "Example 6 of a MHV Note" ] ;
+       fhir:description [ fhir:v "Derived from the a mock NoteTO:\n\nNote has a signed addenda" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note>
        ]
      ] [
        fhir:extension ( [
@@ -4591,6 +4610,18 @@
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals>
        ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen> ;
+         fhir:reference [ fhir:v "StructureDefinition/noteAuthenticatedWhen" ]
+       ] ;
+       fhir:name [ fhir:v "When the authentication happened" ] ;
+       fhir:description [ fhir:v "DateTime of when the authentication happened" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] ) ;
      fhir:page [
        fhir:extension ( [

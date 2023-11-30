@@ -14,11 +14,11 @@
     "valueInteger" : 1
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr",
-  "version" : "0.2.7",
+  "version" : "0.2.8",
   "name" : "VAMHVFHIRPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-11-15T14:14:41-06:00",
+  "date" : "2023-11-30T14:00:30-06:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -888,17 +888,6 @@
     "resource" : [{
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-        "valueString" : "Bundle"
-      }],
-      "reference" : {
-        "reference" : "Bundle/8647883f-2316-48a1-9437-fdbe628f24ec"
-      },
-      "name" : "8647883f-2316-48a1-9437-fdbe628f24ec",
-      "exampleBoolean" : true
-    },
-    {
-      "extension" : [{
-        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "StructureDefinition:extension"
       }],
       "reference" : {
@@ -1703,6 +1692,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/ex-MHV-note-5"
+      },
+      "name" : "Example 5 of a MHV Note",
+      "description" : "Derived from the a mock NoteTO:\n\nNote has an unsigned addenda",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "AllergyIntolerance"
       }],
       "reference" : {
@@ -1735,6 +1736,18 @@
       "name" : "Example 5 of an MHV labReport",
       "description" : "Example from a mock labReportTO",
       "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/ex-MHV-note-6"
+      },
+      "name" : "Example 6 of a MHV Note",
+      "description" : "Derived from the a mock NoteTO:\n\nNote has a signed addenda",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"
     },
     {
       "extension" : [{
@@ -4051,6 +4064,18 @@
       "name" : "WEIGHT",
       "description" : "2200921",
       "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/noteAuthenticatedWhen"
+      },
+      "name" : "When the authentication happened",
+      "description" : "DateTime of when the authentication happened",
+      "exampleBoolean" : false
     }],
     "page" : {
       "extension" : [{

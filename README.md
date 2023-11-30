@@ -8,6 +8,25 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages)
 
+### 0.2.8
+
+2023-30-11
+
+- add link to [business requirements github documentation](https://github.com/department-of-veterans-affairs/va.gov-team/tree/master/products/health-care/digital-health-modernization/mhv-to-va.gov/medical-records)
+- Notes
+  - Detailed Vista cross-reference and questions for KBS
+  - add extension on `DocumentReference.authenticator` to carry when the signature happened
+  - clarify that in a Discharge Summary, the .author is what the previous MHV would display as Discharge Physician, and that what was previously the Admitting Physician was extracted out of the text body from `ATTENDING:`
+  - Hide 'Allergy and Immunology Notes' as they are not CS, PS or DS
+  - Added examples with unsigned note, and when that note gets signed
+  - clarify some cross-references to FileMan
+- Immunization
+  - need example of immunization without an order (was entered, I need the via xml)
+- Vitals
+  - Pulse-OX was entered, need via xml so can confirm map
+  - Noticed on the Vista UX a "CVP" (Central Venous Pressure), is this needed in the FHIR model?
+  - Need to add Blood Sugar, Cholesterol, and INR as required by business. Examples have been entered, need them from VIA
+
 ### 0.2.7
 
 2023-11-15

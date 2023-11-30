@@ -13,6 +13,8 @@ A profile on the DocumentReference resource that covers all uses of FHIR Documen
 * date MS
 * author MS
 * authenticator MS
+* authenticator.extension contains NoteAuthenticatedWhen named when 0..1 MS
+
 * custodian MS
 * context.related MS
 * context.period MS
@@ -48,3 +50,14 @@ Description: "DocumentReference types"
 * LOINC#11524-6
 // imaging
 * LOINC#18748-4
+
+Extension: NoteAuthenticatedWhen
+Id: noteAuthenticatedWhen
+Title: "When the authentication happened"
+Description: """
+DateTime of when the authentication happened
+"""
+* ^context[+].type = #element
+* ^context[=].expression = "DocumentReference.authenticator"
+* value[x] only dateTime
+* valueDateTime 1..1

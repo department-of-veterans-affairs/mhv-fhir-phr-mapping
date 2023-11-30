@@ -1,0 +1,86 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "ex-MHV-note-5",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"ex-MHV-note-5\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;ex-MHV-note-5&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id:\u00a0NoteTO.5298388\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: Progress note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-1.html\">Patient/ex-MHV-patient-1</a> &quot; DAYTSHR&quot;</p><p><b>date</b>: Nov 16, 2023, 8:40:00\u202fAM</p><p><b>author</b>: <a name=\"ex-MHV-practitioner-36556\"> </a></p><blockquote><p/><p><a name=\"ex-MHV-practitioner-36556\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.37556\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><p><b>authenticator</b>: <a name=\"ex-MHV-practitioner-36556\"> </a></p><blockquote><p/><p><a name=\"ex-MHV-practitioner-36556\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.37556\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 3119 bytes)</td><td>STAGING (TNM) URINARY BLADDER</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"ex-MHV-location-984\"> </a><blockquote><p/><p><a name=\"ex-MHV-location-984\"> </a></p><p><b>identifier</b>: id:\u00a0HospitalLocationTO.984\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #ex-MHV-practitioner-36556</b><a name=\"ex-MHV-practitioner-36556\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.37556\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #ex-MHV-location-984</b><a name=\"ex-MHV-location-984\"> </a></p><p><b>identifier</b>: id:\u00a0HospitalLocationTO.984\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "ex-MHV-practitioner-36556",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.37556"
+    }],
+    "name" : [{
+      "text" : "AHMED,MARUF",
+      "family" : "MARUF",
+      "given" : ["AHMED"]
+    }]
+  },
+  {
+    "resourceType" : "Location",
+    "id" : "ex-MHV-location-984",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "HospitalLocationTO.984"
+    }],
+    "name" : "DAYTSHR TEST LAB"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "NoteTO.5298388"
+  }],
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "11506-3",
+      "display" : "Progress note"
+    }]
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code" : "clinical-note"
+    }]
+  }],
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-1"
+  },
+  "date" : "2023-11-16T14:40:00Z",
+  "author" : [{
+    "reference" : "#ex-MHV-practitioner-36556"
+  }],
+  "authenticator" : {
+    "extension" : [{
+      "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen",
+      "valueDateTime" : "2023-11-16T14:50:26Z"
+    }],
+    "reference" : "#ex-MHV-practitioner-36556"
+  },
+  "content" : [{
+    "attachment" : {
+      "contentType" : "text/plain",
+      "data" : "TE9DQUwgVElUTEU6IFNUQUdJTkcgKFROTSkgVVJJTkFSWSBCTEFEREVSICAgICAgICAgICAgICAgICAgICAgIApEQVRFIE9GIE5PVEU6IE5PViAxNiwgMjAyM0AxNDo0MCAgICAgRU5UUlkgREFURTogTk9WIDE2LCAyMDIzQDE0OjQwOjQ3ICAgICAgCiAgICAgIEFVVEhPUjogQUhNRUQsTUFSVUYgICAgICAgICAgRVhQIENPU0lHTkVSOiAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgIFVSR0VOQ1k6ICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNUQVRVUzogQ09NUExFVEVEICAgICAgICAgICAgICAgICAgICAgCgogICAqKiogU1RBR0lORyAoVE5NKSBVUklOQVJZIEJMQURERVIgSGFzIEFEREVOREEgKioqCgpVUklOQVJZIEJMQURERVIKNnRoIGVkaXRpb24gQUpDQyBDYW5jZXIgU3RhZ2luZyBNYW51YWwKCgp0ZXN0aW5nIG5vdGUgd2l0aCBrYnN0IHRlYW0KIApDTElOICAgUEFUSCAgICAgUFJJTUFSWSBUVU1PUiAoVCkKIFtYXSAgIFsgXSAgIFRYICAgICAgUHJpbWFyeSB0dW1vciBjYW5ub3QgYmUgYXNzZXNzZWQKIFsgXSAgIFsgXSAgIFQwICAgICAgTm8gZXZpZGVuY2Ugb2YgcHJpbWFyeSB0dW1vcgogWyBdICAgWyBdICAgVGEgICAgICBOb24gaW52YXNpdmUgcGFwaWxsYXJ5IGNhcmNpbm9tYQogWyBdICAgWyBdICAgVGlzICAgICBDYXJjaW5vbWEgaW4gc2l0dSAoZmxhdCB0dW1vcikKIFtYXSAgIFsgXSAgIFQxICAgICAgVHVtb3IgaW52YWRlcyBzdWJlcGl0aGVsaWFsIGNvbm5lY3RpdmUgdGlzc3VlCiBbIF0gICBbIF0gICBUMiAgICAgIFR1bW9yIGludmFkZXMgbXVzY2xlCiBbIF0gICBbIF0gICAgICAgICAgIFQyYSAgICAgVHVtb3IgSW52YWRlcyBzdXBlcmZpY2lhbCAoaW5uZXIgaGFsZikKIFsgXSAgIFsgXSAgICAgICAgICAgVDJiICAgICBUdW1vciBJbnZhZGVzIGRlZXAgbXVzY2xlIChvdXRlciBoYWxmKQogWyBdICAgW1hdICAgVDMgICAgICBUdW1vciBpbnZhZGVzIHBlcml2ZXNpY2FsIHRpc3N1ZQogWyBdICAgW1hdICAgICAgICAgICBUM2EgICAgIE1pY3Jvc2NvcGljYWxseQogWyBdICAgWyBdICAgICAgICAgICBUM2IgICAgIE1hY3Jvc2NvcGljYWxseSAoZXh0cmF2ZXNpY2FsIG1hc3MpCiBbIF0gICBbIF0gICBUNCAgICAgIFR1bW9yIGludmFkZXMgYW55IG9mIHRoZSBmb2xsb3dpbmc6IHByb3N0YXRlLAogICAgICAgICAgICAgICAgICAgICAgIHV0ZXJ1cywgdmFnaW5hLCBwZWx2aWMgb3IgYWJkb21pbmFsIHdhbGwKIFsgXSAgIFsgXSAgICAgICAgICAgVDRhICAgICBUdW1vciBpbnZhZGVzIHByb3N0YXRlLCB1dGVydXMsIHZhZ2luYQogW1hdICAgW1hdICAgICAgICAgICBUNGIgICAgIFR1bW9yIGludmFkZXMgcGVsdmljIHdhbGwsIGFiZG9taW5hbCB3YWxsCiAKIAogICAgICAgICAgICAgICBSRUdJT05BTCBMWU1QSCBOT0RFUyAoTikKIFsgXSAgIFsgXSAgIE5YICAgICAgUmVnaW9uYWwgbHltcGggbm9kZSBtZXRhc3Rhc2lzIGNhbm5vdCBiZSBhc3Nlc3NlZAogWyBdICAgWyBdICAgTjAgICAgICBObyByZWdpb25hbCBseW1waCBub2RlIG1ldGFzdGFzaXMKIFsgXSAgIFtYXSAgIE4xICAgICAgTWV0cyBpbiBhIHNpbmdsZSBseW1waCBub2RlLCAyIGNtIG9yIGxlc3MgaW4KICAgICAgICAgICAgICAgICAgICAgICBncmVhdGVzdCBkaW1lbnNpb24uCiBbIF0gICBbWF0gICBOMiAgICAgIE1ldHMgaW4gYSBzaW5nbGUgbHltcGggbm9kZSBtb3JlIHRoYW4gMiBidXQgbm90CiAgICAgICAgICAgICAgICAgICAgICAgbW9yZSB0aGFuIDUgY20gaW4gZ3JlYXRlc3QgZGltZW5zaW9uOyBtdWx0aXBsZQogICAgICAgICAgICAgICAgICAgICAgIGx5bXBoIG5vZGVzLCBub25lIG1vcmUgdGhhbiA1IGNtIGluIGdyZWF0ZXN0CiAgICAgICAgICAgICAgICAgICAgICAgZGltZW5zaW9uLgogWyBdICAgWyBdICAgTjMgICAgICBNZXRhc3Rhc2lzIGluIGEgbHltcGggbm9kZSBtb3JlIHRoYW4gNSBjbQogCiAgICAgICAgICAgICAgIERJU1RBTlQgTUVUQVNUQVNJUyAoTSkKIFsgXSAgIFtYXSAgIE1YICAgICAgUHJlc2VuY2Ugb2YgZGlzdGFudCBtZXRhc3Rhc2lzIGNhbm5vdCBiZSBhc3Nlc3NlZAogWyBdICAgW1hdICAgTTAgICAgICBObyBkaXN0YW50IG1ldGFzdGFzaXMKIFsgXSAgIFsgXSAgIE0xICAgICAgRGlzdGFudCBtZXRhc3Rhc2lzCiAKU1RBR0UgR1JPVVBJTkcKIFsgXSAgIFsgXSAgIE9hICAgICAgVGEgICAgICBOMCAgICAgIE0wCiBbIF0gICBbIF0gICBPaXMgICAgIFRpcyAgICAgTjAgICAgICBNMAogWyBdICAgWyBdICAgSSAgICAgICBUMSAgICAgIE4wICAgICAgTTAKIFsgXSAgIFtYXSAgIElJICAgICAgVDJhICAgICBOMCAgICAgIE0wCiBbIF0gICBbIF0gICAgICAgICAgIFQyYiAgICAgTjAgICAgICBNMAogWyBdICAgWyBdICAgSUlJICAgICBUM2EgICAgIE4wICAgICAgTTAKIFsgXSAgIFtYXSAgICAgICAgICAgVDNiICAgICBOMCAgICAgIE0wCiBbIF0gICBbIF0gICAgICAgICAgIFQ0YSAgICAgTjAgICAgICBNMAogWyBdICAgWyBdICAgSVYgICAgICBUNGIgICAgIE4wICAgICAgTTAKIFtYXSAgIFsgXSAgICAgICAgICAgQW55IFQgICBOMSAgICAgIE0wCiBbWF0gICBbIF0gICAgICAgICAgIEFueSBUICAgTjIgICAgICBNMAogW1hdICAgWyBdICAgICAgICAgICBBbnkgVCAgIE4zICAgICAgTTAKIFtYXSAgIFsgXSAgICAgICAgICAgQW55IFQgICBBbnkgTiAgIE0xCiAKICAgICAgICAgICAgICAgICAgICAgICBHUkFERQogICAgICAgIFsgXSAgIEdYICAgICAgR3JhZGUgY2Fubm90IGJlIGFzc2Vzc2VkCiAgICAgICAgW1hdICAgRzEgICAgICBXZWxsIGRpZmZlcmVudGlhdGVkCiAgICAgICAgW1hdICAgRzIgICAgICBNb2QgZGlmZmVyZW50aWF0ZWQKICAgICAgICBbIF0gICBHMyAgICAgIFBvb3JseSBkaWZmZXJlbnRpYXRlZAogICAgICAgIFsgXSAgIEc0ICAgICAgVW5kaWZmZXJlbnRpYXRlZAogCiAKT1AgIzU5OGMgKDU1MikgQXBwcm92ZWQgMTIvOTkgUmV2IDAzLzAzCiAKL2VzLyBNQVJVRiBBSE1FRApQSFlTSUNJQU4KU2lnbmVkOiAxMS8xNi8yMDIzIDE0OjUwCgoxMS8xNi8yMDIzIEFEREVORFVNICAgICAgICAgICAgICAgICAgICAgIFNUQVRVUzogVU5TSUdORUQKIFlvdSBtYXkgbm90IFZJRVcgdGhpcyBVTlNJR05FRCBBZGRlbmR1bS4=",
+      "title" : "STAGING (TNM) URINARY BLADDER"
+    }
+  }],
+  "context" : {
+    "related" : [{
+      "reference" : "#ex-MHV-location-984"
+    }]
+  }
+}

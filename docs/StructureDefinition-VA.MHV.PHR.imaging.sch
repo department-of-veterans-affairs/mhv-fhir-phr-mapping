@@ -66,4 +66,10 @@
       <sch:assert test="count(f:userSelected) &lt;= 1">userSelected: maximum cardinality of 'userSelected' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:DocumentReference/f:authenticator</sch:title>
+    <sch:rule context="f:DocumentReference/f:authenticator">
+      <sch:assert test="count(f:extension[@url = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen']) &lt;= 1">extension with URL = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen': maximum cardinality of 'extension' is 1</sch:assert>
+    </sch:rule>
+  </sch:pattern>
 </sch:schema>

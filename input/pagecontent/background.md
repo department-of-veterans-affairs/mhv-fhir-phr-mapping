@@ -117,8 +117,7 @@ General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes) Mapping 
   - [Examples](StructureDefinition-VA.MHV.PHR.vitalsPain-examples.html)
 - other [Examples](StructureDefinition-VA.MHV.PHR.vitals-examples.html)
 
-
-#### in progress
+### in progress
 
 - Medications
   - See [Medication Request notes](StructureDefinition-VA.MHV.PHR.medicationRequest.html#notes)
@@ -129,16 +128,6 @@ General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes) Mapping 
   - Should support Cerner in the future.
   - non-VA meds is not in scope
   - PGHD meds is not in scope
-- Revisions of artifacts. Unclear how this comes to us via the feeds. Specifically we need to know how we ask for these, vs today just getting current. And what the vocabulary are to support changes
-  - IntoleranceCondition (allergies) could have the status change
-  - problemTO (conditions) could be removed or not active
-  - imagingExamTO.status
-  - noteTO -- there is also discussion of notes being amended, appended, and rescinded
-  - some artifacts don't seem to have a status in the schema api
-    - clinicalProcedureTO (ECG)
-    - immunizationTO
-    - labReportTO
-    - vitalSignTO
 - Enforcement of Business rules: Today this is enforced as data comes into the PHR, the data that should not be seen is not persisted. This works as the PHR is refreshed often. But with FHIR server we are persisting, and thus the business rule such as a timeframe to wait before showing the patient would need to be enforced on the FHIR API, not on the data feed.
 
 #### other
@@ -160,7 +149,7 @@ unknown (FHIR supports the following topics but unclear if this data exists in P
 
 The use of FHIR AuditEvent should be used to track all uses of the FHIR API. This is a base configuration of the HAPI FHIR Server. See IHE Implementation Guide on the use of [Basic Audit Log Patterns](https://profiles.ihe.net/ITI/BALP/index.html)
 
-### Data input processing
+## Data input processing
 
 General Pattern
 
@@ -183,7 +172,7 @@ General Pattern
 3. When one item is found, we compare the data we have with the data we were given. If no change, then nothing more is done. If there is a difference, then we update our data.
 4. When creating a new instance, or updating an existing instance, create a Provenance instance to track what was imported, from what, to what, when, and given some detail to indicate the translation used.
 
-### Entered-in-Error
+## Entered-in-Error
 
 Before Production use there must be a permanent solution. The solution needs address some update problems (e.g. entered-in-error).  The following are potential candidates
 
@@ -198,7 +187,7 @@ Before Production use there must be a permanent solution. The solution needs add
 9. new event service? slack #ves-event-bus
 10. track updates, and notice when a VIA update does not include a record we previously had. This would be very expensive and memory intensive. Thus might be something we do only occationally at low compute time.
 
-### References
+## References
 
 Source of data received from VIA using a SOAP xml schema that might be from one of:
 

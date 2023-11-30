@@ -5,6 +5,8 @@ This Implementation Guide includes the FHIR profiles and  test plan for how MHV 
 
 This includes the test plan, profiles of how MHV makes PHR available, examples that match those profiles, and examples that are good FHIR Resources that MHV should handle well.
 
+This is work as part of [My Health Medical Records Product](https://github.com/department-of-veterans-affairs/va.gov-team/tree/master/products/health-care/digital-health-modernization/mhv-to-va.gov/medical-records) where business requirements can be found.
+
 The main sections of this IG are:
 
 - [API](api.html)
