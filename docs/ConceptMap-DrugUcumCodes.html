@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>Mapping from Vista used drug units string to formal UCUM codes - MyHealtheVet PHR FHIR API v0.2.9</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/vha-ig-template.css" rel="stylesheet"/>
+
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"10.39"}
+    h3,h4,h5,h6{--heading-prefix:"10.39"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+<div id="va-nav"> 
+     <a id="va-logo" no-external="true" href="https://va.gov">
+     <img height="50" alt="VA Organization" src="assets/images/va-header-logo.png"/>
+     </a>
+	 </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">0.2.9 - ci-build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Vista Mapping
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">background</a>
+      </li>
+      <li>
+        <a href="background.html#allergy">Allergy</a>
+      </li>
+      <li>
+        <a href="background.html#chem-hem">Chem-Hem</a>
+      </li>
+      <li>
+        <a href="background.html#condition">Condition</a>
+      </li>
+      <li>
+        <a href="background.html#ecg">ECG</a>
+      </li>
+      <li>
+        <a href="background.html#immunization">Immunization</a>
+      </li>
+      <li>
+        <a href="background.html#labreport">LabReport</a>
+      </li>
+      <li>
+        <a href="background.html#notes">Notes</a>
+      </li>
+      <li>
+        <a href="background.html#radiology">Radiology</a>
+      </li>
+      <li>
+        <a href="background.html#vital-sign">Vital-Sign</a>
+      </li>
+      <li>
+        <a href="utility.html">Utility</a>
+      </li>
+      <li>
+        <a href="ConvertDate.html">ConvertDate</a>
+      </li>
+      <li>
+        <a href="identifier.html">Id vs Identifier</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="testplan.html">Test Plan</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>Mapping from Vista used drug units string to formal UCUM codes</b></li>
+
+          <span style="float:right;">
+
+            <a href="ConceptMap-VF-VitalsCodes.ttl.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="ConceptMap-DrugUcumCodes-testing.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.9) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li class="active">
+    <a href="#">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li>
+      <a href="ConceptMap-DrugUcumCodes.xml.html">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="ConceptMap-DrugUcumCodes.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+  <a name="root"> </a>
+
+  <h2 id="root">ConceptMap: Mapping from Vista used drug units string to formal UCUM codes
+
+  </h2>
+
+  <table class="colstu">
+
+    <tr>
+      <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/DrugUcumCodes<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/DrugUcumCodes"/></span>
+      </td>
+      <td><i>Version</i>:
+      <span class="copy-text">0.2.9<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/DrugUcumCodes|0.2.9"/></span>
+      </td>
+    </tr>
+
+    <tr>
+
+
+
+
+
+
+
+      <td colspan="3">
+        
+          <i>
+            
+            Standards status:
+          </i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Trial-use</a>
+          
+        
+      </td>
+
+      <td>
+        <a href="maturity.html">Maturity Level</a>: 1
+        
+      </td>
+
+
+
+      <td><i>Computable Name</i>: <span style="font-family: monospace;">DrugTOucumCodes</span></td>
+    </tr>
+
+
+
+
+  </table>
+
+
+<p>
+<p>Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.</p>
+
+<ul>
+  <li>DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325</li>
+</ul>
+
+</p>
+
+
+<p>
+<p>To be able to use proper UCUM code in FHIR</p>
+
+</p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+<!--  <p>
+  Formats: <a href="ConceptMap-DrugUcumCodes.xml.html">XML</a>, <a href="ConceptMap-DrugUcumCodes.json.html">JSON</a>, <a href="ConceptMap-DrugUcumCodes.ttl.html">Turtle</a>
+  </p>-->
+
+  
+
+
+  <div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, John Moehrke (himself): <a href="mailto:John.Moehrke@va.gov">John.Moehrke@va.gov</a>). </p><div><p>Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.</p>
+<ul>
+<li>DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325</li>
+</ul>
+</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v3-ucum.html">Unified Code for Units of Measure (UCUM)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>5335551 (%)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>% (percent)</td></tr><tr><td>5335489 (GM)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>g (gram)</td></tr><tr><td>5335633 (MCG)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>ug (microgram)</td></tr><tr><td>5336101 (MCG/24HR)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>ug/(24.h) (microgram per 24 hour)</td></tr><tr><td>5336003 (MCG/HR)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>ug/h (microgram per hour)</td></tr><tr><td>5335497 (MCG/ML)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>ug/mL (microgram per milliliter)</td></tr><tr><td>5335647 (MEQ)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>meq (milliequivalent)</td></tr><tr><td>5335503 (MG)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg (milligram)</td></tr><tr><td>5335869 (MG/24HRS)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/(24.h) (milligram per 24 hour)</td></tr><tr><td>5335895 (MG/DAY)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/d (milligram per day)</td></tr><tr><td>5335677 (MG/GM)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/g (milligram per gram)</td></tr><tr><td>5336057 (MG/HR)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/h (milligram per hour)</td></tr><tr><td>5335505 (MG/ML)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/mL (milligram per milliliter)</td></tr></table></div>
+
+  <!-- insert notes if present -->
+  
+
+
+
+  
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="ConceptMap-VF-VitalsCodes.ttl.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="ConceptMap-DrugUcumCodes-testing.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.9 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 15, 2023 17:23-0600">2023-12-15</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues">Issues</a>
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

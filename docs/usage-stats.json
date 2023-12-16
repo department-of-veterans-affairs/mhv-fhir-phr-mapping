@@ -1,6 +1,6 @@
 {
   "package": "va.mhv.fhir.phr",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
@@ -40,6 +40,10 @@
       {
         "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP",
         "title": "VA MHV PHR Vital-Signs for Blood Pressure"
+      },
+      {
+        "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx",
+        "title": "VA MHV PHR Pulse Oximetry Vital-Signs"
       },
       {
         "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain",
@@ -146,6 +150,9 @@
       "StructureDefinition.differential.element.type",
       "StructureDefinition.snapshot.element.type",
       "StructureDefinition.snapshot.element.type.targetProfile"
+    ],
+    "http://hl7.org/fhir/StructureDefinition/observation-bodyPosition": [
+      "Observation"
     ],
     "http://hl7.org/fhir/StructureDefinition/patient-birthPlace": [
       "Patient"

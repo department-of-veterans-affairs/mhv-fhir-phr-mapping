@@ -5,7 +5,7 @@ Title:          "VA MHV PHR Notes"
 Description:    """
 A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.
 """
-* ^extension[$fmm].valueInteger = 1
+* ^extension[$fmm].valueInteger = 2
 // Most criteria come from the MHV documentReference
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -18,7 +18,7 @@ A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) 
 * identifier[TOid].value ^short = "`NoteTO` | `.` | {NoteTO.id}"
 * type from NoteTypeVS (required)
 * context.encounter 0..0
-* content.attachment.creation 0..0
+* content.attachment.creation 0..1 MS
 * custodian 0..0
 * description 0..0
 
@@ -30,7 +30,7 @@ Description: "Note types"
 //* LOINC#11505-5 "Physician procedure note"
 * LOINC#18842-5 "Discharge summary"
 * LOINC#11506-3 "Progress note"
-//TODO "CR" for Consult Results.
+* LOINC#11488-4 "Consultation Note"
 
 
 
@@ -44,6 +44,7 @@ Title: "VIA to mhv-fhir-phr"
 * subject -> "GetPatient()"
 * identifier -> "NoteTO.id"
 * date -> "ConvertDate(NoteTO.timestamp)" "8925-.1301 - REFERENCE DATE/TIME"
+* content.attachment.creation -> "ConvertDate(NoteTO.timestamp)" "8925-.1301 - REFERENCE DATE/TIME"
 * context.period.start -> "ConvertDate(NoteTO.admitTimestamp)" "8925-.07 - EPISODE BEGIN DATE/TIME"
 * context.period.end -> "ConvertDate(NoteTO.dischargeTimestamp)" "8925-.08 - EPISODE END DATE/TIME"
 * content.attachment.title -> "NoteTO.localTitle" "8925-.01.01 - NAME"

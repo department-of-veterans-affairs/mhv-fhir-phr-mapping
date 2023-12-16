@@ -8,9 +8,23 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages)
 
+### 0.2.9
+
+2023-12-15
+
+- Vitals
+  - do not bring Blood Sugar, Cholesterol, and INR into vital-signs. These are lab results in Vista.
+  - added Pulse-OX
+    - confirmed by experimentation that VIA does not send us supplemental o2 concentration or flow rate
+  - added recommendation for UCUM conversion from KBS advise
+  - added recommendation for qualifier conversion from KBS advise: bodySite, bodyPosition, method, and device
+- Added ConceptMap for Drug and Lab UCUM code and display conversions give KBS provided translation tables
+- Added ConceptMap for VF_VitalCodes, VF_VitalsDevice, VF_VitalsLaterality, VF_VitalsMethod, VF_VitalsPosition, VF_VitalsPosition, VF_VitalsSite, VF_VitalsUnits
+- Immunizations - moved to FMM 3
+
 ### 0.2.8
 
-2023-30-11
+2023-11-30
 
 - add link to [business requirements github documentation](https://github.com/department-of-veterans-affairs/va.gov-team/tree/master/products/health-care/digital-health-modernization/mhv-to-va.gov/medical-records)
 - Notes

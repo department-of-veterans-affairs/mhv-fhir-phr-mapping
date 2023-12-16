@@ -7,7 +7,7 @@
   - `CH` for Chem-Hem
   - other text values come from Pathology or Microbiology report
   - `code` should be LOINC if available
-    - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-ObservationTypeTOVsLoincCode.html)
+    - [Concept Map from VitalSignTO.type.name to LOINC code](ConceptMap-VF-VitalsCodes.html)
 - `identifier` will have cross reference to original source
 - `status` is `final`
 - `effectiveDateTime` and `issued` is the lab report timestamp

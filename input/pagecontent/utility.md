@@ -104,11 +104,10 @@ A failure to find a ConceptMap can be recorded simply as the given string. These
 
 Some of the codes used in Vista are not proper codes.
 
-| Vista code | Proper UCUM |
-|------------|-------------|
-`in` | `[in_i]`
-`lb` | `[lb_av]`
-{: .grid}
+- [Drug](ConceptMap-DrugUcumCodes.html)
+  - From [KBS provided DrugUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/DrugUcum.csv)
+- [Lab](ConceptMap-LabUcumCodes.html)
+  - From [KBS provided LabUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/LabUcum.csv)
 
 #### Identifier
 

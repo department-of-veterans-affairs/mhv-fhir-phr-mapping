@@ -1,0 +1,184 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsUnits> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-VitalsUnits"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href=\"http://va.gov\">http://va.gov</a>, John Moehrke (himself): <a href=\"mailto:John.Moehrke@va.gov\">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string when a units of measure should be dropped</p>\n</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v3-ucum.html\">Unified Code for Units of Measure (UCUM)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>4688718 (AUDIOMETRY)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4500634 (BLOOD PRESSURE)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>unknown (BODY MASS INDEX)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688719 (CENTRAL VENOUS PRESSURE)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688720 (CIRCUMFERENCE/GIRTH)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688721 (FETAL HEART TONES)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688722 (FUNDAL HEIGHT)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688723 (HEARING)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688724 (HEIGHT)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4500635 (PAIN)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4500636 (PULSE)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4500637 (PULSE OXIMETRY)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688725 (RESPIRATION)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4500638 (TEMPERATURE)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688726 (TONOMETRY)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688727 (VISION CORRECTED)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4688728 (VISION UNCORRECTED)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr><tr><td>4500639 (WEIGHT)</td><td colspan=\"2\" style=\"background-color: #efefef\">(not mapped)</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "1"^^xsd:integer ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsUnits"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.9"] ; # 
+  fhir:name [ fhir:v "VF_VitalsUnits"] ; # 
+  fhir:title [ fhir:v "Vitals qualifier Units used"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "VA Digital Services"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA Digital Services" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://va.gov" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "John.Moehrke@va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string when a units of measure should be dropped"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "VF_VitalsUnits"] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "urn:oid:2.16.840.1.113883.6.233"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "4688718" ] ;
+       fhir:display [ fhir:v "AUDIOMETRY" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4500634" ] ;
+       fhir:display [ fhir:v "BLOOD PRESSURE" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "unknown" ] ;
+       fhir:display [ fhir:v "BODY MASS INDEX" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688719" ] ;
+       fhir:display [ fhir:v "CENTRAL VENOUS PRESSURE" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688720" ] ;
+       fhir:display [ fhir:v "CIRCUMFERENCE/GIRTH" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688721" ] ;
+       fhir:display [ fhir:v "FETAL HEART TONES" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688722" ] ;
+       fhir:display [ fhir:v "FUNDAL HEIGHT" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688723" ] ;
+       fhir:display [ fhir:v "HEARING" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688724" ] ;
+       fhir:display [ fhir:v "HEIGHT" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4500635" ] ;
+       fhir:display [ fhir:v "PAIN" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4500636" ] ;
+       fhir:display [ fhir:v "PULSE" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4500637" ] ;
+       fhir:display [ fhir:v "PULSE OXIMETRY" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688725" ] ;
+       fhir:display [ fhir:v "RESPIRATION" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4500638" ] ;
+       fhir:display [ fhir:v "TEMPERATURE" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688726" ] ;
+       fhir:display [ fhir:v "TONOMETRY" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688727" ] ;
+       fhir:display [ fhir:v "VISION CORRECTED" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4688728" ] ;
+       fhir:display [ fhir:v "VISION UNCORRECTED" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4500639" ] ;
+       fhir:display [ fhir:v "WEIGHT" ] ;
+       fhir:target ( [
+         fhir:equivalence [ fhir:v "unmatched" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

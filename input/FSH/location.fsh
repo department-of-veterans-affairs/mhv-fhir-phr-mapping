@@ -219,3 +219,12 @@ Usage: #inline
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "HospitalLocationTO.1148"
 * name = "SLEEP F/U 2"
+
+
+Instance: location-3713
+InstanceOf: MHVlocation
+Usage: #inline
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "HospitalLocationTO.3713"
+* name = "000-EYE NON TREATMENT (LOC)"

@@ -14,11 +14,11 @@
     "valueInteger" : 1
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr",
-  "version" : "0.2.8",
+  "version" : "0.2.9",
   "name" : "VAMHVFHIRPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2023-11-30T14:00:30-06:00",
+  "date" : "2023-12-15T17:23:12-06:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -1932,6 +1932,18 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Observation"
+      }],
+      "reference" : {
+        "reference" : "Observation/ex-MHV-oximetry-1"
+      },
+      "name" : "Example of an MHV heartRate R4 observation",
+      "description" : "Heart Rate holding typical values",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "Patient"
       }],
       "reference" : {
@@ -2220,6 +2232,30 @@
     {
       "extension" : [{
         "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/ex-MHV-immunization-3"
+      },
+      "name" : "Immunization 3",
+      "description" : "Immunization given in 1980",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/ex-MHV-immunization-4"
+      },
+      "name" : "Immunization 4",
+      "description" : "Immunization given in 2012-01-02",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
         "valueString" : "ValueSet"
       }],
       "reference" : {
@@ -2251,6 +2287,42 @@
       },
       "name" : "Known Note types",
       "description" : "Note types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsCodes"
+      },
+      "name" : "Map between Vital Sign ObservationTypeTO.name to Loinc Code",
+      "description" : "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/DrugUcumCodes"
+      },
+      "name" : "Mapping from Vista used drug units string to formal UCUM codes",
+      "description" : "Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.\n\n- DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/LabUcumCodes"
+      },
+      "name" : "Mapping from Vista used lab units string to formal UCUM codes",
+      "description" : "Vista units are close but often not exactly correct.",
       "exampleBoolean" : false
     },
     {
@@ -2491,6 +2563,18 @@
       },
       "name" : "Patient TESTFIVE L, MHVSYSTEST",
       "description" : "This example is derived off of a mock patient",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/9204"
+      },
+      "name" : "Patient used for Immunization testing",
+      "description" : "Immunization testng patient",
       "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"
     },
     {
@@ -3771,6 +3855,18 @@
         "valueString" : "StructureDefinition:resource"
       }],
       "reference" : {
+        "reference" : "StructureDefinition/VA.MHV.PHR.vitalsOx"
+      },
+      "name" : "VA MHV PHR Pulse Oximetry Vital-Signs",
+      "description" : "A profile on the Observation resource for MHV PHR exposing Pluse Oximetry Vital-Signs using FHIR API.\n\nNote that VIA does not provide us the supplemental O2 concentration or flowrate",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
         "reference" : "StructureDefinition/VA.MHV.PHR.imaging"
       },
       "name" : "VA MHV PHR Radiology",
@@ -3819,10 +3915,70 @@
         "valueString" : "ConceptMap"
       }],
       "reference" : {
-        "reference" : "ConceptMap/ObservationTypeTOVsLoincCode"
+        "reference" : "ConceptMap/VF-VitalsDevice"
       },
-      "name" : "Vital Sign ObservationTypeTO.name to Loinc Code",
-      "description" : "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code.",
+      "name" : "Vitals Device used to SNOMED code",
+      "description" : "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[observation-deviceCode].valueCodeableConcept",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsLaterality"
+      },
+      "name" : "Vitals Laterality used to SNOMED code",
+      "description" : "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Laterality Observation",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsMethod"
+      },
+      "name" : "Vitals Method used to SNOMED code",
+      "description" : "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.method",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsPosition"
+      },
+      "name" : "Vitals Position used to SNOMED code",
+      "description" : "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[bodyPosition].valueCodeableConcept",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsUnits"
+      },
+      "name" : "Vitals qualifier Units used",
+      "description" : "Map between VitalSignTO.qualifier VUID/string when a units of measure should be dropped",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
+        "reference" : "ConceptMap/VF-VitalsSite"
+      },
+      "name" : "Vitals Site used to SNOMED code",
+      "description" : "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.bodySite",
       "exampleBoolean" : false
     },
     {

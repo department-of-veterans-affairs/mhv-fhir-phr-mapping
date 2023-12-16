@@ -16,5 +16,5 @@
   - `note.time` will hold the date of the comment
 - no other elements are populated
 
-Should search for entries that do not have verificationStatus=entered-in-error
+Should search for entries that do **not** have `verificationStatus=entered-in-error` (might also work to look for only `active`)
 > GET {path}/AllergyIntolerance?patient={patient}&verification-status:not!=entered-in-error

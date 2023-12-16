@@ -1,0 +1,232 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/DrugUcumCodes> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "DrugUcumCodes"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href=\"http://va.gov\">http://va.gov</a>, John Moehrke (himself): <a href=\"mailto:John.Moehrke@va.gov\">John.Moehrke@va.gov</a>). </p><div><p>Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.</p>\n<ul>\n<li>DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325</li>\n</ul>\n</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v3-ucum.html\">Unified Code for Units of Measure (UCUM)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>5335551 (%)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>% (percent)</td></tr><tr><td>5335489 (GM)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>g (gram)</td></tr><tr><td>5335633 (MCG)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>ug (microgram)</td></tr><tr><td>5336101 (MCG/24HR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>ug/(24.h) (microgram per 24 hour)</td></tr><tr><td>5336003 (MCG/HR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>ug/h (microgram per hour)</td></tr><tr><td>5335497 (MCG/ML)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>ug/mL (microgram per milliliter)</td></tr><tr><td>5335647 (MEQ)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>meq (milliequivalent)</td></tr><tr><td>5335503 (MG)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>mg (milligram)</td></tr><tr><td>5335869 (MG/24HRS)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>mg/(24.h) (milligram per 24 hour)</td></tr><tr><td>5335895 (MG/DAY)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>mg/d (milligram per day)</td></tr><tr><td>5335677 (MG/GM)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>mg/g (milligram per gram)</td></tr><tr><td>5336057 (MG/HR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>mg/h (milligram per hour)</td></tr><tr><td>5335505 (MG/ML)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>mg/mL (milligram per milliliter)</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "1"^^xsd:integer ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/DrugUcumCodes"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.9"] ; # 
+  fhir:name [ fhir:v "DrugTOucumCodes"] ; # 
+  fhir:title [ fhir:v "Mapping from Vista used drug units string to formal UCUM codes"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "VA Digital Services"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA Digital Services" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://va.gov" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "John.Moehrke@va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.\n\n- DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "To be able to use proper UCUM code in FHIR"] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "urn:oid:2.16.840.1.113883.6.233"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "5335551" ] ;
+       fhir:display [ fhir:v "%" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "%" ] ;
+         fhir:display [ fhir:v "percent" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5335489" ] ;
+       fhir:display [ fhir:v "GM" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "g" ] ;
+         fhir:display [ fhir:v "gram" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5335633" ] ;
+       fhir:display [ fhir:v "MCG" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "ug" ] ;
+         fhir:display [ fhir:v "microgram" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5336101" ] ;
+       fhir:display [ fhir:v "MCG/24HR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "ug/(24.h)" ] ;
+         fhir:display [ fhir:v "microgram per 24 hour" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5336003" ] ;
+       fhir:display [ fhir:v "MCG/HR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "ug/h" ] ;
+         fhir:display [ fhir:v "microgram per hour" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5335497" ] ;
+       fhir:display [ fhir:v "MCG/ML" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "ug/mL" ] ;
+         fhir:display [ fhir:v "microgram per milliliter" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5335647" ] ;
+       fhir:display [ fhir:v "MEQ" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "meq" ] ;
+         fhir:display [ fhir:v "milliequivalent" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5335503" ] ;
+       fhir:display [ fhir:v "MG" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "mg" ] ;
+         fhir:display [ fhir:v "milligram" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5335869" ] ;
+       fhir:display [ fhir:v "MG/24HRS" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "mg/(24.h)" ] ;
+         fhir:display [ fhir:v "milligram per 24 hour" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5335895" ] ;
+       fhir:display [ fhir:v "MG/DAY" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "mg/d" ] ;
+         fhir:display [ fhir:v "milligram per day" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5335677" ] ;
+       fhir:display [ fhir:v "MG/GM" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "mg/g" ] ;
+         fhir:display [ fhir:v "milligram per gram" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5336057" ] ;
+       fhir:display [ fhir:v "MG/HR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "mg/h" ] ;
+         fhir:display [ fhir:v "milligram per hour" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "5335505" ] ;
+       fhir:display [ fhir:v "MG/ML" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "mg/mL" ] ;
+         fhir:display [ fhir:v "milligram per milliliter" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

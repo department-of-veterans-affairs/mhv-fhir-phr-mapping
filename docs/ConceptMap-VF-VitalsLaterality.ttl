@@ -1,0 +1,100 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsLaterality> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-VitalsLaterality"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href=\"http://va.gov\">http://va.gov</a>, John Moehrke (himself): <a href=\"mailto:John.Moehrke@va.gov\">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Laterality Observation</p>\n</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>4711355 (LEFT)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>31156008 (Structure of left half of body)</td></tr><tr><td>4711356 (RIGHT)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>85421007 (Structure of right half of body)</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "1"^^xsd:integer ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsLaterality"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.9"] ; # 
+  fhir:name [ fhir:v "VF_VitalsLaterality"] ; # 
+  fhir:title [ fhir:v "Vitals Laterality used to SNOMED code"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "VA Digital Services"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA Digital Services" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://va.gov" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "John.Moehrke@va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Laterality Observation"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "VF_VitalsLaterality"] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "urn:oid:2.16.840.1.113883.6.233"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "4711355" ] ;
+       fhir:display [ fhir:v "LEFT" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "31156008" ] ;
+         fhir:display [ fhir:v "Structure of left half of body" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711356" ] ;
+       fhir:display [ fhir:v "RIGHT" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "85421007" ] ;
+         fhir:display [ fhir:v "Structure of right half of body" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="VF-VitalsMethod"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, John Moehrke (himself): <a href="mailto:John.Moehrke@va.gov">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.method</p>
+</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>4711345 (ACTUAL)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>258104002 (Measured)</td><td/></tr><tr><td>4711309 (AFTER EXERCISE)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>255214003 (After exercise)</td><td/></tr><tr><td>4711313 (AT REST)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>263678003 (At rest)</td><td/></tr><tr><td>4711314 (AUSCULTATE)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>37931006 (Auscultation)</td><td/></tr><tr><td>4712397 (CALCULATED)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>258090004 (Calculated)</td><td/></tr><tr><td>4711346 (DRY)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>445541000 (Dry body weight)</td><td>OE, not method</td></tr><tr><td>4711347 (ESTIMATED)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>414135002 (Estimated)</td><td/></tr><tr><td>4711348 (ESTIMATED BY ARM SPAN)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>414135002 (Estimated)</td><td/></tr><tr><td>4711325 (INVASIVE)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>386341005 (Invasive hemodynamic monitoring)</td><td/></tr><tr><td>4711335 (NON-INVASIVE)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>704042003 (Non-invasive cardiac output monitoring)</td><td/></tr><tr><td>4711337 (PALPATED)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>113011001 (Palpation)</td><td/></tr><tr><td>4711353 (ROOM AIR)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>15158005 (Air)</td><td/></tr><tr><td>4711360 (SPONTANEOUS)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>241700002 (Spontaneous respiration)</td><td/></tr><tr><td>4711363 (STATED)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>418799008 (Finding reported by subject or history provider)</td><td/></tr><tr><td>4711368 (TRANSTRACHEAL)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>426129001 (Transtracheal oxygen catheter)</td><td/></tr><tr><td>4710817 (WITH ACTIVITY)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>309604004 (During exercise)</td><td/></tr><tr><td>4710818 (WITH AMBULATION)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>129006008 (OE, not method)</td><td/></tr><tr><td>4710819 (WITH CAST OR BRACE)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>303474004 (Does not remove prosthesis)</td><td/></tr><tr><td>4710820 (WITH PROSTHESIS)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>303474004 (Does not remove prosthesis)</td><td/></tr><tr><td>4710821 (WITHOUT PROSTHESIS)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>303473005 (Does remove prosthesis)</td><td/></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsMethod"/>
+  <version value="0.2.9"/>
+  <name value="VF_VitalsMethod"/>
+  <title value="Vitals Method used to SNOMED code"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2023-12-15"/>
+  <publisher value="VA Digital Services"/>
+  <contact>
+    <name value="VA Digital Services"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://va.gov"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="John.Moehrke@va.gov"/>
+    </telecom>
+  </contact>
+  <description value="Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.method"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="VF_VitalsMethod"/>
+  <group>
+    <source value="urn:oid:2.16.840.1.113883.6.233"/>
+    <target value="http://snomed.info/sct"/>
+    <element>
+      <code value="4711345"/>
+      <display value="ACTUAL"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="258104002"/>
+        <display value="Measured"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711309"/>
+      <display value="AFTER EXERCISE"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="255214003"/>
+        <display value="After exercise"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711313"/>
+      <display value="AT REST"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="263678003"/>
+        <display value="At rest"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711314"/>
+      <display value="AUSCULTATE"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="37931006"/>
+        <display value="Auscultation"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4712397"/>
+      <display value="CALCULATED"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="258090004"/>
+        <display value="Calculated"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711346"/>
+      <display value="DRY"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="445541000"/>
+        <display value="Dry body weight"/>
+        <equivalence value="equal"/>
+        <comment value="OE, not method"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711347"/>
+      <display value="ESTIMATED"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="414135002"/>
+        <display value="Estimated"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711348"/>
+      <display value="ESTIMATED BY ARM SPAN"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="414135002"/>
+        <display value="Estimated"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711325"/>
+      <display value="INVASIVE"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="386341005"/>
+        <display value="Invasive hemodynamic monitoring"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711335"/>
+      <display value="NON-INVASIVE"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="704042003"/>
+        <display value="Non-invasive cardiac output monitoring"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711337"/>
+      <display value="PALPATED"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="113011001"/>
+        <display value="Palpation"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711353"/>
+      <display value="ROOM AIR"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="15158005"/>
+        <display value="Air"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711360"/>
+      <display value="SPONTANEOUS"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="241700002"/>
+        <display value="Spontaneous respiration"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711363"/>
+      <display value="STATED"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="418799008"/>
+        <display value="Finding reported by subject or history provider"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711368"/>
+      <display value="TRANSTRACHEAL"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="426129001"/>
+        <display value="Transtracheal oxygen catheter"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4710817"/>
+      <display value="WITH ACTIVITY"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="309604004"/>
+        <display value="During exercise"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4710818"/>
+      <display value="WITH AMBULATION"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="129006008"/>
+        <display value="OE, not method"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4710819"/>
+      <display value="WITH CAST OR BRACE"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="303474004"/>
+        <display value="Does not remove prosthesis"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4710820"/>
+      <display value="WITH PROSTHESIS"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="303474004"/>
+        <display value="Does not remove prosthesis"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4710821"/>
+      <display value="WITHOUT PROSTHESIS"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="303473005"/>
+        <display value="Does remove prosthesis"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

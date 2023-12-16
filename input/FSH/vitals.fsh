@@ -30,6 +30,18 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * performer.extension[site].valueReference only Reference(Location)
 * performer.extension[site].valueReference ^type.aggregation = #contained
 * value[x] MS
+/* could do this if there was a list of codes, but no list of codes available
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component contains @default 0..*
+* component[@default].dataAbsentReason 1..1
+* component[@default].value[x] 0..0
+*/
+* bodySite MS 
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named position 0..1
+* method MS
+* device MS
 
 * basedOn 0..0
 * partOf 0..0
@@ -38,14 +50,10 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * issued 0..0
 * dataAbsentReason 0..0
 * interpretation 0..0
-* bodySite 0..0
-* method 0..0
 * specimen 0..0
-* device 0..0
 * referenceRange 0..0
 * hasMember 0..0
 * derivedFrom 0..0
-* component 0..0
 * note 0..0 
 
 Mapping: Vitals-Mapping
@@ -56,15 +64,21 @@ Title: "VIA to mhv-fhir-phr"
 * status -> "`final`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name" "VITAL_TYPE - 120.5-.03 VITAL TYPE"
-* code.coding -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
+* code.coding -> "VitalSignTO.type.name convert to LOINC using VF_VitalsCodes"
 * subject -> "patient" "PATIENT - 120.5-.02 PATIENT"
 * effectiveDateTime -> "VitalSignTO.timestamp" "DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken"
 * value[x] -> "VitalSignTO.value1 and VitalSignTO.units" "MEASUREMENT - 120.5-.1.2 RATE"
-* component -> "Used for BP"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "contained VitalSignTO.recorder" "120.5-.06 ENTERED BY"
 * performer -> "contained VitalSignTO.observer" ""
 * performer.extension[site] -> "Location(VitalSignTO.location)" "120.5-.05 HOSPITAL LOCATION"
+* component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
+* bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
+* extension[position] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
+* method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
+* device -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
+// Laterality
+// Position
 //* note.text -> "VitalSignTO.comments" ""
 
 Mapping: Vitals-Old-Mapping
@@ -92,7 +106,11 @@ A profile on the Observation resource for Pain
 * value[x] only Quantity
 * valueQuantity.value ^minValueQuantity = 0 UCUM#{score}
 * valueQuantity.value ^maxValueQuantity = 10 UCUM#{score}
-* component 0..0
+* code.coding ^slicing.discriminator.type = #pattern
+* code.coding ^slicing.discriminator.path = "code"
+* code.coding ^slicing.rules = #open
+* code.coding contains pain 1..1
+* code.coding[pain].code = LOINC#72514-3
 
 
 Mapping: VitalsPain-Mapping
@@ -103,14 +121,125 @@ Title: "VIA to mhv-fhir-phr"
 * status -> "`final`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name"
-* code.coding -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
+* code.coding -> "LOINC 72514-3"
 * subject -> "patient"
 * effectiveDateTime -> "VitalSignTO.timestamp"
 * value[x] -> "VitalSignTO.value1 and VitalSignTO.units"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "VitalSignTO.recorder and VitalSignTO.observer"
 * performer.extension[site] -> "Location(VitalSignTO.location)"
-* note.text -> "VitalSignTO.comments"
+* component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
+* bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
+* extension[position] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
+* method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
+* device -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
+
+
+
+
+
+Profile:        MHVvitalsOx
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-pulse-oximetry
+//Parent: Observation
+Id:             VA.MHV.PHR.vitalsOx
+Title:          "VA MHV PHR Pulse Oximetry Vital-Signs"
+Description:    """
+A profile on the Observation resource for MHV PHR exposing Pluse Oximetry Vital-Signs using FHIR API.
+
+Note that VIA does not provide us the supplemental O2 concentration or flowrate
+"""
+* ^extension[$fmm].valueInteger = 3
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..
+* identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.type.id}"
+* status = #final
+* category MS
+* code.text MS
+* code.coding MS
+* subject 1..1
+* effectiveDateTime 1..1
+* performer MS
+* performer ^type.aggregation = #contained
+* performer.extension contains http://hl7.org/fhir/StructureDefinition/alternate-reference named site 0..1
+* performer.extension[site].valueReference only Reference(Location)
+* performer.extension[site].valueReference ^type.aggregation = #contained
+* value[x] MS
+* component[FlowRate] 0..0
+* component[Concentration] 0..0
+/* could do this if there was a list of codes, but no list of codes available
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component contains @default 0..*
+* component[@default].dataAbsentReason 1..1
+* component[@default].value[x] 0..0
+*/
+* bodySite MS 
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named position 0..1
+* method MS
+* device MS
+
+* basedOn 0..0
+* partOf 0..0
+* focus 0..0
+* encounter 0..0
+* issued 0..0
+* dataAbsentReason 0..0
+* interpretation 0..0
+* specimen 0..0
+* referenceRange 0..0
+* hasMember 0..0
+* derivedFrom 0..0
+* note 0..0 
+
+Mapping: VitalsOx-Mapping
+Source:	MHVvitalsOx
+Target: "VitalSignTO"
+Title: "VIA to mhv-fhir-phr"
+* -> "VitalSignTO"
+* status -> "`final`"
+* category -> "`vital-signs`"
+* code.text -> "VitalSignTO.type.name" "VITAL_TYPE - 120.5-.03 VITAL TYPE"
+* code.coding[PulseOx] -> "LOINC 59408-5"
+* code.coding[O2Sat] -> "LOINC 2708-6"
+* subject -> "patient" "PATIENT - 120.5-.02 PATIENT"
+* effectiveDateTime -> "VitalSignTO.timestamp" "DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken"
+* value[x] -> "VitalSignTO.value1 and VitalSignTO.units" "MEASUREMENT - 120.5-.1.2 RATE"
+* identifier -> "{StationNbr} and {VitalSignTO.type.id}"
+* performer -> "contained VitalSignTO.recorder" "120.5-.06 ENTERED BY"
+* performer -> "contained VitalSignTO.observer" ""
+* performer.extension[site] -> "Location(VitalSignTO.location)" "120.5-.05 HOSPITAL LOCATION"
+* component.code -> "Qualifier" "120.5 QUALIFIER"
+* component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
+* bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
+* extension[position] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
+* method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
+* device -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
+
+Mapping: VitalsOx-Old-Mapping
+Source:	MHVvitalsOx
+Target: "VitalSignTO"
+Title: "eVault-PHR to MHV-PHR"
+* -> "VitalSignTO" "eVault"
+* status -> "`final`"
+* category -> "`vital-signs`"
+* code.text -> "VitalSignTO.type.name" "VITAL_TYPE - 120.5-.03 VITAL TYPE"
+* code.coding[PulseOx] -> "LOINC 59408-5"
+* code.coding[O2Sat] -> "LOINC 2708-6"
+* subject -> "patient" "patient - 120.5-.02 Patient"
+* effectiveDateTime -> "VitalSignTO.timestamp" "DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken"
+* value[x] -> "VitalSignTO.value1 and VitalSignTO.units" "MEASUREMENT - 120.5-.1.2 RATE"
+
+
+
+
 
 
 
@@ -133,8 +262,6 @@ A profile on the Observation resource for Blood Pressure
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.type.id}"
 * status = #final
-* code.text MS
-* code.coding MS
 * category MS
 * code.text MS
 * code.coding MS
@@ -145,8 +272,19 @@ A profile on the Observation resource for Blood Pressure
 * performer.extension contains http://hl7.org/fhir/StructureDefinition/alternate-reference named site 0..1
 * performer.extension[site].valueReference only Reference(Location)
 * performer.extension[site].valueReference ^type.aggregation = #contained
-* note MS 
-
+* note 0..0 
+/* could do this if there was a list of codes, but no list of codes available
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component contains @default 0..*
+* component[@default].dataAbsentReason 1..1
+* component[@default].value[x] 0..0
+*/
+* bodySite MS 
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named position 0..1
+* method MS
+* device MS
 * basedOn 0..0
 * partOf 0..0
 * focus 0..0
@@ -154,10 +292,7 @@ A profile on the Observation resource for Blood Pressure
 * issued 0..0
 * dataAbsentReason 0..0
 * interpretation 0..0
-* bodySite 0..0
-* method 0..0
 * specimen 0..0
-* device 0..0
 * referenceRange 0..0
 * hasMember 0..0
 * derivedFrom 0..0
@@ -172,14 +307,20 @@ Title: "VIA to mhv-fhir-phr"
 * status -> "`final`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name"
-* code.coding -> "VitalSignTO.type.name convert to LOINC using ObservationTypeTOVsLoincCode"
+* code.coding -> "LOINC 8480-6"
 * subject -> "patient"
 * effectiveDateTime -> "VitalSignTO.timestamp"
-* component -> "For BP is used for value1 parsed out to systolic and diastolic"
+* component[systolic] -> "For BP is used for value1 parsed out to systolic and diastolic"
+* component[diastolic] -> "For BP is used for value1 parsed out to systolic and diastolic"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "VitalSignTO.recorder and VitalSignTO.observer"
 * performer.extension[site] -> "Organization(VitalSignTO.location)"
-* note.text -> "VitalSignTO.comments"
+* component.code -> "Qualifier" "120.5 QUALIFIER"
+* component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
+* bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
+* extension[position] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
+* method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
+* device -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
 
 
 
@@ -242,23 +383,20 @@ Title: "VIA to mhv-fhir-phr"
 
 */
 
-// The full list of codes are from the source schema. No idea if that is exhaustive or even representative of actual data.
-// The codes that are strongly mapped are the only codes needed at this time. 
-// The codes with "seems like possible match" are not critical today. They are in the list because they are defined in the source schema.
-Instance:   ObservationTypeTOVsLoincCode
+Instance:   VF-VitalsCodes
 InstanceOf: ConceptMap
-Title:      "Vital Sign ObservationTypeTO.name to Loinc Code"
+Title:      "Map between Vital Sign ObservationTypeTO.name to Loinc Code"
 Description: "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code."
 Usage: #definition
-* url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/ObservationTypeTOVsLoincCode"
-* name =  "ObservationTypeTOVsLoincCode"
+* url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsCodes"
+* name =  "VF_VitalsCodes"
 * title = "Vital Sign ObservationTypeTO.name to Loinc Code"
 * experimental = false
 * status = #active
 * date = 2023-10-05
 * publisher = "VA KBS"
 * description = "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code."
-* purpose = "To be able to use proper LOINC code in the FHIR Observation"
+* purpose = "VF_VitalsCodes"
 * group.source = VUID
 * group.target = LOINC
 * group.element[+].code = #4688718 
@@ -346,22 +484,9 @@ Usage: #definition
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #29463-7
 * group.element[=].target.display = "Body weight"
-
-/*
-
-KBS action: Removed these from the map as they are not found in the vista data, and there is no good loinc map
-
 * group.element[+].code = #unknown
 * group.element[=].display = "ABDMONAL GIRTH"
-* group.element[=].target.equivalence = #equivalent
-* group.element[=].target.code = #LP31969-6
-* group.element[=].target.display = "Abdominal circumference"
-* group.element[=].target.comment = "seems like possible match, no data in vista"
+* group.element[=].target.equivalence = #unmatched
 * group.element[+].code = #unknown
 * group.element[=].display = "HEAD CIRCUMFERENCE"
-* group.element[=].target.equivalence = #equivalent
-* group.element[=].target.code = #9843-4
-* group.element[=].target.display = "Head Occipital-frontal circumference"
-* group.element[=].target.comment = "seems like possible match, no data in vista"
-
-*/
+* group.element[=].target.equivalence = #unmatched

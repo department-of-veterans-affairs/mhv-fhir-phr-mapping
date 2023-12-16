@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.2.8</title>
+    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.2.9</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.8 - ci-build
+            <span style="display:inline-block;">0.2.9 - ci-build
 
 
 
@@ -191,7 +191,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.8) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.9) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -576,6 +576,17 @@ populate the Organization.name with the value from that table (when it is availa
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-VA.MHV.PHR.vitalsOx.html"
+                  title="StructureDefinition/VA.MHV.PHR.vitalsOx">VA MHV PHR Pulse Oximetry Vital-Signs</a>
+            </td>
+            <td>
+<p>A profile on the Observation resource for MHV PHR exposing Pluse Oximetry Vital-Signs using FHIR API.</p>
+
+<p>Note that VIA does not provide us the supplemental O2 concentration or flowrate</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-VA.MHV.PHR.imaging.html"
                   title="StructureDefinition/VA.MHV.PHR.imaging">VA MHV PHR Radiology</a>
             </td>
@@ -779,11 +790,82 @@ RECORD INDEXES:  AHDR (#482)</p>
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="ConceptMap-ObservationTypeTOVsLoincCode.html"
-                  title="ConceptMap/ObservationTypeTOVsLoincCode">Vital Sign ObservationTypeTO.name to Loinc Code</a>
+               <a href="ConceptMap-VF-VitalsCodes.html" title="ConceptMap/VF-VitalsCodes">Map between Vital Sign ObservationTypeTO.name to Loinc Code</a>
             </td>
             <td>
 <p>Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-DrugUcumCodes.html" title="ConceptMap/DrugUcumCodes">Mapping from Vista used drug units string to formal UCUM codes</a>
+            </td>
+            <td>
+<p>Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.</p>
+
+<ul>
+  <li>DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325</li>
+</ul>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-LabUcumCodes.html" title="ConceptMap/LabUcumCodes">Mapping from Vista used lab units string to formal UCUM codes</a>
+            </td>
+            <td>
+<p>Vista units are close but often not exactly correct.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-VF-VitalsDevice.html"
+                  title="ConceptMap/VF-VitalsDevice">Vitals Device used to SNOMED code</a>
+            </td>
+            <td>
+<p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[observation-deviceCode].valueCodeableConcept</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-VF-VitalsLaterality.html"
+                  title="ConceptMap/VF-VitalsLaterality">Vitals Laterality used to SNOMED code</a>
+            </td>
+            <td>
+<p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Laterality Observation</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-VF-VitalsMethod.html"
+                  title="ConceptMap/VF-VitalsMethod">Vitals Method used to SNOMED code</a>
+            </td>
+            <td>
+<p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.method</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-VF-VitalsPosition.html"
+                  title="ConceptMap/VF-VitalsPosition">Vitals Position used to SNOMED code</a>
+            </td>
+            <td>
+<p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[bodyPosition].valueCodeableConcept</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-VF-VitalsSite.html" title="ConceptMap/VF-VitalsSite">Vitals Site used to SNOMED code</a>
+            </td>
+            <td>
+<p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.bodySite</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="ConceptMap-VF-VitalsUnits.html" title="ConceptMap/VF-VitalsUnits">Vitals qualifier Units used</a>
+            </td>
+            <td>
+<p>Map between VitalSignTO.qualifier VUID/string when a units of measure should be dropped</p>
 </td>
          </tr>
       </tbody>
@@ -1570,6 +1652,15 @@ RECORD INDEXES:  AHDR (#482)</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Observation-ex-MHV-oximetry-1.html"
+                  title="Observation/ex-MHV-oximetry-1">Example of an MHV heartRate R4 observation</a>
+            </td>
+            <td>
+<p>Heart Rate holding typical values</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Observation-05fc4a0c-87a4-4fbf-8be9-5e5d3f1ec8ac.html"
                   title="Observation/05fc4a0c-87a4-4fbf-8be9-5e5d3f1ec8ac">HEIGHT</a>
             </td>
@@ -1756,6 +1847,24 @@ RECORD INDEXES:  AHDR (#482)</p>
             </td>
             <td>
 <p>ImmunizationTO.124685</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-ex-MHV-immunization-3.html"
+                  title="Immunization/ex-MHV-immunization-3">Immunization 3</a>
+            </td>
+            <td>
+<p>Immunization given in 1980</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Immunization-ex-MHV-immunization-4.html"
+                  title="Immunization/ex-MHV-immunization-4">Immunization 4</a>
+            </td>
+            <td>
+<p>Immunization given in 2012-01-02</p>
 </td>
          </tr>
          <tr>
@@ -2115,6 +2224,14 @@ RECORD INDEXES:  AHDR (#482)</p>
             </td>
             <td>
 <p>Used in testing environment</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-9204.html" title="Patient/9204">Patient used for Immunization testing</a>
+            </td>
+            <td>
+<p>Immunization testng patient</p>
 </td>
          </tr>
          <tr>
@@ -2894,7 +3011,7 @@ RECORD INDEXES:  AHDR (#482)</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.8 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Thu, Nov 30, 2023 14:00-0600">2023-11-30</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.9 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 15, 2023 17:23-0600">2023-12-15</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

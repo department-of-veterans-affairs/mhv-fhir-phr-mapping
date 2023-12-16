@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="VF-VitalsLaterality"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, John Moehrke (himself): <a href="mailto:John.Moehrke@va.gov">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Laterality Observation</p>
+</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>4711355 (LEFT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>31156008 (Structure of left half of body)</td></tr><tr><td>4711356 (RIGHT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>85421007 (Structure of right half of body)</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsLaterality"/>
+  <version value="0.2.9"/>
+  <name value="VF_VitalsLaterality"/>
+  <title value="Vitals Laterality used to SNOMED code"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2023-12-15"/>
+  <publisher value="VA Digital Services"/>
+  <contact>
+    <name value="VA Digital Services"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://va.gov"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="John.Moehrke@va.gov"/>
+    </telecom>
+  </contact>
+  <description value="Map between VitalSignTO.qualifier VUID/string and SNOMED code for Laterality Observation"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="VF_VitalsLaterality"/>
+  <group>
+    <source value="urn:oid:2.16.840.1.113883.6.233"/>
+    <target value="http://snomed.info/sct"/>
+    <element>
+      <code value="4711355"/>
+      <display value="LEFT"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="31156008"/>
+        <display value="Structure of left half of body"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="4711356"/>
+      <display value="RIGHT"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="85421007"/>
+        <display value="Structure of right half of body"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

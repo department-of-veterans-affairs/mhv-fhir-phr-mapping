@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="VF-VitalsUnits"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, John Moehrke (himself): <a href="mailto:John.Moehrke@va.gov">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string when a units of measure should be dropped</p>
+</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v3-ucum.html">Unified Code for Units of Measure (UCUM)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>4688718 (AUDIOMETRY)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4500634 (BLOOD PRESSURE)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>unknown (BODY MASS INDEX)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688719 (CENTRAL VENOUS PRESSURE)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688720 (CIRCUMFERENCE/GIRTH)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688721 (FETAL HEART TONES)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688722 (FUNDAL HEIGHT)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688723 (HEARING)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688724 (HEIGHT)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4500635 (PAIN)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4500636 (PULSE)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4500637 (PULSE OXIMETRY)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688725 (RESPIRATION)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4500638 (TEMPERATURE)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688726 (TONOMETRY)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688727 (VISION CORRECTED)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4688728 (VISION UNCORRECTED)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr><tr><td>4500639 (WEIGHT)</td><td colspan="2" style="background-color: #efefef">(not mapped)</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsUnits"/>
+  <version value="0.2.9"/>
+  <name value="VF_VitalsUnits"/>
+  <title value="Vitals qualifier Units used"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2023-12-15"/>
+  <publisher value="VA Digital Services"/>
+  <contact>
+    <name value="VA Digital Services"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://va.gov"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="John.Moehrke@va.gov"/>
+    </telecom>
+  </contact>
+  <description value="Map between VitalSignTO.qualifier VUID/string when a units of measure should be dropped"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="VF_VitalsUnits"/>
+  <group>
+    <source value="urn:oid:2.16.840.1.113883.6.233"/>
+    <target value="http://unitsofmeasure.org"/>
+    <element>
+      <code value="4688718"/>
+      <display value="AUDIOMETRY"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4500634"/>
+      <display value="BLOOD PRESSURE"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="unknown"/>
+      <display value="BODY MASS INDEX"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688719"/>
+      <display value="CENTRAL VENOUS PRESSURE"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688720"/>
+      <display value="CIRCUMFERENCE/GIRTH"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688721"/>
+      <display value="FETAL HEART TONES"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688722"/>
+      <display value="FUNDAL HEIGHT"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688723"/>
+      <display value="HEARING"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688724"/>
+      <display value="HEIGHT"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4500635"/>
+      <display value="PAIN"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4500636"/>
+      <display value="PULSE"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4500637"/>
+      <display value="PULSE OXIMETRY"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688725"/>
+      <display value="RESPIRATION"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4500638"/>
+      <display value="TEMPERATURE"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688726"/>
+      <display value="TONOMETRY"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688727"/>
+      <display value="VISION CORRECTED"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4688728"/>
+      <display value="VISION UNCORRECTED"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+    <element>
+      <code value="4500639"/>
+      <display value="WEIGHT"/>
+      <target>
+        <equivalence value="unmatched"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

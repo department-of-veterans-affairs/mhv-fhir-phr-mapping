@@ -1,0 +1,179 @@
+{
+  "resourceType" : "ConceptMap",
+  "id" : "VF-VitalsPosition",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href=\"http://va.gov\">http://va.gov</a>, John Moehrke (himself): <a href=\"mailto:John.Moehrke@va.gov\">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[bodyPosition].valueCodeableConcept</p>\n</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>5335366 (LEFT LATERAL RECUMBENT)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>102536004 (Left lateral decubitus position)</td></tr><tr><td>4711343 (LYING)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>102538003 (Recumbent body position)</td></tr><tr><td>5335362 (PRONE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>1240000 (Prone body position)</td></tr><tr><td>5335364 (RIGHT LATERAL RECUMBENT)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>102535000 (Right lateral decubitus position)</td></tr><tr><td>4711354 (SEMIFOWLERS)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>426408003 (Semi-Fowler's position)</td></tr><tr><td>4711357 (SITTING)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>33586001 (Sitting position)</td></tr><tr><td>4711361 (STANDING)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>10904000 (Orthostatic body position)</td></tr><tr><td>4711362 (STANDING WEIGHT)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>10904000 (Orthostatic body position)</td></tr><tr><td>4711369 (TRENDELENBURG)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>34106002 (Trendelenburg position)</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 1,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  }],
+  "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsPosition",
+  "version" : "0.2.9",
+  "name" : "VF_VitalsPosition",
+  "title" : "Vitals Position used to SNOMED code",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2023-12-15",
+  "publisher" : "VA Digital Services",
+  "contact" : [{
+    "name" : "VA Digital Services",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://va.gov"
+    }]
+  },
+  {
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "John.Moehrke@va.gov"
+    }]
+  }],
+  "description" : "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[bodyPosition].valueCodeableConcept",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "purpose" : "VF_VitalsPosition",
+  "group" : [{
+    "source" : "urn:oid:2.16.840.1.113883.6.233",
+    "target" : "http://snomed.info/sct",
+    "element" : [{
+      "code" : "5335366",
+      "display" : "LEFT LATERAL RECUMBENT",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "102536004",
+        "display" : "Left lateral decubitus position",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "4711343",
+      "display" : "LYING",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "102538003",
+        "display" : "Recumbent body position",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "5335362",
+      "display" : "PRONE",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "1240000",
+        "display" : "Prone body position",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "5335364",
+      "display" : "RIGHT LATERAL RECUMBENT",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "102535000",
+        "display" : "Right lateral decubitus position",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "4711354",
+      "display" : "SEMIFOWLERS",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "426408003",
+        "display" : "Semi-Fowler's position",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "4711357",
+      "display" : "SITTING",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "33586001",
+        "display" : "Sitting position",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "4711361",
+      "display" : "STANDING",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "10904000",
+        "display" : "Orthostatic body position",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "4711362",
+      "display" : "STANDING WEIGHT",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "10904000",
+        "display" : "Orthostatic body position",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "4711369",
+      "display" : "TRENDELENBURG",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "34106002",
+        "display" : "Trendelenburg position",
+        "equivalence" : "equal"
+      }]
+    }]
+  }]
+}

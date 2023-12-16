@@ -11,7 +11,7 @@ Title: "Immunization 1"
 * occurrenceDateTime = 2022-08-08T11:15:28Z
 * recorded = 2022-08-08T11:15:28Z
 * primarySource.extension[dar].valueCode = #unknown
-* identifier[TOid].value = "ImmunizationTO.124684" 
+* identifier[TOid].value = "ImmunizationTO.1" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * note[0].text = "test"
@@ -45,7 +45,7 @@ Title: "Immunization 2"
 * occurrenceDateTime = 2022-08-05T16:56:38Z
 * recorded = 2022-08-05T16:56:38Z
 * primarySource.extension[dar].valueCode = #unknown
-* identifier[TOid].value = "ImmunizationTO.124685" 
+* identifier[TOid].value = "ImmunizationTO.2" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * note.text = "test comment"
@@ -73,6 +73,56 @@ Instance: in-location-2
 InstanceOf: MHVlocation
 Usage: #inline
 * name =  "ADTP BURNETT"
+
+Instance:   ex-MHV-immunization-3
+InstanceOf: VA.MHV.PHR.immunization
+Description: "Immunization given in 1980"
+Usage: #example
+Title: "Immunization 3"
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #completed
+* vaccineCode.text = "ZOSTER"
+* patient = Reference(Patient/ex-MHV-patient-1)
+* occurrenceDateTime = "1980"
+* recorded = 2022-08-08T11:15:28Z
+* primarySource.extension[dar].valueCode = #unknown
+* identifier[TOid].value = "ImmunizationTO.3" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
+* note[0].text = "test of immunization with just a year"
+* contained[+] = in-location-1
+* location = Reference(in-location-1)
+//* encounter.identifier.value = "6433274"
+* protocolApplied.series = "COMPLETE"
+* protocolApplied.doseNumberString = "C"
+* contained[+] = ex-MHV-organization-552
+* performer[@default].actor = Reference(ex-MHV-organization-552)
+
+
+Instance:   ex-MHV-immunization-4
+InstanceOf: VA.MHV.PHR.immunization
+Description: "Immunization given in 2012-01-02"
+Usage: #example
+Title: "Immunization 4"
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #completed
+* vaccineCode.text = "ZOSTER Booster"
+* patient = Reference(Patient/ex-MHV-patient-1)
+* occurrenceDateTime = "2012-01-02"
+* recorded = 2022-08-08T11:15:28Z
+* primarySource.extension[dar].valueCode = #unknown
+* identifier[TOid].value = "ImmunizationTO.4" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
+* note[0].text = "test of immunization with just a year/month/date"
+* contained[+] = in-location-1
+* location = Reference(in-location-1)
+//* encounter.identifier.value = "6433274"
+* protocolApplied.series = "BOOSTER"
+* protocolApplied.doseNumberString = "B"
+* contained[+] = ex-MHV-organization-552
+* performer[@default].actor = Reference(ex-MHV-organization-552)
+
 
 
 

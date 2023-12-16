@@ -5,6 +5,8 @@ The definition for the Code System with URI 'http://terminology.hl7.org/CodeSyst
 
 # Some immunizations don't have CVX
 WARNING: Immunization/ex-MHV-immunization-1: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
+WARNING: Immunization/ex-MHV-immunization-3: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
+WARNING: Immunization/ex-MHV-immunization-4: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
 
 # These examples did not come with CodeSystem
 WARNING: DiagnosticReport/ex-MHV-labReport-1: DiagnosticReport.contained[0]/*Observation/ex-MHV-labTest-1*/.code: No code provided, and a code should be provided from the value set 'LOINC Codes' (http://hl7.org/fhir/ValueSet/observation-codes|4.0.1)
@@ -80,7 +82,7 @@ Reference to draft item http://terminology.hl7.org/CodeSystem/condition-category
 The Implementation Guide contains no explicitly linked examples for this profile
 
 # Vital-Sign concepts are mapped from VUID
-WARNING: ConceptMap/ObservationTypeTOVsLoincCode: ConceptMap.group[0].source: The Source Code System urn:oid:2.16.840.1.113883.6.233 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
+The Source Code System urn:oid:2.16.840.1.113883.6.233 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
 Code System URI 'urn:oid:2.16.840.1.113883.6.233' could not be found so the code cannot be validated
 
 # Patient-0 is fully populated, therefore uses extensions beyond us-core
@@ -120,9 +122,6 @@ WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained
 WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530001a*/: All observations should have an effectiveDateTime or an effectivePeriod
 WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190530002a*/: All observations should have an effectiveDateTime or an effectivePeriod
 WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190740001a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: Best Practice Recommendation: In general, all observations should have a subject
-WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: Immunization/ex-MHV-immunization-2: Immunization.contained[0]/*Observation/in-reaction-2*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
 
 # Jay checked these. Were valid, but are now retired. Do we just accept validation errors, or do we put defensive code into MHV to not use the code, but just use the old display?
 # 71020 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/71020
@@ -168,7 +167,18 @@ WARNING: Immunization/28652: Immunization.location: Found multiple matching prof
 WARNING: Immunization/28652: Immunization.performer[1].actor: Found multiple matching profiles for #Organization-0 among choices: http://hl7.org/fhir/StructureDefinition/Organization, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization
 WARNING: Immunization/28653: Immunization.location: Found multiple matching profiles for #in-location-1 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
 WARNING: Immunization/28653: Immunization.performer[1].actor: Found multiple matching profiles for #Organization-0 among choices: http://hl7.org/fhir/StructureDefinition/Organization, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization
+WARNING: Immunization/ex-MHV-immunization-3: Immunization.location: Found multiple matching profiles for #in-location-1 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
+WARNING: Immunization/ex-MHV-immunization-3: Immunization.performer[0].actor: Found multiple matching profiles for #ex-MHV-organization-552 among choices: http://hl7.org/fhir/StructureDefinition/Organization, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization
+WARNING: Immunization/ex-MHV-immunization-4: Immunization.location: Found multiple matching profiles for #in-location-1 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
+WARNING: Immunization/ex-MHV-immunization-4: Immunization.performer[0].actor: Found multiple matching profiles for #ex-MHV-organization-552 among choices: http://hl7.org/fhir/StructureDefinition/Organization, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization
 
-# allow more codes than minimally allowed== fsh-generated\resources\Observation-ex-MHV-heartRate-1.json ==
+
+# examples with more codes than minimally allowed
 INFORMATION: Observation/ex-MHV-heartRate-1: Observation.code.coding[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
 INFORMATION: Observation/ex-MHV-vitals-1: Observation.code.coding[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# some Vital-Signs qualifiers go into .component as just codes
+INFORMATION: Observation/ex-MHV-oximetry-1: Observation.component[0]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.2.9 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/ex-MHV-oximetry-1: Observation.code.coding[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/ex-MHV-pain-1: Observation.code.coding[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.2.9 (this may not be a problem, but you should check that it's not intended to match a slice)
+

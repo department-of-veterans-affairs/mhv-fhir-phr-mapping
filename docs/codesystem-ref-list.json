@@ -23,9 +23,25 @@
       "uses" : {
       },
       "ValueSet-DocumentReferenceTypeVS.html" : "Known DocumentReference types",
-      "ValueSet-NoteTypeVS.html" : "Known Note types",
-      "ConceptMap-ObservationTypeTOVsLoincCode.html" : "Vital Sign ObservationTypeTO.name to Loinc Code",
-      "ValueSet-LabReportVS.html" : "Known Lab Report types"
+      "ValueSet-LabReportVS.html" : "Known Lab Report types",
+      "ConceptMap-VF-VitalsCodes.html" : "Vital Sign ObservationTypeTO.name to Loinc Code",
+      "ValueSet-NoteTypeVS.html" : "Known Note types"
+    },
+    {
+      "url" : "http://snomed.info/sct",
+      "version" : null,
+      "status" : "active",
+      "name" : "SNOMED_CT",
+      "title" : "SNOMED CT (all versions)",
+      "description" : "SNOMED CT is the most comprehensive and precise clinical health terminology product in the world, owned and distributed around the world by The International Health Terminology Standards Development Organisation (IHTSDO).",
+      "oids" : ["2.16.840.1.113883.6.96"],
+      "uses" : {
+      },
+      "ConceptMap-VF-VitalsDevice.html" : "Vitals Device used to SNOMED code",
+      "ConceptMap-VF-VitalsLaterality.html" : "Vitals Laterality used to SNOMED code",
+      "ConceptMap-VF-VitalsMethod.html" : "Vitals Method used to SNOMED code",
+      "ConceptMap-VF-VitalsPosition.html" : "Vitals Position used to SNOMED code",
+      "ConceptMap-VF-VitalsSite.html" : "Vitals Site used to SNOMED code"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
@@ -40,8 +56,22 @@
       "ValueSet-ConditionVerificationVS.html" : "Subset of condition verification status"
     },
     {
+      "url" : "http://unitsofmeasure.org",
+      "version" : "3.0.1",
+      "status" : "active",
+      "name" : "UCUM",
+      "title" : "Unified Code for Units of Measure (UCUM)",
+      "description" : "The Unified Code for Units of Measure (UCUM) is a code system intended to include all units of measures being contemporarily used in international science, engineering, and business. The purpose is to facilitate unambiguous electronic communication of quantities together with their units. The focus is on electronic communication, as opposed to communication between humans. A typical application of The Unified Code for Units of Measure are electronic data interchange (EDI) protocols, but there is nothing that prevents it from being used in other types of machine communication.",
+      "oids" : ["2.16.840.1.113883.6.8"],
+      "uses" : {
+      },
+      "ConceptMap-LabUcumCodes.html" : "Mapping from Vista used lab units string to formal UCUM codes",
+      "ConceptMap-VF-VitalsUnits.html" : "Vitals qualifier Units used",
+      "ConceptMap-DrugUcumCodes.html" : "Mapping from Vista used drug units string to formal UCUM codes"
+    },
+    {
       "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS",
-      "version" : "0.2.8",
+      "version" : "0.2.9",
       "status" : "active",
       "name" : "AllergyObservedHistoricCS",
       "title" : "Allergy Observed vs Historic CodeSystem",

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="DrugUcumCodes"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, John Moehrke (himself): <a href="mailto:John.Moehrke@va.gov">John.Moehrke@va.gov</a>). </p><div><p>Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.</p>
+<ul>
+<li>DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325</li>
+</ul>
+</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href="http://terminology.hl7.org/5.0.0/CodeSystem-v3-ucum.html">Unified Code for Units of Measure (UCUM)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>5335551 (%)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>% (percent)</td></tr><tr><td>5335489 (GM)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>g (gram)</td></tr><tr><td>5335633 (MCG)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>ug (microgram)</td></tr><tr><td>5336101 (MCG/24HR)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>ug/(24.h) (microgram per 24 hour)</td></tr><tr><td>5336003 (MCG/HR)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>ug/h (microgram per hour)</td></tr><tr><td>5335497 (MCG/ML)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>ug/mL (microgram per milliliter)</td></tr><tr><td>5335647 (MEQ)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>meq (milliequivalent)</td></tr><tr><td>5335503 (MG)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg (milligram)</td></tr><tr><td>5335869 (MG/24HRS)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/(24.h) (milligram per 24 hour)</td></tr><tr><td>5335895 (MG/DAY)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/d (milligram per day)</td></tr><tr><td>5335677 (MG/GM)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/g (milligram per gram)</td></tr><tr><td>5336057 (MG/HR)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/h (milligram per hour)</td></tr><tr><td>5335505 (MG/ML)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>mg/mL (milligram per milliliter)</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/DrugUcumCodes"/>
+  <version value="0.2.9"/>
+  <name value="DrugTOucumCodes"/>
+  <title value="Mapping from Vista used drug units string to formal UCUM codes"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2023-12-15"/>
+  <publisher value="VA Digital Services"/>
+  <contact>
+    <name value="VA Digital Services"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://va.gov"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="John.Moehrke@va.gov"/>
+    </telecom>
+  </contact>
+  <description value="Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.&#xA;&#xA;- DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325"/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="To be able to use proper UCUM code in FHIR"/>
+  <group>
+    <source value="urn:oid:2.16.840.1.113883.6.233"/>
+    <target value="http://unitsofmeasure.org"/>
+    <element>
+      <code value="5335551"/>
+      <display value="%"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="%"/>
+        <display value="percent"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5335489"/>
+      <display value="GM"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="g"/>
+        <display value="gram"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5335633"/>
+      <display value="MCG"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="ug"/>
+        <display value="microgram"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5336101"/>
+      <display value="MCG/24HR"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="ug/(24.h)"/>
+        <display value="microgram per 24 hour"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5336003"/>
+      <display value="MCG/HR"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="ug/h"/>
+        <display value="microgram per hour"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5335497"/>
+      <display value="MCG/ML"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="ug/mL"/>
+        <display value="microgram per milliliter"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5335647"/>
+      <display value="MEQ"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="meq"/>
+        <display value="milliequivalent"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5335503"/>
+      <display value="MG"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="mg"/>
+        <display value="milligram"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5335869"/>
+      <display value="MG/24HRS"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="mg/(24.h)"/>
+        <display value="milligram per 24 hour"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5335895"/>
+      <display value="MG/DAY"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="mg/d"/>
+        <display value="milligram per day"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5335677"/>
+      <display value="MG/GM"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="mg/g"/>
+        <display value="milligram per gram"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5336057"/>
+      <display value="MG/HR"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="mg/h"/>
+        <display value="milligram per hour"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="5335505"/>
+      <display value="MG/ML"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="mg/mL"/>
+        <display value="milligram per milliliter"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

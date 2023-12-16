@@ -75,8 +75,8 @@ Description:      "holding typical values"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
-* code.coding[+] = LOINC#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
-* code.coding[+] = VUID#4500635 "PAIN"
+* code.coding[pain] = LOINC#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[1] = VUID#4500635 "PAIN"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = 2004-09-24T10:32:00-05:00
@@ -124,3 +124,47 @@ Description:      "Heart Rate holding typical values"
 * performer[=].display = "Location 2938"
 
 
+Instance:   ex-MHV-oximetry-1
+InstanceOf: VA.MHV.PHR.vitalsOx
+Title: "Example of an MHV heartRate R4 observation"
+Description:      "Heart Rate holding typical values"
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+/*
+
+<vitalSignTO>
+    <type>
+        <id>6544753</id>
+        <category>4500637</category>
+        <name>PULSE OXIMETRY</name>
+    </type>
+    <value1>95</value1>
+    <low>0</low>
+    <high>100</high>
+    <timestamp>3231026.113331</timestamp>
+    <location>
+        <id>3713</id>
+        <name>000-EYE NON TREATMENT (LOC)</name>
+    </location>
+    <units>%</units>
+    <qualifierItems>
+        <qualifier>
+            <id>4688666</id>
+            <name>NASAL CANNULA</name>
+        </qualifier>
+    </qualifierItems>
+</vitalSignTO>
+*/
+* status = #final
+* identifier[TOid].value = "VitalSignTO.6544753" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
+* category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
+* code.text = "PULSE"
+* subject = Reference(Patient/ex-MHV-patient-2)
+* effectiveDateTime = 2023-10-26T11:33:31-05:00
+* valueQuantity = 95 '%' "percent"
+* contained[+] = location-3713
+* performer[+].extension[site].valueReference = Reference(location-3713)
+* performer[=].display = "Location 3713"
+* component[+].code = SCT##336623009 "Oxygen nasal cannula"
+* component[=].dataAbsentReason = http://terminology.hl7.org/CodeSystem/data-absent-reason#not-applicable

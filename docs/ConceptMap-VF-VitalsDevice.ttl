@@ -1,0 +1,496 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsDevice> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-VitalsDevice"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href=\"http://va.gov\">http://va.gov</a>, John Moehrke (himself): <a href=\"mailto:John.Moehrke@va.gov\">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[observation-deviceCode].valueCodeableConcept</p>\n</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>4711289 (ADULT CUFF)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>133936004 (Adult)</td></tr><tr><td>4711308 (AEROSOL/HUMIDIFIED MASK)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>426851007 (Aerosol oxygen mask)</td></tr><tr><td>4711310 (AMBU BAG (BAG VALVE MASK))</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>371785003 (Ambu bag)</td></tr><tr><td>4711311 (ARTERIAL LINE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>261241001 (Arterial line)</td></tr><tr><td>4711312 (ASSISTED VENTILATOR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>243141005 (Mechanically assisted spontaneous ventilation)</td></tr><tr><td>4711315 (BED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>466289007 (Bed scale)</td></tr><tr><td>4711316 (BIPAP (BI-LEVEL POSITIVE AIRWAY PRESSURE))</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>243142003 (Dual pressure spontaneous ventilation support)</td></tr><tr><td>4711317 (BIPAP-CPAP (BI-LEVEL POSITIVE AIRWAY PRESSURE-CONTINUOUS POSITIVE AIRWAY PRESSURE))</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>229306004 (Positive pressure therapy)</td></tr><tr><td>4711318 (CHAIR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>467496001 (Chair scale, mechanical)</td></tr><tr><td>4711319 (CONTROLLED VENTILATOR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>243147009 (Controlled ventilation)</td></tr><tr><td>4711320 (CPAP (CONTINUOUS POSITIVE AIRWAY PRESSURE))</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>47545007 (Continuous positive airway pressure ventilation treatment)</td></tr><tr><td>4711321 (CUFF-AUTOMATED (AUTOMATED CUFF))</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>445949006 (Electronic sphygmomanometer)</td></tr><tr><td>4711322 (CUFF-MANUAL (MANUAL CUFF))</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>464069000 (Mercury manual sphygmomanometer)</td></tr><tr><td>4711323 (DOPPLER)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>268447006 (Doppler studies)</td></tr><tr><td>4711324 (FACE TENT)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>426294006 (Face tent oxygen delivery device)</td></tr><tr><td>4711326 (LARYNGEAL MASK AIRWAY)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>257268009 (Laryngeal mask)</td></tr><tr><td>4711327 (LEAD)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>257467001 (Electrocardiogram lead)</td></tr><tr><td>4711290 (LG ADULT CUFF)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>255509001 (Large)</td></tr><tr><td>4711328 (LIFT SCALE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>462242008 (Patient sling scale)</td></tr><tr><td>4711329 (MASK)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>336602003 (Oxygen mask)</td></tr><tr><td>4711330 (MONITOR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>706767009 (Patient data recorder)</td></tr><tr><td>4711331 (MUSTACHE CANNULA)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>336623009 (Oxygen nasal cannula)</td></tr><tr><td>4711332 (NASAL CANNULA)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>336623009 (Oxygen nasal cannula)</td></tr><tr><td>4711334 (NON RE-BREATHER)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>427591007 (Nonrebreather oxygen mask)</td></tr><tr><td>4711338 (PARTIAL RE-BREATHER)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>425926003 (Partial rebreather oxygen mask)</td></tr><tr><td>4711339 (PEDIATRIC CUFF)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>67822003 (Child)</td></tr><tr><td>4711340 (PENDANT CANNULA)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>336623009 (Oxygen nasal cannula)</td></tr><tr><td>4710823 (RESERVOIR CANNULA)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>336623009 (Oxygen nasal cannula)</td></tr><tr><td>4711359 (SM ADULT CUFF)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>255507004 (Small)</td></tr><tr><td>4711366 (THIGH CUFF)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>118712001 (Procedure on thigh)</td></tr><tr><td>4711364 (T-PIECE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>6097006 (T-tube, device)</td></tr><tr><td>4711367 (TRACHEOSTOMY COLLAR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>465839001 (Tracheostomy mask, oxygen)</td></tr><tr><td>4710797 (VENTILATOR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>40617009 (Artificial respiration)</td></tr><tr><td>4710798 (VENTURI MASK)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>465433006 (Venturi oxygen face mask)</td></tr><tr><td>4710816 (WHEELCHAIR SCALE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>466532009 (Wheelchair scale)</td></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "1"^^xsd:integer ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsDevice"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.9"] ; # 
+  fhir:name [ fhir:v "VF_VitalsDevice"] ; # 
+  fhir:title [ fhir:v "Vitals Device used to SNOMED code"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "VA Digital Services"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA Digital Services" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://va.gov" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "John.Moehrke@va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[observation-deviceCode].valueCodeableConcept"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "VF_VitalsDevice"] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "urn:oid:2.16.840.1.113883.6.233"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "4711289" ] ;
+       fhir:display [ fhir:v "ADULT CUFF" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "133936004" ] ;
+         fhir:display [ fhir:v "Adult" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711308" ] ;
+       fhir:display [ fhir:v "AEROSOL/HUMIDIFIED MASK" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "426851007" ] ;
+         fhir:display [ fhir:v "Aerosol oxygen mask" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711310" ] ;
+       fhir:display [ fhir:v "AMBU BAG (BAG VALVE MASK)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "371785003" ] ;
+         fhir:display [ fhir:v "Ambu bag" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711311" ] ;
+       fhir:display [ fhir:v "ARTERIAL LINE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "261241001" ] ;
+         fhir:display [ fhir:v "Arterial line" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711312" ] ;
+       fhir:display [ fhir:v "ASSISTED VENTILATOR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "243141005" ] ;
+         fhir:display [ fhir:v "Mechanically assisted spontaneous ventilation" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711315" ] ;
+       fhir:display [ fhir:v "BED" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "466289007" ] ;
+         fhir:display [ fhir:v "Bed scale" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711316" ] ;
+       fhir:display [ fhir:v "BIPAP (BI-LEVEL POSITIVE AIRWAY PRESSURE)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "243142003" ] ;
+         fhir:display [ fhir:v "Dual pressure spontaneous ventilation support" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711317" ] ;
+       fhir:display [ fhir:v "BIPAP-CPAP (BI-LEVEL POSITIVE AIRWAY PRESSURE-CONTINUOUS POSITIVE AIRWAY PRESSURE)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "229306004" ] ;
+         fhir:display [ fhir:v "Positive pressure therapy" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711318" ] ;
+       fhir:display [ fhir:v "CHAIR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "467496001" ] ;
+         fhir:display [ fhir:v "Chair scale, mechanical" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711319" ] ;
+       fhir:display [ fhir:v "CONTROLLED VENTILATOR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "243147009" ] ;
+         fhir:display [ fhir:v "Controlled ventilation" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711320" ] ;
+       fhir:display [ fhir:v "CPAP (CONTINUOUS POSITIVE AIRWAY PRESSURE)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "47545007" ] ;
+         fhir:display [ fhir:v "Continuous positive airway pressure ventilation treatment" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711321" ] ;
+       fhir:display [ fhir:v "CUFF-AUTOMATED (AUTOMATED CUFF)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "445949006" ] ;
+         fhir:display [ fhir:v "Electronic sphygmomanometer" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711322" ] ;
+       fhir:display [ fhir:v "CUFF-MANUAL (MANUAL CUFF)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "464069000" ] ;
+         fhir:display [ fhir:v "Mercury manual sphygmomanometer" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711323" ] ;
+       fhir:display [ fhir:v "DOPPLER" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "268447006" ] ;
+         fhir:display [ fhir:v "Doppler studies" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711324" ] ;
+       fhir:display [ fhir:v "FACE TENT" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "426294006" ] ;
+         fhir:display [ fhir:v "Face tent oxygen delivery device" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711326" ] ;
+       fhir:display [ fhir:v "LARYNGEAL MASK AIRWAY" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "257268009" ] ;
+         fhir:display [ fhir:v "Laryngeal mask" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711327" ] ;
+       fhir:display [ fhir:v "LEAD" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "257467001" ] ;
+         fhir:display [ fhir:v "Electrocardiogram lead" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711290" ] ;
+       fhir:display [ fhir:v "LG ADULT CUFF" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "255509001" ] ;
+         fhir:display [ fhir:v "Large" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711328" ] ;
+       fhir:display [ fhir:v "LIFT SCALE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "462242008" ] ;
+         fhir:display [ fhir:v "Patient sling scale" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711329" ] ;
+       fhir:display [ fhir:v "MASK" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "336602003" ] ;
+         fhir:display [ fhir:v "Oxygen mask" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711330" ] ;
+       fhir:display [ fhir:v "MONITOR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "706767009" ] ;
+         fhir:display [ fhir:v "Patient data recorder" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711331" ] ;
+       fhir:display [ fhir:v "MUSTACHE CANNULA" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "336623009" ] ;
+         fhir:display [ fhir:v "Oxygen nasal cannula" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711332" ] ;
+       fhir:display [ fhir:v "NASAL CANNULA" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "336623009" ] ;
+         fhir:display [ fhir:v "Oxygen nasal cannula" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711334" ] ;
+       fhir:display [ fhir:v "NON RE-BREATHER" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "427591007" ] ;
+         fhir:display [ fhir:v "Nonrebreather oxygen mask" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711338" ] ;
+       fhir:display [ fhir:v "PARTIAL RE-BREATHER" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "425926003" ] ;
+         fhir:display [ fhir:v "Partial rebreather oxygen mask" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711339" ] ;
+       fhir:display [ fhir:v "PEDIATRIC CUFF" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "67822003" ] ;
+         fhir:display [ fhir:v "Child" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711340" ] ;
+       fhir:display [ fhir:v "PENDANT CANNULA" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "336623009" ] ;
+         fhir:display [ fhir:v "Oxygen nasal cannula" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710823" ] ;
+       fhir:display [ fhir:v "RESERVOIR CANNULA" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "336623009" ] ;
+         fhir:display [ fhir:v "Oxygen nasal cannula" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711359" ] ;
+       fhir:display [ fhir:v "SM ADULT CUFF" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "255507004" ] ;
+         fhir:display [ fhir:v "Small" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711366" ] ;
+       fhir:display [ fhir:v "THIGH CUFF" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "118712001" ] ;
+         fhir:display [ fhir:v "Procedure on thigh" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711364" ] ;
+       fhir:display [ fhir:v "T-PIECE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "6097006" ] ;
+         fhir:display [ fhir:v "T-tube, device" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711367" ] ;
+       fhir:display [ fhir:v "TRACHEOSTOMY COLLAR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "465839001" ] ;
+         fhir:display [ fhir:v "Tracheostomy mask, oxygen" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710797" ] ;
+       fhir:display [ fhir:v "VENTILATOR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "40617009" ] ;
+         fhir:display [ fhir:v "Artificial respiration" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710798" ] ;
+       fhir:display [ fhir:v "VENTURI MASK" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "465433006" ] ;
+         fhir:display [ fhir:v "Venturi oxygen face mask" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710816" ] ;
+       fhir:display [ fhir:v "WHEELCHAIR SCALE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "466532009" ] ;
+         fhir:display [ fhir:v "Wheelchair scale" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

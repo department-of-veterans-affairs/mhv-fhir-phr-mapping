@@ -1,0 +1,317 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsMethod> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-VitalsMethod"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href=\"http://va.gov\">http://va.gov</a>, John Moehrke (himself): <a href=\"mailto:John.Moehrke@va.gov\">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.method</p>\n</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td><td><b>Comment</b></td></tr><tr><td>4711345 (ACTUAL)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>258104002 (Measured)</td><td/></tr><tr><td>4711309 (AFTER EXERCISE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>255214003 (After exercise)</td><td/></tr><tr><td>4711313 (AT REST)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>263678003 (At rest)</td><td/></tr><tr><td>4711314 (AUSCULTATE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>37931006 (Auscultation)</td><td/></tr><tr><td>4712397 (CALCULATED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>258090004 (Calculated)</td><td/></tr><tr><td>4711346 (DRY)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>445541000 (Dry body weight)</td><td>OE, not method</td></tr><tr><td>4711347 (ESTIMATED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>414135002 (Estimated)</td><td/></tr><tr><td>4711348 (ESTIMATED BY ARM SPAN)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>414135002 (Estimated)</td><td/></tr><tr><td>4711325 (INVASIVE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>386341005 (Invasive hemodynamic monitoring)</td><td/></tr><tr><td>4711335 (NON-INVASIVE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>704042003 (Non-invasive cardiac output monitoring)</td><td/></tr><tr><td>4711337 (PALPATED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>113011001 (Palpation)</td><td/></tr><tr><td>4711353 (ROOM AIR)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>15158005 (Air)</td><td/></tr><tr><td>4711360 (SPONTANEOUS)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>241700002 (Spontaneous respiration)</td><td/></tr><tr><td>4711363 (STATED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>418799008 (Finding reported by subject or history provider)</td><td/></tr><tr><td>4711368 (TRANSTRACHEAL)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>426129001 (Transtracheal oxygen catheter)</td><td/></tr><tr><td>4710817 (WITH ACTIVITY)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>309604004 (During exercise)</td><td/></tr><tr><td>4710818 (WITH AMBULATION)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>129006008 (OE, not method)</td><td/></tr><tr><td>4710819 (WITH CAST OR BRACE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>303474004 (Does not remove prosthesis)</td><td/></tr><tr><td>4710820 (WITH PROSTHESIS)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>303474004 (Does not remove prosthesis)</td><td/></tr><tr><td>4710821 (WITHOUT PROSTHESIS)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null\"/></td><td>303473005 (Does remove prosthesis)</td><td/></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "1"^^xsd:integer ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsMethod"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.9"] ; # 
+  fhir:name [ fhir:v "VF_VitalsMethod"] ; # 
+  fhir:title [ fhir:v "Vitals Method used to SNOMED code"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "VA Digital Services"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA Digital Services" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://va.gov" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "John.Moehrke@va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.method"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "VF_VitalsMethod"] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "urn:oid:2.16.840.1.113883.6.233"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "4711345" ] ;
+       fhir:display [ fhir:v "ACTUAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "258104002" ] ;
+         fhir:display [ fhir:v "Measured" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711309" ] ;
+       fhir:display [ fhir:v "AFTER EXERCISE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "255214003" ] ;
+         fhir:display [ fhir:v "After exercise" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711313" ] ;
+       fhir:display [ fhir:v "AT REST" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "263678003" ] ;
+         fhir:display [ fhir:v "At rest" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711314" ] ;
+       fhir:display [ fhir:v "AUSCULTATE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "37931006" ] ;
+         fhir:display [ fhir:v "Auscultation" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4712397" ] ;
+       fhir:display [ fhir:v "CALCULATED" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "258090004" ] ;
+         fhir:display [ fhir:v "Calculated" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711346" ] ;
+       fhir:display [ fhir:v "DRY" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "445541000" ] ;
+         fhir:display [ fhir:v "Dry body weight" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:comment [ fhir:v "OE, not method" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711347" ] ;
+       fhir:display [ fhir:v "ESTIMATED" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "414135002" ] ;
+         fhir:display [ fhir:v "Estimated" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711348" ] ;
+       fhir:display [ fhir:v "ESTIMATED BY ARM SPAN" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "414135002" ] ;
+         fhir:display [ fhir:v "Estimated" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711325" ] ;
+       fhir:display [ fhir:v "INVASIVE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "386341005" ] ;
+         fhir:display [ fhir:v "Invasive hemodynamic monitoring" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711335" ] ;
+       fhir:display [ fhir:v "NON-INVASIVE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "704042003" ] ;
+         fhir:display [ fhir:v "Non-invasive cardiac output monitoring" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711337" ] ;
+       fhir:display [ fhir:v "PALPATED" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "113011001" ] ;
+         fhir:display [ fhir:v "Palpation" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711353" ] ;
+       fhir:display [ fhir:v "ROOM AIR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "15158005" ] ;
+         fhir:display [ fhir:v "Air" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711360" ] ;
+       fhir:display [ fhir:v "SPONTANEOUS" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "241700002" ] ;
+         fhir:display [ fhir:v "Spontaneous respiration" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711363" ] ;
+       fhir:display [ fhir:v "STATED" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "418799008" ] ;
+         fhir:display [ fhir:v "Finding reported by subject or history provider" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711368" ] ;
+       fhir:display [ fhir:v "TRANSTRACHEAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "426129001" ] ;
+         fhir:display [ fhir:v "Transtracheal oxygen catheter" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710817" ] ;
+       fhir:display [ fhir:v "WITH ACTIVITY" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "309604004" ] ;
+         fhir:display [ fhir:v "During exercise" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710818" ] ;
+       fhir:display [ fhir:v "WITH AMBULATION" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "129006008" ] ;
+         fhir:display [ fhir:v "OE, not method" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710819" ] ;
+       fhir:display [ fhir:v "WITH CAST OR BRACE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "303474004" ] ;
+         fhir:display [ fhir:v "Does not remove prosthesis" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710820" ] ;
+       fhir:display [ fhir:v "WITH PROSTHESIS" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "303474004" ] ;
+         fhir:display [ fhir:v "Does not remove prosthesis" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710821" ] ;
+       fhir:display [ fhir:v "WITHOUT PROSTHESIS" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "303473005" ] ;
+         fhir:display [ fhir:v "Does remove prosthesis" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,949 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsSite> a fhir:ConceptMap ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "VF-VitalsSite"] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "extensions" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href=\"http://va.gov\">http://va.gov</a>, John Moehrke (himself): <a href=\"mailto:John.Moehrke@va.gov\">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.bodySite</p>\n</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\">SNOMED CT (all versions)</a></p><table class=\"grid\"><tr><td colspan=\"2\"><b>Source Concept Details</b></td><td><b>Relationship</b></td><td colspan=\"2\"><b>Target Concept Details</b></td><td><b>Comment</b></td><td colspan=\"2\"><b>Properties</b></td></tr><tr><td colspan=\"2\"><b>Codes</b> from urn:oid:2.16.840.1.113883.6.233</td><td/><td colspan=\"2\"><b>Codes</b> from <a href=\"http://hl7.org/fhir/R4/codesystem-snomedct.html\" title=\"http://snomed.info/sct\">SNOMED CT (all versions)</a></td><td/></tr><tr><td style=\"border-right-width: 0px\">4711291</td><td style=\"border-left-width: 0px\">ABDOMINAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">818983003</td><td style=\"border-left-width: 0px\">Abdomen</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711292</td><td style=\"border-left-width: 0px\">ANKLE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">344001</td><td style=\"border-left-width: 0px\">Ankle region structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711292</td><td style=\"border-left-width: 0px\">ANKLE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">51636004</td><td style=\"border-left-width: 0px\">Structure of left ankle</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711292</td><td style=\"border-left-width: 0px\">ANKLE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">6685009</td><td style=\"border-left-width: 0px\">Structure of right ankle</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711293</td><td style=\"border-left-width: 0px\">APICAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">46707002</td><td style=\"border-left-width: 0px\">Structure of precordium</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711294</td><td style=\"border-left-width: 0px\">AV FISTULA (ARTERIOVENOUS FISTULA)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">128617001</td><td style=\"border-left-width: 0px\">Arteriovenous fistula</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711295</td><td style=\"border-left-width: 0px\">AXILLARY</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">422543003</td><td style=\"border-left-width: 0px\">Structure of axillary fossa</td><td/></tr><tr><td style=\"border-right-width: 0px; border-bottom-style: none\">4711295</td><td style=\"border-left-width: 0px; border-bottom-style: none\">AXILLARY</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">764473004</td><td style=\"border-left-width: 0px\">Skin structure of left axilla</td><td/></tr><tr><td style=\"border-right-width: 0px; border-top-style: none\"/><td style=\"border-top-style: none; border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">20437008</td><td style=\"border-left-width: 0px\">Structure of left axillary region</td><td/></tr><tr><td style=\"border-right-width: 0px; border-bottom-style: none\">4711295</td><td style=\"border-left-width: 0px; border-bottom-style: none\">AXILLARY</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">764474005</td><td style=\"border-left-width: 0px\">Skin structure of right axilla</td><td/></tr><tr><td style=\"border-right-width: 0px; border-top-style: none\"/><td style=\"border-top-style: none; border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">19654004</td><td style=\"border-left-width: 0px\">Structure of right axillary region</td><td/></tr><tr><td style=\"border-right-width: 0px; border-bottom-style: none\">4711296</td><td style=\"border-left-width: 0px; border-bottom-style: none\">BILATERAL PERIPHERALS</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">54718008</td><td style=\"border-left-width: 0px\">Peripheral pulse, function</td><td/></tr><tr><td style=\"border-right-width: 0px; border-top-style: none; border-bottom-style: none\"/><td style=\"border-left-width: 0px; border-top-style: none; border-bottom-style: none\"/><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">14414005</td><td style=\"border-left-width: 0px\">Peripheral</td><td/></tr><tr><td style=\"border-right-width: 0px; border-top-style: none\"/><td style=\"border-top-style: none; border-left-width: 0px\"/><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">840581000</td><td style=\"border-left-width: 0px\">Structure of peripheral artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711297</td><td style=\"border-left-width: 0px\">BRACHIAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">17137000</td><td style=\"border-left-width: 0px\">Structure of brachial artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711297</td><td style=\"border-left-width: 0px\">BRACHIAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">723961002</td><td style=\"border-left-width: 0px\">Structure of left brachial artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711297</td><td style=\"border-left-width: 0px\">BRACHIAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">723962009</td><td style=\"border-left-width: 0px\">Structure of right brachial artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711298</td><td style=\"border-left-width: 0px\">CALF</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">53840002</td><td style=\"border-left-width: 0px\">Structure of calf of leg</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711298</td><td style=\"border-left-width: 0px\">CALF</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">722115008</td><td style=\"border-left-width: 0px\">Structure of calf of left lower leg</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711298</td><td style=\"border-left-width: 0px\">CALF</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">722116009</td><td style=\"border-left-width: 0px\">Structure of calf of right lower leg</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711299</td><td style=\"border-left-width: 0px\">CAROTID</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">69105007</td><td style=\"border-left-width: 0px\">Carotid artery structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711299</td><td style=\"border-left-width: 0px\">CAROTID</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">721028001</td><td style=\"border-left-width: 0px\">Structure of left carotid artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711299</td><td style=\"border-left-width: 0px\">CAROTID</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">721033002</td><td style=\"border-left-width: 0px\">Structure of right carotid artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711300</td><td style=\"border-left-width: 0px\">CORE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">276885007</td><td style=\"border-left-width: 0px\">OE, not site</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711301</td><td style=\"border-left-width: 0px\">DORSALIS PEDIS</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">86547008</td><td style=\"border-left-width: 0px\">Structure of dorsalis pedis artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711301</td><td style=\"border-left-width: 0px\">DORSALIS PEDIS</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">792817008</td><td style=\"border-left-width: 0px\">Structure of left dorsalis pedis artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711301</td><td style=\"border-left-width: 0px\">DORSALIS PEDIS</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">792816004</td><td style=\"border-left-width: 0px\">Structure of right dorsalis pedis artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711302</td><td style=\"border-left-width: 0px\">FEMORAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">7657000</td><td style=\"border-left-width: 0px\">Structure of femoral artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711302</td><td style=\"border-left-width: 0px\">FEMORAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">113270003</td><td style=\"border-left-width: 0px\">Structure of left femoral artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711302</td><td style=\"border-left-width: 0px\">FEMORAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">69833005</td><td style=\"border-left-width: 0px\">Structure of right femoral artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711303</td><td style=\"border-left-width: 0px\">HEAD</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">69536005</td><td style=\"border-left-width: 0px\">Head structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4708118</td><td style=\"border-left-width: 0px\">HIP</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">29836001</td><td style=\"border-left-width: 0px\">Hip region structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4708118</td><td style=\"border-left-width: 0px\">HIP</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">287679003</td><td style=\"border-left-width: 0px\">Left hip region structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4708118</td><td style=\"border-left-width: 0px\">HIP</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">287579007</td><td style=\"border-left-width: 0px\">Right hip region structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711304</td><td style=\"border-left-width: 0px\">KNEE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">72696002</td><td style=\"border-left-width: 0px\">Knee region structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711304</td><td style=\"border-left-width: 0px\">KNEE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">82169009</td><td style=\"border-left-width: 0px\">Structure of left knee region</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711304</td><td style=\"border-left-width: 0px\">KNEE</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">6757004</td><td style=\"border-left-width: 0px\">Structure of right knee region</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711305</td><td style=\"border-left-width: 0px\">L ARM (LEFT ARM)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">80768000</td><td style=\"border-left-width: 0px\">Structure of left upper limb</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711306</td><td style=\"border-left-width: 0px\">L LEG (LEFT LEG)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">32153003</td><td style=\"border-left-width: 0px\">Structure of left lower limb</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711307</td><td style=\"border-left-width: 0px\">LOWER ARM</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">14975008</td><td style=\"border-left-width: 0px\">Forearm structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711307</td><td style=\"border-left-width: 0px\">LOWER ARM</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">66480008</td><td style=\"border-left-width: 0px\">Structure of left forearm</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711307</td><td style=\"border-left-width: 0px\">LOWER ARM</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">64262003</td><td style=\"border-left-width: 0px\">Structure of right forearm</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711333</td><td style=\"border-left-width: 0px\">NECK</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">45048000</td><td style=\"border-left-width: 0px\">Neck structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711336</td><td style=\"border-left-width: 0px\">ORAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">123851003</td><td style=\"border-left-width: 0px\">Mouth region structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711341</td><td style=\"border-left-width: 0px\">PERIPHERAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">54718008</td><td style=\"border-left-width: 0px\">OE, not body structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711342</td><td style=\"border-left-width: 0px\">POPLITEAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">43899006</td><td style=\"border-left-width: 0px\">Structure of popliteal artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711342</td><td style=\"border-left-width: 0px\">POPLITEAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">25885001</td><td style=\"border-left-width: 0px\">Left popliteal artery structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711342</td><td style=\"border-left-width: 0px\">POPLITEAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">57832007</td><td style=\"border-left-width: 0px\">Structure of right popliteal artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711344</td><td style=\"border-left-width: 0px\">POSTERIOR TIBIAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">13363002</td><td style=\"border-left-width: 0px\">Structure of posterior tibial artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711344</td><td style=\"border-left-width: 0px\">POSTERIOR TIBIAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">214912001</td><td style=\"border-left-width: 0px\">Structure of left posterior tibial artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711344</td><td style=\"border-left-width: 0px\">POSTERIOR TIBIAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">214811007</td><td style=\"border-left-width: 0px\">Structure of right posterior tibial artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711349</td><td style=\"border-left-width: 0px\">R ARM (RIGHT ARM)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">6921000</td><td style=\"border-left-width: 0px\">Structure of right upper limb</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711350</td><td style=\"border-left-width: 0px\">R LEG (RIGHT LEG)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">62175007</td><td style=\"border-left-width: 0px\">Structure of right lower limb</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711351</td><td style=\"border-left-width: 0px\">RADIAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">45631007</td><td style=\"border-left-width: 0px\">Structure of radial artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711351</td><td style=\"border-left-width: 0px\">RADIAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">368504007</td><td style=\"border-left-width: 0px\">Structure of left radial artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711351</td><td style=\"border-left-width: 0px\">RADIAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">368503001</td><td style=\"border-left-width: 0px\">Structure of right radial artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711352</td><td style=\"border-left-width: 0px\">RECTAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">34402009</td><td style=\"border-left-width: 0px\">Rectum structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711358</td><td style=\"border-left-width: 0px\">SKIN</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">39937001</td><td style=\"border-left-width: 0px\">Skin structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710824</td><td style=\"border-left-width: 0px\">TEMPORAL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">450721000</td><td style=\"border-left-width: 0px\">Structure of temporal region</td><td>Laterality not modeled in SNOMED CT</td></tr><tr><td style=\"border-right-width: 0px\">4711365</td><td style=\"border-left-width: 0px\">THIGH</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">68367000</td><td style=\"border-left-width: 0px\">Thigh structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711365</td><td style=\"border-left-width: 0px\">THIGH</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">61396006</td><td style=\"border-left-width: 0px\">Structure of left thigh</td><td/></tr><tr><td style=\"border-right-width: 0px\">4711365</td><td style=\"border-left-width: 0px\">THIGH</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">11207009</td><td style=\"border-left-width: 0px\">Structure of right thigh</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710794</td><td style=\"border-left-width: 0px\">TYMPANIC</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">42859004</td><td style=\"border-left-width: 0px\">Tympanic membrane structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710794</td><td style=\"border-left-width: 0px\">TYMPANIC</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">726562006</td><td style=\"border-left-width: 0px\">Structure of left tympanic membrane</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710794</td><td style=\"border-left-width: 0px\">TYMPANIC</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">726563001</td><td style=\"border-left-width: 0px\">Structure of right tympanic membrane</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710795</td><td style=\"border-left-width: 0px\">ULNAR</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">44984001</td><td style=\"border-left-width: 0px\">Structure of ulnar artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710795</td><td style=\"border-left-width: 0px\">ULNAR</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">368506009</td><td style=\"border-left-width: 0px\">Structure of left ulnar artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710795</td><td style=\"border-left-width: 0px\">ULNAR</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">368505008</td><td style=\"border-left-width: 0px\">Structure of right ulnar artery</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710796</td><td style=\"border-left-width: 0px\">UPPER ARM</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">40983000</td><td style=\"border-left-width: 0px\">Structure of upper extremity between shoulder and elbow</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710796</td><td style=\"border-left-width: 0px\">UPPER ARM</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">368208006</td><td style=\"border-left-width: 0px\">Left upper arm structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710796</td><td style=\"border-left-width: 0px\">UPPER ARM</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">368209003</td><td style=\"border-left-width: 0px\">Right upper arm structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710822</td><td style=\"border-left-width: 0px\">WRIST</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">8205005</td><td style=\"border-left-width: 0px\">Wrist region structure</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710822</td><td style=\"border-left-width: 0px\">WRIST</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">5951000</td><td style=\"border-left-width: 0px\">Structure of left wrist region</td><td/></tr><tr><td style=\"border-right-width: 0px\">4710822</td><td style=\"border-left-width: 0px\">WRIST</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equivalent\" title=\"equivalent\">is equivalent to</a></td><td style=\"border-right-width: 0px\">9736006</td><td style=\"border-left-width: 0px\">Structure of right wrist region</td><td/></tr></table></div>"
+  ] ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "1"^^xsd:integer ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] [
+     fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
+     fhir:value [
+       fhir:v "trial-use" ;
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom"^^xsd:anyURI ] ;
+         fhir:value [
+           fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI ;
+           fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr>
+         ]
+       ] )
+     ]
+  ] ) ; # 
+  fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsSite"^^xsd:anyURI] ; # 
+  fhir:version [ fhir:v "0.2.9"] ; # 
+  fhir:name [ fhir:v "VF_VitalsSite"] ; # 
+  fhir:title [ fhir:v "Vitals Site used to SNOMED code"] ; # 
+  fhir:status [ fhir:v "active"] ; # 
+  fhir:experimental [ fhir:v "false"^^xsd:boolean] ; # 
+  fhir:date [ fhir:v "2023-12-15"^^xsd:date] ; # 
+  fhir:publisher [ fhir:v "VA Digital Services"] ; # 
+  fhir:contact ( [
+     fhir:name [ fhir:v "VA Digital Services" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "url" ] ;
+       fhir:value [ fhir:v "http://va.gov" ]
+     ] )
+  ] [
+     fhir:name [ fhir:v "John Moehrke (himself)" ] ;
+     fhir:telecom ( [
+       fhir:system [ fhir:v "email" ] ;
+       fhir:value [ fhir:v "John.Moehrke@va.gov" ]
+     ] )
+  ] ) ; # 
+  fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.bodySite"] ; # 
+  fhir:jurisdiction ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "US" ]
+     ] )
+  ] ) ; # 
+  fhir:purpose [ fhir:v "VF_VitalsSite"] ; # 
+  fhir:group ( [
+     fhir:source [ fhir:v "urn:oid:2.16.840.1.113883.6.233"^^xsd:anyURI ] ;
+     fhir:target [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+     fhir:element ( [
+       fhir:code [ fhir:v "4711291" ] ;
+       fhir:display [ fhir:v "ABDOMINAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "818983003" ] ;
+         fhir:display [ fhir:v "Abdomen" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711292" ] ;
+       fhir:display [ fhir:v "ANKLE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "344001" ] ;
+         fhir:display [ fhir:v "Ankle region structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711292" ] ;
+       fhir:display [ fhir:v "ANKLE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "51636004" ] ;
+         fhir:display [ fhir:v "Structure of left ankle" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711292" ] ;
+       fhir:display [ fhir:v "ANKLE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "6685009" ] ;
+         fhir:display [ fhir:v "Structure of right ankle" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711293" ] ;
+       fhir:display [ fhir:v "APICAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "46707002" ] ;
+         fhir:display [ fhir:v "Structure of precordium" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711294" ] ;
+       fhir:display [ fhir:v "AV FISTULA (ARTERIOVENOUS FISTULA)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "128617001" ] ;
+         fhir:display [ fhir:v "Arteriovenous fistula" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711295" ] ;
+       fhir:display [ fhir:v "AXILLARY" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "422543003" ] ;
+         fhir:display [ fhir:v "Structure of axillary fossa" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711295" ] ;
+       fhir:display [ fhir:v "AXILLARY" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "764473004" ] ;
+         fhir:display [ fhir:v "Skin structure of left axilla" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "20437008" ] ;
+         fhir:display [ fhir:v "Structure of left axillary region" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711295" ] ;
+       fhir:display [ fhir:v "AXILLARY" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "764474005" ] ;
+         fhir:display [ fhir:v "Skin structure of right axilla" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "19654004" ] ;
+         fhir:display [ fhir:v "Structure of right axillary region" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711296" ] ;
+       fhir:display [ fhir:v "BILATERAL PERIPHERALS" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "54718008" ] ;
+         fhir:display [ fhir:v "Peripheral pulse, function" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "14414005" ] ;
+         fhir:display [ fhir:v "Peripheral" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "840581000" ] ;
+         fhir:display [ fhir:v "Structure of peripheral artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711297" ] ;
+       fhir:display [ fhir:v "BRACHIAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "17137000" ] ;
+         fhir:display [ fhir:v "Structure of brachial artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711297" ] ;
+       fhir:display [ fhir:v "BRACHIAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "723961002" ] ;
+         fhir:display [ fhir:v "Structure of left brachial artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711297" ] ;
+       fhir:display [ fhir:v "BRACHIAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "723962009" ] ;
+         fhir:display [ fhir:v "Structure of right brachial artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711298" ] ;
+       fhir:display [ fhir:v "CALF" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "53840002" ] ;
+         fhir:display [ fhir:v "Structure of calf of leg" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711298" ] ;
+       fhir:display [ fhir:v "CALF" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "722115008" ] ;
+         fhir:display [ fhir:v "Structure of calf of left lower leg" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711298" ] ;
+       fhir:display [ fhir:v "CALF" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "722116009" ] ;
+         fhir:display [ fhir:v "Structure of calf of right lower leg" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711299" ] ;
+       fhir:display [ fhir:v "CAROTID" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "69105007" ] ;
+         fhir:display [ fhir:v "Carotid artery structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711299" ] ;
+       fhir:display [ fhir:v "CAROTID" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "721028001" ] ;
+         fhir:display [ fhir:v "Structure of left carotid artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711299" ] ;
+       fhir:display [ fhir:v "CAROTID" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "721033002" ] ;
+         fhir:display [ fhir:v "Structure of right carotid artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711300" ] ;
+       fhir:display [ fhir:v "CORE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "276885007" ] ;
+         fhir:display [ fhir:v "OE, not site" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711301" ] ;
+       fhir:display [ fhir:v "DORSALIS PEDIS" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "86547008" ] ;
+         fhir:display [ fhir:v "Structure of dorsalis pedis artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711301" ] ;
+       fhir:display [ fhir:v "DORSALIS PEDIS" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "792817008" ] ;
+         fhir:display [ fhir:v "Structure of left dorsalis pedis artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711301" ] ;
+       fhir:display [ fhir:v "DORSALIS PEDIS" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "792816004" ] ;
+         fhir:display [ fhir:v "Structure of right dorsalis pedis artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711302" ] ;
+       fhir:display [ fhir:v "FEMORAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "7657000" ] ;
+         fhir:display [ fhir:v "Structure of femoral artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711302" ] ;
+       fhir:display [ fhir:v "FEMORAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "113270003" ] ;
+         fhir:display [ fhir:v "Structure of left femoral artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711302" ] ;
+       fhir:display [ fhir:v "FEMORAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "69833005" ] ;
+         fhir:display [ fhir:v "Structure of right femoral artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711303" ] ;
+       fhir:display [ fhir:v "HEAD" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "69536005" ] ;
+         fhir:display [ fhir:v "Head structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4708118" ] ;
+       fhir:display [ fhir:v "HIP" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "29836001" ] ;
+         fhir:display [ fhir:v "Hip region structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4708118" ] ;
+       fhir:display [ fhir:v "HIP" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "287679003" ] ;
+         fhir:display [ fhir:v "Left hip region structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4708118" ] ;
+       fhir:display [ fhir:v "HIP" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "287579007" ] ;
+         fhir:display [ fhir:v "Right hip region structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711304" ] ;
+       fhir:display [ fhir:v "KNEE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "72696002" ] ;
+         fhir:display [ fhir:v "Knee region structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711304" ] ;
+       fhir:display [ fhir:v "KNEE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "82169009" ] ;
+         fhir:display [ fhir:v "Structure of left knee region" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711304" ] ;
+       fhir:display [ fhir:v "KNEE" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "6757004" ] ;
+         fhir:display [ fhir:v "Structure of right knee region" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711305" ] ;
+       fhir:display [ fhir:v "L ARM (LEFT ARM)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "80768000" ] ;
+         fhir:display [ fhir:v "Structure of left upper limb" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711306" ] ;
+       fhir:display [ fhir:v "L LEG (LEFT LEG)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "32153003" ] ;
+         fhir:display [ fhir:v "Structure of left lower limb" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711307" ] ;
+       fhir:display [ fhir:v "LOWER ARM" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "14975008" ] ;
+         fhir:display [ fhir:v "Forearm structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711307" ] ;
+       fhir:display [ fhir:v "LOWER ARM" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "66480008" ] ;
+         fhir:display [ fhir:v "Structure of left forearm" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711307" ] ;
+       fhir:display [ fhir:v "LOWER ARM" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "64262003" ] ;
+         fhir:display [ fhir:v "Structure of right forearm" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711333" ] ;
+       fhir:display [ fhir:v "NECK" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "45048000" ] ;
+         fhir:display [ fhir:v "Neck structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711336" ] ;
+       fhir:display [ fhir:v "ORAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "123851003" ] ;
+         fhir:display [ fhir:v "Mouth region structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711341" ] ;
+       fhir:display [ fhir:v "PERIPHERAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "54718008" ] ;
+         fhir:display [ fhir:v "OE, not body structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711342" ] ;
+       fhir:display [ fhir:v "POPLITEAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "43899006" ] ;
+         fhir:display [ fhir:v "Structure of popliteal artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711342" ] ;
+       fhir:display [ fhir:v "POPLITEAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "25885001" ] ;
+         fhir:display [ fhir:v "Left popliteal artery structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711342" ] ;
+       fhir:display [ fhir:v "POPLITEAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "57832007" ] ;
+         fhir:display [ fhir:v "Structure of right popliteal artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711344" ] ;
+       fhir:display [ fhir:v "POSTERIOR TIBIAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "13363002" ] ;
+         fhir:display [ fhir:v "Structure of posterior tibial artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711344" ] ;
+       fhir:display [ fhir:v "POSTERIOR TIBIAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "214912001" ] ;
+         fhir:display [ fhir:v "Structure of left posterior tibial artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711344" ] ;
+       fhir:display [ fhir:v "POSTERIOR TIBIAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "214811007" ] ;
+         fhir:display [ fhir:v "Structure of right posterior tibial artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711349" ] ;
+       fhir:display [ fhir:v "R ARM (RIGHT ARM)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "6921000" ] ;
+         fhir:display [ fhir:v "Structure of right upper limb" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711350" ] ;
+       fhir:display [ fhir:v "R LEG (RIGHT LEG)" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "62175007" ] ;
+         fhir:display [ fhir:v "Structure of right lower limb" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711351" ] ;
+       fhir:display [ fhir:v "RADIAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "45631007" ] ;
+         fhir:display [ fhir:v "Structure of radial artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711351" ] ;
+       fhir:display [ fhir:v "RADIAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "368504007" ] ;
+         fhir:display [ fhir:v "Structure of left radial artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711351" ] ;
+       fhir:display [ fhir:v "RADIAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "368503001" ] ;
+         fhir:display [ fhir:v "Structure of right radial artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711352" ] ;
+       fhir:display [ fhir:v "RECTAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "34402009" ] ;
+         fhir:display [ fhir:v "Rectum structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711358" ] ;
+       fhir:display [ fhir:v "SKIN" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "39937001" ] ;
+         fhir:display [ fhir:v "Skin structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710824" ] ;
+       fhir:display [ fhir:v "TEMPORAL" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "450721000" ] ;
+         fhir:display [ fhir:v "Structure of temporal region" ] ;
+         fhir:equivalence [ fhir:v "equal" ] ;
+         fhir:comment [ fhir:v "Laterality not modeled in SNOMED CT" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711365" ] ;
+       fhir:display [ fhir:v "THIGH" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "68367000" ] ;
+         fhir:display [ fhir:v "Thigh structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711365" ] ;
+       fhir:display [ fhir:v "THIGH" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "61396006" ] ;
+         fhir:display [ fhir:v "Structure of left thigh" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4711365" ] ;
+       fhir:display [ fhir:v "THIGH" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "11207009" ] ;
+         fhir:display [ fhir:v "Structure of right thigh" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710794" ] ;
+       fhir:display [ fhir:v "TYMPANIC" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "42859004" ] ;
+         fhir:display [ fhir:v "Tympanic membrane structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710794" ] ;
+       fhir:display [ fhir:v "TYMPANIC" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "726562006" ] ;
+         fhir:display [ fhir:v "Structure of left tympanic membrane" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710794" ] ;
+       fhir:display [ fhir:v "TYMPANIC" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "726563001" ] ;
+         fhir:display [ fhir:v "Structure of right tympanic membrane" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710795" ] ;
+       fhir:display [ fhir:v "ULNAR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "44984001" ] ;
+         fhir:display [ fhir:v "Structure of ulnar artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710795" ] ;
+       fhir:display [ fhir:v "ULNAR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "368506009" ] ;
+         fhir:display [ fhir:v "Structure of left ulnar artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710795" ] ;
+       fhir:display [ fhir:v "ULNAR" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "368505008" ] ;
+         fhir:display [ fhir:v "Structure of right ulnar artery" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710796" ] ;
+       fhir:display [ fhir:v "UPPER ARM" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "40983000" ] ;
+         fhir:display [ fhir:v "Structure of upper extremity between shoulder and elbow" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710796" ] ;
+       fhir:display [ fhir:v "UPPER ARM" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "368208006" ] ;
+         fhir:display [ fhir:v "Left upper arm structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710796" ] ;
+       fhir:display [ fhir:v "UPPER ARM" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "368209003" ] ;
+         fhir:display [ fhir:v "Right upper arm structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710822" ] ;
+       fhir:display [ fhir:v "WRIST" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "8205005" ] ;
+         fhir:display [ fhir:v "Wrist region structure" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710822" ] ;
+       fhir:display [ fhir:v "WRIST" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "5951000" ] ;
+         fhir:display [ fhir:v "Structure of left wrist region" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] [
+       fhir:code [ fhir:v "4710822" ] ;
+       fhir:display [ fhir:v "WRIST" ] ;
+       fhir:_target ( [
+         fhir:modifierExtension ( [
+           fhir:url [ fhir:v "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence"^^xsd:anyURI ] ;
+           fhir:value [ fhir:v "equal" ]
+         ] ) ;
+         fhir:code [ fhir:v "9736006" ] ;
+         fhir:display [ fhir:v "Structure of right wrist region" ] ;
+         fhir:equivalence [ fhir:v "equal" ]
+       ] )
+     ] )
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

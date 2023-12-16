@@ -143,7 +143,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.6003505"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2004-09-24T10:32:00Z"
@@ -279,7 +279,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.5335162"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2004-01-21T11:01:00Z"
@@ -415,7 +415,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.4871640"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2003-07-17T10:06:00Z"
@@ -576,7 +576,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.4479146"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2003-01-24T10:08:00Z"
@@ -693,7 +693,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.4218368"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2002-09-23T10:01:00Z"
@@ -829,7 +829,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.3867294"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2002-04-08T11:52:00Z"
@@ -987,7 +987,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.3615701"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2001-12-06T09:58:00Z"
@@ -1104,7 +1104,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.3303294"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2001-07-06T13:04:00Z"
@@ -1262,7 +1262,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.3122812"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2001-03-22T10:26:00Z"
@@ -1398,7 +1398,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.3011573"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2001-01-11T09:55:00Z"
@@ -1496,7 +1496,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.2982650"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2000-12-14T09:05:00Z"
@@ -1613,7 +1613,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.2870656"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2000-09-14T13:00:00Z"
@@ -1749,7 +1749,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.2866199"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2000-09-11T13:29:00Z"
@@ -1828,7 +1828,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.2841125"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2000-08-17T01:00:00Z"
@@ -1945,7 +1945,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.2807290"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "2000-07-18T13:21:00Z"
@@ -2280,7 +2280,7 @@ Usage: #example
 * identifier[TOid].value = "VitalSignTO.2449384"
 * status = #final
 * category[VSCat] = $observation-category#vital-signs
-* code = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
+* code.coding[pain] = $loinc#72514-3 "Pain severity - 0-10 verbal numeric rating [Score] - Reported"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = "1999-08-09T13:13:00Z"

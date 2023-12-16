@@ -43,12 +43,6 @@
     </sch:rule>
   </sch:pattern>
   <sch:pattern>
-    <sch:title>f:DocumentReference/f:content/f:attachment</sch:title>
-    <sch:rule context="f:DocumentReference/f:content/f:attachment">
-      <sch:assert test="count(f:creation) &lt;= 0">creation: maximum cardinality of 'creation' is 0</sch:assert>
-    </sch:rule>
-  </sch:pattern>
-  <sch:pattern>
     <sch:title>f:DocumentReference/f:context</sch:title>
     <sch:rule context="f:DocumentReference/f:context">
       <sch:assert test="count(f:encounter) &lt;= 0">encounter: maximum cardinality of 'encounter' is 0</sch:assert>

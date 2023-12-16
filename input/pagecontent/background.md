@@ -115,6 +115,8 @@ General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes) Mapping 
   - [Examples](StructureDefinition-VA.MHV.PHR.vitalsBP-examples.html)
 - Additional specifics for [Pain Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsPain.html)
   - [Examples](StructureDefinition-VA.MHV.PHR.vitalsPain-examples.html)
+- Additional specifics for [Pulse-OX Vital-Signs](StructureDefinition-VA.MHV.PHR.vitalsOx.html)
+  - [Examples](StructureDefinition-VA.MHV.PHR.vitalsOx-examples.html)
 - other [Examples](StructureDefinition-VA.MHV.PHR.vitals-examples.html)
 
 ### in progress

@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "1"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.8"] ; # 
+  fhir:version [ fhir:v "0.2.9"] ; # 
   fhir:name [ fhir:v "VAMHVFHIRPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-11-30T14:00:30-06:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-12-15T17:23:12-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -2042,6 +2042,21 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Observation" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Observation/ex-MHV-oximetry-1> ;
+         fhir:reference [ fhir:v "Observation/ex-MHV-oximetry-1" ]
+       ] ;
+       fhir:name [ fhir:v "Example of an MHV heartRate R4 observation" ] ;
+       fhir:description [ fhir:v "Heart Rate holding typical values" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Patient" ]
        ] ) ;
        fhir:reference [
@@ -2402,6 +2417,36 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/ex-MHV-immunization-3> ;
+         fhir:reference [ fhir:v "Immunization/ex-MHV-immunization-3" ]
+       ] ;
+       fhir:name [ fhir:v "Immunization 3" ] ;
+       fhir:description [ fhir:v "Immunization given in 1980" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Immunization" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Immunization/ex-MHV-immunization-4> ;
+         fhir:reference [ fhir:v "Immunization/ex-MHV-immunization-4" ]
+       ] ;
+       fhir:name [ fhir:v "Immunization 4" ] ;
+       fhir:description [ fhir:v "Immunization given in 2012-01-02" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
@@ -2434,6 +2479,42 @@
        ] ;
        fhir:name [ fhir:v "Known Note types" ] ;
        fhir:description [ fhir:v "Note types" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsCodes> ;
+         fhir:reference [ fhir:v "ConceptMap/VF-VitalsCodes" ]
+       ] ;
+       fhir:name [ fhir:v "Map between Vital Sign ObservationTypeTO.name to Loinc Code" ] ;
+       fhir:description [ fhir:v "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/DrugUcumCodes> ;
+         fhir:reference [ fhir:v "ConceptMap/DrugUcumCodes" ]
+       ] ;
+       fhir:name [ fhir:v "Mapping from Vista used drug units string to formal UCUM codes" ] ;
+       fhir:description [ fhir:v "Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.\n\n- DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/LabUcumCodes> ;
+         fhir:reference [ fhir:v "ConceptMap/LabUcumCodes" ]
+       ] ;
+       fhir:name [ fhir:v "Mapping from Vista used lab units string to formal UCUM codes" ] ;
+       fhir:description [ fhir:v "Vista units are close but often not exactly correct." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -2731,6 +2812,21 @@
        ] ;
        fhir:name [ fhir:v "Patient TESTFIVE L, MHVSYSTEST" ] ;
        fhir:description [ fhir:v "This example is derived off of a mock patient" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/9204> ;
+         fhir:reference [ fhir:v "Patient/9204" ]
+       ] ;
+       fhir:name [ fhir:v "Patient used for Immunization testing" ] ;
+       fhir:description [ fhir:v "Immunization testng patient" ] ;
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient>
@@ -4256,6 +4352,18 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx> ;
+         fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.vitalsOx" ]
+       ] ;
+       fhir:name [ fhir:v "VA MHV PHR Pulse Oximetry Vital-Signs" ] ;
+       fhir:description [ fhir:v "A profile on the Observation resource for MHV PHR exposing Pluse Oximetry Vital-Signs using FHIR API.\n\nNote that VIA does not provide us the supplemental O2 concentration or flowrate" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging> ;
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.imaging" ]
        ] ;
@@ -4304,11 +4412,71 @@
          fhir:value [ fhir:v "ConceptMap" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/ObservationTypeTOVsLoincCode> ;
-         fhir:reference [ fhir:v "ConceptMap/ObservationTypeTOVsLoincCode" ]
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsDevice> ;
+         fhir:reference [ fhir:v "ConceptMap/VF-VitalsDevice" ]
        ] ;
-       fhir:name [ fhir:v "Vital Sign ObservationTypeTO.name to Loinc Code" ] ;
-       fhir:description [ fhir:v "Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code." ] ;
+       fhir:name [ fhir:v "Vitals Device used to SNOMED code" ] ;
+       fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[observation-deviceCode].valueCodeableConcept" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsLaterality> ;
+         fhir:reference [ fhir:v "ConceptMap/VF-VitalsLaterality" ]
+       ] ;
+       fhir:name [ fhir:v "Vitals Laterality used to SNOMED code" ] ;
+       fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Laterality Observation" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsMethod> ;
+         fhir:reference [ fhir:v "ConceptMap/VF-VitalsMethod" ]
+       ] ;
+       fhir:name [ fhir:v "Vitals Method used to SNOMED code" ] ;
+       fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.method" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsPosition> ;
+         fhir:reference [ fhir:v "ConceptMap/VF-VitalsPosition" ]
+       ] ;
+       fhir:name [ fhir:v "Vitals Position used to SNOMED code" ] ;
+       fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[bodyPosition].valueCodeableConcept" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsUnits> ;
+         fhir:reference [ fhir:v "ConceptMap/VF-VitalsUnits" ]
+       ] ;
+       fhir:name [ fhir:v "Vitals qualifier Units used" ] ;
+       fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string when a units of measure should be dropped" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsSite> ;
+         fhir:reference [ fhir:v "ConceptMap/VF-VitalsSite" ]
+       ] ;
+       fhir:name [ fhir:v "Vitals Site used to SNOMED code" ] ;
+       fhir:description [ fhir:v "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.bodySite" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

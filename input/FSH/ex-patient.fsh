@@ -293,3 +293,17 @@ Usage: #example
 * identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[PatientId].value = "27659"
 * identifier[PatientId].use = #usual
+
+/* used in immunization testing */
+Instance: 9204
+InstanceOf: MHVpatient
+Title: "Patient used for Immunization testing"
+Description: "Immunization testng patient"
+Usage: #example
+* name.given[+] = "unknown"
+* name.family = "test"
+* birthDate = "1000-01-01"
+* gender = #unknown
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "9204"
+* identifier[PatientId].use = #usual
