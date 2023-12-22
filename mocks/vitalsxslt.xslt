@@ -46,6 +46,9 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     <xsl:when test="type/name = 'PAIN'">
                         <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
                     </xsl:when>
+                    <xsl:when test="type/name = 'PULSE OXIMETRY'">
+                        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx"/>
+                    </xsl:when>
                     <xsl:otherwise>
                         <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"/>
                     </xsl:otherwise>
@@ -75,7 +78,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </xsl:if>
 
 <!-- The following two extensions are used to enable the conversion to FSH resources - see mock-images.fsh -->
-<!--
+<!-- 
 <extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
 <valueString>
   <xsl:attribute name="value">
@@ -90,7 +93,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
     </xsl:attribute>
 </valueMarkdown>
 </extension>
--->
+ -->
                 <identifier>
                     <use value="usual"/>
                     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!-- hack for station 989 -->
@@ -161,6 +164,13 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                             <system value="http://loinc.org"/>
                             <code value="8310-5"/>
                             <display value="Body temperature"/>
+                        </coding>
+                     </xsl:when>
+                     <xsl:when test="type/name = 'PULSE OXIMETRY'">
+                        <coding>
+                            <system value="http://loinc.org"/>
+                            <code value="2708-6"/>
+                            <display value="Oxygen saturation in Arterial blood"/>
                         </coding>
                      </xsl:when>
                     </xsl:choose>
@@ -244,40 +254,77 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                      (type/name = 'WEIGHT') or
                      (type/name = 'PULSE') or
                      (type/name = 'RESPIRATION') or
-                     (type/name = 'TEMPERATURE')
+                     (type/name = 'PULSE OXIMETRY') or
+                     (type/name = 'TEMPERATURE') or
+                     (type/name = 'CIRCUMFERENCE/GIRTH')
                      ">
-                        <valueQuantity>
-                            <value>
-                                <xsl:attribute name="value">
-                                    <xsl:value-of select="value1"/>
-                                </xsl:attribute>
-                            </value>
-                            <system value="http://unitsofmeasure.org"/>
-                            <xsl:choose> <!-- some vista ucum units are not proper -->
-                            <xsl:when test="units = 'in'">
-                                <code value="[in_i]"/>
-                            </xsl:when>
-                            <xsl:when test="units = 'lb'">
-                                <code value="[lb_av]"/>
+                     <xsl:choose>
+                        <xsl:when test="number(value1)">
+                            <valueQuantity>
+                                <value>
+                                    <xsl:attribute name="value">
+                                        <xsl:value-of select="value1"/>
+                                    </xsl:attribute>
+                                </value>
+                                <system value="http://unitsofmeasure.org"/>
+                                <xsl:choose> <!-- some vista ucum units are not proper -->
+                                <xsl:when test="units = 'in'">
+                                    <unit value="inches"/>
+                                    <code value="[in_i]"/>
+                                </xsl:when>
+                                <xsl:when test="units = 'lb'">
+                                    <unit value="pounds"/>
+                                    <code value="[lb_av]"/>
+                                </xsl:when>
+                                <xsl:when test="units = 'F'">
+                                    <unit value="F"/>
+                                    <code value="[degF]"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <unit>
+                                        <xsl:attribute name="value">
+                                            <xsl:value-of select="units"/>
+                                        </xsl:attribute>
+                                    </unit>
+                                    <code>
+                                    <xsl:attribute name="value">
+                                        <xsl:value-of select="units"/>
+                                    </xsl:attribute>
+                                    </code>
+                                </xsl:otherwise>
+                                </xsl:choose>
+                            </valueQuantity>
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <dataAbsentReason>
+                                <coding>
+                                    <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+                                    <code value="unknown"/>
+                                </coding>
+                            </dataAbsentReason>
+                        </xsl:otherwise>
+                    </xsl:choose>
+                </xsl:when>
+                    <xsl:when test="type/name = 'PAIN'">
+                        <xsl:choose>
+                            <xsl:when test="number(value1)">
+                                <_valueInteger>
+                                    <value>
+                                        <xsl:attribute name="value">
+                                            <xsl:value-of select="value1"/>
+                                        </xsl:attribute>
+                                    </value>
+                                </_valueInteger>  
                             </xsl:when>
                             <xsl:otherwise>
-                                <code>
-                                  <xsl:attribute name="value">
-                                      <xsl:value-of select="units"/>
-                                  </xsl:attribute>
-                                </code>
+                                <dataAbsentReason>
+                                    <coding>
+                                        <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+                                        <code value="asked-declined"/>
+                                    </coding>
+                                </dataAbsentReason>
                             </xsl:otherwise>
-                            </xsl:choose>
-                        </valueQuantity>
-                    </xsl:when>
-                    <xsl:when test="type/name = 'PAIN'">
-                        <valueQuantity>
-                            <value>
-                                <xsl:attribute name="value">
-                                    <xsl:value-of select="value1"/>
-                                </xsl:attribute>
-                            </value>
-                        </valueQuantity>
+                        </xsl:choose>
                     </xsl:when>
                     <xsl:otherwise>
                         <xsl:choose>
@@ -288,6 +335,11 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                                             <xsl:value-of select="value1"/>
                                         </xsl:attribute>
                                     </value>
+                                    <unit>
+                                        <xsl:attribute name="value">
+                                            <xsl:value-of select="units"/>
+                                        </xsl:attribute>
+                                    </unit>                                
                                     <system value="http://unitsofmeasure.org"/>
                                     <code>
                                         <xsl:attribute name="value">
@@ -346,7 +398,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                             <coding>
                                 <system value="http://loinc.org"/>
                                 <code value="8462-4"/>
-                            <display value="Diastolic blood pressure"/>
+                                <display value="Diastolic blood pressure"/>
                             </coding>
                         </code>
                         <valueQuantity>
@@ -365,6 +417,32 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                         </valueQuantity>
                     </component>
                 </xsl:if>
+
+                <xsl:for-each select="qualifierItems/qualifier">
+                    <component>
+                        <code>
+                            <coding>
+                                <system value="urn:oid:2.16.840.1.113883.6.233"/>
+                                <code>
+                                    <xsl:attribute name="value">
+                                        <xsl:value-of select="id"/>
+                                    </xsl:attribute>
+                                </code>
+                                <display>
+                                    <xsl:attribute name="value">
+                                        <xsl:value-of select="name"/>
+                                    </xsl:attribute>    
+                                </display>
+                            </coding>
+                        </code>
+                        <dataAbsentReason>
+                            <coding>
+                                <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+                                <code value="not-applicable"/>
+                            </coding>
+                        </dataAbsentReason>
+                    </component>
+                </xsl:for-each>
 
                 </Observation>
             </resource>

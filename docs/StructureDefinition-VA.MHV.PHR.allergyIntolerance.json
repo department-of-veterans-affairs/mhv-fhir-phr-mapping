@@ -20,11 +20,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance",
-  "version" : "0.2.9",
+  "version" : "0.2.10",
   "name" : "MHVallergyIntolerance",
   "title" : "VA MHV PHR Allergy and Intolerance",
   "status" : "active",
-  "date" : "2023-12-15T17:23:12-06:00",
+  "date" : "2023-12-22T09:54:24-06:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -66,7 +66,8 @@
   {
     "identity" : "AllergyIntolerance-Mapping",
     "uri" : "intoleranceCondition",
-    "name" : "HDR Allergy to mhv-fhir-phr"
+    "name" : "HDR Allergy to mhv-fhir-phr",
+    "comment" : "Informative map to available elements in MHV FHIR API"
   },
   {
     "identity" : "AllergyIntolerance-Old-Mapping",
@@ -177,7 +178,8 @@
       },
       {
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "HDR Allergy"
+        "map" : "HDR Allergy",
+        "comment" : "Vista FileMan"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -442,7 +444,8 @@
       "isModifier" : false,
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "intoleranceCondition.informationSourceCategory"
+        "map" : "intoleranceCondition.informationSourceCategory",
+        "comment" : "120.8-6 OBSERVED/HISTORICAL"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -1357,7 +1360,8 @@
       },
       {
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "`active` if not entered-in-error"
+        "map" : "`active` if not entered-in-error",
+        "comment" : "120.8-19 VERIFIED"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -1412,7 +1416,8 @@
       },
       {
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "would indicate `entered-in-error`"
+        "map" : "would indicate `entered-in-error`",
+        "comment" : "120.8-22 ENTERED IN ERROR"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -1518,7 +1523,8 @@
       },
       {
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "~intoleranceCondition.allergyType.code"
+        "map" : "~intoleranceCondition.allergyType.code",
+        "comment" : "120.8-3.1 ALLERGY TYPE"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -1787,7 +1793,8 @@
       },
       {
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "intoleranceCondition.agent.code"
+        "map" : "intoleranceCondition.agent.code",
+        "comment" : "120.8-.02 REACTANT"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -1844,7 +1851,8 @@
       },
       {
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "GetPatient(intoleranceCondition.patient)"
+        "map" : "GetPatient(intoleranceCondition.patient)",
+        "comment" : "120.8-.01 PATIENT"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -2015,7 +2023,8 @@
       },
       {
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "~intoleranceCondition.observationTime.literal"
+        "map" : "~intoleranceCondition.observationTime.literal",
+        "comment" : "120.8-9 HISTORICAL DATE/TIME OF EVENT"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -2561,7 +2570,8 @@
       },
       {
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "intoleranceCondition.commentEvents"
+        "map" : "intoleranceCondition.commentEvents",
+        "comment" : "120.8-26 COMMENTS"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -2998,7 +3008,8 @@
       },
       {
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "intoleranceCondition.reaction.reaction"
+        "map" : "intoleranceCondition.reaction.reaction",
+        "comment" : "120.8-10 REACTIONS"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3643,7 +3654,8 @@
       "path" : "AllergyIntolerance",
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "HDR Allergy"
+        "map" : "HDR Allergy",
+        "comment" : "Vista FileMan"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3675,7 +3687,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "intoleranceCondition.informationSourceCategory"
+        "map" : "intoleranceCondition.informationSourceCategory",
+        "comment" : "120.8-6 OBSERVED/HISTORICAL"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3768,7 +3781,8 @@
       "path" : "AllergyIntolerance.clinicalStatus",
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "`active` if not entered-in-error"
+        "map" : "`active` if not entered-in-error",
+        "comment" : "120.8-19 VERIFIED"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3781,7 +3795,8 @@
       "short" : "May indicate entered-in-error",
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "would indicate `entered-in-error`"
+        "map" : "would indicate `entered-in-error`",
+        "comment" : "120.8-22 ENTERED IN ERROR"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3798,7 +3813,8 @@
       },
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "~intoleranceCondition.allergyType.code"
+        "map" : "~intoleranceCondition.allergyType.code",
+        "comment" : "120.8-3.1 ALLERGY TYPE"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3821,7 +3837,8 @@
       "min" : 1,
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "intoleranceCondition.agent.code"
+        "map" : "intoleranceCondition.agent.code",
+        "comment" : "120.8-.02 REACTANT"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3833,7 +3850,8 @@
       "path" : "AllergyIntolerance.patient",
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "GetPatient(intoleranceCondition.patient)"
+        "map" : "GetPatient(intoleranceCondition.patient)",
+        "comment" : "120.8-.01 PATIENT"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3873,7 +3891,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "~intoleranceCondition.observationTime.literal"
+        "map" : "~intoleranceCondition.observationTime.literal",
+        "comment" : "120.8-9 HISTORICAL DATE/TIME OF EVENT"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3942,7 +3961,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "intoleranceCondition.commentEvents"
+        "map" : "intoleranceCondition.commentEvents",
+        "comment" : "120.8-26 COMMENTS"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",
@@ -3991,7 +4011,8 @@
       "max" : "1",
       "mapping" : [{
         "identity" : "AllergyIntolerance-Mapping",
-        "map" : "intoleranceCondition.reaction.reaction"
+        "map" : "intoleranceCondition.reaction.reaction",
+        "comment" : "120.8-10 REACTIONS"
       },
       {
         "identity" : "AllergyIntolerance-Old-Mapping",

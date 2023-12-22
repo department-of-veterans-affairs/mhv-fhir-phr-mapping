@@ -8,6 +8,26 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages)
 
+### 0.2.10
+
+2023-12-22
+
+- include CSV for the VF_ concept maps
+- Vital-Signs
+  - PAIN is not a us-core vital-sign, and now uses valueInteger as there is no useful units of measure for a score 0-10
+  - added examples with component.code of qualifiers
+    - .bodySite, .method, extension bodyPosition, and extension deviceCode -- are populated based on ConceptMap for each element, using string search (VUID in the ConceptMap is not at the code level)
+  - recognize some ucum (SI unit) codes that KBS doesn't recognize - seems VIA sends us SI.
+  - noted that there can be an empty .value[x], where there then should be a .dataAbsentReason
+- Allergies
+  - add Vista FileMan elements to mapping (proposed)
+  - add note on API side that the .reaction.manifestation.coding may be SNOMED-CT
+- Conditions
+  - added Vista FileMan elements to mapping (proposed)
+  - add link to user requirements
+- Immunizations - moved to FMM 4
+- Notes - moved to FMM 3
+
 ### 0.2.9
 
 2023-12-15
@@ -142,7 +162,7 @@ This is mostly cleanup of documentation:
 - add link to this readme.md from the index.html
 - changed patient-0 to us-core so that it does have some profile. This example is not intended to express typical or even possible. It is informative only.
 - allergy - add old maps with details into eVault PHR element, and FileMan element (guess)
-- allergy - do not populate .code.coding with drugClass, as this data is not appropriate in FHIR (Jay)
+- allergy - do not populate .code.coding with drugClass, as this data is not appropriate in FHIR. the concepts recorded are too broad to be actionable like FHIR would present them. Thus it may appear the patient is allergic to a whole class of drugs. (Jay)
 - condition - add old maps with details into eVault PHR element, and FileMan element (guess)
 - conditions - algorithm for <icd> to determine if it is ICD-9 or ICD-10
 - vitals - put location into extension on performer

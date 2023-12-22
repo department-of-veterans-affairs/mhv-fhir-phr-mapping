@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="5d2c473d-9809-4b02-b413-64c09d8845fc"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Observation</b><a name="5d2c473d-9809-4b02-b413-64c09d8845fc"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Observation &quot;5d2c473d-9809-4b02-b413-64c09d8845fc&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.vitalsPain.html">VA MHV PHR Vital-Signs for PAIN</a></p></div><p><b>identifier</b>: id: VitalSignTO.6544819 (use: USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: PAIN <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#72514-3 &quot;Pain severity - 0-10 verbal numeric rating [Score] - Reported&quot;)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-3.html">Patient/ex-MHV-patient-3</a> &quot; CASEYLAST&quot;</p><p><b>effective</b>: 2023-12-12 09:55:14+0000</p><p><b>performer</b>: <span>: CARDIO RESEARCH</span></p><p><b>dataAbsentReason</b>: Asked But Declined <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-data-absent-reason.html">DataAbsentReason</a>#asked-declined)</span></p><hr/><blockquote><p><b>Generated Narrative: Location #location-3713</b><a name="location-3713"> </a></p><p><b>identifier</b>: id: HospitalLocationTO.3713 (use: USUAL)</p><p><b>name</b>: 000-EYE NON TREATMENT (LOC)</p></blockquote></div>
+  </text>
+  <contained>
+    <Location>
+      <id value="location-3713"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="HospitalLocationTO.3713"/>
+      </identifier>
+      <name value="000-EYE NON TREATMENT (LOC)"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="VitalSignTO.6544819"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+      <code value="vital-signs"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="72514-3"/>
+      <display value="Pain severity - 0-10 verbal numeric rating [Score] - Reported"/>
+    </coding>
+    <text value="PAIN"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-3"/>
+  </subject>
+  <effectiveDateTime value="2023-12-12T09:55:14Z"/>
+  <performer>
+    <extension url="http://hl7.org/fhir/StructureDefinition/alternate-reference">
+      <valueReference>
+        <reference value="#location-3713"/>
+      </valueReference>
+    </extension>
+    <display value="CARDIO RESEARCH"/>
+  </performer>
+  <dataAbsentReason>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/data-absent-reason"/>
+      <code value="asked-declined"/>
+    </coding>
+  </dataAbsentReason>
+</Observation>

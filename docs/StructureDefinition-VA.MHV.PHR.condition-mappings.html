@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR problems - Mappings - MyHealtheVet PHR FHIR API v0.2.9</title>
+    <title>VA MHV PHR problems - Mappings - MyHealtheVet PHR FHIR API v0.2.10</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.2.9 - ci-build
+            <span style="display:inline-block;">0.2.10 - ci-build
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.9) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.2.10) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -406,30 +406,43 @@ OR &lt; 272379006 |Event|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>408729009</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>246090004</td> </tr>
 </table>
-<a name="Condition-Mapping"> </a><h3>Mappings for VIA to mhv-fhir-phr (ProblemTO)</h3><table class="grid">
+<a name="Condition-Mapping"> </a><h3>Mappings for VIA to mhv-fhir-phr (ProblemTO)</h3><p>Informative map to available elements in MHV FHIR API</p><table class="grid">
  <tr><td colspan="3"><b>MHVcondition</b></td></tr>
- <tr><td>Condition</td><td>ProblemTO</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ProblemTO.id}</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>ProblemTO.status==ACTIVE &amp; !ProblemTO.removed ? `#active` : todo</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>ProblemTO.verified ? `#confirmed` : `#unconfirmed`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`problem-list-item`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>ICD-9 # ProblemTO.icd</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ProblemTO.type.name</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;onset[x]</td><td>ProblemTO.onsetDate</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;abatement[x]</td><td>ProblemTO.abatementDateTime</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>ProblemTO.modifiedDate</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td>GetPractitioner(ProblemTO.observer)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;evidence</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail</td><td>~ProblemTO.location[hospitalLocationTO], ~ProblemTO.serviceConnected</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>ProblemTO.comments + ProblemTO.comment</td> </tr>
+ <tr><td>Condition</td><td>ProblemTO</td><td><p>Vista FileMan</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {ProblemTO.id}</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>ProblemTO.status==ACTIVE &amp; !ProblemTO.removed ? `#active` : `#inactive`</td><td><p>9000011-.12 STATUS</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>ProblemTO.verified ? `#confirmed` : `#unconfirmed`</td><td><p>???</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`problem-list-item`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>ICD-9 # ProblemTO.icd</td><td><p>9000011-.01 DIAGNOSIS</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>ProblemTO.type.name</td><td><p>9000011-1.01 PROBLEM</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td><td><p>9000011-.02 PATIENT NAME</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;onset[x]</td><td>ProblemTO.onsetDate</td><td><p>9000011-.13 DATE OF ONSET</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;abatement[x]</td><td>ProblemTO.abatementDateTime</td><td><p>9000011-1.07 DATE RESOLVED</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>ProblemTO.modifiedDate</td><td><p>9000011-1.09 DATE RECORDED</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td>GetPractitioner(ProblemTO.observer)</td><td><p>??? 9000011-1.03 ENTERED BY,  -1.04 RECORDING PROVIDER</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;evidence</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detail</td><td>~ProblemTO.location[hospitalLocationTO], ~ProblemTO.serviceConnected</td><td><p>??? 9000011-.06 FACILITY, 1.08 CLINIC</p>
+, <p>9000011-1.1 SERVICE CONNECTED</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>ProblemTO.comments + ProblemTO.comment</td><td><p>9000011-.05 PROVIDER NARRATIVE</p>
+</td> </tr>
 </table>
-<a name="Condition-Old-Mapping"> </a><h3>Mappings for eVault-PHR to MHV-PHR (ProblemTO)</h3><table class="grid">
+<a name="Condition-Old-Mapping"> </a><h3>Mappings for eVault-PHR to MHV-PHR (ProblemTO)</h3><p>Informative map to include only the elements available in eVault PHR</p><table class="grid">
  <tr><td colspan="3"><b>MHVcondition</b></td></tr>
  <tr><td>Condition</td><td>ProblemTO</td><td><p>eVault</p>
 </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>ProblemTO.status==ACTIVE &amp; !ProblemTO.removed ? `#active` : todo</td><td><p>STATUS</p>
+ <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>ProblemTO.status==ACTIVE &amp; !ProblemTO.removed ? `#active` : `#inactive`</td><td><p>STATUS</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`problem-list-item`</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
@@ -518,7 +531,7 @@ OR &lt; 272379006 |Event|</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.9 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 15, 2023 17:23-0600">2023-12-15</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.2.10 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Dec 22, 2023 09:54-0600">2023-12-22</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

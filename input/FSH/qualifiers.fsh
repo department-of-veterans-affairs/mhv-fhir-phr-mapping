@@ -1,7 +1,7 @@
 Instance: VF-VitalsDevice
 InstanceOf: ConceptMap
 Title:      "Vitals Device used to SNOMED code"
-Description: "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[observation-deviceCode].valueCodeableConcept"
+Description: "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.extension[observation-deviceCode].valueCodeableConcept"
 Usage: #definition
 * url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsDevice"
 * name =  "VF_VitalsDevice"
@@ -10,7 +10,7 @@ Usage: #definition
 * status = #active
 * date = 2023-12-15
 * publisher = "VA KBS"
-* description = "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[observation-deviceCode].valueCodeableConcept"
+* description = "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.extension[observation-deviceCode].valueCodeableConcept"
 * group.source = VUID
 * group.target  = SCT
 * purpose = "VF_VitalsDevice"
@@ -348,7 +348,7 @@ Usage: #definition
 Instance: VF-VitalsPosition
 InstanceOf: ConceptMap
 Title:      "Vitals Position used to SNOMED code"
-Description: "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[bodyPosition].valueCodeableConcept"
+Description: "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.extension[bodyPosition].valueCodeableConcept"
 Usage: #definition
 * url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsPosition"
 * name =  "VF_VitalsPosition"
@@ -357,7 +357,7 @@ Usage: #definition
 * status = #active
 * date = 2023-12-15
 * publisher = "VA KBS"
-* description = "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation[bodyPosition].valueCodeableConcept"
+* description = "Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.extension[bodyPosition].valueCodeableConcept"
 * group.source = VUID
 * group.target  = SCT
 * purpose = "VF_VitalsPosition"

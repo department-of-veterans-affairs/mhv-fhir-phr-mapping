@@ -3,6 +3,7 @@
 - maps to [ProblemTO](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl) schema. 
 - [mapping to VIA](StructureDefinition-VA.MHV.PHR.condition-mappings.html#mappings-for-via-to-mhv-fhir-phr-problemto)
 - [Vivian Condition](https://vivian.worldvista.org/dox/Global_XkFVUE5QUk9C.html)
+- [User Requirements for Conditions](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/products/health-care/digital-health-modernization/mhv-to-va.gov/medical-records/data-domains/health-issues/health-issues-brief.md)
 - based on US-Core for Condition Resource profile
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition` to indicate the intent to be compliant with this profile
 - Presume we will not expose those that are ProblemTO.removed = true, but we should update our FHIR database in case the previous was recorded.
@@ -34,3 +35,5 @@ TODO
 - can .status other than "ACTIVE". Might it be "INACTIVE" being a map to .12
 - verificationStatus - might turn into a don't map as we are unclear
 - is the modifiedDate the right one to keep? as KBS seems to think this is a last updated concept, not when it was first recorded.
+- review source-code
+

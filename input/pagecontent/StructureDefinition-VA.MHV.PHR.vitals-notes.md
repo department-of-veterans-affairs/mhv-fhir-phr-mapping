@@ -1,4 +1,6 @@
-- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml) 
+- Mock Data samples
+  - The [mock 1 example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml)
+  - The [mock 2 example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/1013699421V762086_Vitals.xml)
 - maps to [VitalSignTO](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl) schema.
 - Mapping from [VitalSignTo](StructureDefinition-VA.MHV.PHR.vitals-mappings.html#mappings-for-via-to-mhv-fhir-phr-vitalsignto)
 - [Vivian table 120.5](https://vivian.worldvista.org/dox/Global_XkdNUigxMjAuNQ==.html)
@@ -32,7 +34,7 @@
   - Those with units use `.valueQuantity` else `.valueString`
 - value units
   - There is a units within the data, and it seems mostly to be the proper code from the proper code system UCUM
-  - some units are not proper formal UCUM, so I had to fix `lb` and `in` - [Utility UCUM](utility.html)
+  - some units are not proper formal UCUM, so I had to fix `lb`, `F`, `cmH2O`, and `in` - [Utility UCUM](utility.html#ucum-code)
   - populate the valueQuantity.units with the value from VIA feed
   - populate the valueQuantity.code with corrected ucum code value
 - populate `effectiveDateTime`
@@ -66,9 +68,9 @@
 - qualifiers
   - lookup in following ConceptMap for:
     - `.bodySite` = [ConceptMap VF_VitalSite](ConceptMap-VF-VitalsSite.html)
-    - `.device` =  [ConceptMap VF_VitalDevice](ConceptMap-VF-VitalsDevice.html)
+    - `.extension[observation-deviceCode]` =  [ConceptMap VF_VitalDevice](ConceptMap-VF-VitalsDevice.html)
     - `.method` =  [ConceptMap VF_VitalMethod](ConceptMap-VF-VitalsMethod.html)
-    - `.extension[position]` =  [ConceptMap VF_VitalPosition](ConceptMap-VF-VitalsPosition.html)
+    - `.extension[observation-bodyPosition]` =  [ConceptMap VF_VitalPosition](ConceptMap-VF-VitalsPosition.html)
     - Can record 0..1; so if find more than one of these, place the other into .component
   - lookup in following ConceptMap and place into .component
     - [ConceptMap VF_VitalLaterality](ConceptMap-VF-VitalsSite.html)
@@ -114,7 +116,10 @@ also:
 - the code should be defensive for anything beyond the 6 defined domains, such as a robust map anything else generally to valueString or valueQuantity
 - code mapping may need to be confirmed that the code/map is doing what is defined here.
 - need to implement solution for entered-in-error, Likely wipe-and-replace typical of VIA
-- should to add support for qualifiers
-- should add conversion of ucum to fixed ucum codes from KBS
+- should to add support for qualifiers and their conversion to bodySite, deviceCode, method, and bodyPosition
+- should add conversion of ucum to [fixed ucum codes](utility.html#ucum-code)
+- Pain is now an valueInteger
 
 #### TODO
+
+none identified

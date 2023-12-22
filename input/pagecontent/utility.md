@@ -71,11 +71,11 @@ Beyond MVP we could look to add a method to convert these enum or strings to a s
 
 ##### Formal code systems of interest
 
-- SCT = http://snomed.info/sct
-- UCUM = http://unitsofmeasure.org
-- LOINC = http://loinc.org
-- ICD = http://terminology.hl7.org/CodeSystem/icd9cm
-- CPT = http://www.ama-assn.org/go/cpt
+- SCT = `http://snomed.info/sct`
+- UCUM = http://unitsofmeasure.org`
+- LOINC = `http://loinc.org`
+- ICD = `http://terminology.hl7.org/CodeSystem/icd9cm`
+- CPT = `http://www.ama-assn.org/go/cpt`
 
 ##### VA specific code systems
 
@@ -89,8 +89,8 @@ These are systems I have used:
 - http://va.gov/systems/99VA60
 - http://va.gov/systems/99VA61
 - http://va.gov/systems/99VA64
-- http://va.gov/systems/HL70070
-- http://va.gov/systems/mpiPID
+- http://va.gov/systems/HL70070 --> `http://terminology.hl7.org/CodeSystem/v2-0487`
+- http://va.gov/systems/mpiPID --> `urn:oid:2.16.840.1.113883.4.349`
 - http://va.gov/systems/localPID
 - VUID = urn:oid:2.16.840.1.113883.6.233
 
@@ -108,6 +108,19 @@ Some of the codes used in Vista are not proper codes.
   - From [KBS provided DrugUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/DrugUcum.csv)
 - [Lab](ConceptMap-LabUcumCodes.html)
   - From [KBS provided LabUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/LabUcum.csv)
+- Other - likely VIA returns SI units that the above ConceptMaps do not include
+
+##### UCUM SI codes
+
+VIA seems to give us SI units or other units not found in the KBS cross reference above.
+
+| VIA code | Proper UCUM |
+|------------|-------------|
+`in` | `[in_i]`
+`lb` | `[lb_av]`
+`F` | `[degF]`
+`cmH2O` | `cm[H2O]`
+{: .grid}
 
 #### Identifier
 

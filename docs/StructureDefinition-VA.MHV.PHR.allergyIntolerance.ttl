@@ -29,11 +29,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.9"] ; # 
+  fhir:version [ fhir:v "0.2.10"] ; # 
   fhir:name [ fhir:v "MHVallergyIntolerance"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Allergy and Intolerance"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-12-15T17:23:12-06:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-12-22T09:54:24-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -71,7 +71,8 @@
   ] [
      fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
      fhir:uri [ fhir:v "intoleranceCondition"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "HDR Allergy to mhv-fhir-phr" ]
+     fhir:name [ fhir:v "HDR Allergy to mhv-fhir-phr" ] ;
+     fhir:comment [ fhir:v "Informative map to available elements in MHV FHIR API" ]
   ] [
      fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
      fhir:uri [ fhir:v "eVaultPHR"^^xsd:anyURI ] ;
@@ -193,7 +194,8 @@
          fhir:map [ fhir:v "AllergyIntolerance" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "HDR Allergy" ]
+         fhir:map [ fhir:v "HDR Allergy" ] ;
+         fhir:comment [ fhir:v "Vista FileMan" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "HDR Allergy" ]
@@ -474,7 +476,8 @@
        fhir:isModifier [ fhir:v "false"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "intoleranceCondition.informationSourceCategory" ]
+         fhir:map [ fhir:v "intoleranceCondition.informationSourceCategory" ] ;
+         fhir:comment [ fhir:v "120.8-6 OBSERVED/HISTORICAL" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "intoleranceCondition.informationSourceCategory" ]
@@ -1420,7 +1423,8 @@
          fhir:map [ fhir:v "AllergyIntolerance.status" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "`active` if not entered-in-error" ]
+         fhir:map [ fhir:v "`active` if not entered-in-error" ] ;
+         fhir:comment [ fhir:v "120.8-19 VERIFIED" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "`active` if not entered-in-error" ]
@@ -1475,7 +1479,8 @@
          fhir:map [ fhir:v "AllergyIntolerance.status" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "would indicate `entered-in-error`" ]
+         fhir:map [ fhir:v "would indicate `entered-in-error`" ] ;
+         fhir:comment [ fhir:v "120.8-22 ENTERED IN ERROR" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "would indicate `entered-in-error`" ]
@@ -1581,7 +1586,8 @@
          fhir:map [ fhir:v "value < IntoleranceValue (Agent)" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "~intoleranceCondition.allergyType.code" ]
+         fhir:map [ fhir:v "~intoleranceCondition.allergyType.code" ] ;
+         fhir:comment [ fhir:v "120.8-3.1 ALLERGY TYPE" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "~intoleranceCondition.allergyType.code" ]
@@ -1852,7 +1858,8 @@
          fhir:map [ fhir:v "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "intoleranceCondition.agent.code" ]
+         fhir:map [ fhir:v "intoleranceCondition.agent.code" ] ;
+         fhir:comment [ fhir:v "120.8-.02 REACTANT" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "intoleranceCondition.agent.code" ]
@@ -1908,7 +1915,8 @@
          fhir:map [ fhir:v "AllergyIntolerance.patient" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "GetPatient(intoleranceCondition.patient)" ]
+         fhir:map [ fhir:v "GetPatient(intoleranceCondition.patient)" ] ;
+         fhir:comment [ fhir:v "120.8-.01 PATIENT" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "GetPatient(intoleranceCondition.patient)" ]
@@ -2079,7 +2087,8 @@
          fhir:map [ fhir:v ".participation[typeCode=AUT].time" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "~intoleranceCondition.observationTime.literal" ]
+         fhir:map [ fhir:v "~intoleranceCondition.observationTime.literal" ] ;
+         fhir:comment [ fhir:v "120.8-9 HISTORICAL DATE/TIME OF EVENT" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "~intoleranceCondition.observationTime.literal" ]
@@ -2671,7 +2680,8 @@
          fhir:map [ fhir:v "subjectOf.observationEvent[code=\"annotation\"].value" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "intoleranceCondition.commentEvents" ]
+         fhir:map [ fhir:v "intoleranceCondition.commentEvents" ] ;
+         fhir:comment [ fhir:v "120.8-26 COMMENTS" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "intoleranceCondition.commentEvents" ]
@@ -3129,7 +3139,8 @@
          fhir:map [ fhir:v "code" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "intoleranceCondition.reaction.reaction" ]
+         fhir:map [ fhir:v "intoleranceCondition.reaction.reaction" ] ;
+         fhir:comment [ fhir:v "120.8-10 REACTIONS" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "intoleranceCondition.reaction.reaction" ]
@@ -3787,7 +3798,8 @@
        fhir:path [ fhir:v "AllergyIntolerance" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "HDR Allergy" ]
+         fhir:map [ fhir:v "HDR Allergy" ] ;
+         fhir:comment [ fhir:v "Vista FileMan" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "HDR Allergy" ]
@@ -3819,7 +3831,8 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "intoleranceCondition.informationSourceCategory" ]
+         fhir:map [ fhir:v "intoleranceCondition.informationSourceCategory" ] ;
+         fhir:comment [ fhir:v "120.8-6 OBSERVED/HISTORICAL" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "intoleranceCondition.informationSourceCategory" ]
@@ -3906,7 +3919,8 @@
        fhir:path [ fhir:v "AllergyIntolerance.clinicalStatus" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "`active` if not entered-in-error" ]
+         fhir:map [ fhir:v "`active` if not entered-in-error" ] ;
+         fhir:comment [ fhir:v "120.8-19 VERIFIED" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "`active` if not entered-in-error" ]
@@ -3917,7 +3931,8 @@
        fhir:short [ fhir:v "May indicate entered-in-error" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "would indicate `entered-in-error`" ]
+         fhir:map [ fhir:v "would indicate `entered-in-error`" ] ;
+         fhir:comment [ fhir:v "120.8-22 ENTERED IN ERROR" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "would indicate `entered-in-error`" ]
@@ -3935,7 +3950,8 @@
        ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "~intoleranceCondition.allergyType.code" ]
+         fhir:map [ fhir:v "~intoleranceCondition.allergyType.code" ] ;
+         fhir:comment [ fhir:v "120.8-3.1 ALLERGY TYPE" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "~intoleranceCondition.allergyType.code" ]
@@ -3954,7 +3970,8 @@
        fhir:min [ fhir:v "1"^^xsd:nonNegativeInteger ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "intoleranceCondition.agent.code" ]
+         fhir:map [ fhir:v "intoleranceCondition.agent.code" ] ;
+         fhir:comment [ fhir:v "120.8-.02 REACTANT" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "intoleranceCondition.agent.code" ]
@@ -3964,7 +3981,8 @@
        fhir:path [ fhir:v "AllergyIntolerance.patient" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "GetPatient(intoleranceCondition.patient)" ]
+         fhir:map [ fhir:v "GetPatient(intoleranceCondition.patient)" ] ;
+         fhir:comment [ fhir:v "120.8-.01 PATIENT" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "GetPatient(intoleranceCondition.patient)" ]
@@ -3999,7 +4017,8 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "~intoleranceCondition.observationTime.literal" ]
+         fhir:map [ fhir:v "~intoleranceCondition.observationTime.literal" ] ;
+         fhir:comment [ fhir:v "120.8-9 HISTORICAL DATE/TIME OF EVENT" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "~intoleranceCondition.observationTime.literal" ]
@@ -4074,7 +4093,8 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "intoleranceCondition.commentEvents" ]
+         fhir:map [ fhir:v "intoleranceCondition.commentEvents" ] ;
+         fhir:comment [ fhir:v "120.8-26 COMMENTS" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "intoleranceCondition.commentEvents" ]
@@ -4115,7 +4135,8 @@
        fhir:max [ fhir:v "1" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "AllergyIntolerance-Mapping" ] ;
-         fhir:map [ fhir:v "intoleranceCondition.reaction.reaction" ]
+         fhir:map [ fhir:v "intoleranceCondition.reaction.reaction" ] ;
+         fhir:comment [ fhir:v "120.8-10 REACTIONS" ]
        ] [
          fhir:identity [ fhir:v "AllergyIntolerance-Old-Mapping" ] ;
          fhir:map [ fhir:v "intoleranceCondition.reaction.reaction" ]

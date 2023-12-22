@@ -6,7 +6,7 @@ Title:          "VA MHV PHR Immunization"
 Description:    """
 A profile on the Immunization that declares how MHV will expose PHR immunization.
 """
-* ^extension[$fmm].valueInteger = 3
+* ^extension[$fmm].valueInteger = 4
 * status = #completed
 * occurrence[x] only dateTime
 * occurrence[x] 1..1 MS
@@ -79,7 +79,8 @@ Mapping: Immunization-Mapping
 Source:	MHVimmunization
 Target: "ImmunizationTO"
 Title: "VIA to mhv-fhir-phr"
-* -> "ImmunizationTO" "FileMan"
+Description: "Informative map to available elements in MHV FHIR API"
+* -> "ImmunizationTO" "Vista FileMan"
 * vaccineCode.text -> "ImmunizationTO.name" "9000010.11-.01 IMMUNIZATION"
 * note.text -> "ImmunizationTO.comments" "9000010.11-.1101 REMARKS"
 * reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11-.06 REACTION"

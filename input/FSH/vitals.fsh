@@ -30,6 +30,7 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * performer.extension[site].valueReference only Reference(Location)
 * performer.extension[site].valueReference ^type.aggregation = #contained
 * value[x] MS
+* dataAbsentReason MS
 /* could do this if there was a list of codes, but no list of codes available
 * component ^slicing.discriminator.type = #pattern
 * component ^slicing.discriminator.path = "code"
@@ -39,16 +40,16 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * component[@default].value[x] 0..0
 */
 * bodySite MS 
-* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named position 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named bodyPosition 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named deviceCode 0..1
 * method MS
-* device MS
 
+* device 0..0
 * basedOn 0..0
 * partOf 0..0
 * focus 0..0
 * encounter 0..0
 * issued 0..0
-* dataAbsentReason 0..0
 * interpretation 0..0
 * specimen 0..0
 * referenceRange 0..0
@@ -60,6 +61,7 @@ Mapping: Vitals-Mapping
 Source:	MHVvitals
 Target: "VitalSignTO"
 Title: "VIA to mhv-fhir-phr"
+Description: "Informative map to available elements in MHV FHIR API"
 * -> "VitalSignTO"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -74,9 +76,9 @@ Title: "VIA to mhv-fhir-phr"
 * performer.extension[site] -> "Location(VitalSignTO.location)" "120.5-.05 HOSPITAL LOCATION"
 * component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
 * bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
-* extension[position] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
+* extension[bodyPosition] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
 * method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
-* device -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
+* extension[deviceCode] -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
 // Laterality
 // Position
 //* note.text -> "VitalSignTO.comments" ""
@@ -85,6 +87,7 @@ Mapping: Vitals-Old-Mapping
 Source:	MHVvitals
 Target: "VitalSignTO"
 Title: "eVault-PHR to MHV-PHR"
+Description: "Informative map to include only the elements available in eVault PHR"
 * -> "VitalSignTO" "eVault"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -97,26 +100,90 @@ Title: "eVault-PHR to MHV-PHR"
 
 
 Profile:        MHVvitalsPain
-Parent:         VA.MHV.PHR.vitals
+Parent: Observation
+//Parent:         VA.MHV.PHR.vitals
 Id:             VA.MHV.PHR.vitalsPain
 Title:          "VA MHV PHR Vital-Signs for PAIN"
 Description:    """
 A profile on the Observation resource for Pain
+
+Not drived from us-core vitals, us-core does not have Pain and forbids valueInteger. 
 """
-* value[x] only Quantity
-* valueQuantity.value ^minValueQuantity = 0 UCUM#{score}
-* valueQuantity.value ^maxValueQuantity = 10 UCUM#{score}
+// note must use Quantity as we want to derive off of us-core, but us-core does not include Pain.
+// alternative is to use Integer, and write the profile ourself.
+
+* ^extension[$fmm].valueInteger = 3
+
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..
+* identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.type.id}"
+* status = #final
+* category MS
+* category 1..
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category contains VSCat 1..1
+* category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
+* code.text MS
+* code.coding MS
+* code.coding 1..
 * code.coding ^slicing.discriminator.type = #pattern
-* code.coding ^slicing.discriminator.path = "code"
+* code.coding ^slicing.discriminator.path = "$this"
 * code.coding ^slicing.rules = #open
 * code.coding contains pain 1..1
-* code.coding[pain].code = LOINC#72514-3
+* code.coding[pain] = LOINC#72514-3
+* subject 1..1
+* effectiveDateTime 1..1
+* performer MS
+* performer ^type.aggregation = #contained
+* performer.extension contains http://hl7.org/fhir/StructureDefinition/alternate-reference named site 0..1
+* performer.extension[site].valueReference only Reference(Location)
+* performer.extension[site].valueReference ^type.aggregation = #contained
+* value[x] MS
+* value[x] only integer
+* valueInteger.value ^minValueInteger = 0
+* valueInteger.value ^maxValueInteger = 10
+* dataAbsentReason MS
+/* could do this if there was a list of codes, but no list of codes available
+* component ^slicing.discriminator.type = #pattern
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #open
+* component contains @default 0..*
+* component[@default].dataAbsentReason 1..1
+* component[@default].value[x] 0..0
+*/
+* bodySite MS 
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named bodyPosition 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named deviceCode 0..1
+* method MS
+
+* device 0..0
+* basedOn 0..0
+* partOf 0..0
+* focus 0..0
+* encounter 0..0
+* issued 0..0
+* interpretation 0..0
+* specimen 0..0
+* referenceRange 0..0
+* hasMember 0..0
+* derivedFrom 0..0
+* note 0..0 
 
 
 Mapping: VitalsPain-Mapping
 Source:	MHVvitalsPain
 Target: "MHVvitalsPain"
 Title: "VIA to mhv-fhir-phr"
+Description: "Informative map to available elements in MHV FHIR API"
 * -> "VitalSignTO Pain"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -130,9 +197,9 @@ Title: "VIA to mhv-fhir-phr"
 * performer.extension[site] -> "Location(VitalSignTO.location)"
 * component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
 * bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
-* extension[position] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
+* extension[bodyPosition] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
 * method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
-* device -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
+* extension[deviceCode] -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
 
 
 
@@ -171,6 +238,7 @@ Note that VIA does not provide us the supplemental O2 concentration or flowrate
 * performer.extension[site].valueReference only Reference(Location)
 * performer.extension[site].valueReference ^type.aggregation = #contained
 * value[x] MS
+* dataAbsentReason MS
 * component[FlowRate] 0..0
 * component[Concentration] 0..0
 /* could do this if there was a list of codes, but no list of codes available
@@ -182,16 +250,16 @@ Note that VIA does not provide us the supplemental O2 concentration or flowrate
 * component[@default].value[x] 0..0
 */
 * bodySite MS 
-* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named position 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named bodyPosition 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named deviceCode 0..1
 * method MS
-* device MS
 
+* device 0..0
 * basedOn 0..0
 * partOf 0..0
 * focus 0..0
 * encounter 0..0
 * issued 0..0
-* dataAbsentReason 0..0
 * interpretation 0..0
 * specimen 0..0
 * referenceRange 0..0
@@ -203,6 +271,7 @@ Mapping: VitalsOx-Mapping
 Source:	MHVvitalsOx
 Target: "VitalSignTO"
 Title: "VIA to mhv-fhir-phr"
+Description: "Informative map to available elements in MHV FHIR API"
 * -> "VitalSignTO"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -219,14 +288,15 @@ Title: "VIA to mhv-fhir-phr"
 * component.code -> "Qualifier" "120.5 QUALIFIER"
 * component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
 * bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
-* extension[position] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
+* extension[bodyPosition] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
 * method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
-* device -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
+* extension[deviceCode] -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
 
 Mapping: VitalsOx-Old-Mapping
 Source:	MHVvitalsOx
 Target: "VitalSignTO"
 Title: "eVault-PHR to MHV-PHR"
+Description: "Informative map to include only the elements available in eVault PHR"
 * -> "VitalSignTO" "eVault"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -273,24 +343,28 @@ A profile on the Observation resource for Blood Pressure
 * performer.extension[site].valueReference only Reference(Location)
 * performer.extension[site].valueReference ^type.aggregation = #contained
 * note 0..0 
-/* could do this if there was a list of codes, but no list of codes available
-* component ^slicing.discriminator.type = #pattern
-* component ^slicing.discriminator.path = "code"
-* component ^slicing.rules = #open
+* dataAbsentReason MS
+/*
 * component contains @default 0..*
+* component[@default].code 1..1
+* component[@default].code.coding 1..1
+* component[@default].code.coding.system 1..1
+* component[@default].code.coding.code 1..1
 * component[@default].dataAbsentReason 1..1
 * component[@default].value[x] 0..0
+* component ^slicing.rules = #closed
 */
 * bodySite MS 
-* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named position 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named bodyPosition 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named deviceCode 0..1
 * method MS
-* device MS
+
+* device 0..0
 * basedOn 0..0
 * partOf 0..0
 * focus 0..0
 * encounter 0..0
 * issued 0..0
-* dataAbsentReason 0..0
 * interpretation 0..0
 * specimen 0..0
 * referenceRange 0..0
@@ -303,6 +377,7 @@ Mapping: VitalsBP-Mapping
 Source:	MHVvitalsBP
 Target: "MHVvitalsBP"
 Title: "VIA to mhv-fhir-phr"
+Description: "Informative map to available elements in MHV FHIR API"
 * -> "VitalSignTO BP"
 * status -> "`final`"
 * category -> "`vital-signs`"
@@ -318,11 +393,27 @@ Title: "VIA to mhv-fhir-phr"
 * component.code -> "Qualifier" "120.5 QUALIFIER"
 * component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
 * bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
-* extension[position] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
+* extension[bodyPosition] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
 * method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
-* device -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
+* extension[deviceCode] -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
 
 
+Mapping: VitalsBP-Old-Mapping
+Source:	MHVvitalsBP
+Target: "VitalSignTO"
+Title: "eVault-PHR to MHV-PHR"
+Description: "Informative map to include only the elements available in eVault PHR"
+* -> "VitalSignTO BP" "eVault"
+* status -> "`final`"
+* category -> "`vital-signs`"
+* code.text -> "VitalSignTO.type.name"
+* subject -> "patient"
+* effectiveDateTime -> "VitalSignTO.timestamp"
+* component[systolic] -> "For BP is used for value1 parsed out to systolic and diastolic"
+* component[diastolic] -> "For BP is used for value1 parsed out to systolic and diastolic"
+* identifier -> "{StationNbr} and {VitalSignTO.type.id}"
+* performer -> "VitalSignTO.recorder and VitalSignTO.observer"
+* performer.extension[site] -> "Organization(VitalSignTO.location)"
 
 
 

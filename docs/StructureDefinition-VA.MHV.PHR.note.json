@@ -7,7 +7,7 @@
   },
   "extension" : [{
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
-    "valueInteger" : 2
+    "valueInteger" : 3
   },
   {
     "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
@@ -20,11 +20,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note",
-  "version" : "0.2.9",
+  "version" : "0.2.10",
   "name" : "MHVnote",
   "title" : "VA MHV PHR Notes",
   "status" : "active",
-  "date" : "2023-12-15T17:23:12-06:00",
+  "date" : "2023-12-22T09:54:24-06:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -86,7 +86,8 @@
   {
     "identity" : "Notes-Mapping",
     "uri" : "NoteTO",
-    "name" : "VIA to mhv-fhir-phr"
+    "name" : "VIA to mhv-fhir-phr",
+    "comment" : "Informative map to available elements in MHV FHIR API"
   },
   {
     "identity" : "Notes-Old-Mapping",
@@ -187,12 +188,12 @@
       {
         "identity" : "Notes-Mapping",
         "map" : "NoteTO",
-        "comment" : "FileMan"
+        "comment" : "Vista FileMan"
       },
       {
         "identity" : "Notes-Old-Mapping",
         "map" : "NoteTO",
-        "comment" : "FileMan"
+        "comment" : "Vista FileMan"
       }]
     },
     {
@@ -3711,12 +3712,12 @@
       "mapping" : [{
         "identity" : "Notes-Mapping",
         "map" : "NoteTO",
-        "comment" : "FileMan"
+        "comment" : "Vista FileMan"
       },
       {
         "identity" : "Notes-Old-Mapping",
         "map" : "NoteTO",
-        "comment" : "FileMan"
+        "comment" : "Vista FileMan"
       }]
     },
     {

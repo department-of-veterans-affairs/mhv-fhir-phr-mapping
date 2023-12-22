@@ -11,7 +11,7 @@
 - `recorder` may have an extension `alternate-reference` that points to an Organization resource identifying the VAMC where the allergy was first recorded
   - the Organization.name is a friendly name populated from MHV internal table
 - `reaction.manifestation` may have `.text`
-  - may have `.coding.code` but no system is known
+  - may have `.coding` from VUID or SNOMED-CT
 - `note.text` will hold comments
   - `note.time` will hold the date of the comment
 - no other elements are populated

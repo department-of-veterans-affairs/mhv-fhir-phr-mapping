@@ -1,18 +1,19 @@
 
 - based on US-Core documentReference Resource profile for clinical notes
-  - `category` will have `clinical-note`
+- `category` will have `clinical-note`
   - `category` may have other values
-    - [Cardiology (LP29708-2)](https://loinc.org/LP29708-2)
+    - ECG/EKG [Cardiology (LP29708-2)](https://loinc.org/LP29708-2)
 - `type` indicates the specific type of document
   - `.text` the standard title
-  - [ECG/EKG (11524-6)](https://loinc.org/11524-6/)
-  - [Imaging (18748-4)](https://loinc.org/18748-4/)
-    - may have a CPT code
-  - [Progress note (11506-3)](https://loinc.org/11506-3/)
-  - [Discharge Summary (18842-5)](https://loinc.org/18842-5/)
+  - `.coding` code for broad type of document
+    - [Consultation Note (11488-4)](https://loinc.org/11488-4/)
+    - [Progress note (11506-3)](https://loinc.org/11506-3/)
+    - [Discharge Summary (18842-5)](https://loinc.org/18842-5/)
+    - [ECG/EKG (11524-6)](https://loinc.org/11524-6/)
+    - [Imaging (18748-4)](https://loinc.org/18748-4/)
+      - may have a CPT code
 - `subject` is a reference to this patient
 - `status` is `current`
-  - **This is likely changing**, so should only display `current`
 - `identifier` will hold the record identifier from Vista
   - may hold accession number for Radiology reports
   - may hold case number

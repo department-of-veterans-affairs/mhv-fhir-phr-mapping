@@ -80,7 +80,7 @@ Description:      "holding typical values"
 * code.text = "PAIN"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = 2004-09-24T10:32:00-05:00
-* valueQuantity.value = 5
+* valueInteger = 5
 * contained[+] = ex-MHV-location-2938
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"
@@ -159,12 +159,14 @@ Description:      "Heart Rate holding typical values"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * category[VSCat] = http://terminology.hl7.org/CodeSystem/observation-category#vital-signs
-* code.text = "PULSE"
+* code.text = "PULSE OXIMETRY"
+* code = LOINC#2708-6 "Oxygen saturation in Arterial blood"
 * subject = Reference(Patient/ex-MHV-patient-2)
 * effectiveDateTime = 2023-10-26T11:33:31-05:00
 * valueQuantity = 95 '%' "percent"
 * contained[+] = location-3713
 * performer[+].extension[site].valueReference = Reference(location-3713)
 * performer[=].display = "Location 3713"
-* component[+].code = SCT##336623009 "Oxygen nasal cannula"
+* extension[observation-deviceCode].valueCodeableConcept = SCT#336623009 "Oxygen nasal cannula"
+* component[+].code = urn:oid:2.16.840.1.113883.6.233#4688666 "NASAL CANNULA"
 * component[=].dataAbsentReason = http://terminology.hl7.org/CodeSystem/data-absent-reason#not-applicable

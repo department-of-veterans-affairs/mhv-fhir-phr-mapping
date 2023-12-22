@@ -20,11 +20,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition",
-  "version" : "0.2.9",
+  "version" : "0.2.10",
   "name" : "MHVcondition",
   "title" : "VA MHV PHR problems",
   "status" : "active",
-  "date" : "2023-12-15T17:23:12-06:00",
+  "date" : "2023-12-22T09:54:24-06:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -81,12 +81,14 @@
   {
     "identity" : "Condition-Mapping",
     "uri" : "ProblemTO",
-    "name" : "VIA to mhv-fhir-phr"
+    "name" : "VIA to mhv-fhir-phr",
+    "comment" : "Informative map to available elements in MHV FHIR API"
   },
   {
     "identity" : "Condition-Old-Mapping",
     "uri" : "ProblemTO",
-    "name" : "eVault-PHR to MHV-PHR"
+    "name" : "eVault-PHR to MHV-PHR",
+    "comment" : "Informative map to include only the elements available in eVault PHR"
   }],
   "kind" : "resource",
   "abstract" : false,
@@ -216,7 +218,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO"
+        "map" : "ProblemTO",
+        "comment" : "Vista FileMan"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -1024,11 +1027,12 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo"
+        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`",
+        "comment" : "9000011-.12 STATUS"
       },
       {
         "identity" : "Condition-Old-Mapping",
-        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo",
+        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`",
         "comment" : "STATUS"
       }]
     },
@@ -1096,7 +1100,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.verified ? `#confirmed` : `#unconfirmed`"
+        "map" : "ProblemTO.verified ? `#confirmed` : `#unconfirmed`",
+        "comment" : "???"
       }]
     },
     {
@@ -1522,7 +1527,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "ICD-9 # ProblemTO.icd"
+        "map" : "ICD-9 # ProblemTO.icd",
+        "comment" : "9000011-.01 DIAGNOSIS"
       }]
     },
     {
@@ -1571,7 +1577,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.type.name"
+        "map" : "ProblemTO.type.name",
+        "comment" : "9000011-1.01 PROBLEM"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -1682,7 +1689,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "patient"
+        "map" : "patient",
+        "comment" : "9000011-.02 PATIENT NAME"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -1786,7 +1794,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.onsetDate"
+        "map" : "ProblemTO.onsetDate",
+        "comment" : "9000011-.13 DATE OF ONSET"
       }]
     },
     {
@@ -1835,7 +1844,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.abatementDateTime"
+        "map" : "ProblemTO.abatementDateTime",
+        "comment" : "9000011-1.07 DATE RESOLVED"
       }]
     },
     {
@@ -1878,7 +1888,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.modifiedDate"
+        "map" : "ProblemTO.modifiedDate",
+        "comment" : "9000011-1.09 DATE RECORDED"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -1924,7 +1935,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "GetPractitioner(ProblemTO.observer)"
+        "map" : "GetPractitioner(ProblemTO.observer)",
+        "comment" : "??? 9000011-1.03 ENTERED BY,  -1.04 RECORDING PROVIDER"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -2487,11 +2499,13 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "~ProblemTO.location[hospitalLocationTO]"
+        "map" : "~ProblemTO.location[hospitalLocationTO]",
+        "comment" : "??? 9000011-.06 FACILITY, 1.08 CLINIC"
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "~ProblemTO.serviceConnected"
+        "map" : "~ProblemTO.serviceConnected",
+        "comment" : "9000011-1.1 SERVICE CONNECTED"
       }]
     },
     {
@@ -2534,7 +2548,8 @@
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.comments + ProblemTO.comment"
+        "map" : "ProblemTO.comments + ProblemTO.comment",
+        "comment" : "9000011-.05 PROVIDER NARRATIVE"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -2549,7 +2564,8 @@
       "path" : "Condition",
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO"
+        "map" : "ProblemTO",
+        "comment" : "Vista FileMan"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -2614,11 +2630,12 @@
       },
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo"
+        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`",
+        "comment" : "9000011-.12 STATUS"
       },
       {
         "identity" : "Condition-Old-Mapping",
-        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo",
+        "map" : "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`",
         "comment" : "STATUS"
       }]
     },
@@ -2631,7 +2648,8 @@
       },
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.verified ? `#confirmed` : `#unconfirmed`"
+        "map" : "ProblemTO.verified ? `#confirmed` : `#unconfirmed`",
+        "comment" : "???"
       }]
     },
     {
@@ -2665,7 +2683,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "ICD-9 # ProblemTO.icd"
+        "map" : "ICD-9 # ProblemTO.icd",
+        "comment" : "9000011-.01 DIAGNOSIS"
       }]
     },
     {
@@ -2675,7 +2694,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.type.name"
+        "map" : "ProblemTO.type.name",
+        "comment" : "9000011-1.01 PROBLEM"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -2693,7 +2713,8 @@
       "path" : "Condition.subject",
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "patient"
+        "map" : "patient",
+        "comment" : "9000011-.02 PATIENT NAME"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -2717,7 +2738,8 @@
       }],
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.onsetDate"
+        "map" : "ProblemTO.onsetDate",
+        "comment" : "9000011-.13 DATE OF ONSET"
       }]
     },
     {
@@ -2732,7 +2754,8 @@
       }],
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.abatementDateTime"
+        "map" : "ProblemTO.abatementDateTime",
+        "comment" : "9000011-1.07 DATE RESOLVED"
       }]
     },
     {
@@ -2740,7 +2763,8 @@
       "path" : "Condition.recordedDate",
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.modifiedDate"
+        "map" : "ProblemTO.modifiedDate",
+        "comment" : "9000011-1.09 DATE RECORDED"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -2759,7 +2783,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "GetPractitioner(ProblemTO.observer)"
+        "map" : "GetPractitioner(ProblemTO.observer)",
+        "comment" : "??? 9000011-1.03 ENTERED BY,  -1.04 RECORDING PROVIDER"
       },
       {
         "identity" : "Condition-Old-Mapping",
@@ -2793,11 +2818,13 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "~ProblemTO.location[hospitalLocationTO]"
+        "map" : "~ProblemTO.location[hospitalLocationTO]",
+        "comment" : "??? 9000011-.06 FACILITY, 1.08 CLINIC"
       },
       {
         "identity" : "Condition-Mapping",
-        "map" : "~ProblemTO.serviceConnected"
+        "map" : "~ProblemTO.serviceConnected",
+        "comment" : "9000011-1.1 SERVICE CONNECTED"
       }]
     },
     {
@@ -2806,7 +2833,8 @@
       "mustSupport" : true,
       "mapping" : [{
         "identity" : "Condition-Mapping",
-        "map" : "ProblemTO.comments + ProblemTO.comment"
+        "map" : "ProblemTO.comments + ProblemTO.comment",
+        "comment" : "9000011-.05 PROVIDER NARRATIVE"
       },
       {
         "identity" : "Condition-Old-Mapping",

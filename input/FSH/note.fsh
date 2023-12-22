@@ -5,7 +5,7 @@ Title:          "VA MHV PHR Notes"
 Description:    """
 A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) using FHIR API.
 """
-* ^extension[$fmm].valueInteger = 2
+* ^extension[$fmm].valueInteger = 3
 // Most criteria come from the MHV documentReference
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -38,7 +38,8 @@ Mapping: Notes-Mapping
 Source:	MHVnote
 Target: "NoteTO"
 Title: "VIA to mhv-fhir-phr"
-* -> "NoteTO" "FileMan"
+Description: "Informative map to available elements in MHV FHIR API"
+* -> "NoteTO" "Vista FileMan"
 * category -> "`clinical-note`"
 * status -> "`current`" "8925-.05 - STATUS"
 * subject -> "GetPatient()"
@@ -63,7 +64,7 @@ Source:	MHVnote
 Target: "eVaultPHR"
 Title: "eVault-PHR to mhv-fhir-phr"
 Description: "Informative map to include only the elements available in eVault PHR"
-* -> "NoteTO" "FileMan"
+* -> "NoteTO" "Vista FileMan"
 * category -> "`clinical-note`"
 * status -> "`current`" "8925-.05 - STATUS"
 * subject -> "GetPatient()"

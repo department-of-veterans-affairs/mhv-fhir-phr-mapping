@@ -29,11 +29,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.9"] ; # 
+  fhir:version [ fhir:v "0.2.10"] ; # 
   fhir:name [ fhir:v "MHVcondition"] ; # 
   fhir:title [ fhir:v "VA MHV PHR problems"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-12-15T17:23:12-06:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-12-22T09:54:24-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -83,11 +83,13 @@
   ] [
      fhir:identity [ fhir:v "Condition-Mapping" ] ;
      fhir:uri [ fhir:v "ProblemTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ] ;
+     fhir:comment [ fhir:v "Informative map to available elements in MHV FHIR API" ]
   ] [
      fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
      fhir:uri [ fhir:v "ProblemTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "eVault-PHR to MHV-PHR" ]
+     fhir:name [ fhir:v "eVault-PHR to MHV-PHR" ] ;
+     fhir:comment [ fhir:v "Informative map to include only the elements available in eVault PHR" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 
@@ -229,7 +231,8 @@
          fhir:map [ fhir:v "Condition" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO" ]
+         fhir:map [ fhir:v "ProblemTO" ] ;
+         fhir:comment [ fhir:v "Vista FileMan" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO" ] ;
@@ -1068,10 +1071,11 @@
          fhir:map [ fhir:v "Condition.clinicalStatus" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" ]
+         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`" ] ;
+         fhir:comment [ fhir:v "9000011-.12 STATUS" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" ] ;
+         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`" ] ;
          fhir:comment [ fhir:v "STATUS" ]
        ] )
      ] [
@@ -1136,7 +1140,8 @@
          fhir:map [ fhir:v "Condition.verificationStatus" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.verified ? `#confirmed` : `#unconfirmed`" ]
+         fhir:map [ fhir:v "ProblemTO.verified ? `#confirmed` : `#unconfirmed`" ] ;
+         fhir:comment [ fhir:v "???" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.category" ] ;
@@ -1568,7 +1573,8 @@
          fhir:map [ fhir:v "fhir:CodeableConcept.coding rdfs:subPropertyOf dt:CD.coding" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ICD-9 # ProblemTO.icd" ]
+         fhir:map [ fhir:v "ICD-9 # ProblemTO.icd" ] ;
+         fhir:comment [ fhir:v "9000011-.01 DIAGNOSIS" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.code.text" ] ;
@@ -1616,7 +1622,8 @@
          fhir:map [ fhir:v "fhir:CodeableConcept.text rdfs:subPropertyOf dt:CD.originalText" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.type.name" ]
+         fhir:map [ fhir:v "ProblemTO.type.name" ] ;
+         fhir:comment [ fhir:v "9000011-1.01 PROBLEM" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.type.name" ] ;
@@ -1728,7 +1735,8 @@
          fhir:map [ fhir:v "Condition.patient" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "patient" ]
+         fhir:map [ fhir:v "patient" ] ;
+         fhir:comment [ fhir:v "9000011-.02 PATIENT NAME" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "patient" ]
@@ -1830,7 +1838,8 @@
          fhir:map [ fhir:v ".effectiveTime.low or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=\"age at onset\"].value" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.onsetDate" ]
+         fhir:map [ fhir:v "ProblemTO.onsetDate" ] ;
+         fhir:comment [ fhir:v "9000011-.13 DATE OF ONSET" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.abatement[x]" ] ;
@@ -1878,7 +1887,8 @@
          fhir:map [ fhir:v ".effectiveTime.high or .inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=\"age at remission\"].value or .inboundRelationship[typeCode=SUBJ]source[classCode=CONC, moodCode=EVN].status=completed" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.abatementDateTime" ]
+         fhir:map [ fhir:v "ProblemTO.abatementDateTime" ] ;
+         fhir:comment [ fhir:v "9000011-1.07 DATE RESOLVED" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.recordedDate" ] ;
@@ -1920,7 +1930,8 @@
          fhir:map [ fhir:v ".participation[typeCode=AUT].time" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.modifiedDate" ]
+         fhir:map [ fhir:v "ProblemTO.modifiedDate" ] ;
+         fhir:comment [ fhir:v "9000011-1.09 DATE RECORDED" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.modifiedDate" ] ;
@@ -1968,7 +1979,8 @@
          fhir:map [ fhir:v ".participation[typeCode=AUT].role" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ]
+         fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ] ;
+         fhir:comment [ fhir:v "??? 9000011-1.03 ENTERED BY,  -1.04 RECORDING PROVIDER" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ] ;
@@ -2577,10 +2589,12 @@
          fhir:map [ fhir:v ".self" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "~ProblemTO.location[hospitalLocationTO]" ]
+         fhir:map [ fhir:v "~ProblemTO.location[hospitalLocationTO]" ] ;
+         fhir:comment [ fhir:v "??? 9000011-.06 FACILITY, 1.08 CLINIC" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "~ProblemTO.serviceConnected" ]
+         fhir:map [ fhir:v "~ProblemTO.serviceConnected" ] ;
+         fhir:comment [ fhir:v "9000011-1.1 SERVICE CONNECTED" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.note" ] ;
@@ -2622,7 +2636,8 @@
          fhir:map [ fhir:v ".inboundRelationship[typeCode=SUBJ].source[classCode=OBS, moodCode=EVN, code=\"annotation\"].value" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.comments + ProblemTO.comment" ]
+         fhir:map [ fhir:v "ProblemTO.comments + ProblemTO.comment" ] ;
+         fhir:comment [ fhir:v "9000011-.05 PROVIDER NARRATIVE" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.comments" ] ;
@@ -2636,7 +2651,8 @@
        fhir:path [ fhir:v "Condition" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO" ]
+         fhir:map [ fhir:v "ProblemTO" ] ;
+         fhir:comment [ fhir:v "Vista FileMan" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO" ] ;
@@ -2698,10 +2714,11 @@
        ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" ]
+         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`" ] ;
+         fhir:comment [ fhir:v "9000011-.12 STATUS" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : todo" ] ;
+         fhir:map [ fhir:v "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`" ] ;
          fhir:comment [ fhir:v "STATUS" ]
        ] )
      ] [
@@ -2716,7 +2733,8 @@
        ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.verified ? `#confirmed` : `#unconfirmed`" ]
+         fhir:map [ fhir:v "ProblemTO.verified ? `#confirmed` : `#unconfirmed`" ] ;
+         fhir:comment [ fhir:v "???" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.category" ] ;
@@ -2747,7 +2765,8 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ICD-9 # ProblemTO.icd" ]
+         fhir:map [ fhir:v "ICD-9 # ProblemTO.icd" ] ;
+         fhir:comment [ fhir:v "9000011-.01 DIAGNOSIS" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.code.text" ] ;
@@ -2756,7 +2775,8 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.type.name" ]
+         fhir:map [ fhir:v "ProblemTO.type.name" ] ;
+         fhir:comment [ fhir:v "9000011-1.01 PROBLEM" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.type.name" ] ;
@@ -2771,7 +2791,8 @@
        fhir:path [ fhir:v "Condition.subject" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "patient" ]
+         fhir:map [ fhir:v "patient" ] ;
+         fhir:comment [ fhir:v "9000011-.02 PATIENT NAME" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "patient" ]
@@ -2792,7 +2813,8 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.onsetDate" ]
+         fhir:map [ fhir:v "ProblemTO.onsetDate" ] ;
+         fhir:comment [ fhir:v "9000011-.13 DATE OF ONSET" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.abatement[x]" ] ;
@@ -2806,14 +2828,16 @@
        ] ) ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.abatementDateTime" ]
+         fhir:map [ fhir:v "ProblemTO.abatementDateTime" ] ;
+         fhir:comment [ fhir:v "9000011-1.07 DATE RESOLVED" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.recordedDate" ] ;
        fhir:path [ fhir:v "Condition.recordedDate" ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.modifiedDate" ]
+         fhir:map [ fhir:v "ProblemTO.modifiedDate" ] ;
+         fhir:comment [ fhir:v "9000011-1.09 DATE RECORDED" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.modifiedDate" ] ;
@@ -2833,7 +2857,8 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ]
+         fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ] ;
+         fhir:comment [ fhir:v "??? 9000011-1.03 ENTERED BY,  -1.04 RECORDING PROVIDER" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "GetPractitioner(ProblemTO.observer)" ] ;
@@ -2865,10 +2890,12 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "~ProblemTO.location[hospitalLocationTO]" ]
+         fhir:map [ fhir:v "~ProblemTO.location[hospitalLocationTO]" ] ;
+         fhir:comment [ fhir:v "??? 9000011-.06 FACILITY, 1.08 CLINIC" ]
        ] [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "~ProblemTO.serviceConnected" ]
+         fhir:map [ fhir:v "~ProblemTO.serviceConnected" ] ;
+         fhir:comment [ fhir:v "9000011-1.1 SERVICE CONNECTED" ]
        ] )
      ] [
        fhir:id [ fhir:v "Condition.note" ] ;
@@ -2876,7 +2903,8 @@
        fhir:mustSupport [ fhir:v "true"^^xsd:boolean ] ;
        fhir:mapping ( [
          fhir:identity [ fhir:v "Condition-Mapping" ] ;
-         fhir:map [ fhir:v "ProblemTO.comments + ProblemTO.comment" ]
+         fhir:map [ fhir:v "ProblemTO.comments + ProblemTO.comment" ] ;
+         fhir:comment [ fhir:v "9000011-.05 PROVIDER NARRATIVE" ]
        ] [
          fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
          fhir:map [ fhir:v "ProblemTO.comments" ] ;

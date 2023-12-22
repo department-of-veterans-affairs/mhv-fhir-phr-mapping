@@ -14,7 +14,7 @@
   ] ; # 
   fhir:extension ( [
      fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"^^xsd:anyURI ] ;
-     fhir:value [ fhir:v "3"^^xsd:integer ]
+     fhir:value [ fhir:v "4"^^xsd:integer ]
   ] [
      fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status"^^xsd:anyURI ] ;
      fhir:value [
@@ -29,11 +29,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.2.9"] ; # 
+  fhir:version [ fhir:v "0.2.10"] ; # 
   fhir:name [ fhir:v "MHVimmunization"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Immunization"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2023-12-15T17:23:12-06:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2023-12-22T09:54:24-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -79,7 +79,8 @@
   ] [
      fhir:identity [ fhir:v "Immunization-Mapping" ] ;
      fhir:uri [ fhir:v "ImmunizationTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ]
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ] ;
+     fhir:comment [ fhir:v "Informative map to available elements in MHV FHIR API" ]
   ] [
      fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
      fhir:uri [ fhir:v "eVaultPHR"^^xsd:anyURI ] ;
@@ -201,7 +202,7 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO" ] ;
-         fhir:comment [ fhir:v "FileMan" ]
+         fhir:comment [ fhir:v "Vista FileMan" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO" ]
@@ -5421,7 +5422,7 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO" ] ;
-         fhir:comment [ fhir:v "FileMan" ]
+         fhir:comment [ fhir:v "Vista FileMan" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO" ]

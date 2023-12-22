@@ -1,0 +1,83 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Observation/3696d905-853b-49f0-bc16-867e9be94c34> a fhir:Observation ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "3696d905-853b-49f0-bc16-867e9be94c34"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Observation</b><a name=\"3696d905-853b-49f0-bc16-867e9be94c34\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Observation &quot;3696d905-853b-49f0-bc16-867e9be94c34&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.vitals.html\">VA MHV PHR Vital-Signs</a></p></div><p><b>identifier</b>: id: VitalSignTO.6544824 (use: USUAL)</p><p><b>status</b>: final</p><p><b>category</b>: Vital Signs <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-observation-category.html\">Observation Category Codes</a>#vital-signs)</span></p><p><b>code</b>: CENTRAL VENOUS PRESSURE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#8591-0 &quot;Central venous pressure (CVP) Mean&quot;)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-3.html\">Patient/ex-MHV-patient-3</a> &quot; CASEYLAST&quot;</p><p><b>effective</b>: 2023-12-12 09:55:14+0000</p><p><b>performer</b>: <span>: CARDIO RESEARCH</span></p><p><b>value</b>: 30 cmH2O<span style=\"background: LightGoldenRodYellow\"> (Details: UCUM code cm[H2O] = 'cm[H2O]')</span></p><hr/><blockquote><p><b>Generated Narrative: Location #location-3713</b><a name=\"location-3713\"> </a></p><p><b>identifier</b>: id: HospitalLocationTO.3713 (use: USUAL)</p><p><b>name</b>: 000-EYE NON TREATMENT (LOC)</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Location ;
+     fhir:id [ fhir:v "location-3713" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "HospitalLocationTO.3713" ]
+     ] ) ;
+     fhir:name [ fhir:v "000-EYE NON TREATMENT (LOC)" ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "VitalSignTO.6544824" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "vital-signs" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       a loinc:8591-0 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "8591-0" ] ;
+       fhir:display [ fhir:v "Central venous pressure (CVP) Mean" ]
+     ] ) ;
+     fhir:text [ fhir:v "CENTRAL VENOUS PRESSURE" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-3> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-3" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2023-12-12T09:55:14Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/alternate-reference"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Reference ;
+         fhir:reference [ fhir:v "#location-3713" ]
+       ]
+     ] ) ;
+     fhir:display [ fhir:v "CARDIO RESEARCH" ]
+  ] ) ; # 
+  fhir:value [
+     a fhir:Quantity ;
+     fhir:value [ fhir:v "30"^^xsd:decimal ] ;
+     fhir:unit [ fhir:v "cmH2O" ] ;
+     fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+     fhir:code [ fhir:v "cm[H2O]" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+
