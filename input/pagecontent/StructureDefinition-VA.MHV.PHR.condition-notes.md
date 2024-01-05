@@ -16,8 +16,13 @@
   - if the code starts with `E`and followed by 3 numerals before the dot, its ICD-9
   - else it is ICD-10
 
+#### Business Rule
+
+- all conditions are **held for 36 hours past the release date/time**
+
 #### Mapping Concerns
 
+- confirm the mapping
 - not clear if the ProblemTO.location is describing, is it evidence?
 - not clear what ProblemTO.acuity.tag is
 - not clear what ProblemTo.facility is
@@ -35,5 +40,8 @@ TODO
 - can .status other than "ACTIVE". Might it be "INACTIVE" being a map to .12
 - verificationStatus - might turn into a don't map as we are unclear
 - is the modifiedDate the right one to keep? as KBS seems to think this is a last updated concept, not when it was first recorded.
-- review source-code
+
+##### Source-Code review
+
+There is no prototype implementation. So the whole resource needs to be written
 

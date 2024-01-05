@@ -8,7 +8,7 @@ Usage: #inline
 * status = #available
 * type.coding[+].code = #PLAS
 * type.coding[=].display = "Plasma"
-* type.coding[=].system = "http://va.gov/systems/HL70070"
+* type.coding[=].system = "http://terminology.hl7.org/CodeSystem/v2-0487"
 * type.coding[+].code = #73
 * type.coding[=].display = "PLASMA"
 * type.coding[=].system = "http://va.gov/systems/99VA61"

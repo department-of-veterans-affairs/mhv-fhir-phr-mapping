@@ -29,7 +29,7 @@ Usage: #inline
 * status = #available
 * type.coding[+].code = #SER
 * type.coding[=].display = "Serum"
-* type.coding[=].system = "http://va.gov/systems/HL70070"
+* type.coding[=].system = "http://terminology.hl7.org/CodeSystem/v2-0487"
 * type.coding[+].code = #72
 * type.coding[=].display = "SERUM"
 * type.coding[=].system = "http://va.gov/systems/99VA61"

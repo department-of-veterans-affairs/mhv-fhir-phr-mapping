@@ -5,18 +5,25 @@ Title:          "VA MHV All DocumentReference"
 Description:    """
 A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. This includes Physician Notes, Discharge Summary, ECG/EKG, and Imaging reports.
 """
-* ^extension[$fmm].valueInteger = 1
+* ^extension[$fmm].valueInteger = 4
 * identifier MS
 * type from DocumentReferenceTypeVS (required)
 // us-core sets category to `clinical-note`
 * status = #current
 * date MS
 * author MS
+* author ^type.aggregation = #contained
+//* author only Reference(MHVpractitioner)
 * authenticator MS
+* authenticator ^type.aggregation = #contained
+* authenticator only Reference(MHVpractitioner or Practitioner)
 * authenticator.extension contains NoteAuthenticatedWhen named when 0..1 MS
 
 * custodian MS
 * context.related MS
+* context.related ^type.aggregation = #contained
+* context.related only Reference(MHVlocation or Location)
+
 * context.period MS
 * content 1..1
 * content.attachment.contentType MS

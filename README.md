@@ -8,6 +8,13 @@ The [latest build publication](https://department-of-veterans-affairs.github.io/
 
 The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages)
 
+### TBD
+
+TBD
+
+- Note
+  - Moved to FMM 4 as there is no outstanding questions with KBS, all questions have been resolved.
+
 ### 0.2.10
 
 2023-12-22

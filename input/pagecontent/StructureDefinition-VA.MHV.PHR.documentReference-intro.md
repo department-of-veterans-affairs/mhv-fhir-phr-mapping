@@ -28,7 +28,6 @@
 - `context.period` may hold the admit time and discharge time
 - `context.related` may hold the location
 - `context.encounter` may hold the encounter identifier
-- `content.title` is the title of the report
 - `content.attachment.title` may be a local title for the report
 - `content.attachment.creation` may be the Radiology report timestamp
 - `content.attachment.contentType` will be `text/plain`

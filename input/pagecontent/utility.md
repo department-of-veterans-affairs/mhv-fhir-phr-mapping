@@ -72,7 +72,7 @@ Beyond MVP we could look to add a method to convert these enum or strings to a s
 ##### Formal code systems of interest
 
 - SCT = `http://snomed.info/sct`
-- UCUM = http://unitsofmeasure.org`
+- UCUM = `http://unitsofmeasure.org`
 - LOINC = `http://loinc.org`
 - ICD = `http://terminology.hl7.org/CodeSystem/icd9cm`
 - CPT = `http://www.ama-assn.org/go/cpt`
@@ -116,6 +116,8 @@ VIA seems to give us SI units or other units not found in the KBS cross referenc
 
 | VIA code | Proper UCUM |
 |------------|-------------|
+`/min` | `/min`
+`%` | `%`
 `in` | `[in_i]`
 `lb` | `[lb_av]`
 `F` | `[degF]`
