@@ -1,7 +1,8 @@
 == Suppressed Messages ==
+# suppress warning messages can be truncated with a %
 
 # ICD will not validate, but I have it right 
-The definition for the Code System with URI 'http://terminology.hl7.org/CodeSystem/icd9cm' doesnt provide any codes so the code cannot be validated
+A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/icd9cm' could not be found, so the code cannot be validated
 
 # Some immunizations don't have CVX
 WARNING: Immunization/ex-MHV-immunization-1: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
@@ -37,11 +38,8 @@ No code provided, and a code should be provided from the value set 'ReligiousAff
 No code provided, and a code should be provided from the value set 'MaritalStatus' (http://hl7.org/fhir/ValueSet/marital-status|4.0.1)
 
 # Some invented codeSystems
-Code System URI 'http://va.gov/systems/HL70070' could not be found so the code cannot be validated
-Code System URI 'http://va.gov/systems/99VA64' could not be found so the code cannot be validated
-Code System URI 'http://va.gov/systems/99VA60' could not be found so the code cannot be validated
-Code System URI 'http://va.gov/systems/99VA95.3' could not be found so the code cannot be validated
-Code System URI 'http://va.gov/systems/99VA61' could not be found so the code cannot be validated
+The CodeSystem http://va.gov/systems/99VA95.3 is unknown%
+
 
 # example Chem-Hem has extra codes outside the slices defined by us-core
 INFORMATION: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
@@ -74,16 +72,17 @@ INFORMATION: StructureDefinition.where(url = 'https://department-of-veterans-aff
 The value '1000-01-01' is outside the range of reasonable years - check for data entry error
 
 # info messages when using draft resources, like valueSets from THO 
-Reference to draft item http://hl7.org/fhir/allergy-intolerance-category|4.0.1
-Reference to draft item http://terminology.hl7.org/CodeSystem/condition-ver-status|1.0.0
-Reference to draft item http://terminology.hl7.org/CodeSystem/condition-category|0.5.0
+Reference to draft CodeSystem http://hl7.org/fhir/allergy-intolerance-category|4.0.1
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-ver-status|1.0.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|0.5.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|0.1.0
 
 # Organization, Practitioner, and Location are now contained, so there is no examples formally recognized by validator
 The Implementation Guide contains no explicitly linked examples for this profile
 
 # Vital-Sign concepts are mapped from VUID
+A definition for CodeSystem 'urn:oid:2.16.840.1.113883.6.233' could not be found, so the code cannot be validated
 The Source Code System urn:oid:2.16.840.1.113883.6.233 is not fully defined and populated, and no sourceScope is specified, so the source code checking will not be performed
-Code System URI 'urn:oid:2.16.840.1.113883.6.233' could not be found so the code cannot be validated
 
 # Patient-0 is fully populated, therefore uses extensions beyond us-core
 INFORMATION: Patient/ex-VIA-patient-0: Patient.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|5.0.1

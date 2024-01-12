@@ -13,7 +13,7 @@
     - [Imaging (18748-4)](https://loinc.org/18748-4/)
       - may have a CPT code
 - `subject` is a reference to this patient
-- `status` is `current`
+- `status` is `current` or `entered-in-error`
 - `identifier` will hold the record identifier from Vista
   - may hold accession number for Radiology reports
   - may hold case number
@@ -32,4 +32,8 @@
 - `content.attachment.creation` may be the Radiology report timestamp
 - `content.attachment.contentType` will be `text/plain`
 - `content.attachment.data` the report text in base64 encoding
+  - Note that Cerner uses `content.attachment.url` that points at a FHIR Binary holding the text
 - no other elements are populated
+
+Should search for entries that do **not** have `status=entered-in-error` (might also work to look for only `current`)
+> GET {path}/DocumentReference?patient={patient}&status:not!=entered-in-error

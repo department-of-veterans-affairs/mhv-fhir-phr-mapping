@@ -16,6 +16,7 @@
   - valueCodeableConcept of SNOMED#401515003 Known present
   - see [Immunization Reaction Profile of Observation](StructureDefinition-VA.MHV.PHR.immunizationReaction.html)
   - note that va.gov has been directed to now show reaction. The reason is that this is not available in Vista for clinician use anymore.
+- `status` will be `completed` for those we receive from VIA, those we no longer receive will be changed to `entered-in-error`
 - `contraindicated` - '1' for Yes (do not repeat this vaccine), '0' for no (okay to use in the future)
   - KBS indicates that there is a very small fragment that have this set.
   - KBS discussion, we will follow the definition of the element.  Meaning we presume tha the immunization was given. This could be recorded as a FHIR Immunization with `.status=not-done`.
@@ -87,8 +88,10 @@ Note will NOT be using the SNOMED conversion as it is only partial and may not b
 #### changes needed
 
 - Historic (those immunizations not given at the VA) can be entered with partial dateTime. Common to not have a time, also not uncommon to only have a year. Current source-code converts these dates wrongly. Dates without time are converted to dates with a midnight time. Dates that are just the year are not recorded at all. The second issue is more critical as the va.gov UI doesn't show times. Both should be fixed. [DateUtilExt.java](https://github.com/department-of-veterans-affairs/mhv-np-phr-api-v2/blob/1d85f200f1c4253bb730718d7960804781dad30e/src/main/java/gov/va/med/mhv/integration/util/DateUtilExt.java)
+  - MHV-52880
 - The contained Location resource should have the meta.profile populated for consistency and validation
 - If the reaction is "NONE", then we should record a contained Observation indicating no reaction.
   - 293104008 Adverse reaction to component of vaccine product
     - 2667000 Absent
     - 410516002 Known absent
+- immunizations no longer fed to with VIA need to have their `.status` changed to `#entered-in-error`

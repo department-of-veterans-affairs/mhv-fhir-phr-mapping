@@ -1,8 +1,8 @@
 Implementation Guide defining structureDefinition profiles, examples, and testing for how MyHealtheVet publishes the PHR using FHIR as an API.
 
-This is not part of the continuous build to keep visibility low.
+The [latest formal publication](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/) using Github 'pages'
 
-The [latest build publication](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/) using Github 'pages'
+[CI build](https://build.fhir.org/ig/department-of-veterans-affairs/mhv-fhir-phr-mapping/branches/main/index.html) using HL7 CI build infrastructure
 
 ## Version History
 

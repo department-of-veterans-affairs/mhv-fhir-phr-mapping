@@ -7,16 +7,8 @@ A profile on the DocumentReference resource for MHV PHR exposing Radiology note 
 """
 * ^extension[$fmm].valueInteger = 1
 // Most criteria come from the MHV documentReference
-* type.coding 1..2
-* type.coding ^slicing.discriminator.type = #pattern
-* type.coding ^slicing.discriminator.path = "system"
-* type.coding ^slicing.rules = #open
-* type.coding contains
-  LO 1..1 and
-  CP 0..1
-* type.coding[LO].system = LOINC
-* type.coding[LO].code 1..1
 * type.coding[LO] = LOINC#18748-4
+* type.coding contains CP 0..1
 * type.coding[CP].system = CPT
 * type.coding[CP].code 1..1
 * identifier 1..

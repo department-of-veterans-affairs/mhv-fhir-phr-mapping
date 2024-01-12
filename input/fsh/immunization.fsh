@@ -7,7 +7,10 @@ Description:    """
 A profile on the Immunization that declares how MHV will expose PHR immunization.
 """
 * ^extension[$fmm].valueInteger = 4
-* status = #completed
+* meta.extension contains http://hl7.org/fhir/StructureDefinition/lastSourceSync named lastSourceSync 0..1 MS
+//* status = #completed
+* status MS
+* status ^short = "May indicate entered-in-error"
 * occurrence[x] only dateTime
 * occurrence[x] 1..1 MS
 * recorded MS

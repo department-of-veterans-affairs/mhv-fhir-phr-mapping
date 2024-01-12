@@ -12,6 +12,7 @@
   - This also notes many additional kinds of notes. It does indicate MVP will stick to what MHV currently presents.
 - based on US-Core for Clinical Notes
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note` to indicate the intent to be compliant with this profile
+- `status` will be `current` for those we receive from VIA, those we no longer receive will be changed to `entered-in-error`
 - `type` (PN, DS, CR, A).
   - `DS` - LOINC#18842-5 \"Discharge summary\"
   - `PN` - LOINC#11506-3 \"Progress note\"
@@ -24,6 +25,7 @@
     - PROGRESS NOTE - 2,208 sub document types
     - DISCHARGE SUMMARY - 1,647 sub document types
 - Historically MHV has also extracted Discharge Summary from the ADT feed, but this feed does not include the unique identifier for that Discharge Summary, thus it would present a de-duplication problem. **current plan** is to not extract Discharge Summary from ADT feed for FHIR. We will extract Discharge Summary from the notes feed. Unclear what Discharge Summary would be missing, and only in the ADT feed.
+  - KBS Question asked on Leaf #88
 - titles: preserve both `localTitle` and `standardTitle`. Do not try to convert to a code
 - dates: VIA gives us timestamp and procTimestamp
   - There is a third `signatureTimestamp` in the VIA xml schema, but this does not seem to be populated by VIA
@@ -55,18 +57,9 @@
 - if the standard title contains the string `C & P `, then this note is **held for 30 days past the signature date/time**
   - Compensation and Pension
   - Many sub-titles but all have "C & P EXAMINATION CONSULT" (e.g. PODIATRY C & P EXAMINATION CONSULT)
-- all other notes, labs, and conditions are **held for 36 hours past the signature date/time
-
-#### source-code review
-
-2024-01-05
-
-- Will only convert PN and CR
-  - Will not convert DS
+- all other notes, labs, and conditions are **held for 36 hours past the signature date/time**
 
 #### TODO
 
-- delete
-  - when a signed note is deleted.. is it deleted, or marked as entered-in-error or some status? 
-  - We should test to make sure we understand how VIA behaves
-  - How often is this done?
+- discharge summary will have a period. This has not been seen in sample fhir output yet.
+- Those that we do not get updated in VIA need to be marked with `status` of `entered-in-error`

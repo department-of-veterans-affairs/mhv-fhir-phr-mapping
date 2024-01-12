@@ -6,10 +6,19 @@ Description:    """
 A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. This includes Physician Notes, Discharge Summary, ECG/EKG, and Imaging reports.
 """
 * ^extension[$fmm].valueInteger = 4
+* meta.extension contains http://hl7.org/fhir/StructureDefinition/lastSourceSync named lastSourceSync 0..1 MS
 * identifier MS
-* type from DocumentReferenceTypeVS (required)
+// slice type so that other alternaives can be included, such as the existing VUID
+* type.coding ^slicing.discriminator.type = #pattern
+* type.coding ^slicing.discriminator.path = "system"
+* type.coding ^slicing.rules = #open
+* type.coding contains LO 1..1
+* type.coding[LO].system = $loinc
+* type.coding[LO] from DocumentReferenceTypeVS (required)
 // us-core sets category to `clinical-note`
-* status = #current
+* status MS
+* status ^short = "May indicate entered-in-error"
+//* status = #current
 * date MS
 * author MS
 * author ^type.aggregation = #contained

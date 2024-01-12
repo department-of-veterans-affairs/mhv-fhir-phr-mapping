@@ -14,14 +14,6 @@ A profile on the DocumentReference resource for MHV PHR exposing ECG/EKG (Clinic
 * category contains
   LO 1..1
 * category[LO] = LOINC#LP29708-2
-* type.coding 1..1
-* type.coding ^slicing.discriminator.type = #pattern
-* type.coding ^slicing.discriminator.path = "system"
-* type.coding ^slicing.rules = #open
-* type.coding contains
-  LO 1..1
-* type.coding[LO].system = LOINC
-* type.coding[LO].code 1..1
 * type.coding[LO] = LOINC#11524-6
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
