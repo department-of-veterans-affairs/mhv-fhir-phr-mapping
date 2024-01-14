@@ -8,12 +8,27 @@ The [latest formal publication](https://department-of-veterans-affairs.github.io
 
 The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages)
 
-### TBD
+### CI-Build
 
 TBD
 
+- incremental CI build on build.fhir.org 
+- VIA update model
+  - use new HAPI with parameter to not preserve history (history was not needed and problematic)
+  - use extension on meta to indicate the dateTime that we are refreshing, so that we can detect those that **did not change**
+    - `http://hl7.org/fhir/StructureDefinition/lastSourceSync`
+    - Those that **did not change** that are current need to be marked with `status` of `entered-in-error`
 - Note
+  - now can have status of `current` or `entered-in-error`
+    - API search must now make sure searching only on `current`
   - Moved to FMM 4 as there is no outstanding questions with KBS, all questions have been resolved.
+  - `timestamp` needs to go into `.content.attachment.creation` because sometimes it is just a date without time
+  - if `timestamp` is missing the time (just a date) then populate `.date` with `procTimestamp`
+  - Many new examples have been added
+- immunization
+  - now can have status of `completed` or `entered-in-error`
+    - API search must now make sure searching only on `completed`
+- Update concept maps from VF_ qualifiers from January 8, 2024
 
 ### 0.2.10
 

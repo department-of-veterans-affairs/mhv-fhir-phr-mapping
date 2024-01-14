@@ -17,7 +17,7 @@
 - `identifier` will hold the record identifier from Vista
   - may hold accession number for Radiology reports
   - may hold case number
-- `date` the report date
+- `date` the report date (instant)
 - `author` the report author
   - In a Discharge Summary the `author` would have historically been known as the Discharge Physician
   - In a Discharge Summary historically the Admitting Physician is harvested from the content body from `ATTENDING:`
@@ -29,7 +29,7 @@
 - `context.related` may hold the location
 - `context.encounter` may hold the encounter identifier
 - `content.attachment.title` may be a local title for the report
-- `content.attachment.creation` may be the Radiology report timestamp
+- `content.attachment.creation` may be the report timestamp
 - `content.attachment.contentType` will be `text/plain`
 - `content.attachment.data` the report text in base64 encoding
   - Note that Cerner uses `content.attachment.url` that points at a FHIR Binary holding the text

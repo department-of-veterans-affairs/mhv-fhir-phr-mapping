@@ -37,10 +37,6 @@ The repeating element has a pattern. The pattern will apply to all the repeats (
 No code provided, and a code should be provided from the value set 'ReligiousAffiliation' (http://terminology.hl7.org/ValueSet/v3-ReligiousAffiliation|2.0.0)
 No code provided, and a code should be provided from the value set 'MaritalStatus' (http://hl7.org/fhir/ValueSet/marital-status|4.0.1)
 
-# Some invented codeSystems
-The CodeSystem http://va.gov/systems/99VA95.3 is unknown%
-
-
 # example Chem-Hem has extra codes outside the slices defined by us-core
 INFORMATION: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
 INFORMATION: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.category[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
@@ -53,7 +49,6 @@ INFORMATION: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.categ
 
 
 # some allergies have a code, but not system
-A code with no system has no defined meaning. A system should be provided
 No code provided, and a code should be provided from the value set 'Common substances for allergy and intolerance documentation including refutations' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1186.8|20210622)
 
 # DocumentReference profile is for API use. No data will be marked with this profile
@@ -67,9 +62,6 @@ INFORMATION: StructureDefinition/VA.MHV.PHR.medicationDispense: StructureDefinit
 
 # Immunization reaction Observation is a contained, so the IG validator doesn't see it
 INFORMATION: StructureDefinition.where(url = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunizationReaction'): The Implementation Guide contains no explicitly linked examples for this profile
-
-# Patient examples don't actually have a DOB, so I put in this so that I could find it
-The value '1000-01-01' is outside the range of reasonable years - check for data entry error
 
 # info messages when using draft resources, like valueSets from THO 
 Reference to draft CodeSystem http://hl7.org/fhir/allergy-intolerance-category|4.0.1
@@ -123,23 +115,34 @@ WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained
 WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chPanel-1190740001a*/: All observations should have an effectiveDateTime or an effectivePeriod
 
 # Jay checked these. Were valid, but are now retired. Do we just accept validation errors, or do we put defensive code into MHV to not use the code, but just use the old display?
-# 71020 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/71020
-# 78465 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78465
-# 78990 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78990
-# 78480 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78480
-# 78478 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78478
 # old codes that the current CPT valueSet does not include as deprecated codes
-Code '71020' not found in CPT; Unknown Code '71020' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#71020' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.6' (from Tx-Server)
-Code '78465' not found in CPT; Unknown Code '78465' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78465' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.6' (from Tx-Server)
-Code '78990' not found in CPT; Unknown Code '78990' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78990' is not in the value set 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS|0.2.6' (from Tx-Server)
-Code '78480' not found in CPT; Unknown Code '78480' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78480' is not in the value set 'http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1' (from Tx-Server)
-Code '78478' not found in CPT; Unknown Code '78478' in the system 'http://www.ama-assn.org/go/cpt|2023'; The provided code 'http://www.ama-assn.org/go/cpt#78478' is not in the value set 'http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1' (from Tx-Server)
+# 71020 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/71020
+Code '71020' not found in CPT 
+Unknown code '71020' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
 
-# These are the ucum values given in the source data feed.
-WARNING: StructureDefinition/VA.MHV.PHR.vitalsPain: StructureDefinition.snapshot.element[61].minValue.ofType(Quantity): UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked, and the Quantity.unit SHOULD contain the annotation
-WARNING: StructureDefinition/VA.MHV.PHR.vitalsPain: StructureDefinition.snapshot.element[61].maxValue.ofType(Quantity): UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked, and the Quantity.unit SHOULD contain the annotation
-WARNING: StructureDefinition/VA.MHV.PHR.vitalsPain: StructureDefinition.differential.element[11].minValue.ofType(Quantity): UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked, and the Quantity.unit SHOULD contain the annotation
-WARNING: StructureDefinition/VA.MHV.PHR.vitalsPain: StructureDefinition.differential.element[11].maxValue.ofType(Quantity): UCUM Codes that contain human readable annotations like {score} can be misleading (e.g. they are ignored when comparing units). Best Practice is not to depend on annotations in the UCUM code, so this usage should be checked, and the Quantity.unit SHOULD contain the annotation
+# 78478 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78478
+Code '78478' not found in CPT 
+Unknown code '78478' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+
+# 78480 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78480
+Code '78480' not found in CPT
+Unknown code '78480' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+
+# 78465 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78465
+Code '78465' not found in CPT
+Unknown code '78465' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+
+# 78990 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/78990
+Code '78990' not found in CPT
+Unknown code '78990' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'
+
+# image use CTP codes that are not found
+The provided code 'http://www.ama-assn.org/go/cpt#73630 ('RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|5.0.1'
+The provided code 'http://www.ama-assn.org/go/cpt#74415 ('UROGRAPHY, INFUSION, DRIP TECHNIQUE AND/OR BOLUS TECHNIQUE; WITH NEPHROTOMOGRAPHY')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|5.0.1'
+The provided code 'http://www.ama-assn.org/go/cpt#72100 ('RADIOLOGIC EXAMINATION, SPINE, LUMBOSACRAL; 2 OR 3 VIEWS')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|5.0.1'
+The provided code 'http://www.ama-assn.org/go/cpt#71111 ('RADIOLOGIC EXAMINATION, RIBS, BILATERAL; INCLUDING POSTEROANTERIOR CHEST, MINIMUM OF 4 VIEWS')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|5.0.1'
+The provided code 'http://www.ama-assn.org/go/cpt#93015 ('CARDIOVASCULAR STRESS TEST USING MAXIMAL OR SUBMAXIMAL TREADMILL OR BICYCLE EXERCISE, CONTINUOUS ELECTROCARDIOGRAPHIC MONITORING, AND/OR PHARMACOLOGICAL STRESS; WITH SUPERVISION, INTERPRETATION AND REPORT')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|5.0.1'
+The provided code 'http://www.ama-assn.org/go/cpt#71260 ('COMPUTED TOMOGRAPHY, THORAX, DIAGNOSTIC; WITH CONTRAST MATERIAL(S)')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|5.0.1'
 
 # current IG publisher adds this extension to conceptMap and then complains that the extension exists
 The modifier extension http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence from FHIR version {3} is not allowed to be used at this point (allowed = e:ConceptMap.element.target; this element is [[BackboneElement, ConceptMap.group.element.target]; this is a warning since contexts may be renamed between FHIR versions)
@@ -185,40 +188,19 @@ WARNING: DocumentReference/ex-MHV-note-5: DocumentReference.context.related[0]: 
 WARNING: DocumentReference/ex-MHV-note-6: DocumentReference.authenticator: Found multiple matching profiles for #ex-MHV-practitioner-36556 among choices: http://hl7.org/fhir/StructureDefinition/Practitioner, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner
 WARNING: DocumentReference/ex-MHV-note-6: DocumentReference.context.related[0]: Found multiple matching profiles for #ex-MHV-location-984 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
 
-
-# examples with more codes than minimally allowed
-INFORMATION: Observation/ex-MHV-heartRate-1: Observation.code.coding[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/heartrate|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/ex-MHV-vitals-1: Observation.code.coding[1]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-
 # the pain example also includes the original code (VUID)
-INFORMATION: Observation/ex-MHV-pain-1: Observation.code.coding[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.2.11 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # vitals can have .component that carry vista qualifiers. The following are confirmed to be legitimate
-INFORMATION: Observation/ex-MHV-oximetry-1: Observation.component[0]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/ex-MHV-oximetry-1: Observation.code.coding[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/oxygensat|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/3411ad29-aad6-4eae-9897-9503a70ee916: Observation.component[0]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/3ba4e1cb-3215-4669-ad03-b743bf76522a: Observation.component[0]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/8f92c275-7be5-4f9f-81ca-9c1eb58b91c8: Observation.component[0]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/91f05de1-fb1c-4c31-b434-094d53791842: Observation.extension[0].value.ofType(CodeableConcept).coding[0]: The code '243147009' is valid but is not active
-INFORMATION: Observation/d83fd11d-f536-4fb0-8f77-b0b514a8eed9: Observation.component[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/d83fd11d-f536-4fb0-8f77-b0b514a8eed9: Observation.component[3]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/d83fd11d-f536-4fb0-8f77-b0b514a8eed9: Observation.component[4]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/d83fd11d-f536-4fb0-8f77-b0b514a8eed9: Observation.component[5]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/d83fd11d-f536-4fb0-8f77-b0b514a8eed9: Observation.component[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/d83fd11d-f536-4fb0-8f77-b0b514a8eed9: Observation.component[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/d83fd11d-f536-4fb0-8f77-b0b514a8eed9: Observation.component[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/d83fd11d-f536-4fb0-8f77-b0b514a8eed9: Observation.component[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/da82f55f-aa45-4883-896e-0bd87528bb4c: Observation.component[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/da82f55f-aa45-4883-896e-0bd87528bb4c: Observation.component[3]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/da82f55f-aa45-4883-896e-0bd87528bb4c: Observation.component[4]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/da82f55f-aa45-4883-896e-0bd87528bb4c: Observation.component[5]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/da82f55f-aa45-4883-896e-0bd87528bb4c: Observation.component[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/da82f55f-aa45-4883-896e-0bd87528bb4c: Observation.component[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/da82f55f-aa45-4883-896e-0bd87528bb4c: Observation.component[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/da82f55f-aa45-4883-896e-0bd87528bb4c: Observation.component[5]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/f49abb87-0ee6-4aca-8858-2563316926ea: Observation.component[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/f49abb87-0ee6-4aca-8858-2563316926ea: Observation.component[3]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/f49abb87-0ee6-4aca-8858-2563316926ea: Observation.component[4]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP|0.2.10 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/f49abb87-0ee6-4aca-8858-2563316926ea: Observation.component[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/f49abb87-0ee6-4aca-8858-2563316926ea: Observation.component[3]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
-INFORMATION: Observation/f49abb87-0ee6-4aca-8858-2563316926ea: Observation.component[4]: This element does not match any known slice defined in the profile http://hl7.org/fhir/StructureDefinition/bp|4.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.2.11 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# pulseOx has this in addition to the FHIR core desired one.
+The provided code 'http://loinc.org#59408-5' was not found in the value set 'http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1'
+
+# these are matching a code but still complaining
+Terminology_TX_NoValid_3_CC
+Terminology_TX_NoValid_1_CC
+
+# either are fine
+Found multiple matching profiles for #approvedBy-0 among choices: http://hl7.org/fhir/StructureDefinition/Practitioner, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner
+Found multiple matching profiles for #location-0 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location

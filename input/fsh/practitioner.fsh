@@ -26,7 +26,7 @@ Mapping to [HDR PractitionerLite](StructureDefinition-VA.MHV.PHR.practitioner-ma
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
-* identifier contains  TOid 0..*
+* identifier contains  TOid 1..1
 * identifier[TOid].use = #usual
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"

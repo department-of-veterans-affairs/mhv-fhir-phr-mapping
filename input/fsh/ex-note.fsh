@@ -33,6 +33,7 @@ Usage: #example
 Description: """
 Derived from the a mock NoteTO:
 """
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
@@ -114,6 +115,7 @@ Derived from the a mock NoteTO:
 
 Note dropped cosigner
 """
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
@@ -143,6 +145,7 @@ Derived from the a mock NoteTO:
 
 Note has an unsigned addenda
 """
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
@@ -171,6 +174,7 @@ Derived from the a mock NoteTO:
 
 Note has a signed addenda
 """
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)

@@ -29,7 +29,8 @@
 - titles: preserve both `localTitle` and `standardTitle`. Do not try to convert to a code
 - dates: VIA gives us timestamp and procTimestamp
   - There is a third `signatureTimestamp` in the VIA xml schema, but this does not seem to be populated by VIA
-  - `timestamp` will go into the DocumentReference.date
+  - `timestamp` will go into the DocumentReference.date (needing to be expanded to full instant datatype)
+  - `timestamp` will go into the DocumentReference.content.attachment.creation (not expanded, so if just a date, then it is just a date)
   - `procTimestamp` will go into an extension on DocumentReference.authenticator
 - delete / entered-in-error
   - We don't see notes until they are signed (most entered-in-error will be caught prior to this signature)
@@ -61,5 +62,9 @@
 
 #### TODO
 
-- discharge summary will have a period. This has not been seen in sample fhir output yet.
-- Those that we do not get updated in VIA need to be marked with `status` of `entered-in-error`
+- discharge summary may have a `period`. This has not been seen in sample fhir output yet.
+- use extension on meta to indicate the dateTime that we are refreshing, so that we can detect those that did not change
+  - `http://hl7.org/fhir/StructureDefinition/lastSourceSync`
+  - Those that we do not get updated in VIA need to be marked with `status` of `entered-in-error`
+- `timestamp` needs to go into `.content.attachment.creation` because sometimes it is just a date without time
+- if `timestamp` is missing the time (just a date) then populate `.date` with `procTimestamp`

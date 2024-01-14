@@ -18,7 +18,7 @@ A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) 
 * identifier[TOid].value ^short = "`NoteTO` | `.` | {NoteTO.id}"
 * type from NoteTypeVS (required)
 * context.encounter 0..0
-* content.attachment.creation 0..0
+* content.attachment.creation MS
 * custodian 0..0
 * description 0..0
 
@@ -45,7 +45,8 @@ Description: "Informative map to available elements in MHV FHIR API"
 * status -> "`current`" "8925-.05 - STATUS"
 * subject -> "GetPatient()"
 * identifier -> "NoteTO.id"
-* date -> "ConvertDate(NoteTO.timestamp)" "8925-.1301 - REFERENCE DATE/TIME"
+* date -> "if timestamp is missing time, then use procTimestamp"
+* content.attachment.creation -> "ConvertDate(NoteTO.timestamp)" "8925-.1301 - REFERENCE DATE/TIME"
 * context.period.start -> "ConvertDate(NoteTO.admitTimestamp)" "8925-.07 - EPISODE BEGIN DATE/TIME"
 * context.period.end -> "ConvertDate(NoteTO.dischargeTimestamp)" "8925-.08 - EPISODE END DATE/TIME"
 * content.attachment.title -> "NoteTO.localTitle" "8925-.01.01 - NAME"
@@ -69,7 +70,8 @@ Description: "Informative map to include only the elements available in eVault P
 * status -> "`current`" "8925-.05 - STATUS"
 * subject -> "GetPatient()"
 * identifier -> "NoteTO.id"
-* date -> "ConvertDate(NoteTO.timestamp)" "8925-.1301 - REFERENCE DATE/TIME"
+* date -> "if timestamp is missing time, then use procTimestamp"
+* content.attachment.creation -> "ConvertDate(NoteTO.timestamp)" "8925-.1301 - REFERENCE DATE/TIME"
 * context.period.start -> "ConvertDate(NoteTO.admitTimestamp)" "8925-.07 - EPISODE BEGIN DATE/TIME"
 * context.period.end -> "ConvertDate(NoteTO.dischargeTimestamp)" "8925-.08 - EPISODE END DATE/TIME"
 * content.attachment.title -> "NoteTO.localTitle" "8925-.01.01 - NAME"
