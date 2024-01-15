@@ -178,16 +178,17 @@ General Pattern
 
 Before Production use there must be a permanent solution. The solution needs address some update problems (e.g. entered-in-error).  The following are potential candidates
 
+1. Update-and-Expunge: This model is made available with an updated HAPI Server (6.10.0) that has the ability to disable history. However with this version we can't use Wipe-and-Replace as that will result in new id values being assigned at each refresh. So Update-and-Expunge is designed. Each VIA feed we convert to FHIR and request an update, but the HAPI server is smart enough to notice that nothing changed so it will not update the meta.lastUpdated. So we will add to our update the use of the lastSourceSync extension, with todays date/time (now). This will force an update. Thus after we have fully processed the VIA feed, we can then look for entries older than now that are still active. This will most of the time return an empty set, but if it does return resources, we will change them to entered-in-error and update them.
 1. Wipe-and-Replace: Delete the patient's specific Resource (e.g. delete all the Immunizations for this patient) and write using update current data from the VIA refresh -- similar to eVault PHR today. The HAPI server notices an update, by business identifier, of a previously deleted resource, so it brings it back to non-deleted. Thus after a VIA refresh, only current resources are not-deleted. The drawback is that this keeps historic versions, with two versions per refresh, and _lastUpdated is always the refresh time. Also, the ones removed are not marked as entered-in-error.
-2. Get VIA updated
-3. Get VDIF to expose their data
-4. Get VDIF to expose their data in FHIR form
-5. Use Lighthouse FHIR, and thus have the 24 hour problem
-6. Use Lighthouse FHIR, and use a hack for short-term data. Where we only add vitals seen in VIA in the last 24 hours (or some timeframe).
-7. Use HDR
-8. Use CDW somehow
-9. new event service? slack #ves-event-bus
-10. track updates, and notice when a VIA update does not include a record we previously had. This would be very expensive and memory intensive. Thus might be something we do only occationally at low compute time.
+1. Get VIA updated
+1. Get VDIF to expose their data
+1. Get VDIF to expose their data in FHIR form
+1. Use Lighthouse FHIR, and thus have the 24 hour problem
+1. Use Lighthouse FHIR, and use a hack for short-term data. Where we only add vitals seen in VIA in the last 24 hours (or some timeframe).
+1. Use HDR
+1. Use CDW somehow
+1. new event service? slack #ves-event-bus
+1.  track updates, and notice when a VIA update does not include a record we previously had. This would be very expensive and memory intensive. Thus might be something we do only occationally at low compute time.
 
 ## References
 

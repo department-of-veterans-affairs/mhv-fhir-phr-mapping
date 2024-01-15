@@ -94,4 +94,4 @@ Note will NOT be using the SNOMED conversion as it is only partial and may not b
   - 293104008 Adverse reaction to component of vaccine product
     - 2667000 Absent
     - 410516002 Known absent
-- immunizations no longer fed to with VIA need to have their `.status` changed to `#entered-in-error`
+- Update-and-Expunge - immunizations no longer fed to with VIA need to have their `.status` changed to `#entered-in-error`

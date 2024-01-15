@@ -113,7 +113,7 @@ also:
 - preserve location in an extension/contained
 - the code should be defensive for anything beyond the 6 defined domains, such as a robust map anything else generally to valueString or valueQuantity
 - code mapping may need to be confirmed that the code/map is doing what is defined here.
-- need to implement solution for entered-in-error, Likely wipe-and-replace typical of VIA
+- need to implement solution for entered-in-error, Likely Update-and-Expunge, typical of VIA
 - should to add support for qualifiers and their conversion to bodySite, deviceCode, method, and bodyPosition
 - should add conversion of ucum to [fixed ucum codes](utility.html#ucum-code)
 - Pain is now an valueInteger

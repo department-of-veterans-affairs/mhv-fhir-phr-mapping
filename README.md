@@ -13,7 +13,7 @@ The notes below for each release. Archive of [released packages](https://github.
 TBD
 
 - incremental CI build on build.fhir.org 
-- VIA update model
+- Update-and-Expunge - new VIA update model
   - use new HAPI with parameter to not preserve history (history was not needed and problematic)
   - use extension on meta to indicate the dateTime that we are refreshing, so that we can detect those that **did not change**
     - `http://hl7.org/fhir/StructureDefinition/lastSourceSync`
