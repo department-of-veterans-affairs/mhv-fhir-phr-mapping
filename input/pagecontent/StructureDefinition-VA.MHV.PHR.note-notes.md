@@ -63,7 +63,8 @@
 #### TODO
 
 - discharge summary may have a `period`. This has not been seen in sample fhir output yet.
-- use extension on meta to indicate the dateTime that we are refreshing, so that we can detect those that did not change
+- Implement  [Update-and-Expunge](background.html#entered-in-error)
+  - use extension on meta to indicate the dateTime that we are refreshing, so that we can detect those that did not change
   - `http://hl7.org/fhir/StructureDefinition/lastSourceSync`
   - Those that we do not get updated in VIA need to be marked with `status` of `entered-in-error`
 - `timestamp` needs to go into `.content.attachment.creation` because sometimes it is just a date without time

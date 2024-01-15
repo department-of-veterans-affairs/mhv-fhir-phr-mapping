@@ -9,7 +9,7 @@
 - identifier
   - seems most of the time there is a `intoleranceCondition.recordIdentifier.namespaceId`. this should be used if it is provided
   - else there is an typical TOid slice with the value prefix of `AllergyTO.`
-- Using `active` and `entered-in-error` to support normal resource lifecycle. (aka NOT using wipe-and-replace)
+- Using `active` and `entered-in-error` to support normal resource lifecycle.
   - a `verificationStatus` will be set to `entered-in-error` when `status` is `E`
   - a `clinicalStatus` will be set to `active` if the `status` is `F`
   - Thus query needs to look for [entries NOT marked `entered-in-error`](StructureDefinition-VA.MHV.PHR.allergyIntolerance.html)

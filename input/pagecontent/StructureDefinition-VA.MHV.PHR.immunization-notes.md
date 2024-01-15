@@ -34,7 +34,7 @@
   - `manufacture`
 - Updates
   - VIA hides deleted, or removed immunizations (proven with experimentation)
-  - Thus we will be using [Wipe-and-replace hack](background.html#entered-in-error)
+  - Thus we will be using [Update-and-Expunge](background.html#entered-in-error)
 - `series` - series of the immunization type was given to the patient
   - see table below for how to set `.protocolApplied.series`
   - single character `series` into `.protocolApplied.doseNumberString`
@@ -94,4 +94,4 @@ Note will NOT be using the SNOMED conversion as it is only partial and may not b
   - 293104008 Adverse reaction to component of vaccine product
     - 2667000 Absent
     - 410516002 Known absent
-- Update-and-Expunge - immunizations no longer fed to with VIA need to have their `.status` changed to `#entered-in-error`
+- Implement  [Update-and-Expunge](background.html#entered-in-error) - immunizations no longer fed to with VIA need to have their `.status` changed to `#entered-in-error`
