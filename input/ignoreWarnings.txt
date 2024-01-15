@@ -1,9 +1,6 @@
 == Suppressed Messages ==
 # suppress warning messages can be truncated with a %
 
-# ICD will not validate, but I have it right 
-A definition for CodeSystem 'http://terminology.hl7.org/CodeSystem/icd9cm' could not be found, so the code cannot be validated
-
 # Some immunizations don't have CVX
 WARNING: Immunization/ex-MHV-immunization-1: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
 WARNING: Immunization/ex-MHV-immunization-3: Immunization.vaccineCode: No code provided, and a code should be provided from the value set 'CVX Vaccines Administered Vaccine Set' (http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1010.6|20210630)
@@ -204,3 +201,17 @@ Terminology_TX_NoValid_1_CC
 # either are fine
 Found multiple matching profiles for #approvedBy-0 among choices: http://hl7.org/fhir/StructureDefinition/Practitioner, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner
 Found multiple matching profiles for #location-0 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
+
+# Examples for Condition are using historic ICD9 codes
+WARNING: Condition/ex-MHV-condition-1: Condition.code.coding[0].code: Unknown Code '401.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-10: Condition.code.coding[0].code: Unknown Code '600.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-11: Condition.code.coding[0].code: Unknown Code '724.2' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-2: Condition.code.coding[0].code: Unknown Code '300.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-3: Condition.code.coding[0].code: Unknown Code '365.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-4: Condition.code.coding[0].code: Unknown Code 'V79.1' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-5: Condition.code.coding[0].code: Unknown Code 'V79.8' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-6: Condition.code.coding[0].code: Unknown Code '424.90' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-7: Condition.code.coding[0].code: Unknown Code '414.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-8: Condition.code.coding[0].code: Unknown Code '333.99' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ex-MHV-condition-9: Condition.code.coding[0].code: Unknown Code '799.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+

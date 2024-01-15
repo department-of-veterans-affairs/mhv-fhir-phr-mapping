@@ -74,7 +74,7 @@ Beyond MVP we could look to add a method to convert these enum or strings to a s
 - SCT = `http://snomed.info/sct`
 - UCUM = `http://unitsofmeasure.org`
 - LOINC = `http://loinc.org`
-- ICD = `http://terminology.hl7.org/CodeSystem/icd9cm`
+- ICD = `http://hl7.org/fhir/sid/icd-9-cm`
 - CPT = `http://www.ama-assn.org/go/cpt`
 
 ##### VA specific code systems

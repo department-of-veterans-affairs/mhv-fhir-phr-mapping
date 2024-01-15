@@ -29,6 +29,8 @@ TBD
   - now can have status of `completed` or `entered-in-error`
     - API search must now make sure searching only on `completed`
 - Update concept maps from VF_ qualifiers from January 8, 2024
+- Fix URI for ICD9 to `http://hl7.org/fhir/sid/icd-9-cm` from `http://terminology.hl7.org/CodeSystem/icd9cm`
+  - https://terminology.hl7.org/ICD.html
 
 ### 0.2.10
 
