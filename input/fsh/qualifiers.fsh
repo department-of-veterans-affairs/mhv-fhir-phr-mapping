@@ -34,7 +34,7 @@ Usage: #definition
 * group.element[=].target.code  =  #261241001
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.display = "Arterial line"
-* group.element[+].code = #4688701
+* group.element[+].code = #4711312
 * group.element[=].display = "ASSISTED VENTILATOR"
 * group.element[=].target.code  =  #243141005
 * group.element[=].target.equivalence = #equal
