@@ -50,11 +50,30 @@ exclude-result-prefixes="soap ns2 uuid saxon"
 <!-- The following two extensions are used to enable the conversion to FSH resources - see mock-notes.fsh -->
 <!-- -->
 <extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
-    <valueString>
-        <xsl:attribute name="value">
-            <xsl:value-of select="concat('Note: ',id)" />
-        </xsl:attribute>
-    </valueString>
+    <xsl:choose>
+        <!-- this is a subset of values known to be in initial data -->
+        <xsl:when test="type = 'DS'">
+            <valueString>
+                <xsl:attribute name="value">
+                    <xsl:value-of select="concat('DS Note: ',id)" />
+                </xsl:attribute>
+            </valueString>
+        </xsl:when>
+        <xsl:when test="type = 'PN'">
+            <valueString>
+                <xsl:attribute name="value">
+                    <xsl:value-of select="concat('PN Note: ',id)" />
+                </xsl:attribute>
+            </valueString>
+        </xsl:when>
+        <xsl:when test="type = 'CR'">
+            <valueString>
+                <xsl:attribute name="value">
+                    <xsl:value-of select="concat('CR Note: ',id)" />
+                </xsl:attribute>
+            </valueString>
+        </xsl:when>
+    </xsl:choose>                   
 </extension>
 <extension url="http://hl7.org/fhir/StructureDefinition/artifact-description">
     <valueMarkdown>

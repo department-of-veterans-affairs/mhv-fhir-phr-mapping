@@ -13,11 +13,21 @@ The notes below for each release. Archive of [released packages](https://github.
 TBD
 
 - incremental CI build on build.fhir.org 
-- Update-and-Expunge - new VIA update model
-  - use new HAPI with parameter to not preserve history (history was not needed and problematic)
-  - use extension on meta to indicate the dateTime that we are refreshing, so that we can detect those that **did not change**
-    - `http://hl7.org/fhir/StructureDefinition/lastSourceSync`
-    - Those that **did not change** that are current need to be marked with `status` of `entered-in-error`
+- Some models to replace Wipe-and-Replace as this will result in database filling with unnecessary history
+  - **Index-Update-and-Expunge**
+    - pulls current FHIR resources (could use `_elements` [parameter](https://hl7.org/fhir/search.html#elements) to limit results to just identifiers), and 
+    - indexes the `.identifier` values found. 
+    - Then when updating the new VIA feed data, the index marks which `.identifier` were refreshed. 
+    - At the end, we can know which `.identifier` values were not updated. (most of the time there will be no unrefreshed data)
+    - We can pull those that were not updated, by `.identifier`, 
+    - change the status to `entered-in-error`, and 
+    - update them. 
+    - Note: Does not require moving to new HAPI Server.
+  - **Update-and-Expunge**
+    - use new HAPI server (6.10.0) with parameter to not preserve history (history was not needed and problematic)
+    - use extension on meta to indicate the dateTime that we are refreshing, so that we can detect those that **did not change**
+      - `http://hl7.org/fhir/StructureDefinition/lastSourceSync`
+      - Those that **did not change** that are current need to be marked with `status` of `entered-in-error`
 - Note
   - now can have status of `current` or `entered-in-error`
     - API search must now make sure searching only on `current`

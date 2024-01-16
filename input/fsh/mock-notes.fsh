@@ -15,8 +15,7 @@ These examples come from
 8. convert extension for description and title 
 9. move meta.profile into InstanceOf:
 10. use slices on identifier - TOid
-11. replace the FSH Online contained with #inline Location resources, with references
-12. change contained references to .reference = "#author-0" -- https://chat.fhir.org/#narrow/stream/215610-shorthand/topic/FSHOnline.20contained.20resources
+12. change contained (author, approvedBy, and location) references to .reference = "#author-0" -- https://chat.fhir.org/#narrow/stream/215610-shorthand/topic/FSHOnline.20contained.20resources
 
 */
 
@@ -27,7 +26,7 @@ Alias: $us-core-documentreference-category = http://hl7.org/fhir/us/core/CodeSys
 Instance: cd981839-d618-466e-9ac5-a0d07eb1009a
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 81544045"
+Title: "PN Note: 81544045"
 Description: "WOUND - SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -75,7 +74,7 @@ Description: "WOUND - SECURE MESSAGING"
 Instance: bee88c20-4462-4b02-8d73-10beccfe9388
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 81509152"
+Title: "PN Note: 81509152"
 Description: "UROLOGY SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -123,7 +122,7 @@ Description: "UROLOGY SECURE MESSAGING"
 Instance: 37ed1a35-5ca6-4a0b-b9a0-274ff255120d
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 80529980"
+Title: "PN Note: 80529980"
 Description: "EYE - AFTERVISIT SUMMARY SPECTACLE RX"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -171,7 +170,7 @@ Description: "EYE - AFTERVISIT SUMMARY SPECTACLE RX"
 Instance: 56a978c4-0ec7-4bbc-b364-61b28a9c2983
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 80341525"
+Title: "PN Note: 80341525"
 Description: "MENTAL HEALTH SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -219,7 +218,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 Instance: 4da8e1c4-43cf-4d4a-9099-55c9dc0a445f
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 80340830"
+Title: "PN Note: 80340830"
 Description: "MENTAL HEALTH SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -267,7 +266,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 Instance: bc4be08f-16c3-4c66-8eea-f223add70ac7
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 80222094"
+Title: "PN Note: 80222094"
 Description: "CCC: CLINICAL TRIAGE"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -315,7 +314,7 @@ Description: "CCC: CLINICAL TRIAGE"
 Instance: e6a74d16-6402-483e-861c-a2cc6dcaad12
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 79745271"
+Title: "PN Note: 79745271"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -363,7 +362,7 @@ Description: "SECURE MESSAGING"
 Instance: b71ceba1-a4b0-4d09-8a00-2c76568267a9
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 79686701"
+Title: "PN Note: 79686701"
 Description: "AVS STUB NOTE"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -400,7 +399,7 @@ Description: "AVS STUB NOTE"
 Instance: 6dd497a8-621a-4ba7-80fc-13c108ae395a
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 77100417"
+Title: "PN Note: 77100417"
 Description: "VIRTUAL EMERG MGMT PHARM"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -448,7 +447,7 @@ Description: "VIRTUAL EMERG MGMT PHARM"
 Instance: e75beb72-77f4-41f9-8348-c23133a665a7
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 78118479"
+Title: "PN Note: 78118479"
 Description: "PC - AFTERVISIT SUMMARY"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -496,7 +495,7 @@ Description: "PC - AFTERVISIT SUMMARY"
 Instance: 94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 78118440"
+Title: "PN Note: 78118440"
 Description: "PC - NEW"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -544,7 +543,7 @@ Description: "PC - NEW"
 Instance: 3029c9a5-2a11-4ee9-9028-6d5947402575
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 77830476"
+Title: "PN Note: 77830476"
 Description: "TLH - PORTLAND/VANCOUVER"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -592,7 +591,7 @@ Description: "TLH - PORTLAND/VANCOUVER"
 Instance: 7b3443f8-c9ae-41eb-aac1-0586dc63705c
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 77735058"
+Title: "PN Note: 77735058"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -640,7 +639,7 @@ Description: "SECURE MESSAGING"
 Instance: 545e22f7-b716-48b8-8d48-916433c2b41b
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 77713416"
+Title: "PN Note: 77713416"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -688,7 +687,7 @@ Description: "SECURE MESSAGING"
 Instance: 2b7690c3-e2ad-4610-952d-41cf8239db9d
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 77598354"
+Title: "PN Note: 77598354"
 Description: "NEUROLOGY SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -736,7 +735,7 @@ Description: "NEUROLOGY SECURE MESSAGING"
 Instance: 6099a54b-7329-460d-8834-b204aca34050
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 77498227"
+Title: "PN Note: 77498227"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -784,7 +783,7 @@ Description: "SECURE MESSAGING"
 Instance: b0eadec8-a552-49fe-9656-fa080f0b2e0c
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 77429396"
+Title: "PN Note: 77429396"
 Description: "PC - AFTERVISIT SUMMARY"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -832,7 +831,7 @@ Description: "PC - AFTERVISIT SUMMARY"
 Instance: ea96c04b-547f-4a0b-ac18-7da3f5976484
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 77429324"
+Title: "PN Note: 77429324"
 Description: "PC - FOLLOW UP"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -880,7 +879,7 @@ Description: "PC - FOLLOW UP"
 Instance: 6f427bef-053a-4b68-b270-fc55f55bfcc6
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 76750716"
+Title: "PN Note: 76750716"
 Description: "MENTAL HEALTH SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -928,7 +927,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 Instance: 02adeb96-f116-4688-9917-80cf12a2bf7b
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 76666064"
+Title: "PN Note: 76666064"
 Description: "INPAT - MED - ATT - ADMIT"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -976,7 +975,7 @@ Description: "INPAT - MED - ATT - ADMIT"
 Instance: 22edbda8-1800-49c9-a44d-e98ec6ec9957
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 76264996"
+Title: "PN Note: 76264996"
 Description: "MENTAL HEALTH SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1024,7 +1023,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 Instance: d59cb213-6460-40d2-8b8d-c2d43405d157
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 76263140"
+Title: "PN Note: 76263140"
 Description: "MENTAL HEALTH SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1072,7 +1071,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 Instance: 6da04be0-2005-47ff-8164-27a12cc7db81
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 76265401"
+Title: "PN Note: 76265401"
 Description: "MHD - MHICM PROGRESS NOTE"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1120,7 +1119,7 @@ Description: "MHD - MHICM PROGRESS NOTE"
 Instance: baa6cb68-782c-4ff4-b513-5caad0f1132e
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 76265366"
+Title: "PN Note: 76265366"
 Description: "PROCEDURE - INTRAOSSEOUS VASCULAR ACCESS"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1168,7 +1167,7 @@ Description: "PROCEDURE - INTRAOSSEOUS VASCULAR ACCESS"
 Instance: 9743570c-49cd-4d53-8ab5-1d846ad59a24
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 75912699"
+Title: "PN Note: 75912699"
 Description: "ENDOCRINOLOGY SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1216,7 +1215,7 @@ Description: "ENDOCRINOLOGY SECURE MESSAGING"
 Instance: 1f9d61a4-23d2-486c-a48c-ac990883e5de
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 75866332"
+Title: "PN Note: 75866332"
 Description: "MOVE SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1264,7 +1263,7 @@ Description: "MOVE SECURE MESSAGING"
 Instance: 779259b7-04c4-45a4-8c00-fb96e373902d
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 75540140"
+Title: "PN Note: 75540140"
 Description: "PRIMARY CARE SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1312,7 +1311,7 @@ Description: "PRIMARY CARE SECURE MESSAGING"
 Instance: fee0ea20-c28e-4a04-a01b-9ea731487597
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 75535810"
+Title: "PN Note: 75535810"
 Description: "MENTAL HEALTH SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1361,7 +1360,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 Instance: 33116ce7-24ce-49cb-97d1-718efd94f90d
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 19776835"
+Title: "PN Note: 19776835"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1409,7 +1408,7 @@ Description: "SECURE MESSAGING"
 Instance: b60a7fbf-9f60-441f-bd09-aa40ff4c67aa
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 19132325"
+Title: "PN Note: 19132325"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1457,7 +1456,7 @@ Description: "SECURE MESSAGING"
 Instance: fb0d4744-d3b4-4de1-a483-09b14ea42d10
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 19065448"
+Title: "PN Note: 19065448"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1505,7 +1504,7 @@ Description: "SECURE MESSAGING"
 Instance: 8ad345dd-c89f-4e1d-b47e-488c9483a138
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 19034139"
+Title: "PN Note: 19034139"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1553,7 +1552,7 @@ Description: "SECURE MESSAGING"
 Instance: e3302e08-ce2f-4323-8995-c1ff48cd53fd
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 19032582"
+Title: "PN Note: 19032582"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1601,7 +1600,7 @@ Description: "SECURE MESSAGING"
 Instance: 5a77fd98-b82e-49df-a4aa-b09171cfdf41
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 19021967"
+Title: "PN Note: 19021967"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1649,7 +1648,7 @@ Description: "SECURE MESSAGING"
 Instance: f3559412-e0a8-41a6-aa18-f92d7700796e
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 19019553"
+Title: "PN Note: 19019553"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1697,7 +1696,7 @@ Description: "SECURE MESSAGING"
 Instance: a367c56a-28d9-4bc5-a6c6-e22d9c5a2107
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 18964275"
+Title: "PN Note: 18964275"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1745,7 +1744,7 @@ Description: "SECURE MESSAGING"
 Instance: 82f86929-d317-4255-a78d-5bc2d0a0d01f
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 18459196"
+Title: "PN Note: 18459196"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1793,7 +1792,7 @@ Description: "SECURE MESSAGING"
 Instance: 37b3963a-106f-4e4e-98db-1a4362d1b8b5
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 18395172"
+Title: "PN Note: 18395172"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1841,7 +1840,7 @@ Description: "SECURE MESSAGING"
 Instance: f7c91cd2-1ebc-4611-8d23-8551e0329838
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 18395183"
+Title: "PN Note: 18395183"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1889,7 +1888,7 @@ Description: "SECURE MESSAGING"
 Instance: 24559a1b-afd5-4a29-b645-f4576f4a1bd1
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 17521574"
+Title: "PN Note: 17521574"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1937,7 +1936,7 @@ Description: "SECURE MESSAGING"
 Instance: 736b94c1-8290-41cc-b4f6-77d6ea8eb2c5
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 17521552"
+Title: "PN Note: 17521552"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -1985,7 +1984,7 @@ Description: "SECURE MESSAGING"
 Instance: 8c3a7ef7-4ed6-49d4-96d7-9bea812d47ac
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 16277615"
+Title: "PN Note: 16277615"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2033,7 +2032,7 @@ Description: "SECURE MESSAGING"
 Instance: 6b868dda-fe6b-47be-ad85-10e17bb7f39d
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 16024843"
+Title: "PN Note: 16024843"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2081,7 +2080,7 @@ Description: "SECURE MESSAGING"
 Instance: 9c8d050c-80c4-4ee6-9546-0b9a14075a11
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 15780149"
+Title: "PN Note: 15780149"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2129,7 +2128,7 @@ Description: "SECURE MESSAGING"
 Instance: c3ca3358-6b38-431d-acd5-c4a56305390f
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 15802805"
+Title: "PN Note: 15802805"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2177,7 +2176,7 @@ Description: "SECURE MESSAGING"
 Instance: c0b5d917-d4ca-48f8-8711-ad28432dfd8a
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 15780132"
+Title: "PN Note: 15780132"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2225,7 +2224,7 @@ Description: "SECURE MESSAGING"
 Instance: b604bffd-5a11-4341-95ac-b2132a87ace8
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 15778113"
+Title: "PN Note: 15778113"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2273,7 +2272,7 @@ Description: "SECURE MESSAGING"
 Instance: d7f4a7f5-0aeb-4d93-92f1-cb9c3e4f9a72
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 15777395"
+Title: "PN Note: 15777395"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2321,7 +2320,7 @@ Description: "SECURE MESSAGING"
 Instance: 5c058740-b1a2-45ce-9375-5b0e36457613
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 15775744"
+Title: "PN Note: 15775744"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2369,7 +2368,7 @@ Description: "SECURE MESSAGING"
 Instance: b7634047-e088-429c-8524-78af995b94dc
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 15775601"
+Title: "PN Note: 15775601"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2417,7 +2416,7 @@ Description: "SECURE MESSAGING"
 Instance: 25998b93-8058-4cd1-862d-6c08e20ef4dd
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 15775522"
+Title: "PN Note: 15775522"
 Description: "SECURE MESSAGING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2465,7 +2464,7 @@ Description: "SECURE MESSAGING"
 Instance: 97cf0c46-71bc-4392-8673-20a9de8548af
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 15775755"
+Title: "PN Note: 15775755"
 Description: "PSYCHIATRY - ATTENDING"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2513,7 +2512,7 @@ Description: "PSYCHIATRY - ATTENDING"
 Instance: 969e7d79-e27e-4b8f-82c1-e011755d1be9
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 62932232"
+Title: "DS Note: 62932232"
 Description: "Discharge Summary"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2561,7 +2560,7 @@ Description: "Discharge Summary"
 Instance: 9ae81286-2f79-4852-a135-4699c69534ec
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 62846390"
+Title: "DS Note: 62846390"
 Description: "Discharge Summary"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2609,7 +2608,7 @@ Description: "Discharge Summary"
 Instance: 849fe26a-f7e8-4235-a9a2-597836d88e62
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 47760379"
+Title: "DS Note: 47760379"
 Description: "Discharge Summary"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2657,7 +2656,7 @@ Description: "Discharge Summary"
 Instance: 9bb2c706-39c2-4e8a-a7e5-012b039af17a
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 47760462"
+Title: "DS Note: 47760462"
 Description: "Discharge Summary"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2705,7 +2704,7 @@ Description: "Discharge Summary"
 Instance: 58e372ef-e3a8-4b4e-a3ed-8ced732db859
 InstanceOf: VA.MHV.PHR.note
 Usage: #example
-Title: "Note: 43297305"
+Title: "DS Note: 43297305"
 Description: "Discharge Summary"
 * meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
 * contained[0].resourceType = "Practitioner"
@@ -2748,4 +2747,437 @@ Description: "Discharge Summary"
 * content.attachment.data = "CiBMT0NBTCBUSVRMRTogRGlzY2hhcmdlIFN1bW1hcnkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBESVNDSEFSR0UgU1VNTUFSWSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgRElDVCBEQVRFOiBKQU4gMTMsIDIwMTZAMDg6NTEgICAgIEVOVFJZIERBVEU6IEpBTiAxMywgMjAxNkAwODo1MTozMSAgICAgIAogRElDVEFURUQgQlk6IERPVUdMQVMsREFWSUQgTSAgICAgICAgIEFUVEVORElORzogRE9VR0xBUyxEQVZJRCBNICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiByb3V0aW5lICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKQVRURU5ESU5HIFBIWVNJQ0lBTjogCiAKUFJJTUFSWSBDQVJFIFBST1ZJREVSIEFORCBGQUNJTElJVFk6IAogClBSSU5DSVBBTCBESUFHTk9TSVM6IAogCk9USEVSIERJQUdOT1NFUyBUUkVBVEVEIE9SIElNUEFDVElORyBUUkVBVE1FTlQgVEhJUyBBRE1JU1NJT046CgoKIApQUk9DRURVUkVTIFBFUkZPUk1FRCBBVCBUSElTIEhPU1BJVEFMIERVUklORyBDVVJSRU5UIEFETUlTU0lPTjoKIApTVU1NQVJZOgooQUJCUkVWSUFURUQgSFBJLCBQRSwgQU5EIFBFUlRJTkVOVCBMQUJTKQogCiAKSE9TUElUQUwgQ09VUlNFOgogCiAKRlVOQ1RJT05BTCBTVEFUVVM6CihNQVkgSU5DTFVERSBBQ1RJVklUWSBMRVZFTCwgV09SSyBSRVNUUklDVElPTlMsIE9SIERJRVQpCiAKIApESVNDSEFSR0UgTUVESUNBVElPTlM6IAooSU5ESUNBVEUgQURESVRJT05TIE9SIENIQU5HRVMgV0lUSCBBTiBBU1RFUklTSykgCiAKIApNRURJQ0FUSU9OUyBUSEFUIEhBVkUgQkVFTiBESVNDT05USU5VRUQ6CiAKIAogCkNMSU5JQ0FMIElTU1VFUyBSRVFVSVJJTkcgRk9MTE9XIFVQIERVUklORyBQQyBQSE9ORSBBUFQ6CjEuCjIuCjMuCiAKIApBRERJVElPTkFMIEZPTExPVyBVUCBBUFBPSU5UTUVOVFM6ClNQRUNJQUxUWSAgICAgICAgICAgICAgIEVYUEVDVEVEIERBVEUgICBTQ0hFRFVMRUQoWS9OKSAgUE9JTlQgT0YgQ09OVEFDVAoxLgoyLgozLgogCiAKRk9MTE9XIFVQIExBQlMgSU5DTFVESU5HIFBBVEhPTE9HWSAmIE1JQ1JPQklPTE9HWToKVEVTVCAgICAgICAgICAgICAgICAgICAgT1JERVJFRChZL04pICAgIEVYUEVDVEVEIERBVEUgSUYgTk9UIE9SREVSRUQKMS4KMi4KMy4KIAogCkZPTExPVyBVUCBJTUFHSU5HIEFORCBQUk9DRURVUkVTOgpQUk9DRURVUkUgICAgICAgICAgICAgICBPUkRFUkVEKFkvTikgICAgRVhQRUNURUQgREFURSBJRiBOT1QgT1JERVJFRAoxLgoyLgozLgogCi9lcy8gREFWSUQgTS4gRE9VR0xBUyBNRApDSElFRiBIRUFMVEggSU5GT1JNQVRJQ1MgT0ZGSUNFUi9BVFRFTkRJTkcgUFNZQ0hJQVRSSVNUClNpZ25lZDogMDEvMTMvMjAxNiAwODo1MQo="
 * content.attachment.title = "Discharge Summary"
 * content.attachment.creation = "2016-01-13"
+* context.related.reference = "#location-0"
+
+
+Instance: c578f7cb-8002-4ab1-8917-d1cd84b1f638
+InstanceOf: VA.MHV.PHR.note
+Usage: #example
+Title: "CR Note: 58196324"
+Description: "CARDIOLOGY - E-CONSULT"
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
+* contained[0].resourceType = "Practitioner"
+* contained[=].id = "author-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Practitioner"
+* contained[=].id = "approvedBy-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Location"
+* contained[=].id = "location-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "LocationTO.648"
+* contained[=].name = "PORTLAND VA MEDICAL CENTER"
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "NoteTO.58196324"
+* status = #current
+* type = $loinc#11488-4
+* type.text = "CONSULT"
+* category = $us-core-documentreference-category#clinical-note
+* subject = Reference(Patient/ex-MHV-patient-0)
+* date = "2019-03-16T05:48:00Z"
+* author.reference = "#author-0"
+* authenticator.extension.url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"
+* authenticator.extension.valueDateTime = "2019-03-16T06:15:25Z"
+* authenticator.reference = "#approvedBy-0"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "CiBMT0NBTCBUSVRMRTogQ0FSRElPTE9HWSAtIEUtQ09OU1VMVCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBDT05TVUxUICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBNQVIgMTYsIDIwMTlAMDU6NDggICAgIEVOVFJZIERBVEU6IE1BUiAxNiwgMjAxOUAwNTo0OToxMSAgICAgIAogICAgICBBVVRIT1I6IERPVUdMQVMsREFWSUQgTSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKVEhJUyBJUyBBIFRFU1QKIAovZXMvIERBVklEIE0uIERPVUdMQVMgTUQKQ0hJRUYgSEVBTFRIIElORk9STUFUSUNTIE9GRklDRVIvQVRURU5ESU5HIFBTWUNISUFUUklTVApTaWduZWQ6IDAzLzE2LzIwMTkgMDY6MTUK"
+* content.attachment.title = "CARDIOLOGY - E-CONSULT"
+* content.attachment.creation = "2019-03-16T05:48:00Z"
+* context.related.reference = "#location-0"
+
+Instance: b7289c96-ed07-4346-92d1-5b4ba105c2b5
+InstanceOf: VA.MHV.PHR.note
+Usage: #example
+Title: "CR Note: 56889160"
+Description: "ANESTHESIA - E-CONSULT"
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
+* contained[0].resourceType = "Practitioner"
+* contained[=].id = "author-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Practitioner"
+* contained[=].id = "approvedBy-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Location"
+* contained[=].id = "location-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "LocationTO.648"
+* contained[=].name = "PORTLAND VA MEDICAL CENTER"
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "NoteTO.56889160"
+* status = #current
+* type = $loinc#11488-4
+* type.text = "ANESTHESIOLOGY CONSULT"
+* category = $us-core-documentreference-category#clinical-note
+* subject = Reference(Patient/ex-MHV-patient-0)
+* date = "2018-12-05T11:37:00Z"
+* author.reference = "#author-0"
+* authenticator.extension.url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"
+* authenticator.extension.valueDateTime = "2018-12-05T11:37:36Z"
+* authenticator.reference = "#approvedBy-0"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "CiBMT0NBTCBUSVRMRTogQU5FU1RIRVNJQSAtIEUtQ09OU1VMVCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBBTkVTVEhFU0lPTE9HWSBDT05TVUxUICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBERUMgMDUsIDIwMThAMTE6MzcgICAgIEVOVFJZIERBVEU6IERFQyAwNSwgMjAxOEAxMTozNzoyNyAgICAgIAogICAgICBBVVRIT1I6IERPVUdMQVMsREFWSUQgTSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKdGVzdAogCi9lcy8gREFWSUQgTS4gRE9VR0xBUyBNRApDSElFRiBIRUFMVEggSU5GT1JNQVRJQ1MgT0ZGSUNFUi9BVFRFTkRJTkcgUFNZQ0hJQVRSSVNUClNpZ25lZDogMTIvMDUvMjAxOCAxMTozNwo="
+* content.attachment.title = "ANESTHESIA - E-CONSULT"
+* content.attachment.creation = "2018-12-05T11:37:00Z"
+* context.related.reference = "#location-0"
+
+Instance: bf51989c-a68f-47f5-b803-9d8462b6c291
+InstanceOf: VA.MHV.PHR.note
+Usage: #example
+Title: "CR Note: 55856227"
+Description: "CLINICAL PHARMACY - E-CONSULT"
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
+* contained[0].resourceType = "Practitioner"
+* contained[=].id = "author-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.3542"
+* contained[=].name.text = "COLLEY,COLLEEN A"
+* contained[=].name.family = "COLLEY,COLLEEN A"
+* contained[+].resourceType = "Practitioner"
+* contained[=].id = "approvedBy-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Location"
+* contained[=].id = "location-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "LocationTO.648"
+* contained[=].name = "PORTLAND VA MEDICAL CENTER"
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "NoteTO.55856227"
+* status = #current
+* type = $loinc#11488-4
+* type.text = "PHARMACY CONSULT"
+* category = $us-core-documentreference-category#clinical-note
+* subject = Reference(Patient/ex-MHV-patient-0)
+* date = "2018-09-19T13:09:00Z"
+* author.reference = "#author-0"
+* authenticator.extension.url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"
+* authenticator.extension.valueDateTime = "2018-09-19T13:09:54Z"
+* authenticator.reference = "#approvedBy-0"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "CiBMT0NBTCBUSVRMRTogQ0xJTklDQUwgUEhBUk1BQ1kgLSBFLUNPTlNVTFQgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBQSEFSTUFDWSBDT05TVUxUICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBTRVAgMTksIDIwMThAMTM6MDkgICAgIEVOVFJZIERBVEU6IFNFUCAxOSwgMjAxOEAxMzowOToyMSAgICAgIAogICAgICBBVVRIT1I6IENPTExFWSxDT0xMRUVOIEEgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKUGxlYXNlIG9idGFpbiBvdXRzaWRlIHJlY29yZHMgYW5kIHBlcmZvcm0gbWVkaWNhdGlvbiByZWNvbmNpbGlhdGlvbiBwcmlvciB0byAKcmVzdWJtaXR0aW5nIGFuIGFudGktY29hZyBjb25zdWx0CiAKL2VzLyBEQVZJRCBNLiBET1VHTEFTIE1ECkNISUVGIEhFQUxUSCBJTkZPUk1BVElDUyBPRkZJQ0VSL0FUVEVORElORyBQU1lDSElBVFJJU1QKU2lnbmVkOiAwOS8xOS8yMDE4IDEzOjA5CmZvciBDb2xsZWVuIEEuIENvbGxleSBQaGFybS5ELiAgICAgICAgICAgICAgICAgICAgCkFudGljb2FndWxhdGlvbiBQcm9ncmFtIE1hbmFnZXIsIENsaW5pY2FsIFBoYXJtYWN5Cg=="
+* content.attachment.title = "CLINICAL PHARMACY - E-CONSULT"
+* content.attachment.creation = "2018-09-19T13:09:00Z"
+* context.related.reference = "#location-0"
+
+Instance: 9441ec45-ed79-4581-825d-75c1cd564c54
+InstanceOf: VA.MHV.PHR.note
+Usage: #example
+Title: "CR Note: 54812639"
+Description: "PULMONARY - LUNG CANCER SCREENING CONSULT"
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
+* contained[0].resourceType = "Practitioner"
+* contained[=].id = "author-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.377519"
+* contained[=].name.text = "SADAK,CYNTHIA H"
+* contained[=].name.family = "SADAK,CYNTHIA H"
+* contained[+].resourceType = "Practitioner"
+* contained[=].id = "approvedBy-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.377519"
+* contained[=].name.text = "SADAK,CYNTHIA H"
+* contained[=].name.family = "SADAK,CYNTHIA H"
+* contained[+].resourceType = "Location"
+* contained[=].id = "location-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "LocationTO.648"
+* contained[=].name = "PORTLAND VA MEDICAL CENTER"
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "NoteTO.54812639"
+* status = #current
+* type = $loinc#11488-4
+* type.text = "PREVENTIVE MEDICINE CONSULT"
+* category = $us-core-documentreference-category#clinical-note
+* subject = Reference(Patient/ex-MHV-patient-0)
+* date = "2018-07-03T08:04:00Z"
+* author.reference = "#author-0"
+* authenticator.extension.url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"
+* authenticator.extension.valueDateTime = "2018-07-03T08:05:47Z"
+* authenticator.reference = "#approvedBy-0"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "CiBMT0NBTCBUSVRMRTogUFVMTU9OQVJZIC0gTFVORyBDQU5DRVIgU0NSRUVOSU5HIENPTlNVTFQgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBQUkVWRU5USVZFIE1FRElDSU5FIENPTlNVTFQgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBKVUwgMDMsIDIwMThAMDg6MDQgICAgIEVOVFJZIERBVEU6IEpVTCAwMywgMjAxOEAwODowNDoyMyAgICAgIAogICAgICBBVVRIT1I6IFNBREFLLENZTlRISUEgSCAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKQWRkaXRpb25hbCBub3RlIHRvIHVwZGF0ZSBMQ1MgcmVnaXN0cnk6CgpUZXN0IHBhdGllbnQgd2l0aCBMQ1MgY29uc3VsdCwgdGVzdCBwYXRpZW50IG5vdyBzaG93aW5nIGluIExDUyByZWdpc3RyeSB1bmRlciAKbmV3IGNvbnN1bHRzLCB3aWxsIHJlbW92ZSB0ZXN0IHBhdGllbnQgZnJvbSByZWdpc3RyeSB3aXRoIHRoaXMgbm90ZS4KCkx1bmcgQ2FuY2VyIFNjcmVlbmluZyBSZWZlcnJhbAogIFBhdGllbnQgbm8gbG9uZ2VyIGluIHRhcmdldCBwb3B1bGF0aW9uLgoKIAovZXMvIENZTlRISUEgSCBTQURBSwpMdW5nIENhbmNlciBTY3JlZW5pbmcgUk4gQ29vcmRpbmF0b3IKU2lnbmVkOiAwNy8wMy8yMDE4IDA4OjA1Cg=="
+* content.attachment.title = "PULMONARY - LUNG CANCER SCREENING CONSULT"
+* content.attachment.creation = "2018-07-03T08:04:00Z"
+* context.related.reference = "#location-0"
+
+Instance: 0d6b882f-34e2-4e88-8ef4-29de9c3cf102
+InstanceOf: VA.MHV.PHR.note
+Usage: #example
+Title: "CR Note: 54705220"
+Description: "WOUND - E-CONSULT"
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
+* contained[0].resourceType = "Practitioner"
+* contained[=].id = "author-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Practitioner"
+* contained[=].id = "approvedBy-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Location"
+* contained[=].id = "location-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "LocationTO.648"
+* contained[=].name = "PORTLAND VA MEDICAL CENTER"
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "NoteTO.54705220"
+* status = #current
+* type = $loinc#11488-4
+* type.text = "WOUND CARE CONSULT"
+* category = $us-core-documentreference-category#clinical-note
+* subject = Reference(Patient/ex-MHV-patient-0)
+* date = "2018-06-25T09:35:00Z"
+* author.reference = "#author-0"
+* authenticator.extension.url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"
+* authenticator.extension.valueDateTime = "2018-06-25T09:36:02Z"
+* authenticator.reference = "#approvedBy-0"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "CiBMT0NBTCBUSVRMRTogV09VTkQgLSBFLUNPTlNVTFQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBXT1VORCBDQVJFIENPTlNVTFQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBKVU4gMjUsIDIwMThAMDk6MzUgICAgIEVOVFJZIERBVEU6IEpVTiAyNSwgMjAxOEAwOTozNTozNiAgICAgIAogICAgICBBVVRIT1I6IERPVUdMQVMsREFWSUQgTSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKcGxlYXNlIHByb3ZpZGUgdGhpcyBhZGRpdGlvbmFsIGluZm9ybWF0aW9uIHRvIHByb2Nlc3MgdGhpcyBjb25zdWx0LiAKIAovZXMvIERBVklEIE0uIERPVUdMQVMgTUQKQ0hJRUYgSEVBTFRIIElORk9STUFUSUNTIE9GRklDRVIvQVRURU5ESU5HIFBTWUNISUFUUklTVApTaWduZWQ6IDA2LzI1LzIwMTggMDk6MzYK"
+* content.attachment.title = "WOUND - E-CONSULT"
+* content.attachment.creation = "2018-06-25T09:35:00Z"
+* context.related.reference = "#location-0"
+
+Instance: 0dff0f4b-4c90-4db0-88cb-e4b0552956d0
+InstanceOf: VA.MHV.PHR.note
+Usage: #example
+Title: "CR Note: 54345827"
+Description: "CLINICAL PHARMACY - MENTAL HEALTH E-CONSULT"
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
+* contained[0].resourceType = "Practitioner"
+* contained[=].id = "author-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Practitioner"
+* contained[=].id = "approvedBy-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Location"
+* contained[=].id = "location-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "LocationTO.648"
+* contained[=].name = "PORTLAND VA MEDICAL CENTER"
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "NoteTO.54345827"
+* status = #current
+* type = $loinc#11488-4
+* type.text = "PHARMACY CONSULT"
+* category = $us-core-documentreference-category#clinical-note
+* subject = Reference(Patient/ex-MHV-patient-0)
+* date = "2018-05-29T07:45:00Z"
+* author.reference = "#author-0"
+* authenticator.extension.url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"
+* authenticator.extension.valueDateTime = "2018-05-29T07:48:09Z"
+* authenticator.reference = "#approvedBy-0"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "CiBMT0NBTCBUSVRMRTogQ0xJTklDQUwgUEhBUk1BQ1kgLSBNRU5UQUwgSEVBTFRIIEUtQ09OU1VMVCAgICAgICAgClNUQU5EQVJEIFRJVExFOiBQSEFSTUFDWSBDT05TVUxUICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBNQVkgMjksIDIwMThAMDc6NDUgICAgIEVOVFJZIERBVEU6IE1BWSAyOSwgMjAxOEAwNzo0NjoxNyAgICAgIAogICAgICBBVVRIT1I6IERPVUdMQVMsREFWSUQgTSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKdGVzdAogCi9lcy8gREFWSUQgTS4gRE9VR0xBUyBNRApDSElFRiBIRUFMVEggSU5GT1JNQVRJQ1MgT0ZGSUNFUi9BVFRFTkRJTkcgUFNZQ0hJQVRSSVNUClNpZ25lZDogMDUvMjkvMjAxOCAwNzo0OAo="
+* content.attachment.title = "CLINICAL PHARMACY - MENTAL HEALTH E-CONSULT"
+* content.attachment.creation = "2018-05-29T07:45:00Z"
+* context.related.reference = "#location-0"
+
+Instance: 1eb498e9-0668-4925-9c98-888c2308abc5
+InstanceOf: VA.MHV.PHR.note
+Usage: #example
+Title: "CR Note: 53889003"
+Description: "COMMUNITY CARE-CONSULT RESULT NOTE"
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
+* contained[0].resourceType = "Practitioner"
+* contained[=].id = "author-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Practitioner"
+* contained[=].id = "approvedBy-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Location"
+* contained[=].id = "location-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "LocationTO.648"
+* contained[=].name = "PORTLAND VA MEDICAL CENTER"
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "NoteTO.53889003"
+* status = #current
+* type = $loinc#11488-4
+* type.text = "NONVA CONSULT"
+* category = $us-core-documentreference-category#clinical-note
+* subject = Reference(Patient/ex-MHV-patient-0)
+* date = "2018-04-24T07:44:51Z"
+* author.reference = "#author-0"
+* authenticator.extension.url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"
+* authenticator.extension.valueDateTime = "2018-04-24T07:44:51Z"
+* authenticator.reference = "#approvedBy-0"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "CiBMT0NBTCBUSVRMRTogQ09NTVVOSVRZIENBUkUtQ09OU1VMVCBSRVNVTFQgTk9URSAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBOT05WQSBDT05TVUxUICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBBUFIgMjQsIDIwMTggICAgICAgICAgIEVOVFJZIERBVEU6IEFQUiAyNCwgMjAxOEAwNzo0NDo1MCAgICAgIAogICAgICBBVVRIT1I6IERPVUdMQVMsREFWSUQgTSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKICAgVmlzdEEgSW1hZ2luZyAtIFNjYW5uZWQgRG9jdW1lbnQKIAovZXMvIERBVklEIE0uIERPVUdMQVMgTUQKQ0hJRUYgSEVBTFRIIElORk9STUFUSUNTIE9GRklDRVIvQVRURU5ESU5HIFBTWUNISUFUUklTVApTaWduZWQ6IDA0LzI0LzIwMTggMDc6NDQK"
+* content.attachment.title = "COMMUNITY CARE-CONSULT RESULT NOTE"
+* content.attachment.creation = "2018-04-24"
+* context.related.reference = "#location-0"
+
+Instance: 1b36c49d-0708-47fe-8bce-87cd5209a6e2
+InstanceOf: VA.MHV.PHR.note
+Usage: #example
+Title: "CR Note: 53889052"
+Description: "COMMUNITY CARE-CONSULT RESULT NOTE"
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
+* contained[0].resourceType = "Practitioner"
+* contained[=].id = "author-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Practitioner"
+* contained[=].id = "approvedBy-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.2926"
+* contained[=].name.text = "DOUGLAS,DAVID M"
+* contained[=].name.family = "DOUGLAS,DAVID M"
+* contained[+].resourceType = "Location"
+* contained[=].id = "location-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "LocationTO.648"
+* contained[=].name = "PORTLAND VA MEDICAL CENTER"
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "NoteTO.53889052"
+* status = #current
+* type = $loinc#11488-4
+* type.text = "NONVA CONSULT"
+* category = $us-core-documentreference-category#clinical-note
+* subject = Reference(Patient/ex-MHV-patient-0)
+* date = "2018-04-24T07:47:36Z"
+* author.reference = "#author-0"
+* authenticator.extension.url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"
+* authenticator.extension.valueDateTime = "2018-04-24T07:47:36Z"
+* authenticator.reference = "#approvedBy-0"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "CiBMT0NBTCBUSVRMRTogQ09NTVVOSVRZIENBUkUtQ09OU1VMVCBSRVNVTFQgTk9URSAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBOT05WQSBDT05TVUxUICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBBUFIgMjQsIDIwMTggICAgICAgICAgIEVOVFJZIERBVEU6IEFQUiAyNCwgMjAxOEAwNzo0NzozNSAgICAgIAogICAgICBBVVRIT1I6IERPVUdMQVMsREFWSUQgTSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKICAgVmlzdEEgSW1hZ2luZyAtIFNjYW5uZWQgRG9jdW1lbnQKIAovZXMvIERBVklEIE0uIERPVUdMQVMgTUQKQ0hJRUYgSEVBTFRIIElORk9STUFUSUNTIE9GRklDRVIvQVRURU5ESU5HIFBTWUNISUFUUklTVApTaWduZWQ6IDA0LzI0LzIwMTggMDc6NDcKClJlY2VpcHQgQWNrbm93bGVkZ2VkIEJ5OgoqIEFXQUlUSU5HIFNJR05BVFVSRSAqICAgICAgIE1DS0VPV04sTkFUSEFOQUVMIEogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAK"
+* content.attachment.title = "COMMUNITY CARE-CONSULT RESULT NOTE"
+* content.attachment.creation = "2018-04-24"
+* context.related.reference = "#location-0"
+
+Instance: de517264-b4d0-454b-9afa-46a4491c2009
+InstanceOf: VA.MHV.PHR.note
+Usage: #example
+Title: "CR Note: 53661869"
+Description: "PODIATRY - CONSULT REQUESTED"
+* meta.extension[lastSourceSync].valueDateTime = 2024-01-14T08:59:26.5669915-06:00
+* contained[0].resourceType = "Practitioner"
+* contained[=].id = "author-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.114539"
+* contained[=].name.text = "QUIJANO,VICTOR J"
+* contained[=].name.family = "QUIJANO,VICTOR J"
+* contained[+].resourceType = "Practitioner"
+* contained[=].id = "approvedBy-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "AuthorTO.114539"
+* contained[=].name.text = "QUIJANO,VICTOR J"
+* contained[=].name.family = "QUIJANO,VICTOR J"
+* contained[+].resourceType = "Location"
+* contained[=].id = "location-0"
+* contained[=].meta.profile = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"
+* contained[=].identifier.use = #usual
+* contained[=].identifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* contained[=].identifier.value = "LocationTO.648"
+* contained[=].name = "PORTLAND VA MEDICAL CENTER"
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].value = "NoteTO.53661869"
+* status = #current
+* type = $loinc#11488-4
+* type.text = "PODIATRY CONSULT"
+* category = $us-core-documentreference-category#clinical-note
+* subject = Reference(Patient/ex-MHV-patient-0)
+* date = "2018-04-06T11:14:00Z"
+* author.reference = "#author-0"
+* authenticator.extension.url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"
+* authenticator.extension.valueDateTime = "2018-04-06T11:15:26Z"
+* authenticator.reference = "#approvedBy-0"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "CiBMT0NBTCBUSVRMRTogUE9ESUFUUlkgLSBDT05TVUxUIFJFUVVFU1RFRCAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBQT0RJQVRSWSBDT05TVUxUICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBBUFIgMDYsIDIwMThAMTE6MTQgICAgIEVOVFJZIERBVEU6IEFQUiAwNiwgMjAxOEAxMToxNToxMSAgICAgIAogICAgICBBVVRIT1I6IFFVSUpBTk8sVklDVE9SIEogICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKdGVzdAogCi9lcy8gVklDVE9SIEogUVVJSkFOTyBKciBEUE0sIFBoRApQb2RpYXRyeQpTaWduZWQ6IDA0LzA2LzIwMTggMTE6MTUK"
+* content.attachment.title = "PODIATRY - CONSULT REQUESTED"
+* content.attachment.creation = "2018-04-06T11:14:00Z"
 * context.related.reference = "#location-0"
