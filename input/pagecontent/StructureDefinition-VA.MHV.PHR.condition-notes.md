@@ -7,8 +7,8 @@
 - based on US-Core for Condition Resource profile
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition` to indicate the intent to be compliant with this profile
 - Presume we will not expose those that are ProblemTO.removed = true, but we should update our FHIR database in case the previous was recorded.
-  - `clinicalStatus` set to `active`
-- `ProblemTO.status` is only seen as `ACTIVE`.
+  - `clinicalStatus` set to `active` unless `entered-in-error`
+  - `verificationStatus` will use [entered-in-error method](background.html#entered-in-error) to support `entered-in-error`
 - `note` to have as many indexes to handle all the ProblemTO.comments and ProblemTO.comment
 - `icd` is not always ICD-9, sometimes it is ICD-10. The following algorithm by Jay Lyle:
   - if the code starts with a number, its ICD-9

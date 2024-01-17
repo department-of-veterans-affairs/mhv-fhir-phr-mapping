@@ -30,14 +30,26 @@ TBD
       - Those that **did not change** that are current need to be marked with `status` of `entered-in-error`
 - Note
   - now can have status of `current` or `entered-in-error`
-    - API search must now make sure searching only on `current`
+    - API search must now make sure it is not searching on `entered-in-error`
   - Moved to FMM 4 as there is no outstanding questions with KBS, all questions have been resolved.
   - `timestamp` needs to go into `.content.attachment.creation` because sometimes it is just a date without time
   - if `timestamp` is missing the time (just a date) then populate `.date` with `procTimestamp`
   - Many new examples have been added
-- immunization
+  - added an example of `entered-in-error`
+- Immunization
   - now can have status of `completed` or `entered-in-error`
-    - API search must now make sure searching only on `completed`
+    - API search must now make sure it is not searching on `entered-in-error`
+    - added an example of `entered-in-error`
+- Condition
+  - minor updates, still under review
+  - now can have verificationStatus of `confirmed` or `unconfirmed` or `entered-in-error`
+    - API search must now make sure it is not searching on `entered-in-error`
+    - added an example of `entered-in-error`
+- Vitals
+  - minor updates, still under review
+  - now can have status of `completed` or `entered-in-error`
+    - API search must now make sure it is not searching on `entered-in-error`
+    - added an example of `entered-in-error`
 - Update concept maps from VF_ qualifiers from January 8, 2024
 - Fix URI for ICD9 to `http://hl7.org/fhir/sid/icd-9-cm` from `http://terminology.hl7.org/CodeSystem/icd9cm`
   - https://terminology.hl7.org/ICD.html

@@ -33,11 +33,40 @@ Usage: #example
 Description: """
 Derived from the a mock NoteTO:
 """
-* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
+//* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
 * identifier[TOid].value = "NoteTO.5281863" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
+* date = 2022-08-05T16:56:00Z
+* content.attachment.title = "Adverse React/Allergy"
+* type = LOINC#11506-3 "Progress note"
+* contained[+] = ex-MHV-practitioner-36556
+* contained[+] = ex-MHV-location-984
+* author = Reference(Practitioner/ex-MHV-practitioner-36556)
+* authenticator = Reference(Practitioner/ex-MHV-practitioner-36556)
+* authenticator.extension[when].valueDateTime = 2022-08-05T16:58:46Z
+* context.related[+] = Reference(Location/ex-MHV-location-984)
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "TE9DQUwgVElUTEU6IEFkdmVyc2UgUmVhY3QvQWxsZXJneSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIApTVEFOREFSRCBUSVRMRTogQUxMRVJHWSAmYW1wOyBJTU1VTk9MT0dZIEFEVkVSU0UgRVZFTlQgTk9URSAgICAgICAgIApEQVRFIE9GIE5PVEU6IEFVRyAwNSwgMjAyMkAxMToyMzo1NCAgRU5UUlkgREFURTogQVVHIDA1LCAyMDIyQDExOjIzOjU0ICAgICAgCiAgICAgIEFVVEhPUjogQUhNRUQsTUFSVUYgICAgICAgICAgRVhQIENPU0lHTkVSOiAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgIFVSR0VOQ1k6ICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNUQVRVUzogQ09NUExFVEVEICAgICAgICAgICAgICAgICAgICAgCgpUaGlzIHBhdGllbnQgaGFzIGhhZCB0aGUgZm9sbG93aW5nIHJlYWN0aW9ucyAKc2lnbmVkLW9mZiBvbiBBdWcgMDUsIDIwMjJAMTE6MjM6NTQuCgpXSElURSBGSVNICgpBdXRob3IncyBjb21tZW50czoKCk1hcnVmJ3MgdGVzdCBkYXRhIAoKIAovZXMvIE1BUlVGIEFITUVEClBIWVNJQ0lBTgpTaWduZWQ6IDA4LzA4LzIwMjIgMTA6NTA="
+
+
+Instance: ex-MHV-note-deleted-1
+InstanceOf: VA.MHV.PHR.note
+Title: "Example 1 of a MHV Note"
+Usage: #example
+Description: """
+Derived from the a mock NoteTO:
+
+This is replicated from ex-MHV-note-1, with change of identifier (NoteTO.5), and marked as entered-in-error
+"""
+//* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
+* status = #entered-in-error
+* category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
+* subject =  Reference(Patient/ex-MHV-patient-1)
+* identifier[TOid].value = "NoteTO.5" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * date = 2022-08-05T16:56:00Z
@@ -115,7 +144,7 @@ Derived from the a mock NoteTO:
 
 Note dropped cosigner
 """
-* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
+//* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
@@ -145,7 +174,7 @@ Derived from the a mock NoteTO:
 
 Note has an unsigned addenda
 """
-* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
+//* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)
@@ -174,7 +203,7 @@ Derived from the a mock NoteTO:
 
 Note has a signed addenda
 """
-* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
+//* meta.extension[lastSourceSync].valueDateTime = 2024-01-12T16:47:01Z
 * status = #current
 * category = http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category#clinical-note
 * subject =  Reference(Patient/ex-MHV-patient-1)

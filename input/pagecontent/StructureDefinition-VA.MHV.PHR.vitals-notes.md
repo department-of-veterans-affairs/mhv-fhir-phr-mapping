@@ -15,7 +15,7 @@
   - Pain `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain`
   - Blood-Pressure `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsBP`
   - Pulse-Ox `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals-pulse-oximetry`
-- `status` of `final`
+- `status` of `final` unless `entered-in-error`
 - `category` code of `vital-signs`
 - `code.text` the original `VitalSignTO.type.name`
   - `coding` should be LOINC if available
@@ -120,4 +120,4 @@ also:
 
 #### TODO
 
-none identified
+there is KBS work on how to process the qualifiers. This work is not done, so no code change recommendation at this time.

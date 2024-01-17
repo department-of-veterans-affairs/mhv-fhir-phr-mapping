@@ -11,7 +11,7 @@ Title: "Immunization 1"
 * occurrenceDateTime = 2022-08-08T11:15:28Z
 * recorded = 2022-08-08T11:15:28Z
 * primarySource.extension[dar].valueCode = #unknown
-* identifier[TOid].value = "ImmunizationTO.1" 
+* identifier[TOid].value = "ImmunizationTO.124684" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * note[0].text = "test"
@@ -30,6 +30,29 @@ Usage: #inline
 * name =  "23 HOUR OBSERVATION"
 
 
+Instance:   ex-MHV-immunization-deleted-1
+InstanceOf: VA.MHV.PHR.immunization
+Description: "This is derived from ImmunizationTO.124684, with a diffent identifier (ImmunizationTO.1), and marked as entered-in-error"
+Usage: #example
+Title: "Immunization 1 deleted"
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #entered-in-error
+* vaccineCode.text = "COVID-19 (MODERNA), MRNA, LNP-S, PF, 100 MCG/0.5ML DOSE OR 50 MCG/0.25ML DOSE"
+* patient = Reference(Patient/ex-MHV-patient-1)
+* occurrenceDateTime = 2022-08-08T11:15:28Z
+* recorded = 2022-08-08T11:15:28Z
+* primarySource.extension[dar].valueCode = #unknown
+* identifier[TOid].value = "ImmunizationTO.1" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
+* note[0].text = "test"
+* contained[+] = in-location-1
+* location = Reference(in-location-1)
+//* encounter.identifier.value = "6433274"
+* protocolApplied.series = "COMPLETE"
+* protocolApplied.doseNumberString = "C"
+* contained[+] = ex-MHV-organization-552
+* performer[@default].actor = Reference(ex-MHV-organization-552)
 
 
 Instance:   ex-MHV-immunization-2

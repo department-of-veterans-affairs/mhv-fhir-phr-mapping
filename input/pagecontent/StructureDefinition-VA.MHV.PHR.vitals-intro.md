@@ -4,7 +4,7 @@
   - Pulse-Ox is based off of the Pulse-Oximitry profile
 - Pain does not have a specific us-core profile to derive from, so is not derived from us-core
 - `subject` is a reference to this patient
-- `status` is `final`
+- `status` is `final` unless `entered-in-error`
 - `category` code of `vital-signs`
 - `code.text` the original vital-sign type name
   - `coding` may be LOINC if available
@@ -23,3 +23,7 @@
 - `.device` may hold the device from qualifiers
 - `.component.code` may hold any other qualifiers, with no `.component.value[x]`
 - no other elements are populated
+
+Should search for entries that do **not** have `status=entered-in-error` (might also work to look for only `completed`)
+> GET {path}/Observation?patient={patient}&status:not!=entered-in-error
+

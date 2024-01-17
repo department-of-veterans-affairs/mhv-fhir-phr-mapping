@@ -37,16 +37,6 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                   </xsl:attribute>
                 </id>
 
-                <meta>
-                    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
-                    <extension url="http://hl7.org/fhir/StructureDefinition/lastSourceSync">
-                        <valueDateTime>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="current-dateTime()"/>
-                            </xsl:attribute>
-                        </valueDateTime>
-                    </extension>                    
-                </meta>
 <!-- The following two extensions are used to enable the conversion to FSH resources - see mock-notes.fsh -->
 <!-- -->
 <extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
@@ -83,6 +73,19 @@ exclude-result-prefixes="soap ns2 uuid saxon"
     </valueMarkdown>
 </extension>
  <!-- -->
+                <!-- used for Update-and-Expunge, forces update in the FHIR database for things we see, so that we can see what is missing -->
+                <!--
+                <meta>
+                    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
+                    <extension url="http://hl7.org/fhir/StructureDefinition/lastSourceSync">
+                        <valueDateTime>
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="current-dateTime()"/>
+                            </xsl:attribute>
+                        </valueDateTime>
+                    </extension>                    
+                </meta>
+                -->
                 <contained>
                     <Practitioner>
                         <id value="author-0"/>

@@ -52,6 +52,7 @@ Description: "not all of them"
 * ^experimental = false
 * http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
+* http://terminology.hl7.org/CodeSystem/condition-ver-status#entered-in-error
 
 
 
@@ -64,7 +65,7 @@ Description: "Informative map to available elements in MHV FHIR API"
 * identifier -> "{StationNbr} and {ProblemTO.id}"
 * code.text -> "ProblemTO.type.name" "9000011-1.01 PROBLEM"
 * recorder -> "GetPractitioner(ProblemTO.observer)" "??? 9000011-1.03 ENTERED BY,  -1.04 RECORDING PROVIDER"
-* clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`" "9000011-.12 STATUS"
+* clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive` if not `entered-in-error`" "9000011-.12 STATUS"
 * verificationStatus -> "ProblemTO.verified ? `#confirmed` : `#unconfirmed`" "???"
 * note -> "ProblemTO.comments + ProblemTO.comment" "9000011-.05 PROVIDER NARRATIVE"
 * recordedDate -> "ProblemTO.modifiedDate" "9000011-1.09 DATE RECORDED"
@@ -85,7 +86,7 @@ Description: "Informative map to include only the elements available in eVault P
 * -> "ProblemTO" "eVault"
 * code.text -> "ProblemTO.type.name" "PROBLEM"
 * recorder -> "GetPractitioner(ProblemTO.observer)" "PROVIDER"
-* clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive`" "STATUS"
+* clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive` if not `entered-in-error`" "STATUS"
 * note -> "ProblemTO.comments" "COMMENTS"
 * recordedDate -> "ProblemTO.modifiedDate" "EVENT_TIME"
 * subject -> "patient"

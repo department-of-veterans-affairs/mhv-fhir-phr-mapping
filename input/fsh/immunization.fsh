@@ -7,7 +7,7 @@ Description:    """
 A profile on the Immunization that declares how MHV will expose PHR immunization.
 """
 * ^extension[$fmm].valueInteger = 4
-* meta.extension contains http://hl7.org/fhir/StructureDefinition/lastSourceSync named lastSourceSync 0..1 MS
+//* meta.extension contains http://hl7.org/fhir/StructureDefinition/lastSourceSync named lastSourceSync 0..1 MS
 //* status = #completed
 * status MS
 * status ^short = "May indicate entered-in-error"
@@ -103,7 +103,7 @@ Description: "Informative map to available elements in MHV FHIR API"
 * protocolApplied.series -> "translation of ImmunizationTO.series" "9000010.11-.04 SERIES"
 * protocolApplied.doseNumberString -> "number from ImmunizationTO.series" "9000010.11-.04 SERIES"
 * patient -> "patient" "9000010.11-.02 PATIENT"
-* status -> "`completed`"
+* status -> "`completed` if not `entered-in-error`"
 * primarySource -> "Data Absent Reason - unknown"
 
 Mapping: Immunization-Old-Mapping

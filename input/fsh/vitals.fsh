@@ -18,7 +18,9 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.type.id}"
-* status = #final
+* status MS
+* status ^short = "May indicate entered-in-error"
+//* status = #final
 * category MS
 * code.text MS
 * code.coding MS
@@ -63,7 +65,7 @@ Target: "VitalSignTO"
 Title: "VIA to mhv-fhir-phr"
 Description: "Informative map to available elements in MHV FHIR API"
 * -> "VitalSignTO"
-* status -> "`final`"
+* status -> "`final` if not `entered-in-error`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name" "VITAL_TYPE - 120.5-.03 VITAL TYPE"
 * code.coding -> "VitalSignTO.type.name convert to LOINC using VF_VitalsCodes"
@@ -89,7 +91,7 @@ Target: "VitalSignTO"
 Title: "eVault-PHR to MHV-PHR"
 Description: "Informative map to include only the elements available in eVault PHR"
 * -> "VitalSignTO" "eVault"
-* status -> "`final`"
+* status -> "`final` if not `entered-in-error`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name" "VITAL_TYPE - 120.5-.03 VITAL TYPE"
 * subject -> "patient" "patient - 120.5-.02 Patient"
@@ -124,7 +126,9 @@ Not drived from us-core vitals, us-core does not have Pain and forbids valueInte
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.type.id}"
-* status = #final
+* status MS
+* status ^short = "May indicate entered-in-error"
+//* status = #final
 * category MS
 * category 1..
 * category ^slicing.discriminator.type = #pattern
@@ -185,7 +189,7 @@ Target: "MHVvitalsPain"
 Title: "VIA to mhv-fhir-phr"
 Description: "Informative map to available elements in MHV FHIR API"
 * -> "VitalSignTO Pain"
-* status -> "`final`"
+* status -> "`final` if not `entered-in-error`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name"
 * code.coding -> "LOINC 72514-3"
@@ -226,7 +230,9 @@ Note that VIA does not provide us the supplemental O2 concentration or flowrate
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.type.id}"
-* status = #final
+* status MS
+* status ^short = "May indicate entered-in-error"
+//* status = #final
 * category MS
 * code.text MS
 * code.coding MS
@@ -273,7 +279,7 @@ Target: "VitalSignTO"
 Title: "VIA to mhv-fhir-phr"
 Description: "Informative map to available elements in MHV FHIR API"
 * -> "VitalSignTO"
-* status -> "`final`"
+* status -> "`final` if not `entered-in-error`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name" "VITAL_TYPE - 120.5-.03 VITAL TYPE"
 * code.coding[PulseOx] -> "LOINC 59408-5"
@@ -298,7 +304,7 @@ Target: "VitalSignTO"
 Title: "eVault-PHR to MHV-PHR"
 Description: "Informative map to include only the elements available in eVault PHR"
 * -> "VitalSignTO" "eVault"
-* status -> "`final`"
+* status -> "`final` if not `entered-in-error`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name" "VITAL_TYPE - 120.5-.03 VITAL TYPE"
 * code.coding[PulseOx] -> "LOINC 59408-5"
@@ -331,7 +337,9 @@ A profile on the Observation resource for Blood Pressure
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`VitalSignTO` | `.` | {VitalSignTO.type.id}"
-* status = #final
+* status MS
+* status ^short = "May indicate entered-in-error"
+//* status = #final
 * category MS
 * code.text MS
 * code.coding MS
@@ -379,7 +387,7 @@ Target: "MHVvitalsBP"
 Title: "VIA to mhv-fhir-phr"
 Description: "Informative map to available elements in MHV FHIR API"
 * -> "VitalSignTO BP"
-* status -> "`final`"
+* status -> "`final` if not `entered-in-error`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name"
 * code.coding -> "LOINC 8480-6"
@@ -404,7 +412,7 @@ Target: "VitalSignTO"
 Title: "eVault-PHR to MHV-PHR"
 Description: "Informative map to include only the elements available in eVault PHR"
 * -> "VitalSignTO BP" "eVault"
-* status -> "`final`"
+* status -> "`final` if not `entered-in-error`"
 * category -> "`vital-signs`"
 * code.text -> "VitalSignTO.type.name"
 * subject -> "patient"
