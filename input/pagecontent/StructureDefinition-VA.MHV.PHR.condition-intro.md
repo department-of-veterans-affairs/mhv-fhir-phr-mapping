@@ -8,7 +8,6 @@
 - `code` is the condition, problem or diagnosis
   - `code.coding` may be populated with an ICD-9 code
   - do not have any other codes available
-
 - `recorder` the clinician
 - `note` may have notes
 - `recordedDate` indicate last modified date on Vista

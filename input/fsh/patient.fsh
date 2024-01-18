@@ -11,6 +11,8 @@ A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.
 
 - based on US-Core for Patient
 - mapping from patient details in eVault (not from VIA/HDR transaction)
+  - all elements populated from eVault PHR patient service
+  - phrVPRDAO.fetchDetailPatientInfo(icn)
 - `identifier`  
   - `value` = GetPatientId
   - `system` = `urn:oid:2.16.840.1.113883.4.349`
@@ -25,6 +27,7 @@ mapping concerns - JIRA
 - identifer.use is not being populated
 - name seems to only populate first and last, but puts them both in given
 - populating identifier with GetPatientId(), not sure that is the same as GetIcn()
+  - the system value should not be the generic VA oid, but rather some URI identifying MHV as this is where these id values are unique.
 - eVault also has, but are not being used in the FHIR Patient
   - MiddleName
   - Ssn
@@ -89,7 +92,7 @@ PatientTO mapping notes
   - Dropping telecom
   - dropping contact
 
-*/
+
 Mapping: Patient-Mapping
 Source:	MHVpatient
 Target: "PatientTO"
@@ -103,12 +106,13 @@ Title: "VIA to mhv-fhir-phr"
 * gender -> "PatientTO.gender"
 * extension[us-core-race] -> "MHV PHR - RACE"
 * extension[us-core-ethnicity] -> "PatientTO.ethnicity"
-//* extension[religion] -> "PatientTO.religion"
-//* extension[birthPlace] -> "PatientTO.demographics.demographicsSetTO.Addresses.addressTO.city + PatientTO.demographics.demographicsSetTO.Addresses.addressTO.state"
+* extension[religion] -> "PatientTO.religion"
+* extension[birthPlace] -> "PatientTO.demographics.demographicsSetTO.Addresses.addressTO.city + PatientTO.demographics.demographicsSetTO.Addresses.addressTO.state"
 * maritalStatus -> "ConvertCode(PatientTO.martalStatus)"
 * address -> "PatientTO.demographics.demographicsSetTO.Addresses.addressTO"
 * telecom -> "PatientTO.demographics.demographicsSetTO.Phones"
 * contact -> "PatientTO.PersonArray.Persons.PersonTO"
+*/
 
 /*
   <xs:complexType name="patientTO">
