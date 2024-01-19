@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="b71ceba1-a4b0-4d09-8a00-2c76568267a9"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="b71ceba1-a4b0-4d09-8a00-2c76568267a9"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;b71ceba1-a4b0-4d09-8a00-2c76568267a9&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.note.html">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: NoteTO.79686701 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: EDUCATION NOTE <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Jul 6, 2023, 5:08:36 AM</p><p><b>author</b>: <a name="author-0"> </a></p><blockquote><p/><p><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.11786 (use: USUAL)</p><p><b>name</b>: LENZI,AMIE M</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style="display: none">*</td><td>text/plain</td><td>(base64 data - 1345 bytes)</td><td>AVS STUB NOTE</td><td>2023-07-06 10:08:36+0000</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Related</b></td></tr><tr><td style="display: none">*</td><td><a name="location-0"> </a><blockquote><p/><p><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.11786 (use: USUAL)</p><p><b>name</b>: LENZI,AMIE M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="author-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.11786"/>
+      </identifier>
+      <name>
+        <text value="LENZI,AMIE M"/>
+        <family value="LENZI,AMIE M"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Location>
+      <id value="location-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="LocationTO.648"/>
+      </identifier>
+      <name value="PORTLAND VA MEDICAL CENTER"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="NoteTO.79686701"/>
+  </identifier>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="11506-3"/>
+    </coding>
+    <text value="EDUCATION NOTE"/>
+  </type>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
+      <code value="clinical-note"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <date value="2023-07-06T10:08:36Z"/>
+  <author>
+    <reference value="#author-0"/>
+  </author>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <data value="CiBMT0NBTCBUSVRMRTogQVZTIFNUVUIgTk9URSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBFRFVDQVRJT04gTk9URSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgRElDVCBEQVRFOiBKVUwgMDYsIDIwMjNAMTA6MDg6MzYgIEVOVFJZIERBVEU6IEpVTCAwNiwgMjAyM0AxMDowODozNiAgICAgIAogRElDVEFURUQgQlk6IExFTlpJLEFNSUUgTSAgICAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKVGhlIHBhdGllbnQgd2FzIHByb3ZpZGVkIHdpdGggYSBjb3B5IG9mIGFuIGFmdGVyLXZpc2l0IHN1bW1hcnkgYXQgdGhlCmNvbmNsdXNpb24gb2YgdGhlIHZpc2l0LgoKVGhlIGFmdGVyLXZpc2l0IHN1bW1hcnkgaW5jbHVkZXMgaW5mb3JtYXRpb24gcGVydGFpbmluZyB0byB0aGUgcGF0aWVudCdzCmVuY291bnRlciwgaW5jbHVkaW5nIGRpYWdub3Nlcywgdml0YWwgc2lnbnMsIG1lZGljYXRpb25zLCBhbmQgbmV3IG9yZGVycywKYXMgd2VsbCBhcyBhIGxpc3Qgb2YgYW55IGFueSB1cGNvbWluZyBhcHBvaW50bWVudHMgYW5kIGluZm9ybWF0aW9uIHJlZ2FyZGluZwp0aGUgcGF0aWVudCdzIG9uZ29pbmcgY2FyZS4KClRoZSBwYXRpZW50J3MgbWVkaWNhdGlvbnMgd2VyZSByZXZpZXdlZCB3aXRoIHRoZSBwYXRpZW50IGJ5IHRoZSBwcm92aWRlcgphbmQgd2VyZSBwcm92aWRlZCB0byB0aGUgcGF0aWVudCBhcyBhbiB1cGRhdGVkIGxpc3Qgb2YgbWVkaWNhdGlvbnMuICBUaGUKcGF0aWVudCB3YXMgaW5zdHJ1Y3RlZCB0byBpbmZvcm0gdGhlIHByb3ZpZGVyIG9mIGFueSBtZWRpY2F0aW9uIGNoYW5nZXMKb3IgZGlzY3JlcGFuY2llcyB0aGF0IHdlcmUgbm90ZWQuICBPdGhlcndpc2UsIHRoZSBwYXRpZW50IHdhcyBpbnN0cnVjdGVkCnRvIGNvbnRpbnVlIHRoZSBtZWRpY2F0aW9ucyBhcyBwcmVzY3JpYmVkLgoKQSBjb3B5IG9mIHRoZSBhZnRlci12aXNpdCBzdW1tYXJ5IHByb3ZpZGVkIHRvIHRoZSBwYXRpZW50IGlzIGF2YWlsYWJsZSBpbgpWaXN0QSBJbWFnaW5nLgogCiAgICAgICAgICAgICAgICAgICAgICAgICAgICoqKiBTQ0FOTkVEIERPQ1VNRU5UICoqKgogICAgICAgICAgICAgICAgICAgICAgICAgICAgU0lHTkFUVVJFIE5PVCBSRVFVSVJFRAogCiAKICBFbGVjdHJvbmljYWxseSBGaWxlZDogMDcvMDYvMjAyMwogICAgICAgICAgICAgICAgICAgIGJ5OiBFUklDIEMgU1BBSE4KICAgICAgICAgICAgICAgICAgICAgICAgCg=="/>
+      <title value="AVS STUB NOTE"/>
+      <creation value="2023-07-06T10:08:36Z"/>
+    </attachment>
+  </content>
+  <context>
+    <related>
+      <reference value="#location-0"/>
+    </related>
+  </context>
+</DocumentReference>

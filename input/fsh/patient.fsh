@@ -24,10 +24,10 @@ A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.
 
 mapping concerns - JIRA
 - The Identifier for the ICN is still being discussed
-- identifer.use is not being populated
+- identifer.use is not being populated so can't use slicing
 - name seems to only populate first and last, but puts them both in given
-- populating identifier with GetPatientId(), not sure that is the same as GetIcn()
-  - the system value should not be the generic VA oid, but rather some URI identifying MHV as this is where these id values are unique.
+- populating identifier with GetPatientId() - the MHV patientId (jwt subjectId)
+  - **the system value should not be the generic VA oid**, but rather some URI identifying MHV as this is where these id values are unique.
 - eVault also has, but are not being used in the FHIR Patient
   - MiddleName
   - Ssn
@@ -35,8 +35,9 @@ mapping concerns - JIRA
   - Icn 
 - set .meta.profile
 - Would be even better if we could use a common Patient registry. 
-
-NOT USING Mapping to [VIA PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-fhir-phr-patientto)
+- The Patient resource can hold much more such as religion, birth place, other identifiers, etc...
+- Integration with Cerner will force even more federation of identities
+- Not mapping PatientTO 
 """
 * ^extension[$fmm].valueInteger = 3
 //* extension contains http://hl7.org/fhir/StructureDefinition/patient-religion named religion 0..1

@@ -1,0 +1,102 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "2b7690c3-e2ad-4610-952d-41cf8239db9d",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"2b7690c3-e2ad-4610-952d-41cf8239db9d\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;2b7690c3-e2ad-4610-952d-41cf8239db9d&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id:\u00a0NoteTO.77598354\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: NEUROLOGY SECURE MESSAGING <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Feb 8, 2023, 10:32:00\u202fAM</p><p><b>author</b>: <a name=\"author-0\"> </a></p><blockquote><p/><p><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.90042\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: ORALLO,EDITHA</p></blockquote><p><b>authenticator</b>: <a name=\"approvedBy-0\"> </a></p><blockquote><p/><p><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.90042\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: ORALLO,EDITHA</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 1043 bytes)</td><td>NEUROLOGY SECURE MESSAGING</td><td>2023-02-08 16:32:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"location-0\"> </a><blockquote><p/><p><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.90042\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: ORALLO,EDITHA</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.90042\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: ORALLO,EDITHA</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "author-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.90042"
+    }],
+    "name" : [{
+      "text" : "ORALLO,EDITHA",
+      "family" : "ORALLO,EDITHA"
+    }]
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "approvedBy-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.90042"
+    }],
+    "name" : [{
+      "text" : "ORALLO,EDITHA",
+      "family" : "ORALLO,EDITHA"
+    }]
+  },
+  {
+    "resourceType" : "Location",
+    "id" : "location-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "LocationTO.648"
+    }],
+    "name" : "PORTLAND VA MEDICAL CENTER"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "NoteTO.77598354"
+  }],
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "11506-3"
+    }],
+    "text" : "NEUROLOGY SECURE MESSAGING"
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code" : "clinical-note"
+    }]
+  }],
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "date" : "2023-02-08T16:32:00Z",
+  "author" : [{
+    "reference" : "#author-0"
+  }],
+  "authenticator" : {
+    "extension" : [{
+      "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen",
+      "valueDateTime" : "2023-02-08T13:32:22Z"
+    }],
+    "reference" : "#approvedBy-0"
+  },
+  "content" : [{
+    "attachment" : {
+      "contentType" : "text/plain",
+      "data" : "CiBMT0NBTCBUSVRMRTogTkVVUk9MT0dZIFNFQ1VSRSBNRVNTQUdJTkcgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBORVVST0xPR1kgU0VDVVJFIE1FU1NBR0lORyAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBGRUIgMDgsIDIwMjNAMTY6MzIgICAgIEVOVFJZIERBVEU6IEZFQiAwOCwgMjAyM0AxMzozMjoyMiAgICAgIAogICAgICBBVVRIT1I6IE9SQUxMTyxFRElUSEEgICAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKLS0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAKU2VudDogIDAyLzA4LzIwMjMgMDM6NDYgUE0gRVQgCkZyb206ICBNSFZaWlZJU05UV0VOVFksIFRFU1QgIFBBVElFTlRSIApUbzogIE5ldXJvbG9neSBDbGluaWNzX1ZBUG9ydGxhbmRIQ1NfREhTTSAKU3ViamVjdDogIEdlbmVyYWw6VHJhaW5pbmcgTXNnIDIgZm9yIEVkaXRoYSAKClRlc3QgVGVzdCBUZXN0ZXIgMiAgCiAgCiAgCkZsdSBTaG90IEluZm86IGh0dHBzOi8vd3d3LnBvcnRsYW5kLnZhLmdvdi9uZXdzL2ZsdXNob3RzLmFzcCAgCmh0dHBzOi8vd3d3LnZhLmdvdi9kaXJlY3RvcnkvZ3VpZGUvcmVnaW9uLmFzcD9JRD0xMDIwPwotLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIApTZW50OiAgMDIvMDgvMjAyMyAwNDozMCBQTSBFVCAKRnJvbTogIE9SQUxMTywgRWRpdGhhICAKVG86ICBNSFZaWlZJU05UV0VOVFksIFRFU1QgIFBBVElFTlRSIApTdWJqZWN0OiAgR2VuZXJhbDpUcmFpbmluZyBNc2cgMiBmb3IgRWRpdGhhIAoKICAKdGVzdCAyICAKICAKICAKRWRpdGggT3JhbGxvICAKTmV1cm9sb2d5IEFNU0EgCgogCi9lcy8gRWRpdGhhIE9yYWxsbyBGYWNpbGl0YXRvcgpBZHZhbmNlIE1lZGljYWwgU3VwcG9ydCBBc3N0ClNpZ25lZDogMDIvMDgvMjAyMyAxMzozMgo=",
+      "title" : "NEUROLOGY SECURE MESSAGING",
+      "creation" : "2023-02-08T16:32:00Z"
+    }
+  }],
+  "context" : {
+    "related" : [{
+      "reference" : "#location-0"
+    }]
+  }
+}

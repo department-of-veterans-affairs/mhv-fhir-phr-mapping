@@ -17,13 +17,17 @@
 - `performer` may have contained recorder, and/or observer
   - may have an extension `alternate-reference` that points to a Location resource identifying the VAMC where the vital-sign was first recorded
 - `identifier` will hold the record identifier from Vista
+
+Should search for entries that do **not** have `status=entered-in-error` (might also work to look for only `completed`)
+> GET {path}/Observation?patient={patient}&status:not!=entered-in-error
+
+### beyond MVP
+
+The following is a future improvement beyond MVP. There are "qualifiers" in the vista data model with vital signs. They are a flat list of codes. I am working with KBS to figure out the right way to process them, but at this time that is not yet decided. The following is current thinking, but not likely final thinking.
+
 - `.bodySite` may hold the bodySite from qualifiers
 - `.extension[observation-bodyPosition]` may hold the bodyPosition from qualifiers
 - `.method` may hold the method from qualifiers
 - `.device` may hold the device from qualifiers
 - `.component.code` may hold any other qualifiers, with no `.component.value[x]`
 - no other elements are populated
-
-Should search for entries that do **not** have `status=entered-in-error` (might also work to look for only `completed`)
-> GET {path}/Observation?patient={patient}&status:not!=entered-in-error
-

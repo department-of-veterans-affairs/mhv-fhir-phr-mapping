@@ -30,4 +30,6 @@ The MHV FHIR Server would have a similar [CapabilityStatement](CapabilityStateme
 
 ### Patient
 
-Note that the above APIs take a patient/subject as a parameter. The expectation is that one will provide the ICN in a `patient.identifier` parameter rather than using `patient.id`.
+Note that the above APIs take a patient/subject as a parameter. The expectation is that one will lookup that `Patient` by the `MHV patientId` (jwt `subjectId`) to get the FHIR `Patient.id`, and use the `Patient.id` where ever a `subject` or `patient` parameter is needed. It is possible to provide the `MHV patientId` (not ICN) in a `patient.identifier` parameter rather than using `patient.id`, but this will be slower and more error prone.
+
+The [Patient resource](StructureDefinition-VA.MHV.PHR.patient.html) is minimally populated.

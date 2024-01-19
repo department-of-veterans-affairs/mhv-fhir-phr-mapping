@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="37ed1a35-5ca6-4a0b-b9a0-274ff255120d"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="37ed1a35-5ca6-4a0b-b9a0-274ff255120d"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;37ed1a35-5ca6-4a0b-b9a0-274ff255120d&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.note.html">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: NoteTO.80529980 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: OPTOMETRY NOTE <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Sep 1, 2023, 9:52:00 AM</p><p><b>author</b>: <a name="author-0"> </a></p><blockquote><p/><p><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.273377 (use: USUAL)</p><p><b>name</b>: JACKSON,ANNA L</p></blockquote><p><b>authenticator</b>: <a name="approvedBy-0"> </a></p><blockquote><p/><p><a name="approvedBy-0"> </a></p><p><b>identifier</b>: id: AuthorTO.273377 (use: USUAL)</p><p><b>name</b>: JACKSON,ANNA L</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style="display: none">*</td><td>text/plain</td><td>(base64 data - 1885 bytes)</td><td>EYE - AFTERVISIT SUMMARY SPECTACLE RX</td><td>2023-09-01 14:52:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Related</b></td></tr><tr><td style="display: none">*</td><td><a name="location-0"> </a><blockquote><p/><p><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648GA (use: USUAL)</p><p><b>name</b>: BEND, OR CBOC</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.273377 (use: USUAL)</p><p><b>name</b>: JACKSON,ANNA L</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name="approvedBy-0"> </a></p><p><b>identifier</b>: id: AuthorTO.273377 (use: USUAL)</p><p><b>name</b>: JACKSON,ANNA L</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648GA (use: USUAL)</p><p><b>name</b>: BEND, OR CBOC</p></blockquote></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="author-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.273377"/>
+      </identifier>
+      <name>
+        <text value="JACKSON,ANNA L"/>
+        <family value="JACKSON,ANNA L"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="approvedBy-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.273377"/>
+      </identifier>
+      <name>
+        <text value="JACKSON,ANNA L"/>
+        <family value="JACKSON,ANNA L"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Location>
+      <id value="location-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="LocationTO.648GA"/>
+      </identifier>
+      <name value="BEND, OR CBOC"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="NoteTO.80529980"/>
+  </identifier>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="11506-3"/>
+    </coding>
+    <text value="OPTOMETRY NOTE"/>
+  </type>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
+      <code value="clinical-note"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <date value="2023-09-01T14:52:00Z"/>
+  <author>
+    <reference value="#author-0"/>
+  </author>
+  <authenticator>
+    <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen">
+      <valueDateTime value="2023-09-01T14:53:33Z"/>
+    </extension>
+    <reference value="#approvedBy-0"/>
+  </authenticator>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <data value="CiBMT0NBTCBUSVRMRTogRVlFIC0gQUZURVJWSVNJVCBTVU1NQVJZIFNQRUNUQUNMRSBSWCAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBPUFRPTUVUUlkgTk9URSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBTRVAgMDEsIDIwMjNAMTQ6NTIgICAgIEVOVFJZIERBVEU6IFNFUCAwMSwgMjAyM0AxNDo1Mjo1MyAgICAgIAogICAgICBBVVRIT1I6IEpBQ0tTT04sQU5OQSBMICAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNQRUNUQUNMRSBSWAogICAgICAgIERFUEFSVE1FTlQgT0YgVkVURVJBTlMgQUZGQUlSUyBTUEVDVEFDTEUgUFJFU0NSSVBUSU9OIEZPUk0KICAgICAgICAgICAgICAgICpOb3QgdG8gYmUgZmlsbGVkIHByaXZhdGVseSBhdCBWQSBleHBlbnNlKgogClBhdGllbnQgTmFtZTogIE1IVlpaVklTTlRXRU5UWSxURVNUIFBBVElFTlRSICAgICAgICAgICAgRGF0ZSBvZiBCaXJ0aDogIEpBTiAKMSwyMDAxCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCiAKRnJvbSBub3RlOiBFWUUvT1BUT00gLSBGT0xMT1ctVVAgOS8xLzIzQDE0OjUwCk1hbmlmZXN0IHJlZnJhY3Rpb246ClJJR0hUIEVZRSAoT0QpOgogKzAuNTAgKzAuNTAgeCAwOTAKTEVGVCBFWUUgKE9TKToKICswLjUwICswLjI1IHggMDk1CkFERDogKzIuNTAKIAogCiAKIAogCkVsZWN0cm9uaWNhbGx5IFNpZ25lZCBCeToKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpFeWUgQ2FyZSBQcm92aWRlcjogIEthcmVuIFdhZGhhbXMsIE9EIC8gT1IgQVQtMzY0MwpFeGFtaW5hdGlvbiBEYXRlOiAgU2VwIDEsMjAyMwpFeHBpcmF0aW9uIERhdGU6ICAyIHllYXJzIGZyb20gRXhhbWluYXRpb24gRGF0ZQogCkNvbnRhY3QvQWRkcmVzcyBJbmZvcm1hdGlvbiBmb3IgdGhlIFZBUE9SSENTIEV5ZSBTZXJ2aWNlOiAoMjAxOSkKIApURUxFUEhPTkUgLyBFWUUgQ0FSRSBTRVJWSUNFUzogIDUwMy03MjEtNzg5MAogICAgICBPcHRpb24gMTogIFNjaGVkdWxpbmcKICAgICAgT3B0aW9uIDI6ICBNZWRpY2F0aW9ucwogICAgICBPcHRpb24gMzogIE9wdGljYWwgU2hvcAogICAgICBPcHRpb24gNDogIENvbW11bml0eSBDYXJlCiAgICAgIE9wdGlvbiA1OiAgVXJnZW50IEV5ZSBQcm9ibGVtcwogCkJlbmQgQ0JPQywgVkFQT1JIQ1MgICAgICAgICAgIFBvcnRsYW5kIERpdmlzaW9uLCBWQVBPUkhDUwpFeWUgQ2xpbmljLCAybmQgRmxvb3IgICAgICAgICBFeWUgQ2xpbmljLCBCbGRnIDEwMCwgOC1DCjI2NTAgTkUgQ291cnRuZXkgRHJpdmUgICAgICAgIDM3MTAgU1cgVS5TLiBWZXRlcmFucyBIb3NwaXRhbCBSZC4KQmVuZCwgT3JlZ29uIDk3NzAxICAgICAgICAgICAgUG9ydGxhbmQsIE9yZWdvbiA5NzIzOQogClNhbGVtIENCT0MsIFZBUE9SSENTICAgICAgICAgIFZhbmNvdXZlciBDYW1wdXMsIFZBUE9SSENTCkV5ZSBDbGluaWMsIFN1aXRlIDEzMCAgICAgICAgIEV5ZSBDbGluaWMsIEJ1aWxkaW5nIDE3LCAzcmQgRmxvb3IKMTc1MCBNY0dpbGNocmlzdCBTdC4gU0UgICAgICAgMTYwMSBFIEZvdXJ0aCBQbGFpbiBCbHZkLgpTYWxlbSwgT1IgOTczMDIgICAgICAgICAgICAgICBWYW5jb3V2ZXIsIFdhc2hpbmd0b24gOTg2NjEKIApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwoKCg=="/>
+      <title value="EYE - AFTERVISIT SUMMARY SPECTACLE RX"/>
+      <creation value="2023-09-01T14:52:00Z"/>
+    </attachment>
+  </content>
+  <context>
+    <related>
+      <reference value="#location-0"/>
+    </related>
+  </context>
+</DocumentReference>

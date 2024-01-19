@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="6da04be0-2005-47ff-8164-27a12cc7db81"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="6da04be0-2005-47ff-8164-27a12cc7db81"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;6da04be0-2005-47ff-8164-27a12cc7db81&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.note.html">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: NoteTO.76265401 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: MENTAL HEALTH OUTPATIENT NOTE <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Oct 31, 2022, 9:32:00 AM</p><p><b>author</b>: <a name="author-0"> </a></p><blockquote><p/><p><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.154424 (use: USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><p><b>authenticator</b>: <a name="approvedBy-0"> </a></p><blockquote><p/><p><a name="approvedBy-0"> </a></p><p><b>identifier</b>: id: AuthorTO.154424 (use: USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style="display: none">*</td><td>text/plain</td><td>(base64 data - 1723 bytes)</td><td>MHD - MHICM PROGRESS NOTE</td><td>2022-10-31 14:32:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Related</b></td></tr><tr><td style="display: none">*</td><td><a name="location-0"> </a><blockquote><p/><p><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.154424 (use: USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name="approvedBy-0"> </a></p><p><b>identifier</b>: id: AuthorTO.154424 (use: USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="author-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.154424"/>
+      </identifier>
+      <name>
+        <text value="WRIGHT,DANIEL E"/>
+        <family value="WRIGHT,DANIEL E"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="approvedBy-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.154424"/>
+      </identifier>
+      <name>
+        <text value="WRIGHT,DANIEL E"/>
+        <family value="WRIGHT,DANIEL E"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Location>
+      <id value="location-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="LocationTO.648"/>
+      </identifier>
+      <name value="PORTLAND VA MEDICAL CENTER"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="NoteTO.76265401"/>
+  </identifier>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="11506-3"/>
+    </coding>
+    <text value="MENTAL HEALTH OUTPATIENT NOTE"/>
+  </type>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
+      <code value="clinical-note"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <date value="2022-10-31T14:32:00Z"/>
+  <author>
+    <reference value="#author-0"/>
+  </author>
+  <authenticator>
+    <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen">
+      <valueDateTime value="2022-10-31T14:32:51Z"/>
+    </extension>
+    <reference value="#approvedBy-0"/>
+  </authenticator>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <data value="CiBMT0NBTCBUSVRMRTogTUhEIC0gTUhJQ00gUFJPR1JFU1MgTk9URSAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBNRU5UQUwgSEVBTFRIIE9VVFBBVElFTlQgTk9URSAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBPQ1QgMzEsIDIwMjJAMTQ6MzIgICAgIEVOVFJZIERBVEU6IE9DVCAzMSwgMjAyMkAxNDozMjo1MSAgICAgIAogICAgICBBVVRIT1I6IFdSSUdIVCxEQU5JRUwgRSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKTUhEIC0gTUhJQ00gUFJPR1JFU1MgTk9URSAtIDMxIE9jdCwgMjAyMiBAIDAyOjMyUE0KVmlzaXQgRGF0ZTogIDMwIE5vdiwgMjAyMSBAIDExOjM5IC0gUE9SLVNFQ01TRy1NSCBDV1QvU0UtWAoKTUhUQyBub3QgYXNzaWduZWQKClRFQU0gTUVNQkVSUzoKV1JJR0hULERBTklFTCBFOiBTT0NJQUwgV09SS0VSCgpJTlRFUkRJU0NJUExJTkFSWSBJTlRFR1JBVEVEIFNVTU1BUlk6IApDaGllZiBDb21wbGFpbnQvSHggb2YgUHJlc2VudCBJbGxuZXNzCnZhZnYgYQoKRmFtaWx5IENpcmN1bXN0YW5jZXMKYVN2YVZCCgpJbnRlcnByZXRpdmUgU3VtbWFyeToKYWJyZmJhYmFiCgpUUkVBVE1FTlQgUExBTjogClByb2JsZW06IFByb2JsZW0vTmVlZDogW0FESlVTVE1FTlQgRElTT1JERVJdOiBJIGhhdmUgYmVlbiAKICAgICAgICAgZXhwZXJpZW5jaW5nIDRraWU2N2tpZSBpbiByZXNwb25zZSB0byA0aWs0cgogICAgR29hbDogSSB3YW50IHRvIHJlZHVjZSB0aGUgbGV2ZWwgb2YgbXkgZmVlbGluZ3MgCiAgICAgICAgICBvZiBkaXN0cmVzcy4KICAgIE9iamVjdGl2ZTogSSB3aWxsIHRha2UgbWVkaWNhdGlvbnMgYXMgcHJlc2NyaWJlZCB0byAKICAgICAgICAgICAgICAgcHJvbW90ZSBpbXByb3ZlbWVudCBpbiAgNHJpOC4gSW1wcm92ZW1lbnQgd2lsbCAKICAgICAgICAgICAgICAgYmUgbWVhc3VyZWQgdGhyb3VnaCBpbi1vZmZpY2UgYXNzZXNzbWVudCBhbmQgCiAgICAgICAgICAgICAgIHNlbGYtcmVwb3J0LiAgUHJvamVjdGVkIFRhcmdldCBEYXRlOiAxMS8wMS8yMDIyCiAgICAgICAgSW50ZXJ2ZW50aW9uOiBbUFNZQ0hPVEhFUkFQWV0gTXkgcHJvdmlkZXIgd2lsbCB3b3JrIAogICAgICAgICAgICAgICAgICAgICAgd2l0aCBtZSB0byBhY2hpZXZlIHRoaXMgZ29hbCBhbmQgCiAgICAgICAgICAgICAgICAgICAgICBvYmplY3RpdmUgdGhyb3VnaCByNmlrNHIgIFByb3ZpZGVyczogCiAgICAgICAgICAgICAgICAgICAgICBXUklHSFQsREFOSUVMIEUgIFRpbWUgRnJhbWU6IFR3byB0aW1lcyAKICAgICAgICAgICAgICAgICAgICAgIHBlciB3ZWVrIGZvciAxIHdlZWsKICAgICAgICAgICAgICAgVHJlYXRpbmcgU3BlY2lhbHR5OiBNSElDTQogICAgICAgICAgICAgICBSZW5ld2FsIERhdGU6IDA0LzI5LzIwMjMKICAgICAgICAgICAgICAgRW50ZXJlZCBUcmVhdG1lbnQ6IDEwLzMxLzIwMjIgQCAwMjozMFBNCiAgICAgICAgICAgICAgIEFudGljaXBhdGVkIERpc2NoYXJnZTogTm9uZQogICAgICAgICAgICAgICBBY3R1YWwgRGlzY2hhcmdlOiBOb25lCiAKL2VzLyBEYW5pZWwgRS4gV3JpZ2h0LCBMQ1NXCkxpY2Vuc2VkIENsaW5pY2FsIFNvY2lhbCBXb3JrZXIKU2lnbmVkOiAxMC8zMS8yMDIyIDE0OjMyCg=="/>
+      <title value="MHD - MHICM PROGRESS NOTE"/>
+      <creation value="2022-10-31T14:32:00Z"/>
+    </attachment>
+  </content>
+  <context>
+    <related>
+      <reference value="#location-0"/>
+    </related>
+  </context>
+</DocumentReference>

@@ -4,7 +4,7 @@
   <id value="VF-VitalsPosition"/>
   <text>
     <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, John Moehrke (himself): <a href="mailto:John.Moehrke@va.gov">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Observation.extension[bodyPosition].valueCodeableConcept</p>
-</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>5335366 (LEFT LATERAL RECUMBENT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>102536004 (Left lateral decubitus position)</td></tr><tr><td>4711343 (LYING)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>102538003 (Recumbent body position)</td></tr><tr><td>5335362 (PRONE)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>1240000 (Prone body position)</td></tr><tr><td>5335364 (RIGHT LATERAL RECUMBENT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>102535000 (Right lateral decubitus position)</td></tr><tr><td>4711354 (SEMIFOWLERS)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>426408003 (Semi-Fowler's position)</td></tr><tr><td>4711357 (SITTING)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>33586001 (Sitting position)</td></tr><tr><td>4711361 (STANDING)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>10904000 (Orthostatic body position)</td></tr><tr><td>4711362 (STANDING WEIGHT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>10904000 (Orthostatic body position)</td></tr><tr><td>4711369 (TRENDELENBURG)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>34106002 (Trendelenburg position)</td></tr></table></div>
+</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>5335366 (LEFT LATERAL RECUMBENT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>102536004 (Left lateral decubitus position)</td></tr><tr><td>4688663 (LYING)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>102538003 (Recumbent body position)</td></tr><tr><td>5335362 (PRONE)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>1240000 (Prone body position)</td></tr><tr><td>5335364 (RIGHT LATERAL RECUMBENT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>102535000 (Right lateral decubitus position)</td></tr><tr><td>4688682 (SEMIFOWLERS)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>426408003 (Semi-Fowler's position)</td></tr><tr><td>4688703 (SITTING)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>33586001 (Sitting position)</td></tr><tr><td>4688707 (STANDING)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>10904000 (Orthostatic body position)</td></tr><tr><td>4500643 (STANDING WEIGHT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>10904000 (Orthostatic body position)</td></tr><tr><td>4688694 (TRENDELENBURG)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>34106002 (Trendelenburg position)</td></tr></table></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1">
@@ -21,7 +21,7 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsPosition"/>
-  <version value="0.2.10"/>
+  <version value="0.3.1"/>
   <name value="VF_VitalsPosition"/>
   <title value="Vitals Position used to SNOMED code"/>
   <status value="active"/>
@@ -66,7 +66,7 @@
       </target>
     </element>
     <element>
-      <code value="4711343"/>
+      <code value="4688663"/>
       <display value="LYING"/>
       <target>
         <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
@@ -102,7 +102,7 @@
       </target>
     </element>
     <element>
-      <code value="4711354"/>
+      <code value="4688682"/>
       <display value="SEMIFOWLERS"/>
       <target>
         <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
@@ -114,7 +114,7 @@
       </target>
     </element>
     <element>
-      <code value="4711357"/>
+      <code value="4688703"/>
       <display value="SITTING"/>
       <target>
         <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
@@ -126,7 +126,7 @@
       </target>
     </element>
     <element>
-      <code value="4711361"/>
+      <code value="4688707"/>
       <display value="STANDING"/>
       <target>
         <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
@@ -138,7 +138,7 @@
       </target>
     </element>
     <element>
-      <code value="4711362"/>
+      <code value="4500643"/>
       <display value="STANDING WEIGHT"/>
       <target>
         <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
@@ -150,7 +150,7 @@
       </target>
     </element>
     <element>
-      <code value="4711369"/>
+      <code value="4688694"/>
       <display value="TRENDELENBURG"/>
       <target>
         <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">

@@ -12,7 +12,6 @@ MyHealtheVet acts as a FHIR Server. It receives information from many sources an
 Note that these resources are used purely to provide linkage, they are minimally populated based on the information MHV receives. Often that means all that is populated is an identifier.
 
 - [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
-  - [Mappings from VIA - PatientTO](StructureDefinition-VA.MHV.PHR.patient-mappings.html#mappings-for-via-to-mhv-fhir-phr-patientto)
   - [Examples](StructureDefinition-VA.MHV.PHR.patient-examples.html)
 - [Practitioner](StructureDefinition-VA.MHV.PHR.practitioner.html)
   - [Mappings from VIA - UserTO](StructureDefinition-VA.MHV.PHR.practitioner-mappings.html#mappings-for-via-to-mhv-fhir-phr-userto)
@@ -178,26 +177,29 @@ General Pattern
 
 Before Production use there must be a permanent solution. The solution needs address some update problems (e.g. entered-in-error).  The following are potential candidates
 
-1. **Index-Update-and-Expunge**: This model 
-   1. pulls current FHIR resources (could use `_elements` [parameter](https://hl7.org/fhir/search.html#elements) to limit results to just identifiers), and 
-   2. indexes the `.identifier` values found. 
-   3. Then when updating the new VIA feed data, the index marks which `.identifier` were refreshed. 
-   4. At the end, we can know which `.identifier` values were not updated. (most of the time there will be no unrefreshed data)
-   5. We can pull those that were not updated, by `.identifier`, 
-   6. change the status to `entered-in-error`, and 
-   7. update them. 
-   8. -- Note: Does not require moving to new HAPI Server.
-2. **Update-and-Expunge**: This model is made available with an updated HAPI Server (6.10.0) that has the ability to disable history. However with this version we can't use Wipe-and-Replace as that will result in new id values being assigned at each refresh. So Update-and-Expunge is designed. Each VIA feed we convert to FHIR and request an update, but the HAPI server is smart enough to notice that nothing changed so it will not update the meta.lastUpdated. So we will add to our update the use of the  `http://hl7.org/fhir/StructureDefinition/lastSourceSync` extension, with todays date/time (now). This will force an update. Thus after we have fully processed the VIA feed, we can then look for entries older than now that are still active. This will most of the time return an empty set, but if it does return resources, we will change them to entered-in-error and update them.
-3. **Wipe-and-Replace**: Delete the patient's specific Resource (e.g. delete all the Immunizations for this patient) and write using update current data from the VIA refresh -- similar to eVault PHR today. The HAPI server notices an update, by business identifier, of a previously deleted resource, so it brings it back to non-deleted. Thus after a VIA refresh, only current resources are not-deleted. The drawback is that this keeps historic versions, with two versions per refresh, and _lastUpdated is always the refresh time. Also, the ones removed are not marked as entered-in-error. -- **January 2024, decided to abandon this as the database fills to fast with history, and we don't need this history**
-4. Get VIA updated
-5. Get VDIF to expose their data
-6. Get VDIF to expose their data in FHIR form
-7. Use Lighthouse FHIR, and thus have the 24 hour problem
-8. Use Lighthouse FHIR, and use a hack for short-term data. Where we only add vitals seen in VIA in the last 24 hours (or some timeframe).
-9.  Use HDR
-10. Use CDW somehow
-11. new event service? slack #ves-event-bus
-12. track updates, and notice when a VIA update does not include a record we previously had. This would be very expensive and memory intensive. Thus might be something we do only occationally at low compute time.
+1. **Index-Update-and-Delete**: This model:
+   1. pulls current FHIR resource `.identifier` values (use `_elements` [parameter](https://hl7.org/fhir/search.html#elements) to limit results to just identifiers, id),
+   2. When updating the new VIA feed data, remember the  `.identifier` that were refreshed.
+   3. At the end, we can know which `.identifier` values were not updated. (most of the time there will be no unrefreshed data)
+   4. We can `delete` those that were not updated
+   5. -- Note: Does not require moving to new HAPI Server.
+2. **Index-Update-and-Expunge**: This model:
+   1. pulls current FHIR resource `.identifier` values (use `_elements` [parameter](https://hl7.org/fhir/search.html#elements) to limit results to just identifiers, id, status),
+   2. When updating the new VIA feed data, remember the  `.identifier` that were refreshed.
+   3. At the end, we can know which `.identifier` values were not updated. (most of the time there will be no unrefreshed data)
+   4. We can `patch` those that were not updated, by `.id`, status to `entered-in-error`,
+   5. -- Note: Does not require moving to new HAPI Server.
+3. **Update-and-Expunge**: This model is made available with an updated HAPI Server (6.10.0) that has the ability to disable history. However with this version we can't use Wipe-and-Replace as that will result in new id values being assigned at each refresh. So Update-and-Expunge is designed. Each VIA feed we convert to FHIR and request an update, but the HAPI server is smart enough to notice that nothing changed so it will not update the meta.lastUpdated. So we will add to our update the use of the  `http://hl7.org/fhir/StructureDefinition/lastSourceSync` extension, with todays date/time (now). This will force an update. Thus after we have fully processed the VIA feed, we can then look for entries older than now that are still active. This will most of the time return an empty set, but if it does return resources, we will change them to entered-in-error and update them.
+4. **Wipe-and-Replace**: Delete the patient's specific Resource (e.g. delete all the Immunizations for this patient) and write using update current data from the VIA refresh -- similar to eVault PHR today. The HAPI server notices an update, by business identifier, of a previously deleted resource, so it brings it back to non-deleted. Thus after a VIA refresh, only current resources are not-deleted. The drawback is that this keeps historic versions, with two versions per refresh, and _lastUpdated is always the refresh time. Also, the ones removed are not marked as entered-in-error. -- **January 2024, decided to abandon this as the database fills to fast with history, and we don't need this history**
+5. Get VIA updated
+6. Get VDIF to expose their data
+7. Get VDIF to expose their data in FHIR form
+8. Use Lighthouse FHIR, and thus have the 24 hour problem
+9.  Use Lighthouse FHIR, and use a hack for short-term data. Where we only add vitals seen in VIA in the last 24 hours (or some timeframe).
+10. Use HDR
+11. Use CDW somehow
+12. new event service? slack #ves-event-bus
+13. track updates, and notice when a VIA update does not include a record we previously had. This would be very expensive and memory intensive. Thus might be something we do only occationally at low compute time.
 
 ## References
 

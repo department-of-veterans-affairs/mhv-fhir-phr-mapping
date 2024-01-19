@@ -1,0 +1,102 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "baa6cb68-782c-4ff4-b513-5caad0f1132e",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"baa6cb68-782c-4ff4-b513-5caad0f1132e\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;baa6cb68-782c-4ff4-b513-5caad0f1132e&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id:\u00a0NoteTO.76265366\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: PROCEDURE NOTE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Oct 31, 2022, 9:31:00\u202fAM</p><p><b>author</b>: <a name=\"author-0\"> </a></p><blockquote><p/><p><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.154424\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><p><b>authenticator</b>: <a name=\"approvedBy-0\"> </a></p><blockquote><p/><p><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.154424\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 1783 bytes)</td><td>PROCEDURE - INTRAOSSEOUS VASCULAR ACCESS</td><td>2022-10-31 14:31:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"location-0\"> </a><blockquote><p/><p><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.154424\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.154424\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "author-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.154424"
+    }],
+    "name" : [{
+      "text" : "WRIGHT,DANIEL E",
+      "family" : "WRIGHT,DANIEL E"
+    }]
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "approvedBy-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.154424"
+    }],
+    "name" : [{
+      "text" : "WRIGHT,DANIEL E",
+      "family" : "WRIGHT,DANIEL E"
+    }]
+  },
+  {
+    "resourceType" : "Location",
+    "id" : "location-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "LocationTO.648"
+    }],
+    "name" : "PORTLAND VA MEDICAL CENTER"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "NoteTO.76265366"
+  }],
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "11506-3"
+    }],
+    "text" : "PROCEDURE NOTE"
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code" : "clinical-note"
+    }]
+  }],
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "date" : "2022-10-31T14:31:00Z",
+  "author" : [{
+    "reference" : "#author-0"
+  }],
+  "authenticator" : {
+    "extension" : [{
+      "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen",
+      "valueDateTime" : "2022-10-31T14:31:31Z"
+    }],
+    "reference" : "#approvedBy-0"
+  },
+  "content" : [{
+    "attachment" : {
+      "contentType" : "text/plain",
+      "data" : "CiBMT0NBTCBUSVRMRTogUFJPQ0VEVVJFIC0gSU5UUkFPU1NFT1VTIFZBU0NVTEFSIEFDQ0VTUyAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBQUk9DRURVUkUgTk9URSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBPQ1QgMzEsIDIwMjJAMTQ6MzEgICAgIEVOVFJZIERBVEU6IE9DVCAzMSwgMjAyMkAxNDozMTozMSAgICAgIAogICAgICBBVVRIT1I6IFdSSUdIVCxEQU5JRUwgRSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKQUNDRVNTICA8UFJPQ0VEVVJFIC0gSU5UUkFPU1NFT1VTIFZBU0NVTEFSIEFDQ0VTUz4gLSAzMSBPY3QsIDIwMjIgQCAwMjozMVBNClZpc2l0IERhdGU6ICA2IEp1bCwgMjAyMiBAIDExOjQyIC0gUE9SLVNFQ01TRy1NSCBJTkQtWAoKTUhUQyBub3QgYXNzaWduZWQKClRFQU0gTUVNQkVSUzoKV1JJR0hULERBTklFTCBFOiBTT0NJQUwgV09SS0VSCgpUUkVBVE1FTlQgUExBTjogClByb2JsZW06IFByb2JsZW0vTmVlZDogW0FESlVTVE1FTlQgRElTT1JERVJdOiBJIGhhdmUgYmVlbiAKICAgICAgICAgZXhwZXJpZW5jaW5nIDRraWU2N2tpZSBpbiByZXNwb25zZSB0byA0aWs0cgogICAgR29hbDogSSB3YW50IHRvIHJlZHVjZSB0aGUgbGV2ZWwgb2YgbXkgZmVlbGluZ3MgCiAgICAgICAgICBvZiBkaXN0cmVzcy4KICAgIE9iamVjdGl2ZTogSSB3aWxsIHRha2UgbWVkaWNhdGlvbnMgYXMgcHJlc2NyaWJlZCB0byAKICAgICAgICAgICAgICAgcHJvbW90ZSBpbXByb3ZlbWVudCBpbiAgNHJpOC4gSW1wcm92ZW1lbnQgd2lsbCAKICAgICAgICAgICAgICAgYmUgbWVhc3VyZWQgdGhyb3VnaCBpbi1vZmZpY2UgYXNzZXNzbWVudCBhbmQgCiAgICAgICAgICAgICAgIHNlbGYtcmVwb3J0LiAgUHJvamVjdGVkIFRhcmdldCBEYXRlOiAxMS8wMS8yMDIyCiAgICAgICAgSW50ZXJ2ZW50aW9uOiBbUFNZQ0hPVEhFUkFQWV0gTXkgcHJvdmlkZXIgd2lsbCB3b3JrIAogICAgICAgICAgICAgICAgICAgICAgd2l0aCBtZSB0byBhY2hpZXZlIHRoaXMgZ29hbCBhbmQgCiAgICAgICAgICAgICAgICAgICAgICBvYmplY3RpdmUgdGhyb3VnaCByNmlrNHIgIFByb3ZpZGVyczogCiAgICAgICAgICAgICAgICAgICAgICBXUklHSFQsREFOSUVMIEUgIFRpbWUgRnJhbWU6IFR3byB0aW1lcyAKICAgICAgICAgICAgICAgICAgICAgIHBlciB3ZWVrIGZvciAxIHdlZWsKICAgICAgICAgICAgICAgVHJlYXRpbmcgU3BlY2lhbHR5OiBNSElDTQogICAgICAgICAgICAgICBSZW5ld2FsIERhdGU6IDA0LzI5LzIwMjMKICAgICAgICAgICAgICAgRW50ZXJlZCBUcmVhdG1lbnQ6IDEwLzMxLzIwMjIgQCAwMjozMFBNCiAgICAgICAgICAgICAgIEFudGljaXBhdGVkIERpc2NoYXJnZTogTm9uZQogICAgICAgICAgICAgICBBY3R1YWwgRGlzY2hhcmdlOiBOb25lCiAKL2VzLyBEYW5pZWwgRS4gV3JpZ2h0LCBMQ1NXCkxpY2Vuc2VkIENsaW5pY2FsIFNvY2lhbCBXb3JrZXIKU2lnbmVkOiAxMC8zMS8yMDIyIDE0OjMxCgpSZWNlaXB0IEFja25vd2xlZGdlZCBCeToKMTAvMzEvMjAyMiAxNToxNiAgICAgICAgL2VzLyBMeW5uZSBBLiBMdWRlbWFuLCBQTUhOUC1CQyAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgIFBzeWNoaWF0cmljIE5QICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCg==",
+      "title" : "PROCEDURE - INTRAOSSEOUS VASCULAR ACCESS",
+      "creation" : "2022-10-31T14:31:00Z"
+    }
+  }],
+  "context" : {
+    "related" : [{
+      "reference" : "#location-0"
+    }]
+  }
+}

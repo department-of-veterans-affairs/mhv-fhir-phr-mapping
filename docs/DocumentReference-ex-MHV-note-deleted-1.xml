@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-note-deleted-1"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="ex-MHV-note-deleted-1"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;ex-MHV-note-deleted-1&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.note.html">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: NoteTO.5 (use: USUAL)</p><p><b>status</b>: entered-in-error</p><p><b>type</b>: Progress note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-1.html">Patient/ex-MHV-patient-1</a> &quot; DAYTSHR&quot;</p><p><b>date</b>: Aug 5, 2022, 11:56:00 AM</p><p><b>author</b>: <a name="ex-MHV-practitioner-36556"> </a></p><blockquote><p/><p><a name="ex-MHV-practitioner-36556"> </a></p><p><b>identifier</b>: id: AuthorTO.37556 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><p><b>authenticator</b>: <a name="ex-MHV-practitioner-36556"> </a></p><blockquote><p/><p><a name="ex-MHV-practitioner-36556"> </a></p><p><b>identifier</b>: id: AuthorTO.37556 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td></tr><tr><td style="display: none">*</td><td>text/plain</td><td>(base64 data - 557 bytes)</td><td>Adverse React/Allergy</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Related</b></td></tr><tr><td style="display: none">*</td><td><a name="ex-MHV-location-984"> </a><blockquote><p/><p><a name="ex-MHV-location-984"> </a></p><p><b>identifier</b>: id: HospitalLocationTO.984 (use: USUAL)</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #ex-MHV-practitioner-36556</b><a name="ex-MHV-practitioner-36556"> </a></p><p><b>identifier</b>: id: AuthorTO.37556 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #ex-MHV-location-984</b><a name="ex-MHV-location-984"> </a></p><p><b>identifier</b>: id: HospitalLocationTO.984 (use: USUAL)</p><p><b>name</b>: DAYTSHR TEST LAB</p></blockquote></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="ex-MHV-practitioner-36556"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.37556"/>
+      </identifier>
+      <name>
+        <text value="AHMED,MARUF"/>
+        <family value="MARUF"/>
+        <given value="AHMED"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Location>
+      <id value="ex-MHV-location-984"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="HospitalLocationTO.984"/>
+      </identifier>
+      <name value="DAYTSHR TEST LAB"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="NoteTO.5"/>
+  </identifier>
+  <status value="entered-in-error"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="11506-3"/>
+      <display value="Progress note"/>
+    </coding>
+  </type>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
+      <code value="clinical-note"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-1"/>
+  </subject>
+  <date value="2022-08-05T16:56:00Z"/>
+  <author>
+    <reference value="#ex-MHV-practitioner-36556"/>
+  </author>
+  <authenticator>
+    <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen">
+      <valueDateTime value="2022-08-05T16:58:46Z"/>
+    </extension>
+    <reference value="#ex-MHV-practitioner-36556"/>
+  </authenticator>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <data value="TE9DQUwgVElUTEU6IEFkdmVyc2UgUmVhY3QvQWxsZXJneSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIApTVEFOREFSRCBUSVRMRTogQUxMRVJHWSAmYW1wOyBJTU1VTk9MT0dZIEFEVkVSU0UgRVZFTlQgTk9URSAgICAgICAgIApEQVRFIE9GIE5PVEU6IEFVRyAwNSwgMjAyMkAxMToyMzo1NCAgRU5UUlkgREFURTogQVVHIDA1LCAyMDIyQDExOjIzOjU0ICAgICAgCiAgICAgIEFVVEhPUjogQUhNRUQsTUFSVUYgICAgICAgICAgRVhQIENPU0lHTkVSOiAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgIFVSR0VOQ1k6ICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNUQVRVUzogQ09NUExFVEVEICAgICAgICAgICAgICAgICAgICAgCgpUaGlzIHBhdGllbnQgaGFzIGhhZCB0aGUgZm9sbG93aW5nIHJlYWN0aW9ucyAKc2lnbmVkLW9mZiBvbiBBdWcgMDUsIDIwMjJAMTE6MjM6NTQuCgpXSElURSBGSVNICgpBdXRob3IncyBjb21tZW50czoKCk1hcnVmJ3MgdGVzdCBkYXRhIAoKIAovZXMvIE1BUlVGIEFITUVEClBIWVNJQ0lBTgpTaWduZWQ6IDA4LzA4LzIwMjIgMTA6NTA="/>
+      <title value="Adverse React/Allergy"/>
+    </attachment>
+  </content>
+  <context>
+    <related>
+      <reference value="#ex-MHV-location-984"/>
+    </related>
+  </context>
+</DocumentReference>

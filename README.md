@@ -10,25 +10,17 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
-TBD
+### 0.3.1
 
-- incremental CI build on build.fhir.org 
-- Some models to replace Wipe-and-Replace as this will result in database filling with unnecessary history
-  - **Index-Update-and-Expunge**
-    - pulls current FHIR resources (could use `_elements` [parameter](https://hl7.org/fhir/search.html#elements) to limit results to just identifiers), and 
-    - indexes the `.identifier` values found. 
-    - Then when updating the new VIA feed data, the index marks which `.identifier` were refreshed. 
-    - At the end, we can know which `.identifier` values were not updated. (most of the time there will be no unrefreshed data)
-    - We can pull those that were not updated, by `.identifier`, 
-    - change the status to `entered-in-error`, and 
-    - update them. 
-    - Note: Does not require moving to new HAPI Server.
-  - **Update-and-Expunge**
-    - use new HAPI server (6.10.0) with parameter to not preserve history (history was not needed and problematic)
-    - use extension on meta to indicate the dateTime that we are refreshing, so that we can detect those that **did not change**
-      - `http://hl7.org/fhir/StructureDefinition/lastSourceSync`
-      - Those that **did not change** that are current need to be marked with `status` of `entered-in-error`
-- Note
+2024-01-19
+
+- incremental CI build is now available on build.fhir.org 
+- [Some models to replace Wipe-and-Replace](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/background.html#entered-in-error) as this will result in database filling with unnecessary history
+  - **Index-Update-and-Delete** - indexes current, detects those not refreshed and deletes them
+  - **Index-Update-and-Expunge** - indexes current, detects those not refreshed and marks them  `entered-in-error`
+  - **Update-and-Expunge** - use new HAPI server (6.10.0) with parameter to not preserve history (history was not needed and problematic) - to detect those not refreshed and mark them
+ `entered-in-error`
+- Notes
   - now can have status of `current` or `entered-in-error`
     - API search must now make sure it is not searching on `entered-in-error`
   - Moved to FMM 4 as there is no outstanding questions with KBS, all questions have been resolved.
@@ -50,9 +42,14 @@ TBD
   - now can have status of `completed` or `entered-in-error`
     - API search must now make sure it is not searching on `entered-in-error`
     - added an example of `entered-in-error`
+    - moved the qualifiers to outside MVP. These were not available in MHV phr, so they are not MVP. Handling them is still under discussion with KBS.
 - Update concept maps from VF_ qualifiers from January 8, 2024
+  - Note that KBS is [developing their own IG](https://j-p-systems.github.io/va.maps/index.html) that we could in the future dependOn so that we don't need to maintain replicated data such as this.
 - Fix URI for ICD9 to `http://hl7.org/fhir/sid/icd-9-cm` from `http://terminology.hl7.org/CodeSystem/icd9cm`
   - https://terminology.hl7.org/ICD.html
+- Patient
+  - clarified that the Patient is to be looked up by the MHV patientId (aka. jwt subjectId), and that it is best to use the returned Patient.id from that point on.
+  - clarified that the Patient resource is minimally populated with some values from MHV patient.
 
 ### 0.2.10
 

@@ -4,7 +4,7 @@
   <id value="VF-VitalsLaterality"/>
   <text>
     <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, John Moehrke (himself): <a href="mailto:John.Moehrke@va.gov">John.Moehrke@va.gov</a>). </p><div><p>Map between VitalSignTO.qualifier VUID/string and SNOMED code for Laterality Observation</p>
-</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>4711355 (LEFT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>31156008 (Structure of left half of body)</td></tr><tr><td>4711356 (RIGHT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>85421007 (Structure of right half of body)</td></tr></table></div>
+</div><br/><p><b>Group 1</b>Mapping from <code>urn:oid:2.16.840.1.113883.6.233</code> to <a href="http://hl7.org/fhir/R4/codesystem-snomedct.html">SNOMED CT (all versions)</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>4688660 (LEFT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>31156008 (Structure of left half of body)</td></tr><tr><td>4688680 (RIGHT)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#null"/></td><td>85421007 (Structure of right half of body)</td></tr></table></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
     <valueInteger value="1">
@@ -21,7 +21,7 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsLaterality"/>
-  <version value="0.2.10"/>
+  <version value="0.3.1"/>
   <name value="VF_VitalsLaterality"/>
   <title value="Vitals Laterality used to SNOMED code"/>
   <status value="active"/>
@@ -54,7 +54,7 @@
     <source value="urn:oid:2.16.840.1.113883.6.233"/>
     <target value="http://snomed.info/sct"/>
     <element>
-      <code value="4711355"/>
+      <code value="4688660"/>
       <display value="LEFT"/>
       <target>
         <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
@@ -66,7 +66,7 @@
       </target>
     </element>
     <element>
-      <code value="4711356"/>
+      <code value="4688680"/>
       <display value="RIGHT"/>
       <target>
         <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">

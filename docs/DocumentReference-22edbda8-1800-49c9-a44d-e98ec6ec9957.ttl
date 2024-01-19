@@ -1,0 +1,124 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/22edbda8-1800-49c9-a44d-e98ec6ec9957> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "22edbda8-1800-49c9-a44d-e98ec6ec9957"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"22edbda8-1800-49c9-a44d-e98ec6ec9957\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;22edbda8-1800-49c9-a44d-e98ec6ec9957&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: NoteTO.76264996 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: MENTAL HEALTH SECURE MESSAGING <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Oct 31, 2022, 11:19:00 AM</p><p><b>author</b>: <a name=\"author-0\"> </a></p><blockquote><p/><p><a name=\"author-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.154424 (use: USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><p><b>authenticator</b>: <a name=\"approvedBy-0\"> </a></p><blockquote><p/><p><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.154424 (use: USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 1148 bytes)</td><td>MENTAL HEALTH SECURE MESSAGING</td><td>2022-10-31 16:19:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"location-0\"> </a><blockquote><p/><p><a name=\"location-0\"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name=\"author-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.154424 (use: USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.154424 (use: USUAL)</p><p><b>name</b>: WRIGHT,DANIEL E</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name=\"location-0\"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "author-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "AuthorTO.154424" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "WRIGHT,DANIEL E" ] ;
+       fhir:family [ fhir:v "WRIGHT,DANIEL E" ]
+     ] )
+  ] [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "approvedBy-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "AuthorTO.154424" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "WRIGHT,DANIEL E" ] ;
+       fhir:family [ fhir:v "WRIGHT,DANIEL E" ]
+     ] )
+  ] [
+     a fhir:Location ;
+     fhir:id [ fhir:v "location-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "LocationTO.648" ]
+     ] ) ;
+     fhir:name [ fhir:v "PORTLAND VA MEDICAL CENTER" ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "NoteTO.76264996" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:11506-3 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "11506-3" ]
+     ] ) ;
+     fhir:text [ fhir:v "MENTAL HEALTH SECURE MESSAGING" ]
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:date [ fhir:v "2022-10-31T16:19:00Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:reference [ fhir:v "#author-0" ]
+  ] ) ; # 
+  fhir:authenticator [
+     fhir:extension ( [
+       fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "2022-10-31T14:19:31Z"^^xsd:dateTime ]
+     ] ) ;
+     fhir:reference [ fhir:v "#approvedBy-0" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "CiBMT0NBTCBUSVRMRTogTUVOVEFMIEhFQUxUSCBTRUNVUkUgTUVTU0FHSU5HICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBNRU5UQUwgSEVBTFRIIFNFQ1VSRSBNRVNTQUdJTkcgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBPQ1QgMzEsIDIwMjJAMTY6MTkgICAgIEVOVFJZIERBVEU6IE9DVCAzMSwgMjAyMkAxNDoxOTozMSAgICAgIAogICAgICBBVVRIT1I6IFdSSUdIVCxEQU5JRUwgRSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKLS0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAKU2VudDogIDEwLzMxLzIwMjIgMDI6MzMgUE0gRVQgCkZyb206ICBNSFZaWlZJU05UV0VOVFksIFRFU1QgIFBBVElFTlRSIApUbzogIE1ISUNNX1ZBUG9ydGxhbmRIQ1NfTUggClN1YmplY3Q6ICBHZW5lcmFsOlRlc3RpbmcgMS4uLiAKCkxvcmVtIGlwc3VtIGRvbG9yIHNpdCBhbWV0LCBjb25zZWN0ZXR1ciBhZGlwaXNjaW5nIGVsaXQuIFV0IGNvbnNlY3RldHVyIG9ybmFyZSAKYXVndWUuIE51bmMgc2VkIHNvZGFsZXMgbGlndWxhLCBpZCBsb2JvcnRpcyBuaWJoLiAgIAogIAogIApGbHUgU2hvdCBJbmZvOiBodHRwczovL3d3dy5wb3J0bGFuZC52YS5nb3YvbmV3cy9mbHVzaG90cy5hc3AgIApodHRwczovL3d3dy52YS5nb3YvZGlyZWN0b3J5L2d1aWRlL3JlZ2lvbi5hc3A/SUQ9MTAyMD8KLS0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAKU2VudDogIDEwLzMxLzIwMjIgMDU6MTggUE0gRVQgCkZyb206ICBXUklHSFQsIERBTklFTCAgRSAKVG86ICBNSFZaWlZJU05UV0VOVFksIFRFU1QgIFBBVElFTlRSIApTdWJqZWN0OiAgR2VuZXJhbDpUZXN0aW5nIDEuLi4gCgp0aGlzIGlzIGEgcmVwbHkgIAogIAogIAogIApEYW5pZWwgV3JpZ2h0LCBMQ1NXICAKVGVhbSBMZWFkL0Nhc2UgTWFuYWdlciwgTUhJQ00gCgogCi9lcy8gRGFuaWVsIEUuIFdyaWdodCwgTENTVwpMaWNlbnNlZCBDbGluaWNhbCBTb2NpYWwgV29ya2VyClNpZ25lZDogMTAvMzEvMjAyMiAxNDoxOQo="^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "MENTAL HEALTH SECURE MESSAGING" ] ;
+       fhir:creation [ fhir:v "2022-10-31T16:19:00Z"^^xsd:dateTime ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:related ( [
+       fhir:reference [ fhir:v "#location-0" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

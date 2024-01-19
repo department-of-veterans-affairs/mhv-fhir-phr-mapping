@@ -1,0 +1,124 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/58e372ef-e3a8-4b4e-a3ed-8ced732db859> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "58e372ef-e3a8-4b4e-a3ed-8ced732db859"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"58e372ef-e3a8-4b4e-a3ed-8ced732db859\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;58e372ef-e3a8-4b4e-a3ed-8ced732db859&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: NoteTO.43297305 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: DISCHARGE SUMMARY <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#18842-5)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Jan 13, 2016, 2:51:47 AM</p><p><b>author</b>: <a name=\"author-0\"> </a></p><blockquote><p/><p><a name=\"author-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.2926 (use: USUAL)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><p><b>authenticator</b>: <a name=\"approvedBy-0\"> </a></p><blockquote><p/><p><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.2926 (use: USUAL)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 1415 bytes)</td><td>Discharge Summary</td><td>2016-01-13</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"location-0\"> </a><blockquote><p/><p><a name=\"location-0\"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name=\"author-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.2926 (use: USUAL)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.2926 (use: USUAL)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name=\"location-0\"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "author-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "AuthorTO.2926" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "DOUGLAS,DAVID M" ] ;
+       fhir:family [ fhir:v "DOUGLAS,DAVID M" ]
+     ] )
+  ] [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "approvedBy-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "AuthorTO.2926" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "DOUGLAS,DAVID M" ] ;
+       fhir:family [ fhir:v "DOUGLAS,DAVID M" ]
+     ] )
+  ] [
+     a fhir:Location ;
+     fhir:id [ fhir:v "location-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "LocationTO.648" ]
+     ] ) ;
+     fhir:name [ fhir:v "PORTLAND VA MEDICAL CENTER" ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "NoteTO.43297305" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:18842-5 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "18842-5" ]
+     ] ) ;
+     fhir:text [ fhir:v "DISCHARGE SUMMARY" ]
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:date [ fhir:v "2016-01-13T08:51:47Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:reference [ fhir:v "#author-0" ]
+  ] ) ; # 
+  fhir:authenticator [
+     fhir:extension ( [
+       fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "2016-01-13T08:51:47Z"^^xsd:dateTime ]
+     ] ) ;
+     fhir:reference [ fhir:v "#approvedBy-0" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "CiBMT0NBTCBUSVRMRTogRGlzY2hhcmdlIFN1bW1hcnkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBESVNDSEFSR0UgU1VNTUFSWSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgRElDVCBEQVRFOiBKQU4gMTMsIDIwMTZAMDg6NTEgICAgIEVOVFJZIERBVEU6IEpBTiAxMywgMjAxNkAwODo1MTozMSAgICAgIAogRElDVEFURUQgQlk6IERPVUdMQVMsREFWSUQgTSAgICAgICAgIEFUVEVORElORzogRE9VR0xBUyxEQVZJRCBNICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiByb3V0aW5lICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKQVRURU5ESU5HIFBIWVNJQ0lBTjogCiAKUFJJTUFSWSBDQVJFIFBST1ZJREVSIEFORCBGQUNJTElJVFk6IAogClBSSU5DSVBBTCBESUFHTk9TSVM6IAogCk9USEVSIERJQUdOT1NFUyBUUkVBVEVEIE9SIElNUEFDVElORyBUUkVBVE1FTlQgVEhJUyBBRE1JU1NJT046CgoKIApQUk9DRURVUkVTIFBFUkZPUk1FRCBBVCBUSElTIEhPU1BJVEFMIERVUklORyBDVVJSRU5UIEFETUlTU0lPTjoKIApTVU1NQVJZOgooQUJCUkVWSUFURUQgSFBJLCBQRSwgQU5EIFBFUlRJTkVOVCBMQUJTKQogCiAKSE9TUElUQUwgQ09VUlNFOgogCiAKRlVOQ1RJT05BTCBTVEFUVVM6CihNQVkgSU5DTFVERSBBQ1RJVklUWSBMRVZFTCwgV09SSyBSRVNUUklDVElPTlMsIE9SIERJRVQpCiAKIApESVNDSEFSR0UgTUVESUNBVElPTlM6IAooSU5ESUNBVEUgQURESVRJT05TIE9SIENIQU5HRVMgV0lUSCBBTiBBU1RFUklTSykgCiAKIApNRURJQ0FUSU9OUyBUSEFUIEhBVkUgQkVFTiBESVNDT05USU5VRUQ6CiAKIAogCkNMSU5JQ0FMIElTU1VFUyBSRVFVSVJJTkcgRk9MTE9XIFVQIERVUklORyBQQyBQSE9ORSBBUFQ6CjEuCjIuCjMuCiAKIApBRERJVElPTkFMIEZPTExPVyBVUCBBUFBPSU5UTUVOVFM6ClNQRUNJQUxUWSAgICAgICAgICAgICAgIEVYUEVDVEVEIERBVEUgICBTQ0hFRFVMRUQoWS9OKSAgUE9JTlQgT0YgQ09OVEFDVAoxLgoyLgozLgogCiAKRk9MTE9XIFVQIExBQlMgSU5DTFVESU5HIFBBVEhPTE9HWSAmIE1JQ1JPQklPTE9HWToKVEVTVCAgICAgICAgICAgICAgICAgICAgT1JERVJFRChZL04pICAgIEVYUEVDVEVEIERBVEUgSUYgTk9UIE9SREVSRUQKMS4KMi4KMy4KIAogCkZPTExPVyBVUCBJTUFHSU5HIEFORCBQUk9DRURVUkVTOgpQUk9DRURVUkUgICAgICAgICAgICAgICBPUkRFUkVEKFkvTikgICAgRVhQRUNURUQgREFURSBJRiBOT1QgT1JERVJFRAoxLgoyLgozLgogCi9lcy8gREFWSUQgTS4gRE9VR0xBUyBNRApDSElFRiBIRUFMVEggSU5GT1JNQVRJQ1MgT0ZGSUNFUi9BVFRFTkRJTkcgUFNZQ0hJQVRSSVNUClNpZ25lZDogMDEvMTMvMjAxNiAwODo1MQo="^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "Discharge Summary" ] ;
+       fhir:creation [ fhir:v "2016-01-13"^^xsd:date ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:related ( [
+       fhir:reference [ fhir:v "#location-0" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

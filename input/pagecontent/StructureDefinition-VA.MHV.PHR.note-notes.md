@@ -63,6 +63,7 @@
 #### TODO
 
 - discharge summary may have a `period`. This has not been seen in sample fhir output yet.
-- Implement  [Index-Update-and-Expunge](background.html#entered-in-error)
+- Implement an [entered-in-error](background.html#entered-in-error)
 - `timestamp` needs to go into `.content.attachment.creation` because sometimes it is just a date without time
 - if `timestamp` is missing the time (just a date) then populate `.date` with `procTimestamp`
+- qualifiers are beyond MVP; they can be implemented but we know that the current model will change.

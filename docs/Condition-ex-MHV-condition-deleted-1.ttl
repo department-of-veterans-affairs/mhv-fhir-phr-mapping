@@ -1,0 +1,75 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-deleted-1> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-condition-deleted-1"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Condition</b><a name=\"ex-MHV-condition-deleted-1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;ex-MHV-condition-deleted-1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.condition.html\">VA MHV PHR problems</a></p></div><p><b>identifier</b>: id: ProblemTO.4 (use: USUAL)</p><p><b>verificationStatus</b>: Entered in Error <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#entered-in-error)</span></p><p><b>category</b>: Problem List Item <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-category.html\">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Hypertension (ICD-9-CM 401.9) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (icd-9-cm#401.9)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-2.html\">Patient/ex-MHV-patient-2</a> &quot; MHVLISAONE&quot;</p><p><b>recordedDate</b>: 1995-09-27</p><p><b>recorder</b>: <a name=\"ex-MHV-practitioner-110\"> </a></p><blockquote><p/><p><a name=\"ex-MHV-practitioner-110\"> </a></p><p><b>identifier</b>: id: AuthorTO.110 (use: USUAL)</p><p><b>name</b>: MANGAS,PHYLLIS A</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #ex-MHV-practitioner-110</b><a name=\"ex-MHV-practitioner-110\"> </a></p><p><b>identifier</b>: id: AuthorTO.110 (use: USUAL)</p><p><b>name</b>: MANGAS,PHYLLIS A</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "ex-MHV-practitioner-110" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "AuthorTO.110" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "MANGAS,PHYLLIS A" ] ;
+       fhir:family [ fhir:v "MANGAS" ] ;
+       fhir:given ( [ fhir:v "PHYLLIS" ] [ fhir:v "A" ] )
+     ] )
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ProblemTO.4" ]
+  ] ) ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "entered-in-error" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "problem-list-item" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/icd-9-cm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "401.9" ]
+     ] ) ;
+     fhir:text [ fhir:v "Hypertension (ICD-9-CM 401.9)" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-2> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-2" ]
+  ] ; # 
+  fhir:recordedDate [ fhir:v "1995-09-27"^^xsd:date] ; # 
+  fhir:recorder [
+     fhir:reference [ fhir:v "#ex-MHV-practitioner-110" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

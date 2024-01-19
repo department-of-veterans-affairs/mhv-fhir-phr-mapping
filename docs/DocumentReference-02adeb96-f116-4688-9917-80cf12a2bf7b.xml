@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="02adeb96-f116-4688-9917-80cf12a2bf7b"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="02adeb96-f116-4688-9917-80cf12a2bf7b"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;02adeb96-f116-4688-9917-80cf12a2bf7b&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.note.html">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: NoteTO.76666064 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: ATTENDING ADMISSION EVALUATION NOTE <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Nov 30, 2022, 10:23:00 AM</p><p><b>author</b>: <a name="author-0"> </a></p><blockquote><p/><p><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.42803 (use: USUAL)</p><p><b>name</b>: SEGURA,JENNIFER RENEE</p></blockquote><p><b>authenticator</b>: <a name="approvedBy-0"> </a></p><blockquote><p/><p><a name="approvedBy-0"> </a></p><p><b>identifier</b>: id: AuthorTO.42803 (use: USUAL)</p><p><b>name</b>: SEGURA,JENNIFER RENEE</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style="display: none">*</td><td>text/plain</td><td>(base64 data - 1789 bytes)</td><td>INPAT - MED - ATT - ADMIT</td><td>2022-11-30 16:23:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Related</b></td></tr><tr><td style="display: none">*</td><td><a name="location-0"> </a><blockquote><p/><p><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.42803 (use: USUAL)</p><p><b>name</b>: SEGURA,JENNIFER RENEE</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name="approvedBy-0"> </a></p><p><b>identifier</b>: id: AuthorTO.42803 (use: USUAL)</p><p><b>name</b>: SEGURA,JENNIFER RENEE</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="author-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.42803"/>
+      </identifier>
+      <name>
+        <text value="SEGURA,JENNIFER RENEE"/>
+        <family value="SEGURA,JENNIFER RENEE"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="approvedBy-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.42803"/>
+      </identifier>
+      <name>
+        <text value="SEGURA,JENNIFER RENEE"/>
+        <family value="SEGURA,JENNIFER RENEE"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Location>
+      <id value="location-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="LocationTO.648"/>
+      </identifier>
+      <name value="PORTLAND VA MEDICAL CENTER"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="NoteTO.76666064"/>
+  </identifier>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="11506-3"/>
+    </coding>
+    <text value="ATTENDING ADMISSION EVALUATION NOTE"/>
+  </type>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
+      <code value="clinical-note"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <date value="2022-11-30T16:23:00Z"/>
+  <author>
+    <reference value="#author-0"/>
+  </author>
+  <authenticator>
+    <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen">
+      <valueDateTime value="2022-11-30T16:34:04Z"/>
+    </extension>
+    <reference value="#approvedBy-0"/>
+  </authenticator>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <data value="CiBMT0NBTCBUSVRMRTogSU5QQVQgLSBNRUQgLSBBVFQgLSBBRE1JVCAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBBVFRFTkRJTkcgQURNSVNTSU9OIEVWQUxVQVRJT04gTk9URSAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBOT1YgMzAsIDIwMjJAMTY6MjMgICAgIEVOVFJZIERBVEU6IE5PViAzMCwgMjAyMkAxNjoyMzoyNyAgICAgIAogICAgICBBVVRIT1I6IFNFR1VSQSxKRU5OSUZFUiBSRU4gIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKQ0xJTklDQUwgUkVNSU5ERVIgQUNUSVZJVFkKICBUb3hpYyBFeHBvc3VyZSBTY3JlZW5pbmc6CiAgICBUaGUgVmV0ZXJhbi9jYXJlZ2l2ZXIgd2FzIGFza2VkIGlmIHRoZXkgYmVsaWV2ZSB0aGUgVmV0ZXJhbiBleHBlcmllbmNlZCBhbnkgCiAgICB0b3hpYyBleHBvc3VyZShzKSwgc3VjaCBhcyBPcGVuIEJ1cm4gUGl0cy9BaXJib3JuZSBIYXphcmRzLCBHdWxmIFdhciAKICAgIHJlbGF0ZWQgZXhwb3N1cmVzLCBBZ2VudCBPcmFuZ2UsIFJhZGlhdGlvbiwgY29udGFtaW5hdGVkIHdhdGVyIGF0IENhbXAgCiAgICBMZWpldW5lIG9yIG90aGVyIHN1Y2ggZXhwb3N1cmVzLCB3aGlsZSBzZXJ2aW5nIGluIHRoZSBBcm1lZCBGb3JjZXMuCiAKICAgICAgVmV0ZXJhbi9jYXJlZ2l2ZXIgZG9lc24ndCBrbm93IG9mIGNvbmNlcm5zIGFib3V0IFZldGVyYW4gZXhwb3N1cmUgdG8gCiAgICAgIGhhcm1mdWwgc3Vic3RhbmNlcyB3aGlsZSBzZXJ2aW5nIGluIHRoZSBBcm1lZCBGb3JjZXMuCiAgICAgICAgUHJpbnRlZCBpbmZvcm1hdGlvbiB3YXMgb2ZmZXJlZCBhbmQgY29udGFjdCBpbmZvcm1hdGlvbiBmb3IgbG9jYWwgCiAgICAgICAgcmVzb3VyY2VzIHdlcmUgcHJvdmlkZWQgaWYgcmVxdWVzdGVkLgogCiAgICAgICAgVmV0ZXJhbi9jYXJlZ2l2ZXIgZG9lcyBub3QgaGF2ZSBxdWVzdGlvbnMgYXQgdGhpcyB0aW1lLgogICAgICAgICAgVmV0ZXJhbi9jYXJlZ2l2ZXIgd2FzIGluZm9ybWVkIG9mIGxvY2FsIHBvaW50cyBvZiBjb250YWN0LgogCiAgICAgICAgQ29udGFjdCBpbmZvcm1hdGlvbiBmb3IgbG9jYWwgcmVzb3VyY2VzOgogCiAgICAgICAgRm9yIHF1ZXN0aW9ucyBhYm91dCBURVMgUmVnaXN0cnkgUHJvZ3JhbSwgVmV0ZXJhbiBtYXkgY2FsbCA1MDMtOTA2LTUxMDAKIAogICAgICAgIEZvciBhZGRpdGlvbmFsIGFzc2lzdGFuY2Ugd2l0aCBURVMgUHJvZ3JhbSwgVmV0ZXJhbiBtYXkgY29udGFjdCBsb2NhbAogICAgICAgIFRFUyBOYXZpZ2F0b3IgdGVhbSBhdCA1MDMtMjczLTUwNzUKIAogICAgICAgIEZvciBIZWFsdGhjYXJlIEVsaWdpYmlsaXR5IGFuZCBFbnJvbGxtZW50IHF1ZXN0aW9ucywgVmV0ZXJhbiBtYXkKICAgICAgICBjb250YWN0IGxvY2FsIEVucm9sbG1lbnQgT2ZmaWNlIGF0IDUwMy0yNzMtNTA2OQogCiAgICAgICAgRm9yIHF1ZXN0aW9ucyBhYm91dCBCZW5lZml0cyBhbmQgQ2xhaW1zIFZldGVyYW4gbWF5IGNvbnRhY3QgVmV0ZXJhbgogICAgICAgIGluc3RydWN0ZWQgdG8gd29yayB0aHJvdWdoIGxvY2FsIFZldGVyYW4gU2VydmljZSBPcmdhbml6YXRpb24gT2ZmaWNlIGF0CiAgICAgICAgaHR0cHM6Ly93d3cuZWJlbmVmaXRzLnZhLmdvdi9lYmVuZWZpdHMvdnNvLXNlYXJjaAogCi9lcy8gSi4gUkVORUUgU0VHVVJBLCBNRApTdGFmZiBBdHRlbmRpbmcKU2lnbmVkOiAxMS8zMC8yMDIyIDE2OjM0Cg=="/>
+      <title value="INPAT - MED - ATT - ADMIT"/>
+      <creation value="2022-11-30T16:23:00Z"/>
+    </attachment>
+  </content>
+  <context>
+    <related>
+      <reference value="#location-0"/>
+    </related>
+  </context>
+</DocumentReference>

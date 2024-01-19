@@ -1,0 +1,102 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "969e7d79-e27e-4b8f-82c1-e011755d1be9",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"969e7d79-e27e-4b8f-82c1-e011755d1be9\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;969e7d79-e27e-4b8f-82c1-e011755d1be9&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id:\u00a0NoteTO.62932232\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: DISCHARGE SUMMARY <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#18842-5)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Feb 26, 2020, 7:00:35\u202fAM</p><p><b>author</b>: <a name=\"author-0\"> </a></p><blockquote><p/><p><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.7194\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: WINTERBOTTOM,LISA M</p></blockquote><p><b>authenticator</b>: <a name=\"approvedBy-0\"> </a></p><blockquote><p/><p><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.7194\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: WINTERBOTTOM,LISA M</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 4552 bytes)</td><td>Discharge Summary</td><td>2020-02-26</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"location-0\"> </a><blockquote><p/><p><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.7194\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: WINTERBOTTOM,LISA M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.7194\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: WINTERBOTTOM,LISA M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "author-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.7194"
+    }],
+    "name" : [{
+      "text" : "WINTERBOTTOM,LISA M",
+      "family" : "WINTERBOTTOM,LISA M"
+    }]
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "approvedBy-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.7194"
+    }],
+    "name" : [{
+      "text" : "WINTERBOTTOM,LISA M",
+      "family" : "WINTERBOTTOM,LISA M"
+    }]
+  },
+  {
+    "resourceType" : "Location",
+    "id" : "location-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "LocationTO.648"
+    }],
+    "name" : "PORTLAND VA MEDICAL CENTER"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "NoteTO.62932232"
+  }],
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "18842-5"
+    }],
+    "text" : "DISCHARGE SUMMARY"
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code" : "clinical-note"
+    }]
+  }],
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "date" : "2020-02-26T13:00:35Z",
+  "author" : [{
+    "reference" : "#author-0"
+  }],
+  "authenticator" : {
+    "extension" : [{
+      "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen",
+      "valueDateTime" : "2020-02-26T13:00:35Z"
+    }],
+    "reference" : "#approvedBy-0"
+  },
+  "content" : [{
+    "attachment" : {
+      "contentType" : "text/plain",
+      "data" : "CiBMT0NBTCBUSVRMRTogRGlzY2hhcmdlIFN1bW1hcnkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBESVNDSEFSR0UgU1VNTUFSWSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgRElDVCBEQVRFOiBGRUIgMjYsIDIwMjBAMTI6NTggICAgIEVOVFJZIERBVEU6IEZFQiAyNiwgMjAyMEAxMjo1ODo1NyAgICAgIAogRElDVEFURUQgQlk6IFdJTlRFUkJPVFRPTSxMSVNBIE0gICAgIEFUVEVORElORzogV0lOVEVSQk9UVE9NLExJU0EgTSAgICAgICAgICAKICAgICBVUkdFTkNZOiByb3V0aW5lICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKREFURSBPRiBBRE1JU1NJT046IApEQVRFIE9GIERJU0NIQVJHRTogCkFUVEVORElORyBQSFlTSUNJQU46IAogClBSSU1BUlkgQ0FSRSBQUk9WSURFUi9GQUNJTElUWTogCiAKUFJJTUFSWSBESUFHTk9TSVMgRk9SIFRISVMgQURNSVNTSU9OOiAKIAogCk9USEVSIERJQUdOT1NFUyBUUkVBVEVEIERVUklORyBUSElTIEFETUlTU0lPTiBUSEFUIFdFUkUgUFJFU0VOVCBBVCBUSEUgClRJTUUgT0YgQURNSVNTSU9OOgogCiAKT1RIRVIgRElBR05PU0VTIFRSRUFURUQgRFVSSU5HIFRISVMgQURNSVNTSU9OIFRIQVQgREVWRUxPUEVEIEFGVEVSIApBRE1JU1NJT04sIElGIEFOWToKIAogClBST0NFRFVSRVMgUEVSRk9STUVEIERVUklORyBUSElTIEFETUlTU0lPTjogCiAKIApQRVJUSU5FTlQgSU1BR0lORyBQRVJGT1JNRUQgRFVSSU5HIFRISVMgQURNSVNTSU9OOiAKIChJbmNsdWRlIHN1bW1hcnkgb2YgbWFpbiBpbWFnaW5nIHJlc3VsdHMpCiAKIApDT05TVUxUUyBPQlRBSU5FRCBEVVJJTkcgVEhJUyBBRE1JU1NJT046IAogCiAKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCkJSSUVGIEhQSSAoU0VFIEFETUlUIE5PVEUgRk9SIENPTVBMRVRFIERFVEFJTFMpOiAKIChQcmVzZW50aW5nIHN5bXB0b21zLCBwZXJ0aW5lbnQgZXhhbSwgbGFiIGFuZCBpbWFnaW5nIGZpbmRpbmdzKQogCiAKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fIApIT1NQSVRBTCBDT1VSU0UsIEJZIFBST0JMRU06IAogKFBlcnRpbmVudCB0cmVhdG1lbnQgcHJvdmlkZWQsIGNvbXBsaWNhdGlvbnMsIHN1Z2dlc3Rpb25zIGZvcgogIGZ1dHVyZSBtYW5hZ2VtZW50LCBmb2xsb3cgdXAgY2FyZSBuZWVkZWQpCiAKICMgCiAjIAogIyAKICMgCiAjIAogCkVYQU0gT04gREFZIE9GIERJU0NIQVJHRTogCiBEaXNjaGFyZ2UgVml0YWxzOiAKIAogRm9jdXNlZCBFeGFtOiAKIApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KRElTQ0hBUkdFIE1FRElDQVRJT04gTElTVAooTXVzdCBjb3B5IGFuZCBwYXN0ZSBmcm9tIFBoYXJtYWN5IERpc2NoYXJnZSBJbnN0cnVjdGlvbnMgc28gYm90aCBsaXN0cyAKbWF0Y2ggZXhhY3RseSkKCgpBY3RpdmUgTWVkaWNhdGlvbnM6CkFjdGl2ZSBhbmQgUmVjZW50bHkgRXhwaXJlZCBPdXRwYXRpZW50IE1lZGljYXRpb25zIChleGNsdWRpbmcgU3VwcGxpZXMpOgogCiAgICAgQWN0aXZlIE91dHBhdGllbnQgTWVkaWNhdGlvbnMgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YXR1cwo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CjEpICAgQU1MT0RJUElORSBCRVNZTEFURSA1TUcgVEFCIFRBS0UgT05FIFRBQkxFVCBCWSBNT1VUSCAgIEFDVElWRSAoUykKICAgICAgIEVWRVJZIERBWSBGT1IgQkxPT0QgUFJFU1NVUkUKMikgICBBU1BJUklOIDMyNU1HIFRBQiBUQUtFIE9ORSBUQUJMRVQgQlkgTU9VVEggRVZFUlkgREFZICAgQUNUSVZFIChTKQogICAgICAgQVMgRElSRUNURUQKMykgICBBVE9SVkFTVEFUSU4gQ0FMQ0lVTSA4ME1HIFRBQiBUQUtFIE9ORSBUQUJMRVQgQlkgICAgICAgQUNUSVZFIChTKQogICAgICAgTU9VVEggRVZFUlkgRVZFTklORyBUTyBMT1dFUiBDSE9MRVNURVJPTCAqQVZPSUQKICAgICAgIEdSQVBFRlJVSVQgUFJPRFVDVFMgV0lUSCBUSElTIE1FRElDSU5FCjQpICAgTUVURk9STUlOIEhDTCA1MDBNRyAyNEhSIFNBIFRBQiBUQUtFIFRXTyBUQUJMRVRTIEJZICAgIEFDVElWRSAoUykKICAgICAgIE1PVVRIIFdJVEggWU9VUiBFVkVOSU5HIE1FQUwKIAogICAgIFBlbmRpbmcgT3V0cGF0aWVudCBNZWRpY2F0aW9ucyAgICAgICAgICAgICAgICAgICAgICAgICBTdGF0dXMKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoxKSAgIExJU0lOT1BSSUwgNU1HIFRBQiBUQUtFIE9ORSBUQUJMRVQgQlkgTU9VVEggRVZFUlkgREFZICBQRU5ESU5HCiAgICAgICBGT1IgQkxPT0QgUFJFU1NVUkUKMikgICBNRVRGT1JNSU4gSENMIDUwME1HIDI0SFIgU0EgVEFCIFRBS0UgT05FIFRBQkxFVCBCWSAgICAgUEVORElORwogICAgICAgTU9VVEggV0lUSCBZT1VSIEVWRU5JTkcgTUVBTAogCiAgICAgSW5hY3RpdmUgT3V0cGF0aWVudCBNZWRpY2F0aW9ucyAgICAgICAgICAgICAgICAgICAgICAgIFN0YXR1cwo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CjEpICAgQU1PWElDSUxMSU4gMjUwTUcgQ0FQIFRBS0UgT05FIENBUFNVTEUgQlkgTU9VVEggVEhSRUUgIEVYUElSRUQKICAgICAgIFRJTUVTIEEgREFZCjIpICAgQVRPUlZBU1RBVElOIDEwTUcgVEFCIChHUkVFTlNUT05FIEJSQU5EKSBUQUtFIE9ORSAgICAgIEVYUElSRUQKICAgICAgIFRBQkxFVCBFVkVSWSBEQVkgSEFTCiAKICAgICBBY3RpdmUgTm9uLVZBIE1lZGljYXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU3RhdHVzCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KMSkgICBOb24tVkEgTVVMVElWSVRBTUlOIENBUC9UQUIgMSBDQVAvVEFCIE1PVVRIIEVWRVJZIERBWSAgQUNUSVZFCiAKOSBUb3RhbCBNZWRpY2F0aW9ucwoKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09ClBlbmRpbmcgcHJlc2NyaXB0aW9ucyB3cml0dGVuIHdpdGhpbiBsYXN0IDcgZGF5cwo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KKioqIFBFTkRJTkcgb3V0cGF0aWVudCBtZWRzIG9yZGVyZWQgaW4gdGhlIGxhc3QgNyBkYXlzOiAqKioKTGlzaW5vcHJpbCBUYWIgIDVNZwogVGFrZSBPbmUgVGFibGV0IEJ5IE1vdXRoIEV2ZXJ5IERheSBGb3IgQmxvb2QgUHJlc3N1cmUKIFF1YW50aXR5OiA5MCBSZWZpbGxzOiAzCiBPcmRlciBTdGF0dXM6IFBlbmRpbmcgICAgICAgICAgICAgUHJvdmlkZXI6IExJU0EgTSBXSU5URVJCT1RUT00sIE0uRC4KIApNZXRmb3JtaW4gVGFiLHNhICA1MDBNZwogVGFrZSBPbmUgVGFibGV0IEJ5IE1vdXRoIFdpdGggWW91ciBFdmVuaW5nIE1lYWwKIFF1YW50aXR5OiA5MCBSZWZpbGxzOiAzCiBPcmRlciBTdGF0dXM6IFBlbmRpbmcgICAgICAgICAgICAgUHJvdmlkZXI6IExJU0EgTSBXSU5URVJCT1RUT00sIE0uRC4KIAoKCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpSZW1vdGUgVkEgUGhhcm1hY3kgbWVkaWNhdGlvbi9hbGxlcmd5IGluZm9ybWF0aW9uCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpIRFJNIC0gUmVtb3RlIEFjdGl2ZSBNZWRzCgpBY3RpdmUgTWVkaWNhdGlvbnMgZnJvbSBSZW1vdGUgRGF0YQogCkNMT1BJRE9HUkVMIEJJU1VMRkFURSA3NU1HIFRBQgpTaWc6ICBUQUtFIE9ORSBUQUJMRVQgRVZFUlkgREFZClF1YW50aXR5OiAzMCAgICBEYXlzIFN1cHBseTogMzAKMTEgcmVmaWxscyByZW1haW5pbmcgdW50aWwgMDEvMzEvMjEKTGFzdCBmaWxsZWQgMDEvMzEvMjAgYXQgTUFOTi1HUkFORFNUQUZGIFZBTUMgKEFjdGl2ZSkKIApSQVJUIC0gUmVtb3RlIEFEUgoKRkFDSUxJVFkgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEFMTEVSR1kvQURSCi0tLS0tLS0tICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAtLS0tLS0tLS0tLQozNjNeQU5DSE9SQUdFIFZBIE1FRElDQUwgQ0VOVEVSXjQ2MyAgICAgVEVUQU5VUyBUT1hPSUQKNjY4Xk1BTk4tR1JBTkRTVEFGRiBWQU1DXjY2OCAgICAgICAgICAgIENMSU5EQU1ZQ0lOCjY4N15KT05BVEhBTiBNLiBXQUlOV1JJR0hUIFZBTUNeNjg3ICAgICBQRU5JQ0lMTElOCgogCi9lcy8gTElTQSBNIFdJTlRFUkJPVFRPTSwgTS5ELgpTdGFmZiBQaHlzaWNpYW4KU2lnbmVkOiAwMi8yNi8yMDIwIDEzOjAwCg==",
+      "title" : "Discharge Summary",
+      "creation" : "2020-02-26"
+    }
+  }],
+  "context" : {
+    "related" : [{
+      "reference" : "#location-0"
+    }]
+  }
+}

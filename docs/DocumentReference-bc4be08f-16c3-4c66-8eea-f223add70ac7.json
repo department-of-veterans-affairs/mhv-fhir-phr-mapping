@@ -1,0 +1,102 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "bc4be08f-16c3-4c66-8eea-f223add70ac7",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"bc4be08f-16c3-4c66-8eea-f223add70ac7\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;bc4be08f-16c3-4c66-8eea-f223add70ac7&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id:\u00a0NoteTO.80222094\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: RN PROGRESS NOTE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Aug 11, 2023, 8:03:18\u202fAM</p><p><b>author</b>: <a name=\"author-0\"> </a></p><blockquote><p/><p><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.41743\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: NUTTBROCK,SARAH R</p></blockquote><p><b>authenticator</b>: <a name=\"approvedBy-0\"> </a></p><blockquote><p/><p><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.41743\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: NUTTBROCK,SARAH R</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 1334 bytes)</td><td>CCC: CLINICAL TRIAGE</td><td>2023-08-11 13:03:18+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"location-0\"> </a><blockquote><p/><p><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.41743\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: NUTTBROCK,SARAH R</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.41743\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: NUTTBROCK,SARAH R</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "author-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.41743"
+    }],
+    "name" : [{
+      "text" : "NUTTBROCK,SARAH R",
+      "family" : "NUTTBROCK,SARAH R"
+    }]
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "approvedBy-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.41743"
+    }],
+    "name" : [{
+      "text" : "NUTTBROCK,SARAH R",
+      "family" : "NUTTBROCK,SARAH R"
+    }]
+  },
+  {
+    "resourceType" : "Location",
+    "id" : "location-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "LocationTO.648"
+    }],
+    "name" : "PORTLAND VA MEDICAL CENTER"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "NoteTO.80222094"
+  }],
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "11506-3"
+    }],
+    "text" : "RN PROGRESS NOTE"
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code" : "clinical-note"
+    }]
+  }],
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "date" : "2023-08-11T13:03:18Z",
+  "author" : [{
+    "reference" : "#author-0"
+  }],
+  "authenticator" : {
+    "extension" : [{
+      "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen",
+      "valueDateTime" : "2023-08-11T13:03:19Z"
+    }],
+    "reference" : "#approvedBy-0"
+  },
+  "content" : [{
+    "attachment" : {
+      "contentType" : "text/plain",
+      "data" : "CiBMT0NBTCBUSVRMRTogQ0NDOiBDTElOSUNBTCBUUklBR0UgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBSTiBQUk9HUkVTUyBOT1RFICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBBVUcgMTEsIDIwMjNAMTM6MDM6MTggIEVOVFJZIERBVEU6IEFVRyAxMSwgMjAyM0AxMzowMzoxOCAgICAgIAogICAgICBBVVRIT1I6IE5VVFRCUk9DSyxTQVJBSCBSICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKClBhdGllbnQgRGVtb2dyYXBoaWNzClBhdGllbnQgTmFtZTogVEVTVCBQQVRJRU5UUiBNSFZaWlZJU05UV0VOVFkKU1NOOiA2NjY2NjIwMDAKUGF0aWVudCBQcmltYXJ5IEFkZHJlc3M6IDQ4MTUgTiBBc3NlbWJseSBTdCA8YnI+U3Bva2FuZSwgV0EgOTkyMDUKUGF0aWVudCBET0I6IEphbnVhcnkgMSwgMjAwMQpQYXRpZW50IEFnZTogMjIKQ2FsbGVyL1JlY2lwaWVudCBSZWxhdGlvbiB0byBQYXRpZW50OiBTZWxmCgpUcmlhZ2UgU3VtbWFyeQpDb25kdWN0ZWQgdHJpYWdlL2Rpc2N1c3NlZCBzeW1wdG9tcwpVdGlsaXplZCB0aGUgVHJpYWdlIFRvb2w6IFllcwpDaGllZiBDb21wbGFpbnQ6IHRlc3QgdGVzdApOdXJzZSdzIFJlY29tbWVuZGF0aW9uIC8gV0hFTjogV2l0aGluIDggSG91cnMKTnVyc2UncyBSZWNvbW1lbmRhdGlvbiAvIFdIRVJFOiBVcmdlbnQgTm9uLVZBCgpQYXRpZW50IERpc3Bvc2l0aW9uClBhdGllbnQvQ2FyZWdpdmVyIGFncmVlcyB0byBwbGFuIG9mIGNhcmU6IFllcwpQYXRpZW50IGlzIFVyZ2VudCBvciBFbWVyZ2VudAoKTnVyc2luZyBQbGFuIGFuZCBEaXNwb3NpdGlvbgpSZWZlcnJlZCBwYXRpZW50IHRvIGVtZXJnZW5jeSBzZXJ2aWNlcwpJbnN0cnVjdGVkIHRvIGdvIHRvIFVyZ2VudCBDYXJlIChVQykKUHJvdmlkZWQgbG9jYXRpb24gb2YgVXJnZW50IENhcmUgQ2VudGVyCkFkdmlzZWQgb2YgTWlzc2lvbiBBY3QgVUMgQmVuZWZpdHMKCk51cnNlIFN1bW1hcnkKTnVyc2UgU3VtbWFyeTogdGVzdCB0ZXN0IHRlc3QKCkNsaW5pY2FsIENvbnRhY3QgQ2VudGVyIENvZGVzCkNsaW5pYy9Mb2NhdGlvbjogVjIwIFBPUiBQSE9ORSBDQ0MgUk4KCk5vdGVzCk5vdGVzICYgSW5mb3JtYXRpb246IHRlc3RpbmcgdGVzdGluZyB0ZXN0aW5nCiAKL2VzLyBTYXJhaCBSIE51dHRicm9jaywgUk4KUGF0aWVudCBBY2Nlc3MgQ2VudGVyIENvb3JkaW5hdG9yClNpZ25lZDogMDgvMTEvMjAyMyAxMzowMwo=",
+      "title" : "CCC: CLINICAL TRIAGE",
+      "creation" : "2023-08-11T13:03:18Z"
+    }
+  }],
+  "context" : {
+    "related" : [{
+      "reference" : "#location-0"
+    }]
+  }
+}

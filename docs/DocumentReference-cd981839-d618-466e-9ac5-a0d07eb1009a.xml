@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DocumentReference xmlns="http://hl7.org/fhir">
+  <id value="cd981839-d618-466e-9ac5-a0d07eb1009a"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: DocumentReference</b><a name="cd981839-d618-466e-9ac5-a0d07eb1009a"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource DocumentReference &quot;cd981839-d618-466e-9ac5-a0d07eb1009a&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.note.html">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: NoteTO.81544045 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: WOUND CARE SECURE MESSAGING <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="https://loinc.org/">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Nov 13, 2023, 9:27:00 AM</p><p><b>author</b>: <a name="author-0"> </a></p><blockquote><p/><p><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.374229 (use: USUAL)</p><p><b>name</b>: ISON,RONALD C</p></blockquote><p><b>authenticator</b>: <a name="approvedBy-0"> </a></p><blockquote><p/><p><a name="approvedBy-0"> </a></p><p><b>identifier</b>: id: AuthorTO.374229 (use: USUAL)</p><p><b>name</b>: ISON,RONALD C</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class="grid"><tr><td style="display: none">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style="display: none">*</td><td>text/plain</td><td>(base64 data - 1008 bytes)</td><td>WOUND - SECURE MESSAGING</td><td>2023-11-13 15:27:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Related</b></td></tr><tr><td style="display: none">*</td><td><a name="location-0"> </a><blockquote><p/><p><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name="author-0"> </a></p><p><b>identifier</b>: id: AuthorTO.374229 (use: USUAL)</p><p><b>name</b>: ISON,RONALD C</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name="approvedBy-0"> </a></p><p><b>identifier</b>: id: AuthorTO.374229 (use: USUAL)</p><p><b>name</b>: ISON,RONALD C</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name="location-0"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="author-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.374229"/>
+      </identifier>
+      <name>
+        <text value="ISON,RONALD C"/>
+        <family value="ISON,RONALD C"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="approvedBy-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.374229"/>
+      </identifier>
+      <name>
+        <text value="ISON,RONALD C"/>
+        <family value="ISON,RONALD C"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Location>
+      <id value="location-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="LocationTO.648"/>
+      </identifier>
+      <name value="PORTLAND VA MEDICAL CENTER"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="NoteTO.81544045"/>
+  </identifier>
+  <status value="current"/>
+  <type>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="11506-3"/>
+    </coding>
+    <text value="WOUND CARE SECURE MESSAGING"/>
+  </type>
+  <category>
+    <coding>
+      <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
+      <code value="clinical-note"/>
+    </coding>
+  </category>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <date value="2023-11-13T15:27:00Z"/>
+  <author>
+    <reference value="#author-0"/>
+  </author>
+  <authenticator>
+    <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen">
+      <valueDateTime value="2023-11-13T12:27:38Z"/>
+    </extension>
+    <reference value="#approvedBy-0"/>
+  </authenticator>
+  <content>
+    <attachment>
+      <contentType value="text/plain"/>
+      <data value="CiBMT0NBTCBUSVRMRTogV09VTkQgLSBTRUNVUkUgTUVTU0FHSU5HICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBXT1VORCBDQVJFIFNFQ1VSRSBNRVNTQUdJTkcgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBOT1YgMTMsIDIwMjNAMTU6MjcgICAgIEVOVFJZIERBVEU6IE5PViAxMywgMjAyM0AxMjoyNzozOCAgICAgIAogICAgICBBVVRIT1I6IElTT04sUk9OQUxEIEMgICAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKLS0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLSAKU2VudDogIDExLzEzLzIwMjMgMDM6MjAgUE0gRVQgCkZyb206ICBNSFZaWlZJU05UV0VOVFksIFRFU1QgIFBBVElFTlRSIApUbzogIE9zdG9teSAmIFdvdW5kIENhcmVfVkFQb3J0bGFuZEhDU19PQ0QgClN1YmplY3Q6ICBHZW5lcmFsOlRlc3QgTWVzc2FnZSBmb3IgU2F2ZSB0byBDUFJTIAoKVGVzdCBNZXNzYWdlIGZvciBTYXZlIHRvIENQUlMgLSBOb3RlIHRpdGxlIGVycm9yICAKICAKICAKRmx1IFNob3QgSW5mbzogaHR0cHM6Ly93d3cucG9ydGxhbmQudmEuZ292L25ld3MvZmx1c2hvdHMuYXNwICAKaHR0cHM6Ly93d3cudmEuZ292L2RpcmVjdG9yeS9ndWlkZS9yZWdpb24uYXNwP0lEPTEwMjA/Ci0tLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0gClNlbnQ6ICAxMS8xMy8yMDIzIDAzOjI3IFBNIEVUIApGcm9tOiAgSVNPTiwgUk9OQUxEICBDIApUbzogIE1IVlpaVklTTlRXRU5UWSwgVEVTVCAgUEFUSUVOVFIgClN1YmplY3Q6ICBHZW5lcmFsOlRlc3QgTWVzc2FnZSBmb3IgU2F2ZSB0byBDUFJTIAoKdHJpYWwKCiAKL2VzLyBST05BTEQgQyBJU09OCkFSTlAgQ1dPTgpTaWduZWQ6IDExLzEzLzIwMjMgMTI6MjcK"/>
+      <title value="WOUND - SECURE MESSAGING"/>
+      <creation value="2023-11-13T15:27:00Z"/>
+    </attachment>
+  </content>
+  <context>
+    <related>
+      <reference value="#location-0"/>
+    </related>
+  </context>
+</DocumentReference>

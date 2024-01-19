@@ -1,0 +1,102 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "24559a1b-afd5-4a29-b645-f4576f4a1bd1",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"24559a1b-afd5-4a29-b645-f4576f4a1bd1\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;24559a1b-afd5-4a29-b645-f4576f4a1bd1&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id:\u00a0NoteTO.17521574\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: MHV DIALOG NOTE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Apr 1, 2009, 5:24:01\u202fPM</p><p><b>author</b>: <a name=\"author-0\"> </a></p><blockquote><p/><p><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.11059\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PENNINGTON,ANNA L</p></blockquote><p><b>authenticator</b>: <a name=\"approvedBy-0\"> </a></p><blockquote><p/><p><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.11059\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PENNINGTON,ANNA L</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 1484 bytes)</td><td>SECURE MESSAGING</td><td>2009-04-01 22:24:01+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"location-0\"> </a><blockquote><p/><p><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.11059\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PENNINGTON,ANNA L</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.11059\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PENNINGTON,ANNA L</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "author-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.11059"
+    }],
+    "name" : [{
+      "text" : "PENNINGTON,ANNA L",
+      "family" : "PENNINGTON,ANNA L"
+    }]
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "approvedBy-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.11059"
+    }],
+    "name" : [{
+      "text" : "PENNINGTON,ANNA L",
+      "family" : "PENNINGTON,ANNA L"
+    }]
+  },
+  {
+    "resourceType" : "Location",
+    "id" : "location-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "LocationTO.648"
+    }],
+    "name" : "PORTLAND VA MEDICAL CENTER"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "NoteTO.17521574"
+  }],
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "11506-3"
+    }],
+    "text" : "MHV DIALOG NOTE"
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code" : "clinical-note"
+    }]
+  }],
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "date" : "2009-04-01T22:24:01Z",
+  "author" : [{
+    "reference" : "#author-0"
+  }],
+  "authenticator" : {
+    "extension" : [{
+      "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen",
+      "valueDateTime" : "2009-04-01T15:24:11Z"
+    }],
+    "reference" : "#approvedBy-0"
+  },
+  "content" : [{
+    "attachment" : {
+      "contentType" : "text/plain",
+      "data" : "CiBMT0NBTCBUSVRMRTogU0VDVVJFIE1FU1NBR0lORyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBNSFYgRElBTE9HIE5PVEUgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBBUFIgMDEsIDIwMDlAMjI6MjQ6MTAgIEVOVFJZIERBVEU6IEFQUiAwMSwgMjAwOUAxNToyNDoxMSAgICAgIAogICAgICBBVVRIT1I6IFBFTk5JTkdUT04sQU5OQSBMICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKLS0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpTZW50OiAgMDIvMjQvMjAwOSAxMjo0OCBQTQpGcm9tOiAgRG91Z2xhcywgRGF2aWQKVG86ICBNSFZaWlZJU05UV0VOVFksIFRFU1QKU3ViamVjdDogIFRISVMgSVMgQSBURVNUCgpXSUxMIFRISVMgTUVTU0FHRSBFU0NBTEFURT8KCgogICAgIC0tLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgICBTZW50OiAgMDIvMjQvMjAwOSAwMTowNCBQTQogICAgIEZyb206ICBNSFZaWlZJU05UV0VOVFksIFRFU1QKICAgICBUbzogIERvdWdsYXMgRF9QcmltYXJ5IENhcmVfUG9ydGxhbmQKICAgICBTdWJqZWN0OiAgVEhJUyBJUyBBIFRFU1QKICAgICAKICAgICBXaWxsIHRoaXMgbWVzc2FnZSBlc2NhbGF0ZT8KCgogICAgICAgICAgLS0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAgICAgICAgU2VudDogIDAzLzAzLzIwMDkgMDE6NTggUE0KICAgICAgICAgIEZyb206ICBXb29kcywgU3VzYW4KICAgICAgICAgIFRvOiAgTUhWWlpWSVNOVFdFTlRZLCBURVNUCiAgICAgICAgICBTdWJqZWN0OiAgVEhJUyBJUyBBIFRFU1QKICAgICAgICAgIAogICAgICAgICAgSGVsbG8gTUhWIHBhdGllbnQuCgpUaGlzIGlzIGEgdGVzdCB0byBzZWUgaWYgbXkgUkVQTFkgaXMgc2VlbiBpbiB0aGUgY29tcGxldGVkIG1lc3NhZ2UgYW5kIHRoZSBDUFJTCiBub3RlLgoKRHIuIFdvb2RzCgoKICAgICAgICAgICAgICAgLS0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQogICAgICAgICAgICAgICBTZW50OiAgMDQvMDEvMjAwOSAwNToxMyBQTQogICAgICAgICAgICAgICBGcm9tOiAgTUhWWlpWSVNOVFdFTlRZLCBURVNUCiAgICAgICAgICAgICAgIFRvOiAgRG91Z2xhcyBEX1ByaW1hcnkgQ2FyZV9Qb3J0bGFuZAogICAgICAgICAgICAgICBTdWJqZWN0OiAgVEhJUyBJUyBBIFRFU1QKICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgIE1lc3NhZ2UgcmVjZWl2ZWQuIAoKCgogCi9lcy8gQU5OQSBMIFBFTk5JTkdUT04KUGF0aWVudCBSZWxhdGlvbnMgQXNzaXN0YW50ClNpZ25lZDogMDQvMDEvMjAwOSAxNToyNAo=",
+      "title" : "SECURE MESSAGING",
+      "creation" : "2009-04-01T22:24:01Z"
+    }
+  }],
+  "context" : {
+    "related" : [{
+      "reference" : "#location-0"
+    }]
+  }
+}

@@ -1,0 +1,466 @@
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+    <title>PN Note: 78118440 - XML Representation - MyHealtheVet PHR FHIR API v0.3.1</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="author" content="http://hl7.org/fhir"/>
+
+    <link href="fhir.css" rel="stylesheet"/>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap-fhir.css" rel="stylesheet"/>
+
+    <!-- Project extras -->
+    <link href="assets/css/project.css" rel="stylesheet"/>
+    <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
+    <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
+  	<link href="assets/css/prism.css" rel="stylesheet" />
+    <!-- Placeholder for child template CSS declarations -->
+<link href="assets/css/vha-ig-template.css" rel="stylesheet"/>
+
+
+
+    <script type="text/javascript" src="fhir-table-scripts.js"> </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Favicons -->
+    <link rel="fhir-logo" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="fhir-logo" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="fhir-logo" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="fhir-logo" href="assets/ico/icon-fhir-57.png"/>
+    <link rel="shortcut icon" href="assets/ico/favicon.png"/>
+  </head>
+  <body onload="document.body.style.opacity='1'">
+
+	  <script src="assets/js/prism.js"></script>
+
+    <style type="text/css">h2{--heading-prefix:"10.254"}
+    h3,h4,h5,h6{--heading-prefix:"10.254"}</style>
+    <div id="segment-header" class="segment">  <!-- segment-header -->
+      <div class="container">  <!-- container -->
+        <!-- Placeholder for child template header declarations -->
+
+<div id="va-nav"> 
+     <a id="va-logo" no-external="true" href="https://va.gov">
+     <img height="50" alt="VA Organization" src="assets/images/va-header-logo.png"/>
+     </a>
+	 </div>
+
+        <div id="ig-status">
+          <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
+            <br/>
+            <span style="display:inline-block;">0.3.1 - ci-build
+
+
+
+  <img alt="United States of America flag" src="assets/images/usa.svg" height="16" title="United States of America"/>
+
+
+            </span>
+          </p>
+        </div>
+      </div> <!-- /container -->
+    </div>  <!-- /segment-header -->
+
+    <div id="segment-navbar" class="segment">  <!-- segment-navbar -->
+      <div id="stripe"> </div>
+      <div class="container">  <!-- container -->
+        <!-- HEADER CONTENT -->
+
+        <nav class="navbar navbar-inverse">
+          <!--status-bar-->
+          <div class="container">
+            <button data-target=".navbar-inverse-collapse" class="navbar-toggle" data-toggle="collapse" type="button">
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+              <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
+            <div class="nav-collapse collapse navbar-inverse-collapse">
+              <!-- menu.xml  -->
+
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li>
+    <a href="index.html">Home</a>
+  </li>
+  <li>
+    <a href="api.html">API</a>
+  </li>
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Vista Mapping
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="background.html">background</a>
+      </li>
+      <li>
+        <a href="background.html#allergy">Allergy</a>
+      </li>
+      <li>
+        <a href="background.html#chem-hem">Chem-Hem</a>
+      </li>
+      <li>
+        <a href="background.html#condition">Condition</a>
+      </li>
+      <li>
+        <a href="background.html#ecg">ECG</a>
+      </li>
+      <li>
+        <a href="background.html#immunization">Immunization</a>
+      </li>
+      <li>
+        <a href="background.html#labreport">LabReport</a>
+      </li>
+      <li>
+        <a href="background.html#notes">Notes</a>
+      </li>
+      <li>
+        <a href="background.html#radiology">Radiology</a>
+      </li>
+      <li>
+        <a href="background.html#vital-sign">Vital-Sign</a>
+      </li>
+      <li>
+        <a href="utility.html">Utility</a>
+      </li>
+      <li>
+        <a href="ConvertDate.html">ConvertDate</a>
+      </li>
+      <li>
+        <a href="identifier.html">Id vs Identifier</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="testplan.html">Test Plan</a>
+  </li>
+  <li>
+    <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+</ul>
+            </div>  <!-- /.nav-collapse -->
+          </div>  <!-- /.container -->
+        </nav>  <!-- /.navbar -->
+      <!-- /HEADER CONTENT -->
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-navbar -->
+    <!--status-bar-->
+
+    <div id="segment-breadcrumb" class="segment">  <!-- segment-breadcrumb -->
+      <div class="container">  <!-- container -->
+        <ul class="breadcrumb">
+          <li><a href='toc.html'><b>Table of Contents</b></a></li><li><a href='artifacts.html'><b>Artifacts Summary</b></a></li><li><b>PN Note: 78118440</b></li>
+
+          <span style="float:right;">
+
+            <a href="DocumentReference-94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8.html">&lt;prev</a> | 
+
+            <a href="#bottom">bottom</a>
+
+          | <a href="DocumentReference-94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8.json.html">next&gt;</a>
+
+          </span>
+
+        </ul>
+      </div>  <!-- /container -->
+    </div>  <!-- /segment-breadcrumb -->
+
+    <a name="top"> </a>
+    <div id="segment-content" class="segment">  <!-- segment-content -->
+      <div class="container">  <!-- container -->
+        <div class="row">
+          <div class="inner-wrapper">
+
+<div style="counter-reset: section 7" class="col-12">
+<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.1) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs">
+
+  <li>
+    <a href="DocumentReference-94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8.html">Narrative Content</a>
+  </li>
+
+
+
+  
+    <li class="active">
+      <a href="#">XML</a>
+    </li>
+  
+
+
+  
+    <li>
+      <a href="DocumentReference-94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8.json.html">JSON</a>
+    </li>
+  
+
+
+
+
+</ul>
+
+
+<a name="root"> </a>
+
+
+<h2 id="root">: PN Note: 78118440 - XML Representation</h2>
+
+  <table class="colsi">
+    <tr>
+
+      <td colspan="2">
+        
+          <i>Page standards status:</i> <a href="http://hl7.org/fhir/R4/versions.html#std-process" title="Standard Status">Informative</a>
+          
+        
+      </td>
+
+    </tr>
+  </table>
+
+
+<p><a href="DocumentReference-94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8.xml" no-download="true">Raw xml</a> | <a href="DocumentReference-94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8.xml" download>Download</a></p>
+
+  <!-- insert intro if present -->
+  
+
+
+
+  <pre class="xml" style="white-space: pre; text-wrap: nowrap;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+
+&lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference">DocumentReference</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note&quot;/&gt;
+  &lt;/meta&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: DocumentReference&lt;/b&gt;&lt;a name=&quot;94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Resource DocumentReference &amp;quot;94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8&amp;quot; &lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-VA.MHV.PHR.note.html&quot;&gt;VA MHV PHR Notes&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: NoteTO.78118440 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: current&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: PRIMARY CARE OUTPATIENT NOTE &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;https://loinc.org/&quot;&gt;LOINC&lt;/a&gt;#11506-3)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Clinical Note &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html&quot;&gt;US Core DocumentReferences Category Codes&lt;/a&gt;#clinical-note)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=&quot;Patient-ex-MHV-patient-0.html&quot;&gt;Patient/ex-MHV-patient-0&lt;/a&gt; &amp;quot; MHVLISAONE&amp;quot;&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: Mar 17, 2023, 4:25:00 AM&lt;/p&gt;&lt;p&gt;&lt;b&gt;author&lt;/b&gt;: &lt;a name=&quot;author-0&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p/&gt;&lt;p&gt;&lt;a name=&quot;author-0&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: AuthorTO.7194 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: WINTERBOTTOM,LISA M&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;authenticator&lt;/b&gt;: &lt;a name=&quot;approvedBy-0&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p/&gt;&lt;p&gt;&lt;a name=&quot;approvedBy-0&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: AuthorTO.7194 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: WINTERBOTTOM,LISA M&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;content&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Attachments&lt;/h3&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td style=&quot;display: none&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;ContentType&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Data&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Title&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Creation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;display: none&quot;&gt;*&lt;/td&gt;&lt;td&gt;text/plain&lt;/td&gt;&lt;td&gt;(base64 data - 6618 bytes)&lt;/td&gt;&lt;td&gt;PC - NEW&lt;/td&gt;&lt;td&gt;2023-03-17 09:25:00+0000&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;h3&gt;Contexts&lt;/h3&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td style=&quot;display: none&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Related&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;display: none&quot;&gt;*&lt;/td&gt;&lt;td&gt;&lt;a name=&quot;location-0&quot;&gt; &lt;/a&gt;&lt;blockquote&gt;&lt;p/&gt;&lt;p&gt;&lt;a name=&quot;location-0&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: LocationTO.648 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PORTLAND VA MEDICAL CENTER&lt;/p&gt;&lt;/blockquote&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Practitioner #author-0&lt;/b&gt;&lt;a name=&quot;author-0&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: AuthorTO.7194 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: WINTERBOTTOM,LISA M&lt;/p&gt;&lt;/blockquote&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Practitioner #approvedBy-0&lt;/b&gt;&lt;a name=&quot;approvedBy-0&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: AuthorTO.7194 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: WINTERBOTTOM,LISA M&lt;/p&gt;&lt;/blockquote&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Location #location-0&lt;/b&gt;&lt;a name=&quot;location-0&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: id: LocationTO.648 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PORTLAND VA MEDICAL CENTER&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/text&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">contained</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">Practitioner</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;author-0&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.meta">meta</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner&quot;/&gt;
+      &lt;/meta&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;usual&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.4.349.4.989&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;AuthorTO.7194&quot;/&gt;
+      &lt;/identifier&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">name</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;WINTERBOTTOM,LISA M&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;WINTERBOTTOM,LISA M&quot;/&gt;
+      &lt;/name&gt;
+    &lt;/Practitioner&gt;
+  &lt;/contained&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">contained</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">Practitioner</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;approvedBy-0&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.meta">meta</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner&quot;/&gt;
+      &lt;/meta&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;usual&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.4.349.4.989&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;AuthorTO.7194&quot;/&gt;
+      &lt;/identifier&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner.name">name</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;WINTERBOTTOM,LISA M&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#HumanName#HumanName.family">family</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;WINTERBOTTOM,LISA M&quot;/&gt;
+      &lt;/name&gt;
+    &lt;/Practitioner&gt;
+  &lt;/contained&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/location.html#Location">contained</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/location.html#Location">Location</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;location-0&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.meta">meta</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+                 <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location&quot;/&gt;
+      &lt;/meta&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.identifier">identifier</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;usual&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.4.349.4.989&quot;/&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;LocationTO.648&quot;/&gt;
+      &lt;/identifier&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/location.html#Location.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PORTLAND VA MEDICAL CENTER&quot;/&gt;
+    &lt;/Location&gt;
+  &lt;/contained&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.identifier">identifier</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;usual&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;urn:oid:2.16.840.1.113883.4.349.4.989&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Identifier#Identifier.value">value</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;NoteTO.78118440&quot;/&gt;
+  &lt;/identifier&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;current&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.type">type</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;11506-3&quot;/&gt;
+    &lt;/coding&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.text">text</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PRIMARY CARE OUTPATIENT NOTE&quot;/&gt;
+  &lt;/type&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.category">category</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;clinical-note&quot;/&gt;
+    &lt;/coding&gt;
+  &lt;/category&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.subject">subject</a>&gt;<a href="Patient-ex-MHV-patient-0.html" style="color: Maroon">&#x1F517;</a> 
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/ex-MHV-patient-0&quot;/&gt;
+  &lt;/subject&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#instant">value</a>=&quot;2023-03-17T09:25:00Z&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.author">author</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;#author-0&quot;/&gt;
+  &lt;/author&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.authenticator">authenticator</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.extension">extension</a>
+               <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>=&quot;https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen&quot;&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueDateTime</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2023-03-17T09:26:05Z&quot;/&gt;
+    &lt;/extension&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;#approvedBy-0&quot;/&gt;
+  &lt;/authenticator&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.content">content</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.content.attachment">attachment</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.contentType">contentType</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;text/plain&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.data">data</a>
+            <a href="http://hl7.org/fhir/R4/datatypes.html#base64Binary">value</a>=&quot;CiBMT0NBTCBUSVRMRTogUEMgLSBORVcgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBQUklNQVJZIENBUkUgT1VUUEFUSUVOVCBOT1RFICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBNQVIgMTcsIDIwMjNAMDk6MjUgICAgIEVOVFJZIERBVEU6IE1BUiAxNywgMjAyM0AwOToyNTo0OSAgICAgIAogICAgICBBVVRIT1I6IFdJTlRFUkJPVFRPTSxMSVNBIE0gIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKQ0M6CiAKIApQcm9ibGVtczoKIApEb2N0b3JzL091dHNpZGUgcmVjb3JkczoKIApTdXJnaWNhbCBhZG1pc3Npb25zOgogCk1lZGljYWwgYWRtaXNzaW9uczoKIApXb21lbidzIEhlYWx0aDogZ3hweGF4LCBicmVhc3QgaGlzdG9yeSwgcGFwIGhpc3RvcnksIGZhbWlseSAKcGxhbm5pbmcvY29udHJhY2VwdGlvbiBwbGFuLCBib25lIGhlYWx0aAogCk1lZGljYXRpb25zOgogCkFsbGVyZ2llcyB0byBtZWRzOgogClNvY2lhbCBoaXN0b3J5OgogClRvYmFjY28sIGV0b2gsIHJlYyBkcnVnczoKIApGYW1pbHkgaHg6CiAKTWlsaXRhcnkgaHg6ICAgVGltZSBwZXJpb2Q6ICAgICAgICAgICAgIEJyYW5jaDogSm9iOiAgICAgICAgICAgIExvY2F0aW9uczoKICAgICAgICBJbG5lc3NlcyB3aGlsZSBpbjogICAgICAgICAgICAgIFBUU0Q6CkFueSBleHBlcmllbmNlcyBmb3Igd2hpY2ggd291bGQgbGlrZSBjb3Vuc2VsaW5nOgp3aXRuZXNzZWQgZGVhdGggb3IgY29tYmF0OgogCk1lbnRhbCBIZWFsdGg6CiAKIAogClJvczogbm8gc2VpenVyZSwgbG9jLCBoZWFkYWNoZXMsIHZpc3VhbCBwcm9ibGVtcwogICAgIG5vIGhlYXJpbmcgcHJvYmxlbXMKICAgICBubyBwcm9ibGVtcyB3aXRoIHRlZXRoIG9yIGd1bXMKICAgICAgICBwdWxtb25hcnk6CiAgICAgICAgaHRuIG9yIG11cm11cnM6CiAgICAgbm8gZGlmZmljdWx0eSBzd2FsbG93aW5nLCBubyBzdG9tYWNoIHByb2JsZW1zLCBubyBjb25zdGlwYXRpb24gb3IgCmRpYXJyaGVhLApubyBibG9vZCBpbiBzdG9vbCBvciBvbiB0b2lsZXQgcGFwZXIKICAgICBubyB1cmluYXJ5IGZyZXF1ZW5jeSwgdXJnZW5jeSwgZGlmZmljdWx0eSBzdGFydGluZyBvciBzdG9wcGluZyBzdHJlYW0KICAgICBubyBtdXNjbGUgcHJvYmxlbXMsIG5vIG5ldyBqb2ludCBwcm9ibGVtcwogICAgIG5vIHNraW4gb3IgbmV1cm9sb2dpYWwgcHJvYmxlbXMKIAogCiAKU1VCSkVDVElWRTogTUhWWlpWSVNOVFdFTlRZLFRFU1QgUEFUSUVOVFIgaXMgYSAyMiBZT01BTEUgaGVyZSBmb3IKIAogCk1FRElDQVRJT05TOgpBY3RpdmUgT3V0cGF0aWVudCBNZWRpY2F0aW9ucyAoaW5jbHVkaW5nIFN1cHBsaWVzKToKIAogICAgIEFjdGl2ZSBPdXRwYXRpZW50IE1lZGljYXRpb25zICAgICAgICAgICAgICAgICAgICAgICAgICBTdGF0dXMKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoxKSAgIEFDRVRBTUlOT1BIRU4gNTAwTUcgVEFCIFRBS0UgT05FIFRBQkxFVCBCWSBNT1VUSCBGT1VSICBIT0xECiAgICAgICBUSU1FUyBBIERBWSBBUyBORUVERUQgKkRPIE5PVCBUQUtFIE1PUkUgVEhBTgogICAgICAgNCwwMDBNRyBBIERBWSBPRiBBQ0VUQU1JTk9QSEVOIEZST00gQUxMIFNPVVJDRVMgRFVFCiAgICAgICBUTyBSSVNLIE9GIExJVkVSIERBTUFHRS4KMikgICBBTEJVVEVST0wgMTAwL0lQUkFUUk8gMjBNQ0cgMTIwRCBQTyBJTkhMIElOSEFMRSAxICAgICAgQUNUSVZFCiAgICAgICBTUFJBWSBCWSBNT1VUSCBGT1VSIFRJTUVTIEEgREFZIChFQUNIIElOSEFMRVIKICAgICAgIENPTlRBSU5TIDEyMCBTUFJBWVMpCjMpICAgQUxDT0hPTCBQUkVQIFBBRCBVU0UgUEFEIFRPUElDQUxMWSBBUyBESVJFQ1RFRCAgICAgICAgIEFDVElWRSAoUykKNCkgICBBTExPUFVSSU5PTCAxMDBNRyBUQUIgVEFLRSBPTkUgVEFCTEVUIEJZIE1PVVRIIEVWRVJZICAgQUNUSVZFCiAgICAgICBEQVkKNSkgICBBU1BJUklOIDMyNU1HIEVDIFRBQiBUQUtFIE9ORSBUQUJMRVQgQlkgTU9VVEggRVZFUlkgICAgSE9MRAogICAgICAgREFZCjYpICAgQlVTUElST05FIEhDTCAxME1HIFRBQiBUQUtFIE9ORSBUQUJMRVQgQlkgTU9VVEggVFdJQ0UgIEFDVElWRQogICAgICAgQSBEQVkgQVMgTkVFREVEIEZPUiBBTlhJRVRZCjcpICAgQ0FQU0FJQ0lOIDAuMSUgQ1JFQU0gQVBQTFkgQSBTTUFMTCBBTU9VTlQgVE9QSUNBTExZICAgIEFDVElWRQogICAgICAgVFdJQ0UgQSBEQVkKOCkgICBDTE9QSURPR1JFTCBCSVNVTEZBVEUgNzVNRyBUQUIgVEFLRSBPTkUgVEFCTEVUIEVWRVJZICAgQUNUSVZFCiAgICAgICBEQVkKOSkgICBESVBIRU5IWURSQU1JTkUgSENMIDI1TUcgQ0FQIFRBS0UgT05FIENBUFNVTEUgQlkgICAgICAgQUNUSVZFCiAgICAgICBNT1VUSCBGT1VSIFRJTUVTIEEgREFZIEFTIE5FRURFRAoxMCkgIEZMVU9YRVRJTkUgSENMIDEwTUcgQ0FQIFRBS0UgT05FIENBUFNVTEUgQlkgTU9VVEggICAgICBBQ1RJVkUKICAgICAgIEVWRVJZIERBWQoxMSkgIEZMVVRJQ0FTIDUwMC9TQUxNRVRFUk9MIDUwIElOSEwgRElTSyA2MCBJTkhBTEUgMSAgICAgICBBQ1RJVkUKICAgICAgIElOSEFMQVRJT04gQlkgTU9VVEggVFdJQ0UgQSBEQVkgUklOU0UgTU9VVEggQU5ECiAgICAgICBTUElUIEFGVEVSIFVTRS4gRElTQ0FSRCAxIE1PTlRIIEFGVEVSIE9QRU5JTkcgRk9JTAogICAgICAgUE9VQ0guCjEyKSAgRk9MSUMgQUNJRCAxTUcgVEFCIFRBS0UgT05FIFRBQkxFVCBCWSBNT1VUSCBFVkVSWSBEQVkgIEFDVElWRQoxMykgIEdMSVBJWklERSA1TUcgVEFCIFRBS0UgT05FIFRBQkxFVCBCWSBNT1VUSCBUV0lDRSBBICAgICBBQ1RJVkUKICAgICAgIERBWSBGT1IgRElBQkVURVMuIFRBS0UgMzAgTUlOVVRFUyBCRUZPUkUgQSBNRUFMLgoxNCkgIEdMVUNPU1RJWCBHTFVDT1NFIFRFU1QgU1RSSVAgVVNFIDEgU1RSSVAgSVRFTSBBUyAgICAgICBBQ1RJVkUKICAgICAgIERJUkVDVEVECjE1KSAgSFlEUk9DSExPUk9USElBWklERSAyNU1HIFRBQiBUQUtFIFRXTyBUQUJMRVRTIEJZICAgICAgIEFDVElWRQogICAgICAgTU9VVEggRVZFUlkgTU9STklORyBGT1IgQkxPT0QgUFJFU1NVUkUKMTYpICBIWURST0NPUlRJU09ORSAxJSBDUkVBTSBBUFBMWSBUSElOIEZJTE0gVE9QSUNBTExZICAgICAgQUNUSVZFCiAgICAgICBFVkVSWSBEQVkKMTcpICBJQlVQUk9GRU4gNDAwTUcgVEFCIFRBS0UgT05FIFRBQkxFVCBCWSBNT1VUSCBUSFJFRSAgICAgQUNUSVZFCiAgICAgICBUSU1FUyBBIERBWSBBUyBORUVERUQKMTgpICBJTlNVTElOIFJFRyAxMDBVL01MIElOSiAxME1MIFZMIElOSkVDVCA1IFVOSVRTICAgICAgICAgQUNUSVZFCiAgICAgICBTVUJDVVRBTkVPVVNMWSBBUyBESVJFQ1RFRAoxOSkgIE1FVEZPUk1JTiBIQ0wgNTAwTUcgVEFCIFRBS0UgT05FIFRBQkxFVCBCWSBNT1VUSCAgICAgICBBQ1RJVkUKICAgICAgIEVWRVJZIERBWQoyMCkgIE1FVE9QUk9MT0wgU1VDQ0lOQVRFIDI1TUcgU0EgVEFCIFRBS0UgVFdPIFRBQkxFVFMgQlkgICBBQ1RJVkUKICAgICAgIE1PVVRIIEVWRVJZIERBWQoyMSkgIE1VTFRJVklUQU1JTiBDQVAvVEFCIFRBS0UgMSBDQVAvVEFCIEJZIE1PVVRIIEVWRVJZICAgICBBQ1RJVkUKICAgICAgIERBWQoyMikgIE5FRURMRSAyNUcgMS41SU4gVVNFIE9ORSBJVEVNIEFTIERJUkVDVEVEICAgICAgICAgICAgICBBQ1RJVkUKMjMpICBPTUVQUkFaT0xFIDIwTUcgRUMgQ0FQIFRBS0UgT05FIENBUFNVTEUgQlkgTU9VVEggICAgICAgQUNUSVZFCiAgICAgICBFVkVSWSBEQVkKMjQpICBQSU9HTElUQVpPTkUgSENMIDE1TUcgVEFCIFRBS0UgT05FIFRBQkxFVCBCWSBNT1VUSCAgICAgQUNUSVZFCiAgICAgICBFVkVSWSBEQVkKMjUpICBQUkFWQVNUQVRJTiBOQSA4ME1HIFRBQiBUQUtFIE9ORS1IQUxGIFRBQkxFVCBCWSBNT1VUSCAgQUNUSVZFCiAgICAgICBFVkVSWSBFVkVOSU5HIFRPIExPV0VSIFlPVVIgQ0hPTEVTVEVST0wKMjYpICBUQU1TVUxPU0lOIEhDTCAwLjRNRyBDQVAgVEFLRSBPTkUgQ0FQU1VMRSBCWSBNT1VUSCBBVCAgQUNUSVZFCiAgICAgICBCRURUSU1FCjI3KSAgVElPVFJPUElVTSAxOE1DRyBJTkhMIENBUCAzMCBQTEFDRSAxIENBUFNVTEUgKDE4IE1DRykgIEFDVElWRQogICAgICAgSU4gSU5IQUxFUiwgSU5IQUxFIEJZIE1PVVRIIEVWRVJZIERBWSBSRVBMQUNFUwogICAgICAgSVBSQVRST1BJVU0gKEFUUk9WRU5UL0NPTUJJVkVOVCksIEZPUiBJTkhBTEVSIFVTRQogICAgICAgT05MWQogCiAgICAgQWN0aXZlIE5vbi1WQSBNZWRpY2F0aW9ucyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFN0YXR1cwo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CjEpICAgTm9uLVZBIEFDRVRBTUlOT1BIRU4gNTAwTUcgVEFCIDUwME1HIE1PVVRIICAgICAgICAgICAgIEFDVElWRQoyKSAgIE5vbi1WQSBBTUlPREFST05FIEhDTCAoUEFDRVJPTkUpIDIwME1HIFRBQiAyMDBNRyAgICAgICBBQ1RJVkUKICAgICAgIE1PVVRIIEVWRVJZIERBWQozKSAgIE5vbi1WQSBBU1BJUklOIFRBQixFQyAgTU9VVEggRVZFUlkgREFZICAgICAgICAgICAgICAgICBBQ1RJVkUKNCkgICBOb24tVkEgQ0xPUElET0dSRUwgQklTVUxGQVRFIDc1TUcgVEFCIDc1TUcgTU9VVEggICAgICAgQUNUSVZFCjUpICAgTm9uLVZBIE1VTFRJVklUQU1JTiBDQVAvVEFCIDEgQ0FQL1RBQiBNT1VUSCBFVkVSWSBEQVkgIEFDVElWRQogCjMyIFRvdGFsIE1lZGljYXRpb25zCiAKQUxMRVJHSUVTOgogIFBFTklDSUxMSU4sIFNVTEZBIERSVUdTLCBFR0dTLCBNQUFMT1ggQU5UQUNJRCwgQURIRVNJVkUgVEFQRSwgVEVUUkFDWUNMSU5FCiAgUFJBWk9TSU4sIExJU0lOT1BSSUwKIApQSFlTSUNBTCBFWEFNOgpCUDEyNS84MCAoMDEvMDgvMjAyMCAxNDoyNykgIFA2NyAoMDEvMDgvMjAyMCAxNDoyNykgIFJSMTIgKDAxLzA4LzIwMjAgMTQ6MjcpIApUOTguOCBGIFszNy4xIENdICgwMS8wOC8yMDIwIDE0OjI3KQpXVDI1NSBsYiBbMTE1LjY3IGtnXSAoMDEvMDgvMjAyMCAxNDoyNykgIEJPRFkgTUFTUyBJTkRFWCAtIE5PIEhFSUdIVFMgRk9VTkQKIApBUFBFQVJBTkNFOiAgV0VMTCBBUFBFQVJJTkcsIElOIE5BRApIRUVOVDogIEFUL05DLCBQRUVSTEEsIEVPTUkKTkVDSzogIE5PIE5PREVTIE9SIE1BU1NFUwpMVU5HUzogIENUQSBCSUxBVEVSQUxMWQpDT1I6ICBSUlIsIE5PIE1SRwpBQkRPTUVOOiBOTyBNQVNTRVMgSU4gQUxMIDQgUVVBRFJBTlRTLCBOTyBIU00KRVhUOiAgTk8gQy9DL0UsIERQIDIrIEJJTEFULCBTRU5TQVRJT04gSU4gVEFDVApHVToKIApMYWJzOgogCmNob2xlc3Rlcm9sICAgICAgIE5vIENIT0xFU1RFUk9MIGluIHRoZSBsYXN0IDFZCmhkbCAgICAgICAgICAgICAgIE5vIEhETCBpbiB0aGUgbGFzdCAxWQpsZGwgY2FsYyAgICAgICAgICBObyBMREwtQ0hPTCBDQUxDIGluIHRoZSBsYXN0IDFZCnRyaWdzICAgICAgICAgICAgIE5vIFRSSUdMWUNFUklERVMgaW4gdGhlIGxhc3QgMVkKZmVycml0aW4gICAgICAgICAgTm8gRkVSUklUSU4gaW4gdGhlIGxhc3QgMVkKSENUICAgICAgICAgICAgICAgTm8gSENUIGluIHRoZSBsYXN0IDFZCkhlbW9nbG9iaW4gICAgICAgIFRoZSBPQkpFQ1QgTEFCLUhHQkExQyB3YXMgTk9UIGZvdW5kLi4uQ29udGFjdCBJUk0uClBTQSAgICAgICAgICAgICAgIE5vIFBST1NUQVRJQyBTUEVDSUZJQyBBTlRJR0VOIGluIHRoZSBsYXN0IDFZCnN0b29sIGNhcmRzICAgICAgIE5vIEdVQUlBQyBHQVNUUklDIGluIHRoZSBsYXN0IDFZCiAKTm8gQ0JDIGluIHRoZSBwYXN0IDFZCiAKTm8gQkFTSUMgTUVUQUJPTElDIFBBTkVMIGluIHRoZSBwYXN0IDFZTm8gR1VBSUFDIEdBU1RSSUMgaW4gdGhlIGxhc3QgMVlObyAKSEVNT0dMT0JJTiBBMUMgaW4gdGhlIGxhc3QgMVlObyBaWkhFUEFUSVRJUyBBIEFOVElCT0RZIFRPVEFMIGluIHRoZSBsYXN0IDFZTm8gCkhFUEFUSVRJUyBCIFNVUkZBQ0UgQU5USUdFTiBpbiB0aGUgbGFzdCAxWVRoZSBPQkpFQ1QgTEFCLSB3YXMgTk9UIApmb3VuZC4uLkNvbnRhY3QgSVJNLgpIRVAgQyBBQlRoZSBPQkpFQ1QgIHdhcyBOT1QgZm91bmQuLi5Db250YWN0IElSTS5MQUItTElWRVIKUFJPRklMRVRoZSBPQkpFQ1QgIHdhcyBOT1QgZm91bmQuLi5Db250YWN0IElSTS5MQUItTUEvQ1IgUkFUSU9UaGUgT0JKRUNUICB3YXMgCk5PVCBmb3VuZC4uLkNvbnRhY3QgSVJNLkxBQi1VUklOQUxZU0lTVGhlIE9CSkVDVCAgd2FzIE5PVCBmb3VuZC4uLkNvbnRhY3QgCklSTS4KIAogCiAKSU1QUkVTU0lPTjogIE1IVlpaVklTTlRXRU5UWSxURVNUIFBBVElFTlRSIGlzIGEgMjIgWU9NQUxFIGhlcmUgZm9yCiAKUFJPQkxFTVM6CiAKTm8gRnV0dXJlIEFwcG9pbnRtZW50cyBTY2hlZHVsZWQKIApwcm9ibGVtIDEKCnByb2JsZW0gMgoKcHJvYmxlbSAzCiAKL2VzLyBMSVNBIE0gV0lOVEVSQk9UVE9NLCBNLkQuClN0YWZmIFBoeXNpY2lhbgpTaWduZWQ6IDAzLzE3LzIwMjMgMDk6MjYK&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.title">title</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;PC - NEW&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Attachment#Attachment.creation">creation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2023-03-17T09:25:00Z&quot;/&gt;
+    &lt;/attachment&gt;
+  &lt;/content&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.context">context</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.context.related">related</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;#location-0&quot;/&gt;
+    &lt;/related&gt;
+  &lt;/context&gt;
+&lt;/DocumentReference&gt;</code></pre>
+
+
+  <!-- insert notes if present -->
+  
+
+
+
+</div>
+        </div>  <!-- /inner-wrapper -->
+      </div>  <!-- /row -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-content -->
+
+  <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
+  <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      if(window.location.hash != "") {
+          $('a[href="' + window.location.hash + '"]').click()
+      }
+    });
+  </script>
+  <a name="bottom"> </a>
+  <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
+    <div class="container">  <!-- container -->
+
+      <div style="background-color:var(--footer-nav-bg-color)">
+        <table style="width:100%">
+          <tbody>
+            <tr>
+              <td style="text-align:left">&#xA0;
+
+                <a href="DocumentReference-94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8.html">&lt;prev</a>
+
+              </td>
+              <td style="text-align:center">
+                <a href="#top">top</a>
+              </td>
+              <td style="text-align:right">&#xA0;
+
+                <a href="DocumentReference-94b33c4e-b9eb-4ae0-9f32-11cc4f4b13f8.json.html">next&gt;</a>
+
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="inner-wrapper">
+        <p>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Jan 19, 2024 11:04-0600">2024-01-19</span>
+          <br/>
+          <span style="color: var(--footer-highlight-text-color)">
+                      Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
+                 <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
+                  | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/issues">Issues</a>
+                
+          </span>
+        </p>
+      </div>  <!-- /inner-wrapper -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-footer -->
+  
+  <div id="segment-post-footer" class="segment hidden">  <!-- segment-post-footer -->
+    <div class="container">  <!-- container -->
+    </div>  <!-- /container -->
+  </div>  <!-- /segment-post-footer -->
+  
+  <!-- JS and analytics only. -->
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"> </script>
+  <script type="text/javascript" src="assets/js/respond.min.js"> </script>
+  <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
+  <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
+  <script>anchors.options.visible = 'hover'
+anchors.add()</script>
+  
+<!-- feedback form - Google forms -->
+<!-- v0.1, 2021-01-09 -->
+
+
+  
+    
+  
+
+
+  
+    
+  
+
+
+
+<!-- / feedback form  -->
+
+  <!-- Analytics Below
+  ================================================== -->
+  </body>
+</html>
+

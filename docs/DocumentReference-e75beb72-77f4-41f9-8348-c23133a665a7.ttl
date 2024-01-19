@@ -1,0 +1,124 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/e75beb72-77f4-41f9-8348-c23133a665a7> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "e75beb72-77f4-41f9-8348-c23133a665a7"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"e75beb72-77f4-41f9-8348-c23133a665a7\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;e75beb72-77f4-41f9-8348-c23133a665a7&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id: NoteTO.78118479 (use: USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: PRIMARY CARE NOTE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Mar 17, 2023, 4:27:00 AM</p><p><b>author</b>: <a name=\"author-0\"> </a></p><blockquote><p/><p><a name=\"author-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.7194 (use: USUAL)</p><p><b>name</b>: WINTERBOTTOM,LISA M</p></blockquote><p><b>authenticator</b>: <a name=\"approvedBy-0\"> </a></p><blockquote><p/><p><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.7194 (use: USUAL)</p><p><b>name</b>: WINTERBOTTOM,LISA M</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 7037 bytes)</td><td>PC - AFTERVISIT SUMMARY</td><td>2023-03-17 09:27:00+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"location-0\"> </a><blockquote><p/><p><a name=\"location-0\"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name=\"author-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.7194 (use: USUAL)</p><p><b>name</b>: WINTERBOTTOM,LISA M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id: AuthorTO.7194 (use: USUAL)</p><p><b>name</b>: WINTERBOTTOM,LISA M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name=\"location-0\"> </a></p><p><b>identifier</b>: id: LocationTO.648 (use: USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "author-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "AuthorTO.7194" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "WINTERBOTTOM,LISA M" ] ;
+       fhir:family [ fhir:v "WINTERBOTTOM,LISA M" ]
+     ] )
+  ] [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "approvedBy-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "AuthorTO.7194" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "WINTERBOTTOM,LISA M" ] ;
+       fhir:family [ fhir:v "WINTERBOTTOM,LISA M" ]
+     ] )
+  ] [
+     a fhir:Location ;
+     fhir:id [ fhir:v "location-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "LocationTO.648" ]
+     ] ) ;
+     fhir:name [ fhir:v "PORTLAND VA MEDICAL CENTER" ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "NoteTO.78118479" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:11506-3 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "11506-3" ]
+     ] ) ;
+     fhir:text [ fhir:v "PRIMARY CARE NOTE" ]
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:date [ fhir:v "2023-03-17T09:27:00Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:reference [ fhir:v "#author-0" ]
+  ] ) ; # 
+  fhir:authenticator [
+     fhir:extension ( [
+       fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "2023-03-17T09:28:54Z"^^xsd:dateTime ]
+     ] ) ;
+     fhir:reference [ fhir:v "#approvedBy-0" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "CiBMT0NBTCBUSVRMRTogUEMgLSBBRlRFUlZJU0lUIFNVTU1BUlkgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBQUklNQVJZIENBUkUgTk9URSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBNQVIgMTcsIDIwMjNAMDk6MjcgICAgIEVOVFJZIERBVEU6IE1BUiAxNywgMjAyM0AwOToyNzowNiAgICAgIAogICAgICBBVVRIT1I6IFdJTlRFUkJPVFRPTSxMSVNBIE0gIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKCioqKiBDTElOSUMgQUZURVJWSVNJVCBTVU1NQVJZICoqKgogCk1IVlpaVklTTlRXRU5UWSxURVNUIFBBVElFTlRSCiAKVGhhbmsgeW91IGZvciBhbGxvd2luZyB1cyB0byBwYXJ0aWNpcGF0ZSBpbiB5b3VyIGhlYWx0aGNhcmUuIFBsZWFzZSByZXZpZXcgdGhpcwpkb2N1bWVudC4gIEl0IG1heSBjb250YWluIGFkZGl0aW9uYWwgaW5mb3JtYXRpb24gb3IgaW5zdHJ1Y3Rpb25zIGZyb20geW91ciBjYXJlCnByb3ZpZGVyLgogX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KIApQQVRJRU5UIElOU1RSVUNUSU9OUzoKClRoYW5rIHlvdSBmb3IgY29taW5nIGluCgpQbGVhc2UgcmVwb3J0IGZvciBsYWJzCgpQbGVhc2UgbW9uaXRvciB5b3VyIGJsb29kIHByZXNzdXJlIGFuZCBibG9vZCBnbHVjb3NlCgpXZSB3aWxsIG1lZXQgYWdhaW4gaW4gMyBtb250aHMKIAogCisrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKIApUSElTIElTIFlPVVIgTUVESUNBVElPTiBMSVNUIE1BUiAxNywgMjAyMyBZb3Ugc2hvdWxkIGtlZXAgYSBjb3B5IG9mIHlvdXIKbWVkaWNhdGlvbiBsaXN0IGFuZCBicmluZyBpdCB3aXRoIHlvdSB0byBhbGwgb2YgeW91ciBtZWRpY2FsIGFwcG9pbnRtZW50cy4KUGxlYXNlIGNvbnRpbnVlIHRvIHRha2UgdGhlc2UgbWVkaWNhdGlvbnMgYXMgZGlyZWN0ZWQuIENhbGwgdXMgb3Igc2VuZCB1cyBhCnNlY3VyZSBtZXNzYWdlIGlmIHlvdSBzdGFydCwgc3RvcCwgb3IgY2hhbmdlIG1lZGljYXRpb25zLiBUbyBoZWxwIHlvdXIgcHJpbWFyeQpjYXJlIHRlYW0gcHJvdmlkZSB0aGUgc2FmZXN0IGNhcmUgZm9yIHlvdSwgaXQgaXMgaW1wb3J0YW50IGZvciB0aGVtIHRvIGtub3cKYWJvdXQgYWxsIHRoZSBtZWRpY2F0aW9ucyB5b3UgdGFrZSwgZXZlbiBpZiBpdCdzIGp1c3QgYW4gaGVyYmFsIHN1cHBsZW1lbnQgb3IKb3ZlciB0aGUgY291bnRlciBtZWRpY2F0aW9ucy4KIApJZiB5b3UgaGF2ZSBhbnkgcXVlc3Rpb25zLCBwbGVhc2Ugbm90aWZ5IGFuIGFzc2lzdGFudCBiZWZvcmUgeW91IGxlYXZlLiAgSWYgeW91Cm5lZWQgdG8gcmVmaWxsIGEgbWVkaWNhdGlvbiwgcGxlYXNlIGNhbGwgMS04ODgtNDAwLTgzODcKIApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwogCk5FVyBBTkQgRElTQ09OVElOVUVEIE1FRElDQVRJT05TCiAKIApZb3VyIHByb3ZpZGVyIGhhcyBOT1QgcHJlc2NyaWJlZCBhbnkgbmV3IG1lZGljYXRpb25zIHRvZGF5LgogCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCiAKWW91ciBwcm92aWRlciBoYXMgTk9UIGRpc2NvbnRpbnVlZCBhbnkgb2YgeW91ciBtZWRpY2F0aW9ucyB0b2RheS4KIApfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwogCkNPTlRJTlVFRCBNRURJQ0FUSU9OUyAoYWN0aXZlIFZBIGFuZCBub24tVkEgbWVkcykKIApUaGVzZSBtZWRpY2F0aW9ucyB3ZXJlIG5vdCBjaGFuZ2VkIGR1cmluZyB0aGlzIHZpc2l0LiBZb3Ugc2hvdWxkIGNvbnRpbnVlIHRvCnRha2UgdGhlbSBhcyBwcmVzY3JpYmVkLgpBY3RpdmUgTWVkaWNhdGlvbnMKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiAxKSBBY2V0YW1pbm9waGVuIDUwME1nIFRhYgogICAgIFRha2Ugb25lIHRhYmxldCBieSBtb3V0aCBmb3VyIHRpbWVzIGEgZGF5IGFzIG5lZWRlZCAqZG8KICAgICBOb3QgdGFrZSBtb3JlICB0aGFuIDQsMDAwbWcgYSBkYXkgb2YgYWNldGFtaW5vcGhlbgogICAgIEZyb20gYWxsIHNvdXJjZXMgZHVlIHRvIHJpc2sgb2YgIGxpdmVyIGRhbWFnZS4KIDIpIEFsYnV0ZXJvbCAxMDAvSXByYXRybyAyME1jZyAxMjBEIFBvIEluaGwKICAgICBJbmhhbGUgMSBzcHJheSBieSBtb3V0aCBmb3VyIHRpbWVzIGEgZGF5IChlYWNoIGluaGFsZXIKICAgICBDb250YWlucyAxMjAgIHNwcmF5cykKIDMpIEFsbG9wdXJpbm9sIDEwME1nIFRhYgogICAgIFRha2Ugb25lIHRhYmxldCBieSBtb3V0aCBldmVyeSBkYXkKIDQpIEFzcGlyaW4gMzI1TWcgRWMgVGFiCiAgICAgVGFrZSBvbmUgdGFibGV0IGJ5IG1vdXRoIGV2ZXJ5IGRheQogNSkgQnVzcGlyb25lIEhjbCAxME1nIFRhYgogICAgIFRha2Ugb25lIHRhYmxldCBieSBtb3V0aCB0d2ljZSBhIGRheSBhcyBuZWVkZWQgZm9yIGFueGlldHkKIDYpIENhcHNhaWNpbiAwLjElIENyZWFtCiAgICAgQXBwbHkgYSBzbWFsbCBhbW91bnQgdG9waWNhbGx5IHR3aWNlIGEgZGF5CiA3KSBDbG9waWRvZ3JlbCBCaXN1bGZhdGUgNzVNZyBUYWIKICAgICBUYWtlIG9uZSB0YWJsZXQgZXZlcnkgZGF5CiA4KSBEaXBoZW5oeWRyYW1pbmUgSGNsIDI1TWcgQ2FwCiAgICAgVGFrZSBvbmUgY2Fwc3VsZSBieSBtb3V0aCBmb3VyIHRpbWVzIGEgZGF5IGFzIG5lZWRlZAogOSkgRmx1b3hldGluZSBIY2wgMTBNZyBDYXAKICAgICBUYWtlIG9uZSBjYXBzdWxlIGJ5IG1vdXRoIGV2ZXJ5IGRheQoxMCkgRmx1dGljYXMgNTAwL1NhbG1ldGVyb2wgNTAgSW5obCBEaXNrIDYwCiAgICAgSW5oYWxlIDEgaW5oYWxhdGlvbiBieSBtb3V0aCB0d2ljZSBhIGRheSByaW5zZSBtb3V0aCBhbmQKICAgICBTcGl0IGFmdGVyICB1c2UuIERpc2NhcmQgMSBtb250aCBhZnRlciBvcGVuaW5nIGZvaWwgcG91Y2guCjExKSBGb2xpYyBBY2lkIDFNZyBUYWIKICAgICBUYWtlIG9uZSB0YWJsZXQgYnkgbW91dGggZXZlcnkgZGF5CjEyKSBHbGlwaXppZGUgNU1nIFRhYgogICAgIFRha2Ugb25lIHRhYmxldCBieSBtb3V0aCB0d2ljZSBhIGRheSBmb3IgZGlhYmV0ZXMuIFRha2UKICAgICAzMCBNaW51dGVzICBiZWZvcmUgYSBtZWFsLgoxMykgSHlkcm9jaGxvcm90aGlhemlkZSAyNU1nIFRhYgogICAgIFRha2UgdHdvIHRhYmxldHMgYnkgbW91dGggZXZlcnkgbW9ybmluZyBmb3IgYmxvb2QgcHJlc3N1cmUKMTQpIEh5ZHJvY29ydGlzb25lIDElIENyZWFtCiAgICAgQXBwbHkgdGhpbiBmaWxtIHRvcGljYWxseSBldmVyeSBkYXkKMTUpIElidXByb2ZlbiA0MDBNZyBUYWIKICAgICBUYWtlIG9uZSB0YWJsZXQgYnkgbW91dGggdGhyZWUgdGltZXMgYSBkYXkgYXMgbmVlZGVkCjE2KSBJbnN1bGluIFJlZyAxMDBVL21sIEluaiAxME1sIFZsCiAgICAgSW5qZWN0IDUgdW5pdHMgc3ViY3V0YW5lb3VzbHkgYXMgZGlyZWN0ZWQKMTcpIE1ldGZvcm1pbiBIY2wgNTAwTWcgVGFiCiAgICAgVGFrZSBvbmUgdGFibGV0IGJ5IG1vdXRoIGV2ZXJ5IGRheQoxOCkgTWV0b3Byb2xvbCBTdWNjaW5hdGUgMjVNZyBTYSBUYWIKICAgICBUYWtlIHR3byB0YWJsZXRzIGJ5IG1vdXRoIGV2ZXJ5IGRheQoxOSkgTXVsdGl2aXRhbWluIENhcC90YWIKICAgICBUYWtlIDEgY2FwL3RhYiBieSBtb3V0aCBldmVyeSBkYXkKMjApIE9tZXByYXpvbGUgMjBNZyBFYyBDYXAKICAgICBUYWtlIG9uZSBjYXBzdWxlIGJ5IG1vdXRoIGV2ZXJ5IGRheQoyMSkgUGlvZ2xpdGF6b25lIEhjbCAxNU1nIFRhYgogICAgIFRha2Ugb25lIHRhYmxldCBieSBtb3V0aCBldmVyeSBkYXkKMjIpIFByYXZhc3RhdGluIE5hIDgwTWcgVGFiCiAgICAgVGFrZSBvbmUtaGFsZiB0YWJsZXQgYnkgbW91dGggZXZlcnkgZXZlbmluZyB0byBsb3dlciB5b3VyCiAgICAgQ2hvbGVzdGVyb2wKMjMpIFRhbXN1bG9zaW4gSGNsIDAuNE1nIENhcAogICAgIFRha2Ugb25lIGNhcHN1bGUgYnkgbW91dGggYXQgYmVkdGltZQoyNCkgVGlvdHJvcGl1bSAxOE1jZyBJbmhsIENhcCAzMAogICAgIFBsYWNlIDEgY2Fwc3VsZSAoMTggbWNnKSBpbiBpbmhhbGVyLCBpbmhhbGUgYnkgbW91dGggZXZlcnkKICAgICBEYXkgIHJlcGxhY2VzIGlwcmF0cm9waXVtIChhdHJvdmVudC9jb21iaXZlbnQpLCBmb3IKICAgICBJbmhhbGVyIHVzZSBvbmx5CiAKQWN0aXZlIE5vbi1WQSBNZWRpY2F0aW9uczoKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CiAxKSBBY2V0YW1pbm9waGVuIDUwME1nIFRhYgogICAgIFRha2Ugb25lIHRhYmxldCBieSBtb3V0aAogMikgQW1pb2Rhcm9uZSBIY2wgKFBhY2Vyb25lKSAyMDBNZyBUYWIKICAgICBUYWtlIG9uZSB0YWJsZXQgYnkgbW91dGggZXZlcnkgZGF5CiAzKSBBc3BpcmluCiAgICAgVGFrZSAgYnkgbW91dGggZXZlcnkgZGF5CiA0KSBDbG9waWRvZ3JlbCBCaXN1bGZhdGUgNzVNZyBUYWIKICAgICBUYWtlIG9uZSB0YWJsZXQgYnkgbW91dGgKIDUpIE11bHRpdml0YW1pbiBDYXAvdGFiCiAgICAgVGFrZSAxIGNhcC90YWIgYnkgbW91dGggZXZlcnkgZGF5CiAKICBZb3UgaGF2ZSAyOSBhY3RpdmUgbWVkaWNhdGlvbnMKIAogCisrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKIApZb3VyIFByaW1hcnkgQ2FyZSBQcm92aWRlciBpczogVW5rbm93bgogCiNGVVRVUkUgQVBQT0lOVE1FTlRTOgpGdXR1cmUgQXBwb2ludG1lbnRzOgpObyBmdXR1cmUgYXBwb2ludG1lbnRzIG9uIGZpbGUKIAojTEFCUyB0aGF0IHdlcmUgb3JkZXJlZCB0b2RheTogICBObyBwZW5kaW5nIGxhYnMuCiAKI0lNQUdJTkcgU1RVRElFUyB0aGF0IHdlcmUgb3JkZXJlZCBpbiB0aGUgbGFzdCAzIG1vbnRoczogICBOTyByZWNlbnQgcGVuZGluZwpSYWRpb2xvZ3kgZm91bmQuCiAKICArIElmIGFuIGltYWdpbmcgc3R1ZHkgKHVsdHJhc291bmQsIENULCBNUkksIGV0YykgaGFzIGJlZW4gb3JkZXJlZCwKICAgIHBsZWFzZSBjYWxsIHRoZSBQb3J0bGFuZCBWQSBNZWRpY2FsIENlbnRlciBJbWFnaW5nIFNjaGVkdWxpbmcgbnVtYmVyCiAgICB0byBtYWtlIGFycmFuZ2VtZW50czogNTAzLTI3My01MTI2LgogCiNDT05TVUxUUyBvciBQUk9DRURVUkVTIHRoYXQgd2VyZSBvcmRlcmVkIGluIHRoZSBwYXN0IHdlZWs6ICAgTk8gcmVjZW50IHBlbmRpbmcKQ29uc3VsdHMgZm91bmQuCiAKWW91ciBoZWFsdGggY2FyZSB0ZWFtIG1heSBoYXZlIGRpc2N1c3NlZCB3aGV0aGVyIG9yIG5vdCB5b3Ugd2VyZSBleHBvc2VkIHRvIGFueQpwb3RlbnRpYWwgdG94aW5zL2hhemFyZHMgZHVyaW5nIHlvdXIgbWlsaXRhcnkgc2VydmljZSBkdXJpbmcgdGhpcyB2aXNpdC4KIApUaGlzIGlzIHJlbGF0ZWQgdG8gYSBuZXcgVG94aWMgRXhwb3N1cmUgU2NyZWVuaW5nIChURVMpIHByb2dyYW0gaW4gdGhlIFZBLiAgSWYKeW91IGJlbGlldmUgeW91IHdlcmUgZXhwb3NlZCB0byBwb3RlbnRpYWwgdG94aW5zL2hhemFyZHMgZHVyaW5nIHlvdXIgc2VydmljZSwKeW91IGNhbiBnbyBoZXJlIHRvIGxlYXJuIG1vcmUgYWJvdXQgd2hhdCB0aGUgVkEgaXMgZG9pbmcgdG8gc3VwcG9ydCBvdXIKVmV0ZXJhbnM6Cmh0dHBzOi8vd3d3LndhcnJlbGF0ZWRpbGxuZXNzLnZhLmdvdi9XQVJSRUxBVEVESUxMTkVTUy9lZHVjYXRpb24vbG9jYWwtb2ZmCmVyaW5ncy9zdXBwb3J0L1RveGljRXhwb3N1cmVTY3JlZW5pbmdFbmdsaXNoLnBkZgogCklmIHlvdSBiZWxpZXZlIHlvdSB3ZXJlIGV4cG9zZWQgdG8gYWdlbnQgb3JhbmdlLCBidXJuIHBpdHMsIG90aGVyIGFpcmJvcm5lCmhhemFyZHMsIHJhZGlhdGlvbiwgb3IgIHNlcnZlZCBpbiBHdWxmIFdhciB0aGVhdGVycywgeW91IG1heSBiZSBlbGlnaWJsZSB0bwpwYXJ0aWNpcGF0ZSBpbiBhIGZyZWUgcmVnaXN0cnkgZXhhbS4gIFlvdSBtYXkgY2FsbCA1MDMtOTA2LTUxMDAgZm9yIG1vcmUKaW5mb3JtYXRpb24uCiAKRm9yIEhlYWx0aGNhcmUgRWxpZ2liaWxpdHkgYW5kIEVucm9sbG1lbnQgcXVlc3Rpb25zLCBjb250YWN0IG91ciBFbnJvbGxtZW50Ck9mZmljZSBhdCA1MDMtMjczLTUwNjkuCiAKRm9yIHF1ZXN0aW9ucyBhYm91dCBCZW5lZml0cyBhbmQgQ2xhaW1zIHlvdSBjYW4gZmluZCBhIFZldGVyYW4gU2VydmljZQpPcmdhbml6YXRpb24gT2ZmaWNlIG5lYXIgeW91IGF0OgpodHRwczovL3d3dy5lYmVuZWZpdHMudmEuZ292L2ViZW5lZml0cy92c28tc2VhcmNoIG9yIGJ5IGNhbGxpbmcgVkJBCjEtODAwLTgyNy0xMDAwLgogCklmIHlvdSBhcmUgaW50ZXJlc3RlZCBpbiBwaHlzaWNhbCB0aGVyYXB5LCBwbGVhc2UgY2FsbCB0aGUgbnVtYmVyIGJlbG93IHRvCmFycmFuZ2UgYW4gYXBwb2ludG1lbnQ6CkFsbCBjbGluaWNzOiAgICAgICAgICAgICAoNTAzKTI3My01MDE4CiAKIApZb3VyIHZpdGFscyBmb3IgdG9kYXkgYXJlOgogIEJsb29kIFByZXNzdXJlIC0gMTI1LzgwICgwMS8wOC8yMDIwIDE0OjI3KQogIFdlaWdodCAtIDI1NSBsYiBbMTE1LjY3IGtnXSAoMDEvMDgvMjAyMCAxNDoyNykKICBQYWluIExldmVsIC0gMCAoMDEvMDgvMjAyMCAxNDoyNykKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KIApJZiB5b3UgaGF2ZSBxdWVzdGlvbnMgb3IgY29uY2VybnMgYWZ0ZXIgdG9kYXksIHBsZWFzZSBjb250YWN0IHRoZSBjbGluaWMgYnkKY2FsbGluZyAxLTgwMC05NDktMTAwNC4gU2VsZWN0IG9wdGlvbiAyIHdoZW4gdGhlIGF1dG9tYXRlZCBtZXNzYWdlIHN0YXJ0cy4KCgo="^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "PC - AFTERVISIT SUMMARY" ] ;
+       fhir:creation [ fhir:v "2023-03-17T09:27:00Z"^^xsd:dateTime ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:related ( [
+       fhir:reference [ fhir:v "#location-0" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

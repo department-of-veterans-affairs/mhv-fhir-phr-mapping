@@ -1,0 +1,102 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "6b868dda-fe6b-47be-ad85-10e17bb7f39d",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference</b><a name=\"6b868dda-fe6b-47be-ad85-10e17bb7f39d\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource DocumentReference &quot;6b868dda-fe6b-47be-ad85-10e17bb7f39d&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: id:\u00a0NoteTO.16024843\u00a0(use:\u00a0USUAL)</p><p><b>status</b>: current</p><p><b>type</b>: MHV DIALOG NOTE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11506-3)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-0.html\">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>date</b>: Sep 16, 2008, 4:44:29\u202fAM</p><p><b>author</b>: <a name=\"author-0\"> </a></p><blockquote><p/><p><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.2926\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><p><b>authenticator</b>: <a name=\"approvedBy-0\"> </a></p><blockquote><p/><p><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.2926\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td><td><b>Creation</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 2155 bytes)</td><td>SECURE MESSAGING</td><td>2008-09-16 09:44:29+0000</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"location-0\"> </a><blockquote><p/><p><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner #author-0</b><a name=\"author-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.2926\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #approvedBy-0</b><a name=\"approvedBy-0\"> </a></p><p><b>identifier</b>: id:\u00a0AuthorTO.2926\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #location-0</b><a name=\"location-0\"> </a></p><p><b>identifier</b>: id:\u00a0LocationTO.648\u00a0(use:\u00a0USUAL)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "author-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.2926"
+    }],
+    "name" : [{
+      "text" : "DOUGLAS,DAVID M",
+      "family" : "DOUGLAS,DAVID M"
+    }]
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "approvedBy-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "AuthorTO.2926"
+    }],
+    "name" : [{
+      "text" : "DOUGLAS,DAVID M",
+      "family" : "DOUGLAS,DAVID M"
+    }]
+  },
+  {
+    "resourceType" : "Location",
+    "id" : "location-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "LocationTO.648"
+    }],
+    "name" : "PORTLAND VA MEDICAL CENTER"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "NoteTO.16024843"
+  }],
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "11506-3"
+    }],
+    "text" : "MHV DIALOG NOTE"
+  },
+  "category" : [{
+    "coding" : [{
+      "system" : "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category",
+      "code" : "clinical-note"
+    }]
+  }],
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "date" : "2008-09-16T09:44:29Z",
+  "author" : [{
+    "reference" : "#author-0"
+  }],
+  "authenticator" : {
+    "extension" : [{
+      "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen",
+      "valueDateTime" : "2008-09-16T02:44:32Z"
+    }],
+    "reference" : "#approvedBy-0"
+  },
+  "content" : [{
+    "attachment" : {
+      "contentType" : "text/plain",
+      "data" : "CiBMT0NBTCBUSVRMRTogU0VDVVJFIE1FU1NBR0lORyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgClNUQU5EQVJEIFRJVExFOiBNSFYgRElBTE9HIE5PVEUgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKREFURSBPRiBOT1RFOiBTRVAgMTYsIDIwMDhAMDk6NDQ6MjkgIEVOVFJZIERBVEU6IFNFUCAxNiwgMjAwOEAwMjo0NDozMSAgICAgIAogICAgICBBVVRIT1I6IERPVUdMQVMsREFWSUQgTSAgICAgIEVYUCBDT1NJR05FUjogICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICBVUkdFTkNZOiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVEFUVVM6IENPTVBMRVRFRCAgICAgICAgICAgICAgICAgICAgIAoKLS0tLS0tT3JpZ2luYWwgTWVzc2FnZS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpTZW50OiAgMDkvMTYvMjAwOCAwNDozMSBBTQpGcm9tOiAgTUhWWlpWSVNOVFdFTlRZLCBURVNUClRvOiAgRG91Z2xhcyBEX1ByaW1hcnkgQ2FyZV9Qb3J0bGFuZApTdWJqZWN0OiAgU2NoZWR1bGUgcm91dGluZSBhcHBvaW50bWVudAoKUGxlYXNlIG5vdGUgdGhhdCB3ZSBuZWVkIDMgYnVzaW5lc3MgZGF5cyB0byByZXNwb25kIHRvIHNlY3VyZSBtZXNzYWdpbmcKClt4XSBJIHJlY2VpdmVkIGEgcmVjYWxsIGxldHRlci9wb3N0IGNhcmQvcGhvbmUgY2FsbCB0byBzY2hlZHVsZSBhIGZvbGxvdyB1cCAKYXBwb2ludG1lbnQKClsgXSBJIGFtIGR1ZSBmb3IgYW4gYXBwb2ludG1lbnQKClsgXSBPdGhlciAocGxlYXNlIGVudGVyIGluZm9ybWF0aW9uIGhlcmUgaW5jbHVkaW5nIG5hbWUgYW5kIGxvY2F0aW9uIG9mIGNsaW5pYwoKUGxlYXNlIGxldCB1cyBrbm93IGlmIHlvdSB3b3VsZCBwcmVmZXIgYSBtb3JuaW5nIG9yIGFmdGVybm9vbiBhcHBvaW50bWVudC4gCklmIHBvc3NpYmxlLCB3ZSB3aWxsIHRyeSB0byBnaXZlIHlvdSB0aGUgdGltZSB5b3Ugd291bGQgcHJlZmVyCgpbeF0gTW9ybmluZyAoYmV0d2VlbiA4IGFtIGFuZCBub29uKQoKWyBdIEFmdGVybm9vbiAoYmV0d2VlbiAxIHBtIGFuZCA0IHBtKQoKWyBdIE5vIHByZWZlcmVuY2UgYW55IHRpbWUgYmV0d2VlbiA4IGFtIGFuZCA0IHBtIGlzIE9LCgpQbGVhc2UgaW5kaWNhdGUgdGhlIGRheShzKSBvZiB0aGUgd2VlayB5b3Ugd291bGQgbGlrZSBmb3IgeW91ciBhcHBvaW50bWVudC4gCklmIHBvc3NpYmxlLCB3ZSB3aWxsIHRyeSB0byBnaXZlIHlvdSB0aGUgZGF5IHlvdSB3b3VsZCBwcmVmZXIuCgpbIF0gTW9uZGF5IFsgXSBUdWVzZGF5IFt4XSBXZWRuZXNkYXkgWyBdIFRodXJzZGF5IFsgXSBGcmlkYXkKClsgXSBObyBwcmVmZXJlbmNlIGFueSBkYXkgaXMgT0sKClJlYXNvbihzKSBmb3IgYXBwb2ludG1lbnQ6ICBJIHJlY2VpdmVkIGEgcG9zdCBjYXJkLiAKCgogICAgIC0tLS0tLU9yaWdpbmFsIE1lc3NhZ2UtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KICAgICBTZW50OiAgMDkvMTYvMjAwOCAwNDo0NCBBTQogICAgIEZyb206ICBEb3VnbGFzLCBEYXZpZAogICAgIFRvOiAgTUhWWlpWSVNOVFdFTlRZLCBURVNUCiAgICAgU3ViamVjdDogIFNjaGVkdWxlIHJvdXRpbmUgYXBwb2ludG1lbnQKICAgICAKICAgICBZb3VyIGZvbGxvdyB1cCBhcHBvaW50bWVudCBoYXMgYmVlbiBzY2hlZHVsZWQgZm9yOgoKU2VwdCAxOCBhdCAxMEFNCgpOQU1FIG9mIENsaW5pYzogUHJpbWFyeSBDYXJlIERvdWdsYXMKCk5BTUUgb2YgUHJvdmlkZXIgRGF2aWQgRG91Z2xhcyAKCkhvc3BpdGFsIG9yIENsaW5pYyBBZGRyZXNzICBQb3J0bGFuZCBWQU1DCgpQbGVhc2UgcmVzcG9uZCB0byB0aGlzIGVtYWlsIElmIHlvdSBuZWVkIHRvIGNoYW5nZSB0aGlzIGFwcG9pbnRtZW50LiAgV2UgCm5lZWQgdG8gcmVjZWl2ZSB5b3VyIG1lc3NhZ2UgYXQgbGVhc3QgdGhyZWUgYnVzaW5lc3MgZGF5cyBiZWZvcmUgeW91ciAKYXBwb2ludG1lbnQuCgpJZiBpdCBpcyBsZXNzIHRoYW4gdGhyZWUgYnVzaW5lc3MgZGF5cyB1bnRpbCB0aGUgYXBwb2ludG1lbnQsIHBsZWFzZSBjYWxsIAp0aGUgZm9sbG93aW5nIG51bWJlciB0byBjYW5jZWwgb3IgcmVzY2hlZHVsZSB0aGlzIGFwcG9pbnRtZW50OgoKCgoKIAovZXMvIERBVklEIE0uIERPVUdMQVMgTUQKRkFDSUxJVFkgQ0lPL0FUVEVORElORyBQU1lDSElBVFJJU1QKU2lnbmVkOiAwOS8xNi8yMDA4IDAyOjQ0Cg==",
+      "title" : "SECURE MESSAGING",
+      "creation" : "2008-09-16T09:44:29Z"
+    }
+  }],
+  "context" : {
+    "related" : [{
+      "reference" : "#location-0"
+    }]
+  }
+}
