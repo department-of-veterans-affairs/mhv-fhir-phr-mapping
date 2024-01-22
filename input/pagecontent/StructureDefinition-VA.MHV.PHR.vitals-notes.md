@@ -65,6 +65,9 @@
   - facility
 - comments has been saved in the past, but there is no way to enter a comment on a vital and no place in vista/fileman for a comment.
 - Pulse-OX - supplemental oxygen concentration and rate are NOT sent to us in VIA. Thus we don't have these to convert.
+
+Qualifiers are beyond current MHV eVault, so are not MVP. Given that KBS is still working on defining what should be done, we should not implement any use of qualifiers.
+
 - qualifiers
   - lookup in following ConceptMap for:
     - `.bodySite` = [ConceptMap VF_VitalSite](ConceptMap-VF-VitalsSite.html)
