@@ -66,10 +66,10 @@
 - Implement an [entered-in-error](background.html#entered-in-error)
 - `timestamp` needs to go into `.content.attachment.creation` because sometimes it is just a date without time
 - if `timestamp` is missing the time (just a date) then populate `.date` with `procTimestamp`
-- given current code starts by capturing current data that is not entered in error (id, identifier, status), records all the identifiers updated, and at the end looks for any current data that was not updated, so that the ones not updated can be marked as entered-in-error... 
-  - current code does an update with an empty resource with just the id, identifier, and status. Thus leaving a corrupted set of data behind.
-    - If we want DELETE, then we should just use DELETE
-    - If we are going to mark as entered-in-error, then we should keep the data 
+- given current replacement for wipe-and-replace code starts by capturing current resources that are not entered in error (id, identifier, status), records all the identifiers updated, and at the end looks for any current data that was not updated, so that the ones not updated can be marked as entered-in-error...
+  - current code does an update with an empty resource with just the id, identifier, and status=entered-in-error. Thus leaving a corrupted set of data behind.
+    - If we want DELETE, then we should just use DELETE. This may be the right solution as we will never be sure what happened, it just vanished. Specifically the data might have been changed.
+    - If we are going to mark as entered-in-error, then we should keep the data
       - GET full current resource, update status, and UPDATE
       - use PATCH to just change the status (see [section 3.7.4 Transaction Patch](https://hapifhir.io/hapi-fhir/docs/model/bundle_builder.html))
   - This current list could be used to place the current id on entries with the given identifier, these entries can be then marked as conditional update. Where as today it is a conditional update based on a lookup on the .identifier. This will improve the performance of the HAPI server as it will remove an indirect lookup. We can also know which entries are NEW, so we can mark them as create.
