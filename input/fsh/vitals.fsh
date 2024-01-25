@@ -115,7 +115,6 @@ Not drived from us-core vitals, us-core does not have Pain and forbids valueInte
 // alternative is to use Integer, and write the profile ourself.
 
 * ^extension[$fmm].valueInteger = 3
-
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -327,6 +326,7 @@ Title:          "VA MHV PHR Vital-Signs for Blood Pressure"
 Description:    """
 A profile on the Observation resource for Blood Pressure
 """
+* ^extension[$fmm].valueInteger = 3
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"

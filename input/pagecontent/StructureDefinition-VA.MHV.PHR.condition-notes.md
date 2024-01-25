@@ -6,9 +6,8 @@
 - [User Requirements for Conditions](https://github.com/department-of-veterans-affairs/va.gov-team/blob/master/products/health-care/digital-health-modernization/mhv-to-va.gov/medical-records/data-domains/health-issues/health-issues-brief.md)
 - based on US-Core for Condition Resource profile
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition` to indicate the intent to be compliant with this profile
-- Presume we will not expose those that are ProblemTO.removed = true, but we should update our FHIR database in case the previous was recorded.
-  - `clinicalStatus` set to `active` unless `entered-in-error`
-  - `verificationStatus` will use [entered-in-error method](background.html#entered-in-error) to support `entered-in-error`
+- VIA will not expose those that are ProblemTO.removed = true, but we should update our FHIR database in case the previous was recorded.
+  - Thus we will be using [Index-Update-and-Delete](background.html#entered-in-error)
 - `note` to have as many indexes to handle all the ProblemTO.comments and ProblemTO.comment
 - `icd` is not always ICD-9, sometimes it is ICD-10. The following algorithm by Jay Lyle:
   - if the code starts with a number, its ICD-9
@@ -24,11 +23,25 @@
 
 - confirm the mapping
 - not clear if the ProblemTO.location is describing, is it evidence?
-- not clear what ProblemTO.acuity.tag is
-- not clear what ProblemTo.facility is
+- not clear what `acuity` is mock data is always `C` / `CHRONIC`
+- not clear what `facility` is
 - **are we ever exposed to ProblemTO.removed=true**
-- **what are the other values for ProblemTO.status**
-  - how do we handle when a problem is moved from active to not active? Are we made aware of this? Should we delete, mark not active, or mark entered-in-error?
+- **what are the other values for ProblemTO.status** mock data is always `ACTIVE`
+- not clear what `verified` is. All sample data true/false.
+- not clear what `type.category` is. All samples are empty
+- Do we need to preserve both `modifiedDate` and `timestamp`?
+- How to preserve the `serviceConnected` boolean
+- How to preserve the `observer` (AuthorTO)
+- Don't have mock data with the following items defined in the ProblemTO schema -- **Not clear VIA will ever fill them**
+  - `organizationalProperties` (taggedTextArray)
+  - `comment` (string)
+  - `comments` (taggedNoteArray)
+  - `priority` (string)
+  - `noteNarrative` (string)
+  - `exposures` (string)
+  - `resolvedDate` (string)
+  - `onsetDate` (string)
+  - `providerNarrative` (string)
 
 #### 2023-10-12
 

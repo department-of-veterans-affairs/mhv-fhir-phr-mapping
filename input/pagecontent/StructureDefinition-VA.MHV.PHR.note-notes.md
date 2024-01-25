@@ -47,8 +47,8 @@
   - could we just de-duplicate only based on timestamp? If so, does that do anything useful?
 - Using `attachment.data`. Note that Cerner uses `attachment.url` with a Binary.
 - some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them. It seems that VIA might not be populating them. serviceCategory, cosigner, hasAddendum, isAddendum, originalNoteID, hasImages, itemId, consultId, surgicalProcId, prfId, and parentId
-- VIA does not tell us about signed notes that have been deleted.
-  - Thus we will be using [Update-and-Expunge](background.html#entered-in-error)
+- VIA does not tell us about signed notes that have been deleted or marked entered-in-error.
+  - Thus we will be using [Index-Update-and-Delete](background.html#entered-in-error)
 
 #### Business Rules
 

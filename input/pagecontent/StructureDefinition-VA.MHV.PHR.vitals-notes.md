@@ -82,11 +82,11 @@ Qualifiers are beyond current MHV eVault, so are not MVP. Given that KBS is stil
     - `component[=].code` either ConceptMap target code, or original VUID if none
     - no .component.value[x]
     - `component[=].dataAbsentReason` = `http://terminology.hl7.org/CodeSystem/data-absent-reason#not-applicable`
+- VIA does not tell us about vitals that have been deleted or marked entered-in-error.
+  - Thus we will be using [Index-Update-and-Delete](background.html#entered-in-error)
 
 #### Mapping Concerns
 
-- Not clear how we learn of previously good vitals that should be changed and marked as entered-in-error
-  - seems likely that VIA filters these out
 - should we take the location (a location IEN) and figure out which site (Organization) manages that location (institution) so that we can have an Organization rather than just Location.  (CDW does this)
   - or should we do a lookup in MHV similar to what we did with allergies.
 - testing of all the vista supported vitals beyond the MVP 8 should be done to assure that we can handle them without problem.

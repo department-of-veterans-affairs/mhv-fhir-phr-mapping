@@ -16,7 +16,8 @@
   - valueCodeableConcept of SNOMED#401515003 Known present
   - see [Immunization Reaction Profile of Observation](StructureDefinition-VA.MHV.PHR.immunizationReaction.html)
   - note that va.gov has been directed to now show reaction. The reason is that this is not available in Vista for clinician use anymore.
-- `status` will be `completed` for those we receive from VIA, those we no longer receive will be changed to `entered-in-error`
+- `status` will be `completed` for those we receive from VIA,
+  - those we no longer receive will be using [Index-Update-and-Delete](background.html#entered-in-error)
 - `contraindicated` - '1' for Yes (do not repeat this vaccine), '0' for no (okay to use in the future)
   - KBS indicates that there is a very small fragment that have this set.
   - KBS discussion, we will follow the definition of the element.  Meaning we presume tha the immunization was given. This could be recorded as a FHIR Immunization with `.status=not-done`.
@@ -94,4 +95,5 @@ Note will NOT be using the SNOMED conversion as it is only partial and may not b
   - 293104008 Adverse reaction to component of vaccine product
     - 2667000 Absent
     - 410516002 Known absent
-- Implement an [entered-in-error](background.html#entered-in-error) - immunizations no longer fed to with VIA need to have their `.status` changed to `#entered-in-error`
+- VIA does not tell us about immunizations that have been deleted or marked entered-in-error.
+  - Thus we will be using [Index-Update-and-Delete](background.html#entered-in-error)

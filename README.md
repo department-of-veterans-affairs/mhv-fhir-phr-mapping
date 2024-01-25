@@ -10,6 +10,9 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
+- Conditions
+  - Mapping concerns outlined
+
 ### 0.3.1
 
 2024-01-19
