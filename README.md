@@ -13,6 +13,27 @@ The notes below for each release. Archive of [released packages](https://github.
 - Conditions
   - Mapping concerns outlined
 
+### 0.3.2
+
+2024-01-29
+
+- vitals
+  - moved to FMM 4 as the mapping is ready for implementation, with the exception of qualifiers which will be added later.
+- notes
+  - ready with new deleted processing model
+  - identified implementation improvement on use of timestamp and DocumentReference.date
+  - identified implementation improvement on use of current/historic identifier indexing
+  - include backlog jira tickets
+- immunization
+  - ready with new deleted processing model
+  - include backlog jira tickets
+- conditions
+  - identified the mapping concerns
+  - these mapping concerns need to be experimentally tested by entering specific data at Vista and see what comes to us in VIA.
+- Patient
+  - The MHV patientId is placed into the .identifier, but the .identifier.system is the bare VA OID. This must not be used as that bare VA OID is used for the patient ICN. Thus we need an identified system. Working on getting an OID sub-node, else will define a system value in the IG.
+  - include backlog jira ticket
+
 ### 0.3.1
 
 2024-01-19

@@ -14,11 +14,11 @@
     "valueInteger" : 1
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr",
-  "version" : "0.3.1",
+  "version" : "0.3.2-ci",
   "name" : "VAMHVFHIRPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2024-01-19T11:04:10-06:00",
+  "date" : "2024-01-29T11:03:46-06:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -202,17 +202,6 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueString" : "path-output"
-      },
-      {
-        "url" : "value",
-        "valueString" : "docs"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
         "valueString" : "fmm-definition"
       },
       {
@@ -339,6 +328,17 @@
       {
         "url" : "value",
         "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -602,17 +602,6 @@
     {
       "extension" : [{
         "url" : "code",
-        "valueCode" : "path-output"
-      },
-      {
-        "url" : "value",
-        "valueString" : "docs"
-      }],
-      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
-    },
-    {
-      "extension" : [{
-        "url" : "code",
         "valueCode" : "fmm-definition"
       },
       {
@@ -739,6 +728,17 @@
       {
         "url" : "value",
         "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -2564,6 +2564,18 @@
         "reference" : "Immunization/ex-MHV-immunization-2"
       },
       "name" : "Immunization 2",
+      "description" : "ImmunizationTO.124685",
+      "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Immunization"
+      }],
+      "reference" : {
+        "reference" : "Immunization/ex-MHV-immunization-2-none"
+      },
+      "name" : "Immunization 2 - but with a reaction explicitly indicated as NONE, this is different than no reaction indicated.",
       "description" : "ImmunizationTO.124685",
       "exampleCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"
     },
@@ -4964,7 +4976,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.patient"
       },
       "name" : "VA MHV PHR Patient",
-      "description" : "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- mapping from patient details in eVault (not from VIA/HDR transaction)\n  - all elements populated from eVault PHR patient service\n  - phrVPRDAO.fetchDetailPatientInfo(icn)\n- `identifier`  \n  - `value` = GetPatientId\n  - `system` = `urn:oid:2.16.840.1.113883.4.349`\n  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.\n- `name` - First and Last Name\n- `gender`\n- `birthDate`\n- `active` = true\n\nmapping concerns - JIRA\n- The Identifier for the ICN is still being discussed\n- identifer.use is not being populated so can't use slicing\n- name seems to only populate first and last, but puts them both in given\n- populating identifier with GetPatientId() - the MHV patientId (jwt subjectId)\n  - **the system value should not be the generic VA oid**, but rather some URI identifying MHV as this is where these id values are unique.\n- eVault also has, but are not being used in the FHIR Patient\n  - MiddleName\n  - Ssn\n  - Email\n  - Icn \n- set .meta.profile\n- Would be even better if we could use a common Patient registry. \n- The Patient resource can hold much more such as religion, birth place, other identifiers, etc...\n- Integration with Cerner will force even more federation of identities\n- Not mapping PatientTO",
+      "description" : "A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.\n\n- based on US-Core for Patient\n- mapping from patient details in eVault (not from VIA/HDR transaction)\n  - all elements populated from eVault PHR patient service\n  - phrVPRDAO.fetchDetailPatientInfo(icn)\n- `identifier`  \n  - `value` = GetPatientId\n  - `system` = `urn:oid:2.16.840.1.113883.4.349`\n  - not using ICN but rather the id value known to eVault. There is concern the ICN is not unique enough.\n- `name` - First and Last Name\n- `gender`\n- `birthDate`\n- `active` = true\n\nmapping concerns - TODO\n- The Identifier for the ICN is still being discussed\n- identifer.use is not being populated so can't use slicing\n- name seems to only populate first and last, but puts them both in given\n- populating identifier with GetPatientId() - the MHV patientId (jwt subjectId)\n  - TODO: **the system value should not be the generic VA oid**, but rather some URI identifying MHV as this is where these id values are unique.\n  - TODO: John is requesting an assigned OID for the MHV patientId system\n    - Historically `200MH` was used as an assigning authority `USVHA` identifier type (e.g., H7 v2 Identifier)\n  - FHIR database will likely need to have the current Patient resources updated. Updating the FHIR database first will continue to work with current client.\n  - **MHV-54036**\n  - TODO: client will need to change to be specific to the new system value - https://github.com/department-of-veterans-affairs/vets-api/blob/f2733b21112f94c90dae618f0420d712f01cdf49/lib/medical_records/client.rb#L75\n- eVault also has, but are not being used in the FHIR Patient\n  - MiddleName\n  - Ssn\n  - Email\n  - Icn \n- set .meta.profile\n- Would be even better if we could use a common Patient registry. \n- The Patient resource can hold much more such as religion, birth place, other identifiers, etc...\n- Integration with Cerner will force even more federation of identities\n- Not mapping PatientTO",
       "exampleBoolean" : false
     },
     {

@@ -11,6 +11,8 @@
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport` to indicate the intent to be compliant with this profile
 - `code.text` contains the original `labReportTO.title`
   - `code` also includes the type in LOINC
+    - SP -> LOINC#60567-5 "Comprehensive pathology report panel"
+    - MI -> LOINC#79381-0 "Gastrointestinal pathogens panel - Stool by NAA with probe detection"
 - `category` must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`
   - `category` also holds 1..* codes from the contained Observation.code
 

@@ -85,15 +85,10 @@ Note will NOT be using the SNOMED conversion as it is only partial and may not b
 - codes for reaction -- TODO Leaf 60
   - not a priority as current text is sufficient for now.
   - some of the codes can be mapped, but others are multiple things in an OR relationship
+  - If the reaction is "NONE", then we should record a contained Observation indicating no reaction. **MHV-54039** -- TODO Leaf 59
 
 #### changes needed
 
 - Historic (those immunizations not given at the VA) can be entered with partial dateTime. Common to not have a time, also not uncommon to only have a year. Current source-code converts these dates wrongly. Dates without time are converted to dates with a midnight time. Dates that are just the year are not recorded at all. The second issue is more critical as the va.gov UI doesn't show times. Both should be fixed. [DateUtilExt.java](https://github.com/department-of-veterans-affairs/mhv-np-phr-api-v2/blob/1d85f200f1c4253bb730718d7960804781dad30e/src/main/java/gov/va/med/mhv/integration/util/DateUtilExt.java)
-  - MHV-52880
+  - **MHV-52880**
 - The contained Location resource should have the meta.profile populated for consistency and validation
-- If the reaction is "NONE", then we should record a contained Observation indicating no reaction.
-  - 293104008 Adverse reaction to component of vaccine product
-    - 2667000 Absent
-    - 410516002 Known absent
-- VIA does not tell us about immunizations that have been deleted or marked entered-in-error.
-  - Thus we will be using [Index-Update-and-Delete](background.html#entered-in-error)

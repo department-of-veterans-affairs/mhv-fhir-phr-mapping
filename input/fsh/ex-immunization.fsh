@@ -97,6 +97,44 @@ InstanceOf: MHVlocation
 Usage: #inline
 * name =  "ADTP BURNETT"
 
+
+Instance:   ex-MHV-immunization-2-none
+InstanceOf: VA.MHV.PHR.immunization
+Description: "ImmunizationTO.124685"
+Usage: #example
+Title: "Immunization 2 - but with a reaction explicitly indicated as NONE, this is different than no reaction indicated."
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #completed
+* vaccineCode.text = "INFLUENZA, INJECTABLE, QUADRIVALENT"
+* vaccineCode.coding[0] = CPT#90688 "IIV4 VACCINE SPLT 0.5 ML IM"
+* patient = Reference(Patient/ex-MHV-patient-1)
+* occurrenceDateTime = 2022-08-05T16:56:38Z
+* recorded = 2022-08-05T16:56:38Z
+* primarySource.extension[dar].valueCode = #unknown
+* identifier[TOid].value = "ImmunizationTO.2" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #usual
+* note.text = "test comment"
+* contained[+] = in-location-2
+* location = Reference(in-location-2)
+//* encounter.identifier.value = "6433261"
+* protocolApplied.series = "COMPLETE"
+* protocolApplied.doseNumberString = "C"
+* reaction.detail = Reference(in-reaction-2-none)
+* contained[+] = in-reaction-2-none
+* contained[+] = ex-MHV-organization-552
+* performer[@default].actor = Reference(ex-MHV-organization-552)
+
+Instance: in-reaction-2-none
+InstanceOf: MHVimmunizationReaction
+Usage: #inline
+* status = #final
+* code.text = "NONE"
+* valueCodeableConcept = SCT#410515003
+* effectiveDateTime = 2022-08-05T16:56:38Z
+* subject = Reference(Patient/ex-MHV-patient-1)
+
+
 Instance:   ex-MHV-immunization-3
 InstanceOf: VA.MHV.PHR.immunization
 Description: "Immunization given in 1980"

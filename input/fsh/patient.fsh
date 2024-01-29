@@ -22,12 +22,17 @@ A profile on the Patient resource for MHV PHR exposing Patient using FHIR API.
 - `birthDate`
 - `active` = true
 
-mapping concerns - JIRA
+mapping concerns - TODO
 - The Identifier for the ICN is still being discussed
 - identifer.use is not being populated so can't use slicing
 - name seems to only populate first and last, but puts them both in given
 - populating identifier with GetPatientId() - the MHV patientId (jwt subjectId)
-  - **the system value should not be the generic VA oid**, but rather some URI identifying MHV as this is where these id values are unique.
+  - TODO: **the system value should not be the generic VA oid**, but rather some URI identifying MHV as this is where these id values are unique.
+  - TODO: John is requesting an assigned OID for the MHV patientId system
+    - Historically `200MH` was used as an assigning authority `USVHA` identifier type (e.g., H7 v2 Identifier)
+  - FHIR database will likely need to have the current Patient resources updated. Updating the FHIR database first will continue to work with current client.
+  - **MHV-54036**
+  - TODO: client will need to change to be specific to the new system value - https://github.com/department-of-veterans-affairs/vets-api/blob/f2733b21112f94c90dae618f0420d712f01cdf49/lib/medical_records/client.rb#L75
 - eVault also has, but are not being used in the FHIR Patient
   - MiddleName
   - Ssn

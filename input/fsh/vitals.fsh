@@ -7,7 +7,7 @@ Title:          "VA MHV PHR Vital-Signs"
 Description:    """
 A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHIR API.
 """
-* ^extension[$fmm].valueInteger = 3
+* ^extension[$fmm].valueInteger = 4
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -114,7 +114,7 @@ Not drived from us-core vitals, us-core does not have Pain and forbids valueInte
 // note must use Quantity as we want to derive off of us-core, but us-core does not include Pain.
 // alternative is to use Integer, and write the profile ourself.
 
-* ^extension[$fmm].valueInteger = 3
+* ^extension[$fmm].valueInteger = 4
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -218,7 +218,7 @@ A profile on the Observation resource for MHV PHR exposing Pluse Oximetry Vital-
 
 Note that VIA does not provide us the supplemental O2 concentration or flowrate
 """
-* ^extension[$fmm].valueInteger = 3
+* ^extension[$fmm].valueInteger = 4
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -326,7 +326,7 @@ Title:          "VA MHV PHR Vital-Signs for Blood Pressure"
 Description:    """
 A profile on the Observation resource for Blood Pressure
 """
-* ^extension[$fmm].valueInteger = 3
+* ^extension[$fmm].valueInteger = 4
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"

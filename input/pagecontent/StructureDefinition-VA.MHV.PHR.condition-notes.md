@@ -23,13 +23,15 @@
 
 - confirm the mapping
 - not clear if the ProblemTO.location is describing, is it evidence?
-- not clear what `acuity` is mock data is always `C` / `CHRONIC`
+- not clear what `acuity` (likely 1.14 PRIORITY)is mock data is always `C` / `CHRONIC` vs `A` / `ACUTE`
 - not clear what `facility` is
 - **are we ever exposed to ProblemTO.removed=true**
 - **what are the other values for ProblemTO.status** mock data is always `ACTIVE`
-- not clear what `verified` is. All sample data true/false.
+- not clear what `verified` is. All sample data true/false. (1.02 CONDITION - Transcribed, Permenant, Hidden)
+- `status` (.12 STATS Active vs Inactive)
 - not clear what `type.category` is. All samples are empty
-- Do we need to preserve both `modifiedDate` and `timestamp`?
+- Do we need to preserve both `modifiedDate` (80201 Date Of Interest) and `timestamp` (Date entered)?
+- `location`
 - How to preserve the `serviceConnected` boolean
 - How to preserve the `observer` (AuthorTO)
 - Don't have mock data with the following items defined in the ProblemTO schema -- **Not clear VIA will ever fill them**
@@ -38,7 +40,7 @@
   - `comments` (taggedNoteArray)
   - `priority` (string)
   - `noteNarrative` (string)
-  - `exposures` (string)
+  - `exposures` (string) -- head or neck cancer, military sexual trauma, agent orange
   - `resolvedDate` (string)
   - `onsetDate` (string)
   - `providerNarrative` (string)
