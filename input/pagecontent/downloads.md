@@ -1,7 +1,6 @@
 
 You can download:
 
-- [this entire guide](full-ig.zip)
 - the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), or
 - the example resources in [json](examples.json.zip), or [xml](examples.xml.zip)
 
