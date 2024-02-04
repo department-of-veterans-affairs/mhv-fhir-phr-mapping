@@ -839,9 +839,9 @@ Usage: #definition
 * group.element[=].target.equivalence = #unmatched 
 * group.element[+].code = #4688724
 * group.element[=].display = "HEIGHT"
-* group.element[=].target.code  =  #[lb_av]
+* group.element[=].target.code  =  #[in_i]
 * group.element[=].target.equivalence = #equal
-* group.element[=].target.display = "[lb_av]"
+* group.element[=].target.display = "[in_i]"
 * group.element[+].code = #4500635
 * group.element[=].display = "PAIN"
 * group.element[=].target.equivalence = #unmatched 
