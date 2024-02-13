@@ -40,7 +40,7 @@ Description: "SPINE LUMBOSACRAL MIN 2 VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..092404-1582"
+* identifier[accessionNumber].value = "Accession.092404-1582"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1582"
@@ -74,7 +74,7 @@ Description: "CHEST 2 VIEWS PA&LAT"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..092302-360"
+* identifier[accessionNumber].value = "Accession.092302-360"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.360"
@@ -108,7 +108,7 @@ Description: "SPINE LUMBOSACRAL MIN 2 VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..092302-363"
+* identifier[accessionNumber].value = "Accession.092302-363"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.363"
@@ -142,7 +142,7 @@ Description: "MYOCARDIAL PERFUSION (SPECT), EX/REDIST, W/ W/O PHARM INTER"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1516"
+* identifier[accessionNumber].value = "Accession.042601-1516"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1516"
@@ -176,7 +176,7 @@ Description: "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1539"
+* identifier[accessionNumber].value = "Accession.042601-1539"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1539"
@@ -209,7 +209,7 @@ Description: "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1540"
+* identifier[accessionNumber].value = "Accession.042601-1540"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1540"
@@ -242,7 +242,7 @@ Description: "CARDIOVASCULAR STRESS TEST (TECH)"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1544"
+* identifier[accessionNumber].value = "Accession.042601-1544"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1544"
@@ -276,7 +276,7 @@ Description: "#PROVISION OF DIAGNOSTIC RADIONUCLIDES"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1519"
+* identifier[accessionNumber].value = "Accession.042601-1519"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1519"
@@ -310,7 +310,7 @@ Description: "MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1520"
+* identifier[accessionNumber].value = "Accession.042601-1520"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1520"
@@ -344,7 +344,7 @@ Description: "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1530"
+* identifier[accessionNumber].value = "Accession.042601-1530"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1530"
@@ -377,7 +377,7 @@ Description: "A9505 THALLOUS CHLORIDE TL 201/MCI"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1531"
+* identifier[accessionNumber].value = "Accession.042601-1531"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1531"
@@ -410,7 +410,7 @@ Description: "A9505 THALLOUS CHLORIDE TL 201/MCI"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1533"
+* identifier[accessionNumber].value = "Accession.042601-1533"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1533"
@@ -443,7 +443,7 @@ Description: "A9505 THALLOUS CHLORIDE TL 201/MCI"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1535"
+* identifier[accessionNumber].value = "Accession.042601-1535"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1535"
@@ -476,7 +476,7 @@ Description: "MYOCARDIAL PERFUSION STUDY WITH WALL MOTION"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1536"
+* identifier[accessionNumber].value = "Accession.042601-1536"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1536"
@@ -510,7 +510,7 @@ Description: "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042601-1538"
+* identifier[accessionNumber].value = "Accession.042601-1538"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1538"
@@ -543,7 +543,7 @@ Description: "CHEST 2 VIEWS PA&LAT"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..121400-767"
+* identifier[accessionNumber].value = "Accession.121400-767"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.767"
@@ -577,7 +577,7 @@ Description: "CT THORAX W/CONT"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..082900-372"
+* identifier[accessionNumber].value = "Accession.082900-372"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.372"
@@ -612,7 +612,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..080900-922"
+* identifier[accessionNumber].value = "Accession.080900-922"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.922"
@@ -646,7 +646,7 @@ Description: "CHEST 2 VIEWS PA&LAT"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..073100-312"
+* identifier[accessionNumber].value = "Accession.073100-312"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.312"
@@ -680,7 +680,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..071800-616"
+* identifier[accessionNumber].value = "Accession.071800-616"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.616"
@@ -714,7 +714,7 @@ Description: "RIBS BILAT+CHEST 4 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..040898-1235"
+* identifier[accessionNumber].value = "Accession.040898-1235"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1235"
@@ -746,7 +746,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..101597-1019"
+* identifier[accessionNumber].value = "Accession.101597-1019"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1019"
@@ -778,7 +778,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..092297-269"
+* identifier[accessionNumber].value = "Accession.092297-269"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.269"
@@ -810,7 +810,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..090897-207"
+* identifier[accessionNumber].value = "Accession.090897-207"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.207"
@@ -842,7 +842,7 @@ Description: "CHEST 2 VIEWS PA&LAT"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..090397-827"
+* identifier[accessionNumber].value = "Accession.090397-827"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.827"
@@ -874,7 +874,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..090397-833"
+* identifier[accessionNumber].value = "Accession.090397-833"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.833"
@@ -906,7 +906,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..081197-354"
+* identifier[accessionNumber].value = "Accession.081197-354"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.354"
@@ -938,7 +938,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..071697-1446"
+* identifier[accessionNumber].value = "Accession.071697-1446"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1446"
@@ -970,7 +970,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..062397-656"
+* identifier[accessionNumber].value = "Accession.062397-656"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.656"
@@ -1002,7 +1002,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..051297-238"
+* identifier[accessionNumber].value = "Accession.051297-238"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.238"
@@ -1034,7 +1034,7 @@ Description: "CHEST 2 VIEWS PA&LAT"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..050797-1341"
+* identifier[accessionNumber].value = "Accession.050797-1341"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1341"
@@ -1066,7 +1066,7 @@ Description: "FOOT 3 OR MORE VIEWS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..042197-411"
+* identifier[accessionNumber].value = "Accession.042197-411"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.411"
@@ -1098,7 +1098,7 @@ Description: "CHEST 2 VIEWS PA&LAT"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..070194-2941"
+* identifier[accessionNumber].value = "Accession.070194-2941"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.2941"
@@ -1129,7 +1129,7 @@ Description: "UROGRAM IV W NEPHROTOMOGRAMS"
 * identifier[accessionNumber].use = #official
 * identifier[accessionNumber].type = $v2-0203#ACSN
 * identifier[accessionNumber].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
-* identifier[accessionNumber].value = "Accession..101592-1172"
+* identifier[accessionNumber].value = "Accession.101592-1172"
 * identifier[casenum].use = #secondary
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1172"

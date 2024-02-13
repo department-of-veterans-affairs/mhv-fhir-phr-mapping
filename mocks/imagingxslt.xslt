@@ -77,7 +77,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!-- TODO: should be derived from Vista site, using 989 -->
                     <value>
                     <xsl:attribute name="value">
-                        <xsl:value-of select="concat('Accession..', radiologyReportTO/accessionNumber)" />
+                        <xsl:value-of select="concat('Accession.', radiologyReportTO/accessionNumber)" />
                     </xsl:attribute>
                     </value>
                 </identifier>

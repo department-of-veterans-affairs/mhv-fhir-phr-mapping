@@ -52,7 +52,7 @@ Description: "not all of them"
 * ^experimental = false
 * http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
-* http://terminology.hl7.org/CodeSystem/condition-ver-status#entered-in-error
+//* http://terminology.hl7.org/CodeSystem/condition-ver-status#entered-in-error
 
 
 
@@ -126,4 +126,20 @@ Description: "Informative map to include only the elements available in eVault P
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="observationTypeTO">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractTO">
+        <xs:sequence>
+          <xs:element form="unqualified" minOccurs="0" name="id" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="category" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="name" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="shortName" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="dataId" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="dataName" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="dataType" type="xs:string"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
 */
