@@ -19,31 +19,31 @@
 
 | Vista | Vista Field Name          | VIA ProblemTO       |   MHV eVault      | FHIR Condition    | Confidence |
 |-------|-------------------------- |---------------------|-------------------|-------------------|------------|
-| 0.01  | DIAGNOSIS                 | type.name           | problem           | code.text         | string including ICD
+| 0.01  | DIAGNOSIS                 | type.name           | problem           | code.text         | string including SCT
 |       |                           | icd                 |                   | code.coding (icd) |
 | 0.02  | PATIENT NAME              | patient             | (icn)             | subject           |
-| 0.03  | DATE LAST MODIFIED        | modifiedDate        | eventTime         |                   | populated/unclear
+| 0.03  | DATE LAST MODIFIED        | modifiedDate        | eventTime         |                   | see note
 | 0.04  | CLASS (Personal, Family)  |
 | 0.05  | PROVIDER NARRATIVE        |                     |                   |
-| 0.06  | FACILITY                  | facility (tag, text) |                  |                   | 
-| 0.07  | NMBR                      | id                  |                   | identifier        | assumed
+| 0.06  | FACILITY                  | facility (tag, text) |                  |                   |
+| 0.07  | NMBR                      | id                  |                   | identifier        |
 | 0.08  | DATE ENTERED              
-| 0.12  | STATUS(Active, Inactive)  | status              | status            | clinicalStatus    | data is `ACTIVE`
-| 0.13  | DATE OF ONSET             | onsetDate           |                   | onsetDateTime     | assumed
+| 0.12  | STATUS(Active, Inactive)  | status              | status            | clinicalStatus    |
+| 0.13  | DATE OF ONSET             | onsetDate           |                   | onsetDateTime     |
 | 1.01  | PROBLEM                   |                     |
-| 1.02  | CONDITION(Transcribed, Permanent, Hidden) | verified  |             |verificationStatus | ?
-| 1.03  | ENTERED BY                |                     |                   | recorder          | ?
+| 1.02  | CONDITION(Transcribed, Permanent, Hidden) | verified (true/false)  |             |verificationStatus | ?
+| 1.03  | ENTERED BY                |                     |                   |                   | ?
 | 1.04  | RECORDING PROVIDER        |                     |                   |                   | ?
-| 1.05  | RESPONSIBLE PROVIDER      | observer (id,name)  | provider          |                   | ?
+| 1.05  | RESPONSIBLE PROVIDER      | observer (id,name)  | provider          | recorder          | ?
 | 1.06  | SERVICE
-| 1.07  | DATE RESOLVED             | resolvedDateTime    |                   | abatementDateTime | assumed
-| 1.08  | CLINIC                    | location            |                   | ?                 | assumed
-| 1.09  | DATE RECORDED             | timestamp           | (hold)            | recordedDate      | assumed
+| 1.07  | DATE RESOLVED             | resolvedDate        |                   | abatementDateTime | 
+| 1.08  | CLINIC                    | location            |                   | ? recorder[location] | 
+| 1.09  | DATE RECORDED             | timestamp           | (hold)            | recordedDate      | see note
 | 1.1   | SERVICE CONNECTED         | serviceConnected    |                   | ?                 | true/false
 | 1.11  | AGENT ORANGE EXPOSURE
 | 1.12  | IONIZING RADIATION EXPOSURE
 | 1.13  | PERSIAN GULF EXPOSURE
-| 1.14  | PRIORITY (Acute, Chronic) | acuity              | acuity            | ?                 | +1
+| 1.14  | PRIORITY (Acute, Chronic) | acuity              | acuity            | ?                 |
 | 1.15  | HEAD AND/OR NECK CANCER
 | 1.16  | MILITARY SEXUAL TRAUMA
 | 1.17  | COMBAT VETERAN
@@ -59,11 +59,10 @@
 | 80201 | DATE OF INTEREST
 | 80202 | CODING SYSTEM
 | 80300 | MAPPING TARGETS
-|       |                           | removed             |                   |           | data is `false`
-|       |                           | verified            |                   |           | data is `true`/`false`
-|       |                           | comments.text       | comments          |           | multiple entries
-|       |                           | comments.timestamp  |                   |           | multiple entries
-|       |                           | comments.author     |                   |           | multiple entries
+|       |                           | removed             |                   |                   | data is `false`
+|       |                           | comments.text       | comments          | note[*].text      |
+|       |                           | comments.timestamp  |                   | note[*].time      |
+|       |                           | comments.author.name |                  | note[*].authorString |
 |       |                           | providerNarrative   |                   |           | no data
 |       |                           | exposures           |                   |           | no data
 |       |                           | noteNarrative       |                   |           | no data
@@ -72,7 +71,7 @@
 |       |                           | comment             |                   |           | no data
 |       |                           | organizationalProperties |              |           | no data
 |       |                           | providerNarrative   |                   |           | no data
-|       |                           | ../../tag           | stationNumber
+|       |                           | ../../tag           | stationNumber     | ? recorder[]
 {: .grid}
 
 - MHV seems to be adding midnight time to dates that don't have a time.
@@ -84,11 +83,14 @@
 - comments are multiple entries, and do show in bluebutton if multiple comments. is this 0.05 PROVIDER NARRATIVE?
 - problem catagories at Vista (e.g. cardiology) do not come thru. Could this be .type.category that is always blank.
 - where does icd come from? Is this converted by VIA?
+- what to do with acuity?
+- 1.02 CONDITION, is this what VIA gives as verified?
+- entered by , recording provider, responsible provider ? Historic MHV documentation seems to indicate responsible provider is used. (ProblemTO.observer)
 
 #### Business Rule
 
 - all conditions are **held for 36 hours past the release date/time**
-- filter out non-active
+- filter out non-active, deleted are filtered out by VIA
 - 36 hour hold based on `timestamp` - skip those with no timestamp or bad timestamp
 
 #### Mapping Concerns
