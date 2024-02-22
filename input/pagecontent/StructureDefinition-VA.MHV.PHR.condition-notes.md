@@ -17,33 +17,33 @@
 
 #### Mapping
 
-| Vista | Vista Field Name          | VIA ProblemTO       | FHIR Condition    | Confidence |
-|-------|-------------------------- |---------------------|-------------------|------------|
-| 0.01  | DIAGNOSIS                 | type.name           | code.text         | string including ICD
-|       |                           | icd                 | code.coding (icd) |
-| 0.02  | PATIENT NAME              | patient             | subject           |
-| 0.03  | DATE LAST MODIFIED        |                     |                   | ?
+| Vista | Vista Field Name          | VIA ProblemTO       |   MHV eVault      | FHIR Condition    | Confidence |
+|-------|-------------------------- |---------------------|-------------------|-------------------|------------|
+| 0.01  | DIAGNOSIS                 | type.name           | problem           | code.text         | string including ICD
+|       |                           | icd                 |                   | code.coding (icd) |
+| 0.02  | PATIENT NAME              | patient             | (icn)             | subject           |
+| 0.03  | DATE LAST MODIFIED        | modifiedDate        | eventTime         |                   | populated/unclear
 | 0.04  | CLASS (Personal, Family)  |
-| 0.05  | PROVIDER NARRATIVE
-| 0.06  | FACILITY
-| 0.07  | NMBR                      | id                  | identifier        | assumed true
-| 0.08  | DATE ENTERED              | modifiedDate        |                          | populated/unclear
-| 0.12  | STATUS(Active, Inactive)  | status              | clinicalStatus    | data is `ACTIVE`
-| 0.13  | DATE OF ONSET             | onsetDate           | onsetDateTime     | assumed
-| 1.01  | PROBLEM
-| 1.02  | CONDITION(Transcribed, Permanent, Hidden) | verified  | verificationStatus | ?
-| 1.03  | ENTERED BY                |                     | recorder          | ?
-| 1.04  | RECORDING PROVIDER        |                     |                   | ?
-| 1.05  | RESPONSIBLE PROVIDER      |                     |                   | ?
+| 0.05  | PROVIDER NARRATIVE        |                     |                   |
+| 0.06  | FACILITY                  | facility (tag, text) |                  |                   | 
+| 0.07  | NMBR                      | id                  |                   | identifier        | assumed
+| 0.08  | DATE ENTERED              
+| 0.12  | STATUS(Active, Inactive)  | status              | status            | clinicalStatus    | data is `ACTIVE`
+| 0.13  | DATE OF ONSET             | onsetDate           |                   | onsetDateTime     | assumed
+| 1.01  | PROBLEM                   |                     |
+| 1.02  | CONDITION(Transcribed, Permanent, Hidden) | verified  |             |verificationStatus | ?
+| 1.03  | ENTERED BY                |                     |                   | recorder          | ?
+| 1.04  | RECORDING PROVIDER        |                     |                   |                   | ?
+| 1.05  | RESPONSIBLE PROVIDER      | observer (id,name)  | provider          |                   | ?
 | 1.06  | SERVICE
-| 1.07  | DATE RESOLVED             | resolvedDateTime    | abatementDateTime | assumed
-| 1.08  | CLINIC                    | location            | ?                 | assumed
-| 1.09  | DATE RECORDED             | timestamp           | recordedDate      | assumed
-| 1.1   | SERVICE CONNECTED         | serviceConnected    | ?                 | ?
+| 1.07  | DATE RESOLVED             | resolvedDateTime    |                   | abatementDateTime | assumed
+| 1.08  | CLINIC                    | location            |                   | ?                 | assumed
+| 1.09  | DATE RECORDED             | timestamp           | (hold)            | recordedDate      | assumed
+| 1.1   | SERVICE CONNECTED         | serviceConnected    |                   | ?                 | true/false
 | 1.11  | AGENT ORANGE EXPOSURE
 | 1.12  | IONIZING RADIATION EXPOSURE
 | 1.13  | PERSIAN GULF EXPOSURE
-| 1.14  | PRIORITY (Acute, Chronic) | acuity              | ?                 | some data is Chronic
+| 1.14  | PRIORITY (Acute, Chronic) | acuity              | acuity            | ?                 | +1
 | 1.15  | HEAD AND/OR NECK CANCER
 | 1.16  | MILITARY SEXUAL TRAUMA
 | 1.17  | COMBAT VETERAN
@@ -59,25 +59,37 @@
 | 80201 | DATE OF INTEREST
 | 80202 | CODING SYSTEM
 | 80300 | MAPPING TARGETS
-|       |                           | removed             |           | data is `false`
-|       |                           | verified            |           | data is `true`/`false`
-|       |                           | comments            |           | no data
-|       |                           | providerNarrative   |           | no data
-|       |                           | exposures           |           | no data
-|       |                           | noteNarrative       |           | no data
-|       |                           | priority            |           | no data
-|       |                           | observer (id,name)  |           | data is id and name
-|       |                           | facility (tag, text) |          | data is tag and text
-|       |                           | type.category       |           | data is empty
-|       |                           | comment             |           | no data
-|       |                           | organizationalProperties |           | no data
-|       |                           | providerNarrative   |           | no data
+|       |                           | removed             |                   |           | data is `false`
+|       |                           | verified            |                   |           | data is `true`/`false`
+|       |                           | comments.text       | comments          |           | multiple entries
+|       |                           | comments.timestamp  |                   |           | multiple entries
+|       |                           | comments.author     |                   |           | multiple entries
+|       |                           | providerNarrative   |                   |           | no data
+|       |                           | exposures           |                   |           | no data
+|       |                           | noteNarrative       |                   |           | no data
+|       |                           | priority            |                   |           | no data
+|       |                           | type.category       |                   |           | data is empty
+|       |                           | comment             |                   |           | no data
+|       |                           | organizationalProperties |              |           | no data
+|       |                           | providerNarrative   |                   |           | no data
+|       |                           | ../../tag           | stationNumber
 {: .grid}
 
+- MHV seems to be adding midnight time to dates that don't have a time.
+- deleted problems are not included in VIA. So will need to address.
+- look at cerner data to see if they have extensions (location?) -- no
+- location might be in a shell of an encounter? could be extension on recorder, or extension on root.
+- what is displayed today for location is likely coming from ../../tag - e.g. "984". The current MHV code preserves this value, and does not seem to preserve the facility.
+- where should service related and other exposures to be saved (Jay) -- likely not appropriate in Condition as these seem more related to VA payment
+- comments are multiple entries, and do show in bluebutton if multiple comments. is this 0.05 PROVIDER NARRATIVE?
+- problem catagories at Vista (e.g. cardiology) do not come thru. Could this be .type.category that is always blank.
+- where does icd come from? Is this converted by VIA?
 
 #### Business Rule
 
 - all conditions are **held for 36 hours past the release date/time**
+- filter out non-active
+- 36 hour hold based on `timestamp` - skip those with no timestamp or bad timestamp
 
 #### Mapping Concerns
 

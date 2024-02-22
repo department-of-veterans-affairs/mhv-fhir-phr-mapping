@@ -112,14 +112,14 @@ Target: "eVaultPHR"
 Title: "eVault-PHR to MHV-PHR"
 Description: "Informative map that includes only the elements available in eVault PHR"
 * -> "ImmunizationTO"
-* location -> "GetLocation(ImmunizationTO.encounter.location)" "9000010.11-.1215 ORDERING LOCATION"
-* vaccineCode.text -> "ImmunizationTO.name" "9000010.11-.01 IMMUNIZATION"
-* note.text -> "ImmunizationTO.comments"
+* vaccineCode.text -> "ImmunizationTO.name" "Immunization"
+* note.text -> "ImmunizationTO.comments" "Remarks"
 * patient -> "patient"
 * status -> "`completed`"
-* reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "9000010.11-.06 REACTION"
-* occurrenceDateTime -> "ImmunizationTO.administeredDate" "9000010.11-.1201 EVENT DATE AND TIME"
-* performer -> "GetOrganization(ImmunizationTO.encounter.facility)"
+* reaction.detail.reference -> "contained Observation with ImmunizationTO.reaction" "Reaction"
+* occurrenceDateTime -> "ImmunizationTO.administeredDate" "Event Date and Time"
+* protocolApplied.series -> "translation of ImmunizationTO.series" "Series"
+
 
 
 

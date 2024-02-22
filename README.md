@@ -12,6 +12,13 @@ The notes below for each release. Archive of [released packages](https://github.
 
 - Conditions
   - Mapping concerns outlined
+  - Added a mapping table from Vista fields -> VIA ProblemTO -> FHIR Condition
+- DocumentReference
+  - clarify date/time vs just time
+- Allergies
+  - add MHV-PHR element names to the evaultPHR mapping
+- Immunizations
+  - add MHV-PHR element names to the evaultPHR mapping
 
 ### 0.3.2
 
