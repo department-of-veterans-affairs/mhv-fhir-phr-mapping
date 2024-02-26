@@ -55,7 +55,7 @@ Derived from the a mock NoteTO:
 
 Instance: ex-MHV-note-deleted-1
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 1 of a MHV Note"
+Title: "Example 1 of a MHV Note - marked as entered-in-error"
 Usage: #example
 Description: """
 Derived from the a mock NoteTO:

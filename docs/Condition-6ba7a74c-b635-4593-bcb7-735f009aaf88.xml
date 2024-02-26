@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="6ba7a74c-b635-4593-bcb7-735f009aaf88"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Condition</b><a name="6ba7a74c-b635-4593-bcb7-735f009aaf88"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Condition &quot;6ba7a74c-b635-4593-bcb7-735f009aaf88&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.condition.html">VA MHV PHR problems</a></p></div><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ProblemTO.98034 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.3.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: ENDOCARDITIS NOS (ICD-9-CM 424.90) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (icd-9-cm#424.90)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-0.html">Patient/ex-MHV-patient-0</a> &quot; MHVLISAONE&quot;</p><p><b>recordedDate</b>: 2000-07-18</p><p><b>recorder</b>: <a name="ex-MHV-practitioner-110"> </a></p><blockquote><p/><p><a name="ex-MHV-practitioner-110"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/AuthorTO.110 (use: USUAL)</p><p><b>name</b>: MANGAS,PHYLLIS A</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #ex-MHV-practitioner-110</b><a name="ex-MHV-practitioner-110"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/AuthorTO.110 (use: USUAL)</p><p><b>name</b>: MANGAS,PHYLLIS A</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #ex-MHV-location-552</b><a name="ex-MHV-location-552"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/HospitalLocationTO.552 (use: USUAL)</p><p><b>name</b>: DAYTON</p></blockquote></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="ex-MHV-practitioner-110"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.110"/>
+      </identifier>
+      <name>
+        <text value="MANGAS,PHYLLIS A"/>
+        <family value="MANGAS"/>
+        <given value="PHYLLIS"/>
+        <given value="A"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Location>
+      <id value="ex-MHV-location-552"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="HospitalLocationTO.552"/>
+      </identifier>
+      <name value="DAYTON"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ProblemTO.98034"/>
+  </identifier>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="active"/>
+    </coding>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="confirmed"/>
+    </coding>
+  </verificationStatus>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+      <code value="problem-list-item"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-9-cm"/>
+      <code value="424.90"/>
+    </coding>
+    <text value="ENDOCARDITIS NOS (ICD-9-CM 424.90)"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <recordedDate value="2000-07-18"/>
+  <recorder>
+    <extension url="http://hl7.org/fhir/StructureDefinition/alternate-reference">
+      <valueReference>
+        <reference value="#ex-MHV-location-552"/>
+      </valueReference>
+    </extension>
+    <reference value="#ex-MHV-practitioner-110"/>
+  </recorder>
+</Condition>

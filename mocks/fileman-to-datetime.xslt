@@ -9,6 +9,12 @@
   <xsl:variable name="day" select="substring($fileman-date, 6, 2)" />
 
   <xsl:choose>
+    <xsl:when test="$month='00'">
+      <xsl:value-of select="$year" />
+    </xsl:when>
+    <xsl:when test="$day='00'">
+      <xsl:value-of select="concat($year, '-', $month)" />
+    </xsl:when>
     <xsl:when test="not(string-length($fileman-date) > 8)">
       <xsl:value-of select="concat($year, '-', $month, '-', $day)" />
     </xsl:when> 

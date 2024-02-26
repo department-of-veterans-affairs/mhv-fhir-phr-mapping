@@ -27,23 +27,25 @@ A profile on the Condition resource for MHV PHR exposing Problems using FHIR API
 * recorder MS
 * recorder only Reference(Practitioner)
 * recorder ^type.aggregation = #contained
-* clinicalStatus = http://terminology.hl7.org/CodeSystem/condition-clinical#active
+* recorder.extension contains http://hl7.org/fhir/StructureDefinition/alternate-reference named location 0..1
+* recorder.extension[location].valueReference only Reference(Location)
+* recorder.extension[location].valueReference ^type.aggregation = #contained
+* clinicalStatus from ConditionClinicalStatusVS (required)
 * verificationStatus from ConditionVerificationVS (required)
+* category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
 * note MS
 * recordedDate MS
 * onset[x] only dateTime
 * onsetDateTime MS
 * abatement[x] only dateTime
 * abatementDateTime MS
-* evidence.detail MS
-* evidence.detail ^type.aggregation = #contained
-* category = http://terminology.hl7.org/CodeSystem/condition-category#problem-list-item
+* evidence 0..0
 * severity 0..0
 * bodySite 0..0
 * encounter 0..0
 * asserter 0..0
 * stage 0..0
-* evidence.code 0..0
+* evidence 0..0
 
 
 ValueSet: ConditionVerificationVS
@@ -52,9 +54,14 @@ Description: "not all of them"
 * ^experimental = false
 * http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 * http://terminology.hl7.org/CodeSystem/condition-ver-status#unconfirmed
-//* http://terminology.hl7.org/CodeSystem/condition-ver-status#entered-in-error
+* http://terminology.hl7.org/CodeSystem/condition-ver-status#entered-in-error
 
-
+ValueSet: ConditionClinicalStatusVS
+Title: "Subset of condition clinical status"
+Description: "Not all of them"
+* ^experimental = false
+* http://terminology.hl7.org/CodeSystem/condition-clinical#active
+* http://terminology.hl7.org/CodeSystem/condition-clinical#inactive
 
 Mapping: Condition-Mapping
 Source:	MHVcondition
@@ -63,18 +70,16 @@ Title: "VIA to mhv-fhir-phr"
 Description: "Informative map to available elements in MHV FHIR API"
 * -> "ProblemTO" "Vista FileMan"
 * identifier -> "{StationNbr} and {ProblemTO.id}"
-* code.text -> "ProblemTO.type.name" "9000011-1.01 PROBLEM"
-* recorder -> "GetPractitioner(ProblemTO.observer)" "??? 9000011-1.03 ENTERED BY,  -1.04 RECORDING PROVIDER"
-* clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive` if not `entered-in-error`" "9000011-.12 STATUS"
-* verificationStatus -> "ProblemTO.verified ? `#confirmed` : `#unconfirmed`" "???"
-* note -> "ProblemTO.comments + ProblemTO.comment" "9000011-.05 PROVIDER NARRATIVE"
-* recordedDate -> "ProblemTO.modifiedDate" "9000011-1.09 DATE RECORDED"
+* code.text -> "ProblemTO.type.name" "9000011-.01 DIAGNOSIS"
+* code.coding -> "ProblemTO.icd" "9000011-.01 DIAGNOSIS"
+* recorder -> "GetPractitioner(ProblemTO.observer)" "9000011-1.05 RESPONSIBLE PROVIDER"
+* clinicalStatus -> "ProblemTO.status (Active, Inactive)" "9000011-.12 STATUS"
+* verificationStatus -> "ProblemTO.verified (confirmed, unconfirmed, entered-in-error)" "9000011-1.02 CONDITION"
+* note -> "ProblemTO.comments" "??? 9000011-.05 PROVIDER NARRATIVE"
+* recordedDate -> "ProblemTO.timestamp" "9000011-1.09 DATE RECORDED"
 * onsetDateTime -> "ProblemTO.onsetDate" "9000011-.13 DATE OF ONSET"
 * abatementDateTime -> "ProblemTO.abatementDateTime" "9000011-1.07 DATE RESOLVED"
-//* meta.lastUpdated -> "ProblemTO.timestamp"
-* evidence.detail -> "~ProblemTO.location[hospitalLocationTO]" "??? 9000011-.06 FACILITY, 1.08 CLINIC"
-* code.coding -> "ICD-9 # ProblemTO.icd" "9000011-.01 DIAGNOSIS"
-* evidence.detail -> "~ProblemTO.serviceConnected" "9000011-1.1 SERVICE CONNECTED"
+* recorder.extension[location] -> "~ProblemTO.facility" "9000011-.06 FACILITY"
 * subject -> "patient" "9000011-.02 PATIENT NAME"
 * category -> "`problem-list-item`"
 
@@ -86,12 +91,12 @@ Description: "Informative map to include only the elements available in eVault P
 * -> "ProblemTO" "eVault"
 * code.text -> "ProblemTO.type.name" "PROBLEM"
 * recorder -> "GetPractitioner(ProblemTO.observer)" "PROVIDER"
-* clinicalStatus -> "ProblemTO.status==ACTIVE & !ProblemTO.removed ? `#active` : `#inactive` if not `entered-in-error`" "STATUS"
+* clinicalStatus -> "ProblemTO.status (Active, Inactive)" "STATUS"
 * note -> "ProblemTO.comments" "COMMENTS"
 * recordedDate -> "ProblemTO.modifiedDate" "EVENT_TIME"
 * subject -> "patient"
 * category -> "`problem-list-item`"
-//"ProblemTO.Acuity.text" "ACUITY"
+
 
 
 

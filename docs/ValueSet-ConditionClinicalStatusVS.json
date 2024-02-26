@@ -1,0 +1,68 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "ConditionClinicalStatusVS",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\"><code>http://terminology.hl7.org/CodeSystem/condition-clinical</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html#condition-clinical-active\">active</a></td><td style=\"color: #cccccc\">Active</td><td>The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk.</td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html#condition-clinical-inactive\">inactive</a></td><td style=\"color: #cccccc\">Inactive</td><td>The subject is no longer experiencing the condition or situation and there is no longer evidence or appreciable risk of the condition or situation.</td></tr></table></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 1,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  }],
+  "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionClinicalStatusVS",
+  "version" : "0.3.3",
+  "name" : "ConditionClinicalStatusVS",
+  "title" : "Subset of condition clinical status",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2024-02-26T14:52:47-06:00",
+  "publisher" : "VA Digital Services",
+  "contact" : [{
+    "name" : "VA Digital Services",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://va.gov"
+    }]
+  },
+  {
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "John.Moehrke@va.gov"
+    }]
+  }],
+  "description" : "Not all of them",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
+      "concept" : [{
+        "code" : "active"
+      },
+      {
+        "code" : "inactive"
+      }]
+    }]
+  }
+}

@@ -1,0 +1,104 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/74869b91-f12f-4281-bd94-b9c72c6fbaab> a fhir:Condition ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "74869b91-f12f-4281-bd94-b9c72c6fbaab"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: Condition</b><a name=\"74869b91-f12f-4281-bd94-b9c72c6fbaab\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource Condition &quot;74869b91-f12f-4281-bd94-b9c72c6fbaab&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.condition.html\">VA MHV PHR problems</a></p></div><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.984</code>/ProblemTO.352234 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html\">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.3.0/CodeSystem-condition-ver-status.html\">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-condition-category.html\">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: History of Alcohol Abuse (SCT 371434005) <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-icd10CM.html\">International Classification of Diseases, 10th Revision, Clinical Modification (ICD-10-CM)</a>#F10.21)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-4.html\">Patient/ex-MHV-patient-4</a> &quot; CASEY&quot;</p><p><b>onset</b>: 2005-12-31</p><p><b>recordedDate</b>: 2023-12-20</p><p><b>recorder</b>: <a name=\"ex-MHV-practitioner-36556\"> </a></p><blockquote><p/><p><a name=\"ex-MHV-practitioner-36556\"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/AuthorTO.37556 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #ex-MHV-practitioner-36556</b><a name=\"ex-MHV-practitioner-36556\"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/AuthorTO.37556 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #ex-MHV-location-552</b><a name=\"ex-MHV-location-552\"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/HospitalLocationTO.552 (use: USUAL)</p><p><b>name</b>: DAYTON</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "ex-MHV-practitioner-36556" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "AuthorTO.37556" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "AHMED,MARUF" ] ;
+       fhir:family [ fhir:v "MARUF" ] ;
+       fhir:given ( [ fhir:v "AHMED" ] )
+     ] )
+  ] [
+     a fhir:Location ;
+     fhir:id [ fhir:v "ex-MHV-location-552" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "HospitalLocationTO.552" ]
+     ] ) ;
+     fhir:name [ fhir:v "DAYTON" ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.984"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ProblemTO.352234" ]
+  ] ) ; # 
+  fhir:clinicalStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-clinical"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "active" ]
+     ] )
+  ] ; # 
+  fhir:verificationStatus [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-ver-status"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "confirmed" ]
+     ] )
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/condition-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "problem-list-item" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/sid/icd-10-cm"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "F10.21" ]
+     ] ) ;
+     fhir:text [ fhir:v "History of Alcohol Abuse (SCT 371434005)" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-4> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-4" ]
+  ] ; # 
+  fhir:onset [ fhir:v "2005-12-31"^^xsd:date] ; # 
+  fhir:recordedDate [ fhir:v "2023-12-20"^^xsd:date] ; # 
+  fhir:recorder [
+     fhir:extension ( [
+       fhir:url [ fhir:v "http://hl7.org/fhir/StructureDefinition/alternate-reference"^^xsd:anyURI ] ;
+       fhir:value [
+         a fhir:Reference ;
+         fhir:reference [ fhir:v "#ex-MHV-location-552" ]
+       ]
+     ] ) ;
+     fhir:reference [ fhir:v "#ex-MHV-practitioner-36556" ]
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

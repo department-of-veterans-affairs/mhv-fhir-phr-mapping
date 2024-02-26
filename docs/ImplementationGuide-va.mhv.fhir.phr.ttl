@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "1"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.3.2"] ; # 
+  fhir:version [ fhir:v "0.3.3"] ; # 
   fhir:name [ fhir:v "VAMHVFHIRPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-01-29T11:44:59-06:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-26T14:52:47-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -94,7 +94,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ci-build" ]
+         fhir:value [ fhir:v "trial-use" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -421,7 +421,7 @@
          fhir:value [ fhir:v "releaselabel" ]
        ] [
          fhir:url [ fhir:v "value"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ci-build" ]
+         fhir:value [ fhir:v "trial-use" ]
        ] ) ;
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] [
@@ -1292,6 +1292,456 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/0635f0d9-81ab-4a0b-af8d-f899d8e5220d> ;
+         fhir:reference [ fhir:v "Condition/0635f0d9-81ab-4a0b-af8d-f899d8e5220d" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 118499" ] ;
+       fhir:description [ fhir:v "COR ATHEROSCL UNSP TYP-VES (ICD-9-CM 414.00)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/7f88a60c-ffe5-4001-8286-c5eeccc069dd> ;
+         fhir:reference [ fhir:v "Condition/7f88a60c-ffe5-4001-8286-c5eeccc069dd" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 128381" ] ;
+       fhir:description [ fhir:v "Restless Legs (ICD-9-CM 333.99)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/2b2d8b23-439d-4d5c-967e-b080b2710dd9> ;
+         fhir:reference [ fhir:v "Condition/2b2d8b23-439d-4d5c-967e-b080b2710dd9" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 229415" ] ;
+       fhir:description [ fhir:v "Benign Prostatic Hypertrophy (ICD-9-CM 799.9)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/a7471138-f4ac-4226-9555-4999196c6136> ;
+         fhir:reference [ fhir:v "Condition/a7471138-f4ac-4226-9555-4999196c6136" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 268463" ] ;
+       fhir:description [ fhir:v "Hypertrophy (Benign) of Prostate without Urinary obstruction (ICD-9-CM 600.00)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/7e55cbc8-4864-462d-a730-98ca4cccd4a2> ;
+         fhir:reference [ fhir:v "Condition/7e55cbc8-4864-462d-a730-98ca4cccd4a2" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 318630" ] ;
+       fhir:description [ fhir:v "Lumbago (ICD-9-CM 724.2)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/067e62f5-6066-46c8-92c8-03011db4187b> ;
+         fhir:reference [ fhir:v "Condition/067e62f5-6066-46c8-92c8-03011db4187b" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352164" ] ;
+       fhir:description [ fhir:v "Cardiomegaly (SCT 8186001)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/f451313f-3b04-48ae-9b88-78f3fcc22b53> ;
+         fhir:reference [ fhir:v "Condition/f451313f-3b04-48ae-9b88-78f3fcc22b53" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352165" ] ;
+       fhir:description [ fhir:v "Chronic Kidney Disease Stage 2 (SCT 431856006)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/32f99fab-9fdb-4cc4-832a-d4e275800489> ;
+         fhir:reference [ fhir:v "Condition/32f99fab-9fdb-4cc4-832a-d4e275800489" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352166" ] ;
+       fhir:description [ fhir:v "Retained Dental Root (SCT 66569006)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/49cdaa51-9e6d-4246-9b54-5c9f3db13909> ;
+         fhir:reference [ fhir:v "Condition/49cdaa51-9e6d-4246-9b54-5c9f3db13909" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352167" ] ;
+       fhir:description [ fhir:v "Proliferative Diabetic Retinopathy (SCT 59276001)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/735ac73b-30e1-4784-9cd8-25aa3e89cd5f> ;
+         fhir:reference [ fhir:v "Condition/735ac73b-30e1-4784-9cd8-25aa3e89cd5f" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352218" ] ;
+       fhir:description [ fhir:v "Rash (SCT 271807003)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/6fec0aa5-b0e9-4de3-abb6-53dd3812163d> ;
+         fhir:reference [ fhir:v "Condition/6fec0aa5-b0e9-4de3-abb6-53dd3812163d" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352231" ] ;
+       fhir:description [ fhir:v "Atrial Flutter (SCT 5370000)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/c7f280d9-88fe-4849-8075-91f6cc8a6f54> ;
+         fhir:reference [ fhir:v "Condition/c7f280d9-88fe-4849-8075-91f6cc8a6f54" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352232" ] ;
+       fhir:description [ fhir:v "Defective Dental Restoration (SCT 109728009)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/3ca33c70-26dc-48f1-bc8a-0a5d1c141bcf> ;
+         fhir:reference [ fhir:v "Condition/3ca33c70-26dc-48f1-bc8a-0a5d1c141bcf" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352233" ] ;
+       fhir:description [ fhir:v "Benign Neoplasm of Skin (SCT 92384009)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/74869b91-f12f-4281-bd94-b9c72c6fbaab> ;
+         fhir:reference [ fhir:v "Condition/74869b91-f12f-4281-bd94-b9c72c6fbaab" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352234" ] ;
+       fhir:description [ fhir:v "History of Alcohol Abuse (SCT 371434005)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/6a2be107-501e-458f-8f17-0ada297d34d8> ;
+         fhir:reference [ fhir:v "Condition/6a2be107-501e-458f-8f17-0ada297d34d8" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352243" ] ;
+       fhir:description [ fhir:v "Angina Pectoris (SCT 194828000)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/cfe9ec39-d291-4ca0-b130-c7a4d33eb83b> ;
+         fhir:reference [ fhir:v "Condition/cfe9ec39-d291-4ca0-b130-c7a4d33eb83b" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352245" ] ;
+       fhir:description [ fhir:v "Chest Pain (SCT 29857009)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/b1aee5a0-fccd-4506-88de-d218cd40be0a> ;
+         fhir:reference [ fhir:v "Condition/b1aee5a0-fccd-4506-88de-d218cd40be0a" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352246" ] ;
+       fhir:description [ fhir:v "Acute Deep Vein Thrombosis Of Lower Limb (SCT 651000119108)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/88c35ca4-a88a-43d3-8f97-69144f229051> ;
+         fhir:reference [ fhir:v "Condition/88c35ca4-a88a-43d3-8f97-69144f229051" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352247" ] ;
+       fhir:description [ fhir:v "Exposure to Agent Orange (SCT 718016003)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/c4706e07-7290-44e8-8d34-593027b04913> ;
+         fhir:reference [ fhir:v "Condition/c4706e07-7290-44e8-8d34-593027b04913" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352248" ] ;
+       fhir:description [ fhir:v "Acute posttraumatic stress disorder following military combat (SCT 446175003)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/acf94eab-a6d1-4b5e-bd76-1288e616dd4b> ;
+         fhir:reference [ fhir:v "Condition/acf94eab-a6d1-4b5e-bd76-1288e616dd4b" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352249" ] ;
+       fhir:description [ fhir:v "AF- Atrial Fibrillation (SCT 49436004)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/794eed45-7ad5-4078-bc08-302ec0060ac6> ;
+         fhir:reference [ fhir:v "Condition/794eed45-7ad5-4078-bc08-302ec0060ac6" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352250" ] ;
+       fhir:description [ fhir:v "Alcohol Abuse (SCT 15167005)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/65daf497-c0d2-451d-9950-f31616437a88> ;
+         fhir:reference [ fhir:v "Condition/65daf497-c0d2-451d-9950-f31616437a88" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352251" ] ;
+       fhir:description [ fhir:v "CAD - Coronary Artery Disease (SCT 53741008)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/61784c6a-854d-49cd-9847-9d92772fdba6> ;
+         fhir:reference [ fhir:v "Condition/61784c6a-854d-49cd-9847-9d92772fdba6" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 352252" ] ;
+       fhir:description [ fhir:v "Abnormal cardiotochogram tracing (SCT 735205007)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ca55b358-f98a-4ba0-a3dc-0346cbeaf44d> ;
+         fhir:reference [ fhir:v "Condition/ca55b358-f98a-4ba0-a3dc-0346cbeaf44d" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 37085" ] ;
+       fhir:description [ fhir:v "SCREENING FOR ALCOHOLISM (ICD-9-CM V79.1)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/c02cc828-7fd0-40a7-a2fb-5b4609f825a7> ;
+         fhir:reference [ fhir:v "Condition/c02cc828-7fd0-40a7-a2fb-5b4609f825a7" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 37086" ] ;
+       fhir:description [ fhir:v "SCREENING FOR OTHER SPECIFIED MENTAL DISORDERS AND DEVELOPMENTAL HANDICAPS (ICD-9-CM V79.8)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/36a44c53-cb2a-45a3-a932-a295ac7d52c7> ;
+         fhir:reference [ fhir:v "Condition/36a44c53-cb2a-45a3-a932-a295ac7d52c7" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 487" ] ;
+       fhir:description [ fhir:v "Hypertension (ICD-9-CM 401.9)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-deleted-487> ;
+         fhir:reference [ fhir:v "Condition/ex-MHV-condition-deleted-487" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 487 - deleted" ] ;
+       fhir:description [ fhir:v "Hypertension (ICD-9-CM 401.9)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/397ef2d8-7516-4fdb-aef4-ae74b53dd202> ;
+         fhir:reference [ fhir:v "Condition/397ef2d8-7516-4fdb-aef4-ae74b53dd202" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 488" ] ;
+       fhir:description [ fhir:v "Anxiety Neuroses (ICD-9-CM 300.00)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/74976867-7782-4e26-90af-2e576be9bb44> ;
+         fhir:reference [ fhir:v "Condition/74976867-7782-4e26-90af-2e576be9bb44" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 489" ] ;
+       fhir:description [ fhir:v "Glaucoma (ICD-9-CM 365.9)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Condition" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/6ba7a74c-b635-4593-bcb7-735f009aaf88> ;
+         fhir:reference [ fhir:v "Condition/6ba7a74c-b635-4593-bcb7-735f009aaf88" ]
+       ] ;
+       fhir:name [ fhir:v "Condition: 98034" ] ;
+       fhir:description [ fhir:v "ENDOCARDITIS NOS (ICD-9-CM 424.90)" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "DocumentReference" ]
        ] ) ;
        fhir:reference [
@@ -1568,7 +2018,7 @@
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/ex-MHV-note-deleted-1> ;
          fhir:reference [ fhir:v "DocumentReference/ex-MHV-note-deleted-1" ]
        ] ;
-       fhir:name [ fhir:v "Example 1 of a MHV Note" ] ;
+       fhir:name [ fhir:v "Example 1 of a MHV Note - marked as entered-in-error" ] ;
        fhir:description [ fhir:v "Derived from the a mock NoteTO:\n\nThis is replicated from ex-MHV-note-1, with change of identifier (NoteTO.5), and marked as entered-in-error" ] ;
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI ;
@@ -1592,6 +2042,21 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "AllergyIntolerance" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/AllergyIntolerance/ex-MHV-allergy-1-deleted> ;
+         fhir:reference [ fhir:v "AllergyIntolerance/ex-MHV-allergy-1-deleted" ]
+       ] ;
+       fhir:name [ fhir:v "Example 1 of an MHV allergy or intolerance - deleted" ] ;
+       fhir:description [ fhir:v "IntoleranceCondition record identity 53495 from a mock ProblemTO" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "DiagnosticReport" ]
        ] ) ;
        fhir:reference [
@@ -1603,36 +2068,6 @@
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-1> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-1" ]
-       ] ;
-       fhir:name [ fhir:v "Example 1 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-deleted-1> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-deleted-1" ]
-       ] ;
-       fhir:name [ fhir:v "Example 1 of an MHV condition, deleted" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO\n\nExample 1 of an MHV condition, with a different identifier, and marked as entered-in-error" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ] [
        fhir:extension ( [
@@ -1697,21 +2132,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-10> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-10" ]
-       ] ;
-       fhir:name [ fhir:v "Example 10 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "AllergyIntolerance" ]
        ] ) ;
        fhir:reference [
@@ -1723,21 +2143,6 @@
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-11> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-11" ]
-       ] ;
-       fhir:name [ fhir:v "Example 11 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ] [
        fhir:extension ( [
@@ -1922,21 +2327,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-2> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-2" ]
-       ] ;
-       fhir:name [ fhir:v "Example 2 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "DiagnosticReport" ]
        ] ) ;
        fhir:reference [
@@ -1978,21 +2368,6 @@
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-3> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-3" ]
-       ] ;
-       fhir:name [ fhir:v "Example 3 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ] [
        fhir:extension ( [
@@ -2057,21 +2432,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-4> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-4" ]
-       ] ;
-       fhir:name [ fhir:v "Example 4 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "DiagnosticReport" ]
        ] ) ;
        fhir:reference [
@@ -2132,21 +2492,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-5> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-5" ]
-       ] ;
-       fhir:name [ fhir:v "Example 5 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "DiagnosticReport" ]
        ] ) ;
        fhir:reference [
@@ -2192,21 +2537,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-6> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-6" ]
-       ] ;
-       fhir:name [ fhir:v "Example 6 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "DiagnosticReport" ]
        ] ) ;
        fhir:reference [
@@ -2233,21 +2563,6 @@
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-7> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-7" ]
-       ] ;
-       fhir:name [ fhir:v "Example 7 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ] [
        fhir:extension ( [
@@ -2282,21 +2597,6 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-8> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-8" ]
-       ] ;
-       fhir:name [ fhir:v "Example 8 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "DiagnosticReport" ]
        ] ) ;
        fhir:reference [
@@ -2323,21 +2623,6 @@
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"^^xsd:anyURI ;
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance>
-       ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "Condition" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Condition/ex-MHV-condition-9> ;
-         fhir:reference [ fhir:v "Condition/ex-MHV-condition-9" ]
-       ] ;
-       fhir:name [ fhir:v "Example 9 of an MHV condition" ] ;
-       fhir:description [ fhir:v "Example from a mock ProblemTO" ] ;
-       fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition>
        ]
      ] [
        fhir:extension ( [
@@ -2451,6 +2736,21 @@
          fhir:reference [ fhir:v "Patient/ex-MHV-patient-2" ]
        ] ;
        fhir:name [ fhir:v "Example ROBERT from PatientTO" ] ;
+       fhir:description [ fhir:v "This example is derived off of a mock PatientTO" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "Patient" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-4> ;
+         fhir:reference [ fhir:v "Patient/ex-MHV-patient-4" ]
+       ] ;
+       fhir:name [ fhir:v "Example VETERAN CASEY" ] ;
        fhir:description [ fhir:v "This example is derived off of a mock PatientTO" ] ;
        fhir:example [
          fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.patient"^^xsd:anyURI ;
@@ -5194,6 +5494,18 @@
        ] ;
        fhir:name [ fhir:v "Subset of allergy intolerance category" ] ;
        fhir:description [ fhir:v "not all of them" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionClinicalStatusVS> ;
+         fhir:reference [ fhir:v "ValueSet/ConditionClinicalStatusVS" ]
+       ] ;
+       fhir:name [ fhir:v "Subset of condition clinical status" ] ;
+       fhir:description [ fhir:v "Not all of them" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

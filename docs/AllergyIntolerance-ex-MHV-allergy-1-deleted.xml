@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<AllergyIntolerance xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-allergy-1-deleted"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
+  </meta>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: AllergyIntolerance</b><a name="ex-MHV-allergy-1-deleted"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource AllergyIntolerance &quot;ex-MHV-allergy-1-deleted&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance.html">VA MHV PHR Allergy and Intolerance</a></p></div><p><b>Allergy Observed vs Historic</b>: h</p><p><b>identifier</b>: <code>http://va.gov/systems/979_120.8</code>/53495 (use: OFFICIAL)</p><p><b>verificationStatus</b>: Entered in Error <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-allergyintolerance-verification.html">AllergyIntolerance Verification Status</a>#entered-in-error)</span></p><p><b>category</b>: medication</p><p><b>code</b>: CONTRAST MEDIA, OTHER <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> ()</span></p><p><b>patient</b>: <a href="Patient-ex-MHV-patient-89486.html">Patient/ex-MHV-patient-89486</a> &quot; MHVASPXXI&quot;</p><p><b>recordedDate</b>: 2002-06-03 09:44:00+0000</p><p><b>recorder</b>: <span>: Organization 979</span></p><p><b>note</b>: Updated using clean up process.  Changed reactant from IVP DYE (free text) to CONTRAST MEDIA, OTHER(file - PS(50.605,) ( @Jul 24, 2004, 1:29:07 PM)</p><h3>Reactions</h3><table class="grid"><tr><td style="display: none">-</td><td><b>Manifestation</b></td></tr><tr><td style="display: none">*</td><td>RESPIRATORY DISTRESS <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (unknown#4637183)</span></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Organization #ex-MHV-organization-979</b><a name="ex-MHV-organization-979"> </a></p><p><b>identifier</b>: FI/979 (use: USUAL)</p><p><b>active</b>: true</p><p><b>name</b>: Organization 979</p></blockquote></div>
+  </text>
+  <contained>
+    <Organization>
+      <id value="ex-MHV-organization-979"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <text value="FI"/>
+        </type>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="979"/>
+      </identifier>
+      <active value="true"/>
+      <name value="Organization 979"/>
+    </Organization>
+  </contained>
+  <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric">
+    <valueCode value="h"/>
+  </extension>
+  <identifier>
+    <use value="official"/>
+    <system value="http://va.gov/systems/979_120.8"/>
+    <value value="53495"/>
+  </identifier>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+      <code value="entered-in-error"/>
+    </coding>
+  </verificationStatus>
+  <category value="medication"/>
+  <code>
+    <text value="CONTRAST MEDIA, OTHER"/>
+  </code>
+  <patient>
+    <reference value="Patient/ex-MHV-patient-89486"/>
+  </patient>
+  <recordedDate value="2002-06-03T09:44:00Z"/>
+  <recorder>
+    <extension url="http://hl7.org/fhir/StructureDefinition/alternate-reference">
+      <valueReference>
+        <reference value="#ex-MHV-organization-979"/>
+      </valueReference>
+    </extension>
+    <display value="Organization 979"/>
+  </recorder>
+  <note>
+    <time value="2004-07-24T18:29:07Z"/>
+    <text value="Updated using clean up process.  Changed reactant from IVP DYE (free text) to CONTRAST MEDIA, OTHER(file - PS(50.605,)"/>
+  </note>
+  <reaction>
+    <manifestation>
+      <coding>
+        <system value="urn:oid:2.16.840.1.113883.6.233"/>
+        <code value="4637183"/>
+      </coding>
+      <text value="RESPIRATORY DISTRESS"/>
+    </manifestation>
+  </reaction>
+</AllergyIntolerance>

@@ -181,3 +181,14 @@ Usage: #inline
 * name.given[+] = "V"
 * identifier[+].value = "59845-VA660"
 * identifier[=].system = "http://va.gov/systems/99VA4"
+
+Instance: ex-MHV-practitioner-37524
+InstanceOf: VA.MHV.PHR.practitioner
+Title: "Example Practitioner 37524"
+Description: "MARCUS OPURUM,MAUREEN N"
+Usage: #inline
+* identifier[TOid].use = #usual
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.984"
+* identifier[TOid].value = "AuthorTO.37524"
+* name.text = "MARCUS OPURUM,MAUREEN N"
+* name.family = "MARCUS OPURUM,MAUREEN N"

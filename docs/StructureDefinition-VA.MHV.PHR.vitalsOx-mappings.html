@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR Pulse Oximetry Vital-Signs - Mappings - MyHealtheVet PHR FHIR API v0.3.2</title>
+    <title>VA MHV PHR Pulse Oximetry Vital-Signs - Mappings - MyHealtheVet PHR FHIR API v0.3.3</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.2 - ci-build
+            <span style="display:inline-block;">0.3.3 - trial-use
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.2) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.3) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -302,7 +302,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>&lt; 445584004 |Report by finality status|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>&lt; 363787002 |Observable entity| OR &lt; 386053000 |Evaluation procedure|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>&lt; 123037004 |Body structure|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>&lt; 363787002 |Observable entity| OR 
 &lt; 386053000 |Evaluation procedure|</td> </tr>
@@ -341,8 +340,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>OBX.15 / (Practitioner)  OBX-16,  PRT-5:PRT-4='RO' /  (Device)  OBX-18 , PRT-10:PRT-4='EQUIP' / (Organization)  OBX-23,  PRT-8:PRT-4='PO'</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>N/A</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>OBX-20</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;method</td><td>OBX-17</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td>containment by OBX-4?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>OBX-3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>OBX.2, OBX.5, OBX.6</td> </tr>
@@ -355,6 +352,7 @@
  <tr><td>Observation</td><td>Entity. Role, or Act, Observation[classCode=OBS, moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>id</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier (TOid)</td><td>id</td> </tr>
@@ -403,8 +401,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;display</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>value</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;dataAbsentReason</td><td>value.nullFlavor</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>targetSiteCode</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;method</td><td>methodCode</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td>outBoundRelationship[typeCode=COMP]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -436,7 +432,6 @@
  <tr><td>Observation</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>116680003 |Is a|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>718497002 |Inherent location|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
@@ -444,10 +439,6 @@
 <a name="VitalsOx-Mapping"> </a><h3>Mappings for VIA to mhv-fhir-phr (VitalSignTO)</h3><p>Informative map to available elements in MHV FHIR API</p><table class="grid">
  <tr><td colspan="3"><b>MHVvitalsOx</b></td></tr>
  <tr><td>Observation</td><td>VitalSignTO</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (bodyPosition)</td><td>VF_VitalsPosition(Qualifier)</td><td><p>120.5 QUALIFIER</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (deviceCode)</td><td>VF_VitalsDevice(Qualifier)</td><td><p>120.5 QUALIFIER</p>
-</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {VitalSignTO.type.id}</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final` if not `entered-in-error`</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td><td></td> </tr>
@@ -465,14 +456,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (site)</td><td>Location(VitalSignTO.location)</td><td><p>120.5-.05 HOSPITAL LOCATION</p>
 </td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>VitalSignTO.value1 and VitalSignTO.units</td><td><p>MEASUREMENT - 120.5-.1.2 RATE</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;bodySite</td><td>VF_VitalsSite(Qualifier)</td><td><p>120.5 QUALIFIER</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;method</td><td>VF_VitalsMethod(Qualifier)</td><td><p>120.5 QUALIFIER</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;component</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code</td><td>Qualifier, all non matched Qualifier</td><td><p>120.5 QUALIFIER</p>
-, <p>120.5 QUALIFIER</p>
 </td> </tr>
 </table>
 <a name="VitalsOx-Old-Mapping"> </a><h3>Mappings for eVault-PHR to MHV-PHR (VitalSignTO)</h3><p>Informative map to include only the elements available in eVault PHR</p><table class="grid">
@@ -568,7 +551,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jan 29, 2024 11:44-0600">2024-01-29</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 26, 2024 14:52-0600">2024-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

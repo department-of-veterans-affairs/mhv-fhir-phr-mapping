@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR Allergy and Intolerance - Mappings - MyHealtheVet PHR FHIR API v0.3.2</title>
+    <title>VA MHV PHR Allergy and Intolerance - Mappings - MyHealtheVet PHR FHIR API v0.3.3</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.2 - ci-build
+            <span style="display:inline-block;">0.3.3 - trial-use
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.2) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.3) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -452,24 +452,31 @@ Observation.code=ASSERTION; Observation.value</td> </tr>
 </table>
 <a name="AllergyIntolerance-Old-Mapping"> </a><h3>Mappings for eVault-PHR to MHV-PHR (eVaultPHR)</h3><p>Informative map that includes only the elements available in eVault PHR</p><table class="grid">
  <tr><td colspan="3"><b>MHVallergyIntolerance</b></td></tr>
- <tr><td>AllergyIntolerance</td><td>HDR Allergy</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (observedHistoric)</td><td>intoleranceCondition.informationSourceCategory</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>intoleranceCondition.recordIdentifer</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>`active` if not entered-in-error</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>would indicate `entered-in-error`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>~intoleranceCondition.allergyType.code</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>intoleranceCondition.agent.code</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>GetPatient(intoleranceCondition.patient)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>~intoleranceCondition.observationTime.literal</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (visn)</td><td>Organization(intoleranceCondition.facilityIdentifier)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>intoleranceCondition.commentEvents</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time</td><td>~intoleranceCondition.commentEvents.date.literal</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>intoleranceCondition.commentEvents.comment</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manifestation</td><td>intoleranceCondition.reaction.reaction</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>intoleranceCondition.reaction.reaction.displayText</td> </tr>
+ <tr><td>AllergyIntolerance</td><td>HDR Allergy</td><td><p>eVault</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (observedHistoric)</td><td>intoleranceCondition.informationSourceCategory</td><td><p>Observed/Historical</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>intoleranceCondition.recordIdentifer</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;clinicalStatus</td><td>`active` if not entered-in-error</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;verificationStatus</td><td>would indicate `entered-in-error`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>~intoleranceCondition.allergyType.code</td><td><p>Allergy Type</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>intoleranceCondition.agent.code</td><td><p>Allergen</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;patient</td><td>GetPatient(intoleranceCondition.patient)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recordedDate</td><td>~intoleranceCondition.observationTime.literal</td><td><p>Date Entered</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;recorder</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (visn)</td><td>Organization(intoleranceCondition.facilityIdentifier)</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>intoleranceCondition.commentEvents</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time</td><td>~intoleranceCondition.commentEvents.date.literal</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>intoleranceCondition.commentEvents.comment</td><td><p>Comments</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;reaction</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;manifestation</td><td>intoleranceCondition.reaction.reaction</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>intoleranceCondition.reaction.reaction.displayText</td><td><p>Reactions</p>
+</td> </tr>
 </table>
 
 
@@ -546,7 +553,7 @@ Observation.code=ASSERTION; Observation.value</td> </tr>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.2 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jan 29, 2024 11:44-0600">2024-01-29</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 26, 2024 14:52-0600">2024-02-26</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

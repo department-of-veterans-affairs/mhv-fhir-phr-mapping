@@ -153,6 +153,10 @@ WARNING: Immunization/ex-MHV-immunization-1: Immunization.location: Found multip
 WARNING: Immunization/ex-MHV-immunization-1: Immunization.performer[0].actor: Found multiple matching profiles for #ex-MHV-organization-552 among choices: http://hl7.org/fhir/StructureDefinition/Organization, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization
 WARNING: Immunization/ex-MHV-immunization-deleted-1: Immunization.location: Found multiple matching profiles for #in-location-1 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
 WARNING: Immunization/ex-MHV-immunization-deleted-1: Immunization.performer[0].actor: Found multiple matching profiles for #ex-MHV-organization-552 among choices: http://hl7.org/fhir/StructureDefinition/Organization, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization
+WARNING: Immunization/ex-MHV-immunization-2-none: Immunization.contained[1]/*Observation/in-reaction-2-none*/: Best Practice Recommendation: In general, all observations should have a performer
+WARNING: Immunization/ex-MHV-immunization-2-none: Immunization.location: Found multiple matching profiles for #in-location-2 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
+WARNING: Immunization/ex-MHV-immunization-2-none: Immunization.performer[0].actor: Found multiple matching profiles for #ex-MHV-organization-552 among choices: http://hl7.org/fhir/StructureDefinition/Organization, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization
+WARNING: Immunization/ex-MHV-immunization-2-none: Immunization.reaction[0].detail: Found multiple matching profiles for #in-reaction-2-none among choices: http://hl7.org/fhir/StructureDefinition/Observation, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunizationReaction
 WARNING: Immunization/ex-MHV-immunization-2: Immunization.location: Found multiple matching profiles for #in-location-2 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
 WARNING: Immunization/ex-MHV-immunization-2: Immunization.performer[0].actor: Found multiple matching profiles for #ex-MHV-organization-552 among choices: http://hl7.org/fhir/StructureDefinition/Organization, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization
 WARNING: Immunization/ex-MHV-immunization-2: Immunization.reaction[0].detail: Found multiple matching profiles for #in-reaction-2 among choices: http://hl7.org/fhir/StructureDefinition/Observation, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunizationReaction
@@ -191,13 +195,10 @@ WARNING: DocumentReference/ex-MHV-note-6: DocumentReference.authenticator: Found
 WARNING: DocumentReference/ex-MHV-note-6: DocumentReference.context.related[0]: Found multiple matching profiles for #ex-MHV-location-984 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
 
 # the pain example also includes the original code (VUID)
-This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.2.11 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.3.3 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # vitals can have .component that carry vista qualifiers. The following are confirmed to be legitimate
-This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.2.11 (this may not be a problem, but you should check that it's not intended to match a slice)
-
-# pulseOx has this in addition to the FHIR core desired one.
-The provided code 'http://loinc.org#59408-5' was not found in the value set 'http://hl7.org/fhir/ValueSet/observation-vitalsignresult|4.0.1'
+This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.3.3 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # these are matching a code but still complaining
 Terminology_TX_NoValid_3_CC
@@ -223,3 +224,16 @@ WARNING: Condition/ex-MHV-condition-9: Condition.code.coding[0].code: Unknown Co
 
 # KBS recommended code
 INFORMATION: Observation/91f05de1-fb1c-4c31-b434-094d53791842: Observation.extension[0].value.ofType(CodeableConcept).coding[0].code: The code '243147009' is valid but is not active
+
+# Presumed good codes from ICD
+WARNING: Condition/0635f0d9-81ab-4a0b-af8d-f899d8e5220d: Condition.code.coding[0].code: Unknown Code '414.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/2b2d8b23-439d-4d5c-967e-b080b2710dd9: Condition.code.coding[0].code: Unknown Code '799.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/36a44c53-cb2a-45a3-a932-a295ac7d52c7: Condition.code.coding[0].code: Unknown Code '401.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/397ef2d8-7516-4fdb-aef4-ae74b53dd202: Condition.code.coding[0].code: Unknown Code '300.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/6ba7a74c-b635-4593-bcb7-735f009aaf88: Condition.code.coding[0].code: Unknown Code '424.90' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/74976867-7782-4e26-90af-2e576be9bb44: Condition.code.coding[0].code: Unknown Code '365.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/7e55cbc8-4864-462d-a730-98ca4cccd4a2: Condition.code.coding[0].code: Unknown Code '724.2' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/7f88a60c-ffe5-4001-8286-c5eeccc069dd: Condition.code.coding[0].code: Unknown Code '333.99' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/a7471138-f4ac-4226-9555-4999196c6136: Condition.code.coding[0].code: Unknown Code '600.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/c02cc828-7fd0-40a7-a2fb-5b4609f825a7: Condition.code.coding[0].code: Unknown Code 'V79.8' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
+WARNING: Condition/ca55b358-f98a-4ba0-a3dc-0346cbeaf44d: Condition.code.coding[0].code: Unknown Code 'V79.1' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment

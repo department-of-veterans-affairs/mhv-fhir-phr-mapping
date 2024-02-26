@@ -62,11 +62,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/>
-  <version value="0.3.2"/>
+  <version value="0.3.3"/>
   <name value="MHVallergyIntolerance"/>
   <title value="VA MHV PHR Allergy and Intolerance"/>
   <status value="active"/>
-  <date value="2024-01-29T11:44:59-06:00"/>
+  <date value="2024-02-26T14:52:47-06:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -223,6 +223,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="HDR Allergy"/>
+        <comment value="eVault"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.id">
@@ -478,6 +479,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="intoleranceCondition.informationSourceCategory"/>
+        <comment value="Observed/Historical"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.modifierExtension">
@@ -1526,6 +1528,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="~intoleranceCondition.allergyType.code"/>
+        <comment value="Allergy Type"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.criticality">
@@ -1787,6 +1790,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="intoleranceCondition.agent.code"/>
+        <comment value="Allergen"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.patient">
@@ -2012,6 +2016,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="~intoleranceCondition.observationTime.literal"/>
+        <comment value="Date Entered"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.recorder">
@@ -2737,6 +2742,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="intoleranceCondition.commentEvents.comment"/>
+        <comment value="Comments"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction">
@@ -3401,6 +3407,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="intoleranceCondition.reaction.reaction.displayText"/>
+        <comment value="Reactions"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.description">
@@ -3586,6 +3593,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="HDR Allergy"/>
+        <comment value="eVault"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.extension">
@@ -3617,6 +3625,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="intoleranceCondition.informationSourceCategory"/>
+        <comment value="Observed/Historical"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.identifier">
@@ -3731,6 +3740,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="~intoleranceCondition.allergyType.code"/>
+        <comment value="Allergy Type"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.criticality">
@@ -3752,6 +3762,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="intoleranceCondition.agent.code"/>
+        <comment value="Allergen"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.patient">
@@ -3801,6 +3812,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="~intoleranceCondition.observationTime.literal"/>
+        <comment value="Date Entered"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.recorder">
@@ -3892,6 +3904,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="intoleranceCondition.commentEvents.comment"/>
+        <comment value="Comments"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.substance">
@@ -3934,6 +3947,7 @@
       <mapping>
         <identity value="AllergyIntolerance-Old-Mapping"/>
         <map value="intoleranceCondition.reaction.reaction.displayText"/>
+        <comment value="Reactions"/>
       </mapping>
     </element>
     <element id="AllergyIntolerance.reaction.description">

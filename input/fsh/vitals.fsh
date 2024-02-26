@@ -41,10 +41,15 @@ A profile on the Observation resource for MHV PHR exposing Vital-Signs using FHI
 * component[@default].dataAbsentReason 1..1
 * component[@default].value[x] 0..0
 */
+/*
 * bodySite MS 
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named bodyPosition 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named deviceCode 0..1
 * method MS
+*/
+* bodySite 0..0
+* method 0..0
+
 
 * device 0..0
 * basedOn 0..0
@@ -76,11 +81,13 @@ Description: "Informative map to available elements in MHV FHIR API"
 * performer -> "contained VitalSignTO.recorder" "120.5-.06 ENTERED BY"
 * performer -> "contained VitalSignTO.observer" ""
 * performer.extension[site] -> "Location(VitalSignTO.location)" "120.5-.05 HOSPITAL LOCATION"
+/*
 * component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
 * bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
 * extension[bodyPosition] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
 * method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
 * extension[deviceCode] -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
+*/
 // Laterality
 // Position
 //* note.text -> "VitalSignTO.comments" ""
@@ -163,10 +170,14 @@ Not drived from us-core vitals, us-core does not have Pain and forbids valueInte
 * component[@default].dataAbsentReason 1..1
 * component[@default].value[x] 0..0
 */
+/*
 * bodySite MS 
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named bodyPosition 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named deviceCode 0..1
 * method MS
+*/
+* bodySite 0..0
+* method 0..0
 
 * device 0..0
 * basedOn 0..0
@@ -198,12 +209,13 @@ Description: "Informative map to available elements in MHV FHIR API"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "VitalSignTO.recorder and VitalSignTO.observer"
 * performer.extension[site] -> "Location(VitalSignTO.location)"
+/*
 * component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
 * bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
 * extension[bodyPosition] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
 * method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
 * extension[deviceCode] -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
-
+*/
 
 
 
@@ -253,12 +265,14 @@ Note that VIA does not provide us the supplemental O2 concentration or flowrate
 * component contains @default 0..*
 * component[@default].dataAbsentReason 1..1
 * component[@default].value[x] 0..0
-*/
+/*
 * bodySite MS 
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named bodyPosition 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named deviceCode 0..1
 * method MS
-
+*/
+* bodySite 0..0
+* method 0..0
 * device 0..0
 * basedOn 0..0
 * partOf 0..0
@@ -290,12 +304,14 @@ Description: "Informative map to available elements in MHV FHIR API"
 * performer -> "contained VitalSignTO.recorder" "120.5-.06 ENTERED BY"
 * performer -> "contained VitalSignTO.observer" ""
 * performer.extension[site] -> "Location(VitalSignTO.location)" "120.5-.05 HOSPITAL LOCATION"
+/*
 * component.code -> "Qualifier" "120.5 QUALIFIER"
 * component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
 * bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
 * extension[bodyPosition] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
 * method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
 * extension[deviceCode] -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
+*/
 
 Mapping: VitalsOx-Old-Mapping
 Source:	MHVvitalsOx

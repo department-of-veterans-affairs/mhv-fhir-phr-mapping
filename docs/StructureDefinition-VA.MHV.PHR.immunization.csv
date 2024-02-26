@@ -152,7 +152,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "Immunization.location","Immunization.location","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location], CanonicalType[http://hl7.org/fhir/StructureDefinition/Location]]} (contained
 )
 ","Where immunization occurred","The service delivery location where the vaccine administration occurred.","","","","","","","","","",,,,,"",,,,"Immunization.location",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.location","RXA-27  (or RXA-11, deprecated as of v2.7)",".participation[typeCode=LOC].COCT_MT240000UV","FiveWs.where[x]","GetLocation(ImmunizationTO.encounter.location)","GetLocation(ImmunizationTO.encounter.location)"
+","Event.location","RXA-27  (or RXA-11, deprecated as of v2.7)",".participation[typeCode=LOC].COCT_MT240000UV","FiveWs.where[x]","GetLocation(ImmunizationTO.encounter.location)"
 "Immunization.location.id","Immunization.location.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Immunization.location.extension","Immunization.location.extension","","extensions
@@ -202,7 +202,7 @@ Reference is intended to point to a structure that can potentially be expressed 
 "Immunization.performer","Immunization.performer","","","",0,*,"Y","","Y","BackboneElement {[]} {[]}
 ","Who performed event","Indicates who performed the immunization event.","","","","","","","","","",,,,,"","pattern:function}
 ","",,"closed","Immunization.performer",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","Event.performer","ORC-12 / RXA-10",".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]","GetPractitioner(ImmunizationTO.encounter.provider) | `AP`","GetOrganization(ImmunizationTO.encounter.facility)","GetOrganization(ImmunizationTO.encounter.facility)"
+","Event.performer","ORC-12 / RXA-10",".participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]","GetPractitioner(ImmunizationTO.encounter.provider) | `AP`","GetOrganization(ImmunizationTO.encounter.facility)"
 "Immunization.performer.id","Immunization.performer.id","","","",0,1,"","","","string {[]} {[]}
 ","Unique id for inter-element referencing","Unique id for the element within a resource (for internal references). This may be any string value that does not contain spaces.","","","","","","","","","",,,,,"",,,,"Element.id",0,1,"","","n/a"
 "Immunization.performer.extension","Immunization.performer.extension","","extensions
@@ -433,7 +433,7 @@ Modifier extensions SHALL NOT change the meaning of any elements on Resource or 
 ext-1:Must have either extensions or value[x], not both {extension.exists() != value.exists()}","N/A"
 "Immunization.protocolApplied.series","Immunization.protocolApplied.series","","","",0,1,"Y","","","string {[]} {[]}
 ","Name of vaccine series","One possible path to achieve presumed immunity against a disease - within the context of an authority.","","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.series",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
-","N/A","translation of ImmunizationTO.series"
+","N/A","translation of ImmunizationTO.series","translation of ImmunizationTO.series"
 "Immunization.protocolApplied.authority","Immunization.protocolApplied.authority","","","",0,0,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Who is responsible for publishing the recommendations","Indicates the authority who published the protocol (e.g. ACIP) that is being followed.","","","","","","","","","",,,,,"",,,,"Immunization.protocolApplied.authority",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="cfe9ec39-d291-4ca0-b130-c7a4d33eb83b"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p><b>Generated Narrative: Condition</b><a name="cfe9ec39-d291-4ca0-b130-c7a4d33eb83b"> </a></p><div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%"><p style="margin-bottom: 0px">Resource Condition &quot;cfe9ec39-d291-4ca0-b130-c7a4d33eb83b&quot; </p><p style="margin-bottom: 0px">Profile: <a href="StructureDefinition-VA.MHV.PHR.condition.html">VA MHV PHR problems</a></p></div><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.984</code>/ProblemTO.352245 (use: USUAL)</p><p><b>clinicalStatus</b>: Active <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html">Condition Clinical Status Codes</a>#active)</span></p><p><b>verificationStatus</b>: Confirmed <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.3.0/CodeSystem-condition-ver-status.html">ConditionVerificationStatus</a>#confirmed)</span></p><p><b>category</b>: Problem List Item <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-category.html">Condition Category Codes</a>#problem-list-item)</span></p><p><b>code</b>: Chest Pain (SCT 29857009) <span style="background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki"> (<a href="http://terminology.hl7.org/5.0.0/CodeSystem-icd10CM.html">International Classification of Diseases, 10th Revision, Clinical Modification (ICD-10-CM)</a>#R07.9)</span></p><p><b>subject</b>: <a href="Patient-ex-MHV-patient-4.html">Patient/ex-MHV-patient-4</a> &quot; CASEY&quot;</p><p><b>onset</b>: 1999</p><p><b>recordedDate</b>: 2024-02-13</p><p><b>recorder</b>: <a name="ex-MHV-practitioner-36556"> </a></p><blockquote><p/><p><a name="ex-MHV-practitioner-36556"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/AuthorTO.37556 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Practitioner #ex-MHV-practitioner-36556</b><a name="ex-MHV-practitioner-36556"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/AuthorTO.37556 (use: USUAL)</p><p><b>name</b>: AHMED,MARUF</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location #ex-MHV-location-552</b><a name="ex-MHV-location-552"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/HospitalLocationTO.552 (use: USUAL)</p><p><b>name</b>: DAYTON</p></blockquote></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="ex-MHV-practitioner-36556"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="AuthorTO.37556"/>
+      </identifier>
+      <name>
+        <text value="AHMED,MARUF"/>
+        <family value="MARUF"/>
+        <given value="AHMED"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Location>
+      <id value="ex-MHV-location-552"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="HospitalLocationTO.552"/>
+      </identifier>
+      <name value="DAYTON"/>
+    </Location>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.984"/>
+    <value value="ProblemTO.352245"/>
+  </identifier>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="active"/>
+    </coding>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="confirmed"/>
+    </coding>
+  </verificationStatus>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+      <code value="problem-list-item"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://hl7.org/fhir/sid/icd-10-cm"/>
+      <code value="R07.9"/>
+    </coding>
+    <text value="Chest Pain (SCT 29857009)"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-4"/>
+  </subject>
+  <onsetDateTime value="1999"/>
+  <recordedDate value="2024-02-13"/>
+  <recorder>
+    <extension url="http://hl7.org/fhir/StructureDefinition/alternate-reference">
+      <valueReference>
+        <reference value="#ex-MHV-location-552"/>
+      </valueReference>
+    </extension>
+    <reference value="#ex-MHV-practitioner-36556"/>
+  </recorder>
+</Condition>

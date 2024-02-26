@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <Bundle xmlns="http://hl7.org/fhir">
-  <id value="d0bfee81-821b-4abc-b5ed-d2f87e80e2c1"/>
+  <id value="7a145b4a-89a9-439b-83c5-ee52f911b117"/>
   <meta>
-    <lastUpdated value="2024-01-29T11:44:59.293-06:00"/>
+    <lastUpdated value="2024-02-26T14:52:47.011-06:00"/>
   </meta>
   <type value="collection"/>
   <entry>
@@ -78,12 +78,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/AllergyCategoryVS"/>
-        <version value="0.3.2"/>
+        <version value="0.3.3"/>
         <name value="AllergyCategoryVS"/>
         <title value="Subset of allergy intolerance category"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2024-01-29T11:44:59-06:00"/>
+        <date value="2024-02-26T14:52:47-06:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -91,8 +91,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:8cb825a4-f809-4b56-8eb6-da97f24f67ed"/>
-          <timestamp value="2024-01-29T11:48:24-06:00"/>
+          <identifier value="urn:uuid:cc710610-1fa4-4ae2-83c7-25e765c29391"/>
+          <timestamp value="2024-02-26T14:56:19-06:00"/>
           <total value="3"/>
           <offset value="0"/>
           <parameter>
@@ -142,7 +142,7 @@
           <status value="generated"/>
           <div xmlns="http://www.w3.org/1999/xhtml">
             <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
-              <a href="CodeSystem-AllergyObservedHistoricCS.html">codesystem Allergy Observed vs Historic CodeSystem v0.3.2 (CodeSystem)</a>
+              <a href="CodeSystem-AllergyObservedHistoricCS.html">codesystem Allergy Observed vs Historic CodeSystem v0.3.3 (CodeSystem)</a>
             </p>
             <p>This value set contains 2 concepts.</p>
             <table class="codes">
@@ -192,12 +192,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/AllergyObservedHistoricVS"/>
-        <version value="0.3.2"/>
+        <version value="0.3.3"/>
         <name value="AllergyObservedHistoricVS"/>
         <title value="Allergy Observed vs Historic ValueSet"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2024-01-29T11:44:59-06:00"/>
+        <date value="2024-02-26T14:52:47-06:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -205,8 +205,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:2fc95c8f-5785-4950-b4a6-06f06daff1fd"/>
-          <timestamp value="2024-01-29T11:48:25-06:00"/>
+          <identifier value="urn:uuid:b6b85445-0791-400c-8e8f-a7edeaae29c0"/>
+          <timestamp value="2024-02-26T14:56:19-06:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>
@@ -223,7 +223,7 @@
           </parameter>
           <parameter>
             <name value="used-codesystem"/>
-            <valueUri value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS|0.3.2"/>
+            <valueUri value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS|0.3.3"/>
           </parameter>
           <contains>
             <system value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS"/>
@@ -234,6 +234,111 @@
             <system value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS"/>
             <code value="h"/>
             <display value="HISTORICAL"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+  <entry>
+    <fullUrl value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionClinicalStatusVS"/>
+    <resource>
+      <ValueSet>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html">codesystem Condition Clinical Status Codes v2.0.0 (CodeSystem)</a>
+            </p>
+            <p>This value set contains 2 concepts.</p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>System</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---terminology.hl7.org-CodeSystem-condition-clinical-active"> </a>  
+                  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html#condition-clinical-active">active</a>
+                </td>
+                <td>http://terminology.hl7.org/CodeSystem/condition-clinical</td>
+                <td>Active</td>
+                <td>
+                  <div>
+                    <p>The subject is currently experiencing the condition or situation, there is evidence of the condition or situation, or considered to be a significant risk.</p>
+
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---terminology.hl7.org-CodeSystem-condition-clinical-inactive"> </a>  
+                  <a href="http://terminology.hl7.org/5.0.0/CodeSystem-condition-clinical.html#condition-clinical-inactive">inactive</a>
+                </td>
+                <td>http://terminology.hl7.org/CodeSystem/condition-clinical</td>
+                <td>Inactive</td>
+                <td>
+                  <div>
+                    <p>The subject is no longer experiencing the condition or situation and there is no longer evidence or appreciable risk of the condition or situation.</p>
+
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionClinicalStatusVS"/>
+        <version value="0.3.3"/>
+        <name value="ConditionClinicalStatusVS"/>
+        <title value="Subset of condition clinical status"/>
+        <status value="active"/>
+        <experimental value="false"/>
+        <date value="2024-02-26T14:52:47-06:00"/>
+        <jurisdiction>
+          <coding>
+            <system value="urn:iso:std:iso:3166"/>
+            <code value="US"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:5f646c72-2beb-44d0-a00c-1517afc86f32"/>
+          <timestamp value="2024-02-26T14:56:19-06:00"/>
+          <total value="2"/>
+          <offset value="0"/>
+          <parameter>
+            <name value="count"/>
+            <valueInteger value="1000"/>
+          </parameter>
+          <parameter>
+            <name value="offset"/>
+            <valueInteger value="0"/>
+          </parameter>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="used-codesystem"/>
+            <valueUri value="http://terminology.hl7.org/CodeSystem/condition-clinical|2.0.0"/>
+          </parameter>
+          <contains>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </contains>
+          <contains>
+            <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+            <code value="inactive"/>
+            <display value="Inactive"/>
           </contains>
         </expansion>
       </ValueSet>
@@ -311,12 +416,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/ConditionVerificationVS"/>
-        <version value="0.3.2"/>
+        <version value="0.3.3"/>
         <name value="ConditionVerificationVS"/>
         <title value="Subset of condition verification status"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2024-01-29T11:44:59-06:00"/>
+        <date value="2024-02-26T14:52:47-06:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -324,8 +429,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:539d8a04-9a3f-45db-b657-ef944e9af0f9"/>
-          <timestamp value="2024-01-29T11:48:25-06:00"/>
+          <identifier value="urn:uuid:18d7d660-ffff-4db6-ad73-35c83e45831b"/>
+          <timestamp value="2024-02-26T14:56:19-06:00"/>
           <total value="3"/>
           <offset value="0"/>
           <parameter>
@@ -379,7 +484,7 @@
               <ul>
                 <li>Loinc v2.74</li>
                 <li>
-                  <a href="ValueSet-NoteTypeVS.html">valueset Known Note types v0.3.2 (ValueSet)</a>
+                  <a href="ValueSet-NoteTypeVS.html">valueset Known Note types v0.3.3 (ValueSet)</a>
                 </li>
               </ul>
             </div>
@@ -418,7 +523,7 @@
                   <a href="https://loinc.org/11488-4/">11488-4</a>
                 </td>
                 <td>http://loinc.org</td>
-                <td>Consultation Note</td>
+                <td>Consult note</td>
               </tr>
               <tr>
                 <td style="white-space:nowrap">
@@ -440,12 +545,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS"/>
-        <version value="0.3.2"/>
+        <version value="0.3.3"/>
         <name value="DocumentReferenceTypeVS"/>
         <title value="Known DocumentReference types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2024-01-29T11:44:59-06:00"/>
+        <date value="2024-02-26T14:52:47-06:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -453,8 +558,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:69bafe28-e673-4f10-8fff-d002ef9a7c5e"/>
-          <timestamp value="2024-01-29T11:48:25-06:00"/>
+          <identifier value="urn:uuid:10ab07c8-df25-4339-9745-7338b8b8b73b"/>
+          <timestamp value="2024-02-26T14:56:20-06:00"/>
           <total value="5"/>
           <offset value="0"/>
           <parameter>
@@ -471,7 +576,7 @@
           </parameter>
           <parameter>
             <name value="used-valueset"/>
-            <valueUri value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.3.2"/>
+            <valueUri value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS|0.3.3"/>
           </parameter>
           <parameter>
             <name value="used-valueset"/>
@@ -502,7 +607,7 @@
           <contains>
             <system value="http://loinc.org"/>
             <code value="11488-4"/>
-            <display value="Consultation Note"/>
+            <display value="Consult note"/>
           </contains>
           <contains>
             <system value="http://loinc.org"/>
@@ -559,12 +664,12 @@
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/LabReportVS"/>
-        <version value="0.3.2"/>
+        <version value="0.3.3"/>
         <name value="LabReportVS"/>
         <title value="Known Lab Report types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2024-01-29T11:44:59-06:00"/>
+        <date value="2024-02-26T14:52:47-06:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -572,8 +677,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:524869a4-33aa-4b5b-b786-2941f0cbc51f"/>
-          <timestamp value="2024-01-29T11:48:26-06:00"/>
+          <identifier value="urn:uuid:aaa0fe9d-0220-4635-b494-2699907e8069"/>
+          <timestamp value="2024-02-26T14:56:20-06:00"/>
           <total value="2"/>
           <offset value="0"/>
           <parameter>
@@ -657,18 +762,18 @@
                   <a href="https://loinc.org/11488-4/">11488-4</a>
                 </td>
                 <td>http://loinc.org</td>
-                <td>Consultation Note</td>
+                <td>Consult note</td>
               </tr>
             </table>
           </div>
         </text>
         <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS"/>
-        <version value="0.3.2"/>
+        <version value="0.3.3"/>
         <name value="NoteTypeVS"/>
         <title value="Known Note types"/>
         <status value="active"/>
         <experimental value="false"/>
-        <date value="2024-01-29T11:44:59-06:00"/>
+        <date value="2024-02-26T14:52:47-06:00"/>
         <jurisdiction>
           <coding>
             <system value="urn:iso:std:iso:3166"/>
@@ -676,8 +781,8 @@
           </coding>
         </jurisdiction>
         <expansion>
-          <identifier value="urn:uuid:d93c5487-576a-4363-8118-fd6f8714fab8"/>
-          <timestamp value="2024-01-29T11:48:26-06:00"/>
+          <identifier value="urn:uuid:b95281b2-618e-476c-88dd-5d6fdfde7602"/>
+          <timestamp value="2024-02-26T14:56:20-06:00"/>
           <total value="3"/>
           <offset value="0"/>
           <parameter>
@@ -717,7 +822,7 @@
           <contains>
             <system value="http://loinc.org"/>
             <code value="11488-4"/>
-            <display value="Consultation Note"/>
+            <display value="Consult note"/>
           </contains>
         </expansion>
       </ValueSet>

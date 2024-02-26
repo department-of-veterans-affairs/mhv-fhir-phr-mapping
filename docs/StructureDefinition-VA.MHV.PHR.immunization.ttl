@@ -29,11 +29,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.3.2"] ; # 
+  fhir:version [ fhir:v "0.3.3"] ; # 
   fhir:name [ fhir:v "MHVimmunization"] ; # 
   fhir:title [ fhir:v "VA MHV PHR Immunization"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-01-29T11:44:59-06:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-02-26T14:52:47-06:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -1547,7 +1547,7 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.name" ] ;
-         fhir:comment [ fhir:v "9000010.11-.01 IMMUNIZATION" ]
+         fhir:comment [ fhir:v "Immunization" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.patient" ] ;
@@ -1722,7 +1722,7 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.administeredDate" ] ;
-         fhir:comment [ fhir:v "9000010.11-.1201 EVENT DATE AND TIME" ]
+         fhir:comment [ fhir:v "Event Date and Time" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.recorded" ] ;
@@ -2201,10 +2201,6 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "GetLocation(ImmunizationTO.encounter.location)" ]
-       ] [
-         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
-         fhir:map [ fhir:v "GetLocation(ImmunizationTO.encounter.location)" ] ;
-         fhir:comment [ fhir:v "9000010.11-.1215 ORDERING LOCATION" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.location.id" ] ;
@@ -2737,9 +2733,6 @@
          fhir:map [ fhir:v "GetPractitioner(ImmunizationTO.encounter.provider) | `AP`" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
-         fhir:map [ fhir:v "GetOrganization(ImmunizationTO.encounter.facility)" ]
-       ] [
-         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "GetOrganization(ImmunizationTO.encounter.facility)" ]
        ] )
      ] [
@@ -3933,7 +3926,8 @@
          fhir:comment [ fhir:v "9000010.11-.1101 REMARKS" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
-         fhir:map [ fhir:v "ImmunizationTO.comments" ]
+         fhir:map [ fhir:v "ImmunizationTO.comments" ] ;
+         fhir:comment [ fhir:v "Remarks" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.reasonCode" ] ;
@@ -4843,7 +4837,7 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "contained Observation with ImmunizationTO.reaction" ] ;
-         fhir:comment [ fhir:v "9000010.11-.06 REACTION" ]
+         fhir:comment [ fhir:v "Reaction" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.reaction.detail.type" ] ;
@@ -5180,6 +5174,10 @@
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "translation of ImmunizationTO.series" ] ;
          fhir:comment [ fhir:v "9000010.11-.04 SERIES" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "translation of ImmunizationTO.series" ] ;
+         fhir:comment [ fhir:v "Series" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.protocolApplied.authority" ] ;
@@ -5512,7 +5510,7 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.name" ] ;
-         fhir:comment [ fhir:v "9000010.11-.01 IMMUNIZATION" ]
+         fhir:comment [ fhir:v "Immunization" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.patient" ] ;
@@ -5546,7 +5544,7 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "ImmunizationTO.administeredDate" ] ;
-         fhir:comment [ fhir:v "9000010.11-.1201 EVENT DATE AND TIME" ]
+         fhir:comment [ fhir:v "Event Date and Time" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.recorded" ] ;
@@ -5615,10 +5613,6 @@
        fhir:mapping ( [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "GetLocation(ImmunizationTO.encounter.location)" ]
-       ] [
-         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
-         fhir:map [ fhir:v "GetLocation(ImmunizationTO.encounter.location)" ] ;
-         fhir:comment [ fhir:v "9000010.11-.1215 ORDERING LOCATION" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.location.display" ] ;
@@ -5664,9 +5658,6 @@
          fhir:map [ fhir:v "GetPractitioner(ImmunizationTO.encounter.provider) | `AP`" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
-         fhir:map [ fhir:v "GetOrganization(ImmunizationTO.encounter.facility)" ]
-       ] [
-         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "GetOrganization(ImmunizationTO.encounter.facility)" ]
        ] )
      ] [
@@ -5765,7 +5756,8 @@
          fhir:comment [ fhir:v "9000010.11-.1101 REMARKS" ]
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
-         fhir:map [ fhir:v "ImmunizationTO.comments" ]
+         fhir:map [ fhir:v "ImmunizationTO.comments" ] ;
+         fhir:comment [ fhir:v "Remarks" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.reasonCode" ] ;
@@ -5819,7 +5811,7 @@
        ] [
          fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
          fhir:map [ fhir:v "contained Observation with ImmunizationTO.reaction" ] ;
-         fhir:comment [ fhir:v "9000010.11-.06 REACTION" ]
+         fhir:comment [ fhir:v "Reaction" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.reaction.detail.identifier" ] ;
@@ -5845,6 +5837,10 @@
          fhir:identity [ fhir:v "Immunization-Mapping" ] ;
          fhir:map [ fhir:v "translation of ImmunizationTO.series" ] ;
          fhir:comment [ fhir:v "9000010.11-.04 SERIES" ]
+       ] [
+         fhir:identity [ fhir:v "Immunization-Old-Mapping" ] ;
+         fhir:map [ fhir:v "translation of ImmunizationTO.series" ] ;
+         fhir:comment [ fhir:v "Series" ]
        ] )
      ] [
        fhir:id [ fhir:v "Immunization.protocolApplied.authority" ] ;

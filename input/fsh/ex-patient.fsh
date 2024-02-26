@@ -347,3 +347,43 @@ Usage: #example
 * identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[PatientId].value = "3"
 * identifier[PatientId].use = #usual
+
+/*
+used in test data
+
+<patientTO>
+    <name>CASEY,VETERAN</name>
+    <patientName>CASEY,VETERAN</patientName>
+    <mpiPid>1013704789</mpiPid>
+    <mpiChecksum>992505</mpiChecksum>
+    <localPid>552164830</localPid>
+    <confidentiality>
+        <tag>0</tag>
+    </confidentiality>
+    <patientFlags>
+        <count>0</count>
+    </patientFlags>
+</patientTO>
+
+*/
+Instance: ex-MHV-patient-4
+InstanceOf: MHVpatient
+Title: "Example VETERAN CASEY"
+Description: """
+This example is derived off of a mock PatientTO
+"""
+Usage: #example
+* name[+].family = "CASEY"
+* name[=].given = "VETERAN"
+
+* gender = #unknown
+* birthDate = "1000-01-01"
+//* identifier[+].use = #official
+//* identifier[=].system = "http://va.gov/systems/mpiPID"
+//* identifier[=].value = "1013699421"
+//* identifier[+].use = #secondary
+//* identifier[=].system = "http://va.gov/systems/localPID"
+//* identifier[=].value = "1013699421"
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "4"
+* identifier[PatientId].use = #usual

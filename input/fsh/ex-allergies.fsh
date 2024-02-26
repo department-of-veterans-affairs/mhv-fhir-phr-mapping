@@ -25,6 +25,34 @@ IntoleranceCondition record identity 53495 from a mock ProblemTO
 * recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
 * recorder[=].display = "Organization 979"
 
+
+Instance:   ex-MHV-allergy-1-deleted
+InstanceOf: VA.MHV.PHR.allergyIntolerance
+Title: "Example 1 of an MHV allergy or intolerance - deleted"
+Usage: #example
+Description:      """
+IntoleranceCondition record identity 53495 from a mock ProblemTO
+"""
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* patient = Reference(Patient/ex-MHV-patient-89486)
+* identifier[recordIdentifier].value = "53495" 
+* identifier[recordIdentifier].system = "http://va.gov/systems/979_120.8"
+* identifier[recordIdentifier].use = #official
+//* clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
+* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#entered-in-error
+* recordedDate = 2002-06-03T09:44:00Z
+* code.text = "CONTRAST MEDIA, OTHER"
+//* code.coding[+].display = "CONTRAST MEDIA, OTHER"
+* category = #medication
+* reaction[+].manifestation.text = "RESPIRATORY DISTRESS"
+* reaction[=].manifestation.coding = VUID#4637183
+* note.text = "Updated using clean up process.  Changed reactant from IVP DYE (free text) to CONTRAST MEDIA, OTHER(file - PS(50.605,)"
+* note.time = 2004-07-24T18:29:07Z
+* extension[observedHistoric].valueCode = #h
+* contained[+] = ex-MHV-organization-979
+* recorder[+].extension[visn].valueReference = Reference(ex-MHV-organization-979)
+* recorder[=].display = "Organization 979"
+
 Instance:   ex-MHV-allergy-2
 InstanceOf: VA.MHV.PHR.allergyIntolerance
 Title: "Example 2 of an MHV allergy or intolerance"
@@ -37,8 +65,7 @@ IntoleranceCondition record identity 67933 from a mock ProblemTO
 * identifier[recordIdentifier].value = "67933" 
 * identifier[recordIdentifier].system = "http://va.gov/systems/979_120.8"
 * identifier[recordIdentifier].use = #official
-//* clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
-* verificationStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-verification#entered-in-error
+* clinicalStatus = http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical#active
 * recordedDate = 2006-02-01T13:57:00Z
 * code.text = "TYLENOL"
 //* code.coding[+].display = "NON-OPIOID ANALGESICS"

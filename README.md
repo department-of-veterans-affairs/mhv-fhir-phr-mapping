@@ -10,15 +10,25 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
+- TBD
+
+### 0.3.3
+
 - Conditions
-  - Mapping concerns outlined
-  - Added a mapping table from Vista fields -> VIA ProblemTO -> FHIR Condition
+  - Mapping defined
+  - Added a narrative mapping table from Vista fields -> VIA ProblemTO -> MHV eVault -> FHIR Condition
+  - Confirmed that when a problem is deleted on Vista, VIA stops sending it to us. So must handle.
+  - Added examples of Conditions translated from VIA feed using defined mapping / profile
+  - Noted some data just has YEAR with month and day as '00' to indicate none. This should be handled as just year specified.
 - DocumentReference
   - clarify date/time vs just time
 - Allergies
   - add MHV-PHR element names to the evaultPHR mapping
+  - include an example of entered-in-error for completeness sake
 - Immunizations
   - add MHV-PHR element names to the evaultPHR mapping
+- Vitals
+  - remove use of qualifiers from examples and profiles
 
 ### 0.3.2
 
