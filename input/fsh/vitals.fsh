@@ -378,11 +378,14 @@ A profile on the Observation resource for Blood Pressure
 * component[@default].value[x] 0..0
 * component ^slicing.rules = #closed
 */
+/*
 * bodySite MS 
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-bodyPosition named bodyPosition 0..1
 * extension contains http://hl7.org/fhir/StructureDefinition/observation-deviceCode named deviceCode 0..1
 * method MS
-
+*/
+* bodySite 0..0
+* method 0..0
 * device 0..0
 * basedOn 0..0
 * partOf 0..0
@@ -414,13 +417,14 @@ Description: "Informative map to available elements in MHV FHIR API"
 * identifier -> "{StationNbr} and {VitalSignTO.type.id}"
 * performer -> "VitalSignTO.recorder and VitalSignTO.observer"
 * performer.extension[site] -> "Organization(VitalSignTO.location)"
+/*
 * component.code -> "Qualifier" "120.5 QUALIFIER"
 * component.code -> "all non matched Qualifier" "120.5 QUALIFIER"
 * bodySite -> "VF_VitalsSite(Qualifier)" "120.5 QUALIFIER"
 * extension[bodyPosition] -> "VF_VitalsPosition(Qualifier)" "120.5 QUALIFIER"
 * method -> "VF_VitalsMethod(Qualifier)" "120.5 QUALIFIER"
 * extension[deviceCode] -> "VF_VitalsDevice(Qualifier)" "120.5 QUALIFIER"
-
+*/
 
 Mapping: VitalsBP-Old-Mapping
 Source:	MHVvitalsBP

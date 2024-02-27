@@ -149,7 +149,7 @@ Usage: #example
 * effectiveDateTime = "2004-09-24T10:32:00Z"
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"
-* valueInteger.value = 5
+* valueInteger = 5
 
 Instance: 1707b5b6-0f14-488e-8430-17ecb5e8b72a
 InstanceOf: VA.MHV.PHR.vitals
@@ -285,7 +285,7 @@ Usage: #example
 * effectiveDateTime = "2004-01-21T11:01:00Z"
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: 89a43d5e-0443-4c7e-b640-1a202645248d
 InstanceOf: VA.MHV.PHR.vitals
@@ -421,7 +421,7 @@ Usage: #example
 * effectiveDateTime = "2003-07-17T10:06:00Z"
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: 66b8bd60-7541-496b-9da7-17939057f37d
 InstanceOf: VA.MHV.PHR.vitals
@@ -582,7 +582,7 @@ Usage: #example
 * effectiveDateTime = "2003-01-24T10:08:00Z"
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: 1724ffd2-624f-477b-b022-758185b6281c
 InstanceOf: VA.MHV.PHR.vitals
@@ -699,7 +699,7 @@ Usage: #example
 * effectiveDateTime = "2002-09-23T10:01:00Z"
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: b8373ed2-5a94-48aa-8100-c74a00d88d36
 InstanceOf: VA.MHV.PHR.vitals
@@ -835,7 +835,7 @@ Usage: #example
 * effectiveDateTime = "2002-04-08T11:52:00Z"
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: c46287b1-0afb-4a8d-9f30-151d1e143ba1
 InstanceOf: VA.MHV.PHR.vitals
@@ -993,7 +993,7 @@ Usage: #example
 * effectiveDateTime = "2001-12-06T09:58:00Z"
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: 35e2c3a7-58f0-4871-a441-07f16965c195
 InstanceOf: VA.MHV.PHR.vitals
@@ -1110,7 +1110,7 @@ Usage: #example
 * effectiveDateTime = "2001-07-06T13:04:00Z"
 * performer[+].extension[site].valueReference = Reference(location-2901)
 * performer[=].display = "Location 2801"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: 04af358b-d5b1-4777-92ea-44be2e8dbfd8
 InstanceOf: VA.MHV.PHR.vitals
@@ -1268,7 +1268,7 @@ Usage: #example
 * effectiveDateTime = "2001-03-22T10:26:00Z"
 * performer[+].extension[site].valueReference = Reference(ex-MHV-location-2938)
 * performer[=].display = "Location 2938"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: bda8fb9b-c704-4477-884c-27656b463904
 InstanceOf: VA.MHV.PHR.vitals
@@ -1404,7 +1404,7 @@ Usage: #example
 * effectiveDateTime = "2001-01-11T09:55:00Z"
 * performer[+].extension[site].valueReference = Reference(location-1148)
 * performer[=].display = "Location 1148"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: 1d55fb39-fbfc-4544-8993-48cdf165d9d2
 InstanceOf: VA.MHV.PHR.vitals
@@ -1502,7 +1502,7 @@ Usage: #example
 * effectiveDateTime = "2000-12-14T09:05:00Z"
 * performer[+].extension[site].valueReference = Reference(location-1921)
 * performer[=].display = "Location 1921"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: f5ff73ae-8ffd-4aac-a9ef-3a34cf767f6e
 InstanceOf: VA.MHV.PHR.vitals
@@ -1619,7 +1619,7 @@ Usage: #example
 * effectiveDateTime = "2000-09-14T13:00:00Z"
 * performer[+].extension[site].valueReference = Reference(location-2171)
 * performer[=].display = "Location 2171"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: 43be306c-c701-460d-88d0-096e65cc600d
 InstanceOf: VA.MHV.PHR.vitals
@@ -1755,7 +1755,7 @@ Usage: #example
 * effectiveDateTime = "2000-09-11T13:29:00Z"
 * performer[+].extension[site].valueReference = Reference(location-3318)
 * performer[=].display = "Location 3318"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: 2cd4c842-1216-4788-b74d-0eb9c3b206d6
 InstanceOf: VA.MHV.PHR.vitals
@@ -1834,7 +1834,7 @@ Usage: #example
 * effectiveDateTime = "2000-08-17T01:00:00Z"
 * performer[+].extension[site].valueReference = Reference(location-2171)
 * performer[=].display = "Location 2171"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: f5c67f04-a23e-4149-b08a-7aedec145891
 InstanceOf: VA.MHV.PHR.vitals
@@ -1951,7 +1951,7 @@ Usage: #example
 * effectiveDateTime = "2000-07-18T13:21:00Z"
 * performer[+].extension[site].valueReference = Reference(location-1439)
 * performer[=].display = "Location 1439"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: 8c6589a4-5324-4c6f-b4e3-ba41742e41b9
 InstanceOf: VA.MHV.PHR.vitals
@@ -2286,7 +2286,7 @@ Usage: #example
 * effectiveDateTime = "1999-08-09T13:13:00Z"
 * performer[+].extension[site].valueReference = Reference(location-1920)
 * performer[=].display = "Location 1920"
-* valueInteger.value = 0
+* valueInteger = 0
 
 Instance: b0b8b707-0828-45cf-8a84-98d79619d1d4
 InstanceOf: VA.MHV.PHR.vitals

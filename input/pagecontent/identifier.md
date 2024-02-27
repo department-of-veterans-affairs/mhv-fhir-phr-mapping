@@ -140,4 +140,26 @@ see mapping [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organiza
 
 #### Patient
 
-I don't know enough about how patient id is managed. I understand that we are just going to use the MHV assigned patient identifier and nothing more. The Patient resource is populated from the MHV eVault patient details.
+MyHealtheVet has a patient id that it manages, and a 'profile' that is details about the patient including demographics, contact information, etc. This information is managed in the MHV eVault. The MHV Patient id is communicated in existing as assigning facility `200MH` at assigning authority `USVHA`. I believe that this id is known to the MPI service.
+
+The FHIR interface does populate a Patient resource in the FHIR Server given this 'profile' and to provide a mapping to the MyHealtheVet patient id. Thus we need a system value for this id, and today the root VA OID is used.
+
+Oracle Health for the Patient ICN uses the root OID as the system URI. Otherwise known as the "Veteran ID". Given that this also uses the root VA OID, we have a problem as we both can't use that same system. This will especially be problematic when we integrate OH data into the MHV FHIR Server.
+
+``` json
+"system": "urn:oid:2.16.840.1.113883.4.349",
+"value": "1013781790V126649",
+```
+
+and for DOD ID, using an OID assigned to Military Health Service (MHS):
+
+``` json
+"system": "urn:oid:2.16.840.1.113883.3.42.10001.100001.12",
+"value": "2114389261",
+```
+
+Could just add that assigning authority and facility to the URL pattern I have started
+
+`http://va.gov/systems/USVHA/200MH`
+
+It would work, but I just hope that there is something better to use.
