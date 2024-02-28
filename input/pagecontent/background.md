@@ -104,7 +104,7 @@ This section is dedicated to instructions on how MHV will transition the data we
 
 - [Mapping from VIA - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-via-to-mhv-fhir-phr-imagingexamto)
 - [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
-- [Example Bundle with all image reports](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Bundle-images.html), and thus not individually exposed.
+- [Example Bundle with all image reports](Bundle-images.html), and thus not individually exposed.
 
 #### Vital-Sign
 
