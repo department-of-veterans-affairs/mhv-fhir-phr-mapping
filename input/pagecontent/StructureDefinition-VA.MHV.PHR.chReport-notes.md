@@ -24,6 +24,8 @@
 - MHV eVault has processing for an `Amended` status. I have no mock examples
 - `DiagnosticReport.conclusion` is just a string, yet the `labPromises.labComments` is an array of comments
 - should the station number be recorded in an Organization resource? 
+- what I have as chPanel, should this be better modeled as a serviceRequest, and placed in DiagnosticReport.basedOn? - all I have is the ordered Test Code values.
+  - Or should this orderedTestCode go into the chTest?
 
 #### Business Rules
 
@@ -53,31 +55,31 @@ DiagnosticReport
 |  |  |                                                 |  createdDate |  |  |
 |  |  |                                                 |  modifiedDate |  |  |
 |  |  |                                                 |  icn={icn}                      | DiagnosticReport.subject            |  |
-|  |  | recordSource/namespaceId                        |  stationNumber                  |                                     | should this be an Organization?  |
+|  |  | recordSource/                                   |  stationNumber={namespaceId}                 |                                     | should this be an Organization?  |
 |  |  |                                                 |  requestMsgCtrlId |  |  |
 |  |  |                                                 |  responseMsgCtrlId |  |  |
 |  |  |                                                 |  extractStatus=`NEW`            |                                     | unclear how this might change |
 |  |  |                                                 |  recordStatus |  |  |
 |  |  |                                                 |  key |  |  |
 |  |  | (labTestRequest, specimen, labTests)            | recordSubType                   |                                     | `LAB` / `PANEL` / `TEST` |
-|  |  | labTests[n]/observationValue                    | result                          | Observation[chTest].value[x]        |  |
-|  |  | labTests[n]/chemistryResults/valueInterpretation | resultIndicator                | Observation[chTest].interpretation  | L->Low, LL->Critical Low, H->High, HH->Critical High |
-|  |  | labTests[n]/chemistryResults/observationUnits   | units                           | Observation[chTest].valueQuantity.units |  |
-|  |  | labTests[n]/chemistryResults/referenceRange     | referenceRange                  | Observation[chTest].referenceRange.text  |  |
+|  |  | labTests[n]/orderedTestCode/                    | orderedTest = {displayText}     | Observation[chPanel].code           | should this be a serviceRequest? |
 |  |  | labTests[n]/chemistryResults/testIdentifier/    | labTestName={originalText}      | Observation[chTest].code            |  |
-|  |  | labTests[n]/orderedTestCode/                    | orderedTest = {displayText}     | Observation[chPanel].code           |  |
+|  |  | labTests[n]/chemistryResults/observationStatus  | status                          | Observation[chTest].status          | mock data -> `F` and `C` |
+|  |  | labTests[n]/chemistryResults/observationValue   | result                          | Observation[chTest].value[x]        |  |
+|  |  | labTests[n]/chemistryResults/observationUnits   | units                           | Observation[chTest].valueQuantity.units |  |
+|  |  | labTests[n]/chemistryResults/valueInterpretation | resultIndicator                | Observation[chTest].interpretation  | L->Low, LL->Critical Low, H->High, HH->Critical High |
+|  |  | labTests[n]/chemistryResults/referenceRange     | referenceRange                  | Observation[chTest].referenceRange.text  |  |
+|  |  | labTests[n]/chemistryResults/labCommentEvents   | interpretation                  | Observation[chTest].note.text       | multiple |
 |  |  | labTests[n]/chemistryResults/performingOrganization/ | performingLocation={location} | Observation[chTest].performer[org]  |  |
 |  |  |   ""                                            | performingLocationName={name}   |                                     |  |
-|  |  | labTestRequest/author/name                      | orderingProvider                | DiagnosticReport.performer[author]  | |
-|  |  | labTests[n]/chemistryResults/observationStatus  | status                          | Observation[chTest].status          |  |
-|  |  | labTests[n]/chemistryResults/labCommentEvents   | interpretation                  | Observation[chTest].note.text       |  |
+|  |  | labTestRequest/author/                          | orderingProvider={name}         | DiagnosticReport.performer[author]  |  |
 |  |  | labCommentEvents                                | comments                        | DiagnosticReport.conclusion         | multiple |
 |  |  | labSubscript                                    | labType                         | DiagnosticReport.code.text          | `CH` |
 |  |  | specimen/specimenTakenDate                      | collectedOnDatePrecise          | Specimen.collectedDateTime          |  |
 |  |  |  ""                                             | collectedOnDateImprecise        |  |  |
 |  |  | recordIdentifier                                | recordId                        | DiagnosticReport.identifier[Rid]    |  |
-|  |  | specimen/specimenSource/displayText             | specimenSource                  | Specimen.type                       |  |
-|  |  | labTestRequest/orderingFacilityIdentifier/name  | orderingLocation                | DiagnosticReport.performer[location]  |  |
+|  |  | specimen/specimenSource/                        | specimenSource={displayText}    | Specimen.type                       |  |
+|  |  | labTestRequest/orderingFacilityIdentifier/      | orderingLocation={name}         | DiagnosticReport.performer[location]  |  |
 |  |  | reportCompleteDate                              | reportCompleteDatePrecise       | DiagnosticReport.effectiveDateTime  |  |
 |  |  |  ""                                             |                                 | DiagnosticReport.issued             |  |
 |  |  |  ""                                             | reportCompleteDateImprecise     |  |  |
@@ -92,4 +94,6 @@ DiagnosticReport
 |  |  |                                                 |                                 | Observation[chPanel].status=`final` |  |
 |  |  |                                                 |                                 | Observation[chTest].category=`laboratory`     |  |
 |  |  |                                                 |                                 | Observation[chTest].status=`final`  |  |
+|  |  | recordVersion
+|  |  | recordUpdateTime/
 {: .grid}
