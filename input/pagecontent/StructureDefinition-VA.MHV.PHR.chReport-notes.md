@@ -20,12 +20,18 @@
 - current distinguishing between panel and results is by way of if the `hasMember` element is populated. Panel will have no `value[x]` and will have `hasMember` populated; where as results will have a `value[x]` and will not have `hasMember` populated.
   - Could create a code to use in `category`, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.
   - I checked with the VA C-CDA team to see if they have set a precedence that I could use. --> None
+- what I have as chPanel, should this be better modeled as a serviceRequest, and placed in DiagnosticReport.basedOn? - all I have is the ordered Test Code values.
+  - Or should this orderedTestCode go into the chTest?
 - likely source of Blood Sugar, Cholesterol, and INR
 - MHV eVault has processing for an `Amended` status. I have no mock examples
 - `DiagnosticReport.conclusion` is just a string, yet the `labPromises.labComments` is an array of comments
 - should the station number be recorded in an Organization resource? 
-- what I have as chPanel, should this be better modeled as a serviceRequest, and placed in DiagnosticReport.basedOn? - all I have is the ordered Test Code values.
-  - Or should this orderedTestCode go into the chTest?
+- could go to us-core 6 and not have the conflict mentioned here?
+- check concept map
+- status other than final? HDR might
+- issued vs effectiveDate - not clear I have anything else to use
+- performer as author or verifier?
+- do we really get a case number?
 
 #### Business Rules
 
