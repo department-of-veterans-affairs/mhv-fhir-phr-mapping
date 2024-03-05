@@ -36,4 +36,4 @@
 - no other elements are populated
 
 Should search for entries that do **not** have `status=entered-in-error` (might also work to look for only `current`)
-> GET {path}/DocumentReference?patient={patient}&status:not!=entered-in-error
+> GET {path}/DocumentReference?patient={patient}&status:not=entered-in-error

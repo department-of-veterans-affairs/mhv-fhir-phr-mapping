@@ -21,3 +21,75 @@
   - Could create a code to use in `category`, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.
   - I checked with the VA C-CDA team to see if they have set a precedence that I could use. --> None
 - likely source of Blood Sugar, Cholesterol, and INR
+- MHV eVault has processing for an `Amended` status. I have no mock examples
+- `DiagnosticReport.conclusion` is just a string, yet the `labPromises.labComments` is an array of comments
+- should the station number be recorded in an Organization resource? 
+
+#### Business Rules
+
+ChemistryTransformer.java
+- Ignore anything not `CH`
+- Ignore anything without a stationNumber
+- Ignore less than 48 hour (INCREMENTAL_GRACE_PERIOD) -- later is a 36 hour hold  ???
+  - excluding covid tests
+- some kind of "Wipe and Refresh" logic
+
+#### Mapping
+
+MHV eVault has one object definition that gets replicated for each portion (Lab, Panel, and Test), identified by recordSubType element. (Test is chemistryResult, Panel is orderedTest, Lab is overall?)
+
+DiagnosticReport
+- DiagnosticReport.result = contained Observation[chTest or chPanel]
+  - Observation[chPanel] - comes from orderedTestCode, and only hasMember pointing to chTest(s)
+  - Observation[chTest] - mostly filled with chemistryResults
+- DiagnosticReport.specimen = contained Specimen[specimen]
+- DiagnosticReport.performer = contained Practitioner or Organization
+- DiagnosticReport.category = all codes from contained Observations to enable finding them since they are contained
+
+| Vista | Vista Field Name          | HDR labTestPromises |   MHV eVault      | FHIR              | Note |
+|-------|-------------------------- |---------------------|-------------------|-------------------|------------|
+|  |  |                                                 |  id |  |  |
+|  |  |                                                 |  oplock |  |  |
+|  |  |                                                 |  createdDate |  |  |
+|  |  |                                                 |  modifiedDate |  |  |
+|  |  |                                                 |  icn={icn}                      | DiagnosticReport.subject            |  |
+|  |  | recordSource/namespaceId                        |  stationNumber                  |                                     | should this be an Organization?  |
+|  |  |                                                 |  requestMsgCtrlId |  |  |
+|  |  |                                                 |  responseMsgCtrlId |  |  |
+|  |  |                                                 |  extractStatus=`NEW`            |                                     | unclear how this might change |
+|  |  |                                                 |  recordStatus |  |  |
+|  |  |                                                 |  key |  |  |
+|  |  | (labTestRequest, specimen, labTests)            | recordSubType                   |                                     | `LAB` / `PANEL` / `TEST` |
+|  |  | labTests[n]/observationValue                    | result                          | Observation[chTest].value[x]        |  |
+|  |  | labTests[n]/chemistryResults/valueInterpretation | resultIndicator                | Observation[chTest].interpretation  | L->Low, LL->Critical Low, H->High, HH->Critical High |
+|  |  | labTests[n]/chemistryResults/observationUnits   | units                           | Observation[chTest].valueQuantity.units |  |
+|  |  | labTests[n]/chemistryResults/referenceRange     | referenceRange                  | Observation[chTest].referenceRange.text  |  |
+|  |  | labTests[n]/chemistryResults/testIdentifier/    | labTestName={originalText}      | Observation[chTest].code            |  |
+|  |  | labTests[n]/orderedTestCode/                    | orderedTest = {displayText}     | Observation[chPanel].code           |  |
+|  |  | labTests[n]/chemistryResults/performingOrganization/ | performingLocation={location} | Observation[chTest].performer[org]  |  |
+|  |  |   ""                                            | performingLocationName={name}   |                                     |  |
+|  |  | labTestRequest/author/name                      | orderingProvider                | DiagnosticReport.performer[author]  | |
+|  |  | labTests[n]/chemistryResults/observationStatus  | status                          | Observation[chTest].status          |  |
+|  |  | labTests[n]/chemistryResults/labCommentEvents   | interpretation                  | Observation[chTest].note.text       |  |
+|  |  | labCommentEvents                                | comments                        | DiagnosticReport.conclusion         | multiple |
+|  |  | labSubscript                                    | labType                         | DiagnosticReport.code.text          | `CH` |
+|  |  | specimen/specimenTakenDate                      | collectedOnDatePrecise          | Specimen.collectedDateTime          |  |
+|  |  |  ""                                             | collectedOnDateImprecise        |  |  |
+|  |  | recordIdentifier                                | recordId                        | DiagnosticReport.identifier[Rid]    |  |
+|  |  | specimen/specimenSource/displayText             | specimenSource                  | Specimen.type                       |  |
+|  |  | labTestRequest/orderingFacilityIdentifier/name  | orderingLocation                | DiagnosticReport.performer[location]  |  |
+|  |  | reportCompleteDate                              | reportCompleteDatePrecise       | DiagnosticReport.effectiveDateTime  |  |
+|  |  |  ""                                             |                                 | DiagnosticReport.issued             |  |
+|  |  |  ""                                             | reportCompleteDateImprecise     |  |  |
+|  |  | labTests[n]/status                              | amendedStatus                   |  | if `Amended` |
+|  |  |                                                 | pid                             |  | ++ each panel / result |
+|  |  |                                                 | lid                             |  | ++ each lab |
+|  |  |                                                 | hold                            |  | if hold |
+|  |  |                                                 |                                 | DiagnosticReport.category=`LAB`     |  |
+|  |  |                                                 |                                 | DiagnosticReport.status=`final`     |  |
+|  |  |                                                 |                                 | Specimen.status=`available`         |  |
+|  |  |                                                 |                                 | Observation[chPanel].category=`laboratory`     |  |
+|  |  |                                                 |                                 | Observation[chPanel].status=`final` |  |
+|  |  |                                                 |                                 | Observation[chTest].category=`laboratory`     |  |
+|  |  |                                                 |                                 | Observation[chTest].status=`final`  |  |
+{: .grid}

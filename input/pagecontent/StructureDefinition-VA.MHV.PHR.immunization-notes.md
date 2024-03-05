@@ -89,6 +89,4 @@ Note will NOT be using the SNOMED conversion as it is only partial and may not b
 
 #### changes needed
 
-- Historic (those immunizations not given at the VA) can be entered with partial dateTime. Common to not have a time, also not uncommon to only have a year. Current source-code converts these dates wrongly. Dates without time are converted to dates with a midnight time. Dates that are just the year are not recorded at all. The second issue is more critical as the va.gov UI doesn't show times. Both should be fixed. [DateUtilExt.java](https://github.com/department-of-veterans-affairs/mhv-np-phr-api-v2/blob/1d85f200f1c4253bb730718d7960804781dad30e/src/main/java/gov/va/med/mhv/integration/util/DateUtilExt.java)
-  - **MHV-52880**
-- The contained Location resource should have the meta.profile populated for consistency and validation
+none known

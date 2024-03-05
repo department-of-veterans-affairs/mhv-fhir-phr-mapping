@@ -19,7 +19,7 @@
 - `identifier` will hold the record identifier from Vista
 
 Should search for entries that do **not** have `status=entered-in-error` (might also work to look for only `completed`)
-> GET {path}/Observation?patient={patient}&status:not!=entered-in-error
+> GET {path}/Observation?patient={patient}&status:not=entered-in-error
 
 ### beyond MVP
 

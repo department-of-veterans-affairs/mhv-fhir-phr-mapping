@@ -135,7 +135,9 @@ General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes) Mapping 
 
 - Eventually this same API would support data from Cerner. Thus the same API providing comprehensive data from Vista and/or Cerner where ever it is.
 - Provenance -- track where the data has come from, and if from multiple places track all.
-  
+- Grahame - Intermediaries White Paper -- https://confluence.hl7.org/display/FHIR/Intermediaries+White+Paper
+- HL7 FAST - Exchange Routing -- https://hl7.org/fhir/us/exchange-routing/  
+
 unknown (FHIR supports the following topics but unclear if this data exists in PHR)
 
 - care plan / care team resources

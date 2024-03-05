@@ -18,4 +18,4 @@
 - no other elements are populated
 
 Should search for entries that do **not** have `verificationStatus=entered-in-error`
-> GET {path}/Condition?patient={patient}&verification-status:not!=entered-in-error
+> GET {path}/Condition?patient={patient}&verification-status:not=entered-in-error

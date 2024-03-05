@@ -10,7 +10,11 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
-- TBD
+- All
+  - Fixed the example of not entered-in-error, as they all had double negative in a non working form
+- Chem-Hem
+  - Added mapping markdown table
+    - need Vista Fileman Field mapping yet.
 
 ### 0.3.3
 
