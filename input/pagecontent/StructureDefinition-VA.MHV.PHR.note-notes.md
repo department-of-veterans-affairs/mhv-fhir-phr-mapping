@@ -29,9 +29,10 @@
 - titles: preserve both `localTitle` and `standardTitle`. Do not try to convert to a code
 - dates: VIA gives us timestamp and procTimestamp
   - There is a third `signatureTimestamp` in the VIA xml schema, but this does not seem to be populated by VIA
-  - `timestamp` will go into the DocumentReference.date (needing to be expanded to full instant datatype)
   - `timestamp` will go into the DocumentReference.content.attachment.creation (not expanded, so if just a date, then it is just a date)
   - `procTimestamp` will go into an extension on DocumentReference.authenticator
+  - if `timestamp` has both date and time, then it will go into the DocumentReference.date
+    - else `procTimestamp` will go into DocumentReference.date
 - delete / entered-in-error
   - We don't see notes until they are signed (most entered-in-error will be caught prior to this signature)
   - Notes that are already signed have a workflow that can be used to delete them. First there is an annex that is added indicating the note needs to be deleted, and that is signed. Then within 24-48 hours the note is deleted.
@@ -63,6 +64,6 @@
 #### TODO
 
 - discharge summary may have a `period`. This has not been seen in sample fhir output yet.
-- `timestamp` must to go into `.content.attachment.creation` because sometimes it is just a date without time
+- `timestamp` must to go into `.content.attachment.creation` because sometimes it is just a date without time [see mock example 3](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/note3.xml)
 - if `timestamp` is missing the time (just a date) then populate `.date` with `procTimestamp` **MHV-54034**
 - The current/historic list could be used to place the current id on entries with the given identifier, these entries can be then marked as conditional update. Where as today it is a conditional update based on a lookup on the .identifier. This will improve the performance of the HAPI server as it will remove an indirect lookup. We can also know which entries are NEW, so we can mark them as create. **MHV-54038**

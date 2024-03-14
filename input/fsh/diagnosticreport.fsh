@@ -31,9 +31,13 @@ This defines the use for Chem-Hem and
 * specimen only Reference(MHVchSpecimen or MHVlabSpecimen)
 * result MS
 * result ^type.aggregation = #contained
-* result only Reference(MHVchTest or MHVchPanel or MHVlabTest)
+* result only Reference(MHVchTest or MHVlabTest)
 * performer MS
+* performer ^type.aggregation = #contained
 * performer only Reference(MHVorganization or MHVpractitioner)
+* basedOn 1..*
+* basedOn ^type.aggregation = #contained
+* basedOn only Reference(MHVchOrder)
 * encounter 0..0
 * resultsInterpreter 0..0
 * imagingStudy 0..0

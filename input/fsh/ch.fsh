@@ -43,10 +43,22 @@ Title: "HDR labTestPromises.specimen to mhv-fhir-phr"
 * type -> "labTestPromises.specimen.specimenSource"
 * collection.collectedDateTime -> "ConvertDate(labTestPromises.specimen.specimenTakenDate)"
 
+Extension: Notes
+Id: Notes
+Title: "Notes"
+Description: """
+Notes
+"""
+* ^context[+].type = #element
+* ^context[=].expression = "DiagnosticReport"
+* value[x] only string
+* valueString 1..1
+
+
 
 Profile: MHVchReport
-//Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
-Parent: DiagnosticReport
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
+//Parent: DiagnosticReport
 Id: VA.MHV.PHR.chReport
 Title: "VA MHV PHR HDR Chem-Hem Report"
 Description: """
@@ -66,6 +78,7 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 * subject 1..1
 * code 1..1 MS
 * code.text = "CH"
+/*
 * category MS
 * category 1..
 * category ^slicing.discriminator.type = #pattern
@@ -73,23 +86,29 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 * category ^slicing.rules = #open
 * category contains LaboratorySlice 1..1
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+*/
 * effectiveDateTime MS
 * issued MS
-* conclusion MS
+* extension contains Notes named note 0..* MS
 * specimen MS
 * specimen ^type.aggregation = #contained
 * specimen only Reference(MHVchSpecimen)
 * result MS
+* result 0..*
 * result ^type.aggregation = #contained
-* result only Reference(MHVchTest or MHVchPanel)
+* result only Reference(MHVchTest)
+* basedOn 1..*
+* basedOn ^type.aggregation = #contained
+* basedOn only Reference(MHVchOrder)
 * performer MS
-* performer ^short = "performingOrganization"
-* performer only Reference(MHVorganization or MHVpractitioner)
+* performer ^short = "recordSource"
+* performer only Reference(MHVorganization)
 * performer ^type.aggregation = #contained
 * encounter 0..0
 * resultsInterpreter 0..0
 * imagingStudy 0..0
 * media 0..0
+* conclusion 0..0
 * conclusionCode 0..0
 * presentedForm 0..0
 
@@ -103,90 +122,94 @@ Title: "HDR to mhv-fhir-phr"
 * category -> "all codes from contained labTests"
 * status -> "`final`"
 * subject -> "patient"
-* effectiveDateTime -> "ConvertDate(labTestPromises.reportCompleDate.literal)"
+* effectiveDateTime -> "ConvertDate(labTestPromises.specimen.specimenTakenDate)"
 * issued -> "ConvertDate(labTestPromises.reportCompleDate.literal)"
 * code -> "labTestPromises.labSubscript"
-* conclusion -> "labTestPromises.labCommentEvents.comments combined"
-* performer -> "GetPractitioner(labTestPromises.labTestRequest.author)"
-* performer -> "GetLocation(labTestPromises.labTestRequest.orderingFacilityIdentifier)"
+* extension[note] -> "labTestPromises.labCommentEvents.comments"
 * performer -> "GetLocation(labTestPromises.recordSource)"
 * result -> "Contained Observation(labTestPromises.labTests)"
 * specimen -> "Contained Specimen (labTestPromises.specimen)"
+* basedOn -> "Contained ServiceRequest (labTestPromises.orderedTestCode)"
 //* meta.lastUpdated -> "ConvertDate(labTestPromises.recordUpdateTime)"
 
 
-Profile:        MHVchPanel
-//Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
-Parent: Observation // just observation as this is not us-core like
-Id:             VA.MHV.PHR.chPanel
+Profile:        MHVchOrder
+Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-servicerequest
+//Parent: ServiceRequest 
+Id:             VA.MHV.PHR.chOrder
 Title:          "VA MHV PHR CH labTests.orderedTestCode"
 Description:    """
-A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.
+A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.
 
-One Observation holds one `labTests.orderedTestCode`
-- This profile is based Observation, as it is not found in us-core
-	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`
+One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.
 - `.subject` must be the patient from the DiagnosticReport
-- `orderedTestCode -> `.code`
-- Panel is distinguished by 
-  - there is no `.value[x]` - as this is just a panel
-  - there is `.hasMember` 1..* - These point at the results observations
+- code = {labTests.orderedTestCode}
+- status = `unknown` -- as we dont know
+- intent = `order` -- unclear 
+- category = SCT#108252007 Laboratory procedure
+- not populating US-Core must support as we dont have the values
+	- occurrence[x], authoredOn, requester
+- no other elements are populated
+
+TODO Question
+- should specimen be populated?
 """
 * code 1..1 MS
-* code ^short = "orderedTestCode"
+* code ^short = "labTests.orderedTestCode"
 * code.coding MS
 * code.coding ^short = "code and alternateCode"
 * code.text ^short = "displayText"
-* category MS
-* category ^short = "orderedTestCode"
-* category MS
-* category 1..
-* category ^slicing.discriminator.type = #pattern
-* category ^slicing.discriminator.path = "$this"
-* category ^slicing.rules = #open
-* category contains Laboratory 1..1
-* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
-* interpretation 0..0
-* status = #final
-* performer 0..0
-* value[x] 0..0
-* note 0..0
-* hasMember 1..
-* hasMember MS
-* hasMember only Reference(MHVchTest)
+//* category[us-core] = SCT#108252007 "Laboratory procedure"
+* status = #unknown
+* intent = #order
+* subject 1..1 MS
+* requester ^short = "labTestPromises.labTestRequest.author"
+//* requester only Reference(Practitioner)
+* performer ^short = "labTestPromises.labTestRequest.orderingFacilityIdentifier"
+* performer only Reference(MHVorganization)
 
-// given this is contained in the DiagnosticReport
-//* subject 0..0 
-* effective[x] 0..0
-* issued 0..0
-* specimen 0..0
+// Not these from us-core
+* occurrence[x] 0..0
+* authoredOn 0..0
 
 // other things not used
-* referenceRange 0..0
 * identifier 0..0
+* instantiatesCanonical 0..0
+* instantiatesUri 0..0
 * basedOn 0..0
-* partOf 0..0
-* focus 0..0
+* replaces 0..0
+* requisition 0..0
+* priority 0..0
+* doNotPerform 0..0
+* orderDetail 0..0
+* quantity[x] 0..0
 * encounter 0..0
-* dataAbsentReason 0..0
+* asNeeded[x] 0..0
+* performerType 0..0
+* locationCode 0..0
+* locationReference 0..0
+* reasonCode 0..0
+* reasonReference 0..0
+* insurance 0..0
+* supportingInfo 0..0
 * bodySite 0..0
-* method 0..0
-* device 0..0
-* derivedFrom 0..0
-* component 0..0
+* patientInstruction 0..0
+* relevantHistory 0..0
 
-Mapping: CH-Mapping-labPanel
-Source:	MHVchPanel
+Mapping: CH-Mapping-labOrder
+Source:	MHVchOrder
 Target: "labTestPromises.labTests.orderedTestCode"
-Title: "HDR labTests Panel to mhv-fhir-phr"
+Title: "HDR labTests Order to mhv-fhir-phr"
 * -> "HDR labTests.orderedTestCode"
 * code -> "orderedTestCode"
 * code.text -> "displayText"
 * code.coding -> "code and alternateCode"
-* category -> "`laboratory`"
-* status -> "final"
-* hasMember -> "reference to chemistryResults"
+* category -> "`Laboratory procedure`"
+* status -> "`unknown`"
+* intent -> "`order`"
 * subject -> "patient"
+* requester -> "GetPractitioner(labTestPromises.labTestRequest.author)"
+* performer -> "GetOrganization(labTestPromises.labTestRequest.orderingFacilityIdentifier)"
 
 Profile:        MHVchTest
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
@@ -203,8 +226,8 @@ One Observation holds one `labTests.chemistryResults`
   - `L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L
   - 'H' -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H
 - `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)
-- `testIdentifier` -> `.code` -- where "LN" is Loinc
-- `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value
+- `testIdentifier` -> `.code` -- where LN is Loinc
+- `referenceRange` -> `.referenceRange.text` -- dont try to break out further as there is little use of this value
 - `labCommentEvents` -> `.note.text`
 - value[x] either String or Quantity with units
 - `observationValue` -> `.valueQuantity.value`
@@ -215,8 +238,8 @@ One Observation holds one `labTests.chemistryResults`
 - given this is contained in the DiagnosticReport, then 
   - effective[x] is presumed from the DiagnosticReport
   - issued is presumed from the DiagnosticReport
-  - specimen is presumed from the DiagnosticReport
-- will not have a `.hasMember` as this is results not a panel
+- `specimen` -> specimen
+- `basedOn` -> ServiceRequest
 """
 * code 1..1 MS
 * code ^short = "testIdentifier"
@@ -244,16 +267,18 @@ One Observation holds one `labTests.chemistryResults`
 * referenceRange.age 0..0
 * note 0..* MS
 * note ^short = "labCommentEvents"
+* specimen MS
+* specimen only Reference(MHVchSpecimen)
+* basedOn 1..1 MS
+* basedOn only Reference(MHVchOrder)
 
 // given this is contained in the DiagnosticReport
 //* subject 0..0 
 * effective[x] 0..0
 * issued 0..0
-* specimen 0..0
 
 // other things not used
 * identifier 0..0
-* basedOn 0..0
 * partOf 0..0
 * focus 0..0
 * encounter 0..0

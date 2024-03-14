@@ -38,10 +38,33 @@ Usage: #inline
 * collection.collectedDateTime = 2021-01-20T16:38:59-05:00
 
 
-Instance: ex-MHV-chPanel-1a
-InstanceOf: VA.MHV.PHR.chPanel
+Instance: ex-MHV-chOrder-1a
+InstanceOf: VA.MHV.PHR.chOrder
 Usage: #inline
 /*  first labTest in the report
+         <labTestRequest>
+            <author>
+               <identifier>
+                  <identity>14934-VA552</identity>
+               </identifier>
+               <idSourceTable>99VA4</idSourceTable>
+               <name>
+                  <given>LISA</given>
+                  <middle>A</middle>
+                  <family>HALL</family>
+               </name>
+            </author>
+            <orderingFacilityIdentifier>
+               <identity>552</identity>
+               <name>DAYTON, OH VAMC</name>
+               <assigningAuthority>USVHA</assigningAuthority>
+               <nameTypeCode>L</nameTypeCode>
+               <identityTypeCode>FI</identityTypeCode>
+               <nameRepresentation>A</nameRepresentation>
+               <stationNumber>552</stationNumber>
+            </orderingFacilityIdentifier>
+         </labTestRequest>
+   ...
          <labTests>
             <orderedTestCode>
                <code>84140.0000</code>
@@ -53,16 +76,19 @@ Usage: #inline
             </orderedTestCode>
       ...
 */
-* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[us-core] = SCT#108252007 "Laboratory procedure"
 * code.coding[+].code = #84140.0000
 * code.text = "Potassium"
 * code.coding[=].system = "http://va.gov/systems/99VA64"
 * code.coding[+].code = #177
 * code.coding[=].display = "POTASSIUM"
 * code.coding[=].system = "http://va.gov/systems/99VA60"
-* status = #final
+* status = #unknown
+* intent = #order
 * subject = Reference(Patient/ex-MHV-patient-942104)
-* hasMember = Reference(ex-MHV-chTest-1a)
+* performer[+] = Reference(Organization/ex-MHV-organization-552)
+* requester[+] = Reference(Practitioner/ex-MHV-practitioner-14934-VA552)
+
 
 Instance: ex-MHV-chTest-1a
 InstanceOf: VA.MHV.PHR.chTest 
@@ -133,13 +159,37 @@ Usage: #inline
 * valueQuantity.system = UCUM
 * performer = Reference(Organization/ex-MHV-organization-552)
 * subject = Reference(Patient/ex-MHV-patient-942104)
+* specimen = Reference(ex-MHV-chSpecimen-1)
+* basedOn = Reference(ex-MHV-chOrder-1a)
 
 
-
-Instance: ex-MHV-chPanel-1b
-InstanceOf: VA.MHV.PHR.chPanel 
+Instance: ex-MHV-chOrder-1b
+InstanceOf: VA.MHV.PHR.chOrder
 Usage: #inline
 /* second labTest in the report
+         <labTestRequest>
+            <author>
+               <identifier>
+                  <identity>14934-VA552</identity>
+               </identifier>
+               <idSourceTable>99VA4</idSourceTable>
+               <name>
+                  <given>LISA</given>
+                  <middle>A</middle>
+                  <family>HALL</family>
+               </name>
+            </author>
+            <orderingFacilityIdentifier>
+               <identity>552</identity>
+               <name>DAYTON, OH VAMC</name>
+               <assigningAuthority>USVHA</assigningAuthority>
+               <nameTypeCode>L</nameTypeCode>
+               <identityTypeCode>FI</identityTypeCode>
+               <nameRepresentation>A</nameRepresentation>
+               <stationNumber>552</stationNumber>
+            </orderingFacilityIdentifier>
+         </labTestRequest>
+    ...
          <labTests>
             <orderedTestCode>
                <code>84295.0000</code>
@@ -151,16 +201,18 @@ Usage: #inline
             </orderedTestCode>
          ...
 */
-* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[us-core] = SCT#108252007 "Laboratory procedure"
 * code.coding[+].code = #84295.0000
 * code.text = "Sodium"
 * code.coding[=].system = "http://va.gov/systems/99VA64"
 * code.coding[+].code = #176
 * code.coding[=].display = "SODIUM"
 * code.coding[=].system = "http://va.gov/systems/99VA60"
-* status = #final
+* status = #unknown
+* intent = #order
 * subject = Reference(Patient/ex-MHV-patient-942104)
-* hasMember = Reference(ex-MHV-chTest-1b)
+* performer[+] = Reference(Organization/ex-MHV-organization-552)
+* requester[+] = Reference(Practitioner/ex-MHV-practitioner-14934-VA552)
 
 
 Instance: ex-MHV-chTest-1b
@@ -227,7 +279,8 @@ Usage: #inline
 * valueQuantity.system = UCUM
 * performer = Reference(Organization/ex-MHV-organization-552)
 * subject = Reference(Patient/ex-MHV-patient-942104)
-
+* basedOn = Reference(ex-MHV-chOrder-1b)
+* specimen = Reference(ex-MHV-chSpecimen-1)
 
 
 
@@ -267,28 +320,6 @@ Example from a mock labTestPromises (1110200002)
             <comments>Lisa's Test 1/20/2021 - Second lab</comments>
             <comments>Added Potassium test</comments>
          </labCommentEvents>
-         <labTestRequest>
-            <author>
-               <identifier>
-                  <identity>14934-VA552</identity>
-               </identifier>
-               <idSourceTable>99VA4</idSourceTable>
-               <name>
-                  <given>LISA</given>
-                  <middle>A</middle>
-                  <family>HALL</family>
-               </name>
-            </author>
-            <orderingFacilityIdentifier>
-               <identity>552</identity>
-               <name>DAYTON, OH VAMC</name>
-               <assigningAuthority>USVHA</assigningAuthority>
-               <nameTypeCode>L</nameTypeCode>
-               <identityTypeCode>FI</identityTypeCode>
-               <nameRepresentation>A</nameRepresentation>
-               <stationNumber>552</stationNumber>
-            </orderingFacilityIdentifier>
-         </labTestRequest>
 
 ...  Specimen and two labTest ...
 
@@ -313,19 +344,16 @@ Example from a mock labTestPromises (1110200002)
 * subject = Reference(Patient/ex-MHV-patient-942104)
 * effectiveDateTime = 2021-01-21T11:32:47-05:00
 * issued = 2021-01-21T11:32:47-05:00
-* conclusion = """
-Lisa's Test 1/20/2021 - Second lab
-Added Potassium test
-"""
+* extension[note][+].valueString = "Lisa's Test 1/20/2021 - Second lab"
+* extension[note][+].valueString = "Added Potassium test"
+
 * contained[+] = ex-MHV-organization-552
 * contained[+] = ex-MHV-practitioner-14934-VA552
 * contained[+] = ex-MHV-organization-989
-* performer[+] = Reference(Organization/ex-MHV-organization-552)
-* performer[+] = Reference(Practitioner/ex-MHV-practitioner-14934-VA552)
 * performer[+] = Reference(Organization/ex-MHV-organization-989)
 
-* contained[+] = ex-MHV-chPanel-1a
-* result[+] = Reference(ex-MHV-chPanel-1a)
+* contained[+] = ex-MHV-chOrder-1a
+* basedOn[+] = Reference(ex-MHV-chOrder-1a)
 * contained[+] = ex-MHV-chTest-1a
 * result[+] = Reference(ex-MHV-chTest-1a)
 * category[1].coding.code = #2823-3
@@ -333,8 +361,8 @@ Added Potassium test
 * category[=].coding.system = LOINC
 * category[=].coding.version = "2.68"
 
-* contained[+] = ex-MHV-chPanel-1b
-* result[+] = Reference(ex-MHV-chPanel-1b)
+* contained[+] = ex-MHV-chOrder-1b
+* basedOn[+] = Reference(ex-MHV-chOrder-1b)
 * contained[+] = ex-MHV-chTest-1b
 * result[+] = Reference(ex-MHV-chTest-1b)
 * category[+].coding.code = #2951-2
@@ -344,5 +372,4 @@ Added Potassium test
 
 * contained[+] = ex-MHV-chSpecimen-1
 * specimen[+] = Reference(ex-MHV-chSpecimen-1)
-//* meta.lastUpdated = 2021-01-21T13:23:48-05:00
-
+* effectiveDateTime = 2021-01-20T16:38:59-05:00

@@ -56,8 +56,8 @@ This section is dedicated to instructions on how MHV will transition the data we
   - Mappings from [HDR labTestPromises.specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-fhir-phr-labtestpromises-specimen)
 - contained Results [Observation(s)](StructureDefinition-VA.MHV.PHR.chTest.html)
   - Mapping from [HDR labTests](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-fhir-phr-labtestpromises-labtests)
-- contained Panels [Observation(s)](StructureDefinition-VA.MHV.PHR.chPanel.html)
-  - Mapping from [HDR labTests.orderedTestCode](StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-fhir-phr-labtestpromises-labtests-orderedtestcode)
+- contained Orders [ServiceRequest(s)](StructureDefinition-VA.MHV.PHR.chOrder.html)
+  - Mapping from [HDR labTests.orderedTestCode](StructureDefinition-VA.MHV.PHR.chOrder-mappings.html#mappings-for-hdr-labtests-order-to-mhv-fhir-phr-labtestpromises-labtests-orderedtestcode)
 
 #### Condition
 

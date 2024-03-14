@@ -7,49 +7,60 @@
   - This profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport` to indicate the intent to be compliant with this profile
 - The `labTestPromises` is mapped onto this FHIR `DiagnosticReport` for laboratory reporting. The mapping to [HDR labTestPromise](StructureDefinition-VA.MHV.PHR.chReport-mappings.html#mappings-for-hdr-to-mhv-fhir-phr-labtestpromises)
-- code.text must be `CH`. No other codeing values
+- code.text must be `CH`. No other coding values
 - category must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`
-- category also holds 1..* codes from the contained Observation.code
-- the `labTestPromises.labTests.orderedTestCode` is recorded as a [Observation panel](StructureDefinition-VA.MHV.PHR.chPanel.html) that is contained in the DiagnosticReport. This is unusual, but preserves the structure we are given from the HDR. The Panel points at the chemestryResults within that labTests. The map to [HDR orderedTestCode](StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-fhir-phr-labtestpromises-labtests-orderedtestcode).
+- category also holds 1..* codes from the contained Observation.code -- TODO might not do this
+- the `labTestPromises.labTests.orderedTestCode` is recorded as a [Ordered test](StructureDefinition-VA.MHV.PHR.chOrder.html) that is contained in the DiagnosticReport. The map to [HDR orderedTestCode](StructureDefinition-VA.MHV.PHR.chOrder-mappings.html#mappings-for-hdr-labtests-order-to-mhv-fhir-phr-labtestpromises-labtests-orderedtestcode).
 - The `labTestPromises.labTests.chemistryResult` are each recorded as a FHIR [Observation result](StructureDefinition-VA.MHV.PHR.chTest.html) that is contained in the DiagnosticReport. The map to [HDR chTestPromise](StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-fhir-phr-labtestpromises-labtests). 
 - The `labTestPromises.specimen` is mapped into a FHIR [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html) resource that is contained in the DiagnosticReport. The map to [HDR Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen-mappings.html#mappings-for-hdr-labtestpromises-specimen-to-mhv-fhir-phr-labtestpromises-specimen).
-- The use of contained means that we do not need to de-duplicate the lab tests or specimen. Note that means that the specimen and observations are no individually findable or referenceable.
+- The use of contained means that we do not need to de-duplicate the lab tests or specimen. Note that means that the specimen and observations are no individually findable or referenceable. -- TODO would be good if the Observations were not forced as contained, but there is no identifier.
+- note to API use, the Observations here are would include: Blood Sugar, Cholesterol, and INR
 
 #### Mapping Concerns
 
-- current distinguishing between panel and results is by way of if the `hasMember` element is populated. Panel will have no `value[x]` and will have `hasMember` populated; where as results will have a `value[x]` and will not have `hasMember` populated.
-  - Could create a code to use in `category`, but that would mean defining a Canonical URI in this publication which today is informal and published on my personal github repo. Would prefer not creating a code.
-  - I checked with the VA C-CDA team to see if they have set a precedence that I could use. --> None
-- what I have as chPanel, should this be better modeled as a serviceRequest, and placed in DiagnosticReport.basedOn? - all I have is the ordered Test Code values.
-  - Or should this orderedTestCode go into the chTest?
-- likely source of Blood Sugar, Cholesterol, and INR
-- MHV eVault has processing for an `Amended` status. I have no mock examples
-- `DiagnosticReport.conclusion` is just a string, yet the `labPromises.labComments` is an array of comments
-- should the station number be recorded in an Organization resource? 
-- could go to us-core 6 and not have the conflict mentioned here?
-- check concept map
-- status other than final? HDR might
-- issued vs effectiveDate - not clear I have anything else to use
-- performer as author or verifier?
-- do we really get a case number?
+- need a .code for Diagnostic Report for `CH`
+- could make standalone Observations using the DiagnosticReport id+position
+- There are many system values that I don't know what to do with, so I just invent a canonical
+  - http://va.gov/systems/99VA64
+  - http://va.gov/systems/99VA60
+  - http://va.gov/systems/99VA95.3
+  - http://va.gov/systems/99VA61
+- not clear what to do with observationStatus. 
+
+```
+  case "F": return ObservationStatus.FINAL;
+  case "C": return ObservationStatus.AMENDED;
+  case "I": return ObservationStatus.PRELIMINARY;
+  case "X": return ObservationStatus.CANCELLED;
+  default: return ObservationStatus.UNKNOWN;
+```
+
+TODO
+
+- TODO can likely fill out completely a US-Core Practitioner for the ServiceRequest.requester
+- TODO should the station number be recorded in an Organization resource? vamc, sta3n, (sta3n->sta6n? (longer numbers are clinics/facilities))
+- TODO do we have data for everything? -- Maruf is looking for historic data
+- TODO update diagnostic report profile and api narrative
 
 #### Business Rules
 
-ChemistryTransformer.java
+rules interpreted from ChemistryTransformer.java
+
 - Ignore anything not `CH`
 - Ignore anything without a stationNumber
 - Ignore less than 48 hour (INCREMENTAL_GRACE_PERIOD) -- later is a 36 hour hold  ???
-  - excluding covid tests
+- no hold date for reports that have been amended (status of `C`)
+- no hold date for covid
 - some kind of "Wipe and Refresh" logic
-
+  
 #### Mapping
 
-MHV eVault has one object definition that gets replicated for each portion (Lab, Panel, and Test), identified by recordSubType element. (Test is chemistryResult, Panel is orderedTest, Lab is overall?)
+MHV eVault has one object definition that gets replicated for each portion (Lab, Order, and Test), identified by recordSubType element. (Test is chemistryResult, Order is orderedTest, Lab is overall?)
 
 DiagnosticReport
-- DiagnosticReport.result = contained Observation[chTest or chPanel]
-  - Observation[chPanel] - comes from orderedTestCode, and only hasMember pointing to chTest(s)
-  - Observation[chTest] - mostly filled with chemistryResults
+- DiagnosticReport.result = contained Observation[chTest or chOrder]
+  - ServiceRequest[chOrder] - comes from orderedTestCode, and only hasMember pointing to chTest(s) within this orderedTest
+    - Observation[chTest] - mostly filled with chemistryResults found within that orderedTestCode
 - DiagnosticReport.specimen = contained Specimen[specimen]
 - DiagnosticReport.performer = contained Practitioner or Organization
 - DiagnosticReport.category = all codes from contained Observations to enable finding them since they are contained
@@ -68,15 +79,15 @@ DiagnosticReport
 |  |  |                                                 |  recordStatus |  |  |
 |  |  |                                                 |  key |  |  |
 |  |  | (labTestRequest, specimen, labTests)            | recordSubType                   |                                     | `LAB` / `PANEL` / `TEST` |
-|  |  | labTests[n]/orderedTestCode/                    | orderedTest = {displayText}     | Observation[chPanel].code           | should this be a serviceRequest? |
-|  |  | labTests[n]/chemistryResults/testIdentifier/    | labTestName={originalText}      | Observation[chTest].code            |  |
-|  |  | labTests[n]/chemistryResults/observationStatus  | status                          | Observation[chTest].status          | mock data -> `F` and `C` |
-|  |  | labTests[n]/chemistryResults/observationValue   | result                          | Observation[chTest].value[x]        |  |
-|  |  | labTests[n]/chemistryResults/observationUnits   | units                           | Observation[chTest].valueQuantity.units |  |
-|  |  | labTests[n]/chemistryResults/valueInterpretation | resultIndicator                | Observation[chTest].interpretation  | L->Low, LL->Critical Low, H->High, HH->Critical High |
-|  |  | labTests[n]/chemistryResults/referenceRange     | referenceRange                  | Observation[chTest].referenceRange.text  |  |
-|  |  | labTests[n]/chemistryResults/labCommentEvents   | interpretation                  | Observation[chTest].note.text       | multiple |
-|  |  | labTests[n]/chemistryResults/performingOrganization/ | performingLocation={location} | Observation[chTest].performer[org]  |  |
+| 63.07-3 |  | labTests[n]/orderedTestCode/                    | orderedTest = {displayText}     | ServiceRequest[chOrder].code           |  |
+|  |  | labTests[n]/chemistryResults[m]/testIdentifier/    | labTestName={originalText}      | Observation[chTest].code            |  |
+| 63.04-10 |  | labTests[n]/chemistryResults[m]/observationStatus  | status                          | Observation[chTest].status          | mock data -> `F` and `C`-> Corrected |
+|  |  | labTests[n]/chemistryResults[m]/observationValue   | result                          | Observation[chTest].value[x]        |  |
+|  |  | labTests[n]/chemistryResults[m]/observationUnits   | units                           | Observation[chTest].valueQuantity.units |  |
+|  |  | labTests[n]/chemistryResults[m]/valueInterpretation | resultIndicator                | Observation[chTest].interpretation  | L->Low, LL->Critical Low, H->High, HH->Critical High |
+|  |  | labTests[n]/chemistryResults[m]/referenceRange     | referenceRange                  | Observation[chTest].referenceRange.text  |  |
+|  |  | labTests[n]/chemistryResults[m]/labCommentEvents   | interpretation                  | Observation[chTest].note.text       | multiple |
+|  |  | labTests[n]/chemistryResults[m]/performingOrganization/ | performingLocation={location} | Observation[chTest].performer[org]  |  |
 |  |  |   ""                                            | performingLocationName={name}   |                                     |  |
 |  |  | labTestRequest/author/                          | orderingProvider={name}         | DiagnosticReport.performer[author]  |  |
 |  |  | labCommentEvents                                | comments                        | DiagnosticReport.conclusion         | multiple |
@@ -90,16 +101,36 @@ DiagnosticReport
 |  |  |  ""                                             |                                 | DiagnosticReport.issued             |  |
 |  |  |  ""                                             | reportCompleteDateImprecise     |  |  |
 |  |  | labTests[n]/status                              | amendedStatus                   |  | if `Amended` |
-|  |  |                                                 | pid                             |  | ++ each panel / result |
+|  |  |                                                 | pid                             |  | ++ each order / result |
 |  |  |                                                 | lid                             |  | ++ each lab |
 |  |  |                                                 | hold                            |  | if hold |
 |  |  |                                                 |                                 | DiagnosticReport.category=`LAB`     |  |
 |  |  |                                                 |                                 | DiagnosticReport.status=`final`     |  |
 |  |  |                                                 |                                 | Specimen.status=`available`         |  |
-|  |  |                                                 |                                 | Observation[chPanel].category=`laboratory`     |  |
-|  |  |                                                 |                                 | Observation[chPanel].status=`final` |  |
+|  |  |                                                 |                                 | ServiceRequest[chOrder].category=`Laboratory procedure`     |  |
+|  |  |                                                 |                                 | ServiceRequest[chOrder].status=`unknown` |  |
+|  |  |                                                 |                                 | ServiceRequest[chOrder].intent=`order` |  |
 |  |  |                                                 |                                 | Observation[chTest].category=`laboratory`     |  |
 |  |  |                                                 |                                 | Observation[chTest].status=`final`  |  |
+|  |  |                                                 |                                 | Observation[chTest].specimen = {Specimen}  |  |
+|  |  |                                                 |                                 | Observation[chTest].basedOn = {ServiceRequest}  |  |
 |  |  | recordVersion
 |  |  | recordUpdateTime/
+{: .grid}
+
+
+##### observation status  code
+
+code | meaning
+-----|--------
+C | CORRECTED RESULTS
+F | FINAL RESULTS
+Y | NO ORDER ON RECORD
+R | NOT VERIFIED
+X | ORDER CANCELED
+O | ORDER RECIEVED
+P | PRELIMINARY
+S | PROCEDURE SCHEDULED
+A | SOME RESULTS AVAILABLE
+I | SPECIMEN RECEIVED
 {: .grid}

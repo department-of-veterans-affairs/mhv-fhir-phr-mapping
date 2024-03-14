@@ -15,6 +15,13 @@ The notes below for each release. Archive of [released packages](https://github.
 - Chem-Hem
   - Added mapping markdown table
     - need Vista Fileman Field mapping yet.
+  - Refine Chem-Hem 
+    - use ServiceRequest rather than an Observation with hasMembers
+- Vitals
+  - remind to also refine search to just vital-signs, so as to not pull labs or other
+- DocumentReference
+  - clarify timestamp handling as sometimes it doesn't come with a time
+  - remind to also refine search to just clinical-note category
 
 ### 0.3.3
 

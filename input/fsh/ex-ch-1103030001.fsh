@@ -17,19 +17,21 @@ Usage: #inline
 * collection.collectedDateTime = 2020-10-29T13:28:45-05:00
 
 
-Instance: ex-MHV-chPanel-1103030001a
-InstanceOf: VA.MHV.PHR.chPanel
+Instance: ex-MHV-chOrder-1103030001a
+InstanceOf: VA.MHV.PHR.chOrder
 Usage: #inline
-* category[Laboratory] = http://terminology.hl7.org/CodeSystem/observation-category#laboratory
+* category[us-core] = SCT#108252007 "Laboratory procedure"
 * code.coding[+].code = #84330.0000
 * code.text = "Glucose Quant"
 * code.coding[=].system = "http://va.gov/systems/99VA64"
 * code.coding[+].code = #175
 * code.coding[=].display = "GLUCOSE"
 * code.coding[=].system = "http://va.gov/systems/99VA60"
-* status = #final
+* status = #unknown
+* intent = #order
 * subject = Reference(Patient/ex-MHV-patient-942104)
-* hasMember = Reference(ex-MHV-chTest-1103030001a)
+* requester[+] = Reference(Practitioner/ex-MHV-practitioner-59845-VA660)
+* performer[+] = Reference(Organization/ex-MHV-organization-660)
 
 Instance: ex-MHV-chTest-1103030001a
 InstanceOf: VA.MHV.PHR.chTest 
@@ -50,7 +52,8 @@ Usage: #inline
 * valueQuantity.system = UCUM
 * performer = Reference(Organization/ex-MHV-organization-660)
 * subject = Reference(Patient/ex-MHV-patient-942104)
-
+* specimen = Reference(Specimen/ex-MHV-chSpecimen-1103030001)
+* basedOn = Reference(ServiceRequest/ex-MHV-chOrder-1103030001a)
 
 
 
@@ -72,18 +75,14 @@ Example from a mock labTestPromises (1103030001)
 * subject = Reference(Patient/ex-MHV-patient-942104)
 * effectiveDateTime = 2020-10-29T13:29:52-05:00
 * issued = 2020-10-29T13:29:52-05:00
-* conclusion = """
-Lisa's test 10/29/20
-"""
+* extension[note][+].valueString = "Lisa's test 10/29/20"
 * contained[+] = ex-MHV-organization-552
 * contained[+] = ex-MHV-practitioner-59845-VA660
 * contained[+] = ex-MHV-organization-660
 * performer[+] = Reference(Organization/ex-MHV-organization-552)
-* performer[+] = Reference(Practitioner/ex-MHV-practitioner-59845-VA660)
-* performer[+] = Reference(Organization/ex-MHV-organization-660)
 
-* contained[+] = ex-MHV-chPanel-1103030001a
-* result[+] = Reference(ex-MHV-chPanel-1103030001a)
+* contained[+] = ex-MHV-chOrder-1103030001a
+* basedOn[+] = Reference(ex-MHV-chOrder-1103030001a)
 * contained[+] = ex-MHV-chTest-1103030001a
 * result[+] = Reference(ex-MHV-chTest-1103030001a)
 * category[1].coding.code = #2345-7
@@ -93,5 +92,4 @@ Lisa's test 10/29/20
 
 * contained[+] = ex-MHV-chSpecimen-1103030001
 * specimen[+] = Reference(ex-MHV-chSpecimen-1103030001)
-//* meta.lastUpdated = 2020-10-29T13:29:52-05:00
-
+* effectiveDateTime = 2020-10-29T13:28:45-05:00

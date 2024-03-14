@@ -18,8 +18,9 @@
   - may have an extension `alternate-reference` that points to a Location resource identifying the VAMC where the vital-sign was first recorded
 - `identifier` will hold the record identifier from Vista
 
-Should search for entries that do **not** have `status=entered-in-error` (might also work to look for only `completed`)
-> GET {path}/Observation?patient={patient}&status:not=entered-in-error
+A search for vital-signs would limit the Observations to vital-signs by including the `category` search parameter (i.e. `&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs`).
+Should search for entries that do **not** have `status=entered-in-error` (might also work to look for only `completed`) (i.e., `&status:not=entered-in-error`)
+> GET {path}/Observation?patient={patient}&category=http://terminology.hl7.org/CodeSystem/observation-category|vital-signs&status:not=entered-in-error
 
 ### beyond MVP
 
