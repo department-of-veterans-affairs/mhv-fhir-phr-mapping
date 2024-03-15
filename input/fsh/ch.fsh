@@ -126,7 +126,7 @@ Title: "HDR to mhv-fhir-phr"
 * issued -> "ConvertDate(labTestPromises.reportCompleDate.literal)"
 * code -> "labTestPromises.labSubscript"
 * extension[note] -> "labTestPromises.labCommentEvents.comments"
-* performer -> "GetLocation(labTestPromises.recordSource)"
+* performer -> "GetOrganization(labTestPromises.recordSource)"
 * result -> "Contained Observation(labTestPromises.labTests)"
 * specimen -> "Contained Specimen (labTestPromises.specimen)"
 * basedOn -> "Contained ServiceRequest (labTestPromises.orderedTestCode)"
@@ -147,12 +147,10 @@ One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedT
 - status = `unknown` -- as we dont know
 - intent = `order` -- unclear 
 - category = SCT#108252007 Laboratory procedure
+- specimen = specimen
 - not populating US-Core must support as we dont have the values
 	- occurrence[x], authoredOn, requester
 - no other elements are populated
-
-TODO Question
-- should specimen be populated?
 """
 * code 1..1 MS
 * code ^short = "labTests.orderedTestCode"
@@ -167,7 +165,8 @@ TODO Question
 //* requester only Reference(Practitioner)
 * performer ^short = "labTestPromises.labTestRequest.orderingFacilityIdentifier"
 * performer only Reference(MHVorganization)
-
+* specimen MS
+* specimen only Reference(MHVchSpecimen)
 // Not these from us-core
 * occurrence[x] 0..0
 * authoredOn 0..0
@@ -210,6 +209,7 @@ Title: "HDR labTests Order to mhv-fhir-phr"
 * subject -> "patient"
 * requester -> "GetPractitioner(labTestPromises.labTestRequest.author)"
 * performer -> "GetOrganization(labTestPromises.labTestRequest.orderingFacilityIdentifier)"
+* specimen -> "Specimen (labTestPromises.specimen)"
 
 Profile:        MHVchTest
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
@@ -308,6 +308,9 @@ Title: "HDR labTests to mhv-fhir-phr"
 * performer -> "GetOrganization(performingOrganization)"
 * category -> "`laboratory`"
 * subject -> "patient"
+* specimen -> "Specimen (labTestPromises.specimen)"
+* basedOn -> "ServiceRequest (labTestPromises.orderedTestCode)"
+* note -> "labCommentEvents"
 
 /* Lab.xsd
 

@@ -18,15 +18,31 @@
 
 #### Mapping Concerns
 
+- would like to have vista field mapping, but so far few fields are sure
+  - are trying to find older data that might be more traceable
+  - have gotten a mapping table from HDR but it is to HL7v2, so not helpful
 - need a .code for Diagnostic Report for `CH`
 - could make standalone Observations using the DiagnosticReport id+position
+  - Only if we can make the ServiceRequest and the Specimen also standalone. Which is just as possible.
+  - the benefit is unclear as there is not currently a use-case asking for this.
+- Should ServiceRequest.specimen also be populated to the specimen?
 - There are many system values that I don't know what to do with, so I just invent a canonical
   - http://va.gov/systems/99VA64
   - http://va.gov/systems/99VA60
   - http://va.gov/systems/99VA95.3
   - http://va.gov/systems/99VA61
-- not clear what to do with observationStatus. 
 
+- recordSource - is this a Location or Organization (currently using Organization, as looked last week and given three digits would likely be vamc)
+  - schema defined as `<xsd:element minOccurs="0" name="recordSource" type="basedatatypes:HL72FacilityIdentifier"/>`
+  - example 
+```
+<recordSource>
+  <namespaceId>989</namespaceId>
+  <universalId>DAYT29.FO-BAYPINES.MED.VA.GOV</universalId>
+  <universalIdType>DNS</universalIdType>
+</recordSource>
+```
+- not clear what to do with observationStatus. 
 ```
   case "F": return ObservationStatus.FINAL;
   case "C": return ObservationStatus.AMENDED;
@@ -34,13 +50,14 @@
   case "X": return ObservationStatus.CANCELLED;
   default: return ObservationStatus.UNKNOWN;
 ```
+- resolve DiagnosticReport.category if it holds all of the codes for the lab tests performed. It does not seem to be needed for use-cases, but it might be handy if they ever want to show observations.
 
 TODO
 
 - TODO can likely fill out completely a US-Core Practitioner for the ServiceRequest.requester
-- TODO should the station number be recorded in an Organization resource? vamc, sta3n, (sta3n->sta6n? (longer numbers are clinics/facilities))
 - TODO do we have data for everything? -- Maruf is looking for historic data
 - TODO update diagnostic report profile and api narrative
+- TODO make sure markdown table matches profile
 
 #### Business Rules
 
@@ -72,7 +89,7 @@ DiagnosticReport
 |  |  |                                                 |  createdDate |  |  |
 |  |  |                                                 |  modifiedDate |  |  |
 |  |  |                                                 |  icn={icn}                      | DiagnosticReport.subject            |  |
-|  |  | recordSource/                                   |  stationNumber={namespaceId}                 |                                     | should this be an Organization?  |
+|  |  | recordSource/                                   |  stationNumber={namespaceId}    | DiagnosticReport.performer          |  |
 |  |  |                                                 |  requestMsgCtrlId |  |  |
 |  |  |                                                 |  responseMsgCtrlId |  |  |
 |  |  |                                                 |  extractStatus=`NEW`            |                                     | unclear how this might change |
@@ -89,27 +106,28 @@ DiagnosticReport
 |  |  | labTests[n]/chemistryResults[m]/labCommentEvents   | interpretation                  | Observation[chTest].note.text       | multiple |
 |  |  | labTests[n]/chemistryResults[m]/performingOrganization/ | performingLocation={location} | Observation[chTest].performer[org]  |  |
 |  |  |   ""                                            | performingLocationName={name}   |                                     |  |
-|  |  | labTestRequest/author/                          | orderingProvider={name}         | DiagnosticReport.performer[author]  |  |
-|  |  | labCommentEvents                                | comments                        | DiagnosticReport.conclusion         | multiple |
+|  |  | labTestRequest/author/                          | orderingProvider={name}         | ServiceRequest.author               |  |
+|  |  | labCommentEvents                                | comments                        | DiagnosticReport.extension[notes]   | multiple |
 |  |  | labSubscript                                    | labType                         | DiagnosticReport.code.text          | `CH` |
 |  |  | specimen/specimenTakenDate                      | collectedOnDatePrecise          | Specimen.collectedDateTime          |  |
 |  |  |  ""                                             | collectedOnDateImprecise        |  |  |
 |  |  | recordIdentifier                                | recordId                        | DiagnosticReport.identifier[Rid]    |  |
 |  |  | specimen/specimenSource/                        | specimenSource={displayText}    | Specimen.type                       |  |
-|  |  | labTestRequest/orderingFacilityIdentifier/      | orderingLocation={name}         | DiagnosticReport.performer[location]  |  |
+|  |  | labTestRequest/orderingFacilityIdentifier/      | orderingLocation={name}         | ServiceRequest.performer[location]  |  |
 |  |  | reportCompleteDate                              | reportCompleteDatePrecise       | DiagnosticReport.effectiveDateTime  |  |
 |  |  |  ""                                             |                                 | DiagnosticReport.issued             |  |
 |  |  |  ""                                             | reportCompleteDateImprecise     |  |  |
-|  |  | labTests[n]/status                              | amendedStatus                   |  | if `Amended` |
+|  |  | labTests[n]/status                              | amendedStatus if amended        | ???? |  |
 |  |  |                                                 | pid                             |  | ++ each order / result |
 |  |  |                                                 | lid                             |  | ++ each lab |
 |  |  |                                                 | hold                            |  | if hold |
-|  |  |                                                 |                                 | DiagnosticReport.category=`LAB`     |  |
+|  |  |                                                 |                                 | DiagnosticReport.category=`LAB`     | also all chTest code |
 |  |  |                                                 |                                 | DiagnosticReport.status=`final`     |  |
 |  |  |                                                 |                                 | Specimen.status=`available`         |  |
 |  |  |                                                 |                                 | ServiceRequest[chOrder].category=`Laboratory procedure`     |  |
 |  |  |                                                 |                                 | ServiceRequest[chOrder].status=`unknown` |  |
 |  |  |                                                 |                                 | ServiceRequest[chOrder].intent=`order` |  |
+|  |  |                                                 |                                 | ServiceRequest[chOrder].specimen = {Specimen}  |  |
 |  |  |                                                 |                                 | Observation[chTest].category=`laboratory`     |  |
 |  |  |                                                 |                                 | Observation[chTest].status=`final`  |  |
 |  |  |                                                 |                                 | Observation[chTest].specimen = {Specimen}  |  |
