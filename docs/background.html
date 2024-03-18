@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Vista Mapping - MyHealtheVet PHR FHIR API v0.3.3</title>
+    <title>Vista Mapping - MyHealtheVet PHR FHIR API v0.3.4</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.3 - trial-use
+            <span style="display:inline-block;">0.3.4 - trial-use
 
 
 
@@ -191,7 +191,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.3) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.4) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Vista Mapping</h2>
   
 
@@ -319,9 +319,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.chTest-mappings.html#mappings-for-hdr-labtests-to-mhv-fhir-phr-labtestpromises-labtests">HDR labTests</a></li>
     </ul>
   </li>
-  <li>contained Panels <a href="StructureDefinition-VA.MHV.PHR.chPanel.html">Observation(s)</a>
+  <li>contained Orders <a href="StructureDefinition-VA.MHV.PHR.chOrder.html">ServiceRequest(s)</a>
     <ul>
-      <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.chPanel-mappings.html#mappings-for-hdr-labtests-panel-to-mhv-fhir-phr-labtestpromises-labtests-orderedtestcode">HDR labTests.orderedTestCode</a></li>
+      <li>Mapping from <a href="StructureDefinition-VA.MHV.PHR.chOrder-mappings.html#mappings-for-hdr-labtests-order-to-mhv-fhir-phr-labtestpromises-labtests-orderedtestcode">HDR labTests.orderedTestCode</a></li>
     </ul>
   </li>
 </ul>
@@ -391,7 +391,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li><a href="StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-via-to-mhv-fhir-phr-imagingexamto">Mapping from VIA - ImagingExamTO</a></li>
   <li><a href="StructureDefinition-VA.MHV.PHR.imaging-examples.html">Examples</a></li>
-  <li><a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Bundle-images.html">Example Bundle with all image reports</a>, and thus not individually exposed.</li>
+  <li><a href="Bundle-images.html">Example Bundle with all image reports</a>, and thus not individually exposed.</li>
 </ul>
 
 <h4 id="vital-sign">Vital-Sign</h4>
@@ -440,6 +440,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li>Eventually this same API would support data from Cerner. Thus the same API providing comprehensive data from Vista and/or Cerner where ever it is.</li>
   <li>Provenance – track where the data has come from, and if from multiple places track all.</li>
+  <li>Grahame - Intermediaries White Paper – https://confluence.hl7.org/display/FHIR/Intermediaries+White+Paper</li>
+  <li>HL7 FAST - Exchange Routing – https://hl7.org/fhir/us/exchange-routing/</li>
 </ul>
 
 <p>unknown (FHIR supports the following topics but unclear if this data exists in PHR)</p>
@@ -589,7 +591,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 26, 2024 14:52-0600">2024-02-26</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 18, 2024 14:58-0500">2024-03-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

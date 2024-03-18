@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR CH labTests.orderedTestCode - Testing - MyHealtheVet PHR FHIR API v0.3.3</title>
+    <title>VA MHV PHR CH labTests.orderedTestCode - Mappings - MyHealtheVet PHR FHIR API v0.3.4</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.3 - trial-use
+            <span style="display:inline-block;">0.3.4 - trial-use
 
 
 
@@ -169,11 +169,11 @@
 
           <span style="float:right;">
 
-            <a href="StructureDefinition-VA.MHV.PHR.chPanel-mappings.html">&lt;prev</a> | 
+            <a href="StructureDefinition-VA.MHV.PHR.chOrder-definitions.html">&lt;prev</a> | 
 
             <a href="#bottom">bottom</a>
 
-          | <a href="StructureDefinition-VA.MHV.PHR.chPanel.profile.xml.html">next&gt;</a>
+          | <a href="StructureDefinition-VA.MHV.PHR.chOrder-testing.html">next&gt;</a>
 
           </span>
 
@@ -187,8 +187,8 @@
         <div class="row">
           <div class="inner-wrapper">
 
-<div style="counter-reset: section 6" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.3) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<div style="counter-reset: section 5" class="col-12">
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.4) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -204,20 +204,20 @@
 <ul class="nav nav-tabs">
 
   <li>
-    <a href="StructureDefinition-VA.MHV.PHR.chPanel.html">Content</a>
+    <a href="StructureDefinition-VA.MHV.PHR.chOrder.html">Content</a>
   </li>
 
 
 
   <li>
-    <a href="StructureDefinition-VA.MHV.PHR.chPanel-definitions.html">Detailed Descriptions</a>
+    <a href="StructureDefinition-VA.MHV.PHR.chOrder-definitions.html">Detailed Descriptions</a>
   </li>
 
 
 
   
-    <li>
-      <a href="StructureDefinition-VA.MHV.PHR.chPanel-mappings.html">Mappings</a>
+    <li class="active">
+      <a href="#">Mappings</a>
     </li>
   
 
@@ -229,14 +229,14 @@
 
   
     <li>
-      <a href="StructureDefinition-VA.MHV.PHR.chPanel.profile.xml.html">XML</a>
+      <a href="StructureDefinition-VA.MHV.PHR.chOrder.profile.xml.html">XML</a>
     </li>
   
 
 
   
     <li>
-      <a href="StructureDefinition-VA.MHV.PHR.chPanel.profile.json.html">JSON</a>
+      <a href="StructureDefinition-VA.MHV.PHR.chOrder.profile.json.html">JSON</a>
     </li>
   
 
@@ -245,8 +245,8 @@
 </ul>
 
 
-  <a name="root"> </a>
-  <h2 id="root">Resource Profile: MHVchPanel - Testing</h2>
+<a name="root"> </a>
+<h2 id="root">Resource Profile: MHVchOrder - Mappings</h2>
 
   <table class="colstu">
     <tr>
@@ -267,25 +267,101 @@
   </table>
 
 
+<p>Mappings for the VA.MHV.PHR.chOrder resource profile.</p>
+
+  <!-- insert intro if present -->
+  
 
 
-<!-- insert intro if present -->
+
+  <a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>MHVchOrder</b></td></tr>
+ <tr><td>ServiceRequest</td><td>Request</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Request.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>Request.intent</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Request.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Request.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>Request.requester</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>Request.performer</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>Request.note</td> </tr>
+</table>
+<a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>MHVchOrder</b></td></tr>
+ <tr><td>ServiceRequest</td><td>ORC</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>ORC.5,RF1-1</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>RF1-5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>RF1-5</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>PR1-3 / OBR-4  (varies by domain)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>ORC.12, PRT</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>PRT, Practitioner: PRD-2/PRD-7 where PRD-3 = RT; Organization: PRD-10 where PRD-3 = RT</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>SPM</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE</td> </tr>
+</table>
+<a name="rim"> </a><h3>Mappings for RIM Mapping (<a href="http://hl7.org/comparison-v3.html">http://hl7.org/v3</a>)</h3><table class="grid">
+ <tr><td colspan="3"><b>MHVchOrder</b></td></tr>
+ <tr><td>ServiceRequest</td><td>Entity. Role, or Act, Act[moodCode&lt;=INT]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;text</td><td>Act.text?</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>.moodCode (nuances beyond PRP/PLAN/RQO would need to be elsewhere)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;INT&quot;].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;INT&quot;].code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>.code</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>.participation[typeCode=SBJ].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>.participation[typeCode=AUT].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>.participation[typeCode=PRF].role[scoper.determinerCode=INSTANCE]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>.participation[typeCode=SPC].role</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>.inboundRelationship(typeCode=SUBJ].source[classCode=ANNGEN, moodCode=EVN].value[xsi:type=ST]</td> </tr>
+</table>
+<a name="w5"> </a><h3>Mappings for FiveWs Pattern Mapping (http://hl7.org/fhir/fivews)</h3><table class="grid">
+ <tr><td colspan="3"><b>MHVchOrder</b></td></tr>
+ <tr><td>ServiceRequest</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>FiveWs.status</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category (us-core)</td><td>FiveWs.class</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>FiveWs.what[x]</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>FiveWs.subject[x], FiveWs.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>FiveWs.author</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
+</table>
+<a name="quick"> </a><h3>Mappings for Quality Improvement and Clinical Knowledge (QUICK) (http://siframework.org/cqf)</h3><table class="grid">
+ <tr><td colspan="3"><b>MHVchOrder</b></td></tr>
+ <tr><td>ServiceRequest</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Action.currentStatus</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Procedure.procedureCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>ClinicalStatement.subject</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>ClinicalStatement.statementAuthor</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>ClinicalStatement.additionalText</td> </tr>
+</table>
+<a name="CH-Mapping-labOrder"> </a><h3>Mappings for HDR labTests Order to mhv-fhir-phr (labTestPromises.labTests.orderedTestCode)</h3><table class="grid">
+ <tr><td colspan="3"><b>MHVchOrder</b></td></tr>
+ <tr><td>ServiceRequest</td><td>HDR labTests.orderedTestCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`unknown`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;intent</td><td>`order`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`Laboratory procedure`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>orderedTestCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>code and alternateCode</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>displayText</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;requester</td><td>GetPractitioner(labTestPromises.labTestRequest.author)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetOrganization(labTestPromises.labTestRequest.orderingFacilityIdentifier)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Specimen (labTestPromises.specimen)</td> </tr>
+</table>
 
 
-
-
-<h3>Test Plans</h3>
-
-  <p><b>No test plans are currently available for the  Profile.</b></p>
-
-
-<h3>Test Scripts</h3>
-
-  <p><b>No test scripts are currently available for the  Profile.</b></p>
-
-
-<!-- insert notes if present -->
-
+  <!-- insert notes if present -->
+  
 
 
 
@@ -339,7 +415,7 @@
             <tr>
               <td style="text-align:left">&#xA0;
 
-                <a href="StructureDefinition-VA.MHV.PHR.chPanel-mappings.html">&lt;prev</a>
+                <a href="StructureDefinition-VA.MHV.PHR.chOrder-definitions.html">&lt;prev</a>
 
               </td>
               <td style="text-align:center">
@@ -347,7 +423,7 @@
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="StructureDefinition-VA.MHV.PHR.chPanel.profile.xml.html">next&gt;</a>
+                <a href="StructureDefinition-VA.MHV.PHR.chOrder-testing.html">next&gt;</a>
 
               </td>
             </tr>
@@ -357,7 +433,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 26, 2024 14:52-0600">2024-02-26</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 18, 2024 14:58-0500">2024-03-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

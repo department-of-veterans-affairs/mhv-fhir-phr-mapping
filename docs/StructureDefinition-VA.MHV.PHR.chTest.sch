@@ -13,7 +13,8 @@
     <sch:title>f:Observation</sch:title>
     <sch:rule context="f:Observation">
       <sch:assert test="count(f:identifier) &lt;= 0">identifier: maximum cardinality of 'identifier' is 0</sch:assert>
-      <sch:assert test="count(f:basedOn) &lt;= 0">basedOn: maximum cardinality of 'basedOn' is 0</sch:assert>
+      <sch:assert test="count(f:basedOn) &gt;= 1">basedOn: minimum cardinality of 'basedOn' is 1</sch:assert>
+      <sch:assert test="count(f:basedOn) &lt;= 1">basedOn: maximum cardinality of 'basedOn' is 1</sch:assert>
       <sch:assert test="count(f:partOf) &lt;= 0">partOf: maximum cardinality of 'partOf' is 0</sch:assert>
       <sch:assert test="count(f:focus) &lt;= 0">focus: maximum cardinality of 'focus' is 0</sch:assert>
       <sch:assert test="count(f:encounter) &lt;= 0">encounter: maximum cardinality of 'encounter' is 0</sch:assert>
@@ -22,7 +23,6 @@
       <sch:assert test="count(f:dataAbsentReason) &lt;= 0">dataAbsentReason: maximum cardinality of 'dataAbsentReason' is 0</sch:assert>
       <sch:assert test="count(f:bodySite) &lt;= 0">bodySite: maximum cardinality of 'bodySite' is 0</sch:assert>
       <sch:assert test="count(f:method) &lt;= 0">method: maximum cardinality of 'method' is 0</sch:assert>
-      <sch:assert test="count(f:specimen) &lt;= 0">specimen: maximum cardinality of 'specimen' is 0</sch:assert>
       <sch:assert test="count(f:device) &lt;= 0">device: maximum cardinality of 'device' is 0</sch:assert>
       <sch:assert test="count(f:hasMember) &lt;= 0">hasMember: maximum cardinality of 'hasMember' is 0</sch:assert>
       <sch:assert test="count(f:derivedFrom) &lt;= 0">derivedFrom: maximum cardinality of 'derivedFrom' is 0</sch:assert>

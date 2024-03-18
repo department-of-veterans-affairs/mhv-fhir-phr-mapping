@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 2345-7}\">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104\u00a0(use:\u00a0USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Reported</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1190530002\u00a0(use:\u00a0USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's test 2/22/19</p></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 2345-7}\">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104\u00a0(use:\u00a0USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 11:11:47-0500</td></tr><tr><td>Reported</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1190530002\u00a0(use:\u00a0USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table></div>"
   },
   "contained" : [{
     "resourceType" : "Organization",
@@ -63,16 +63,18 @@
     }]
   },
   {
-    "resourceType" : "Observation",
-    "id" : "ex-MHV-chPanel-1190530002a",
+    "resourceType" : "ServiceRequest",
+    "id" : "ex-MHV-chOrder-1190530002a",
     "meta" : {
-      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel"]
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"]
     },
-    "status" : "final",
+    "status" : "unknown",
+    "intent" : "order",
     "category" : [{
       "coding" : [{
-        "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
-        "code" : "laboratory"
+        "system" : "http://snomed.info/sct",
+        "code" : "108252007",
+        "display" : "Laboratory procedure"
       }]
     }],
     "code" : {
@@ -90,8 +92,11 @@
     "subject" : {
       "reference" : "Patient/ex-MHV-patient-942104"
     },
-    "hasMember" : [{
-      "reference" : "#ex-MHV-chTest-1190530002a"
+    "requester" : {
+      "reference" : "#ex-MHV-practitioner-59845-VA660"
+    },
+    "performer" : [{
+      "reference" : "#ex-MHV-organization-660"
     }]
   },
   {
@@ -100,6 +105,9 @@
     "meta" : {
       "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest"]
     },
+    "basedOn" : [{
+      "reference" : "#ex-MHV-chOrder-1190530002a"
+    }],
     "status" : "final",
     "category" : [{
       "coding" : [{
@@ -131,6 +139,9 @@
       "unit" : "mg/dl",
       "system" : "http://unitsofmeasure.org"
     },
+    "specimen" : {
+      "reference" : "#ex-MHV-chSpecimen-1190530002"
+    },
     "referenceRange" : [{
       "text" : "71-119"
     }]
@@ -160,10 +171,17 @@
       "collectedDateTime" : "2019-02-22T11:11:47-05:00"
     }
   }],
+  "extension" : [{
+    "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes",
+    "valueString" : "Lisa's test 2/22/19"
+  }],
   "identifier" : [{
     "use" : "usual",
     "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
     "value" : "1190530002"
+  }],
+  "basedOn" : [{
+    "reference" : "#ex-MHV-chOrder-1190530002a"
   }],
   "status" : "final",
   "category" : [{
@@ -186,25 +204,15 @@
   "subject" : {
     "reference" : "Patient/ex-MHV-patient-942104"
   },
-  "effectiveDateTime" : "2019-02-22T21:12:57-05:00",
+  "effectiveDateTime" : "2019-02-22T11:11:47-05:00",
   "issued" : "2019-02-22T21:12:57-05:00",
   "performer" : [{
     "reference" : "#ex-MHV-organization-979"
-  },
-  {
-    "reference" : "#ex-MHV-organization-660"
-  },
-  {
-    "reference" : "#ex-MHV-practitioner-59845-VA660"
   }],
   "specimen" : [{
     "reference" : "#ex-MHV-chSpecimen-1190530002"
   }],
   "result" : [{
-    "reference" : "#ex-MHV-chPanel-1190530002a"
-  },
-  {
     "reference" : "#ex-MHV-chTest-1190530002a"
-  }],
-  "conclusion" : "Lisa's test 2/22/19"
+  }]
 }

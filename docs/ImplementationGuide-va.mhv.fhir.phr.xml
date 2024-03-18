@@ -13,11 +13,11 @@
     <valueInteger value="1"/>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
-  <version value="0.3.3"/>
+  <version value="0.3.4"/>
   <name value="VAMHVFHIRPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2024-02-26T14:52:47-06:00"/>
+  <date value="2024-03-18T14:58:21-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -2524,6 +2524,17 @@
     </resource>
     <resource>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/Notes"/>
+      </reference>
+      <name value="Notes"/>
+      <description value="Notes"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
         <valueString value="Observation"/>
       </extension>
       <reference>
@@ -4466,7 +4477,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.chTest"/>
       </reference>
       <name value="VA MHV PHR CH labTest.chemistryResults"/>
-      <description value="A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.chemistryResults`&#xA;- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- `valueInterpretation` -&gt; `.interpretation` &#xA;  - `L` -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L&#xA;  - 'H' -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H&#xA;- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)&#xA;- `testIdentifier` -&gt; `.code` -- where &quot;LN&quot; is Loinc&#xA;- `referenceRange` -&gt; `.referenceRange.text` -- don't try to break out further as there is little use of this value&#xA;- `labCommentEvents` -&gt; `.note.text`&#xA;- value[x] either String or Quantity with units&#xA;- `observationValue` -&gt; `.valueQuantity.value`&#xA;- `observationUnits.unit` -&gt; `.valueQuantity.unit`&#xA;- `observationUnits.code` -&gt; `.valueQuantity.code` - likely need to adjust some&#xA;- `observationUnits.codingSystem` -&gt; `.valueQuantity.system`&#xA;- `performingOrganization` -&gt; `.performer`&#xA;- given this is contained in the DiagnosticReport, then &#xA;  - effective[x] is presumed from the DiagnosticReport&#xA;  - issued is presumed from the DiagnosticReport&#xA;  - specimen is presumed from the DiagnosticReport&#xA;- will not have a `.hasMember` as this is results not a panel"/>
+      <description value="A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.chemistryResults`&#xA;- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- `valueInterpretation` -&gt; `.interpretation` &#xA;  - `L` -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L&#xA;  - 'H' -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H&#xA;- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)&#xA;- `testIdentifier` -&gt; `.code` -- where LN is Loinc&#xA;- `referenceRange` -&gt; `.referenceRange.text` -- dont try to break out further as there is little use of this value&#xA;- `labCommentEvents` -&gt; `.note.text`&#xA;- value[x] either String or Quantity with units&#xA;- `observationValue` -&gt; `.valueQuantity.value`&#xA;- `observationUnits.unit` -&gt; `.valueQuantity.unit`&#xA;- `observationUnits.code` -&gt; `.valueQuantity.code` - likely need to adjust some&#xA;- `observationUnits.codingSystem` -&gt; `.valueQuantity.system`&#xA;- `performingOrganization` -&gt; `.performer`&#xA;- given this is contained in the DiagnosticReport, then &#xA;  - effective[x] is presumed from the DiagnosticReport&#xA;  - issued is presumed from the DiagnosticReport&#xA;- `specimen` -&gt; specimen&#xA;- `basedOn` -&gt; ServiceRequest"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4474,10 +4485,10 @@
         <valueString value="StructureDefinition:resource"/>
       </extension>
       <reference>
-        <reference value="StructureDefinition/VA.MHV.PHR.chPanel"/>
+        <reference value="StructureDefinition/VA.MHV.PHR.chOrder"/>
       </reference>
       <name value="VA MHV PHR CH labTests.orderedTestCode"/>
-      <description value="A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.orderedTestCode`&#xA;- This profile is based Observation, as it is not found in us-core&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- `orderedTestCode -&gt; `.code`&#xA;- Panel is distinguished by &#xA;  - there is no `.value[x]` - as this is just a panel&#xA;  - there is `.hasMember` 1..* - These point at the results observations"/>
+      <description value="A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- code = {labTests.orderedTestCode}&#xA;- status = `unknown` -- as we dont know&#xA;- intent = `order` -- unclear &#xA;- category = SCT#108252007 Laboratory procedure&#xA;- specimen = specimen&#xA;- not populating US-Core must support as we dont have the values&#xA;&#x9;- occurrence[x], authoredOn, requester&#xA;- no other elements are populated"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

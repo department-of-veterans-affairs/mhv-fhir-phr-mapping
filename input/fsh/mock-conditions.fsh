@@ -349,6 +349,9 @@ Description: "Rash (SCT 271807003)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2023-10-30"
+* note.text = "Problem list test Comment , Muazzam Khan"
 
 Instance: 6fec0aa5-b0e9-4de3-abb6-53dd3812163d
 InstanceOf: VA.MHV.PHR.condition
@@ -371,6 +374,9 @@ Description: "Atrial Flutter (SCT 5370000)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2023-12-20"
+* note.text = "Problem Catagories -Cardiology, Status -Active, Immediacy - Unknown"
 
 Instance: c7f280d9-88fe-4849-8075-91f6cc8a6f54
 InstanceOf: VA.MHV.PHR.condition
@@ -393,6 +399,9 @@ Description: "Defective Dental Restoration (SCT 109728009)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2023-12-20"
+* note.text = "Problem Catagories -Dental, Status -Active, Immediacy - chronic"
 
 Instance: 3ca33c70-26dc-48f1-bc8a-0a5d1c141bcf
 InstanceOf: VA.MHV.PHR.condition
@@ -415,6 +424,9 @@ Description: "Benign Neoplasm of Skin (SCT 92384009)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2023-12-20"
+* note.text = "Problem Catagories -Dental, Status -dermotology, Immediacy - Acute"
 
 Instance: 74869b91-f12f-4281-bd94-b9c72c6fbaab
 InstanceOf: VA.MHV.PHR.condition
@@ -437,6 +449,9 @@ Description: "History of Alcohol Abuse (SCT 371434005)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2023-12-20"
+* note.text = "Problem Catagories -Active, Status -Active, Immediacy - Acute"
 
 Instance: cfe9ec39-d291-4ca0-b130-c7a4d33eb83b
 InstanceOf: VA.MHV.PHR.condition
@@ -459,6 +474,9 @@ Description: "Chest Pain (SCT 29857009)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2024-02-13"
+* note.text = "treatment factor service connected with date of onset YYYY01"
 
 Instance: b1aee5a0-fccd-4506-88de-d218cd40be0a
 InstanceOf: VA.MHV.PHR.condition
@@ -481,6 +499,9 @@ Description: "Acute Deep Vein Thrombosis Of Lower Limb (SCT 651000119108)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2024-02-13"
+* note.text = "will sign thsi problem"
 
 Instance: 88c35ca4-a88a-43d3-8f97-69144f229051
 InstanceOf: VA.MHV.PHR.condition
@@ -503,6 +524,9 @@ Description: "Exposure to Agent Orange (SCT 718016003)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2024-02-13"
+* note.text = "Problem added from other problem list"
 
 Instance: c4706e07-7290-44e8-8d34-593027b04913
 InstanceOf: VA.MHV.PHR.condition
@@ -525,6 +549,9 @@ Description: "Acute posttraumatic stress disorder following military combat (SCT
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2024-02-13"
+* note.text = "Problem added from other problem under military"
 
 Instance: acf94eab-a6d1-4b5e-bd76-1288e616dd4b
 InstanceOf: VA.MHV.PHR.condition
@@ -546,6 +573,18 @@ Description: "AF- Atrial Fibrillation (SCT 49436004)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note[0].authorString = "AHMED,MARUF"
+* note[=].time = "2024-02-15"
+* note[=].text = "Comment - 4 of 4"
+* note[+].authorString = "AHMED,MARUF"
+* note[=].time = "2024-02-15"
+* note[=].text = "Comment - 3 of 4"
+* note[+].authorString = "AHMED,MARUF"
+* note[=].time = "2024-02-15"
+* note[=].text = "Comment - 2 of 4"
+* note[+].authorString = "AHMED,MARUF"
+* note[=].time = "2024-02-15"
+* note[=].text = "Comment -1 of 4"
 
 Instance: 794eed45-7ad5-4078-bc08-302ec0060ac6
 InstanceOf: VA.MHV.PHR.condition
@@ -567,6 +606,9 @@ Description: "Alcohol Abuse (SCT 15167005)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-37524)
+* note.authorString = "NOBLE,PAMELA J"
+* note.time = "2024-02-20"
+* note.text = "test"
 
 Instance: 65daf497-c0d2-451d-9950-f31616437a88
 InstanceOf: VA.MHV.PHR.condition
@@ -588,6 +630,9 @@ Description: "CAD - Coronary Artery Disease (SCT 53741008)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-37524)
+* note.authorString = "NOBLE,PAMELA J"
+* note.time = "2024-02-20"
+* note.text = "test"
 
 Instance: 61784c6a-854d-49cd-9847-9d92772fdba6
 InstanceOf: VA.MHV.PHR.condition
@@ -609,6 +654,9 @@ Description: "Abnormal cardiotochogram tracing (SCT 735205007)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2024-02-20"
+* note.text = "diagnosis"
 
 Instance: 49cdaa51-9e6d-4246-9b54-5c9f3db13909
 InstanceOf: VA.MHV.PHR.condition
@@ -632,6 +680,9 @@ Description: "Proliferative Diabetic Retinopathy (SCT 59276001)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note.authorString = "AHMED,MARUF"
+* note.time = "2022-08-18"
+* note.text = "test"
 
 Instance: 6a2be107-501e-458f-8f17-0ada297d34d8
 InstanceOf: VA.MHV.PHR.condition
@@ -655,3 +706,15 @@ Description: "Angina Pectoris (SCT 194828000)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
+* note[0].authorString = "AHMED,MARUF"
+* note[=].time = "2024-02-13"
+* note[=].text = "test4"
+* note[+].authorString = "AHMED,MARUF"
+* note[=].time = "2024-02-13"
+* note[=].text = "test3"
+* note[+].authorString = "AHMED,MARUF"
+* note[=].time = "2024-02-13"
+* note[=].text = "Test 2 with John_Maruf Ahmed"
+* note[+].authorString = "AHMED,MARUF"
+* note[=].time = "2024-02-13"
+* note[=].text = "Test with John_Maruf Ahmed"

@@ -1,9 +1,16 @@
 {
   "package": "va.mhv.fhir.phr",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "fhirVersion": "4.0.1",
   "jurisdiction": "US",
   "extensions": [
+    {
+      "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes",
+      "title": "Notes",
+      "types": [
+        "string"
+      ]
+    },
     {
       "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric",
       "title": "Allergy Observed vs Historic",
@@ -32,6 +39,18 @@
         "title": "VA MHV PHR Allergy and Intolerance"
       }
     ],
+    "ServiceRequest": [
+      {
+        "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder",
+        "title": "VA MHV PHR CH labTests.orderedTestCode"
+      }
+    ],
+    "DiagnosticReport": [
+      {
+        "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport",
+        "title": "VA MHV PHR Lab Report"
+      }
+    ],
     "Observation": [
       {
         "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals",
@@ -48,12 +67,6 @@
       {
         "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain",
         "title": "VA MHV PHR Vital-Signs for PAIN"
-      }
-    ],
-    "DiagnosticReport": [
-      {
-        "url": "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport",
-        "title": "VA MHV PHR Lab Report"
       }
     ],
     "Condition": [
@@ -156,9 +169,6 @@
       "StructureDefinition.snapshot.element.type",
       "StructureDefinition.snapshot.element.type.targetProfile"
     ],
-    "http://hl7.org/fhir/StructureDefinition/observation-bodyPosition": [
-      "Observation"
-    ],
     "http://hl7.org/fhir/StructureDefinition/observation-deviceCode": [
       "Observation"
     ],
@@ -225,6 +235,9 @@
     ],
     "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race": [
       "Patient"
+    ],
+    "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes": [
+      "DiagnosticReport"
     ],
     "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric": [
       "AllergyIntolerance"

@@ -6,7 +6,7 @@
     <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://loinc.org 2345-7}">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Reported</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1190530002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's test 2/22/19</p></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://loinc.org 2345-7}">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 11:11:47-0500</td></tr><tr><td>Reported</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1190530002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr></table></div>
   </text>
   <contained>
     <Organization>
@@ -66,16 +66,18 @@
     </Organization>
   </contained>
   <contained>
-    <Observation>
-      <id value="ex-MHV-chPanel-1190530002a"/>
+    <ServiceRequest>
+      <id value="ex-MHV-chOrder-1190530002a"/>
       <meta>
-        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel"/>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"/>
       </meta>
-      <status value="final"/>
+      <status value="unknown"/>
+      <intent value="order"/>
       <category>
         <coding>
-          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
-          <code value="laboratory"/>
+          <system value="http://snomed.info/sct"/>
+          <code value="108252007"/>
+          <display value="Laboratory procedure"/>
         </coding>
       </category>
       <code>
@@ -93,10 +95,13 @@
       <subject>
         <reference value="Patient/ex-MHV-patient-942104"/>
       </subject>
-      <hasMember>
-        <reference value="#ex-MHV-chTest-1190530002a"/>
-      </hasMember>
-    </Observation>
+      <requester>
+        <reference value="#ex-MHV-practitioner-59845-VA660"/>
+      </requester>
+      <performer>
+        <reference value="#ex-MHV-organization-660"/>
+      </performer>
+    </ServiceRequest>
   </contained>
   <contained>
     <Observation>
@@ -104,6 +109,9 @@
       <meta>
         <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest"/>
       </meta>
+      <basedOn>
+        <reference value="#ex-MHV-chOrder-1190530002a"/>
+      </basedOn>
       <status value="final"/>
       <category>
         <coding>
@@ -135,6 +143,9 @@
         <unit value="mg/dl"/>
         <system value="http://unitsofmeasure.org"/>
       </valueQuantity>
+      <specimen>
+        <reference value="#ex-MHV-chSpecimen-1190530002"/>
+      </specimen>
       <referenceRange>
         <text value="71-119"/>
       </referenceRange>
@@ -166,11 +177,17 @@
       </collection>
     </Specimen>
   </contained>
+  <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes">
+    <valueString value="Lisa's test 2/22/19"/>
+  </extension>
   <identifier>
     <use value="usual"/>
     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
     <value value="1190530002"/>
   </identifier>
+  <basedOn>
+    <reference value="#ex-MHV-chOrder-1190530002a"/>
+  </basedOn>
   <status value="final"/>
   <category>
     <coding>
@@ -192,25 +209,15 @@
   <subject>
     <reference value="Patient/ex-MHV-patient-942104"/>
   </subject>
-  <effectiveDateTime value="2019-02-22T21:12:57-05:00"/>
+  <effectiveDateTime value="2019-02-22T11:11:47-05:00"/>
   <issued value="2019-02-22T21:12:57-05:00"/>
   <performer>
     <reference value="#ex-MHV-organization-979"/>
-  </performer>
-  <performer>
-    <reference value="#ex-MHV-organization-660"/>
-  </performer>
-  <performer>
-    <reference value="#ex-MHV-practitioner-59845-VA660"/>
   </performer>
   <specimen>
     <reference value="#ex-MHV-chSpecimen-1190530002"/>
   </specimen>
   <result>
-    <reference value="#ex-MHV-chPanel-1190530002a"/>
-  </result>
-  <result>
     <reference value="#ex-MHV-chTest-1190530002a"/>
   </result>
-  <conclusion value="Lisa's test 2/22/19"/>
 </DiagnosticReport>

@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR CH labTest.chemistryResults - Mappings - MyHealtheVet PHR FHIR API v0.3.3</title>
+    <title>VA MHV PHR CH labTest.chemistryResults - Mappings - MyHealtheVet PHR FHIR API v0.3.4</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.3 - trial-use
+            <span style="display:inline-block;">0.3.4 - trial-use
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.3) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.4) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -277,6 +277,7 @@
   <a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVchTest</b></td></tr>
  <tr><td>Observation</td><td>Event</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>Event.basedOn</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>Event.status</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>Event.code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>Event.subject</td> </tr>
@@ -291,11 +292,13 @@
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>&lt; 441742003 |Evaluation finding|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>&lt; 260245000 |Findings values|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>&lt; 123038009 |Specimen|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td></td> </tr>
 </table>
 <a name="v2"> </a><h3>Mappings for HL7 v2 Mapping (<a href="http://hl7.org/comparison-v2.html">http://hl7.org/v2</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVchTest</b></td></tr>
  <tr><td>Observation</td><td>OBX</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>ORC</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>OBX-11</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>OBX-3</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
@@ -309,6 +312,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>NTE.3 (partner NTE to OBX, or sometimes another (child?) OBX)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>SPM segment</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td>OBX.7</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>OBX-7</td> </tr>
 </table>
@@ -319,6 +323,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;contained</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;extension</td><td>N/A</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;modifierExtension</td><td>N/A</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>.inboundRelationship[typeCode=COMP].source[moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>status  Amended &amp; Final are differentiated by whether it is the subject of a ControlAct event with a type of &quot;revise&quot;</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category (Laboratory)</td><td>.outboundRelationship[typeCode=&quot;COMP].target[classCode=&quot;LIST&quot;, moodCode=&quot;EVN&quot;].code</td> </tr>
@@ -338,6 +343,7 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>subjectOf.observationEvent[code=&quot;annotation&quot;].value</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>participation[typeCode=SPC].specimen</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td>outboundRelationship[typeCode=REFV]/target[classCode=OBS, moodCode=EVN]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
@@ -362,10 +368,12 @@
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueQuantity)</td><td>363714003 |Interprets|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;value[x] (valueString)</td><td>363714003 |Interprets|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>704319004 |Inherent in|</td> </tr>
 </table>
 <a name="CH-Mapping-labTests"> </a><h3>Mappings for HDR labTests to mhv-fhir-phr (labTestPromises.labTests)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVchTest</b></td></tr>
  <tr><td>Observation</td><td>HDR labTests</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>ServiceRequest (labTestPromises.orderedTestCode)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>~observedStatus</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`laboratory`</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>testIdentifier</td> </tr>
@@ -378,6 +386,9 @@
  <tr><td>&nbsp;&nbsp;&nbsp;interpretation</td><td></td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>`L` -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L, `H` -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>valueInterpretation</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;note</td><td>labCommentEvents</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Specimen (labTestPromises.specimen)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;referenceRange</td><td>referenceRange</td> </tr>
 </table>
 
 
@@ -454,7 +465,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 26, 2024 14:52-0600">2024-02-26</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 18, 2024 14:58-0500">2024-03-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "1"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.3.3"] ; # 
+  fhir:version [ fhir:v "0.3.4"] ; # 
   fhir:name [ fhir:v "VAMHVFHIRPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-02-26T14:52:47-06:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-03-18T14:58:21-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -3266,6 +3266,18 @@
      ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:extension" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes> ;
+         fhir:reference [ fhir:v "StructureDefinition/Notes" ]
+       ] ;
+       fhir:name [ fhir:v "Notes" ] ;
+       fhir:description [ fhir:v "Notes" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "Observation" ]
        ] ) ;
        fhir:reference [
@@ -5892,7 +5904,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.chTest" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR CH labTest.chemistryResults" ] ;
-       fhir:description [ fhir:v "A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests.chemistryResults`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n- `.subject` must be the patient from the DiagnosticReport\n- `valueInterpretation` -> `.interpretation` \n  - `L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L\n  - 'H' -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H\n- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n- `testIdentifier` -> `.code` -- where \"LN\" is Loinc\n- `referenceRange` -> `.referenceRange.text` -- don't try to break out further as there is little use of this value\n- `labCommentEvents` -> `.note.text`\n- value[x] either String or Quantity with units\n- `observationValue` -> `.valueQuantity.value`\n- `observationUnits.unit` -> `.valueQuantity.unit`\n- `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n- `observationUnits.codingSystem` -> `.valueQuantity.system`\n- `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n  - specimen is presumed from the DiagnosticReport\n- will not have a `.hasMember` as this is results not a panel" ] ;
+       fhir:description [ fhir:v "A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests.chemistryResults`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n- `.subject` must be the patient from the DiagnosticReport\n- `valueInterpretation` -> `.interpretation` \n  - `L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L\n  - 'H' -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H\n- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n- `testIdentifier` -> `.code` -- where LN is Loinc\n- `referenceRange` -> `.referenceRange.text` -- dont try to break out further as there is little use of this value\n- `labCommentEvents` -> `.note.text`\n- value[x] either String or Quantity with units\n- `observationValue` -> `.valueQuantity.value`\n- `observationUnits.unit` -> `.valueQuantity.unit`\n- `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n- `observationUnits.codingSystem` -> `.valueQuantity.system`\n- `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n- `specimen` -> specimen\n- `basedOn` -> ServiceRequest" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -5900,11 +5912,11 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel> ;
-         fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.chPanel" ]
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder> ;
+         fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.chOrder" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR CH labTests.orderedTestCode" ] ;
-       fhir:description [ fhir:v "A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests.orderedTestCode`\n- This profile is based Observation, as it is not found in us-core\n	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n- `.subject` must be the patient from the DiagnosticReport\n- `orderedTestCode -> `.code`\n- Panel is distinguished by \n  - there is no `.value[x]` - as this is just a panel\n  - there is `.hasMember` 1..* - These point at the results observations" ] ;
+       fhir:description [ fhir:v "A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.\n\nOne ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.\n- `.subject` must be the patient from the DiagnosticReport\n- code = {labTests.orderedTestCode}\n- status = `unknown` -- as we dont know\n- intent = `order` -- unclear \n- category = SCT#108252007 Laboratory procedure\n- specimen = specimen\n- not populating US-Core must support as we dont have the values\n	- occurrence[x], authoredOn, requester\n- no other elements are populated" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.3.3</title>
+    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.3.4</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.3 - trial-use
+            <span style="display:inline-block;">0.3.4 - trial-use
 
 
 
@@ -191,7 +191,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.3) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.4) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -303,8 +303,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </ul>
   </li>
   <li><code class="language-plaintext highlighter-rouge">observedStatus</code> (mock data has <code class="language-plaintext highlighter-rouge">F</code>, <code class="language-plaintext highlighter-rouge">C</code>, ) (? final vs preliminary ?)</li>
-  <li><code class="language-plaintext highlighter-rouge">testIdentifier</code> -&gt; <code class="language-plaintext highlighter-rouge">.code</code> – where “LN” is Loinc</li>
-  <li><code class="language-plaintext highlighter-rouge">referenceRange</code> -&gt; <code class="language-plaintext highlighter-rouge">.referenceRange.text</code> – don’t try to break out further as there is little use of this value</li>
+  <li><code class="language-plaintext highlighter-rouge">testIdentifier</code> -&gt; <code class="language-plaintext highlighter-rouge">.code</code> – where LN is Loinc</li>
+  <li><code class="language-plaintext highlighter-rouge">referenceRange</code> -&gt; <code class="language-plaintext highlighter-rouge">.referenceRange.text</code> – dont try to break out further as there is little use of this value</li>
   <li><code class="language-plaintext highlighter-rouge">labCommentEvents</code> -&gt; <code class="language-plaintext highlighter-rouge">.note.text</code></li>
   <li>value[x] either String or Quantity with units</li>
   <li><code class="language-plaintext highlighter-rouge">observationValue</code> -&gt; <code class="language-plaintext highlighter-rouge">.valueQuantity.value</code></li>
@@ -316,36 +316,35 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <ul>
       <li>effective[x] is presumed from the DiagnosticReport</li>
       <li>issued is presumed from the DiagnosticReport</li>
-      <li>specimen is presumed from the DiagnosticReport</li>
     </ul>
   </li>
-  <li>will not have a <code class="language-plaintext highlighter-rouge">.hasMember</code> as this is results not a panel</li>
+  <li><code class="language-plaintext highlighter-rouge">specimen</code> -&gt; specimen</li>
+  <li><code class="language-plaintext highlighter-rouge">basedOn</code> -&gt; ServiceRequest</li>
 </ul>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-VA.MHV.PHR.chPanel.html"
-                  title="StructureDefinition/VA.MHV.PHR.chPanel">VA MHV PHR CH labTests.orderedTestCode</a>
+               <a href="StructureDefinition-VA.MHV.PHR.chOrder.html"
+                  title="StructureDefinition/VA.MHV.PHR.chOrder">VA MHV PHR CH labTests.orderedTestCode</a>
             </td>
             <td>
-<p>A profile showing how HDR labTests.orderedTestCode (Panel) using FHIR API to MyHealtheVet PHR.</p>
+<p>A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.</p>
 
-<p>One Observation holds one <code class="language-plaintext highlighter-rouge">labTests.orderedTestCode</code></p>
+<p>One ServiceRequest holds one <code class="language-plaintext highlighter-rouge">labTests.orderedTestCode</code>. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.</p>
 <ul>
-  <li>This profile is based Observation, as it is not found in us-core
-    <ul>
-      <li>category must have <code class="language-plaintext highlighter-rouge">http://terminology.hl7.org/CodeSystem/observation-category#laboratory</code></li>
-    </ul>
-  </li>
   <li><code class="language-plaintext highlighter-rouge">.subject</code> must be the patient from the DiagnosticReport</li>
-  <li><code class="language-plaintext highlighter-rouge">orderedTestCode -&amp;gt; </code>.code`</li>
-  <li>Panel is distinguished by
+  <li>code = {labTests.orderedTestCode}</li>
+  <li>status = <code class="language-plaintext highlighter-rouge">unknown</code> – as we dont know</li>
+  <li>intent = <code class="language-plaintext highlighter-rouge">order</code> – unclear</li>
+  <li>category = SCT#108252007 Laboratory procedure</li>
+  <li>specimen = specimen</li>
+  <li>not populating US-Core must support as we dont have the values
     <ul>
-      <li>there is no <code class="language-plaintext highlighter-rouge">.value[x]</code> - as this is just a panel</li>
-      <li>there is <code class="language-plaintext highlighter-rouge">.hasMember</code> 1..* - These point at the results observations</li>
+      <li>occurrence[x], authoredOn, requester</li>
     </ul>
   </li>
+  <li>no other elements are populated</li>
 </ul>
 </td>
          </tr>
@@ -712,6 +711,14 @@ LAST EDITED:  DEC 07, 1990
 DESCRIPTION:<br />
 Indicates whether this allergy/adverse reaction has been observed by some personnel, or if it is historical data gathered about the patient.
 RECORD INDEXES:  AHDR (#482)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-Notes.html" title="StructureDefinition/Notes">Notes</a>
+            </td>
+            <td>
+<p>Notes</p>
 </td>
          </tr>
          <tr>
@@ -4129,7 +4136,7 @@ RECORD INDEXES:  AHDR (#482)</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.3 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Feb 26, 2024 14:52-0600">2024-02-26</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 18, 2024 14:58-0500">2024-03-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -13,6 +13,7 @@
     <sch:title>f:DiagnosticReport</sch:title>
     <sch:rule context="f:DiagnosticReport">
       <sch:assert test="count(f:identifier) &gt;= 1">identifier: minimum cardinality of 'identifier' is 1</sch:assert>
+      <sch:assert test="count(f:basedOn) &gt;= 1">basedOn: minimum cardinality of 'basedOn' is 1</sch:assert>
       <sch:assert test="count(f:subject) &gt;= 1">subject: minimum cardinality of 'subject' is 1</sch:assert>
       <sch:assert test="count(f:encounter) &lt;= 0">encounter: maximum cardinality of 'encounter' is 0</sch:assert>
       <sch:assert test="count(f:resultsInterpreter) &lt;= 0">resultsInterpreter: maximum cardinality of 'resultsInterpreter' is 0</sch:assert>

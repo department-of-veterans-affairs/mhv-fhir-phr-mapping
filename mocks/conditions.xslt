@@ -239,7 +239,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     <reference value="#observer-0"/>
                 </recorder>
 
-                <xsl:for-each select="comments/notes/NoteTO">
+                 <xsl:for-each select="comments/notes/noteTO">
                     <note>
                         <authorString>
                             <xsl:attribute name="value">

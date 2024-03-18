@@ -2,6 +2,7 @@
 @prefix loinc: <https://loinc.org/rdf/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # - resource -------------------------------------------------------------------
@@ -17,7 +18,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 4548-4}\">HEMOGLOBIN A1C/HEMOGLOBIN.TOTAL:MFR:PT:BLD:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 11:11:33-0500</td></tr><tr><td>Reported</td><td>2019-02-22 11:11:33-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1190530001 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td></tr><tr><td colspan=\"4\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"4\"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's Test 2/22/19</p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 4548-4}\">HEMOGLOBIN A1C/HEMOGLOBIN.TOTAL:MFR:PT:BLD:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 11:11:33-0500</td></tr><tr><td>Reported</td><td>2019-02-22 11:11:33-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1190530001 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td></tr><tr><td colspan=\"4\"><i>This Observation could not be resolved</i></td></tr></table></div>"
   ] ; # 
   fhir:contained ( [
      a fhir:Organization ;
@@ -76,19 +77,22 @@
        fhir:country [ fhir:v "USA" ]
      ] )
   ] [
-     a fhir:Observation ;
-     fhir:id [ fhir:v "ex-MHV-chPanel-1190530001a" ] ;
+     a fhir:ServiceRequest ;
+     fhir:id [ fhir:v "ex-MHV-chOrder-1190530001a" ] ;
      fhir:meta [
        fhir:profile ( [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder>
        ] )
      ] ;
-     fhir:status [ fhir:v "final" ] ;
+     fhir:status [ fhir:v "unknown" ] ;
+     fhir:intent [ fhir:v "order" ] ;
      fhir:category ( [
        fhir:coding ( [
-         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
-         fhir:code [ fhir:v "laboratory" ]
+         a sct:108252007 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "108252007" ] ;
+         fhir:display [ fhir:v "Laboratory procedure" ]
        ] )
      ] ) ;
      fhir:code [
@@ -106,8 +110,11 @@
        fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-942104> ;
        fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
      ] ;
-     fhir:hasMember ( [
-       fhir:reference [ fhir:v "#ex-MHV-chTest-1190530001a" ]
+     fhir:requester [
+       fhir:reference [ fhir:v "#ex-MHV-practitioner-59845-VA660" ]
+     ] ;
+     fhir:performer ( [
+       fhir:reference [ fhir:v "#ex-MHV-organization-660" ]
      ] )
   ] [
      a fhir:Observation ;
@@ -118,6 +125,9 @@
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest>
        ] )
      ] ;
+     fhir:basedOn ( [
+       fhir:reference [ fhir:v "#ex-MHV-chOrder-1190530001a" ]
+     ] ) ;
      fhir:status [ fhir:v "final" ] ;
      fhir:category ( [
        fhir:coding ( [
@@ -158,6 +168,9 @@
        ] ) ;
        fhir:text [ fhir:v "H" ]
      ] ) ;
+     fhir:specimen [
+       fhir:reference [ fhir:v "#ex-MHV-chSpecimen-1190530001" ]
+     ] ;
      fhir:referenceRange ( [
        fhir:text [ fhir:v "0.6-1.3" ]
      ] )
@@ -188,10 +201,17 @@
        fhir:collected [ fhir:v "2019-02-22T11:10:05-05:00"^^xsd:dateTime ]
      ]
   ] ) ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Lisa's Test 2/22/19" ]
+  ] ) ; # 
   fhir:identifier ( [
      fhir:use [ fhir:v "usual" ] ;
      fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
      fhir:value [ fhir:v "1190530001" ]
+  ] ) ; # 
+  fhir:basedOn ( [
+     fhir:reference [ fhir:v "#ex-MHV-chOrder-1190530001a" ]
   ] ) ; # 
   fhir:status [ fhir:v "final"] ; # 
   fhir:category ( [
@@ -219,20 +239,13 @@
   fhir:issued [ fhir:v "2019-02-22T11:11:33-05:00"^^xsd:dateTime] ; # 
   fhir:performer ( [
      fhir:reference [ fhir:v "#ex-MHV-organization-979" ]
-  ] [
-     fhir:reference [ fhir:v "#ex-MHV-organization-660" ]
-  ] [
-     fhir:reference [ fhir:v "#ex-MHV-practitioner-59845-VA660" ]
   ] ) ; # 
   fhir:specimen ( [
      fhir:reference [ fhir:v "#ex-MHV-chSpecimen-1190530001" ]
   ] ) ; # 
   fhir:result ( [
-     fhir:reference [ fhir:v "#ex-MHV-chPanel-1190530001a" ]
-  ] [
      fhir:reference [ fhir:v "#ex-MHV-chTest-1190530001a" ]
-  ] ) ; # 
-  fhir:conclusion [ fhir:v "Lisa's Test 2/22/19"] . # 
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

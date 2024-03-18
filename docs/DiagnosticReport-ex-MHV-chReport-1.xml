@@ -6,8 +6,7 @@
     <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://loinc.org 2823-3}">POTASSIUM:SCNC:PT:SER/PLAS:QN:</span>, <span title="Codes: {http://loinc.org 2951-2}">SODIUM:SCNC:PT:SER/PLAS:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2021-01-21 11:32:47-0500</td></tr><tr><td>Reported</td><td>2021-01-21 11:32:47-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1110200002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td><td><b>Note</b></td></tr><tr><td colspan="5"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="5"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="5"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="5"><i>This Observation could not be resolved</i></td></tr></table><p>Lisa's Test 1/20/2021 - Second lab
-Added Potassium test</p></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://loinc.org 2823-3}">POTASSIUM:SCNC:PT:SER/PLAS:QN:</span>, <span title="Codes: {http://loinc.org 2951-2}">SODIUM:SCNC:PT:SER/PLAS:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2021-01-20 16:38:59-0500</td></tr><tr><td>Reported</td><td>2021-01-21 11:32:47-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1110200002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td><td><b>Note</b></td></tr><tr><td colspan="5"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="5"><i>This Observation could not be resolved</i></td></tr></table></div>
   </text>
   <contained>
     <Organization>
@@ -68,16 +67,18 @@ Added Potassium test</p></div>
     </Organization>
   </contained>
   <contained>
-    <Observation>
-      <id value="ex-MHV-chPanel-1a"/>
+    <ServiceRequest>
+      <id value="ex-MHV-chOrder-1a"/>
       <meta>
-        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel"/>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"/>
       </meta>
-      <status value="final"/>
+      <status value="unknown"/>
+      <intent value="order"/>
       <category>
         <coding>
-          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
-          <code value="laboratory"/>
+          <system value="http://snomed.info/sct"/>
+          <code value="108252007"/>
+          <display value="Laboratory procedure"/>
         </coding>
       </category>
       <code>
@@ -95,10 +96,13 @@ Added Potassium test</p></div>
       <subject>
         <reference value="Patient/ex-MHV-patient-942104"/>
       </subject>
-      <hasMember>
-        <reference value="#ex-MHV-chTest-1a"/>
-      </hasMember>
-    </Observation>
+      <requester>
+        <reference value="#ex-MHV-practitioner-14934-VA552"/>
+      </requester>
+      <performer>
+        <reference value="#ex-MHV-organization-552"/>
+      </performer>
+    </ServiceRequest>
   </contained>
   <contained>
     <Observation>
@@ -106,6 +110,9 @@ Added Potassium test</p></div>
       <meta>
         <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest"/>
       </meta>
+      <basedOn>
+        <reference value="#ex-MHV-chOrder-1a"/>
+      </basedOn>
       <status value="final"/>
       <category>
         <coding>
@@ -147,22 +154,27 @@ Added Potassium test</p></div>
       <note>
         <text value="Normal Range Prior to 8-22-02 was: 3.6 - 5.0 mEq/L."/>
       </note>
+      <specimen>
+        <reference value="#ex-MHV-chSpecimen-1"/>
+      </specimen>
       <referenceRange>
         <text value="3.6-5.1"/>
       </referenceRange>
     </Observation>
   </contained>
   <contained>
-    <Observation>
-      <id value="ex-MHV-chPanel-1b"/>
+    <ServiceRequest>
+      <id value="ex-MHV-chOrder-1b"/>
       <meta>
-        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chPanel"/>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"/>
       </meta>
-      <status value="final"/>
+      <status value="unknown"/>
+      <intent value="order"/>
       <category>
         <coding>
-          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
-          <code value="laboratory"/>
+          <system value="http://snomed.info/sct"/>
+          <code value="108252007"/>
+          <display value="Laboratory procedure"/>
         </coding>
       </category>
       <code>
@@ -180,10 +192,13 @@ Added Potassium test</p></div>
       <subject>
         <reference value="Patient/ex-MHV-patient-942104"/>
       </subject>
-      <hasMember>
-        <reference value="#ex-MHV-chTest-1b"/>
-      </hasMember>
-    </Observation>
+      <requester>
+        <reference value="#ex-MHV-practitioner-14934-VA552"/>
+      </requester>
+      <performer>
+        <reference value="#ex-MHV-organization-552"/>
+      </performer>
+    </ServiceRequest>
   </contained>
   <contained>
     <Observation>
@@ -191,6 +206,9 @@ Added Potassium test</p></div>
       <meta>
         <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest"/>
       </meta>
+      <basedOn>
+        <reference value="#ex-MHV-chOrder-1b"/>
+      </basedOn>
       <status value="final"/>
       <category>
         <coding>
@@ -229,6 +247,9 @@ Added Potassium test</p></div>
         </coding>
         <text value="L"/>
       </interpretation>
+      <specimen>
+        <reference value="#ex-MHV-chSpecimen-1"/>
+      </specimen>
       <referenceRange>
         <text value="136-145"/>
       </referenceRange>
@@ -260,11 +281,23 @@ Added Potassium test</p></div>
       </collection>
     </Specimen>
   </contained>
+  <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes">
+    <valueString value="Lisa's Test 1/20/2021 - Second lab"/>
+  </extension>
+  <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes">
+    <valueString value="Added Potassium test"/>
+  </extension>
   <identifier>
     <use value="usual"/>
     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
     <value value="1110200002"/>
   </identifier>
+  <basedOn>
+    <reference value="#ex-MHV-chOrder-1a"/>
+  </basedOn>
+  <basedOn>
+    <reference value="#ex-MHV-chOrder-1b"/>
+  </basedOn>
   <status value="final"/>
   <category>
     <coding>
@@ -294,14 +327,8 @@ Added Potassium test</p></div>
   <subject>
     <reference value="Patient/ex-MHV-patient-942104"/>
   </subject>
-  <effectiveDateTime value="2021-01-21T11:32:47-05:00"/>
+  <effectiveDateTime value="2021-01-20T16:38:59-05:00"/>
   <issued value="2021-01-21T11:32:47-05:00"/>
-  <performer>
-    <reference value="#ex-MHV-organization-552"/>
-  </performer>
-  <performer>
-    <reference value="#ex-MHV-practitioner-14934-VA552"/>
-  </performer>
   <performer>
     <reference value="#ex-MHV-organization-989"/>
   </performer>
@@ -309,16 +336,9 @@ Added Potassium test</p></div>
     <reference value="#ex-MHV-chSpecimen-1"/>
   </specimen>
   <result>
-    <reference value="#ex-MHV-chPanel-1a"/>
-  </result>
-  <result>
     <reference value="#ex-MHV-chTest-1a"/>
-  </result>
-  <result>
-    <reference value="#ex-MHV-chPanel-1b"/>
   </result>
   <result>
     <reference value="#ex-MHV-chTest-1b"/>
   </result>
-  <conclusion value="Lisa's Test 1/20/2021 - Second lab&#xA;Added Potassium test"/>
 </DiagnosticReport>
