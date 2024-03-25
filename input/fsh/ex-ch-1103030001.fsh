@@ -11,11 +11,10 @@ Usage: #inline
 * type.coding[=].system = "http://terminology.hl7.org/CodeSystem/v2-0487"
 * type.coding[+].code = #73
 * type.coding[=].display = "PLASMA"
-* type.coding[=].system = "http://va.gov/systems/99VA61"
-* type.coding[=].version = "5.2"
+* type.coding[=].system = "http://va.gov/terminology/vistaDefinedTerms/61"
 * type.text = "PLASMA"
 * collection.collectedDateTime = 2020-10-29T13:28:45-05:00
-
+* request = Reference(ex-MHV-chOrder-1103030001a)
 
 Instance: ex-MHV-chOrder-1103030001a
 InstanceOf: VA.MHV.PHR.chOrder
@@ -23,10 +22,10 @@ Usage: #inline
 * category[us-core] = SCT#108252007 "Laboratory procedure"
 * code.coding[+].code = #84330.0000
 * code.text = "Glucose Quant"
-* code.coding[=].system = "http://va.gov/systems/99VA64"
+* code.coding[=].system = "http://va.gov/terminology/vistaDefinedTerms/64"
 * code.coding[+].code = #175
 * code.coding[=].display = "GLUCOSE"
-* code.coding[=].system = "http://va.gov/systems/99VA60"
+* code.coding[=].system = "http://va.gov/terminology/vistaDefinedTerms/60"
 * status = #unknown
 * intent = #order
 * subject = Reference(Patient/ex-MHV-patient-942104)
@@ -43,9 +42,9 @@ Usage: #inline
 * code.coding[=].system = LOINC
 * code.coding[=].version = "2.68"
 * code.coding[+].code = #4665460
-* code.coding[=].system = "http://va.gov/systems/99VA95.3"
-* code.coding[=].version = "2.68"
+* code.coding[=].system = "http://va.gov/terminology/vistaDefinedTerms/95.3"
 * code.text = "GLUCOSE"
+* effectiveDateTime = 2020-10-29T13:29:52-05:00
 * referenceRange.text = "71-119"
 * valueQuantity.value = 97
 * valueQuantity.unit = "mg/dl"
@@ -67,7 +66,7 @@ Example from a mock labTestPromises (1103030001)
 """
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[Rid].value = "1103030001" 
-* identifier[Rid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[Rid].system = "urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR"
 * identifier[Rid].use = #usual
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB

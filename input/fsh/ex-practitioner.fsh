@@ -154,7 +154,7 @@ Usage: #inline
 * name.given[+] = "LISA"
 * name.given[+] = "A"
 * identifier[+].value = "14934-VA552"
-* identifier[=].system = "http://va.gov/systems/99VA4"
+* identifier[=].system = "http://va.gov/terminology/vistaDefinedTerms/4"
 
 
 /*  from HDR Lab
@@ -180,7 +180,7 @@ Usage: #inline
 * name.given[+] = "LISA"
 * name.given[+] = "V"
 * identifier[+].value = "59845-VA660"
-* identifier[=].system = "http://va.gov/systems/99VA4"
+* identifier[=].system = "http://va.gov/terminology/vistaDefinedTerms/4"
 
 Instance: ex-MHV-practitioner-37524
 InstanceOf: VA.MHV.PHR.practitioner

@@ -11,10 +11,10 @@ Usage: #inline
 * type.coding[=].system = "http://terminology.hl7.org/CodeSystem/v2-0487"
 * type.coding[+].code = #70
 * type.coding[=].display = "BLOOD"
-* type.coding[=].system = "http://va.gov/systems/99VA61"
-* type.coding[=].version = "5.2"
+* type.coding[=].system = "http://va.gov/terminology/vistaDefinedTerms/61"
 * type.text = "BLOOD"
 * collection.collectedDateTime = 2020-10-29T13:30:03-05:00
+* request = Reference(ex-MHV-chOrder-1103030002a)
 
 
 Instance: ex-MHV-chOrder-1103030002a
@@ -23,10 +23,10 @@ Usage: #inline
 * category[us-core] = SCT#108252007 "Laboratory procedure"
 * code.coding[+].code = #85052.0000
 * code.text = "Glycohemoglobin A(1) C"
-* code.coding[=].system = "http://va.gov/systems/99VA64"
+* code.coding[=].system = "http://va.gov/terminology/vistaDefinedTerms/64"
 * code.coding[+].code = #1893
 * code.coding[=].display = "A1C HEMOGLOBIN {Pnl}"
-* code.coding[=].system = "http://va.gov/systems/99VA60"
+* code.coding[=].system = "http://va.gov/terminology/vistaDefinedTerms/60"
 * status = #unknown
 * intent = #order
 * subject = Reference(Patient/ex-MHV-patient-942104)
@@ -45,9 +45,9 @@ Usage: #inline
 * code.coding[=].system = LOINC
 * code.coding[=].version = "2.68"
 * code.coding[+].code = #4682837
-* code.coding[=].system = "http://va.gov/systems/99VA95.3"
-* code.coding[=].version = "2.68"
+* code.coding[=].system = "http://va.gov/terminology/vistaDefinedTerms/95.3"
 * code.text = "HEMOGLOBIN A1C"
+* effectiveDateTime = 2020-10-29T13:32:46-05:00
 * referenceRange.text = "4.4-6.0"
 * valueQuantity.value = 3.9
 * valueQuantity.unit = "%"
@@ -70,7 +70,7 @@ Example from a mock labTestPromises (1103030002)
 """
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[Rid].value = "1103030002" 
-* identifier[Rid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[Rid].system = "urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR"
 * identifier[Rid].use = #usual
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB

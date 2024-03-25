@@ -58,6 +58,14 @@ WARNING: StructureDefinition.where(url = 'https://department-of-veterans-affairs
 # MedicationDispense throws this INFO warning from FHIR core, [ignore chat confirmation](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/MedicationDispense.20html.20INFO.20warning).
 INFORMATION: StructureDefinition/VA.MHV.PHR.medicationDispense: StructureDefinition.snapshot.element[28].mapping[0].map: The string value contains text that looks like embedded HTML tags. If this content is rendered to HTML without appropriate post-processing, it may be a security risk
 
+# Medication workflow is a work in progress, so these are okay
+WARNING: StructureDefinition.where(url = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.medicationDispense'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.medicationRequest'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.medicationTracking'): The Implementation Guide contains no examples for this profile
+
+# I checked, it is a subset
+ERROR: VA MHV PHR Notes.DocumentReference.type: Binding https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/NoteTypeVS is not a subset of binding http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type
+
 # Immunization reaction Observation is a contained, so the IG validator doesn't see it
 INFORMATION: StructureDefinition.where(url = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunizationReaction'): The Implementation Guide contains no explicitly linked examples for this profile
 
@@ -83,38 +91,7 @@ INFORMATION: Patient/ex-VIA-patient-0: Patient.extension[0]: This element does n
 INFORMATION: Patient/ex-VIA-patient-0: Patient.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|5.0.1
 
 # Minimally populated Observation that is contained. I have no details more.
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1a*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[5]/*Observation/ex-MHV-chOrder-1b*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[5]/*Observation/ex-MHV-chOrder-1b*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[6]/*Observation/ex-MHV-chTest-1b*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1103030001a*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1103030001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1103030001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1103030002a*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1103030002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1103030002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190370002a*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190370002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1190370002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190530001a*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190530001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1190530001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190530002a*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190530002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1190530002a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190740001a*/: Best Practice Recommendation: In general, all observations should have a performer
-WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190740001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[4]/*Observation/ex-MHV-chTest-1190740001a*/: Best Practice Recommendation: In general, all observations should have an effective[x] ()
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.contained[5]/*Observation/ex-MHV-chOrder-1b*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1103030001a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1103030002a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190370002a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190530001a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190530002a*/: All observations should have an effectiveDateTime or an effectivePeriod
-WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.contained[3]/*Observation/ex-MHV-chOrder-1190740001a*/: All observations should have an effectiveDateTime or an effectivePeriod
+
 
 # Jay checked these. Were valid, but are now retired. Do we just accept validation errors, or do we put defensive code into MHV to not use the code, but just use the old display?
 # old codes that the current CPT valueSet does not include as deprecated codes
@@ -145,7 +122,6 @@ The provided code 'http://www.ama-assn.org/go/cpt#72100 ('RADIOLOGIC EXAMINATION
 The provided code 'http://www.ama-assn.org/go/cpt#71111 ('RADIOLOGIC EXAMINATION, RIBS, BILATERAL; INCLUDING POSTEROANTERIOR CHEST, MINIMUM OF 4 VIEWS')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|5.0.1'
 The provided code 'http://www.ama-assn.org/go/cpt#93015 ('CARDIOVASCULAR STRESS TEST USING MAXIMAL OR SUBMAXIMAL TREADMILL OR BICYCLE EXERCISE, CONTINUOUS ELECTROCARDIOGRAPHIC MONITORING, AND/OR PHARMACOLOGICAL STRESS; WITH SUPERVISION, INTERPRETATION AND REPORT')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|5.0.1'
 The provided code 'http://www.ama-assn.org/go/cpt#71260 ('COMPUTED TOMOGRAPHY, THORAX, DIAGNOSTIC; WITH CONTRAST MATERIAL(S)')' was not found in the value set 'http://hl7.org/fhir/us/core/ValueSet/us-core-documentreference-type|5.0.1'
-Terminology_TX_NoValid_1_CC
 
 # current IG publisher adds this extension to conceptMap and then complains that the extension exists
 EXTENSION_EXTM_CONTEXT_WRONG_XVER
@@ -200,10 +176,10 @@ WARNING: DocumentReference/ex-MHV-note-6: DocumentReference.authenticator: Found
 WARNING: DocumentReference/ex-MHV-note-6: DocumentReference.context.related[0]: Found multiple matching profiles for #ex-MHV-location-984 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
 
 # the pain example also includes the original code (VUID)
-This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.3.3 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.3.5-current (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # vitals can have .component that carry vista qualifiers. The following are confirmed to be legitimate
-This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.3.3 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.3.5-current (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # these are matching a code but still complaining
 Terminology_TX_NoValid_3_CC
@@ -215,21 +191,7 @@ Found multiple matching profiles for #location-0 among choices: http://hl7.org/f
 
 # Examples for Condition are using historic ICD9 codes
 WARNING: Condition/ex-MHV-condition-deleted-487: Condition.code.coding[0].code: Unknown Code '401.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-1: Condition.code.coding[0].code: Unknown Code '401.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
 WARNING: Condition/ex-MHV-condition-deleted-1: Condition.code.coding[0].code: Unknown Code '401.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-10: Condition.code.coding[0].code: Unknown Code '600.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-11: Condition.code.coding[0].code: Unknown Code '724.2' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-2: Condition.code.coding[0].code: Unknown Code '300.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-3: Condition.code.coding[0].code: Unknown Code '365.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-4: Condition.code.coding[0].code: Unknown Code 'V79.1' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-5: Condition.code.coding[0].code: Unknown Code 'V79.8' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-6: Condition.code.coding[0].code: Unknown Code '424.90' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-7: Condition.code.coding[0].code: Unknown Code '414.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-8: Condition.code.coding[0].code: Unknown Code '333.99' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-WARNING: Condition/ex-MHV-condition-9: Condition.code.coding[0].code: Unknown Code '799.9' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
-
-# KBS recommended code
-INFORMATION: Observation/91f05de1-fb1c-4c31-b434-094d53791842: Observation.extension[0].value.ofType(CodeableConcept).coding[0].code: The code '243147009' is valid but is not active
 
 # Presumed good codes from ICD
 WARNING: Condition/0635f0d9-81ab-4a0b-af8d-f899d8e5220d: Condition.code.coding[0].code: Unknown Code '414.00' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
@@ -245,8 +207,20 @@ WARNING: Condition/c02cc828-7fd0-40a7-a2fb-5b4609f825a7: Condition.code.coding[0
 WARNING: Condition/ca55b358-f98a-4ba0-a3dc-0346cbeaf44d: Condition.code.coding[0].code: Unknown Code 'V79.1' in the system 'http://hl7.org/fhir/sid/icd-9-cm' version '2015' - note that the code system is labeled as a fragment, so the code may be valid in some other fragment
 
 # stand in system for assigning authority short 
-A definition for CodeSystem 'http://va.gov/systems/99VA64' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://va.gov/systems/99VA60' could not be found, so the code cannot be validated
-A definition for CodeSystem 'http://va.gov/systems/99VA95.3' version '2.64' could not be found, so the code cannot be validated. %
-A definition for CodeSystem 'http://va.gov/systems/99VA61' version '5.2' could not be found, so the code cannot be validated. %
-A definition for CodeSystem 'http://va.gov/systems/99VA95.3' version '2.68' could not be found, so the code cannot be validated. %
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/64' could not be found, so the code cannot be validated
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/60' could not be found, so the code cannot be validated
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/95.3' could not be found, so the code cannot be validated
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/61' could not be found, so the code cannot be validated
+
+# Chem-Hem is unique to VA and therefore no good code available
+DiagnosticReport.code: No code provided, and a code should be provided from the value set 'US Core Diagnostic Report Laboratory Codes' (http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-lab-codes|5.0.1)
+WARNING: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.code: No code provided, and a code should be provided from the value set 'US Core Diagnostic Report Laboratory Codes' (http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-lab-codes|5.0.1)
+WARNING: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.code: No code provided, and a code should be provided from the value set 'US Core Diagnostic Report Laboratory Codes' (http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-lab-codes|5.0.1)
+WARNING: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.code: No code provided, and a code should be provided from the value set 'US Core Diagnostic Report Laboratory Codes' (http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-lab-codes|5.0.1)
+WARNING: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.code: No code provided, and a code should be provided from the value set 'US Core Diagnostic Report Laboratory Codes' (http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-lab-codes|5.0.1)
+WARNING: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.code: No code provided, and a code should be provided from the value set 'US Core Diagnostic Report Laboratory Codes' (http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-lab-codes|5.0.1)
+WARNING: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.code: No code provided, and a code should be provided from the value set 'US Core Diagnostic Report Laboratory Codes' (http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-lab-codes|5.0.1)
+WARNING: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.code: No code provided, and a code should be provided from the value set 'US Core Diagnostic Report Laboratory Codes' (http://hl7.org/fhir/us/core/ValueSet/us-core-diagnosticreport-lab-codes|5.0.1)
+
+# There is no source for these codes from Vista for status
+WARNING: ConceptMap/VF-ChemistryResult-ObservationStatus: ConceptMap.group[0]: No Source Code System, so the source codes cannot be checked

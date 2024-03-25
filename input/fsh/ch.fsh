@@ -5,6 +5,7 @@
 
 Profile: MHVchSpecimen
 Parent: Specimen
+// Note no Specimen profile in US-Core
 Id: VA.MHV.PHR.chSpecimen
 Title: "VA MHV PHR HDR CH Specimen"
 Description: """
@@ -15,9 +16,14 @@ A profile showing how the `labTestPromises.specimen` is mapped into a FHIR Speci
   - `Specimen.type.text` <- `labTestPromises.specimen.specimenSource`
 - should have a `collectedDateTime` derived from `labTestPromises.specimen.specimenTakenDate`
 """
+* status = #available
+* collection MS
+* collection.collectedDateTime MS
+* type 1..1 MS
+* request 1..* MS
+// nothing else
 * receivedTime 0..0
 * parent 0..0
-* request 0..0
 * collection.collector 0..0
 * collection.duration 0..0
 * collection.quantity 0..0
@@ -30,9 +36,6 @@ A profile showing how the `labTestPromises.specimen` is mapped into a FHIR Speci
 * note 0..0
 * identifier 0..0
 * subject 0..0
-* collection MS
-* collection.collectedDateTime MS
-* type 1..1 MS
 
 Mapping: CH-Mapping-labTestPromiseSpecimen
 Source: MHVchSpecimen
@@ -42,6 +45,7 @@ Title: "HDR labTestPromises.specimen to mhv-fhir-phr"
 * status -> "`available`"
 * type -> "labTestPromises.specimen.specimenSource"
 * collection.collectedDateTime -> "ConvertDate(labTestPromises.specimen.specimenTakenDate)"
+* request -> "Reference(ServiceRequest)"
 
 Extension: Notes
 Id: Notes
@@ -72,12 +76,12 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 * identifier contains
   Rid 1..1
 * identifier[Rid].use = #usual
-* identifier[Rid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
-* identifier[Rid].system obeys TOid-startswithoid
-* identifier[Rid].value ^short = "`recordIdentifier` | `.` | {labTestPromises.recordIdentifier.identity}"
+* identifier[Rid].system ^short = "DNS universalIdType: `urn:fdc:` + {universalID} + `:` + {namespaceId}"
+* identifier[Rid].value ^short = "{labTestPromises.recordIdentifier.identity}"
 * subject 1..1
-* code 1..1 MS
+* code.text 1..1 MS
 * code.text = "CH"
+* code.coding 0..0
 /*
 * category MS
 * category 1..
@@ -87,20 +91,20 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 * category contains LaboratorySlice 1..1
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 */
-* effectiveDateTime MS
-* issued MS
+* effectiveDateTime 1..1 MS
+* issued 1..1 MS
 * extension contains Notes named note 0..* MS
-* specimen MS
+* specimen 1..1 MS
 * specimen ^type.aggregation = #contained
 * specimen only Reference(MHVchSpecimen)
 * result MS
 * result 0..*
 * result ^type.aggregation = #contained
 * result only Reference(MHVchTest)
-* basedOn 1..*
+* basedOn 1..* MS
 * basedOn ^type.aggregation = #contained
 * basedOn only Reference(MHVchOrder)
-* performer MS
+* performer 1..1 MS
 * performer ^short = "recordSource"
 * performer only Reference(MHVorganization)
 * performer ^type.aggregation = #contained
@@ -124,7 +128,7 @@ Title: "HDR to mhv-fhir-phr"
 * subject -> "patient"
 * effectiveDateTime -> "ConvertDate(labTestPromises.specimen.specimenTakenDate)"
 * issued -> "ConvertDate(labTestPromises.reportCompleDate.literal)"
-* code -> "labTestPromises.labSubscript"
+* code.text -> "`CH`, no coding"
 * extension[note] -> "labTestPromises.labCommentEvents.comments"
 * performer -> "GetOrganization(labTestPromises.recordSource)"
 * result -> "Contained Observation(labTestPromises.labTests)"
@@ -144,12 +148,12 @@ A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyH
 One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.
 - `.subject` must be the patient from the DiagnosticReport
 - code = {labTests.orderedTestCode}
-- status = `unknown` -- as we dont know
-- intent = `order` -- unclear 
+- status = `unknown` -- as we dont know - TODO
+- intent = `order`
 - category = SCT#108252007 Laboratory procedure
 - specimen = specimen
 - not populating US-Core must support as we dont have the values
-	- occurrence[x], authoredOn, requester
+	- occurrence[x], authoredOn
 - no other elements are populated
 """
 * code 1..1 MS
@@ -165,8 +169,7 @@ One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedT
 //* requester only Reference(Practitioner)
 * performer ^short = "labTestPromises.labTestRequest.orderingFacilityIdentifier"
 * performer only Reference(MHVorganization)
-* specimen MS
-* specimen only Reference(MHVchSpecimen)
+* specimen 0..0
 // Not these from us-core
 * occurrence[x] 0..0
 * authoredOn 0..0
@@ -209,7 +212,6 @@ Title: "HDR labTests Order to mhv-fhir-phr"
 * subject -> "patient"
 * requester -> "GetPractitioner(labTestPromises.labTestRequest.author)"
 * performer -> "GetOrganization(labTestPromises.labTestRequest.orderingFacilityIdentifier)"
-* specimen -> "Specimen (labTestPromises.specimen)"
 
 Profile:        MHVchTest
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation-lab
@@ -235,11 +237,12 @@ One Observation holds one `labTests.chemistryResults`
 - `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some
 - `observationUnits.codingSystem` -> `.valueQuantity.system`
 - `performingOrganization` -> `.performer`
-- given this is contained in the DiagnosticReport, then 
-  - effective[x] is presumed from the DiagnosticReport
-  - issued is presumed from the DiagnosticReport
-- `specimen` -> specimen
-- `basedOn` -> ServiceRequest
+- `labCommentEvents` -> '.note`
+- `effective[x]` is same as the DiagnosticReport
+- `issued` is same as the DiagnosticReport
+- `specimen` = specimen
+- `basedOn` = ServiceRequest
+- `ObservationStatus' -> [concept map translation](ConceptMap-VF-ChemistryResult-ObservationStatus.html) -> `.status`
 """
 * code 1..1 MS
 * code ^short = "testIdentifier"
@@ -252,7 +255,7 @@ One Observation holds one `labTests.chemistryResults`
 * interpretation.text MS
 * interpretation.text ^short = "valueInterpreation"
 * status MS
-* status ^short = "observedStatus"
+* status ^short = "observationStatus"
 * performer MS
 * performer ^short = "performingOrganization"
 * performer only Reference(MHVorganization)
@@ -271,11 +274,8 @@ One Observation holds one `labTests.chemistryResults`
 * specimen only Reference(MHVchSpecimen)
 * basedOn 1..1 MS
 * basedOn only Reference(MHVchOrder)
-
-// given this is contained in the DiagnosticReport
-//* subject 0..0 
-* effective[x] 0..0
-* issued 0..0
+* effectiveDateTime MS
+* issued MS
 
 // other things not used
 * identifier 0..0
@@ -298,7 +298,7 @@ Title: "HDR labTests to mhv-fhir-phr"
 * code -> "testIdentifier"
 * code.text -> "testIdentifier.displayText"
 * code.coding -> "testIdentifier.code"
-* status -> "~observedStatus"
+* status -> "~observationStatus map with VF-ChemistryResult-ObservationStatus()"
 * interpretation.text -> "valueInterpretation"
 * interpretation.coding -> "`L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L"
 * interpretation.coding -> "`H` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H"
@@ -311,6 +311,75 @@ Title: "HDR labTests to mhv-fhir-phr"
 * specimen -> "Specimen (labTestPromises.specimen)"
 * basedOn -> "ServiceRequest (labTestPromises.orderedTestCode)"
 * note -> "labCommentEvents"
+* effectiveDateTime -> "ConvertDate(labTestPromises.specimen.specimenTakenDate)"
+* issued -> "ConvertDate(labTestPromises.reportCompleDate.literal)"
+
+Instance:   VF-ChemistryResult-ObservationStatus
+InstanceOf: ConceptMap
+Title:      "Map between ChemistryResult ObservationStatus to FHIR Observation.status codes"
+Description: "Map between ChemistryResult.ObservationStatus and FHIR Observation.status code."
+Usage: #definition
+* url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-ChemistryResult-ObservationStatus"
+* name =  "VF_ChemistryResult_ObservationStatus"
+* title = "ChemistryResult.ObservationStatus to Observation.status"
+* experimental = false
+* status = #active
+* date = 2024-03-25
+* publisher = "VA KBS"
+* description = "Map between ChemistryResult.ObservationStatus and FHIR Observation.status code."
+* purpose = "VF_ChemistryResult-ObservationStatus"
+//* group.source = "VA"
+* group.target = "http://hl7.org/fhir/observation-status"
+* group.element[+].code = #C
+* group.element[=].display = "CORRECTED RESULTS"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #corrected
+* group.element[=].target.display = "Corrected"
+* group.element[+].code = #F
+* group.element[=].display = "FINAL RESULTS"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #final
+* group.element[=].target.display = "Final"
+* group.element[+].code = #Y
+* group.element[=].display = "NO ORDER ON RECORD"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #unknown // or entered-in-error ?
+* group.element[=].target.display = "Unknown"
+* group.element[+].code = #R
+* group.element[=].display = "NOT VERIFIED"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #preliminary
+* group.element[=].target.display = "Preliminary"
+* group.element[+].code = #X
+* group.element[=].display = "ORDER CANCELED"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #cancelled
+* group.element[=].target.display = "Cancelled"
+* group.element[+].code = #O
+* group.element[=].display = "ORDER RECEIVED"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #registered
+* group.element[=].target.display = "Registered"
+* group.element[+].code = #P
+* group.element[=].display = "PRELIMINARY"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #preliminary
+* group.element[=].target.display = "Preliminary"
+* group.element[+].code = #S
+* group.element[=].display = "PROCEDURE SCHEDULED"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #registered
+* group.element[=].target.display = "Registered"
+* group.element[+].code = #A
+* group.element[=].display = "SOME RESULTS AVAILABLE"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #unknown
+* group.element[=].target.display = "Unknown"
+* group.element[+].code = #I
+* group.element[=].display = "SPECIMEN RECEIVED"
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #preliminary
+* group.element[=].target.display = "Preliminary"
 
 /* Lab.xsd
 

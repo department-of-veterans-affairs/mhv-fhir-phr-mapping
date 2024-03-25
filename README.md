@@ -10,7 +10,9 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
-- none
+- Use KBS approved code system mapping from Vista `99VA` strings to a URI - [see Code Lookup](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/utility.html#code-lookup)
+- DiagnosticReport
+  - many changes to align with discussions with KBS
 
 ### 0.3.4
 

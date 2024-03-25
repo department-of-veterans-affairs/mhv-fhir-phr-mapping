@@ -55,6 +55,11 @@ If a Patient is not found given the input parameters, then one is created and po
 
 Profiled [Patient](StructureDefinition-VA.MHV.PHR.patient.html)
 
+Note that the ICN, as mapped by Oracle Health (Cerner): Cerner uses the VA root OID as the system for the ICN.
+
+MyHealtheVet patient id: We need to use a unique system value for this. I recommend
+
+
 ### Conversions
 
 Historic data is using different dataTypes that can be well defined
@@ -79,20 +84,19 @@ Beyond MVP we could look to add a method to convert these enum or strings to a s
 
 ##### VA specific code systems
 
-There is often a system specified, but it is specified as a simple short string. These are not acceptable in FHIR. FHIR needs a URI or URL. So I propose we do the following conversion.
+There is often a system specified, but it is specified as a simple short string. These are not acceptable in FHIR. FHIR needs a URI or URL. 
 
-Given a system ABCD, use `http://va.gov/systems/ABCD`
-
-These are systems I have used:
-
-- http://va.gov/systems/99VA95.3
-- http://va.gov/systems/99VA60
-- http://va.gov/systems/99VA61
-- http://va.gov/systems/99VA64
-- http://va.gov/systems/HL70070 --> `http://terminology.hl7.org/CodeSystem/v2-0487`
-- http://va.gov/systems/mpiPID --> `urn:oid:2.16.840.1.113883.4.349`
-- http://va.gov/systems/localPID
+- HL70070 = `http://terminology.hl7.org/CodeSystem/v2-0487`
 - VUID = urn:oid:2.16.840.1.113883.6.233
+
+**VA Table based code systems**
+
+There is a pattern that starts with `99VA` and is followed by a number (e.g. `99VA60`). That number is the Vista file that holds those codes. KBS has established a pattern for converting these `99VA` values into URI. There may be a version provided, but it is unreliable so do not use the version number.
+
+- `99VA60` = `http://va.gov/terminology/vistaDefinedTerms/60`
+- `99VA95.3` = `http://va.gov/terminology/vistaDefinedTerms/95.3`
+- `99VA61` = `http://va.gov/terminology/vistaDefinedTerms/61`
+- `99VA64` = `http://va.gov/terminology/vistaDefinedTerms/64`
 
 ##### Concept mapping
 
