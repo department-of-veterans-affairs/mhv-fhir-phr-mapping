@@ -181,7 +181,7 @@ Description: "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1539"
 * status = #current
-* type = $loinc#18748-4
+* type.coding[LO] = $loinc#18748-4
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
 * date = "2001-04-26T11:07:00Z"
@@ -214,7 +214,7 @@ Description: "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1540"
 * status = #current
-* type = $loinc#18748-4
+* type.coding[LO] = $loinc#18748-4
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
 * date = "2001-04-26T11:07:00Z"
@@ -349,7 +349,7 @@ Description: "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1530"
 * status = #current
-* type = $loinc#18748-4
+* type.coding[LO] = $loinc#18748-4
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
 * date = "2001-04-26T11:07:00Z"
@@ -382,7 +382,7 @@ Description: "A9505 THALLOUS CHLORIDE TL 201/MCI"
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1531"
 * status = #current
-* type = $loinc#18748-4
+* type.coding[LO] = $loinc#18748-4
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
 * date = "2001-04-26T11:07:00Z"
@@ -415,7 +415,7 @@ Description: "A9505 THALLOUS CHLORIDE TL 201/MCI"
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1533"
 * status = #current
-* type = $loinc#18748-4
+* type.coding[LO] = $loinc#18748-4
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
 * date = "2001-04-26T11:07:00Z"
@@ -448,7 +448,7 @@ Description: "A9505 THALLOUS CHLORIDE TL 201/MCI"
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1535"
 * status = #current
-* type = $loinc#18748-4
+* type.coding[LO] = $loinc#18748-4
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
 * date = "2001-04-26T11:07:00Z"
@@ -515,7 +515,7 @@ Description: "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[casenum].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[casenum].value = "CaseNum.1538"
 * status = #current
-* type = $loinc#18748-4
+* type.coding[LO] = $loinc#18748-4
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
 * date = "2001-04-26T11:07:00Z"

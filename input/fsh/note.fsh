@@ -16,7 +16,7 @@ A profile on the DocumentReference resource for MHV PHR exposing Notes (NoteTO) 
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`NoteTO` | `.` | {NoteTO.id}"
-* type from NoteTypeVS (required)
+* type.coding[LO] from NoteTypeVS (required)
 * context.encounter 0..0
 * content.attachment.creation MS
 * custodian 0..0

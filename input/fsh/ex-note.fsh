@@ -42,7 +42,7 @@ Derived from the a mock NoteTO:
 * identifier[TOid].use = #usual
 * date = 2022-08-05T16:56:00Z
 * content.attachment.title = "Adverse React/Allergy"
-* type = LOINC#11506-3 "Progress note"
+* type.coding[LO] = LOINC#11506-3 "Progress note"
 * contained[+] = ex-MHV-practitioner-36556
 * contained[+] = ex-MHV-location-984
 * author = Reference(Practitioner/ex-MHV-practitioner-36556)
@@ -71,7 +71,7 @@ This is replicated from ex-MHV-note-1, with change of identifier (NoteTO.5), and
 * identifier[TOid].use = #usual
 * date = 2022-08-05T16:56:00Z
 * content.attachment.title = "Adverse React/Allergy"
-* type = LOINC#11506-3 "Progress note"
+* type.coding[LO] = LOINC#11506-3 "Progress note"
 * contained[+] = ex-MHV-practitioner-36556
 * contained[+] = ex-MHV-location-984
 * author = Reference(Practitioner/ex-MHV-practitioner-36556)
@@ -183,7 +183,7 @@ Note has an unsigned addenda
 * identifier[TOid].use = #usual
 * date = 2023-11-16T14:40:00Z
 * content.attachment.title = "STAGING (TNM) URINARY BLADDER"
-* type = LOINC#11506-3 "Progress note"
+* type.coding[LO] = LOINC#11506-3 "Progress note"
 * contained[+] = ex-MHV-practitioner-36556
 * contained[+] = ex-MHV-location-984
 * author = Reference(Practitioner/ex-MHV-practitioner-36556)
@@ -212,7 +212,7 @@ Note has a signed addenda
 * identifier[TOid].use = #usual
 * date = 2023-11-16T14:40:00Z
 * content.attachment.title = "STAGING (TNM) URINARY BLADDER"
-* type = LOINC#11506-3 "Progress note"
+* type.coding[LO] = LOINC#11506-3 "Progress note"
 * contained[+] = ex-MHV-practitioner-36556
 * contained[+] = ex-MHV-location-984
 * author = Reference(Practitioner/ex-MHV-practitioner-36556)

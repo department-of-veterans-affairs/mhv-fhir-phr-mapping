@@ -56,7 +56,7 @@ Description: "WOUND - SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.81544045"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "WOUND CARE SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -104,7 +104,7 @@ Description: "UROLOGY SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.81509152"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "UROLOGY SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -152,7 +152,7 @@ Description: "EYE - AFTERVISIT SUMMARY SPECTACLE RX"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.80529980"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "OPTOMETRY NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -200,7 +200,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.80341525"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MENTAL HEALTH SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -248,7 +248,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.80340830"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MENTAL HEALTH SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -296,7 +296,7 @@ Description: "CCC: CLINICAL TRIAGE"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.80222094"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "RN PROGRESS NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -344,7 +344,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.79745271"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -384,7 +384,7 @@ Description: "AVS STUB NOTE"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.79686701"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "EDUCATION NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -429,7 +429,7 @@ Description: "VIRTUAL EMERG MGMT PHARM"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.77100417"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "TELEHEALTH NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -477,7 +477,7 @@ Description: "PC - AFTERVISIT SUMMARY"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.78118479"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "PRIMARY CARE NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -525,7 +525,7 @@ Description: "PC - NEW"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.78118440"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "PRIMARY CARE OUTPATIENT NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -573,7 +573,7 @@ Description: "TLH - PORTLAND/VANCOUVER"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.77830476"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "PRIMARY CARE TELEPHONE ENCOUNTER NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -621,7 +621,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.77735058"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -669,7 +669,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.77713416"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -717,7 +717,7 @@ Description: "NEUROLOGY SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.77598354"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "NEUROLOGY SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -765,7 +765,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.77498227"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -813,7 +813,7 @@ Description: "PC - AFTERVISIT SUMMARY"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.77429396"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "PRIMARY CARE NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -861,7 +861,7 @@ Description: "PC - FOLLOW UP"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.77429324"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "PRIMARY CARE OUTPATIENT NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -909,7 +909,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.76750716"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MENTAL HEALTH SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -957,7 +957,7 @@ Description: "INPAT - MED - ATT - ADMIT"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.76666064"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "ATTENDING ADMISSION EVALUATION NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1005,7 +1005,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.76264996"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MENTAL HEALTH SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1053,7 +1053,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.76263140"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MENTAL HEALTH SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1101,7 +1101,7 @@ Description: "MHD - MHICM PROGRESS NOTE"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.76265401"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MENTAL HEALTH OUTPATIENT NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1149,7 +1149,7 @@ Description: "PROCEDURE - INTRAOSSEOUS VASCULAR ACCESS"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.76265366"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "PROCEDURE NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1197,7 +1197,7 @@ Description: "ENDOCRINOLOGY SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.75912699"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "ENDOCRINOLOGY SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1245,7 +1245,7 @@ Description: "MOVE SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.75866332"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MOVE SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1293,7 +1293,7 @@ Description: "PRIMARY CARE SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.75540140"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "PRIMARY CARE SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1341,7 +1341,7 @@ Description: "MENTAL HEALTH SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.75535810"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MENTAL HEALTH SECURE MESSAGING"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1390,7 +1390,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.19776835"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1438,7 +1438,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.19132325"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1486,7 +1486,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.19065448"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1534,7 +1534,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.19034139"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1582,7 +1582,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.19032582"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1630,7 +1630,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.19021967"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1678,7 +1678,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.19019553"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1726,7 +1726,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.18964275"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1774,7 +1774,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.18459196"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1822,7 +1822,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.18395172"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1870,7 +1870,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.18395183"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1918,7 +1918,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.17521574"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -1966,7 +1966,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.17521552"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2014,7 +2014,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.16277615"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2062,7 +2062,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.16024843"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2110,7 +2110,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.15780149"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2158,7 +2158,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.15802805"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2206,7 +2206,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.15780132"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2254,7 +2254,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.15778113"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2302,7 +2302,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.15777395"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2350,7 +2350,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.15775744"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2398,7 +2398,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.15775601"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2446,7 +2446,7 @@ Description: "SECURE MESSAGING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.15775522"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "MHV DIALOG NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2494,7 +2494,7 @@ Description: "PSYCHIATRY - ATTENDING"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.15775755"
 * status = #current
-* type = $loinc#11506-3
+* type.coding[LO] = $loinc#11506-3
 * type.text = "PSYCHIATRY ATTENDING NOTE"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2542,7 +2542,7 @@ Description: "Discharge Summary"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.62932232"
 * status = #current
-* type = $loinc#18842-5
+* type.coding[LO] = $loinc#18842-5
 * type.text = "DISCHARGE SUMMARY"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2590,7 +2590,7 @@ Description: "Discharge Summary"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.62846390"
 * status = #current
-* type = $loinc#18842-5
+* type.coding[LO] = $loinc#18842-5
 * type.text = "DISCHARGE SUMMARY"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2638,7 +2638,7 @@ Description: "Discharge Summary"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.47760379"
 * status = #current
-* type = $loinc#18842-5
+* type.coding[LO] = $loinc#18842-5
 * type.text = "DISCHARGE SUMMARY"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2686,7 +2686,7 @@ Description: "Discharge Summary"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.47760462"
 * status = #current
-* type = $loinc#18842-5
+* type.coding[LO] = $loinc#18842-5
 * type.text = "DISCHARGE SUMMARY"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2734,7 +2734,7 @@ Description: "Discharge Summary"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.43297305"
 * status = #current
-* type = $loinc#18842-5
+* type.coding[LO] = $loinc#18842-5
 * type.text = "DISCHARGE SUMMARY"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2783,7 +2783,7 @@ Description: "CARDIOLOGY - E-CONSULT"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.58196324"
 * status = #current
-* type = $loinc#11488-4
+* type.coding[LO] = $loinc#11488-4
 * type.text = "CONSULT"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2831,7 +2831,7 @@ Description: "ANESTHESIA - E-CONSULT"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.56889160"
 * status = #current
-* type = $loinc#11488-4
+* type.coding[LO] = $loinc#11488-4
 * type.text = "ANESTHESIOLOGY CONSULT"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2879,7 +2879,7 @@ Description: "CLINICAL PHARMACY - E-CONSULT"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.55856227"
 * status = #current
-* type = $loinc#11488-4
+* type.coding[LO] = $loinc#11488-4
 * type.text = "PHARMACY CONSULT"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2927,7 +2927,7 @@ Description: "PULMONARY - LUNG CANCER SCREENING CONSULT"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.54812639"
 * status = #current
-* type = $loinc#11488-4
+* type.coding[LO] = $loinc#11488-4
 * type.text = "PREVENTIVE MEDICINE CONSULT"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -2975,7 +2975,7 @@ Description: "WOUND - E-CONSULT"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.54705220"
 * status = #current
-* type = $loinc#11488-4
+* type.coding[LO] = $loinc#11488-4
 * type.text = "WOUND CARE CONSULT"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -3023,7 +3023,7 @@ Description: "CLINICAL PHARMACY - MENTAL HEALTH E-CONSULT"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.54345827"
 * status = #current
-* type = $loinc#11488-4
+* type.coding[LO] = $loinc#11488-4
 * type.text = "PHARMACY CONSULT"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -3071,7 +3071,7 @@ Description: "COMMUNITY CARE-CONSULT RESULT NOTE"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.53889003"
 * status = #current
-* type = $loinc#11488-4
+* type.coding[LO] = $loinc#11488-4
 * type.text = "NONVA CONSULT"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -3119,7 +3119,7 @@ Description: "COMMUNITY CARE-CONSULT RESULT NOTE"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.53889052"
 * status = #current
-* type = $loinc#11488-4
+* type.coding[LO] = $loinc#11488-4
 * type.text = "NONVA CONSULT"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
@@ -3167,7 +3167,7 @@ Description: "PODIATRY - CONSULT REQUESTED"
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "NoteTO.53661869"
 * status = #current
-* type = $loinc#11488-4
+* type.coding[LO] = $loinc#11488-4
 * type.text = "PODIATRY CONSULT"
 * category = $us-core-documentreference-category#clinical-note
 * subject = Reference(Patient/ex-MHV-patient-0)
