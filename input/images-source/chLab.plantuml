@@ -1,0 +1,55 @@
+@startuml
+skinparam svgDimensionStyle false
+
+class DiagnosticReport {
+    identifier;
+    basedOn;
+    category=`LAB`;
+    code=`CH`;
+    subject;
+    effectiveDateTime;
+    issued;
+    performer;
+    specimen;
+    results;
+    extension[notes];
+}
+class ServiceRequest {
+    status=unknown;
+    intent=order;
+    category;
+    code;
+    subject;
+    requester;
+    performer;
+}
+class Specimen {
+    status;
+    type;
+    request;
+    collection.collectionDateTime;
+}
+class Observation {
+    basedOn;
+    status;
+    category=laboratory;
+    code;
+    subject;
+    effectiveDateTime;
+    issued;
+    performer;
+    value[x];
+    interpretation;
+    note;
+    specimen;
+    referenceRange;
+}
+
+DiagnosticReport -right-> Specimen: 1..1 specimen
+DiagnosticReport -right-> ServiceRequest: 1..* basedOn
+DiagnosticReport -right-> Observation: 0..* results
+Observation --> ServiceRequest: 1..1 basedOn
+Observation --> Specimen: 1..1 specimen
+Specimen --> ServiceRequest: 1..1 request
+
+@enduml

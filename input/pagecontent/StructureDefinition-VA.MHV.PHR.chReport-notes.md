@@ -73,14 +73,11 @@ rules interpreted from ChemistryTransformer.java
 
 MHV eVault has one object definition that gets replicated for each portion (Lab, Order, and Test), identified by recordSubType element. (Test is chemistryResult, Order is orderedTest, Lab is overall?)
 
-FHIR `DiagnosticReport`:
-
-- `DiagnosticReport.result` = contained `Observation[m]`
-  - `ServiceRequest[n]` - contained, comes primarily from `orderedTestCode[n]`
-    - Observation[m] - mostly filled with `chemistryResults[m]` found within that `orderedTestCode[n]`
-- `DiagnosticReport.specimen` = contained `Specimen`
-- `DiagnosticReport.performer` = contained Practitioner or Organization
-- `DiagnosticReport.category` = all `code` values from contained `Observation` to enable finding them since they are contained
+<figure>
+{%include chLab.svg%}
+<figcaption><b>Chem-Hem Labs</b></figcaption>
+</figure>
+<br clear="all">
 
 | Vista | Vista Field Name          | HDR labTestPromises |   MHV eVault      | FHIR              | Note |
 |-------|-------------------------- |---------------------|-------------------|-------------------|------------|
