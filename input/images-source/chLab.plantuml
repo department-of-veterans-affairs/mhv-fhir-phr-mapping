@@ -45,11 +45,11 @@ class Observation {
     referenceRange;
 }
 
-DiagnosticReport -right-> Specimen: 1..1 specimen
+DiagnosticReport -down-> Specimen: 1..1 specimen
+Specimen -right-> ServiceRequest: 1..1 request
 DiagnosticReport -right-> ServiceRequest: 1..* basedOn
-DiagnosticReport -right-> Observation: 0..* results
-Observation --> ServiceRequest: 1..1 basedOn
-Observation --> Specimen: 1..1 specimen
-Specimen --> ServiceRequest: 1..1 request
+Observation -up-> ServiceRequest: 1..1 basedOn
+DiagnosticReport -down-> Observation: 0..* results
+Observation -right-> Specimen: 1..1 specimen
 
 @enduml
