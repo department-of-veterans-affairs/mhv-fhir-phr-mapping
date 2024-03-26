@@ -1,11 +1,11 @@
 @startuml
-skinparam svgDimensionStyle false
+skinparam svgDimensionStyle true
 
 class DiagnosticReport {
     identifier;
     basedOn;
-    category=`LAB`;
-    code=`CH`;
+    category=#LAB;
+    code.text=`CH`;
     subject;
     effectiveDateTime;
     issued;
@@ -15,8 +15,8 @@ class DiagnosticReport {
     extension[notes];
 }
 class ServiceRequest {
-    status=unknown;
-    intent=order;
+    status=#unknown;
+    intent=#order;
     category;
     code;
     subject;
@@ -32,7 +32,7 @@ class Specimen {
 class Observation {
     basedOn;
     status;
-    category=laboratory;
+    category=#laboratory;
     code;
     subject;
     effectiveDateTime;
