@@ -59,7 +59,6 @@ Note that the ICN, as mapped by Oracle Health (Cerner): Cerner uses the VA root 
 
 MyHealtheVet patient id: We need to use a unique system value for this. I recommend
 
-
 ### Conversions
 
 Historic data is using different dataTypes that can be well defined

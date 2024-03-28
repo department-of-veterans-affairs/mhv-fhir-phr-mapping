@@ -18,9 +18,28 @@
 
 #### Mapping Concerns
 
-- Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports.
-- I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
+- The mock data I have is from the 1990s. Is that old enough for cross referenceing?
+- There does not appear to be anything that could be the ServiceRequest
+- The labReportTO
+  - type: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports.
+  - I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
+  - id is not just a number - e.g. `<id>MI;7049269</id>` -- is the leading `MI`, just repeating the type of lab, as this was in a type `MI`? Or is there some other meaning?
+  - no performer, possibly the Organization is in result.labSiteId - e.g., `<labSiteId>989</labSiteId>`
+  - schema values but no examples: author, caseNumber, comment, facility
 - Specimen examples didn't have much populated
   - not clear what site and facility might contain, so can't tell where they would go
   - some examples are likely FHIR Device (old hardware left foot), so this might change
+  - how do I derive a useful accession from what I am given? - e.g., `<accessionNum>PARAS 95 264</accessionNum>`
+  - specimen id seems to just be index on report id - e.g. `<id>MI;7049269;1</id>`
+- All of the Observations mock examples I have are 
+  - value is just string
+  - name is just a string
+  - no performer
+  - no date, I guess I just use the date from the labReportTO.restult.timestamp
+  - schema has a loinc element, but it is not populated in mock examples
 
+#### TODO
+
+- should I do a table like I did for chem-hem?
+  - It did help me determine what values MHV pulls from the VIA feed, and thus what might be populated but where I don't have data today.
+- should I do a plantuml diagram like I did for chem-hem?

@@ -140,6 +140,10 @@ see mapping [HDR PerformingOrganization](StructureDefinition-VA.MHV.PHR.organiza
 
 #### Patient
 
+TODO: Need a better system value for the MHV patient id: See discussion in patient.fsh
+ - **MHV-54036**
+  - TODO: client will need to change to be specific to the new system value - https://github.com/department-of-veterans-affairs/vets-api/blob/f2733b21112f94c90dae618f0420d712f01cdf49/lib/medical_records/client.rb#L75
+
 MyHealtheVet has a patient id that it manages, and a 'profile' that is details about the patient including demographics, contact information, etc. This information is managed in the MHV eVault. The MHV Patient id is communicated in existing as assigning facility `200MH` at assigning authority `USVHA`. I believe that this id is known to the MPI service.
 
 The FHIR interface does populate a Patient resource in the FHIR Server given this 'profile' and to provide a mapping to the MyHealtheVet patient id. Thus we need a system value for this id, and today the root VA OID is used.
@@ -161,5 +165,9 @@ and for DOD ID, using an OID assigned to Military Health Service (MHS):
 Could just add that assigning authority and facility to the URL pattern I have started
 
 `http://va.gov/systems/USVHA/200MH`
+
+or could build a canonical off of this IG
+
+`https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/USVHA/200MH`
 
 It would work, but I just hope that there is something better to use.
