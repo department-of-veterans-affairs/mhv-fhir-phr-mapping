@@ -3,7 +3,7 @@ Our FHIR database will track linkages to source objects using the FHIR resource 
 
 1. As far as I can tell the `.id` values coming from Vista (Fileman) are given to us as strings. They are unique strings at the source for that given context of that data. (for a given Vista instance the ImmunizationTO.id is unique, but that id value might be a different ImmunizationTO object at a different Vista site, and that id value on a different object like NoteTO at the original Vista site)
 2. The `.id` values sometimes have a two or three part to them separated by `;`. I don't know if there is something we can interpret, or if I am just looking at non-real examples.
-3. In FHIR [Identifier datatype](http://hl7.org/fhir/datatypes.html#Identifier) tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique.
+3. In FHIR [Identifier datatype]({{site.data.fhir.path}}datatypes.html#Identifier) tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique.
 4. Thus when we know the data received is from VIA we can look up the given id as identifier of system+id.
 5. The VA CDA generation does a similar transform of the `.id` values into CDA `.id` values. We should use the same algorithm so that the same data is easily recognized regardless of if the data was received via CDA or our FHIR api. They do not transform all id values. Thus we should follow their lead where they have taken a lead so as to not create a de-duplication problem.
 6. The Lighthouse does not keep the id values in their FHIR output. So there is no precedent to follow.

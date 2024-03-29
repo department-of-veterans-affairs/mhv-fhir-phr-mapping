@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Vista Mapping - MyHealtheVet PHR FHIR API v0.3.4</title>
+    <title>Vista Mapping - MyHealtheVet PHR FHIR API v0.3.5</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.4 - trial-use
+            <span style="display:inline-block;">0.3.5 - trial-use
 
 
 
@@ -191,7 +191,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.4) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Vista Mapping</h2>
   
 
@@ -441,7 +441,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <li>Eventually this same API would support data from Cerner. Thus the same API providing comprehensive data from Vista and/or Cerner where ever it is.</li>
   <li>Provenance – track where the data has come from, and if from multiple places track all.</li>
   <li>Grahame - Intermediaries White Paper – https://confluence.hl7.org/display/FHIR/Intermediaries+White+Paper</li>
-  <li>HL7 FAST - Exchange Routing – https://hl7.org/fhir/us/exchange-routing/</li>
+  <li>HL7 FAST - Exchange Routing – http://hl7.org/fhir/R4/us/exchange-routing/</li>
 </ul>
 
 <p>unknown (FHIR supports the following topics but unclear if this data exists in PHR)</p>
@@ -494,7 +494,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li><strong>Index-Update-and-Delete</strong>: This model:
     <ol>
-      <li>pulls current FHIR resource <code class="language-plaintext highlighter-rouge">.identifier</code> values (use <code class="language-plaintext highlighter-rouge">_elements</code> <a href="https://hl7.org/fhir/search.html#elements">parameter</a> to limit results to just identifiers, id),</li>
+      <li>pulls current FHIR resource <code class="language-plaintext highlighter-rouge">.identifier</code> values (use <code class="language-plaintext highlighter-rouge">_elements</code> <a href="http://hl7.org/fhir/R4/search.html#elements">parameter</a> to limit results to just identifiers, id),</li>
       <li>When updating the new VIA feed data, remember the  <code class="language-plaintext highlighter-rouge">.identifier</code> that were refreshed.</li>
       <li>At the end, we can know which <code class="language-plaintext highlighter-rouge">.identifier</code> values were not updated. (most of the time there will be no unrefreshed data)</li>
       <li>We can <code class="language-plaintext highlighter-rouge">delete</code> those that were not updated</li>
@@ -503,14 +503,14 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li><strong>Index-Update-and-Expunge</strong>: This model:
     <ol>
-      <li>pulls current FHIR resource <code class="language-plaintext highlighter-rouge">.identifier</code> values (use <code class="language-plaintext highlighter-rouge">_elements</code> <a href="https://hl7.org/fhir/search.html#elements">parameter</a> to limit results to just identifiers, id, status),</li>
+      <li>pulls current FHIR resource <code class="language-plaintext highlighter-rouge">.identifier</code> values (use <code class="language-plaintext highlighter-rouge">_elements</code> <a href="http://hl7.org/fhir/R4/search.html#elements">parameter</a> to limit results to just identifiers, id, status),</li>
       <li>When updating the new VIA feed data, remember the  <code class="language-plaintext highlighter-rouge">.identifier</code> that were refreshed.</li>
       <li>At the end, we can know which <code class="language-plaintext highlighter-rouge">.identifier</code> values were not updated. (most of the time there will be no unrefreshed data)</li>
       <li>We can <code class="language-plaintext highlighter-rouge">patch</code> those that were not updated, by <code class="language-plaintext highlighter-rouge">.id</code>, status to <code class="language-plaintext highlighter-rouge">entered-in-error</code>,</li>
       <li>– Note: Patch is not supported in our current HAPI server.</li>
     </ol>
   </li>
-  <li><strong>Update-and-Expunge</strong>: This model is made available with an updated HAPI Server (6.10.0) that has the ability to disable history. However with this version we can’t use Wipe-and-Replace as that will result in new id values being assigned at each refresh. So Update-and-Expunge is designed. Each VIA feed we convert to FHIR and request an update, but the HAPI server is smart enough to notice that nothing changed so it will not update the meta.lastUpdated. So we will add to our update the use of the  <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/lastSourceSync</code> extension, with todays date/time (now). This will force an update. Thus after we have fully processed the VIA feed, we can then look for entries older than now that are still active. This will most of the time return an empty set, but if it does return resources, we will change them to entered-in-error and update them.</li>
+  <li><strong>Update-and-Expunge</strong>: This model is made available with an updated HAPI Server (6.10.0) that has the ability to disable history. However with this version we can’t use Wipe-and-Replace as that will result in new id values being assigned at each refresh. So Update-and-Expunge is designed. Each VIA feed we convert to FHIR and request an update, but the HAPI server is smart enough to notice that nothing changed so it will not update the meta.lastUpdated. So we will add to our update the use of the  <code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/R4/StructureDefinition/lastSourceSync</code> extension, with todays date/time (now). This will force an update. Thus after we have fully processed the VIA feed, we can then look for entries older than now that are still active. This will most of the time return an empty set, but if it does return resources, we will change them to entered-in-error and update them.</li>
   <li><strong>Wipe-and-Replace</strong>: Delete the patient’s specific Resource (e.g. delete all the Immunizations for this patient) and write using update current data from the VIA refresh – similar to eVault PHR today. The HAPI server notices an update, by business identifier, of a previously deleted resource, so it brings it back to non-deleted. Thus after a VIA refresh, only current resources are not-deleted. The drawback is that this keeps historic versions, with two versions per refresh, and _lastUpdated is always the refresh time. Also, the ones removed are not marked as entered-in-error. – <strong>January 2024, decided to abandon this as the database fills to fast with history, and we don’t need this history</strong></li>
   <li>Get VIA updated</li>
   <li>Get VDIF to expose their data</li>
@@ -591,7 +591,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 18, 2024 14:58-0500">2024-03-18</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

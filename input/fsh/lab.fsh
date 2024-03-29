@@ -14,6 +14,27 @@ A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.
   - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained
 - should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`
 """
+* identifier 0..1 MS
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains  TOid 0..1 
+* identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`LabSpecimenTO` | `.` | {LabSpecimenTO.id}"
+// Note slicing to get consistency in populating
+* accessionIdentifier 0..1 MS
+* accessionIdentifier.use = #usual
+* accessionIdentifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#ACSN
+* accessionIdentifier.system obeys TOid-startswithoid
+* accessionIdentifier.system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* accessionIdentifier.value ^short = "`Accession` | `.` | {LabSpecimenTO.accessionNum}"
+* collection MS
+* collection.collectedDateTime MS
+* type MS
+* type.text 1..1
+* subject 0..0
 * receivedTime 0..0
 * parent 0..0
 * request 0..0
@@ -27,20 +48,6 @@ A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.
 * container 0..0
 * condition 0..0
 * note 0..0
-* identifier 1..
-* identifier ^slicing.discriminator.type = #pattern
-* identifier ^slicing.discriminator.path = "use"
-* identifier ^slicing.rules = #open
-* identifier contains
-  TOid 1..1
-* identifier[TOid].use = #usual
-* identifier[TOid].system obeys TOid-startswithoid
-* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
-* identifier[TOid].value ^short = "`LabSpecimenTO` | `.` | {LabSpecimenTO.id}"
-* subject 0..0
-* collection MS
-* collection.collectedDateTime MS
-* type 1..1 MS
 
 Mapping: Lab-Mapping-LabSpecimenTO
 Source: MHVlabSpecimen
@@ -50,19 +57,19 @@ Title: "VIA to mhv-fhir-phr"
 * identifier -> "{StationNbr} and {LabSpecimenTO.id}"
 * accessionIdentifier -> "{StationNbr} and {LabSpecimenTO.accessionNum}"
 * status -> "`available`"
-* type -> "text = LabSpecimenTO.name"
+* type.text -> "LabSpecimenTO.name"
 * collection.collectedDateTime -> "ConvertDate(LabSpecimenTO.collectionDate)"
 
 
 Profile: MHVlabReport
-//Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
-Parent: DiagnosticReport
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
+//Parent: DiagnosticReport
 Id: VA.MHV.PHR.labReport
 Title: "VA MHV PHR Lab Report"
 Description: """
 A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.
 """
-* ^extension[$fmm].valueInteger = 1
+* ^extension[$fmm].valueInteger = 2
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -78,6 +85,7 @@ A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observ
 * code.text 1..1 MS
 * code.coding ..1 MS
 * code.coding from LabReportVS (preferred)
+/*
 * category MS
 * category 1..
 * category ^slicing.discriminator.type = #pattern
@@ -85,9 +93,18 @@ A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observ
 * category ^slicing.rules = #open
 * category contains LaboratorySlice 1..1
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+*/
 * effectiveDateTime MS
 * issued MS
-* conclusion MS
+* presentedForm MS
+* presentedForm.contentType = #text/plain
+* presentedForm.language 0..0
+* presentedForm.data 1..1
+* presentedForm.url 0..0
+* presentedForm.size 0..0
+* presentedForm.hash 0..0
+* presentedForm.title 0..0
+* presentedForm.creation 0..0
 * specimen MS
 * specimen ^type.aggregation = #contained
 * specimen only Reference(MHVlabSpecimen)
@@ -96,21 +113,21 @@ A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observ
 * result only Reference(MHVlabTest)
 * performer MS
 * performer ^short = "LabReportTO.facility"
-* performer only Reference(MHVorganization or MHVpractitioner)
+* performer only Reference(MHVorganization)
 * encounter 0..0
 * resultsInterpreter 0..0
 * imagingStudy 0..0
 * media 0..0
 * conclusionCode 0..0
-* presentedForm 0..0
-
+* conclusion 0..0
+* basedOn 0..0
 
 ValueSet: LabReportVS
 Title: "Known Lab Report types"
 Description: "Lab Report types"
 * ^experimental = false
-* LOINC#79381-0 "Gastrointestinal pathogens panel - Stool by NAA with probe detection"
-* LOINC#60567-5 "Comprehensive pathology report panel"
+* LOINC#18725-2 "Microbiology studies (set)"
+* LOINC#11526-1 "Pathology study"
 
 
 Mapping: Lab-Mapping-LabReportTO
@@ -118,20 +135,21 @@ Source:	MHVlabReport
 Target: "LabReportTO"
 Title: "VIA to mhv-fhir-phr"
 * -> "LabReportTO"
-* category -> "`laboratory`"
+* category -> "`LAB`"
 * status -> "`final`"
 * subject -> "patient"
 * result -> "Contained Observation(LabResultTO)"
 * performer -> "GetPractitioner(LabReportTO.author)"
 * basedOn.identifier -> "LabReportTO.caseNumber"
-* conclusion -> "LabReportTO.comment + LabReportTO.text"
+* presentedForm.data -> "base64(LabReportTO.text)"
+* presentedForm.contentType -> "`text/plain`"
 * performer -> "GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)"
 * identifier -> "{StationNbr} and {LabReportTO.id}"
 * specimen -> "Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])"
 * effectiveDateTime -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
 * issued -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
-* code -> "text = LabReportTO.title"
-* code -> "LabReportTO.type -- should be converted to LOINC:  MI -> LOINC#79381-0,  SP -> LOINC#60567-5"
+* code.text -> "LabReportTO.title"
+* code.coding -> "LabReportTO.type -> LOINC"
 
 
 Profile:        MHVlabTest
@@ -142,7 +160,6 @@ Description:    """
 A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.
 
 - This profile is based on US-Core Lab
-- sometimes a contained Specimen is needed
 """
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
@@ -159,18 +176,39 @@ A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API t
 * code.text ^short = "LabTestTO.name"
 * code.coding ..1 MS
 * code.coding ^short = "LabTestTO.loinc"
-* specimen ^type.aggregation = #contained
+* status MS
+* performer only Reference(MHVorganization)
+* effectiveDateTime MS
+* valueString MS
+* specimen MS
+* specimen only Reference(MHVlabSpecimen)
+// other things not used
+* basedOn 0..0
+* partOf 0..0
+* focus 0..0
+* encounter 0..0
+* dataAbsentReason 0..0
+* interpretation 0..0
+* note 0..0
+* bodySite 0..0
+* method 0..0
+* device 0..0
+* referenceRange 0..0
+* hasMember 0..0
+* derivedFrom 0..0
+* component 0..0
 
 Mapping: Lab-Mapping-LabResultTO
 Source:	MHVlabTest
 Target: "LabTestTO"
 Title: "VIA to mhv-fhir-phr"
 * -> "LabTestTO / LabResultTO"
-* specimen -> "Contained Specimen (LabTestTO.specimen.[LabSpecimenTO])"
+* specimen -> "Specimen (LabTestTO.specimen.[LabSpecimenTO])"
 * identifier -> "{StationNbr} and {LabTestTO.id}"
-* code -> "text = LabTestTO.name"
-* code -> "LabTestTO.loinc"
+* code.text -> "LabTestTO.name"
+* code.coding -> "LabTestTO.loinc"
 * effectiveDateTime -> "ConvertDate(LabResultTO.timestamp)"
+* issued -> "ConvertDate(LabResultTO.timestamp)"
 * valueString -> "LabResultTO.value"
 * performer -> "GetOrganization(LabResultTO.labSiteId)"
 * status -> "`final`"
@@ -245,5 +283,11 @@ Title: "VIA to mhv-fhir-phr"
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+
+Note MHV code data model
+- StageEntity
+  - StageChemistry (used by Chem-Hem)
+    - StageMicrobiology
+  - StagePathology
 
 */

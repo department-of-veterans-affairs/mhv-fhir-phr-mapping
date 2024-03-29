@@ -68,7 +68,7 @@ Example from a mock labReportTO
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR MICROBIOLOGY REPORT"
-* code = LOINC#79381-0
+* code = LOINC#18725-2
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * issued = 1995-08-03T14:49:00Z
@@ -80,8 +80,13 @@ Example from a mock labReportTO
 * contained[+] = ex-MHV-specimen-1
 * specimen[+] = Reference(ex-MHV-specimen-1)
 * contained[+] = ex-MHV-organization-989
-* performer = Reference(Organization/ex-MHV-organization-989)
-* conclusion = """
+* performer[+] = Reference(Organization/ex-MHV-organization-989)
+* performer[+].display = "MANGAS,PHYLLIS A"
+* presentedForm.contentType = #text/plain
+* presentedForm.data = """
+QWNjZXNzaW9uIFtVSURdOiBQQVJBUyA5NSAyNjQgW10gICAgICAgICAgICBSZWNlaXZlZDogQXVnIDAxLCAxOTk1QDExOjAyCkNvbGxlY3Rpb24gc2FtcGxlOiBTVE9PTCAgICAgICAgICAgICAgIENvbGxlY3Rpb24gZGF0ZTogSnVsIDMwLCAxOTk1ClNpdGUvU3BlY2ltZW46IEZFQ0VTClByb3ZpZGVyOiBNQU5HQVMsUEhZTExJUyBBCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiogUEFSQVNJVE9MT0dZIEZJTkFMIFJFUE9SVCA9PiBBdWcgMDMsIDE5OTUgICBURUNIIENPREU6IDEwMDMKUGFyYXNpdG9sb2d5IFJlbWFyayhzKToKTk8gT1ZBIE9SIFBBUkFTSVRFUyBGT1VORAo=
+"""
+/*
 Accession [UID]: PARAS 95 264 []            Received: Aug 01, 1995@11:02
 Collection sample: STOOL               Collection date: Jul 30, 1995
 Site/Specimen: FECES
@@ -90,7 +95,7 @@ Provider: MANGAS,PHYLLIS A
 * PARASITOLOGY FINAL REPORT => Aug 03, 1995   TECH CODE: 1003
 Parasitology Remark(s):
 NO OVA OR PARASITES FOUND
-"""
+*/
 
 
 //////////////////////////////////////////////////  2  ///////////////////////////////////
@@ -220,7 +225,7 @@ Example from a mock labReportTO
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR MICROBIOLOGY REPORT"
-* code.coding = LOINC#79381-0
+* code.coding = LOINC#18725-2
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1995-08-03T14:49:00Z
 * issued = 1995-08-03T14:49:00Z
@@ -236,8 +241,13 @@ Example from a mock labReportTO
 * contained[+] = ex-MHV-specimen-2
 * specimen[+] = Reference(ex-MHV-specimen-2)
 * contained[+] = ex-MHV-organization-989
-* performer = Reference(Organization/ex-MHV-organization-989)
-* conclusion = """
+* performer[+] = Reference(Organization/ex-MHV-organization-989)
+* performer[+].display = "MANGAS,PHYLLIS A"
+* presentedForm.contentType = #text/plain
+* presentedForm.data = """
+QWNjZXNzaW9uIFtVSURdOiBQQVJBUyA5NSAyNjMgW10gICAgICAgICAgICBSZWNlaXZlZDogQXVnIDAxLCAxOTk1QDExOjAyCkNvbGxlY3Rpb24gc2FtcGxlOiBTVE9PTCAgICAgICAgICAgICAgIENvbGxlY3Rpb24gZGF0ZTogSnVsIDI5LCAxOTk1IDA3OjAwClNpdGUvU3BlY2ltZW46IEZFQ0VTClByb3ZpZGVyOiBNQU5HQVMsUEhZTExJUyBBCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiogUEFSQVNJVE9MT0dZIEZJTkFMIFJFUE9SVCA9PiBBdWcgMDMsIDE5OTUgICBURUNIIENPREU6IDEwMDMKUGFyYXNpdG9sb2d5IFJlbWFyayhzKToKTk8gT1ZBIE9SIFBBUkFTSVRFUyBGT1VORCAKTU9ERVJBVEUgV0JDJ1MgU0VFTiAKTU9ERVJBVEUgWUVBU1QK
+"""
+/*
 Accession [UID]: PARAS 95 263 []            Received: Aug 01, 1995@11:02
 Collection sample: STOOL               Collection date: Jul 29, 1995 07:00
 Site/Specimen: FECES
@@ -248,7 +258,7 @@ Parasitology Remark(s):
 NO OVA OR PARASITES FOUND 
 MODERATE WBC'S SEEN 
 MODERATE YEAST
-"""
+*/
 
 ////////////////////////////////////////////////// 3 ///////////////////////////////////////
 
@@ -378,7 +388,7 @@ Example from a mock labReportTO
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR MICROBIOLOGY REPORT"
-* code.coding = LOINC#79381-0
+* code.coding = LOINC#18725-2
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1995-08-01T11:07:00Z
 * issued = 1995-08-01T11:07:00Z
@@ -394,8 +404,13 @@ Example from a mock labReportTO
 * contained[+] = ex-MHV-specimen-3
 * specimen[+] = Reference(ex-MHV-specimen-3)
 * contained[+] = ex-MHV-organization-989
-* performer = Reference(Organization/ex-MHV-organization-989)
-* conclusion = """
+* performer[+] = Reference(Organization/ex-MHV-organization-989)
+* performer[+].display = "MANGAS,PHYLLIS A"
+* presentedForm.contentType = #text/plain
+* presentedForm.data = """
+QWNjZXNzaW9uIFtVSURdOiBQQVJBUyA5NSAyNjIgW10gICAgICAgICAgICBSZWNlaXZlZDogQXVnIDAxLCAxOTk1QDExOjAwCkNvbGxlY3Rpb24gc2FtcGxlOiBTVE9PTCAgICAgICAgICAgICAgIENvbGxlY3Rpb24gZGF0ZTogSnVsIDI4LCAxOTk1ClNpdGUvU3BlY2ltZW46IEZFQ0VTClByb3ZpZGVyOiBNQU5HQVMsUEhZTExJUyBBCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiogUEFSQVNJVE9MT0dZIEZJTkFMIFJFUE9SVCA9PiBBdWcgMDEsIDE5OTUgICBURUNIIENPREU6IDQyMApQYXJhc2l0b2xvZ3kgUmVtYXJrKHMpOgpSRUpFQ1RFRD1MRUFLRUQK
+"""
+/*
 Accession [UID]: PARAS 95 262 []            Received: Aug 01, 1995@11:00
 Collection sample: STOOL               Collection date: Jul 28, 1995
 Site/Specimen: FECES
@@ -404,7 +419,7 @@ Provider: MANGAS,PHYLLIS A
 * PARASITOLOGY FINAL REPORT => Aug 01, 1995   TECH CODE: 420
 Parasitology Remark(s):
 REJECTED=LEAKED
-"""
+*/
 
 //////////////////////////////////////////////////  4  //////////////////////////////////////////////
 
@@ -439,7 +454,7 @@ Example from a mock labReportTO
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
-* code.coding = LOINC#60567-5
+* code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 2000-08-10T15:56:00Z
 * issued = 2000-08-10T15:56:00Z
@@ -450,7 +465,11 @@ Example from a mock labReportTO
 * specimen[+] = Reference(ex-MHV-specimen-4)
 * contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
-* conclusion = """
+* presentedForm.contentType = #text/plain
+* presentedForm.data = """
+RGF0ZSBTcGVjIHRha2VuOiBBdWcgMDksIDIwMDAgICAgICAgIFBhdGhvbG9naXN0OlNFRVRIQSBTVVJZQVBSQVNBRCBNRApEYXRlIFNwZWMgcmVjJ2Q6IEF1ZyAwOSwgMjAwMCAxNjoxNCAgUmVzaWRlbnQ6IApEYXRlICBjb21wbGV0ZWQ6IEF1ZyAxMCwgMjAwMCAgICAgICAgQWNjZXNzaW9uICM6IFNQIDAwIDE5ODIKU3VibWl0dGVkIGJ5OiBNQVJLIE1BWlVSIE1EICAgICAgICAgIFByYWN0aXRpb25lcjpNQVJLIE1BWlVSIERQTQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClNwZWNpbWVuOiAKT0xEIEhBUkRXQVJFIExFRlQgRk9PVCBYMgpCcmllZiBDbGluaWNhbCBIaXN0b3J5OgpUaGlzIDcxIHkvbyB3bSBwcmVzZW50cyB3aXRoIHBhaW5mdWwgaGFyZHdhcmUgTCAxc3QgbWV0YXRhcnNhbCBoZWFkLiBUaGUKcGlucyB3ZXJlIGluc2VydGVkIDMgeWVhcnMgYWdvIGZvciBhIGJ1bmlvbiBwcm9jZWR1cmUuIFRoZSBCdW5pb25wcm9jZWR1cmUKaXMgd2VsbCBoZWFsZWQgYW5kIHB0IGlzIG5vdyB3YW50aW5nIHRoZSBwaW4gcmVtb3ZlZC4gV2lsbCBwcm9iYWJseSBuZWVkCmstd2lyZSBkcml2ZXIgYW5kIHBvd2VyIGZvciB0aGlzIGNhc2UuClByZW9wZXJhdGl2ZSBEaWFnbm9zaXM6ClBBSU5GVUwgSEFSRFdBUkUgTEVGVCBGSVJTVCBNRVRBVEFSU0FMIApQb3N0b3BlcmF0aXZlIERpYWdub3NpczoKUEFJTkZVTCBIQVJEV0FSRSBMRUZUIEZJUlNUIE1FVEFUQVJTQUwgCkdyb3NzIGRlc2NyaXB0aW9uOgpSRUNFSVZFRCBVTkZJWEVEIEFORCBMQUJFTEVEICJPTEQgSEFSRFdBUkUgTEVGVCBGT09UIFggMiIgQ09OU0lTVFMgT0YgVFdPCjEuNyBDTSBBTkQgMi41IENNIExPTkcgMSBNTSBXSURFIE1FVEFMTElDIFBJTlMuCnxUQUJ8fE5PV1JBUHwKRElBR05PU0lTOiBIQVJEV0FSRSAoQ0xJTklDQUxMWSBGUk9NIExFRlQgRk9PVCkK
+"""
+/*
 Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD
 Date Spec rec'd: Aug 09, 2000 16:14  Resident: 
 Date  completed: Aug 10, 2000        Accession #: SP 00 1982
@@ -472,7 +491,7 @@ RECEIVED UNFIXED AND LABELED "OLD HARDWARE LEFT FOOT X 2" CONSISTS OF TWO
 1.7 CM AND 2.5 CM LONG 1 MM WIDE METALLIC PINS.
 |TAB||NOWRAP|
 DIAGNOSIS: HARDWARE (CLINICALLY FROM LEFT FOOT)
-"""
+*/
 
 
 //////////////////////////////////////////////////  5  //////////////////////////////////////////////
@@ -508,7 +527,7 @@ Example from a mock labReportTO
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
-* code.coding = LOINC#60567-5
+* code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1999-09-27T13:07:00Z
 * issued = 1999-09-27T13:07:00Z
@@ -519,7 +538,11 @@ Example from a mock labReportTO
 * specimen[+] = Reference(ex-MHV-specimen-5)
 * contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
-* conclusion = """
+* presentedForm.contentType = #text/plain
+* presentedForm.data = """
+RGF0ZSBTcGVjIHRha2VuOiBTZXAgMjQsIDE5OTkgICAgICAgIFBhdGhvbG9naXN0OkpBWkJJRUggTU9FWlpJIE1ECkRhdGUgU3BlYyByZWMnZDogU2VwIDI0LCAxOTk5IDEzOjQ2ICBSZXNpZGVudDogCkRhdGUgIGNvbXBsZXRlZDogU2VwIDI3LCAxOTk5ICAgICAgICBBY2Nlc3Npb24gIzogU1AgOTkgMjIwNwpTdWJtaXR0ZWQgYnk6IEtIVVJTSElEIFlPVVNVRiBNRCAgICAgUHJhY3RpdGlvbmVyOktIVVJTSElEIFlPVVNVRgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClNwZWNpbWVuOiAKUE9MWVBTIChBKSBDRUNBTAogICAgICAgKEIpIFBST1hJTUFMIEFTQ0VORElORwogICAgICAgKEMpIFJFQ1RBTApCcmllZiBDbGluaWNhbCBIaXN0b3J5OgpDT0xPTiBQT0xZUFMgUEVSIEZMRVggU0lHClByZW9wZXJhdGl2ZSBEaWFnbm9zaXM6CkNPTE9OIFBPTFlQUwpPcGVyYXRpdmUgRmluZGluZ3M6CnxUQUJ8fE5PV1JBUHwKMS4gQ0VDQUwgUE9MWVBTIFggMgoyLiBBU0NFTkRJTkcgQ09MT04gUE9MWVAKMy4gUkVDVEFMIFBPTFlQClBvc3RvcGVyYXRpdmUgRGlhZ25vc2lzOgpTQU1FCkdyb3NzIGRlc2NyaXB0aW9uOgp8VEFCfHxOT1dSQVB8ClNQRUNJTUVOIChBKSBMQUJFTEVEIENFQ0FMIFBPTFlQIFggMi4gIFJFQ0VJVkVEIElOIEZPUk1BTElOIElTIE9ORSBQQUxFCkdSRVkgVElTU1VFIEZSQUdNRU5UIE1FQVNVUklORyAwLjQgQ00gSU4gRElBTUVURVIuICBFTUJFRERFRCBFTlRJUkVMWSBJTgpPTkUgQkxPQ0suClNQRUNJTUVOIChCKSBMQUJFTEVEIFBST1hJTUFMIEFTQ0VORElORyBDT0xPTi4gIFJFQ0VJVkVEIElOIEZPUk1BTElOIEFSRQpUV08gUEFMRSBCUk9XTiBUSVNTVUUgRlJBR01FTlRTIE1FQVNVUklORyAwLjMgQ00gSU4gQUdHUkVHQVRFLiAgRU1CRURERUQKRU5USVJFTFkgSU4gT05FIEJMT0NLLgpTUEVDSU1FTiAoQykgTEFCRUxFRCBSRUNUQUwgUE9MWVAuICBSRUNFSVZFRCBJTiBGT1JNQUxJTiBBUkUgVEhSRUUgTUlOVVRFClRJU1NVRSBGUkFHTUVOVFMgTUVBU1VSSU5HIDAuMyBDTSBJTiBBR0dSRUdBVEUuICBFTUJFRERFRCBFTlRJUkVMWQpJTiBPTkUgQkxPQ0suCk1pY3Jvc2NvcGljIGRlc2NyaXB0aW9uOiAoRGF0ZSBTcGVjIHRha2VuOiBTZXAgMjQsIDE5OTkpCnxUQUJ8fEJMQU5LKDMpfAp8VEFCfHxOT1dSQVB8CkRJQUdOT1NJUzoKQSkgQ0VDQUwgUE9MWVA6IEhZUEVSUExBU1RJQyBQT0xZUC4gIChTRUUgTk9URSkKQiAmYW1wOyBDKQpQUk9YSU1BTCBBU0NFTkRJTkcgQ09MT04gQU5EIFJFQ1RBTCBQT0xZUFM6IFRVQlVMQVIgQURFTk9NQVMuIChTRUUKTk9URSkKIApOT1RFOiBDT0FHVUxBVElPTiBBUlRFRkFDVCBBTkQgUE9PUiBUSVNTVUUgUFJFU0VSVkFUSU9OIElTIE5PVEVEIENBVVNJTkcKRElGRklDVUxUWSBJTiBFVkFMVUFUSU9OIE9GIExFU0lPTi4KRFIuIFlPVVNVRiBXQVMgTk9USUZJRUQuCg==
+"""
+/*
 Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD
 Date Spec rec'd: Sep 24, 1999 13:46  Resident: 
 Date  completed: Sep 27, 1999        Accession #: SP 99 2207
@@ -563,7 +586,7 @@ NOTE)
 NOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING
 DIFFICULTY IN EVALUATION OF LESION.
 DR. YOUSUF WAS NOTIFIED.
-"""
+*/
 
 //////////////////////////////////////////////////  6  //////////////////////////////////////////////
 
@@ -598,7 +621,7 @@ Example from a mock labReportTO
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
-* code.coding = LOINC#60567-5
+* code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1999-08-11T16:09:00Z
 * issued = 1999-08-11T16:09:00Z
@@ -609,7 +632,11 @@ Example from a mock labReportTO
 * specimen[+] = Reference(ex-MHV-specimen-6)
 * contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
-* conclusion = """
+* presentedForm.contentType = #text/plain
+* presentedForm.data = """
+RGF0ZSBTcGVjIHRha2VuOiBBdWcgMDksIDE5OTkgICAgICAgIFBhdGhvbG9naXN0OlNFRVRIQSBTVVJZQVBSQVNBRCBNRApEYXRlIFNwZWMgcmVjJ2Q6IEF1ZyAxMCwgMTk5OSAxMzoyNyAgUmVzaWRlbnQ6IApEYXRlICBjb21wbGV0ZWQ6IEF1ZyAxMSwgMTk5OSAgICAgICAgQWNjZXNzaW9uICM6IFNQIDk5IDE4MDQKU3VibWl0dGVkIGJ5OiBLQVRITEVFTiBNQVJJRSBXT0xORVIgIFByYWN0aXRpb25lcjpLQVRITEVFTiBNQVJJRSBXT0xORVIgTUQKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpTcGVjaW1lbjogClBPTFlQIEAgMTJDTQpCcmllZiBDbGluaWNhbCBIaXN0b3J5Ogo3MCBZRUFSIE9MRCBNQUxFIEZPUiBTQ1JFRU5JTkcgRVhBTS4gIApPcGVyYXRpdmUgRmluZGluZ3M6ClNNT09USCBCUk9BRCBCQVNFRCBQT0xZUApQb3N0b3BlcmF0aXZlIERpYWdub3NpczoKUFJPQkFCTEUgQkVOSUdOIFBPTFlQCkdyb3NzIGRlc2NyaXB0aW9uOgpSRUNFSVZFRCBJTiBGT1JNQUxJTiBBTkQgTEFCRUxFRCAiUE9MWVAiICBDT05TSVNUUyBPRiBUV08gMSBNTSBGUkFHTUVOVFMKT0YgUElOSyBUSVNTVUUuICBTVUJNSVRURUQgSU4gVE9UQUwgSU4gT05FIEJMT0NLLgpNaWNyb3Njb3BpYyBkZXNjcmlwdGlvbjogKERhdGUgU3BlYyB0YWtlbjogQXVnIDA5LCAxOTk5KQp8VEFCfHxCTEFOSygzKXwKRElBR05PU0lTOgpQT0xZUCBBVCAxMiBDTS4gVFVCVUxBUiBBREVOT01BLgo=
+"""
+/*
 Date Spec taken: Aug 09, 1999        Pathologist:SEETHA SURYAPRASAD MD
 Date Spec rec'd: Aug 10, 1999 13:27  Resident: 
 Date  completed: Aug 11, 1999        Accession #: SP 99 1804
@@ -630,7 +657,7 @@ Microscopic description: (Date Spec taken: Aug 09, 1999)
 |TAB||BLANK(3)|
 DIAGNOSIS:
 POLYP AT 12 CM. TUBULAR ADENOMA.
-"""
+*/
 
 
 //////////////////////////////////////////////////  7  //////////////////////////////////////////////
@@ -666,7 +693,7 @@ Example from a mock labReportTO
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
-* code.coding = LOINC#60567-5
+* code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1997-09-09T13:13:00Z
 * issued = 1997-09-09T13:13:00Z
@@ -677,7 +704,11 @@ Example from a mock labReportTO
 * specimen[+] = Reference(ex-MHV-specimen-7)
 * contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
-* conclusion = """
+* presentedForm.contentType = #text/plain
+* presentedForm.data = """
+RGF0ZSBTcGVjIHRha2VuOiBTZXAgMDgsIDE5OTcgICAgICAgIFBhdGhvbG9naXN0OkpBWkJJRUggTU9FWlpJIE1ECkRhdGUgU3BlYyByZWMnZDogU2VwIDA4LCAxOTk3IDEzOjA4ICBSZXNpZGVudDogCkRhdGUgIGNvbXBsZXRlZDogU2VwIDA5LCAxOTk3ICAgICAgICBBY2Nlc3Npb24gIzogU1AgOTcgMjA5MQpTdWJtaXR0ZWQgYnk6IERFQlJBIEsgTEFUVEEgTUQgICAgICAgUHJhY3RpdGlvbmVyOkRFQlJBIEsgTEFUVEEKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpTcGVjaW1lbjogCihBKSBCT05FIEZST00gUklHSFQgRk9PVAooQikgQk9ORSBSSUdIVCBGT09UCg==
+"""
+/*
 Date Spec taken: Sep 08, 1997        Pathologist:JAZBIEH MOEZZI MD
 Date Spec rec'd: Sep 08, 1997 13:08  Resident: 
 Date  completed: Sep 09, 1997        Accession #: SP 97 2091
@@ -686,7 +717,7 @@ Submitted by: DEBRA K LATTA MD       Practitioner:DEBRA K LATTA
 Specimen: 
 (A) BONE FROM RIGHT FOOT
 (B) BONE RIGHT FOOT
-"""
+*/
 
 
 //////////////////////////////////////////////////  8  //////////////////////////////////////////////
@@ -722,7 +753,7 @@ Example from a mock labReportTO
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
-* code.coding = LOINC#60567-5
+* code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)
 * effectiveDateTime = 1997-05-14T09:54:00Z
 * issued = 1997-05-14T09:54:00Z
@@ -733,7 +764,11 @@ Example from a mock labReportTO
 * specimen[+] = Reference(ex-MHV-specimen-8)
 * contained[+] = ex-MHV-organization-989
 * performer = Reference(Organization/ex-MHV-organization-989)
-* conclusion = """
+* presentedForm.contentType = #text/plain
+* presentedForm.data = """
+RGF0ZSBTcGVjIHRha2VuOiBNYXkgMTIsIDE5OTcgICAgICAgIFBhdGhvbG9naXN0OlNFRVRIQSBTVVJZQVBSQVNBRCBNRApEYXRlIFNwZWMgcmVjJ2Q6IE1heSAxMiwgMTk5NyAxNDowMCAgUmVzaWRlbnQ6IApEYXRlICBjb21wbGV0ZWQ6IE1heSAxMywgMTk5NyAgICAgICAgQWNjZXNzaW9uICM6IFNQIDk3IDEwOTkKU3VibWl0dGVkIGJ5OiBERUJSQSBLIExBVFRBIE1EICAgICAgIFByYWN0aXRpb25lcjpERUJSQSBLIExBVFRBCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KU3BlY2ltZW46IApCT05FIEZSQUdNRU5UUywgTEVGVCBGT09UCg==
+"""
+/*
 Date Spec taken: May 12, 1997        Pathologist:SEETHA SURYAPRASAD MD
 Date Spec rec'd: May 12, 1997 14:00  Resident: 
 Date  completed: May 13, 1997        Accession #: SP 97 1099
@@ -741,4 +776,4 @@ Submitted by: DEBRA K LATTA MD       Practitioner:DEBRA K LATTA
 -------------------------------------------------------------------------------
 Specimen: 
 BONE FRAGMENTS, LEFT FOOT
-"""
+*/

@@ -13,11 +13,11 @@
     <valueInteger value="1"/>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
-  <version value="0.3.4"/>
+  <version value="0.3.5"/>
   <name value="VAMHVFHIRPHR"/>
   <title value="MyHealtheVet PHR FHIR API"/>
   <status value="active"/>
-  <date value="2024-03-18T14:58:21-05:00"/>
+  <date value="2024-03-29T15:35:14-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -51,7 +51,7 @@
     <packageId value="hl7.terminology.r4"/>
     <version value="5.3.0"/>
   </dependsOn>
-  <dependsOn id="hl7_fhir_us_core">
+  <dependsOn id="hl7fhiruscore">
     <uri value="http://fhir.org/packages/hl7.fhir.us.core/ImplementationGuide/hl7.fhir.us.core"/>
     <packageId value="hl7.fhir.us.core"/>
     <version value="5.0.x"/>
@@ -179,7 +179,7 @@
         <valueString value="special-url"/>
       </extension>
       <extension url="value">
-        <valueString value="http://va.gov/systems/99VA95.3"/>
+        <valueString value="http://va.gov/terminology/vistaDefinedTerms/95.3"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -187,7 +187,7 @@
         <valueString value="special-url"/>
       </extension>
       <extension url="value">
-        <valueString value="http://va.gov/systems/99VA60"/>
+        <valueString value="http://va.gov/terminology/vistaDefinedTerms/60"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -195,7 +195,7 @@
         <valueString value="special-url"/>
       </extension>
       <extension url="value">
-        <valueString value="http://va.gov/systems/99VA64"/>
+        <valueString value="http://va.gov/terminology/vistaDefinedTerms/64"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -219,7 +219,7 @@
         <valueString value="special-url"/>
       </extension>
       <extension url="value">
-        <valueString value="http://va.gov/systems/99VA61"/>
+        <valueString value="http://va.gov/terminology/vistaDefinedTerms/61"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -470,7 +470,7 @@
         <valueCode value="special-url"/>
       </extension>
       <extension url="value">
-        <valueString value="http://va.gov/systems/99VA95.3"/>
+        <valueString value="http://va.gov/terminology/vistaDefinedTerms/95.3"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -478,7 +478,7 @@
         <valueCode value="special-url"/>
       </extension>
       <extension url="value">
-        <valueString value="http://va.gov/systems/99VA60"/>
+        <valueString value="http://va.gov/terminology/vistaDefinedTerms/60"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -486,7 +486,7 @@
         <valueCode value="special-url"/>
       </extension>
       <extension url="value">
-        <valueString value="http://va.gov/systems/99VA64"/>
+        <valueString value="http://va.gov/terminology/vistaDefinedTerms/64"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -510,7 +510,7 @@
         <valueCode value="special-url"/>
       </extension>
       <extension url="value">
-        <valueString value="http://va.gov/systems/99VA61"/>
+        <valueString value="http://va.gov/terminology/vistaDefinedTerms/61"/>
       </extension>
     </extension>
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
@@ -2487,6 +2487,17 @@
       </reference>
       <name value="Known Note types"/>
       <description value="Note types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ConceptMap"/>
+      </extension>
+      <reference>
+        <reference value="ConceptMap/VF-ChemistryResult-ObservationStatus"/>
+      </reference>
+      <name value="Map between ChemistryResult ObservationStatus to FHIR Observation.status codes"/>
+      <description value="Map between ChemistryResult.ObservationStatus and FHIR Observation.status code."/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4477,7 +4488,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.chTest"/>
       </reference>
       <name value="VA MHV PHR CH labTest.chemistryResults"/>
-      <description value="A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.chemistryResults`&#xA;- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- `valueInterpretation` -&gt; `.interpretation` &#xA;  - `L` -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L&#xA;  - 'H' -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H&#xA;- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)&#xA;- `testIdentifier` -&gt; `.code` -- where LN is Loinc&#xA;- `referenceRange` -&gt; `.referenceRange.text` -- dont try to break out further as there is little use of this value&#xA;- `labCommentEvents` -&gt; `.note.text`&#xA;- value[x] either String or Quantity with units&#xA;- `observationValue` -&gt; `.valueQuantity.value`&#xA;- `observationUnits.unit` -&gt; `.valueQuantity.unit`&#xA;- `observationUnits.code` -&gt; `.valueQuantity.code` - likely need to adjust some&#xA;- `observationUnits.codingSystem` -&gt; `.valueQuantity.system`&#xA;- `performingOrganization` -&gt; `.performer`&#xA;- given this is contained in the DiagnosticReport, then &#xA;  - effective[x] is presumed from the DiagnosticReport&#xA;  - issued is presumed from the DiagnosticReport&#xA;- `specimen` -&gt; specimen&#xA;- `basedOn` -&gt; ServiceRequest"/>
+      <description value="A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One Observation holds one `labTests.chemistryResults`&#xA;- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)&#xA;&#x9;- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- `valueInterpretation` -&gt; `.interpretation` &#xA;  - `L` -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L&#xA;  - 'H' -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H&#xA;- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)&#xA;- `testIdentifier` -&gt; `.code` -- where LN is Loinc&#xA;- `referenceRange` -&gt; `.referenceRange.text` -- dont try to break out further as there is little use of this value&#xA;- `labCommentEvents` -&gt; `.note.text`&#xA;- value[x] either String or Quantity with units&#xA;- `observationValue` -&gt; `.valueQuantity.value`&#xA;- `observationUnits.unit` -&gt; `.valueQuantity.unit`&#xA;- `observationUnits.code` -&gt; `.valueQuantity.code` - likely need to adjust some&#xA;- `observationUnits.codingSystem` -&gt; `.valueQuantity.system`&#xA;- `performingOrganization` -&gt; `.performer`&#xA;- `labCommentEvents` -&gt; '.note`&#xA;- `effective[x]` is same as the DiagnosticReport&#xA;- `issued` is same as the DiagnosticReport&#xA;- `specimen` = specimen&#xA;- `basedOn` = ServiceRequest&#xA;- `ObservationStatus' -&gt; [concept map translation](ConceptMap-VF-ChemistryResult-ObservationStatus.html) -&gt; `.status`"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4488,7 +4499,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.chOrder"/>
       </reference>
       <name value="VA MHV PHR CH labTests.orderedTestCode"/>
-      <description value="A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- code = {labTests.orderedTestCode}&#xA;- status = `unknown` -- as we dont know&#xA;- intent = `order` -- unclear &#xA;- category = SCT#108252007 Laboratory procedure&#xA;- specimen = specimen&#xA;- not populating US-Core must support as we dont have the values&#xA;&#x9;- occurrence[x], authoredOn, requester&#xA;- no other elements are populated"/>
+      <description value="A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.&#xA;&#xA;One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.&#xA;- `.subject` must be the patient from the DiagnosticReport&#xA;- code = {labTests.orderedTestCode}&#xA;- status = `unknown` -- as we dont know - TODO&#xA;- intent = `order`&#xA;- category = SCT#108252007 Laboratory procedure&#xA;- specimen = specimen&#xA;- not populating US-Core must support as we dont have the values&#xA;&#x9;- occurrence[x], authoredOn&#xA;- no other elements are populated"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>
@@ -4576,7 +4587,7 @@
         <reference value="StructureDefinition/VA.MHV.PHR.labTest"/>
       </reference>
       <name value="VA MHV PHR labTest"/>
-      <description value="A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;- This profile is based on US-Core Lab&#xA;- sometimes a contained Specimen is needed"/>
+      <description value="A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.&#xA;&#xA;- This profile is based on US-Core Lab"/>
       <exampleBoolean value="false"/>
     </resource>
     <resource>

@@ -10,9 +10,17 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
+### 0.3.5
+
+- Better path links to FHIR, and US-Core
 - Use KBS approved code system mapping from Vista `99VA` strings to a URI - [see Code Lookup](https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/utility.html#code-lookup)
 - DiagnosticReport
   - many changes to align with discussions with KBS
+  - change pathology code from LOINC 60567-5 to 11526-1
+  - change microbiology code from LOINC 79381-0 to 18725-2
+  - Increment Chem-Hem to FMM 3 to recognize KBS is almost done
+  - Increment Labs to FMM2 to indicate KBS is being consulted
+  - Labs uses PresentedForm rather than notes
 
 ### 0.3.4
 
@@ -106,7 +114,7 @@ The notes below for each release. Archive of [released packages](https://github.
     - moved the qualifiers to outside MVP. These were not available in MHV phr, so they are not MVP. Handling them is still under discussion with KBS.
 - Update concept maps from VF_ qualifiers from January 8, 2024
   - Note that KBS is [developing their own IG](https://j-p-systems.github.io/va.maps/index.html) that we could in the future dependOn so that we don't need to maintain replicated data such as this.
-- Fix URI for ICD9 to `http://hl7.org/fhir/sid/icd-9-cm` from `http://terminology.hl7.org/CodeSystem/icd9cm`
+- Fix URI for ICD9 to `{{site.data.fhir.path}}sid/icd-9-cm` from `http://terminology.hl7.org/CodeSystem/icd9cm`
   - https://terminology.hl7.org/ICD.html
 - Patient
   - clarified that the Patient is to be looked up by the MHV patientId (aka. jwt subjectId), and that it is best to use the returned Patient.id from that point on.

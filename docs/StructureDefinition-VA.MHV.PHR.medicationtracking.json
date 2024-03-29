@@ -20,11 +20,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.medicationTracking",
-  "version" : "0.3.4",
+  "version" : "0.3.5",
   "name" : "MHVmedicationTracking",
   "title" : "VA MHV PHR medication dispense tracking",
   "status" : "active",
-  "date" : "2024-03-18T14:58:21-05:00",
+  "date" : "2024-03-29T15:35:14-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -49,6 +49,11 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "MedicationTracking-Mapping",
+    "uri" : "Vista",
+    "name" : "Vista to mhv-fhir-phr"
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -67,11 +72,6 @@
     "identity" : "w5",
     "uri" : "http://hl7.org/fhir/fivews",
     "name" : "FiveWs Pattern Mapping"
-  },
-  {
-    "identity" : "MedicationTracking-Mapping",
-    "uri" : "Vista",
-    "name" : "Vista to mhv-fhir-phr"
   }],
   "kind" : "resource",
   "abstract" : false,

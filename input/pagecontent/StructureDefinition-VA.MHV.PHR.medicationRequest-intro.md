@@ -1,5 +1,5 @@
 
-- This profile is based on [US-Core profile on MedicationRequest](http://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-medicationrequest.html).
+- This profile is based on [US-Core profile on MedicationRequest]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-medicationrequest.html).
 - `subject` is a reference to this patient
 - TODO
 

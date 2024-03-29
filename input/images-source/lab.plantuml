@@ -1,0 +1,42 @@
+@startuml
+skinparam svgDimensionStyle true
+
+interface DiagnosticReport {
+    identifier;
+    category=#LAB;
+    code.text;
+    code.coding;
+    subject;
+    effectiveDateTime;
+    issued;
+    performer;
+    specimen;
+    results;
+    presentedForm.data;
+}
+
+class Specimen {
+    status;
+    type.text;
+    collection.collectionDateTime;
+    identifer;
+    accessionIdentifer;
+}
+class Observation {
+    status=#final;
+    category=#laboratory;
+    code.text;
+    code.coding;
+    subject;
+    effectiveDateTime;
+    issued;
+    performer;
+    valueString;
+    specimen;
+}
+
+DiagnosticReport -right-> Specimen: 1..1 specimen
+DiagnosticReport -down-> Observation: 0..* results
+Observation -up-> Specimen: 1..1 specimen
+
+@enduml

@@ -18,7 +18,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 2823-3}\">POTASSIUM:SCNC:PT:SER/PLAS:QN:</span>, <span title=\"Codes: {http://loinc.org 2951-2}\">SODIUM:SCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2021-01-20 16:38:59-0500</td></tr><tr><td>Reported</td><td>2021-01-21 11:32:47-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1110200002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td><td><b>Note</b></td></tr><tr><td colspan=\"5\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"5\"><i>This Observation could not be resolved</i></td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 2823-3}\">POTASSIUM:SCNC:PT:SER/PLAS:QN:</span>, <span title=\"Codes: {http://loinc.org 2951-2}\">SODIUM:SCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2021-01-20 16:38:59-0500</td></tr><tr><td>Reported</td><td>2021-01-21 11:32:47-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR</code>/1110200002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td><td><b>Note</b></td><td><b>When For</b></td></tr><tr><td colspan=\"6\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"6\"><i>This Observation could not be resolved</i></td></tr></table></div>"
   ] ; # 
   fhir:contained ( [
      a fhir:Organization ;
@@ -50,7 +50,7 @@
      a fhir:Practitioner ;
      fhir:id [ fhir:v "ex-MHV-practitioner-14934-VA552" ] ;
      fhir:identifier ( [
-       fhir:system [ fhir:v "http://va.gov/systems/99VA4"^^xsd:anyURI ] ;
+       fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/4"^^xsd:anyURI ] ;
        fhir:value [ fhir:v "14934-VA552" ]
      ] ) ;
      fhir:name ( [
@@ -97,10 +97,10 @@
      ] ) ;
      fhir:code [
        fhir:coding ( [
-         fhir:system [ fhir:v "http://va.gov/systems/99VA64"^^xsd:anyURI ] ;
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/64"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "84140.0000" ]
        ] [
-         fhir:system [ fhir:v "http://va.gov/systems/99VA60"^^xsd:anyURI ] ;
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/60"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "177" ] ;
          fhir:display [ fhir:v "POTASSIUM" ]
        ] ) ;
@@ -142,8 +142,7 @@
          fhir:version [ fhir:v "2.68" ] ;
          fhir:code [ fhir:v "2823-3" ]
        ] [
-         fhir:system [ fhir:v "http://va.gov/systems/99VA95.3"^^xsd:anyURI ] ;
-         fhir:version [ fhir:v "2.68" ] ;
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/95.3"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "4670505" ]
        ] ) ;
        fhir:text [ fhir:v "POTASSIUM" ]
@@ -152,6 +151,7 @@
        fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-942104> ;
        fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
      ] ;
+     fhir:effective [ fhir:v "2021-01-20T16:38:59-05:00"^^xsd:dateTime ] ;
      fhir:performer ( [
        fhir:reference [ fhir:v "#ex-MHV-organization-552" ]
      ] ) ;
@@ -198,10 +198,10 @@
      ] ) ;
      fhir:code [
        fhir:coding ( [
-         fhir:system [ fhir:v "http://va.gov/systems/99VA64"^^xsd:anyURI ] ;
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/64"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "84295.0000" ]
        ] [
-         fhir:system [ fhir:v "http://va.gov/systems/99VA60"^^xsd:anyURI ] ;
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/60"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "176" ] ;
          fhir:display [ fhir:v "SODIUM" ]
        ] ) ;
@@ -243,8 +243,7 @@
          fhir:version [ fhir:v "2.68" ] ;
          fhir:code [ fhir:v "2951-2" ]
        ] [
-         fhir:system [ fhir:v "http://va.gov/systems/99VA95.3"^^xsd:anyURI ] ;
-         fhir:version [ fhir:v "2.68" ] ;
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/95.3"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "4671912" ]
        ] ) ;
        fhir:text [ fhir:v "SODIUM:SCNC:PT:SER/PLAS:QN:" ]
@@ -253,6 +252,7 @@
        fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-942104> ;
        fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
      ] ;
+     fhir:effective [ fhir:v "2021-01-20T16:38:59-05:00"^^xsd:dateTime ] ;
      fhir:performer ( [
        fhir:reference [ fhir:v "#ex-MHV-organization-552" ]
      ] ) ;
@@ -291,13 +291,15 @@
          fhir:code [ fhir:v "SER" ] ;
          fhir:display [ fhir:v "Serum" ]
        ] [
-         fhir:system [ fhir:v "http://va.gov/systems/99VA61"^^xsd:anyURI ] ;
-         fhir:version [ fhir:v "5.2" ] ;
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/61"^^xsd:anyURI ] ;
          fhir:code [ fhir:v "72" ] ;
          fhir:display [ fhir:v "SERUM" ]
        ] ) ;
        fhir:text [ fhir:v "SERUM" ]
      ] ;
+     fhir:request ( [
+       fhir:reference [ fhir:v "#ex-MHV-chOrder-1a" ]
+     ] ) ;
      fhir:collection [
        fhir:collected [ fhir:v "2021-01-20T16:38:59-05:00"^^xsd:dateTime ]
      ]
@@ -311,7 +313,7 @@
   ] ) ; # 
   fhir:identifier ( [
      fhir:use [ fhir:v "usual" ] ;
-     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:system [ fhir:v "urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR"^^xsd:anyURI ] ;
      fhir:value [ fhir:v "1110200002" ]
   ] ) ; # 
   fhir:basedOn ( [

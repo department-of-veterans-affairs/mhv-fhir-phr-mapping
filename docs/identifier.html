@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Id vs Identifier - MyHealtheVet PHR FHIR API v0.3.4</title>
+    <title>Id vs Identifier - MyHealtheVet PHR FHIR API v0.3.5</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.4 - trial-use
+            <span style="display:inline-block;">0.3.5 - trial-use
 
 
 
@@ -191,7 +191,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.4) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Id vs Identifier</h2>
   
 
@@ -234,7 +234,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ol>
   <li>As far as I can tell the <code class="language-plaintext highlighter-rouge">.id</code> values coming from Vista (Fileman) are given to us as strings. They are unique strings at the source for that given context of that data. (for a given Vista instance the ImmunizationTO.id is unique, but that id value might be a different ImmunizationTO object at a different Vista site, and that id value on a different object like NoteTO at the original Vista site)</li>
   <li>The <code class="language-plaintext highlighter-rouge">.id</code> values sometimes have a two or three part to them separated by <code class="language-plaintext highlighter-rouge">;</code>. I don’t know if there is something we can interpret, or if I am just looking at non-real examples.</li>
-  <li>In FHIR <a href="http://hl7.org/fhir/datatypes.html#Identifier">Identifier datatype</a> tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique.</li>
+  <li>In FHIR <a href="http://hl7.org/fhir/R4/datatypes.html#Identifier">Identifier datatype</a> tend to be made up of two parts. The identifier value, and the system value within which that identifier value is known to be unique.</li>
   <li>Thus when we know the data received is from VIA we can look up the given id as identifier of system+id.</li>
   <li>The VA CDA generation does a similar transform of the <code class="language-plaintext highlighter-rouge">.id</code> values into CDA <code class="language-plaintext highlighter-rouge">.id</code> values. We should use the same algorithm so that the same data is easily recognized regardless of if the data was received via CDA or our FHIR api. They do not transform all id values. Thus we should follow their lead where they have taken a lead so as to not create a de-duplication problem.</li>
   <li>The Lighthouse does not keep the id values in their FHIR output. So there is no precedent to follow.</li>
@@ -443,6 +443,12 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
 <h4 id="patient">Patient</h4>
 
+<p>TODO: Need a better system value for the MHV patient id: See discussion in patient.fsh</p>
+<ul>
+  <li><strong>MHV-54036</strong></li>
+  <li>TODO: client will need to change to be specific to the new system value - https://github.com/department-of-veterans-affairs/vets-api/blob/f2733b21112f94c90dae618f0420d712f01cdf49/lib/medical_records/client.rb#L75</li>
+</ul>
+
 <p>MyHealtheVet has a patient id that it manages, and a ‘profile’ that is details about the patient including demographics, contact information, etc. This information is managed in the MHV eVault. The MHV Patient id is communicated in existing as assigning facility <code class="language-plaintext highlighter-rouge">200MH</code> at assigning authority <code class="language-plaintext highlighter-rouge">USVHA</code>. I believe that this id is known to the MPI service.</p>
 
 <p>The FHIR interface does populate a Patient resource in the FHIR Server given this ‘profile’ and to provide a mapping to the MyHealtheVet patient id. Thus we need a system value for this id, and today the root VA OID is used.</p>
@@ -462,6 +468,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <p>Could just add that assigning authority and facility to the URL pattern I have started</p>
 
 <p><code class="language-plaintext highlighter-rouge">http://va.gov/systems/USVHA/200MH</code></p>
+
+<p>or could build a canonical off of this IG</p>
+
+<p><code class="language-plaintext highlighter-rouge">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/USVHA/200MH</code></p>
 
 <p>It would work, but I just hope that there is something better to use.</p>
 
@@ -512,7 +522,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 18, 2024 14:58-0500">2024-03-18</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

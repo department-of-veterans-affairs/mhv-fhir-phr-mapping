@@ -8,7 +8,7 @@ name: VAMHVFHIRPHR
 title: "MyHealtheVet PHR FHIR API"
 description: "MyHealtheVet exposing PHR using FHIR and Testing Plan."
 status: active
-version: 0.3.5-current
+version: 0.3.6-current
 fhirVersion: 4.0.1
 copyrightyear: '2022+'
 #date: 2022-04-14
@@ -32,8 +32,9 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
     valueInteger: 1
 dependencies:
-#  hl7.fhir.us.core: 4.0.0
-  hl7.fhir.us.core: 5.0.x
+  hl7.fhir.us.core: 
+    version: 5.0.x
+    id: hl7fhiruscore
   hl7.fhir.uv.extensions: 1.0.x
 
 parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html

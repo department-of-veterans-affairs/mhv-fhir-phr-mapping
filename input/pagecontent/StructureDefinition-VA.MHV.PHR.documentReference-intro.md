@@ -35,6 +35,6 @@
   - Note that Cerner uses `content.attachment.url` that points at a FHIR Binary holding the text
 - no other elements are populated
 
-To search for clinical-notes, use the `category` parameter with `clinical-note` code (i.e., `&category=http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category|clinical-note`).
+To search for clinical-notes, use the `category` parameter with `clinical-note` code (i.e., `&category={{site.data.fhir.hl7fhiruscore}}/CodeSystem/us-core-documentreference-category|clinical-note`).
 Should search for entries that do **not** have `status=entered-in-error` (might also work to look for only `current`) (i.e., `&status:not=entered-in-error`)
-> GET {path}/DocumentReference?patient={patient}&status:not=entered-in-error&category=http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category|clinical-note
+> GET {path}/DocumentReference?patient={patient}&status:not=entered-in-error&category={{site.data.fhir.hl7fhiruscore}}/CodeSystem/us-core-documentreference-category|clinical-note

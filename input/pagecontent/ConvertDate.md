@@ -1,6 +1,6 @@
 There appears to be different formats of timestamps. First is Fileman Date, HL7 date time, and ClinicalProcedureTO.timestamp
 
-For MVP we will focus on "Best Effort" translation into a [FHIR DateTime](http://hl7.org/fhir/R4/datatypes.html#dateTime) datatype. The specific problem that we have is that often the data comes to us without a TimeZone, and FHIR requires that a timezone is given if a time is given. Within the source Vista it is understood what timezone would be used. Yet even a given timezone for a given Vista is not sufficient given that some Vista servers span timezones.
+For MVP we will focus on "Best Effort" translation into a [FHIR DateTime]({{site.data.fhir.path}}datatypes.html#dateTime) datatype. The specific problem that we have is that often the data comes to us without a TimeZone, and FHIR requires that a timezone is given if a time is given. Within the source Vista it is understood what timezone would be used. Yet even a given timezone for a given Vista is not sufficient given that some Vista servers span timezones.
 
 > st6aid is the medical center divisions. under one VAMC you can have multiple divisions. kind of one to many relationship. THE PROBLEM THAT we encounter (most of the times) is that not all st6aids live under the same TZ to which their parent facilities are living. e.g. Nashville TN is in Central but Knoxville, TN is in Eastern. but Knoxville falls under Nashville. Thats why st2aid's TZ info is so vital.
 

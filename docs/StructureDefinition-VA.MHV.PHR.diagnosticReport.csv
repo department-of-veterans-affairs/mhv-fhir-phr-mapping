@@ -145,6 +145,6 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "DiagnosticReport.conclusionCode","DiagnosticReport.conclusionCode","","","",0,0,"","","","CodeableConcept {[]} {[]}
 ","Codes for the clinical conclusion of test results","One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.","","","","","","","","","",,"example","Diagnosis codes provided as adjuncts to the report.","http://hl7.org/fhir/ValueSet/clinical-findings","",,,,"DiagnosticReport.conclusionCode",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","OBX","inboundRelationship[typeCode=SPRT].source[classCode=OBS, moodCode=EVN, code=LOINC:54531-9].value (type=CD)"
-"DiagnosticReport.presentedForm","DiagnosticReport.presentedForm","","","",0,0,"","","","Attachment {[]} {[]}
+"DiagnosticReport.presentedForm","DiagnosticReport.presentedForm","","","",0,*,"Y","","","Attachment {[]} {[]}
 ","Entire report as issued","Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they SHALL be semantically equivalent.","""application/pdf"" is recommended as the most reliable and interoperable in this context.","Gives laboratory the ability to provide its own fully formatted report for clinical fidelity.","","","","","","","",,,,,"",,,,"DiagnosticReport.presentedForm",0,*,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","OBX","text (type=ED)"

@@ -3,43 +3,109 @@
 - maps to [LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl) schema.
 - [Mapping from VIA - LabReportTO +](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto)
 - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
-- should be based on US-Core for DiagnosticReport
-  - This profile is **not** based on [US-Core DiagnosticReport profile for Laboratory Results Reporting](https://hl7.org/fhir/us/core/StructureDefinition-us-core-diagnosticreport-lab.html) and lab Observations. That profile requires use of us-core Practitioner that I can't extend the way we need to. Except for that problem, I have replicated all the other us-core requirements.
+- This profile is based on:
+  - [US-Core DiagnosticReport profile for Laboratory Results Reporting]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-diagnosticreport-lab.html) and 
+  - [US Core Laboratory Result Observation Profile]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-observation-lab.html) and
+  - [FHIR Specimen as US Core didn't profile]({{site.data.fhir.path}}specimen.html)
 - The LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VIA LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-via-to-mhv-fhir-phr-labtestto).
 - The LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VIA LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-via-to-mhv-fhir-phr-labspecimen).
 - The use of contained means that we do not need to de-duplicate the lab tests or specimen. Note that means that the specimen and observations are no individually findable or referenceable.
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport` to indicate the intent to be compliant with this profile
 - `code.text` contains the original `labReportTO.title`
-  - `code` also includes the type in LOINC
-    - SP -> LOINC#60567-5 "Comprehensive pathology report panel"
-    - MI -> LOINC#79381-0 "Gastrointestinal pathogens panel - Stool by NAA with probe detection"
+  - `code.coding` also includes the type in LOINC
+    - Pathology -> LOINC#11526-1 "Pathology study"
+      - SP - Surgical Pathology
+      - CY - Cytology
+      - EM - Electron Microscopy
+    - MI -> LOINC#18725-2 "Microbiology studies (set)"
+  - `coding` may have a supplied loinc
 - `category` must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`
-  - `category` also holds 1..* codes from the contained Observation.code
+  - `category` also holds 0..* codes from the contained Observation.code
+- VIA will stop sending us entries. so
+  - Thus we will be using [Update-and-Expunge](background.html#entered-in-error)
+- There is no data available to fill out a ServiceRequest
+
+### Business rules
+
+- ignore all but `SP`, `CY`, `EM`, and `MI`
+  - Process Pathology and Microbiology differently
+- Pathology
+  - if "STATUS:" is found and not "COMPLETE", then ignore
+  - if "DATE COMPLETED:" is found, consider it complete and don't ignore
+  - ignore all those with no "Date  completed:" in the text body
+- Micro
+  - ignore with no "FINAL REPORT =>" in the text body, and when the date given is malformed or less than the hold
 
 #### Mapping Concerns
 
-- The mock data I have is from the 1990s. Is that old enough for cross referenceing?
-- There does not appear to be anything that could be the ServiceRequest
+- Text - "Site/Specimen: " or "Collection sample:". 
 - The labReportTO
-  - type: Are there other labReportTO.type values beyond SP, and MI? or is the example limited to just these? We really need to find a legitimate LOINC code for these two kinds of reports.
-  - I am not confident of the LOINC code I picked for the MI (LOINC#79381-0), I am slightly more confident of the code I picked for SP (LOINC#60567-5)
-  - id is not just a number - e.g. `<id>MI;7049269</id>` -- is the leading `MI`, just repeating the type of lab, as this was in a type `MI`? Or is there some other meaning?
+  - type
+    - Pathology -> LOINC#11526-1 "Pathology study"
+      - SP - Surgical Pathology
+      - CY - Cytology --- I have no mock data
+      - EM - Electron Microscopy  --- I have no mock data
+    - MI -> LOINC#18725-2 "Microbiology studies (set)"
   - no performer, possibly the Organization is in result.labSiteId - e.g., `<labSiteId>989</labSiteId>`
-  - schema values but no examples: author, caseNumber, comment, facility
-- Specimen examples didn't have much populated
-  - not clear what site and facility might contain, so can't tell where they would go
-  - some examples are likely FHIR Device (old hardware left foot), so this might change
-  - how do I derive a useful accession from what I am given? - e.g., `<accessionNum>PARAS 95 264</accessionNum>`
-  - specimen id seems to just be index on report id - e.g. `<id>MI;7049269;1</id>`
-- All of the Observations mock examples I have are 
-  - value is just string
-  - name is just a string
-  - no performer
-  - no date, I guess I just use the date from the labReportTO.restult.timestamp
-  - schema has a loinc element, but it is not populated in mock examples
+  - schema values but no examples: author, caseNumber, comment, facility 
+- KBS has a question outstanding with micro. FHIR modeling seems to be from lab perspective, not from EHR.  FHIR-44631
+- Need to determine what happens with deleted/entered-in-error
 
-#### TODO
+### Mapping
 
-- should I do a table like I did for chem-hem?
-  - It did help me determine what values MHV pulls from the VIA feed, and thus what might be populated but where I don't have data today.
-- should I do a plantuml diagram like I did for chem-hem?
+Pathology and MicroBiology are processed differently. The `text` report is processed line by line to extract out some elements. See `labReportTO/text {foo}` where `foo` is the string searched for. Very little of the xml schema is used.
+
+<figure>
+{%include lab.svg%}
+<figcaption><b>Pathology and Microbiology Labs</b></figcaption>
+</figure>
+<br clear="all">
+
+| V | VN | VIA labReportTO                              |   MHV eVault Pathology          |  MHV eVault Micro     | FHIR                                | Note       |
+|---|----|----------------------------------------------|---------------------------------|-----------------------|-------------------------------------|------------|
+|   |    | labReportTO/id                               |  id                             | id                    | DiagnosticReport.identifier[TOid]   |  |
+|   |    |                                              |  icn={icn}                      | icn={icn}             | DiagnosticReport.subject            |  |
+|   |    | taggedLabReportArray/tag                     |  stationNumber={namespaceId}    | stationNumber         | DiagnosticReport.performer[org]     |  |
+|   |    |   ""                                         |                                 | orderingLocation      |  |  |
+|   |    |   ""                                         |                                 | performingLocation    |  |  |
+|   |    | labReportTO/type                             | typeOfReport                    |                       | DiagnosticReport.code.coding        | CY/Cytology, SP/Surgical Pathology, EM/Electron Microscopy
+|   |    | labReportTO/facility                         | performingLocation              |                       | DiagnosticReport.performer(Org)     | |
+|   |    | labReportTO/text                             | reportText                      | reportText            | DiagnosticReport.presentedForm.data | base64 with contentType=text/plain |
+|   |    | labReportTO/text {status:}                   |                                 |                       |                                     | ignore all that are not COMPLETED |
+|   |    | labReportTO/text {specimen}                  | specimen                        |                       | Specimen.type.text                  | Not sure why parsed out of the text, vs using specimen/name |
+|   |    | labReportTO/text {date obtained:}            | collectedDateTime[x]            |                       | Specimen.collectedDateTime          | Not sure why parsed out of the text, vs using specimen/collectionDate
+|   |    | labReportTO/text {signed}                    | completedDateTime[x]            |                       | DiagnosticReport.issued             | signed is used for date if it exists
+|   |    | labReportTO/text {date completed:}           | completedDateTime[x]            | completedDateTime[x]  | DiagnosticReport.issued             | used in **hold** |
+|   |    | labReportTO/text {test(s) ordered:}          |                                 | orderedTest           |                                     | no mock examples |
+|   |    | labReportTO/text {provider:}                 |                                 | orderingProvider      | DiagnosticReport.performer(Pra).display | only have string |
+|   |    | labReportTO/text {site/specimen:}            |                                 | specimenSource        | Specimen.collection.bodySite        | location? KBS/TODO |
+|   |    | labReportTO/text {collection sample:}        |                                 | collectionSample      | Specimen.type.text                  | |
+|   |    | labReportTO/text {collection date:}          |                                 | collectedDateTime[x]  | Specimen.collectedDateTime          | Not sure why parsed out of the text, vs using specimen/collectionDate
+|   |    | labReportTO/text {final report =>}           |                                 |                       | DiagnosticReport.issued             | used in **hold** |
+|   |    | labReportTO/title                            |                                 |                       | DiagnosticReport.code.text          | |
+|   |    |                                              |                                 |                       | DiagnosticReport.category=`LAB`     | also all chTest code |
+|   |    |                                              |                                 |                       | DiagnosticReport.status=`final`     |  |
+|   |    | labReportTO/id                               |                                 |                       | DiagnosticReport.identifier[Rid]    |  |
+|   |    |                                              |                                 |                       | DiagnosticReport.result={Observation} | multiple  |
+|   |    |                                              |                                 |                       | DiagnosticReport.specimen={Specimen} |  |
+|   |    |                                              |                                 |                       | Specimen.status=`available`         |  |
+|   |    | labReportTO/specimen/name                    |                                 |                       | Specimen.type.text                  | not done this way today |
+|   |    | labReportTO/specimen/collectionDate          |                                 |                       | Specimen.collectedDateTime          | not done this way today |
+|   |    | labReportTO/specimen/accessionNum            |                                 |                       | Specimen.accessionIdentifier        |  |
+|   |    | labReportTO/specimen/id                      |                                 |                       | Specimen.identifier                 |  |
+|   |    | labReportTO/timestamp                        |                                 |                       | DiagnosticReport.issued             | no mock examples |
+|   |    | labReportTO/result/timestamp                 |                                 |                       | DiagnosticReport.issued             |  |
+|   |    | labReportTO/result/labSiteId                 |                                 |                       | DiagnosticReport.performer(Org)     | |
+|   |    | labReportTO/caseNumber                       |                                 |                       | DiagnosticReport.basedOn.identifier | no mock examples |
+|   |    | labReportTO/tests/labTestTO[m]/result/value  |                                 |                       | Observation[m].valueString          | samples all valueString |
+|   |    | labReportTO/tests/labTestTO[m]/id            |                                 |                       | Observation[m].identifier[TOid]     | |
+|   |    | labReportTO/tests/labTestTO[m]/name          |                                 |                       | Observation[m].code.text            | |
+|   |    | labReportTO/tests/labTestTO[m]/loinc         |                                 |                       | Observation[m].code.coding          | no mock examples |
+|   |    |                                              |                                 |                       | Observation[m].specimen={Specimen}  |  |
+|   |    |                                              |                                 |                       | Observation[m].status=`final`       |  |
+|   |    |                                              |                                 |                       | Observation[m].category=`laboratory` |  |
+|   |    |   ""                                         |                                 |                       | Observation[m].performer={DiagnosticReport.performer(Org)} | |
+|   |    |                                              |                                 |                       | Observation[m].issued={DiagnosticReport.issued} |  |
+|   |    |                                              |                                 |                       | Observation[m].effectiveDate={DiagnosticReport.effectiveDate} |  |
+|   |    | schema has other elements
+{: .grid}

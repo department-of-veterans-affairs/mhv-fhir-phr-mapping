@@ -17,7 +17,7 @@
       <sch:assert test="count(f:subject) &lt;= 0">subject: maximum cardinality of 'subject' is 0</sch:assert>
       <sch:assert test="count(f:receivedTime) &lt;= 0">receivedTime: maximum cardinality of 'receivedTime' is 0</sch:assert>
       <sch:assert test="count(f:parent) &lt;= 0">parent: maximum cardinality of 'parent' is 0</sch:assert>
-      <sch:assert test="count(f:request) &lt;= 0">request: maximum cardinality of 'request' is 0</sch:assert>
+      <sch:assert test="count(f:request) &gt;= 1">request: minimum cardinality of 'request' is 1</sch:assert>
       <sch:assert test="count(f:processing) &lt;= 0">processing: maximum cardinality of 'processing' is 0</sch:assert>
       <sch:assert test="count(f:container) &lt;= 0">container: maximum cardinality of 'container' is 0</sch:assert>
       <sch:assert test="count(f:condition) &lt;= 0">condition: maximum cardinality of 'condition' is 0</sch:assert>

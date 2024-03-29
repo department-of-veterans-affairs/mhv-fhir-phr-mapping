@@ -20,11 +20,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain",
-  "version" : "0.3.4",
+  "version" : "0.3.5",
   "name" : "MHVvitalsPain",
   "title" : "VA MHV PHR Vital-Signs for PAIN",
   "status" : "active",
-  "date" : "2024-03-18T14:58:21-05:00",
+  "date" : "2024-03-29T15:35:14-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -49,6 +49,12 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "VitalsPain-Mapping",
+    "uri" : "MHVvitalsPain",
+    "name" : "VIA to mhv-fhir-phr",
+    "comment" : "Informative map to available elements in MHV FHIR API"
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -77,12 +83,6 @@
     "identity" : "sct-attr",
     "uri" : "http://snomed.org/attributebinding",
     "name" : "SNOMED CT Attribute Binding"
-  },
-  {
-    "identity" : "VitalsPain-Mapping",
-    "uri" : "MHVvitalsPain",
-    "name" : "VIA to mhv-fhir-phr",
-    "comment" : "Informative map to available elements in MHV FHIR API"
   }],
   "kind" : "resource",
   "abstract" : false,

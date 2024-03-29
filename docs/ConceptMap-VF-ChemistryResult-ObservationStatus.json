@@ -1,0 +1,191 @@
+{
+  "resourceType" : "ConceptMap",
+  "id" : "VF-ChemistryResult-ObservationStatus",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2024-03-25 by VA Digital Services (VA Digital Services: <a href=\"http://va.gov\">http://va.gov</a>, John Moehrke (himself): <a href=\"mailto:John.Moehrke@va.gov\">John.Moehrke@va.gov</a>). </p><div><p>Map between ChemistryResult.ObservationStatus and FHIR Observation.status code.</p>\n</div><br/><p><b>Group 1</b>Mapping from <code>unspecified code system</code> to <a href=\"http://hl7.org/fhir/R4/codesystem-observation-status.html\">ObservationStatus</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>C (CORRECTED RESULTS)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>corrected</td></tr><tr><td>F (FINAL RESULTS)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>final</td></tr><tr><td>Y (NO ORDER ON RECORD)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>unknown</td></tr><tr><td>R (NOT VERIFIED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>preliminary</td></tr><tr><td>X (ORDER CANCELED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>cancelled</td></tr><tr><td>O (ORDER RECEIVED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>registered</td></tr><tr><td>P (PRELIMINARY)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>preliminary</td></tr><tr><td>S (PROCEDURE SCHEDULED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>registered</td></tr><tr><td>A (SOME RESULTS AVAILABLE)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>unknown</td></tr><tr><td>I (SPECIMEN RECEIVED)</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>preliminary</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 1,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  }],
+  "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-ChemistryResult-ObservationStatus",
+  "version" : "0.3.5",
+  "name" : "VF_ChemistryResult_ObservationStatus",
+  "title" : "ChemistryResult.ObservationStatus to Observation.status",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2024-03-25",
+  "publisher" : "VA Digital Services",
+  "contact" : [{
+    "name" : "VA Digital Services",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://va.gov"
+    }]
+  },
+  {
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "John.Moehrke@va.gov"
+    }]
+  }],
+  "description" : "Map between ChemistryResult.ObservationStatus and FHIR Observation.status code.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "purpose" : "VF_ChemistryResult-ObservationStatus",
+  "group" : [{
+    "target" : "http://hl7.org/fhir/observation-status",
+    "element" : [{
+      "code" : "C",
+      "display" : "CORRECTED RESULTS",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "corrected",
+        "display" : "Corrected",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "F",
+      "display" : "FINAL RESULTS",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "final",
+        "display" : "Final",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "Y",
+      "display" : "NO ORDER ON RECORD",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "unknown",
+        "display" : "Unknown",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "R",
+      "display" : "NOT VERIFIED",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "preliminary",
+        "display" : "Preliminary",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "X",
+      "display" : "ORDER CANCELED",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "cancelled",
+        "display" : "Cancelled",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "O",
+      "display" : "ORDER RECEIVED",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "registered",
+        "display" : "Registered",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "P",
+      "display" : "PRELIMINARY",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "preliminary",
+        "display" : "Preliminary",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "S",
+      "display" : "PROCEDURE SCHEDULED",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "registered",
+        "display" : "Registered",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "A",
+      "display" : "SOME RESULTS AVAILABLE",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "unknown",
+        "display" : "Unknown",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "I",
+      "display" : "SPECIMEN RECEIVED",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "preliminary",
+        "display" : "Preliminary",
+        "equivalence" : "equal"
+      }]
+    }]
+  }]
+}

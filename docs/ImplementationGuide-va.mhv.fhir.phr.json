@@ -14,11 +14,11 @@
     "valueInteger" : 1
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr",
-  "version" : "0.3.4",
+  "version" : "0.3.5",
   "name" : "VAMHVFHIRPHR",
   "title" : "MyHealtheVet PHR FHIR API",
   "status" : "active",
-  "date" : "2024-03-18T14:58:21-05:00",
+  "date" : "2024-03-29T15:35:14-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -55,7 +55,7 @@
     "version" : "5.3.0"
   },
   {
-    "id" : "hl7_fhir_us_core",
+    "id" : "hl7fhiruscore",
     "uri" : "http://fhir.org/packages/hl7.fhir.us.core/ImplementationGuide/hl7.fhir.us.core",
     "packageId" : "hl7.fhir.us.core",
     "version" : "5.0.x"
@@ -228,7 +228,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://va.gov/systems/99VA95.3"
+        "valueString" : "http://va.gov/terminology/vistaDefinedTerms/95.3"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -239,7 +239,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://va.gov/systems/99VA60"
+        "valueString" : "http://va.gov/terminology/vistaDefinedTerms/60"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -250,7 +250,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://va.gov/systems/99VA64"
+        "valueString" : "http://va.gov/terminology/vistaDefinedTerms/64"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -283,7 +283,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://va.gov/systems/99VA61"
+        "valueString" : "http://va.gov/terminology/vistaDefinedTerms/61"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -628,7 +628,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://va.gov/systems/99VA95.3"
+        "valueString" : "http://va.gov/terminology/vistaDefinedTerms/95.3"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -639,7 +639,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://va.gov/systems/99VA60"
+        "valueString" : "http://va.gov/terminology/vistaDefinedTerms/60"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -650,7 +650,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://va.gov/systems/99VA64"
+        "valueString" : "http://va.gov/terminology/vistaDefinedTerms/64"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -683,7 +683,7 @@
       },
       {
         "url" : "value",
-        "valueString" : "http://va.gov/systems/99VA61"
+        "valueString" : "http://va.gov/terminology/vistaDefinedTerms/61"
       }],
       "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
@@ -2885,6 +2885,18 @@
         "valueString" : "ConceptMap"
       }],
       "reference" : {
+        "reference" : "ConceptMap/VF-ChemistryResult-ObservationStatus"
+      },
+      "name" : "Map between ChemistryResult ObservationStatus to FHIR Observation.status codes",
+      "description" : "Map between ChemistryResult.ObservationStatus and FHIR Observation.status code.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ConceptMap"
+      }],
+      "reference" : {
         "reference" : "ConceptMap/VF-VitalsCodes"
       },
       "name" : "Map between Vital Sign ObservationTypeTO.name to Loinc Code",
@@ -5048,7 +5060,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.chTest"
       },
       "name" : "VA MHV PHR CH labTest.chemistryResults",
-      "description" : "A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests.chemistryResults`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n\t- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n- `.subject` must be the patient from the DiagnosticReport\n- `valueInterpretation` -> `.interpretation` \n  - `L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L\n  - 'H' -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H\n- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n- `testIdentifier` -> `.code` -- where LN is Loinc\n- `referenceRange` -> `.referenceRange.text` -- dont try to break out further as there is little use of this value\n- `labCommentEvents` -> `.note.text`\n- value[x] either String or Quantity with units\n- `observationValue` -> `.valueQuantity.value`\n- `observationUnits.unit` -> `.valueQuantity.unit`\n- `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n- `observationUnits.codingSystem` -> `.valueQuantity.system`\n- `performingOrganization` -> `.performer`\n- given this is contained in the DiagnosticReport, then \n  - effective[x] is presumed from the DiagnosticReport\n  - issued is presumed from the DiagnosticReport\n- `specimen` -> specimen\n- `basedOn` -> ServiceRequest",
+      "description" : "A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests.chemistryResults`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n\t- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n- `.subject` must be the patient from the DiagnosticReport\n- `valueInterpretation` -> `.interpretation` \n  - `L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L\n  - 'H' -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H\n- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n- `testIdentifier` -> `.code` -- where LN is Loinc\n- `referenceRange` -> `.referenceRange.text` -- dont try to break out further as there is little use of this value\n- `labCommentEvents` -> `.note.text`\n- value[x] either String or Quantity with units\n- `observationValue` -> `.valueQuantity.value`\n- `observationUnits.unit` -> `.valueQuantity.unit`\n- `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n- `observationUnits.codingSystem` -> `.valueQuantity.system`\n- `performingOrganization` -> `.performer`\n- `labCommentEvents` -> '.note`\n- `effective[x]` is same as the DiagnosticReport\n- `issued` is same as the DiagnosticReport\n- `specimen` = specimen\n- `basedOn` = ServiceRequest\n- `ObservationStatus' -> [concept map translation](ConceptMap-VF-ChemistryResult-ObservationStatus.html) -> `.status`",
       "exampleBoolean" : false
     },
     {
@@ -5060,7 +5072,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.chOrder"
       },
       "name" : "VA MHV PHR CH labTests.orderedTestCode",
-      "description" : "A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.\n\nOne ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.\n- `.subject` must be the patient from the DiagnosticReport\n- code = {labTests.orderedTestCode}\n- status = `unknown` -- as we dont know\n- intent = `order` -- unclear \n- category = SCT#108252007 Laboratory procedure\n- specimen = specimen\n- not populating US-Core must support as we dont have the values\n\t- occurrence[x], authoredOn, requester\n- no other elements are populated",
+      "description" : "A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.\n\nOne ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.\n- `.subject` must be the patient from the DiagnosticReport\n- code = {labTests.orderedTestCode}\n- status = `unknown` -- as we dont know - TODO\n- intent = `order`\n- category = SCT#108252007 Laboratory procedure\n- specimen = specimen\n- not populating US-Core must support as we dont have the values\n\t- occurrence[x], authoredOn\n- no other elements are populated",
       "exampleBoolean" : false
     },
     {
@@ -5156,7 +5168,7 @@
         "reference" : "StructureDefinition/VA.MHV.PHR.labTest"
       },
       "name" : "VA MHV PHR labTest",
-      "description" : "A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.\n\n- This profile is based on US-Core Lab\n- sometimes a contained Specimen is needed",
+      "description" : "A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.\n\n- This profile is based on US-Core Lab",
       "exampleBoolean" : false
     },
     {

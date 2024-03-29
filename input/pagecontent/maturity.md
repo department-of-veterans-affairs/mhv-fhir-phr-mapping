@@ -1,6 +1,6 @@
 ## Maturity Levels
 
-**Note: This page derived off of [FHIR core Maturity Model](http://hl7.org/fhir/versions.html#maturity)**
+**Note: This page derived off of [FHIR core Maturity Model]({{site.data.fhir.path}}versions.html#maturity)**
 
 | Level | [CMM Definition](http://wikipedia.org/wiki/Capability_Maturity_Model) | MM Definition | KBS |
 | ----- | ---------- | -------- | -------- |

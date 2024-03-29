@@ -20,7 +20,6 @@
       <sch:assert test="count(f:imagingStudy) &lt;= 0">imagingStudy: maximum cardinality of 'imagingStudy' is 0</sch:assert>
       <sch:assert test="count(f:media) &lt;= 0">media: maximum cardinality of 'media' is 0</sch:assert>
       <sch:assert test="count(f:conclusionCode) &lt;= 0">conclusionCode: maximum cardinality of 'conclusionCode' is 0</sch:assert>
-      <sch:assert test="count(f:presentedForm) &lt;= 0">presentedForm: maximum cardinality of 'presentedForm' is 0</sch:assert>
     </sch:rule>
   </sch:pattern>
   <sch:pattern>

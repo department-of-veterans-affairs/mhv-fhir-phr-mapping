@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="VF-ChemistryResult-ObservationStatus"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2024-03-25 by VA Digital Services (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, John Moehrke (himself): <a href="mailto:John.Moehrke@va.gov">John.Moehrke@va.gov</a>). </p><div><p>Map between ChemistryResult.ObservationStatus and FHIR Observation.status code.</p>
+</div><br/><p><b>Group 1</b>Mapping from <code>unspecified code system</code> to <a href="http://hl7.org/fhir/R4/codesystem-observation-status.html">ObservationStatus</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>C (CORRECTED RESULTS)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>corrected</td></tr><tr><td>F (FINAL RESULTS)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>final</td></tr><tr><td>Y (NO ORDER ON RECORD)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>unknown</td></tr><tr><td>R (NOT VERIFIED)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>preliminary</td></tr><tr><td>X (ORDER CANCELED)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>cancelled</td></tr><tr><td>O (ORDER RECEIVED)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>registered</td></tr><tr><td>P (PRELIMINARY)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>preliminary</td></tr><tr><td>S (PROCEDURE SCHEDULED)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>registered</td></tr><tr><td>A (SOME RESULTS AVAILABLE)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>unknown</td></tr><tr><td>I (SPECIMEN RECEIVED)</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>preliminary</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-ChemistryResult-ObservationStatus"/>
+  <version value="0.3.5"/>
+  <name value="VF_ChemistryResult_ObservationStatus"/>
+  <title value="ChemistryResult.ObservationStatus to Observation.status"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2024-03-25"/>
+  <publisher value="VA Digital Services"/>
+  <contact>
+    <name value="VA Digital Services"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://va.gov"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="John.Moehrke@va.gov"/>
+    </telecom>
+  </contact>
+  <description value="Map between ChemistryResult.ObservationStatus and FHIR Observation.status code."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="VF_ChemistryResult-ObservationStatus"/>
+  <group>
+    <target value="http://hl7.org/fhir/observation-status"/>
+    <element>
+      <code value="C"/>
+      <display value="CORRECTED RESULTS"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="corrected"/>
+        <display value="Corrected"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="F"/>
+      <display value="FINAL RESULTS"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="final"/>
+        <display value="Final"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="Y"/>
+      <display value="NO ORDER ON RECORD"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="unknown"/>
+        <display value="Unknown"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="R"/>
+      <display value="NOT VERIFIED"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="preliminary"/>
+        <display value="Preliminary"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="X"/>
+      <display value="ORDER CANCELED"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="cancelled"/>
+        <display value="Cancelled"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="O"/>
+      <display value="ORDER RECEIVED"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="registered"/>
+        <display value="Registered"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="P"/>
+      <display value="PRELIMINARY"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="preliminary"/>
+        <display value="Preliminary"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="S"/>
+      <display value="PROCEDURE SCHEDULED"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="registered"/>
+        <display value="Registered"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="A"/>
+      <display value="SOME RESULTS AVAILABLE"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="unknown"/>
+        <display value="Unknown"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="I"/>
+      <display value="SPECIMEN RECEIVED"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="preliminary"/>
+        <display value="Preliminary"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

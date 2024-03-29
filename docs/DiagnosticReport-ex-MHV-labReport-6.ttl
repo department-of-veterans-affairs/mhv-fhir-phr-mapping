@@ -17,7 +17,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Reported</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7009190 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Aug 09, 1999        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: Aug 10, 1999 13:27  Resident: \nDate  completed: Aug 11, 1999        Accession #: SP 99 1804\nSubmitted by: KATHLEEN MARIE WOLNER  Practitioner:KATHLEEN MARIE WOLNER MD\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYP @ 12CM\nBrief Clinical History:\n70 YEAR OLD MALE FOR SCREENING EXAM.  \nOperative Findings:\nSMOOTH BROAD BASED POLYP\nPostoperative Diagnosis:\nPROBABLE BENIGN POLYP\nGross description:\nRECEIVED IN FORMALIN AND LABELED &quot;POLYP&quot;  CONSISTS OF TWO 1 MM FRAGMENTS\nOF PINK TISSUE.  SUBMITTED IN TOTAL IN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Aug 09, 1999)\n|TAB||BLANK(3)|\nDIAGNOSIS:\nPOLYP AT 12 CM. TUBULAR ADENOMA.</p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 11526-1}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Reported</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7009190 (use: USUAL)</td></tr></table><p><b>Report Details</b></p></div>"
   ] ; # 
   fhir:contained ( [
      a fhir:Specimen ;
@@ -28,9 +28,6 @@
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen>
        ] )
      ] ;
-     fhir:identifier ( [
-       fhir:use [ fhir:v "usual" ]
-     ] ) ;
      fhir:accessionIdentifier [
        fhir:use [ fhir:v "usual" ] ;
        fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
@@ -77,9 +74,9 @@
   ] ) ; # 
   fhir:code [
      fhir:coding ( [
-       a loinc:60567-5 ;
+       a loinc:11526-1 ;
        fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "60567-5" ]
+       fhir:code [ fhir:v "11526-1" ]
      ] ) ;
      fhir:text [ fhir:v "LR SURGICAL PATHOLOGY REPORT" ]
   ] ; # 
@@ -95,7 +92,10 @@
   fhir:specimen ( [
      fhir:reference [ fhir:v "#ex-MHV-specimen-6" ]
   ] ) ; # 
-  fhir:conclusion [ fhir:v "Date Spec taken: Aug 09, 1999        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: Aug 10, 1999 13:27  Resident: \nDate  completed: Aug 11, 1999        Accession #: SP 99 1804\nSubmitted by: KATHLEEN MARIE WOLNER  Practitioner:KATHLEEN MARIE WOLNER MD\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYP @ 12CM\nBrief Clinical History:\n70 YEAR OLD MALE FOR SCREENING EXAM.  \nOperative Findings:\nSMOOTH BROAD BASED POLYP\nPostoperative Diagnosis:\nPROBABLE BENIGN POLYP\nGross description:\nRECEIVED IN FORMALIN AND LABELED \"POLYP\"  CONSISTS OF TWO 1 MM FRAGMENTS\nOF PINK TISSUE.  SUBMITTED IN TOTAL IN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Aug 09, 1999)\n|TAB||BLANK(3)|\nDIAGNOSIS:\nPOLYP AT 12 CM. TUBULAR ADENOMA."] . # 
+  fhir:presentedForm ( [
+     fhir:contentType [ fhir:v "text/plain" ] ;
+     fhir:data [ fhir:v "RGF0ZSBTcGVjIHRha2VuOiBBdWcgMDksIDE5OTkgICAgICAgIFBhdGhvbG9naXN0OlNFRVRIQSBTVVJZQVBSQVNBRCBNRApEYXRlIFNwZWMgcmVjJ2Q6IEF1ZyAxMCwgMTk5OSAxMzoyNyAgUmVzaWRlbnQ6IApEYXRlICBjb21wbGV0ZWQ6IEF1ZyAxMSwgMTk5OSAgICAgICAgQWNjZXNzaW9uICM6IFNQIDk5IDE4MDQKU3VibWl0dGVkIGJ5OiBLQVRITEVFTiBNQVJJRSBXT0xORVIgIFByYWN0aXRpb25lcjpLQVRITEVFTiBNQVJJRSBXT0xORVIgTUQKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpTcGVjaW1lbjogClBPTFlQIEAgMTJDTQpCcmllZiBDbGluaWNhbCBIaXN0b3J5Ogo3MCBZRUFSIE9MRCBNQUxFIEZPUiBTQ1JFRU5JTkcgRVhBTS4gIApPcGVyYXRpdmUgRmluZGluZ3M6ClNNT09USCBCUk9BRCBCQVNFRCBQT0xZUApQb3N0b3BlcmF0aXZlIERpYWdub3NpczoKUFJPQkFCTEUgQkVOSUdOIFBPTFlQCkdyb3NzIGRlc2NyaXB0aW9uOgpSRUNFSVZFRCBJTiBGT1JNQUxJTiBBTkQgTEFCRUxFRCAiUE9MWVAiICBDT05TSVNUUyBPRiBUV08gMSBNTSBGUkFHTUVOVFMKT0YgUElOSyBUSVNTVUUuICBTVUJNSVRURUQgSU4gVE9UQUwgSU4gT05FIEJMT0NLLgpNaWNyb3Njb3BpYyBkZXNjcmlwdGlvbjogKERhdGUgU3BlYyB0YWtlbjogQXVnIDA5LCAxOTk5KQp8VEFCfHxCTEFOSygzKXwKRElBR05PU0lTOgpQT0xZUCBBVCAxMiBDTS4gVFVCVUxBUiBBREVOT01BLgo="^^xsd:base64Binary ]
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

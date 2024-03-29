@@ -57,11 +57,11 @@
     </valueCode>
   </extension>
   <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain"/>
-  <version value="0.3.4"/>
+  <version value="0.3.5"/>
   <name value="MHVvitalsPain"/>
   <title value="VA MHV PHR Vital-Signs for PAIN"/>
   <status value="active"/>
-  <date value="2024-03-18T14:58:21-05:00"/>
+  <date value="2024-03-29T15:35:14-05:00"/>
   <publisher value="VA Digital Services"/>
   <contact>
     <name value="VA Digital Services"/>
@@ -85,6 +85,12 @@
     </coding>
   </jurisdiction>
   <fhirVersion value="4.0.1"/>
+  <mapping>
+    <identity value="VitalsPain-Mapping"/>
+    <uri value="MHVvitalsPain"/>
+    <name value="VIA to mhv-fhir-phr"/>
+    <comment value="Informative map to available elements in MHV FHIR API"/>
+  </mapping>
   <mapping>
     <identity value="workflow"/>
     <uri value="http://hl7.org/fhir/workflow"/>
@@ -114,12 +120,6 @@
     <identity value="sct-attr"/>
     <uri value="http://snomed.org/attributebinding"/>
     <name value="SNOMED CT Attribute Binding"/>
-  </mapping>
-  <mapping>
-    <identity value="VitalsPain-Mapping"/>
-    <uri value="MHVvitalsPain"/>
-    <name value="VIA to mhv-fhir-phr"/>
-    <comment value="Informative map to available elements in MHV FHIR API"/>
   </mapping>
   <kind value="resource"/>
   <abstract value="false"/>

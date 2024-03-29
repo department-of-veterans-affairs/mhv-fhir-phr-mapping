@@ -20,11 +20,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunization",
-  "version" : "0.3.4",
+  "version" : "0.3.5",
   "name" : "MHVimmunization",
   "title" : "VA MHV PHR Immunization",
   "status" : "active",
-  "date" : "2024-03-18T14:58:21-05:00",
+  "date" : "2024-03-29T15:35:14-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -49,6 +49,18 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "Immunization-Mapping",
+    "uri" : "ImmunizationTO",
+    "name" : "VIA to mhv-fhir-phr",
+    "comment" : "Informative map to available elements in MHV FHIR API"
+  },
+  {
+    "identity" : "Immunization-Old-Mapping",
+    "uri" : "eVaultPHR",
+    "name" : "eVault-PHR to MHV-PHR",
+    "comment" : "Informative map that includes only the elements available in eVault PHR"
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -72,18 +84,6 @@
     "identity" : "cda",
     "uri" : "http://hl7.org/v3/cda",
     "name" : "CDA (R2)"
-  },
-  {
-    "identity" : "Immunization-Mapping",
-    "uri" : "ImmunizationTO",
-    "name" : "VIA to mhv-fhir-phr",
-    "comment" : "Informative map to available elements in MHV FHIR API"
-  },
-  {
-    "identity" : "Immunization-Old-Mapping",
-    "uri" : "eVaultPHR",
-    "name" : "eVault-PHR to MHV-PHR",
-    "comment" : "Informative map that includes only the elements available in eVault PHR"
   }],
   "kind" : "resource",
   "abstract" : false,

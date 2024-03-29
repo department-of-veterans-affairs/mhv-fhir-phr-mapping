@@ -4,7 +4,7 @@
 - maps to [intoleranceConditions](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd) schema. 
 - [mapping to HDR](StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-hdr-allergy-to-mhv-fhir-phr-intolerancecondition)
 - [Vivian Allergy 120.8](https://vivian.worldvista.org/dox/Global_XkdNUigxMjAuOA==.html)
-- Should be based on US-Core for AllergyIntolerance Resource profile
+- Should be based on [US-Core for AllergyIntolerance Resource profile]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-allergyintolerance.html)
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance` to indicate the intent to be compliant with this profile
 - identifier
   - seems most of the time there is a `intoleranceCondition.recordIdentifier.namespaceId`. this should be used if it is provided
@@ -28,7 +28,7 @@
 - `facilityIdentifier` is where the allergy was first recorded (The VISN number).
   - logical to put this into `.recorder`, but that doesn't support a Organization reference
   - use alternate-reference extension on the recorder, with a Organization holding the facilityIdentifier.
-    - `http://hl7.org/fhir/StructureDefinition/alternate-reference`
+    - `{{site.data.fhir.path}}StructureDefinition/alternate-reference`
   - populate the Organization.name from internal MHV table that is manually managed to hold human readable names given a DNS style identifier that we get in the HDR feed.
   - contained Organization
     - if changed to not contained, in order to support _include, we must define a search parameter against alternate-reference so that can be used in search `_include`.

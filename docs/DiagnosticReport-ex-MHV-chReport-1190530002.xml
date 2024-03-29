@@ -6,7 +6,7 @@
     <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://loinc.org 2345-7}">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 11:11:47-0500</td></tr><tr><td>Reported</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1190530002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://loinc.org 2345-7}">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: USUAL))</td></tr><tr><td>When For</td><td>2019-02-22 11:11:47-0500</td></tr><tr><td>Reported</td><td>2019-02-22 21:12:57-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR</code>/1190530002 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>When For</b></td></tr><tr><td colspan="4"><i>This Observation could not be resolved</i></td></tr></table></div>
   </text>
   <contained>
     <Organization>
@@ -30,7 +30,7 @@
     <Practitioner>
       <id value="ex-MHV-practitioner-59845-VA660"/>
       <identifier>
-        <system value="http://va.gov/systems/99VA4"/>
+        <system value="http://va.gov/terminology/vistaDefinedTerms/4"/>
         <value value="59845-VA660"/>
       </identifier>
       <name>
@@ -82,11 +82,11 @@
       </category>
       <code>
         <coding>
-          <system value="http://va.gov/systems/99VA64"/>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/64"/>
           <code value="84330.0000"/>
         </coding>
         <coding>
-          <system value="http://va.gov/systems/99VA60"/>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/60"/>
           <code value="175"/>
           <display value="GLUCOSE"/>
         </coding>
@@ -126,8 +126,7 @@
           <code value="2345-7"/>
         </coding>
         <coding>
-          <system value="http://va.gov/systems/99VA95.3"/>
-          <version value="2.64"/>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/95.3"/>
           <code value="4665460"/>
         </coding>
         <text value="GLUCOSE"/>
@@ -135,6 +134,7 @@
       <subject>
         <reference value="Patient/ex-MHV-patient-942104"/>
       </subject>
+      <effectiveDateTime value="2019-02-22T21:12:57-05:00"/>
       <performer>
         <reference value="#ex-MHV-organization-660"/>
       </performer>
@@ -165,13 +165,15 @@
           <display value="Plasma"/>
         </coding>
         <coding>
-          <system value="http://va.gov/systems/99VA61"/>
-          <version value="5.2"/>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/61"/>
           <code value="73"/>
           <display value="PLASMA"/>
         </coding>
         <text value="PLASMA"/>
       </type>
+      <request>
+        <reference value="#ex-MHV-chOrder-1190530002a"/>
+      </request>
       <collection>
         <collectedDateTime value="2019-02-22T11:11:47-05:00"/>
       </collection>
@@ -182,7 +184,7 @@
   </extension>
   <identifier>
     <use value="usual"/>
-    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <system value="urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR"/>
     <value value="1190530002"/>
   </identifier>
   <basedOn>

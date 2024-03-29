@@ -29,11 +29,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.condition"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.3.4"] ; # 
+  fhir:version [ fhir:v "0.3.5"] ; # 
   fhir:name [ fhir:v "MHVcondition"] ; # 
   fhir:title [ fhir:v "VA MHV PHR problems"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-03-18T14:58:21-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-03-29T15:35:14-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -57,6 +57,16 @@
   ] ) ; # 
   fhir:fhirVersion [ fhir:v "4.0.1"] ; # 
   fhir:mapping ( [
+     fhir:identity [ fhir:v "Condition-Mapping" ] ;
+     fhir:uri [ fhir:v "ProblemTO"^^xsd:anyURI ] ;
+     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ] ;
+     fhir:comment [ fhir:v "Informative map to available elements in MHV FHIR API" ]
+  ] [
+     fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
+     fhir:uri [ fhir:v "ProblemTO"^^xsd:anyURI ] ;
+     fhir:name [ fhir:v "eVault-PHR to MHV-PHR" ] ;
+     fhir:comment [ fhir:v "Informative map to include only the elements available in eVault PHR" ]
+  ] [
      fhir:identity [ fhir:v "workflow" ] ;
      fhir:uri [ fhir:v "http://hl7.org/fhir/workflow"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "Workflow Pattern" ]
@@ -80,16 +90,6 @@
      fhir:identity [ fhir:v "sct-attr" ] ;
      fhir:uri [ fhir:v "http://snomed.org/attributebinding"^^xsd:anyURI ] ;
      fhir:name [ fhir:v "SNOMED CT Attribute Binding" ]
-  ] [
-     fhir:identity [ fhir:v "Condition-Mapping" ] ;
-     fhir:uri [ fhir:v "ProblemTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "VIA to mhv-fhir-phr" ] ;
-     fhir:comment [ fhir:v "Informative map to available elements in MHV FHIR API" ]
-  ] [
-     fhir:identity [ fhir:v "Condition-Old-Mapping" ] ;
-     fhir:uri [ fhir:v "ProblemTO"^^xsd:anyURI ] ;
-     fhir:name [ fhir:v "eVault-PHR to MHV-PHR" ] ;
-     fhir:comment [ fhir:v "Informative map to include only the elements available in eVault PHR" ]
   ] ) ; # 
   fhir:kind [ fhir:v "resource"] ; # 
   fhir:abstract [ fhir:v "false"^^xsd:boolean] ; # 

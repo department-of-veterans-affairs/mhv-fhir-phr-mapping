@@ -8,8 +8,8 @@
   - note that this mixes labs and images with vital-signs
   - this also indicates some labs as vital-signs: Cholesterol, Blood Sugar, and INR
   - Note that Pulse-Ox is sometimes a vital-sign, such as when taken with a finger sensor by a nurse/doctor; but is also a lab result at times (10226-9 Intravascular Oxygen, etc...).
-- based on [US-Core for Vital-Signs Observation Resource](https://hl7.org/fhir/us/core/STU5.0.1/StructureDefinition-us-core-vital-signs.html)
-  - Blood-Pressure is based off of the Blood-Pressure profile
+- based on [US-Core for Vital-Signs Observation Resource]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-vital-signs.html)
+  - Blood-Pressure is based off of the [US-Core Blood-Pressure profile]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-blood-pressure.html)
 - should have `meta.profile` set to - JIRA
   - General Vital-Signs `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitals`
   - Pain `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain`

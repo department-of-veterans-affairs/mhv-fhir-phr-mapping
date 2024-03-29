@@ -6,7 +6,7 @@
   },
   "text" : {
     "status" : "generated",
-    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 2345-7}\">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104\u00a0(use:\u00a0USUAL))</td></tr><tr><td>When For</td><td>2020-10-29 13:28:45-0500</td></tr><tr><td>Reported</td><td>2020-10-29 13:29:52-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/1103030001\u00a0(use:\u00a0USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table></div>"
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://loinc.org 2345-7}\">GLUCOSE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104\u00a0(use:\u00a0USUAL))</td></tr><tr><td>When For</td><td>2020-10-29 13:28:45-0500</td></tr><tr><td>Reported</td><td>2020-10-29 13:29:52-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR</code>/1103030001\u00a0(use:\u00a0USUAL)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>When For</b></td></tr><tr><td colspan=\"4\"><i>This Observation could not be resolved</i></td></tr></table></div>"
   },
   "contained" : [{
     "resourceType" : "Organization",
@@ -36,7 +36,7 @@
     "resourceType" : "Practitioner",
     "id" : "ex-MHV-practitioner-59845-VA660",
     "identifier" : [{
-      "system" : "http://va.gov/systems/99VA4",
+      "system" : "http://va.gov/terminology/vistaDefinedTerms/4",
       "value" : "59845-VA660"
     }],
     "name" : [{
@@ -86,11 +86,11 @@
     }],
     "code" : {
       "coding" : [{
-        "system" : "http://va.gov/systems/99VA64",
+        "system" : "http://va.gov/terminology/vistaDefinedTerms/64",
         "code" : "84330.0000"
       },
       {
-        "system" : "http://va.gov/systems/99VA60",
+        "system" : "http://va.gov/terminology/vistaDefinedTerms/60",
         "code" : "175",
         "display" : "GLUCOSE"
       }],
@@ -129,8 +129,7 @@
         "code" : "2345-7"
       },
       {
-        "system" : "http://va.gov/systems/99VA95.3",
-        "version" : "2.68",
+        "system" : "http://va.gov/terminology/vistaDefinedTerms/95.3",
         "code" : "4665460"
       }],
       "text" : "GLUCOSE"
@@ -138,6 +137,7 @@
     "subject" : {
       "reference" : "Patient/ex-MHV-patient-942104"
     },
+    "effectiveDateTime" : "2020-10-29T13:29:52-05:00",
     "performer" : [{
       "reference" : "#ex-MHV-organization-660"
     }],
@@ -167,13 +167,15 @@
         "display" : "Plasma"
       },
       {
-        "system" : "http://va.gov/systems/99VA61",
-        "version" : "5.2",
+        "system" : "http://va.gov/terminology/vistaDefinedTerms/61",
         "code" : "73",
         "display" : "PLASMA"
       }],
       "text" : "PLASMA"
     },
+    "request" : [{
+      "reference" : "#ex-MHV-chOrder-1103030001a"
+    }],
     "collection" : {
       "collectedDateTime" : "2020-10-29T13:28:45-05:00"
     }
@@ -184,7 +186,7 @@
   }],
   "identifier" : [{
     "use" : "usual",
-    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "system" : "urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR",
     "value" : "1103030001"
   }],
   "basedOn" : [{

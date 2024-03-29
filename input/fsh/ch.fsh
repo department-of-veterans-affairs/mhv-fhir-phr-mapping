@@ -68,7 +68,7 @@ Title: "VA MHV PHR HDR Chem-Hem Report"
 Description: """
 Profile on DiagnosticReport for Chem-Hem lab report.
 """
-* ^extension[$fmm].valueInteger = 1
+* ^extension[$fmm].valueInteger = 3
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"
@@ -78,6 +78,7 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 * identifier[Rid].use = #usual
 * identifier[Rid].system ^short = "DNS universalIdType: `urn:fdc:` + {universalID} + `:` + {namespaceId}"
 * identifier[Rid].value ^short = "{labTestPromises.recordIdentifier.identity}"
+* status MS
 * subject 1..1
 * code.text 1..1 MS
 * code.text = "CH"
@@ -124,7 +125,7 @@ Title: "HDR to mhv-fhir-phr"
 * -> "HDR labTestPromises"
 * category -> "`LAB`"
 * category -> "all codes from contained labTests"
-* status -> "`final`"
+* status -> "`final` or `corrected` or `preliminary or `cancelled`"
 * subject -> "patient"
 * effectiveDateTime -> "ConvertDate(labTestPromises.specimen.specimenTakenDate)"
 * issued -> "ConvertDate(labTestPromises.reportCompleDate.literal)"

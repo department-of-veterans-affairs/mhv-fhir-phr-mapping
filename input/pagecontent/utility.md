@@ -71,14 +71,14 @@ see [ConvertDate](ConvertDate.html)
 
 Most of the historic data just uses strings. For MVP we are not converting codes, except for some very specific ones. This is because MHV is not scoped to be improving the quality of the data, and the use of the MHV FHIR API is driven by display use. Thus codes are not important.
 
-Beyond MVP we could look to add a method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a [FHIR ConceptMap](http://hl7.org/fhir/conceptmap.html) resource, thus making maintaining it easy.
+Beyond MVP we could look to add a method to convert these enum or strings to a standards based code like LOINC, SNOMED, CVX, NDC, or other. These utilities can be based on a [FHIR ConceptMap]({{site.data.fhir.path}}conceptmap.html) resource, thus making maintaining it easy.
 
 ##### Formal code systems of interest
 
 - SCT = `http://snomed.info/sct`
 - UCUM = `http://unitsofmeasure.org`
 - LOINC = `http://loinc.org`
-- ICD = `http://hl7.org/fhir/sid/icd-9-cm`
+- ICD = `{{site.data.fhir.path}}sid/icd-9-cm`
 - CPT = `http://www.ama-assn.org/go/cpt`
 
 ##### VA specific code systems

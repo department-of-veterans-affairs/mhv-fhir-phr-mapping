@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR Allergy and Intolerance - MyHealtheVet PHR FHIR API v0.3.4</title>
+    <title>VA MHV PHR Allergy and Intolerance - MyHealtheVet PHR FHIR API v0.3.5</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.4 - trial-use
+            <span style="display:inline-block;">0.3.5 - trial-use
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.4) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -272,7 +272,7 @@
       <td colspan="4"><i>Official URL</i>: <span class="copy-text">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance<button title="Click to copy URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance"/></span>
       </td>
       <td><i>Version</i>:
-      <span class="copy-text">0.3.4<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.3.4"/></span>
+      <span class="copy-text">0.3.5<button title="Click to copy versioned URL" class="btn-copy" data-clipboard-text="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance|0.3.5"/></span>
       </td>
     </tr>
 
@@ -1309,7 +1309,7 @@ Summary
   <li>maps to <a href="https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/blob/development/src/main/resources/xsd/templates/MHVIntoleranceConditionRead40011/template/MHVIntoleranceConditionRead40011.xsd">intoleranceConditions</a> schema.</li>
   <li><a href="StructureDefinition-VA.MHV.PHR.allergyIntolerance-mappings.html#mappings-for-hdr-allergy-to-mhv-fhir-phr-intolerancecondition">mapping to HDR</a></li>
   <li><a href="https://vivian.worldvista.org/dox/Global_XkdNUigxMjAuOA==.html">Vivian Allergy 120.8</a></li>
-  <li>Should be based on US-Core for AllergyIntolerance Resource profile</li>
+  <li>Should be based on <a href="http://fhir.org/packages/hl7.fhir.us.core/StructureDefinition-us-core-allergyintolerance.html">US-Core for AllergyIntolerance Resource profile</a></li>
   <li>should have <code class="language-plaintext highlighter-rouge">meta.profile</code> set to <code class="language-plaintext highlighter-rouge">https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.allergyIntolerance</code> to indicate the intent to be compliant with this profile</li>
   <li>identifier
     <ul>
@@ -1350,7 +1350,7 @@ Summary
       <li>logical to put this into <code class="language-plaintext highlighter-rouge">.recorder</code>, but that doesn’t support a Organization reference</li>
       <li>use alternate-reference extension on the recorder, with a Organization holding the facilityIdentifier.
         <ul>
-          <li><code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/StructureDefinition/alternate-reference</code></li>
+          <li><code class="language-plaintext highlighter-rouge">http://hl7.org/fhir/R4/StructureDefinition/alternate-reference</code></li>
         </ul>
       </li>
       <li>populate the Organization.name from internal MHV table that is manually managed to hold human readable names given a DNS style identifier that we get in the HDR feed.</li>
@@ -1443,7 +1443,7 @@ Summary
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 18, 2024 14:58-0500">2024-03-18</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

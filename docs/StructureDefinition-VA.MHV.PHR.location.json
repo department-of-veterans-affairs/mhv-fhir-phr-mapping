@@ -20,11 +20,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location",
-  "version" : "0.3.4",
+  "version" : "0.3.5",
   "name" : "MHVlocation",
   "title" : "VA MHV PHR Location",
   "status" : "active",
-  "date" : "2024-03-18T14:58:21-05:00",
+  "date" : "2024-03-29T15:35:14-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -49,6 +49,11 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "Location-Mapping",
+    "uri" : "HospitalLocationTO",
+    "name" : "VIA to mhv-fhir-phr"
+  },
+  {
     "identity" : "rim",
     "uri" : "http://hl7.org/v3",
     "name" : "RIM Mapping"
@@ -57,11 +62,6 @@
     "identity" : "w5",
     "uri" : "http://hl7.org/fhir/fivews",
     "name" : "FiveWs Pattern Mapping"
-  },
-  {
-    "identity" : "Location-Mapping",
-    "uri" : "HospitalLocationTO",
-    "name" : "VIA to mhv-fhir-phr"
   }],
   "kind" : "resource",
   "abstract" : false,

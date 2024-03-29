@@ -13,6 +13,18 @@
       "ValueSet-AllergyCategoryVS.html" : "Subset of allergy intolerance category"
     },
     {
+      "url" : "http://hl7.org/fhir/observation-status",
+      "version" : "4.0.1",
+      "status" : "active",
+      "name" : "ObservationStatus",
+      "title" : "ObservationStatus",
+      "description" : "Codes providing the status of an observation.",
+      "oids" : ["2.16.840.1.113883.4.642.4.401"],
+      "uses" : {
+      },
+      "ConceptMap-VF-ChemistryResult-ObservationStatus.html" : "ChemistryResult.ObservationStatus to Observation.status"
+    },
+    {
       "url" : "http://loinc.org",
       "version" : "3.1.0",
       "status" : "active",
@@ -22,9 +34,9 @@
       "oids" : ["2.16.840.1.113883.6.1"],
       "uses" : {
       },
-      "ConceptMap-VF-VitalsCodes.html" : "Vital Sign ObservationTypeTO.name to Loinc Code",
-      "ValueSet-LabReportVS.html" : "Known Lab Report types",
       "ValueSet-DocumentReferenceTypeVS.html" : "Known DocumentReference types",
+      "ValueSet-LabReportVS.html" : "Known Lab Report types",
+      "ConceptMap-VF-VitalsCodes.html" : "Vital Sign ObservationTypeTO.name to Loinc Code",
       "ValueSet-NoteTypeVS.html" : "Known Note types"
     },
     {
@@ -39,9 +51,9 @@
       },
       "ConceptMap-VF-VitalsSite.html" : "Vitals Site used to SNOMED code",
       "ConceptMap-VF-VitalsLaterality.html" : "Vitals Laterality used to SNOMED code",
+      "ConceptMap-VF-VitalsPosition.html" : "Vitals Position used to SNOMED code",
       "ConceptMap-VF-VitalsDevice.html" : "Vitals Device used to SNOMED code",
-      "ConceptMap-VF-VitalsMethod.html" : "Vitals Method used to SNOMED code",
-      "ConceptMap-VF-VitalsPosition.html" : "Vitals Position used to SNOMED code"
+      "ConceptMap-VF-VitalsMethod.html" : "Vitals Method used to SNOMED code"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
@@ -78,12 +90,12 @@
       "uses" : {
       },
       "ConceptMap-LabUcumCodes.html" : "Mapping from Vista used lab units string to formal UCUM codes",
-      "ConceptMap-VF-VitalsUnits.html" : "Vitals qualifier Units used",
-      "ConceptMap-DrugUcumCodes.html" : "Mapping from Vista used drug units string to formal UCUM codes"
+      "ConceptMap-DrugUcumCodes.html" : "Mapping from Vista used drug units string to formal UCUM codes",
+      "ConceptMap-VF-VitalsUnits.html" : "Vitals qualifier Units used"
     },
     {
       "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS",
-      "version" : "0.3.4",
+      "version" : "0.3.5",
       "status" : "active",
       "name" : "AllergyObservedHistoricCS",
       "title" : "Allergy Observed vs Historic CodeSystem",

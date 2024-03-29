@@ -43,7 +43,7 @@ Title: "VIA to mhv-fhir-phr"
 * content.attachment.title -> "ClinicalProcedureTO.name"
 * type.coding -> "LOINC#8601-7"
 * context.related -> "GetLocation(ClinicalProcedureTO.facility.sitecode)"
-* content.attachment.contentType -> "`text`"
+* content.attachment.contentType -> "`text/plain`"
 * content.attachment.data -> "ClinicalProcedureTO.report"
 
 /*

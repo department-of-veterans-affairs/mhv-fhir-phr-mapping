@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR HDR Chem-Hem Report - Mappings - MyHealtheVet PHR FHIR API v0.3.4</title>
+    <title>VA MHV PHR HDR Chem-Hem Report - Mappings - MyHealtheVet PHR FHIR API v0.3.5</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.4 - trial-use
+            <span style="display:inline-block;">0.3.5 - trial-use
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.4) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -269,7 +269,7 @@
       </td>
 
       <td>
-        <a href="maturity.html">Maturity Level</a>: 1
+        <a href="maturity.html">Maturity Level</a>: 3
         
       </td>
 
@@ -284,7 +284,23 @@
 
 
 
-  <a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
+  <a name="CH-Mapping-labTestPromises"> </a><h3>Mappings for HDR to mhv-fhir-phr (labTestPromises)</h3><table class="grid">
+ <tr><td colspan="3"><b>MHVchReport</b></td></tr>
+ <tr><td>DiagnosticReport</td><td>HDR labTestPromises</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;extension (note)</td><td>labTestPromises.labCommentEvents.comments</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>Contained ServiceRequest (labTestPromises.orderedTestCode)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final` or `corrected` or `preliminary or `cancelled`</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`LAB`, all codes from contained labTests</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>`CH`, no coding</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>ConvertDate(labTestPromises.specimen.specimenTakenDate)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>ConvertDate(labTestPromises.reportCompleDate.literal)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetOrganization(labTestPromises.recordSource)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Contained Specimen (labTestPromises.specimen)</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>Contained Observation(labTestPromises.labTests)</td> </tr>
+</table>
+<a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVchReport</b></td></tr>
  <tr><td>DiagnosticReport</td><td>Event</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Event.identifier</td> </tr>
@@ -313,7 +329,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>OBR-24</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;category (LaboratorySlice)</td><td>OBR-24</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>OBR-4 (HL7 v2 doesn't provide an easy way to indicate both the ordered test and the performed panel)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>C*E.1-8, C*E.10-22</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>C*E.9. But note many systems use C*E.2 for this</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>PID-3 (no HL7 v2 mapping for Group or Device)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>OBR-7</td> </tr>
@@ -346,7 +361,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>code</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;id</td><td>n/a</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension</td><td>n/a</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding</td><td>union(., ./translation)</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>./originalText[mediaType/code=&quot;text/plain&quot;]/data</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>participation[typeCode=SBJ]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x]</td><td>effectiveTime</td> </tr>
@@ -370,21 +384,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>FiveWs.done[x]</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>FiveWs.recorded</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>FiveWs.actor</td> </tr>
-</table>
-<a name="CH-Mapping-labTestPromises"> </a><h3>Mappings for HDR to mhv-fhir-phr (labTestPromises)</h3><table class="grid">
- <tr><td colspan="3"><b>MHVchReport</b></td></tr>
- <tr><td>DiagnosticReport</td><td>HDR labTestPromises</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;extension (note)</td><td>labTestPromises.labCommentEvents.comments</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;basedOn</td><td>Contained ServiceRequest (labTestPromises.orderedTestCode)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final`</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`LAB`, all codes from contained labTests</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td>labTestPromises.labSubscript</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>ConvertDate(labTestPromises.specimen.specimenTakenDate)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;issued</td><td>ConvertDate(labTestPromises.reportCompleDate.literal)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>GetOrganization(labTestPromises.recordSource)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;specimen</td><td>Contained Specimen (labTestPromises.specimen)</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;result</td><td>Contained Observation(labTestPromises.labTests)</td> </tr>
 </table>
 
 
@@ -461,7 +460,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 18, 2024 14:58-0500">2024-03-18</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

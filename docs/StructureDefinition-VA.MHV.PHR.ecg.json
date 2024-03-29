@@ -20,11 +20,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.ecg",
-  "version" : "0.3.4",
+  "version" : "0.3.5",
   "name" : "MHVecg",
   "title" : "VA MHV PHR ECG",
   "status" : "active",
-  "date" : "2024-03-18T14:58:21-05:00",
+  "date" : "2024-03-29T15:35:14-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -49,6 +49,11 @@
   }],
   "fhirVersion" : "4.0.1",
   "mapping" : [{
+    "identity" : "Ecg-Mapping",
+    "uri" : "ClinicalProcedureTO",
+    "name" : "VIA to mhv-fhir-phr"
+  },
+  {
     "identity" : "workflow",
     "uri" : "http://hl7.org/fhir/workflow",
     "name" : "Workflow Pattern"
@@ -82,11 +87,6 @@
     "identity" : "xds",
     "uri" : "http://ihe.net/xds",
     "name" : "XDS metadata equivalent"
-  },
-  {
-    "identity" : "Ecg-Mapping",
-    "uri" : "ClinicalProcedureTO",
-    "name" : "VIA to mhv-fhir-phr"
   }],
   "kind" : "resource",
   "abstract" : false,
@@ -3031,7 +3031,7 @@
       },
       {
         "identity" : "Ecg-Mapping",
-        "map" : "`text`"
+        "map" : "`text/plain`"
       }]
     },
     {
@@ -3965,7 +3965,7 @@
       "path" : "DocumentReference.content.attachment.contentType",
       "mapping" : [{
         "identity" : "Ecg-Mapping",
-        "map" : "`text`"
+        "map" : "`text/plain`"
       }]
     },
     {

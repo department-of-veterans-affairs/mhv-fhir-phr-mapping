@@ -17,7 +17,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Reported</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7029487 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: May 12, 1997        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: May 12, 1997 14:00  Resident: \nDate  completed: May 13, 1997        Accession #: SP 97 1099\nSubmitted by: DEBRA K LATTA MD       Practitioner:DEBRA K LATTA\n-------------------------------------------------------------------------------\nSpecimen: \nBONE FRAGMENTS, LEFT FOOT</p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 11526-1}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Reported</td><td>1997-05-14 09:54:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7029487 (use: USUAL)</td></tr></table><p><b>Report Details</b></p></div>"
   ] ; # 
   fhir:contained ( [
      a fhir:Specimen ;
@@ -28,9 +28,6 @@
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen>
        ] )
      ] ;
-     fhir:identifier ( [
-       fhir:use [ fhir:v "usual" ]
-     ] ) ;
      fhir:accessionIdentifier [
        fhir:use [ fhir:v "usual" ] ;
        fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
@@ -77,9 +74,9 @@
   ] ) ; # 
   fhir:code [
      fhir:coding ( [
-       a loinc:60567-5 ;
+       a loinc:11526-1 ;
        fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "60567-5" ]
+       fhir:code [ fhir:v "11526-1" ]
      ] ) ;
      fhir:text [ fhir:v "LR SURGICAL PATHOLOGY REPORT" ]
   ] ; # 
@@ -95,7 +92,10 @@
   fhir:specimen ( [
      fhir:reference [ fhir:v "#ex-MHV-specimen-8" ]
   ] ) ; # 
-  fhir:conclusion [ fhir:v "Date Spec taken: May 12, 1997        Pathologist:SEETHA SURYAPRASAD MD\nDate Spec rec'd: May 12, 1997 14:00  Resident: \nDate  completed: May 13, 1997        Accession #: SP 97 1099\nSubmitted by: DEBRA K LATTA MD       Practitioner:DEBRA K LATTA\n-------------------------------------------------------------------------------\nSpecimen: \nBONE FRAGMENTS, LEFT FOOT"] . # 
+  fhir:presentedForm ( [
+     fhir:contentType [ fhir:v "text/plain" ] ;
+     fhir:data [ fhir:v "RGF0ZSBTcGVjIHRha2VuOiBNYXkgMTIsIDE5OTcgICAgICAgIFBhdGhvbG9naXN0OlNFRVRIQSBTVVJZQVBSQVNBRCBNRApEYXRlIFNwZWMgcmVjJ2Q6IE1heSAxMiwgMTk5NyAxNDowMCAgUmVzaWRlbnQ6IApEYXRlICBjb21wbGV0ZWQ6IE1heSAxMywgMTk5NyAgICAgICAgQWNjZXNzaW9uICM6IFNQIDk3IDEwOTkKU3VibWl0dGVkIGJ5OiBERUJSQSBLIExBVFRBIE1EICAgICAgIFByYWN0aXRpb25lcjpERUJSQSBLIExBVFRBCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KU3BlY2ltZW46IApCT05FIEZSQUdNRU5UUywgTEVGVCBGT09UCg=="^^xsd:base64Binary ]
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

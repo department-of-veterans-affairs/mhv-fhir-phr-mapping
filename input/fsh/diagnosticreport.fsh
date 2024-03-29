@@ -38,10 +38,10 @@ This defines the use for Chem-Hem and
 * basedOn 1..*
 * basedOn ^type.aggregation = #contained
 * basedOn only Reference(MHVchOrder)
+* presentedForm MS
 * encounter 0..0
 * resultsInterpreter 0..0
 * imagingStudy 0..0
 * media 0..0
 * conclusionCode 0..0
-* presentedForm 0..0
 

@@ -17,7 +17,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 60567-5}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Reported</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7009075 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp;amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED.</p></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 11526-1}\">LR SURGICAL PATHOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Reported</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7009075 (use: USUAL)</td></tr></table><p><b>Report Details</b></p></div>"
   ] ; # 
   fhir:contained ( [
      a fhir:Specimen ;
@@ -28,9 +28,6 @@
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen>
        ] )
      ] ;
-     fhir:identifier ( [
-       fhir:use [ fhir:v "usual" ]
-     ] ) ;
      fhir:accessionIdentifier [
        fhir:use [ fhir:v "usual" ] ;
        fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
@@ -77,9 +74,9 @@
   ] ) ; # 
   fhir:code [
      fhir:coding ( [
-       a loinc:60567-5 ;
+       a loinc:11526-1 ;
        fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
-       fhir:code [ fhir:v "60567-5" ]
+       fhir:code [ fhir:v "11526-1" ]
      ] ) ;
      fhir:text [ fhir:v "LR SURGICAL PATHOLOGY REPORT" ]
   ] ; # 
@@ -95,7 +92,10 @@
   fhir:specimen ( [
      fhir:reference [ fhir:v "#ex-MHV-specimen-5" ]
   ] ) ; # 
-  fhir:conclusion [ fhir:v "Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD\nDate Spec rec'd: Sep 24, 1999 13:46  Resident: \nDate  completed: Sep 27, 1999        Accession #: SP 99 2207\nSubmitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF\n-------------------------------------------------------------------------------\nSpecimen: \nPOLYPS (A) CECAL\n       (B) PROXIMAL ASCENDING\n       (C) RECTAL\nBrief Clinical History:\nCOLON POLYPS PER FLEX SIG\nPreoperative Diagnosis:\nCOLON POLYPS\nOperative Findings:\n|TAB||NOWRAP|\n1. CECAL POLYPS X 2\n2. ASCENDING COLON POLYP\n3. RECTAL POLYP\nPostoperative Diagnosis:\nSAME\nGross description:\n|TAB||NOWRAP|\nSPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE\nGREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN\nONE BLOCK.\nSPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE\nTWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED\nENTIRELY IN ONE BLOCK.\nSPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE\nTISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY\nIN ONE BLOCK.\nMicroscopic description: (Date Spec taken: Sep 24, 1999)\n|TAB||BLANK(3)|\n|TAB||NOWRAP|\nDIAGNOSIS:\nA) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)\nB &amp; C)\nPROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE\nNOTE)\n\nNOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING\nDIFFICULTY IN EVALUATION OF LESION.\nDR. YOUSUF WAS NOTIFIED."] . # 
+  fhir:presentedForm ( [
+     fhir:contentType [ fhir:v "text/plain" ] ;
+     fhir:data [ fhir:v "RGF0ZSBTcGVjIHRha2VuOiBTZXAgMjQsIDE5OTkgICAgICAgIFBhdGhvbG9naXN0OkpBWkJJRUggTU9FWlpJIE1ECkRhdGUgU3BlYyByZWMnZDogU2VwIDI0LCAxOTk5IDEzOjQ2ICBSZXNpZGVudDogCkRhdGUgIGNvbXBsZXRlZDogU2VwIDI3LCAxOTk5ICAgICAgICBBY2Nlc3Npb24gIzogU1AgOTkgMjIwNwpTdWJtaXR0ZWQgYnk6IEtIVVJTSElEIFlPVVNVRiBNRCAgICAgUHJhY3RpdGlvbmVyOktIVVJTSElEIFlPVVNVRgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClNwZWNpbWVuOiAKUE9MWVBTIChBKSBDRUNBTAogICAgICAgKEIpIFBST1hJTUFMIEFTQ0VORElORwogICAgICAgKEMpIFJFQ1RBTApCcmllZiBDbGluaWNhbCBIaXN0b3J5OgpDT0xPTiBQT0xZUFMgUEVSIEZMRVggU0lHClByZW9wZXJhdGl2ZSBEaWFnbm9zaXM6CkNPTE9OIFBPTFlQUwpPcGVyYXRpdmUgRmluZGluZ3M6CnxUQUJ8fE5PV1JBUHwKMS4gQ0VDQUwgUE9MWVBTIFggMgoyLiBBU0NFTkRJTkcgQ09MT04gUE9MWVAKMy4gUkVDVEFMIFBPTFlQClBvc3RvcGVyYXRpdmUgRGlhZ25vc2lzOgpTQU1FCkdyb3NzIGRlc2NyaXB0aW9uOgp8VEFCfHxOT1dSQVB8ClNQRUNJTUVOIChBKSBMQUJFTEVEIENFQ0FMIFBPTFlQIFggMi4gIFJFQ0VJVkVEIElOIEZPUk1BTElOIElTIE9ORSBQQUxFCkdSRVkgVElTU1VFIEZSQUdNRU5UIE1FQVNVUklORyAwLjQgQ00gSU4gRElBTUVURVIuICBFTUJFRERFRCBFTlRJUkVMWSBJTgpPTkUgQkxPQ0suClNQRUNJTUVOIChCKSBMQUJFTEVEIFBST1hJTUFMIEFTQ0VORElORyBDT0xPTi4gIFJFQ0VJVkVEIElOIEZPUk1BTElOIEFSRQpUV08gUEFMRSBCUk9XTiBUSVNTVUUgRlJBR01FTlRTIE1FQVNVUklORyAwLjMgQ00gSU4gQUdHUkVHQVRFLiAgRU1CRURERUQKRU5USVJFTFkgSU4gT05FIEJMT0NLLgpTUEVDSU1FTiAoQykgTEFCRUxFRCBSRUNUQUwgUE9MWVAuICBSRUNFSVZFRCBJTiBGT1JNQUxJTiBBUkUgVEhSRUUgTUlOVVRFClRJU1NVRSBGUkFHTUVOVFMgTUVBU1VSSU5HIDAuMyBDTSBJTiBBR0dSRUdBVEUuICBFTUJFRERFRCBFTlRJUkVMWQpJTiBPTkUgQkxPQ0suCk1pY3Jvc2NvcGljIGRlc2NyaXB0aW9uOiAoRGF0ZSBTcGVjIHRha2VuOiBTZXAgMjQsIDE5OTkpCnxUQUJ8fEJMQU5LKDMpfAp8VEFCfHxOT1dSQVB8CkRJQUdOT1NJUzoKQSkgQ0VDQUwgUE9MWVA6IEhZUEVSUExBU1RJQyBQT0xZUC4gIChTRUUgTk9URSkKQiAmYW1wOyBDKQpQUk9YSU1BTCBBU0NFTkRJTkcgQ09MT04gQU5EIFJFQ1RBTCBQT0xZUFM6IFRVQlVMQVIgQURFTk9NQVMuIChTRUUKTk9URSkKIApOT1RFOiBDT0FHVUxBVElPTiBBUlRFRkFDVCBBTkQgUE9PUiBUSVNTVUUgUFJFU0VSVkFUSU9OIElTIE5PVEVEIENBVVNJTkcKRElGRklDVUxUWSBJTiBFVkFMVUFUSU9OIE9GIExFU0lPTi4KRFIuIFlPVVNVRiBXQVMgTk9USUZJRUQuCg=="^^xsd:base64Binary ]
+  ] ) . # 
 
 # -------------------------------------------------------------------------------------
 

@@ -1,7 +1,7 @@
 
 This section is focused on use of the FHIR API. The FHIR API is made up of the data that is mapped. Thus the [Vista Mapping](background.html) is not critical but may be useful background.
 
-All MHV profiles are based on [HL7 FHIR US-Core](http://hl7.org/fhir/us/core/STU5.0.1/index.html) implementation guide, which provides guidance to the USA marketplace that VHA participates within.  Deeper explanation is provided in the US-Core specification.
+All MHV profiles are based on [HL7 FHIR US-Core]({{site.data.fhir.hl7fhiruscore}}/index.html) implementation guide, which provides guidance to the USA marketplace that VHA participates within.  Deeper explanation is provided in the US-Core specification.
 
 The MHV FHIR Server would have a similar [CapabilityStatement](CapabilityStatement-MHVcapabilities.html).
 

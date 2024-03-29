@@ -136,7 +136,7 @@ General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes) Mapping 
 - Eventually this same API would support data from Cerner. Thus the same API providing comprehensive data from Vista and/or Cerner where ever it is.
 - Provenance -- track where the data has come from, and if from multiple places track all.
 - Grahame - Intermediaries White Paper -- https://confluence.hl7.org/display/FHIR/Intermediaries+White+Paper
-- HL7 FAST - Exchange Routing -- https://hl7.org/fhir/us/exchange-routing/  
+- HL7 FAST - Exchange Routing -- {{site.data.fhir.path}}us/exchange-routing/  
 
 unknown (FHIR supports the following topics but unclear if this data exists in PHR)
 
@@ -180,18 +180,18 @@ General Pattern
 Before Production use there must be a permanent solution. The solution needs address some update problems (e.g. entered-in-error).  The following are potential candidates
 
 1. **Index-Update-and-Delete**: This model:
-   1. pulls current FHIR resource `.identifier` values (use `_elements` [parameter](https://hl7.org/fhir/search.html#elements) to limit results to just identifiers, id),
+   1. pulls current FHIR resource `.identifier` values (use `_elements` [parameter]({{site.data.fhir.path}}search.html#elements) to limit results to just identifiers, id),
    2. When updating the new VIA feed data, remember the  `.identifier` that were refreshed.
    3. At the end, we can know which `.identifier` values were not updated. (most of the time there will be no unrefreshed data)
    4. We can `delete` those that were not updated
    5. -- Note: Does not require moving to new HAPI Server.
 2. **Index-Update-and-Expunge**: This model:
-   1. pulls current FHIR resource `.identifier` values (use `_elements` [parameter](https://hl7.org/fhir/search.html#elements) to limit results to just identifiers, id, status),
+   1. pulls current FHIR resource `.identifier` values (use `_elements` [parameter]({{site.data.fhir.path}}search.html#elements) to limit results to just identifiers, id, status),
    2. When updating the new VIA feed data, remember the  `.identifier` that were refreshed.
    3. At the end, we can know which `.identifier` values were not updated. (most of the time there will be no unrefreshed data)
    4. We can `patch` those that were not updated, by `.id`, status to `entered-in-error`,
    5. -- Note: Patch is not supported in our current HAPI server.
-3. **Update-and-Expunge**: This model is made available with an updated HAPI Server (6.10.0) that has the ability to disable history. However with this version we can't use Wipe-and-Replace as that will result in new id values being assigned at each refresh. So Update-and-Expunge is designed. Each VIA feed we convert to FHIR and request an update, but the HAPI server is smart enough to notice that nothing changed so it will not update the meta.lastUpdated. So we will add to our update the use of the  `http://hl7.org/fhir/StructureDefinition/lastSourceSync` extension, with todays date/time (now). This will force an update. Thus after we have fully processed the VIA feed, we can then look for entries older than now that are still active. This will most of the time return an empty set, but if it does return resources, we will change them to entered-in-error and update them.
+3. **Update-and-Expunge**: This model is made available with an updated HAPI Server (6.10.0) that has the ability to disable history. However with this version we can't use Wipe-and-Replace as that will result in new id values being assigned at each refresh. So Update-and-Expunge is designed. Each VIA feed we convert to FHIR and request an update, but the HAPI server is smart enough to notice that nothing changed so it will not update the meta.lastUpdated. So we will add to our update the use of the  `{{site.data.fhir.path}}StructureDefinition/lastSourceSync` extension, with todays date/time (now). This will force an update. Thus after we have fully processed the VIA feed, we can then look for entries older than now that are still active. This will most of the time return an empty set, but if it does return resources, we will change them to entered-in-error and update them.
 4. **Wipe-and-Replace**: Delete the patient's specific Resource (e.g. delete all the Immunizations for this patient) and write using update current data from the VIA refresh -- similar to eVault PHR today. The HAPI server notices an update, by business identifier, of a previously deleted resource, so it brings it back to non-deleted. Thus after a VIA refresh, only current resources are not-deleted. The drawback is that this keeps historic versions, with two versions per refresh, and _lastUpdated is always the refresh time. Also, the ones removed are not marked as entered-in-error. -- **January 2024, decided to abandon this as the database fills to fast with history, and we don't need this history**
 5. Get VIA updated
 6. Get VDIF to expose their data

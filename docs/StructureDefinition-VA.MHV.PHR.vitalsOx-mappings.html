@@ -7,7 +7,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>VA MHV PHR Pulse Oximetry Vital-Signs - Mappings - MyHealtheVet PHR FHIR API v0.3.4</title>
+    <title>VA MHV PHR Pulse Oximetry Vital-Signs - Mappings - MyHealtheVet PHR FHIR API v0.3.5</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -61,7 +61,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.4 - trial-use
+            <span style="display:inline-block;">0.3.5 - trial-use
 
 
 
@@ -188,7 +188,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 5" class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.4) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   
 
 
@@ -284,7 +284,47 @@
 
 
 
-  <a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
+  <a name="VitalsOx-Mapping"> </a><h3>Mappings for VIA to mhv-fhir-phr (VitalSignTO)</h3><p>Informative map to available elements in MHV FHIR API</p><table class="grid">
+ <tr><td colspan="3"><b>MHVvitalsOx</b></td></tr>
+ <tr><td>Observation</td><td>VitalSignTO</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {VitalSignTO.type.id}</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final` if not `entered-in-error`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (PulseOx)</td><td>LOINC 59408-5</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (O2Sat)</td><td>LOINC 2708-6</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.type.name</td><td><p>VITAL_TYPE - 120.5-.03 VITAL TYPE</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td><td><p>PATIENT - 120.5-.02 PATIENT</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>VitalSignTO.timestamp</td><td><p>DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>contained VitalSignTO.recorder, contained VitalSignTO.observer</td><td><p>120.5-.06 ENTERED BY</p>
+, </td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (site)</td><td>Location(VitalSignTO.location)</td><td><p>120.5-.05 HOSPITAL LOCATION</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>VitalSignTO.value1 and VitalSignTO.units</td><td><p>MEASUREMENT - 120.5-.1.2 RATE</p>
+</td> </tr>
+</table>
+<a name="VitalsOx-Old-Mapping"> </a><h3>Mappings for eVault-PHR to MHV-PHR (VitalSignTO)</h3><p>Informative map to include only the elements available in eVault PHR</p><table class="grid">
+ <tr><td colspan="3"><b>MHVvitalsOx</b></td></tr>
+ <tr><td>Observation</td><td>VitalSignTO</td><td><p>eVault</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final` if not `entered-in-error`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (PulseOx)</td><td>LOINC 59408-5</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (O2Sat)</td><td>LOINC 2708-6</td><td></td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.type.name</td><td><p>VITAL_TYPE - 120.5-.03 VITAL TYPE</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td><td><p>patient - 120.5-.02 Patient</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>VitalSignTO.timestamp</td><td><p>DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken</p>
+</td> </tr>
+ <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>VitalSignTO.value1 and VitalSignTO.units</td><td><p>MEASUREMENT - 120.5-.1.2 RATE</p>
+</td> </tr>
+</table>
+<a name="workflow"> </a><h3>Mappings for Workflow Pattern (<a href="http://hl7.org/fhir/workflow.html">http://hl7.org/fhir/workflow</a>)</h3><table class="grid">
  <tr><td colspan="3"><b>MHVvitalsOx</b></td></tr>
  <tr><td>Observation</td><td>Event</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>Event.identifier</td> </tr>
@@ -436,46 +476,6 @@
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value[x]</td><td>363714003 |Interprets|</td> </tr>
  <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interpretation</td><td>363713009 |Has interpretation|</td> </tr>
 </table>
-<a name="VitalsOx-Mapping"> </a><h3>Mappings for VIA to mhv-fhir-phr (VitalSignTO)</h3><p>Informative map to available elements in MHV FHIR API</p><table class="grid">
- <tr><td colspan="3"><b>MHVvitalsOx</b></td></tr>
- <tr><td>Observation</td><td>VitalSignTO</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;identifier</td><td>{StationNbr} and {VitalSignTO.type.id}</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final` if not `entered-in-error`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (PulseOx)</td><td>LOINC 59408-5</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (O2Sat)</td><td>LOINC 2708-6</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.type.name</td><td><p>VITAL_TYPE - 120.5-.03 VITAL TYPE</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td><td><p>PATIENT - 120.5-.02 PATIENT</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>VitalSignTO.timestamp</td><td><p>DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;performer</td><td>contained VitalSignTO.recorder, contained VitalSignTO.observer</td><td><p>120.5-.06 ENTERED BY</p>
-, </td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extension (site)</td><td>Location(VitalSignTO.location)</td><td><p>120.5-.05 HOSPITAL LOCATION</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>VitalSignTO.value1 and VitalSignTO.units</td><td><p>MEASUREMENT - 120.5-.1.2 RATE</p>
-</td> </tr>
-</table>
-<a name="VitalsOx-Old-Mapping"> </a><h3>Mappings for eVault-PHR to MHV-PHR (VitalSignTO)</h3><p>Informative map to include only the elements available in eVault PHR</p><table class="grid">
- <tr><td colspan="3"><b>MHVvitalsOx</b></td></tr>
- <tr><td>Observation</td><td>VitalSignTO</td><td><p>eVault</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;status</td><td>`final` if not `entered-in-error`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;category</td><td>`vital-signs`</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;code</td><td></td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (PulseOx)</td><td>LOINC 59408-5</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;coding (O2Sat)</td><td>LOINC 2708-6</td><td></td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;text</td><td>VitalSignTO.type.name</td><td><p>VITAL_TYPE - 120.5-.03 VITAL TYPE</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;subject</td><td>patient</td><td><p>patient - 120.5-.02 Patient</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;effective[x] (effectiveDateTime)</td><td>VitalSignTO.timestamp</td><td><p>DATE_TIME_TAKEN - 120.5-.01 Date/Time Vitals Taken</p>
-</td> </tr>
- <tr><td>&nbsp;&nbsp;&nbsp;value[x]</td><td>VitalSignTO.value1 and VitalSignTO.units</td><td><p>MEASUREMENT - 120.5-.1.2 RATE</p>
-</td> </tr>
-</table>
 
 
   <!-- insert notes if present -->
@@ -551,7 +551,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.4 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Mar 18, 2024 14:58-0500">2024-03-18</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

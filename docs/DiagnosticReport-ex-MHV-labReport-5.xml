@@ -6,49 +6,7 @@
     <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 60567-5}">LR SURGICAL PATHOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Reported</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7009075 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><p>Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD
-Date Spec rec'd: Sep 24, 1999 13:46  Resident: 
-Date  completed: Sep 27, 1999        Accession #: SP 99 2207
-Submitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF
--------------------------------------------------------------------------------
-Specimen: 
-POLYPS (A) CECAL
-       (B) PROXIMAL ASCENDING
-       (C) RECTAL
-Brief Clinical History:
-COLON POLYPS PER FLEX SIG
-Preoperative Diagnosis:
-COLON POLYPS
-Operative Findings:
-|TAB||NOWRAP|
-1. CECAL POLYPS X 2
-2. ASCENDING COLON POLYP
-3. RECTAL POLYP
-Postoperative Diagnosis:
-SAME
-Gross description:
-|TAB||NOWRAP|
-SPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE
-GREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN
-ONE BLOCK.
-SPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE
-TWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED
-ENTIRELY IN ONE BLOCK.
-SPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE
-TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY
-IN ONE BLOCK.
-Microscopic description: (Date Spec taken: Sep 24, 1999)
-|TAB||BLANK(3)|
-|TAB||NOWRAP|
-DIAGNOSIS:
-A) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)
-B &amp;amp; C)
-PROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE
-NOTE)
-
-NOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING
-DIFFICULTY IN EVALUATION OF LESION.
-DR. YOUSUF WAS NOTIFIED.</p></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 11526-1}">LR SURGICAL PATHOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Reported</td><td>1999-09-27 13:07:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7009075 (use: USUAL)</td></tr></table><p><b>Report Details</b></p></div>
   </text>
   <contained>
     <Specimen>
@@ -56,9 +14,6 @@ DR. YOUSUF WAS NOTIFIED.</p></div>
       <meta>
         <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen"/>
       </meta>
-      <identifier>
-        <use value="usual"/>
-      </identifier>
       <accessionIdentifier>
         <use value="usual"/>
         <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
@@ -107,7 +62,7 @@ DR. YOUSUF WAS NOTIFIED.</p></div>
   <code>
     <coding>
       <system value="http://loinc.org"/>
-      <code value="60567-5"/>
+      <code value="11526-1"/>
     </coding>
     <text value="LR SURGICAL PATHOLOGY REPORT"/>
   </code>
@@ -122,5 +77,8 @@ DR. YOUSUF WAS NOTIFIED.</p></div>
   <specimen>
     <reference value="#ex-MHV-specimen-5"/>
   </specimen>
-  <conclusion value="Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD&#xA;Date Spec rec'd: Sep 24, 1999 13:46  Resident: &#xA;Date  completed: Sep 27, 1999        Accession #: SP 99 2207&#xA;Submitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF&#xA;-------------------------------------------------------------------------------&#xA;Specimen: &#xA;POLYPS (A) CECAL&#xA;       (B) PROXIMAL ASCENDING&#xA;       (C) RECTAL&#xA;Brief Clinical History:&#xA;COLON POLYPS PER FLEX SIG&#xA;Preoperative Diagnosis:&#xA;COLON POLYPS&#xA;Operative Findings:&#xA;|TAB||NOWRAP|&#xA;1. CECAL POLYPS X 2&#xA;2. ASCENDING COLON POLYP&#xA;3. RECTAL POLYP&#xA;Postoperative Diagnosis:&#xA;SAME&#xA;Gross description:&#xA;|TAB||NOWRAP|&#xA;SPECIMEN (A) LABELED CECAL POLYP X 2.  RECEIVED IN FORMALIN IS ONE PALE&#xA;GREY TISSUE FRAGMENT MEASURING 0.4 CM IN DIAMETER.  EMBEDDED ENTIRELY IN&#xA;ONE BLOCK.&#xA;SPECIMEN (B) LABELED PROXIMAL ASCENDING COLON.  RECEIVED IN FORMALIN ARE&#xA;TWO PALE BROWN TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED&#xA;ENTIRELY IN ONE BLOCK.&#xA;SPECIMEN (C) LABELED RECTAL POLYP.  RECEIVED IN FORMALIN ARE THREE MINUTE&#xA;TISSUE FRAGMENTS MEASURING 0.3 CM IN AGGREGATE.  EMBEDDED ENTIRELY&#xA;IN ONE BLOCK.&#xA;Microscopic description: (Date Spec taken: Sep 24, 1999)&#xA;|TAB||BLANK(3)|&#xA;|TAB||NOWRAP|&#xA;DIAGNOSIS:&#xA;A) CECAL POLYP: HYPERPLASTIC POLYP.  (SEE NOTE)&#xA;B &amp;amp; C)&#xA;PROXIMAL ASCENDING COLON AND RECTAL POLYPS: TUBULAR ADENOMAS. (SEE&#xA;NOTE)&#xA;&#xA;NOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING&#xA;DIFFICULTY IN EVALUATION OF LESION.&#xA;DR. YOUSUF WAS NOTIFIED."/>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="RGF0ZSBTcGVjIHRha2VuOiBTZXAgMjQsIDE5OTkgICAgICAgIFBhdGhvbG9naXN0OkpBWkJJRUggTU9FWlpJIE1ECkRhdGUgU3BlYyByZWMnZDogU2VwIDI0LCAxOTk5IDEzOjQ2ICBSZXNpZGVudDogCkRhdGUgIGNvbXBsZXRlZDogU2VwIDI3LCAxOTk5ICAgICAgICBBY2Nlc3Npb24gIzogU1AgOTkgMjIwNwpTdWJtaXR0ZWQgYnk6IEtIVVJTSElEIFlPVVNVRiBNRCAgICAgUHJhY3RpdGlvbmVyOktIVVJTSElEIFlPVVNVRgotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClNwZWNpbWVuOiAKUE9MWVBTIChBKSBDRUNBTAogICAgICAgKEIpIFBST1hJTUFMIEFTQ0VORElORwogICAgICAgKEMpIFJFQ1RBTApCcmllZiBDbGluaWNhbCBIaXN0b3J5OgpDT0xPTiBQT0xZUFMgUEVSIEZMRVggU0lHClByZW9wZXJhdGl2ZSBEaWFnbm9zaXM6CkNPTE9OIFBPTFlQUwpPcGVyYXRpdmUgRmluZGluZ3M6CnxUQUJ8fE5PV1JBUHwKMS4gQ0VDQUwgUE9MWVBTIFggMgoyLiBBU0NFTkRJTkcgQ09MT04gUE9MWVAKMy4gUkVDVEFMIFBPTFlQClBvc3RvcGVyYXRpdmUgRGlhZ25vc2lzOgpTQU1FCkdyb3NzIGRlc2NyaXB0aW9uOgp8VEFCfHxOT1dSQVB8ClNQRUNJTUVOIChBKSBMQUJFTEVEIENFQ0FMIFBPTFlQIFggMi4gIFJFQ0VJVkVEIElOIEZPUk1BTElOIElTIE9ORSBQQUxFCkdSRVkgVElTU1VFIEZSQUdNRU5UIE1FQVNVUklORyAwLjQgQ00gSU4gRElBTUVURVIuICBFTUJFRERFRCBFTlRJUkVMWSBJTgpPTkUgQkxPQ0suClNQRUNJTUVOIChCKSBMQUJFTEVEIFBST1hJTUFMIEFTQ0VORElORyBDT0xPTi4gIFJFQ0VJVkVEIElOIEZPUk1BTElOIEFSRQpUV08gUEFMRSBCUk9XTiBUSVNTVUUgRlJBR01FTlRTIE1FQVNVUklORyAwLjMgQ00gSU4gQUdHUkVHQVRFLiAgRU1CRURERUQKRU5USVJFTFkgSU4gT05FIEJMT0NLLgpTUEVDSU1FTiAoQykgTEFCRUxFRCBSRUNUQUwgUE9MWVAuICBSRUNFSVZFRCBJTiBGT1JNQUxJTiBBUkUgVEhSRUUgTUlOVVRFClRJU1NVRSBGUkFHTUVOVFMgTUVBU1VSSU5HIDAuMyBDTSBJTiBBR0dSRUdBVEUuICBFTUJFRERFRCBFTlRJUkVMWQpJTiBPTkUgQkxPQ0suCk1pY3Jvc2NvcGljIGRlc2NyaXB0aW9uOiAoRGF0ZSBTcGVjIHRha2VuOiBTZXAgMjQsIDE5OTkpCnxUQUJ8fEJMQU5LKDMpfAp8VEFCfHxOT1dSQVB8CkRJQUdOT1NJUzoKQSkgQ0VDQUwgUE9MWVA6IEhZUEVSUExBU1RJQyBQT0xZUC4gIChTRUUgTk9URSkKQiAmYW1wOyBDKQpQUk9YSU1BTCBBU0NFTkRJTkcgQ09MT04gQU5EIFJFQ1RBTCBQT0xZUFM6IFRVQlVMQVIgQURFTk9NQVMuIChTRUUKTk9URSkKIApOT1RFOiBDT0FHVUxBVElPTiBBUlRFRkFDVCBBTkQgUE9PUiBUSVNTVUUgUFJFU0VSVkFUSU9OIElTIE5PVEVEIENBVVNJTkcKRElGRklDVUxUWSBJTiBFVkFMVUFUSU9OIE9GIExFU0lPTi4KRFIuIFlPVVNVRiBXQVMgTk9USUZJRUQuCg=="/>
+  </presentedForm>
 </DiagnosticReport>
