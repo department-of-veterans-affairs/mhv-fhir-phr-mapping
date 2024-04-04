@@ -3,7 +3,7 @@ MyHealtheVet acts as a FHIR Server. It receives information from many sources an
 
 <figure>
 {%include data-flow.svg%}
-<figcaption>Data flow</figcaption>
+<figcaption><b>Figure: Data flow</b></figcaption>
 </figure>
 <br clear="all">
 
@@ -164,7 +164,7 @@ General Pattern
 
 <figure>
 {%include processing-flow.svg%}
-<figcaption>Backend Processing flow</figcaption>
+<figcaption><b>Figure: Backend Processing flow</b></figcaption>
 </figure>
 <br clear="all">
 
@@ -172,7 +172,7 @@ General Pattern
 
 <figure>
 {%include update-flow.svg%}
-<figcaption>Clinical Resource Processing flow</figcaption>
+<figcaption><b>Figure: Clinical Resource Processing flow</b></figcaption>
 </figure>
 <br clear="all">
 

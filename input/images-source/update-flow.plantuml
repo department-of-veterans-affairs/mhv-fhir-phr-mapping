@@ -3,27 +3,27 @@ title Update mhv-fhir-phr
 
 
 start
-: triggered by API request for a given Patient;
+: triggered by PHR Refresh for a given Patient;
+
+repeat : each Domain;
 
 : read data VIA(VPR) and HDR
 receive a multiple entry SOAP message
 with current information;
 
-: lookup Patient by **icn** to get **Patient/id**;
-if (found?) then (yes)
-  : update if needed;
-else (no)
-  : create new
-  may use MHV-PHR Patient content;
-endif 
 
-repeat 
+  : GET existing id/identifier matrix
+  for this Domain from FHIR into matrix;
   repeat
-    : convert data;
-    : convert VIA **.id** to FHIR **.identifier**;
+    : convert data to FHIR;
+    : convert VIA/HDR **.id** to FHIR **.identifier**;
     : Add to FHIR Bundle;
   repeat while (more data?) is (yes)
   ->no;
+  repeat : for id/identifier matrix
+    : compare Bundle identifiers with id/identifier matrix;
+    : any missed id/identifier add Delete to FHIR Bundle;
+  repeat while (more id/identifier) is (yes)
   : Submit Transaction Bundle to FHIR
   FHIR server will match each entry on **.identifier** 
   and update or create new;

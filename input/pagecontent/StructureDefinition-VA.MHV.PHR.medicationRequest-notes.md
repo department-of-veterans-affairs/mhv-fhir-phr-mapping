@@ -3,7 +3,7 @@ MHV requests updates on medications from Vista using HL7 v2 messaging. This requ
 
 <figure>
 {%include medications.svg%}
-<figcaption>MHV Java Object for Medications</figcaption>
+<figcaption><b>Figure: MHV Java Object for Medications</b></figcaption>
 </figure>
 <br clear="all">
 

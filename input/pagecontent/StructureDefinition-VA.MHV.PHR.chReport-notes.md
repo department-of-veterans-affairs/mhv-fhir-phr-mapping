@@ -53,7 +53,7 @@ MHV eVault has one object definition that gets replicated for each portion (Lab,
 
 <figure>
 {%include chLab.svg%}
-<figcaption><b>Chem-Hem Labs</b></figcaption>
+<figcaption><b>Figure: Chem-Hem Labs</b></figcaption>
 </figure>
 <br clear="all">
 

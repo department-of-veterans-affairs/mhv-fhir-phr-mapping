@@ -37,7 +37,7 @@ More detailed profiling, including the `ServiceRequest`, `Specimen`, and `Observ
 
 <figure>
 {%include chLab.svg%}
-<figcaption><b>Chem-Hem Labs</b></figcaption>
+<figcaption><b>Figure: Chem-Hem Labs</b></figcaption>
 </figure>
 <br clear="all">
 
@@ -47,7 +47,7 @@ More detailed profiling, including the `ServiceRequest`, `Specimen`, and `Observ
 
 <figure>
 {%include lab.svg%}
-<figcaption><b>Pathology and Microbiology Labs</b></figcaption>
+<figcaption><b>Figure: Pathology and Microbiology Labs</b></figcaption>
 </figure>
 <br clear="all">
 

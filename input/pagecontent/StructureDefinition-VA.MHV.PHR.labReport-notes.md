@@ -57,7 +57,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 
 <figure>
 {%include lab.svg%}
-<figcaption><b>Pathology and Microbiology Labs</b></figcaption>
+<figcaption><b>Figure: Pathology and Microbiology Labs</b></figcaption>
 </figure>
 <br clear="all">
 
