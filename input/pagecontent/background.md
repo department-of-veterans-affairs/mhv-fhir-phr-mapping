@@ -118,7 +118,11 @@ General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes) Mapping 
   - [Examples](StructureDefinition-VA.MHV.PHR.vitalsOx-examples.html)
 - other [Examples](StructureDefinition-VA.MHV.PHR.vitals-examples.html)
 
-### in progress
+### potential
+
+#### medication
+
+No longer being developed here.
 
 - Medications
   - See [Medication Request notes](StructureDefinition-VA.MHV.PHR.medicationRequest.html#notes)
@@ -156,11 +160,12 @@ The use of FHIR AuditEvent should be used to track all uses of the FHIR API. Thi
 
 General Pattern
 
-1. Our FHIR database will assign id value naturally using normal HAPI method (likely UUID)
-2. Our FHIR database will put external identifiers (e.g. Those from the Vista id such as ImmunizationTO.id) into the .identifier element
-3. Our FHIR database should have one Organization resource… or are there multiple?
-4. Our FHIR database will have [support resources](utility.html#support-resources) for common resource types: Patient, Practitioner, Location, etc -- a Patient resource for each patient within the database, Location for all locations, and Practitioner for all clinicians (Users) - So that clinical resources can point at these resources as appropriate. For example when an Immunization was given at a specific location, we point at a Location resource with the details. Thus all clinical resources that were associated with that location all point at the one instance of Location. Same for Practitioner (Users), and Patients. 
-5. Our FHIR database will have Provenance resource indicating each time a resource is created/updated/deleted. This will aid with the management of data changes and provide linkage back to origination and mapping details.
+1. Our FHIR database will have a Patient resource that is created as needed from the MHV Patient Profile. It contains minimal elements. The Patient is intended simply for API use.
+2. Our FHIR database will assign Resource id value naturally using normal HAPI method (likely UUID)
+3. Our FHIR database will put external identifiers (e.g. Those from the Vista id such as ImmunizationTO.id) into the .identifier element
+4. The support Resources (Location, Organization, Practitioner, etc) will be contained in the primary clinical FHIR Resource. This because MHV is not told enough about these to properly identify and keep de-duplicated. For example when an Immunization was given at a specific location, we point at a Location resource that is contained in the Immunization with the details. 
+5. Updates vs Deletes -  using [Index-Update-and-Delete](background.html#entered-in-error)
+
 
 <figure>
 {%include processing-flow.svg%}
@@ -176,21 +181,20 @@ General Pattern
 </figure>
 <br clear="all">
 
-1. given an id value on the data we are given, we look for the corresponding FHIR Resource with an identifier element equal to that id value. Thus the identifier element within our FHIR database is the linkage to original data id value.
-2. When nothing is found, we create a new instance of that clinical resource and populate it with the data we are given. Populating the .identifier element with the id of the data we were given.
-3. When one item is found, we compare the data we have with the data we were given. If no change, then nothing more is done. If there is a difference, then we update our data.
-4. When creating a new instance, or updating an existing instance, create a Provenance instance to track what was imported, from what, to what, when, and given some detail to indicate the translation used.
+1. We do updates based on the .identifier. HAPI will find that resource, compare what it has with what we put in the bundle, and NOT do an update if there is no change. Thus we rely on HAPI to properly detect changes, so MHV code does not have to.
 
 ## Entered-in-Error
 
-Before Production use there must be a permanent solution. The solution needs address some update problems (e.g. entered-in-error).  The following are potential candidates
+As data are removed or marked as entered-in-error on Vista, the MHV often is simply not informed about that object any more. With MHV eVault, this was handled by simply purging all PHR data each refresh. With FHIR database, we are a step away from the database and thus purging the database is not possible. We thus need some way to handle the cases where we previously learned of a resource, but it was then deleted, and we now are no longer told about it. The following are potential candidates. Wipe-and-Replace was used for atime, but it resulted in a large historic version filling up the FHIR database with no value.
+
+Now using **Index-Update-and-Delete**, with the exception that Allergies we mark them with entered-in-error as we receive that status from HDR.
 
 1. **Index-Update-and-Delete**: This model:
    1. pulls current FHIR resource `.identifier` values (use `_elements` [parameter]({{site.data.fhir.path}}search.html#elements) to limit results to just identifiers, id),
-   2. When updating the new VIA feed data, remember the  `.identifier` that were refreshed.
+   2. When updating the new data, remember the  `.identifier` that were refreshed.
    3. At the end, we can know which `.identifier` values were not updated. (most of the time there will be no unrefreshed data)
    4. We can `delete` those that were not updated
-   5. -- Note: Does not require moving to new HAPI Server.
+   5. -- Note: Did not require moving to new HAPI Server.
 2. **Index-Update-and-Expunge**: This model:
    1. pulls current FHIR resource `.identifier` values (use `_elements` [parameter]({{site.data.fhir.path}}search.html#elements) to limit results to just identifiers, id, status),
    2. When updating the new VIA feed data, remember the  `.identifier` that were refreshed.

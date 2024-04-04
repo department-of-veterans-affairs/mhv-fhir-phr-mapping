@@ -22,7 +22,7 @@
 - `category` must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`
   - `category` also holds 0..* codes from the contained Observation.code
 - VIA will stop sending us entries. so
-  - Thus we will be using [Update-and-Expunge](background.html#entered-in-error)
+  - Thus we will be using [Index-Update-and-Delete](background.html#entered-in-error)
 - There is no data available to fill out a ServiceRequest
 
 ### Business rules
