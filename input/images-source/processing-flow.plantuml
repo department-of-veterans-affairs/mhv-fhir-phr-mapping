@@ -1,0 +1,42 @@
+@startuml
+skinparam svgDimensionStyle false
+hide footbox
+autonumber
+title "Backend Processing"
+
+	participant "vets-website" as VW
+    participant "vets-api" as VA
+    participant "MHV API" as MHVAPI
+	participant "PHR Refresh" as PHR
+    participant "FHIR DB" as FHIR
+    participant "MHV Authen" as MHVAuth
+    VW->>VA: GET /vitals
+    VW->>VA: GET /status
+    VA->>MHVAPI: POST /status
+    MHVAPI->>PHR: Kick off PHR Refresh\n for single patient
+
+    alt PHR Refresh Not Complete
+        loop Every Second until data is refreshed
+            VW->>VA: GET /status
+            VA->>MHVAPI: GET /status
+            MHVAPI->>PHR:  is refresh complete? 
+            MHVAPI->>VA: return 500
+            VA->>VW: return 202
+        end
+    else PHR Refresh Complete
+        PHR->>FHIR: Populate FHIR DB
+	VW->>VA: GET /status
+        VA->>MHVAPI: GET /status
+        MHVAPI->>PHR:  is refresh complete? 
+        MHVAPI->>VA: return 200 
+        
+        VA->>MHVAuth: Auth
+        MHVAuth->>VA: return 200\nwith Bearer Token
+
+        loop for any clinical data (e.g. Vitals)
+            VA->>FHIR: GET /vitals (with Bearer Token)
+            FHIR->>VA: return 200\nwith  vitals data
+            VA->>VW: return 200\nwith vitals data
+        end
+    end
+@enduml

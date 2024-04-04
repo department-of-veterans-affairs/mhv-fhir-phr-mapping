@@ -41,11 +41,11 @@
 - Text - "Site/Specimen: " or "Collection sample:". 
 - The labReportTO
   - type
-    - Pathology -> LOINC#11526-1 "Pathology study"
-      - SP - Surgical Pathology
-      - CY - Cytology --- I have no mock data
-      - EM - Electron Microscopy  --- I have no mock data
-    - MI -> LOINC#18725-2 "Microbiology studies (set)"
+    - Pathology -> LOINC#11526-1 "Pathology study" -> ? v2-0074#
+      - SP - Surgical Pathology -> ? v2-0074#SP
+      - CY - Cytology --- I have no mock data -> ? v2-0074#CP
+      - EM - Electron Microscopy  --- I have no mock data -> ? v2-0074#
+    - MI -> LOINC#18725-2 "Microbiology studies (set)"  -> ? v2-0074#MB
   - no performer, possibly the Organization is in result.labSiteId - e.g., `<labSiteId>989</labSiteId>`
   - schema values but no examples: author, caseNumber, comment, facility 
 - KBS has a question outstanding with micro. FHIR modeling seems to be from lab perspective, not from EHR.  FHIR-44631

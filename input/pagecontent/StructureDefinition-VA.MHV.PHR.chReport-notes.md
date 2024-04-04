@@ -35,7 +35,8 @@
 - Need data 
   - different status
   - deleted/entered-in-error
-  
+- .category[1]  -> ? v2-0074#CH
+
 #### Business Rules
 
 rules interpreted from ChemistryTransformer.java

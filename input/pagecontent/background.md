@@ -162,11 +162,17 @@ General Pattern
 4. Our FHIR database will have [support resources](utility.html#support-resources) for common resource types: Patient, Practitioner, Location, etc -- a Patient resource for each patient within the database, Location for all locations, and Practitioner for all clinicians (Users) - So that clinical resources can point at these resources as appropriate. For example when an Immunization was given at a specific location, we point at a Location resource with the details. Thus all clinical resources that were associated with that location all point at the one instance of Location. Same for Practitioner (Users), and Patients. 
 5. Our FHIR database will have Provenance resource indicating each time a resource is created/updated/deleted. This will aid with the management of data changes and provide linkage back to origination and mapping details.
 
+<figure>
+{%include processing-flow.svg%}
+<figcaption>Backend Processing flow</figcaption>
+</figure>
+<br clear="all">
+
 ### General Processing of clinical resources
 
 <figure>
 {%include update-flow.svg%}
-<figcaption>General Processing flow</figcaption>
+<figcaption>Clinical Resource Processing flow</figcaption>
 </figure>
 <br clear="all">
 
