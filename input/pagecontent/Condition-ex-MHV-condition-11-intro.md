@@ -9,7 +9,7 @@ Example from a mock ProblemTO
     <modifiedDate>3040924</modifiedDate>
     <observer>
         <id>22572</id>
-        <name>FELKLEY,KENNETH E</name>
+        <name>TESTjohnson,John Michael</name>
         <signature/>
     </observer>
     <facility>

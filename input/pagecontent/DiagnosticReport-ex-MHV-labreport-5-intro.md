@@ -9,10 +9,10 @@ Example from a mock LabReportTO
         <accessionNum>SP 99 2207</accessionNum>
     </specimen>
     <title>LR SURGICAL PATHOLOGY REPORT</title>
-    <text>Date Spec taken: Sep 24, 1999        Pathologist:JAZBIEH MOEZZI MD
+    <text>Date Spec taken: Sep 24, 1999        Pathologist:THOMAS TESTwilliams MD
 Date Spec rec'd: Sep 24, 1999 13:46  Resident: 
 Date  completed: Sep 27, 1999        Accession #: SP 99 2207
-Submitted by: KHURSHID YOUSUF MD     Practitioner:KHURSHID YOUSUF
+Submitted by: EVELYN TESTbrown MD     Practitioner:EVELYN TESTbrown
 -------------------------------------------------------------------------------
 Specimen: 
 POLYPS (A) CECAL
@@ -51,7 +51,7 @@ NOTE)
  
 NOTE: COAGULATION ARTEFACT AND POOR TISSUE PRESERVATION IS NOTED CAUSING
 DIFFICULTY IN EVALUATION OF LESION.
-DR. YOUSUF WAS NOTIFIED.</text>
+DR. TESTbrown WAS NOTIFIED.</text>
     <type>SP</type>
     <result>
         <timestamp>2990927.130700</timestamp>

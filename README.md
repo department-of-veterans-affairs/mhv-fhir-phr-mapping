@@ -10,6 +10,14 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
+- Add a data processing flow diagram
+- Updated the data processing logic description and diagram
+- When a human name is not clearly a test human, change to a name derived from the top 10 family names in the USA (Prefixed with `TEST`), top 10 male names in the USA, and top 10 female names in the USA. I got the following from SSA:
+  - Family: Smith, Johnson, Williams, Brown, Jones, Garcia, Miller, Davis, Rodriguez, Martinez
+  - Male: James, Robert, John, Michael, David, William, Richard, Joseph, Thomas, Christopher
+  - Female: Olivia, Emma, Charlotte, Amelia, Sophia, Isabella, Ava, Mia, Evelyn, Luna
+- also make sure these are changed in any base64 encoded text, like notes and labs.
+
 ### 0.3.5
 
 - Better path links to FHIR, and US-Core

@@ -8,12 +8,12 @@ Derived from the following mock NoteTO:
     <standardTitle>DISCHARGE SUMMARY</standardTitle>
     <author>
         <id>36556</id>
-        <name>AHMED,MARUF</name>
+        <name>TESTmiller,David</name>
     </author>
     <cosigner>
         <id>37569</id>
-        <name>KHAN,MUAZZAM</name>
-        <signature>MUAZZAM KHAN Physician</signature>
+        <name>TESTdavis,William</name>
+        <signature>William TESTdavis Physician</signature>
     </cosigner>
     <location>
         <id>552</id>
@@ -22,7 +22,7 @@ Derived from the following mock NoteTO:
     <text>LOCAL TITLE: Discharge Summary                                  
 STANDARD TITLE: DISCHARGE SUMMARY                               
    DICT DATE: AUG 09, 2022@13:42     ENTRY DATE: AUG 09, 2022@13:43:02      
- DICTATED BY: AHMED,MARUF             ATTENDING: AHMED,NAJEEB                 
+ DICTATED BY: TESTmiller,David             ATTENDING: TESTbrown,Sophia                 
      URGENCY: routine                    STATUS: COMPLETED                     
 
  
@@ -30,7 +30,7 @@ STANDARD TITLE: DISCHARGE SUMMARY
 DATE OF ADMISSION:
 DATE OF DISCHARGE: Aug 9,2022
  
-PRINCIPLE DISCHARGE DIAGNOSIS: TEST DISGNOSIS, Maruf Ahmed.
+PRINCIPLE DISCHARGE DIAGNOSIS: TEST DISGNOSIS, David TESTmiller.
 ADDITIONAL DIAGNOSES:
  
 CONSULTANT(S):
@@ -55,19 +55,19 @@ DISCHARGE INSTRUCTIONS:
    Special Instructions: test again
    Follow-up Plans: test again again
  
-/es/ MARUF AHMED
+/es/ David TESTmiller
 PHYSICIAN
 Signed: 08/09/2022 13:44
  
-/es/ MUAZZAM KHAN
+/es/ William TESTdavis
 Physician
 Cosigned: 08/12/2022 12:17
-for NAJEEB AHMED                                  
+for Sophia TESTbrown                                  
 AMOD</text>
     <approvedBy>
         <id>36556</id>
-        <name>AHMED,MARUF</name>
-        <signature>MARUF AHMED PHYSICIAN</signature>
+        <name>TESTmiller,David</name>
+        <signature>David TESTmiller PHYSICIAN</signature>
     </approvedBy>
     <status>completed</status>
     <type>DS</type>

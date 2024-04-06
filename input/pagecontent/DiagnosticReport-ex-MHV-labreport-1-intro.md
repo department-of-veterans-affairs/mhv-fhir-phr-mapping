@@ -25,7 +25,7 @@ Example from a mock LabReportTO
     <text>Accession [UID]: PARAS 95 264 []            Received: Aug 01, 1995@11:02
 Collection sample: STOOL               Collection date: Jul 30, 1995
 Site/Specimen: FECES
-Provider: MANGAS,PHYLLIS A
+Provider: TESTgarcia,Amelia S
                                                         
 * PARASITOLOGY FINAL REPORT => Aug 03, 1995   TECH CODE: 1003
 Parasitology Remark(s):

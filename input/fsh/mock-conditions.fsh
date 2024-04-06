@@ -349,9 +349,9 @@ Description: "Rash (SCT 271807003)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2023-10-30"
-* note.text = "Problem list test Comment , Muazzam Khan"
+* note.text = "Problem list test Comment , Williams TESTdavis"
 
 Instance: 6fec0aa5-b0e9-4de3-abb6-53dd3812163d
 InstanceOf: VA.MHV.PHR.condition
@@ -374,7 +374,7 @@ Description: "Atrial Flutter (SCT 5370000)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2023-12-20"
 * note.text = "Problem Catagories -Cardiology, Status -Active, Immediacy - Unknown"
 
@@ -399,7 +399,7 @@ Description: "Defective Dental Restoration (SCT 109728009)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2023-12-20"
 * note.text = "Problem Catagories -Dental, Status -Active, Immediacy - chronic"
 
@@ -424,7 +424,7 @@ Description: "Benign Neoplasm of Skin (SCT 92384009)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2023-12-20"
 * note.text = "Problem Catagories -Dental, Status -dermotology, Immediacy - Acute"
 
@@ -449,7 +449,7 @@ Description: "History of Alcohol Abuse (SCT 371434005)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2023-12-20"
 * note.text = "Problem Catagories -Active, Status -Active, Immediacy - Acute"
 
@@ -474,7 +474,7 @@ Description: "Chest Pain (SCT 29857009)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2024-02-13"
 * note.text = "treatment factor service connected with date of onset YYYY01"
 
@@ -499,7 +499,7 @@ Description: "Acute Deep Vein Thrombosis Of Lower Limb (SCT 651000119108)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2024-02-13"
 * note.text = "will sign thsi problem"
 
@@ -524,7 +524,7 @@ Description: "Exposure to Agent Orange (SCT 718016003)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2024-02-13"
 * note.text = "Problem added from other problem list"
 
@@ -549,7 +549,7 @@ Description: "Acute posttraumatic stress disorder following military combat (SCT
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2024-02-13"
 * note.text = "Problem added from other problem under military"
 
@@ -573,16 +573,16 @@ Description: "AF- Atrial Fibrillation (SCT 49436004)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note[0].authorString = "AHMED,MARUF"
+* note[0].authorString = "TESTmiller,David"
 * note[=].time = "2024-02-15"
 * note[=].text = "Comment - 4 of 4"
-* note[+].authorString = "AHMED,MARUF"
+* note[+].authorString = "TESTmiller,David"
 * note[=].time = "2024-02-15"
 * note[=].text = "Comment - 3 of 4"
-* note[+].authorString = "AHMED,MARUF"
+* note[+].authorString = "TESTmiller,David"
 * note[=].time = "2024-02-15"
 * note[=].text = "Comment - 2 of 4"
-* note[+].authorString = "AHMED,MARUF"
+* note[+].authorString = "TESTmiller,David"
 * note[=].time = "2024-02-15"
 * note[=].text = "Comment -1 of 4"
 
@@ -606,7 +606,7 @@ Description: "Alcohol Abuse (SCT 15167005)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-37524)
-* note.authorString = "NOBLE,PAMELA J"
+* note.authorString = "TESTgarcia,Pam J"
 * note.time = "2024-02-20"
 * note.text = "test"
 
@@ -630,7 +630,7 @@ Description: "CAD - Coronary Artery Disease (SCT 53741008)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-37524)
-* note.authorString = "NOBLE,PAMELA J"
+* note.authorString = "TESTgarcia,Pam J"
 * note.time = "2024-02-20"
 * note.text = "test"
 
@@ -654,7 +654,7 @@ Description: "Abnormal cardiotochogram tracing (SCT 735205007)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2024-02-20"
 * note.text = "diagnosis"
 
@@ -680,7 +680,7 @@ Description: "Proliferative Diabetic Retinopathy (SCT 59276001)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note.authorString = "AHMED,MARUF"
+* note.authorString = "TESTmiller,David"
 * note.time = "2022-08-18"
 * note.text = "test"
 
@@ -706,15 +706,15 @@ Description: "Angina Pectoris (SCT 194828000)"
 * recorder.extension.url = "http://hl7.org/fhir/StructureDefinition/alternate-reference"
 * recorder.extension.valueReference = Reference(ex-MHV-location-552)
 * recorder = Reference(ex-MHV-practitioner-36556)
-* note[0].authorString = "AHMED,MARUF"
+* note[0].authorString = "TESTmiller,David"
 * note[=].time = "2024-02-13"
 * note[=].text = "test4"
-* note[+].authorString = "AHMED,MARUF"
+* note[+].authorString = "TESTmiller,David"
 * note[=].time = "2024-02-13"
 * note[=].text = "test3"
-* note[+].authorString = "AHMED,MARUF"
+* note[+].authorString = "TESTmiller,David"
 * note[=].time = "2024-02-13"
 * note[=].text = "Test 2 with John_Maruf Ahmed"
-* note[+].authorString = "AHMED,MARUF"
+* note[+].authorString = "TESTmiller,David"
 * note[=].time = "2024-02-13"
 * note[=].text = "Test with John_Maruf Ahmed"

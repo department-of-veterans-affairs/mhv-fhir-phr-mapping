@@ -3,7 +3,7 @@ Example Practitoner 110
 ```xml
 <observer>
     <id>110</id>
-    <name>MANGAS,PHYLLIS A</name>
+    <name>TESTgarcia,Amelia S</name>
     <signature/>
 </observer>
 ```
