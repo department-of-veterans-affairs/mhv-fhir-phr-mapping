@@ -26,9 +26,66 @@ Derived from the a mock ImagingExamTO:
 * content.attachment.creation = 2004-09-24T11:25:00Z
 * type.coding[LO] = LOINC#18748-4
 * type.coding[CP] = CPT#72100 "RADIOLOGIC EXAMINATION, SPINE, LUMBOSACRAL; 2 OR 3 VIEWS"
-* author[0].display = "GARFUNKEL,FELIX" 
+* author[0].display = "TESTdavis,Joseph" 
 * author[1].display = "DAYT29 TEST LAB"
 * author[1].identifier.value = "989"
 * content.attachment.contentType = #text/plain
-* content.attachment.data = "U1BJTkUgTFVNQk9TQUNSQUwgTUlOIDIgVklFV1MKICAgCkV4bSBEYXRlOiBTRVAgMjQsIDIwMDRAMTE6MjUKUmVxIFBoeXM6IEZFTEtMRVksS0VOTkVUSCBFICAgICAgICAgICAgICBQYXQgTG9jOiBQQ1RfTyBQQVRJTCAoRi9VKSAoUmVxJ2cgTG9jKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEltZyBMb2M6IFJBRElPTE9HWQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNlcnZpY2U6IFVua25vd24KCiAKCihDYXNlIDE1ODIgQ09NUExFVEUpIFNQSU5FIExVTUJPU0FDUkFMIE1JTiAyIFZJRVdTICAgIChSQUQgIERldGFpbGVkKSBDUFQ6NzIxMDAKICAgICBQcm9jIE1vZGlmaWVycyA6IEJJTEFURVJBTCBFWEFNCgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgaGF2aW5nIDMgd2Vla3Mgb2YgYmFjayBwYWlucyBuZWVkIHRvIHJlLWV2YWwgZm9yIGFyaHJpdGlzIG9yIGFueSAKICAgICAgd29yc25laW5nIGRpc2Mgc3BhY2VzIGV0Yy4gCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogU0VQIDI3LCAyMDA0CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBTRVAgMjgsIDIwMDQKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9UaG9uZyBELiBOZ3V5ZW4sIE0uRC4KCiAgICBSZXBvcnQ6CiAgICAgIFRocmVlIHZpZXdzIG9mIHRoZSBsdW1ib3NhY3JhbCBzcGluZSBhcmUgY29tcGFyZWQgd2l0aCBhIHByZXZpb3VzIAogICAgICBleGFtaW5hdGlvbiBvZiA5LzIzLzAyLiAgCiAgICAgICAKICAgICAgVGhlcmUgaGFzIGJlZW4gYSBwYXJ0aWFsIGNvbGxhcHNlIG9mIEwyIHdoaWNoIGlzIHNpbWlsYXIgaW4KICAgICAgYXBwZWFyYW5jZSBhbmQgZGVncmVlIHRvIHRoZSBwcmV2aW91cyBleGFtaW5hdGlvbiBvZiBTZXB0ZW1iZXIKICAgICAgMjAwMi4gIFRoZXJlIGlzIGFsc28gY29sbGFwc2Ugb2YgdGhlIGJvZHkgb2YgVDEyIHdoaWNoIGFwcGFyZW50bHkKICAgICAgaXMgbmV3IHNpbmNlIHRoZSBwcmV2aW91cyBleGFtIGFuZCB0aGUgY29sbGFwc2UgaGFzIGJlZW4KICAgICAgZXN0aW1hdGVkIGFib3ZlIDc1IHRvIDgwJSBvZiB0aGUgaGVpZ2h0IG9mIHRoZSB2ZXJ0ZWJyYWwgYm9keS4gIAogICAgICAgCiAgICAgIFRoZXJlIGlzIG1pbGQgbWFyZ2luYWwgc3B1cnJpbmcgb2YgdGhlIHVwcGVyIGFudGVyaW9yIGFzcGVjdCBvZgogICAgICBMNC4gIFRoZXJlIGFyZSBhcnRlcmlvc2NsZXJvdGljIGNhbGNpZmljYXRpb25zIGluIHRoZSBhYmRvbWluYWwKICAgICAgYW9ydGEgYW5kIGJyYW5jaGVzLiAgCiAgICAgICAKICAgICAgVGhlIGludGVydmVydGVicmFsIGRpc2Mgc3BhY2VzIGFyZSBwcmVzZXJ2ZWQuICAKCiAgICBJbXByZXNzaW9uOgogICAgICAxLiAgT2xkIGNvbXByZXNzaW9uIGZyYWN0dXJlIG9mIEwyIHdpdGggYW50ZXJpb3IgbWFyZ2luYWwKICAgICAgc3B1cnJpbmcgYW5kIGFwcGFyZW50IGFua3lsb3NpcyBMMS1MMi4gIAogICAgICAgCiAgICAgIDIuICBDb2xsYXBzZSBvciBjb21wcmVzc2lvbiBmcmFjdHVyZSBvZiB0aGUgYm9keSBvZiBUMTIgd2hpY2ggaXMKICAgICAgbmV3IHNpbmNlIHRoZSBwcmV2aW91cyBleGFtaW5hdGlvbiBpbiAyMDAyIGFuZCBpbnZvbHZlcyBsb3NzIG9mCiAgICAgIGhlaWdodCBvZiB0aGF0IHZlcnRlYnJhbCBib2R5IGJ5IGFib3V0IDcwJS4gIEFydGVyaW9zY2xlcm90aWMKICAgICAgY2FsY2lmaWNhdGlvbnMgb2YgdGhlIGFvcnRhLiAgCgogICAgUHJpbWFyeSBEaWFnbm9zdGljIENvZGU6IAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgRkVMSVggR0FSRlVOS0VMLCBTdGFmZiBQaHlzaWNpYW4KVkVSSUZJRUQgQlk6CiAgVEhPTkcgTkdVWUVOLCBSYWRpb2xvZ2lzdC9DaGllZgoKL0dFRw=="
+* content.attachment.data = """
+U1BJTkUgTFVNQk9TQUNSQUwgTUlOIDIgVklFV1MKICAgCkV4bSBEYXRlOiBTRVAgMjQsIDIwMDRAMTE6MjUKUmVxIFBoeXM6IFRFU1Rqb2huc29uLEpvaG4gTWljaGFlbCAgICAgICAgICAgICAgUGF0IExvYzogUENUX08gUEFUSUwgKEYvVSkgKFJlcSdnIExvYykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAxNTgyIENPTVBMRVRFKSBTUElORSBMVU1CT1NBQ1JBTCBNSU4gMiBWSUVXUyAgICAoUkFEICBEZXRhaWxlZCkgQ1BUOjcyMTAwCiAgICAgUHJvYyBNb2RpZmllcnMgOiBCSUxBVEVSQUwgRVhBTQoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIGhhdmluZyAzIHdlZWtzIG9mIGJhY2sgcGFpbnMgbmVlZCB0byByZS1ldmFsIGZvciBhcmhyaXRpcyBvciBhbnkgCiAgICAgIHdvcnNuZWluZyBkaXNjIHNwYWNlcyBldGMuIAoKICAgIFJlcG9ydCBTdGF0dXM6IFZlcmlmaWVkICAgICAgICAgICAgICAgICAgIERhdGUgUmVwb3J0ZWQ6IFNFUCAyNywgMjAwNAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRGF0ZSBWZXJpZmllZDogU0VQIDI4LCAyMDA0CiAgICBWZXJpZmllciBFLVNpZzovRVMvUmljaGFyZCBELiBURVNUbWlsbGVyLCBNLkQuCgogICAgUmVwb3J0OgogICAgICBUaHJlZSB2aWV3cyBvZiB0aGUgbHVtYm9zYWNyYWwgc3BpbmUgYXJlIGNvbXBhcmVkIHdpdGggYSBwcmV2aW91cyAKICAgICAgZXhhbWluYXRpb24gb2YgOS8yMy8wMi4gIAogICAgICAgCiAgICAgIFRoZXJlIGhhcyBiZWVuIGEgcGFydGlhbCBjb2xsYXBzZSBvZiBMMiB3aGljaCBpcyBzaW1pbGFyIGluCiAgICAgIGFwcGVhcmFuY2UgYW5kIGRlZ3JlZSB0byB0aGUgcHJldmlvdXMgZXhhbWluYXRpb24gb2YgU2VwdGVtYmVyCiAgICAgIDIwMDIuICBUaGVyZSBpcyBhbHNvIGNvbGxhcHNlIG9mIHRoZSBib2R5IG9mIFQxMiB3aGljaCBhcHBhcmVudGx5CiAgICAgIGlzIG5ldyBzaW5jZSB0aGUgcHJldmlvdXMgZXhhbSBhbmQgdGhlIGNvbGxhcHNlIGhhcyBiZWVuCiAgICAgIGVzdGltYXRlZCBhYm92ZSA3NSB0byA4MCUgb2YgdGhlIGhlaWdodCBvZiB0aGUgdmVydGVicmFsIGJvZHkuICAKICAgICAgIAogICAgICBUaGVyZSBpcyBtaWxkIG1hcmdpbmFsIHNwdXJyaW5nIG9mIHRoZSB1cHBlciBhbnRlcmlvciBhc3BlY3Qgb2YKICAgICAgTDQuICBUaGVyZSBhcmUgYXJ0ZXJpb3NjbGVyb3RpYyBjYWxjaWZpY2F0aW9ucyBpbiB0aGUgYWJkb21pbmFsCiAgICAgIGFvcnRhIGFuZCBicmFuY2hlcy4gIAogICAgICAgCiAgICAgIFRoZSBpbnRlcnZlcnRlYnJhbCBkaXNjIHNwYWNlcyBhcmUgcHJlc2VydmVkLiAgCgogICAgSW1wcmVzc2lvbjoKICAgICAgMS4gIE9sZCBjb21wcmVzc2lvbiBmcmFjdHVyZSBvZiBMMiB3aXRoIGFudGVyaW9yIG1hcmdpbmFsCiAgICAgIHNwdXJyaW5nIGFuZCBhcHBhcmVudCBhbmt5bG9zaXMgTDEtTDIuICAKICAgICAgIAogICAgICAyLiAgQ29sbGFwc2Ugb3IgY29tcHJlc3Npb24gZnJhY3R1cmUgb2YgdGhlIGJvZHkgb2YgVDEyIHdoaWNoIGlzCiAgICAgIG5ldyBzaW5jZSB0aGUgcHJldmlvdXMgZXhhbWluYXRpb24gaW4gMjAwMiBhbmQgaW52b2x2ZXMgbG9zcyBvZgogICAgICBoZWlnaHQgb2YgdGhhdCB2ZXJ0ZWJyYWwgYm9keSBieSBhYm91dCA3MCUuICBBcnRlcmlvc2NsZXJvdGljCiAgICAgIGNhbGNpZmljYXRpb25zIG9mIHRoZSBhb3J0YS4gIAoKICAgIFByaW1hcnkgRGlhZ25vc3RpYyBDb2RlOiAKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIEpvc2VwaCBURVNUZGF2aXMsIFN0YWZmIFBoeXNpY2lhbgpWRVJJRklFRCBCWToKICBSaWNoYXJkIFRFU1RtaWxsZXIsIFJhZGlvbG9naXN0L0NoaWVmCgovR0VH
+"""
 
+/*
+SPINE LUMBOSACRAL MIN 2 VIEWS
+   
+Exm Date: SEP 24, 2004@11:25
+Req Phys: TESTjohnson,John Michael              Pat Loc: PCT_O PATIL (F/U) (Req'g Loc)
+                                         Img Loc: RADIOLOGY
+                                         Service: Unknown
+
+ 
+
+(Case 1582 COMPLETE) SPINE LUMBOSACRAL MIN 2 VIEWS    (RAD  Detailed) CPT:72100
+     Proc Modifiers : BILATERAL EXAM
+
+    Clinical History:
+      having 3 weeks of back pains need to re-eval for arhritis or any 
+      worsneing disc spaces etc. 
+
+    Report Status: Verified                   Date Reported: SEP 27, 2004
+                                              Date Verified: SEP 28, 2004
+    Verifier E-Sig:/ES/Richard D. TESTmiller, M.D.
+
+    Report:
+      Three views of the lumbosacral spine are compared with a previous 
+      examination of 9/23/02.  
+       
+      There has been a partial collapse of L2 which is similar in
+      appearance and degree to the previous examination of September
+      2002.  There is also collapse of the body of T12 which apparently
+      is new since the previous exam and the collapse has been
+      estimated above 75 to 80% of the height of the vertebral body.  
+       
+      There is mild marginal spurring of the upper anterior aspect of
+      L4.  There are arteriosclerotic calcifications in the abdominal
+      aorta and branches.  
+       
+      The intervertebral disc spaces are preserved.  
+
+    Impression:
+      1.  Old compression fracture of L2 with anterior marginal
+      spurring and apparent ankylosis L1-L2.  
+       
+      2.  Collapse or compression fracture of the body of T12 which is
+      new since the previous examination in 2002 and involves loss of
+      height of that vertebral body by about 70%.  Arteriosclerotic
+      calcifications of the aorta.  
+
+    Primary Diagnostic Code: 
+
+Primary Interpreting Staff:
+  Joseph TESTdavis, Staff Physician
+VERIFIED BY:
+  Richard TESTmiller, Radiologist/Chief
+
+/GEG
+*/

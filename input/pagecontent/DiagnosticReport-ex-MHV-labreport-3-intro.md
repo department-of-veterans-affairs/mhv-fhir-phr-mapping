@@ -39,7 +39,7 @@ Example from a mock LabReportTO
     <text>Accession [UID]: PARAS 95 262 []            Received: Aug 01, 1995@11:00
 Collection sample: STOOL               Collection date: Jul 28, 1995
 Site/Specimen: FECES
-Provider: MANGAS,PHYLLIS A
+Provider: TESTgarcia,Amelia S
                                                         
 * PARASITOLOGY FINAL REPORT => Aug 01, 1995   TECH CODE: 420
 Parasitology Remark(s):

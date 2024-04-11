@@ -13,7 +13,7 @@ Example from a mock ProblemTO
     <modifiedDate>2950927</modifiedDate>
     <observer>
         <id>110</id>
-        <name>MANGAS,PHYLLIS A</name>
+        <name>TESTgarcia,Amelia S</name>
         <signature/>
     </observer>
     <facility>

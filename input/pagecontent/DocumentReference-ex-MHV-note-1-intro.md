@@ -7,7 +7,7 @@ Derived from the following mock NoteTO:
     <localTitle>C&amp;P EXAM NOTE</localTitle>
     <author>
         <id>36556</id>
-        <name>AHMED,MARUF</name>
+        <name>TESTmiller,David</name>
     </author>
     <location>
         <id>552</id>
@@ -15,18 +15,18 @@ Derived from the following mock NoteTO:
     </location>
                            <text>LOCAL TITLE: ADHC DISCHARGE NOTE                                
 DATE OF NOTE: AUG 05, 2022@11:29     ENTRY DATE: AUG 05, 2022@11:29:46      
-      AUTHOR: AHMED,MARUF          EXP COSIGNER:                           
+      AUTHOR: TESTmiller,David          EXP COSIGNER:                           
      URGENCY:                            STATUS: COMPLETED                     
 
-This is  a test note, Maruf 
+This is  a test note, David TESTmiller 
  
-/es/ MARUF AHMED
+/es/ David TESTmiller
 PHYSICIAN
 Signed: 08/05/2022 11:50</text>
     <approvedBy>
         <id>36556</id>
-        <name>AHMED,MARUF</name>
-        <signature>MARUF AHMED PHYSICIAN</signature>
+        <name>TESTmiller,David</name>
+        <signature>David TESTmiller PHYSICIAN</signature>
     </approvedBy>
     <status>completed</status>
     <type>PN</type>

@@ -27,9 +27,9 @@ MHVLISAONE,ROBERT M    666-12-3456   NOT INPATIENT              DOB: AUG 9,1962
 
     INSTRUMENT DX:   
                                                Referred By:  PREOP                                 
-                                               Overread By: AGARAM SURYAPRASAD                     
-                                               Edited By  : JEANETTE ROWLAND                       
-                                               Acquired By: MARVA PHELPS                           
+                                               Overread By: Luna TESTrodriguez                     
+                                               Edited By  : Olivia TESTmartinez                       
+                                               Acquired By: Emma TESTsmith                           
                      
                      
                     Normal sinus rhythm
@@ -48,7 +48,7 @@ MHVLISAONE,ROBERT M    666-12-3456   NOT INPATIENT              DOB: AUG 9,1962
 
     HEART MEDS:
 
-    INTERPRETED BY: SURYAPRASAD,AGARAM
+    INTERPRETED BY: TESTjohnson,Charlotte
 
 
 

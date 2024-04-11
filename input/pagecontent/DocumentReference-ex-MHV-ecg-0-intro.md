@@ -43,6 +43,6 @@ MHVLISAONE,ROBERT M    666-12-3456   NOT INPATIENT              DOB: AUG 9,1962
 
     HEART MEDS:
 
-    INTERPRETED BY: GUPTA,SATYENDRA</report>
+    INTERPRETED BY: TESTmartinez,Joseph</report>
 </clinicalProcedureTO>
 ```

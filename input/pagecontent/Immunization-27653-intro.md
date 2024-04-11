@@ -11,7 +11,7 @@ mock examples using VIA
     </cptCode>
     <encounter>
         <provider>
-            <name>KHAN,MUAZZAM</name>
+            <name>TESTdavis,William</name>
         </provider>
         <location>
             <name>AUDIOLOGY FELLOW (PM)</name>

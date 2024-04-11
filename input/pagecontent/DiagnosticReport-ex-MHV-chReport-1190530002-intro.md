@@ -35,7 +35,7 @@ Example from a mock chReport
                <idSourceTable>99VA4</idSourceTable>
                <name>
                   <given>LISA</given>
-                  <family>HALL</family>
+                  <family>TESTWILLIAMS</family>
                </name>
             </author>
             <orderingFacilityIdentifier>

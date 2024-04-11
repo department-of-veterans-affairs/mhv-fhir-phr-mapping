@@ -37,7 +37,7 @@ Example from a mock chReport
                <name>
                   <given>LISA</given>
                   <middle>A</middle>
-                  <family>HALL</family>
+                  <family>TESTWILLIAMS</family>
                </name>
             </author>
             <orderingFacilityIdentifier>

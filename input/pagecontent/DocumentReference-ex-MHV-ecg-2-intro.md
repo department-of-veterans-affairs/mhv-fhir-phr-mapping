@@ -18,12 +18,12 @@ MHVLISAONE,ROBERT M    666-12-3456                     DOB: AUG 9,1962  (60) NOT
 -------------------------------------------------------------------------------
  LOCAL TITLE: CARDIOLOGY NON-INVASIVE                            
 DATE OF NOTE: DEC 02, 1998@10:01:13  ENTRY DATE: DEC 02, 1998@10:01:13      
-      AUTHOR: PORTER,MICHELE       EXP COSIGNER:                           
+      AUTHOR: TESTwilliams,MICHELE       EXP COSIGNER:                           
      URGENCY:                            STATUS: COMPLETED                     
 
 SEE MUSE
  
-/es/ MICHELE PORTER
+/es/ MICHELE TESTwilliams
 supervisor, medical machine tech
 Signed: 12/02/1998 10:01</report>
 </clinicalProcedureTO>

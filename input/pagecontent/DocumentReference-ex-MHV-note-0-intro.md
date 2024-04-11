@@ -8,7 +8,7 @@ Derived from the following mock NoteTO:
     <standardTitle>ALLERGY &amp; IMMUNOLOGY ADVERSE EVENT NOTE</standardTitle>
     <author>
         <id>37569</id>
-        <name>KHAN,MUAZZAM</name>
+        <name>TESTdavis,William</name>
     </author>
     <location>
         <id>552</id>
@@ -17,7 +17,7 @@ Derived from the following mock NoteTO:
     <text>LOCAL TITLE: Adverse React/Allergy                              
 STANDARD TITLE: ALLERGY &amp; IMMUNOLOGY ADVERSE EVENT NOTE         
 DATE OF NOTE: AUG 12, 2022@12:50:56  ENTRY DATE: AUG 12, 2022@12:50:56      
-      AUTHOR: KHAN,MUAZZAM         EXP COSIGNER:                           
+      AUTHOR: TESTdavis,William         EXP COSIGNER:                           
      URGENCY:                            STATUS: COMPLETED                     
 
 This patient has had the following reactions 
@@ -30,13 +30,13 @@ Author's comments:
 test 
 
  
-/es/ MUAZZAM KHAN
+/es/ William TESTdavis
 Physician
 Signed: 08/12/2022 12:51</text>
     <approvedBy>
         <id>37569</id>
-        <name>KHAN,MUAZZAM</name>
-        <signature>MUAZZAM KHAN Physician</signature>
+        <name>TESTdavis,William</name>
+        <signature>William TESTdavis Physician</signature>
     </approvedBy>
     <status>completed</status>
     <type>A</type>

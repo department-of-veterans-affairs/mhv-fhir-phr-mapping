@@ -19,7 +19,7 @@ Derived from the following mock ImagingExamTO:
         </type>
     </order>
     <provider>
-        <name>GARFUNKEL,FELIX</name>
+        <name>TESTdavis,Joseph</name>
     </provider>
     <radiologyReportTO>
         <accessionNumber>092404-1582</accessionNumber>
@@ -30,7 +30,7 @@ Derived from the following mock ImagingExamTO:
         <text>SPINE LUMBOSACRAL MIN 2 VIEWS
    
 Exm Date: SEP 24, 2004@11:25
-Req Phys: FELKLEY,KENNETH E              Pat Loc: PCT_O PATIL (F/U) (Req'g Loc)
+Req Phys: TESTjohnson,John Michael              Pat Loc: PCT_O PATIL (F/U) (Req'g Loc)
                                          Img Loc: RADIOLOGY
                                          Service: Unknown
 
@@ -45,7 +45,7 @@ Req Phys: FELKLEY,KENNETH E              Pat Loc: PCT_O PATIL (F/U) (Req'g Loc)
 
     Report Status: Verified                   Date Reported: SEP 27, 2004
                                               Date Verified: SEP 28, 2004
-    Verifier E-Sig:/ES/Thong D. Nguyen, M.D.
+    Verifier E-Sig:/ES/Richard D. TESTmiller, M.D.
 
     Report:
       Three views of the lumbosacral spine are compared with a previous 
@@ -75,9 +75,9 @@ Req Phys: FELKLEY,KENNETH E              Pat Loc: PCT_O PATIL (F/U) (Req'g Loc)
     Primary Diagnostic Code: 
 
 Primary Interpreting Staff:
-  FELIX GARFUNKEL, Staff Physician
+  Joseph TESTdavis, Staff Physician
 VERIFIED BY:
-  THONG NGUYEN, Radiologist/Chief
+  Richard TESTmiller, Radiologist/Chief
 
 /GEG</text>
         <facility>

@@ -9,10 +9,10 @@ Example from a mock LabReportTO
         <accessionNum>SP 00 1982</accessionNum>
     </specimen>
     <title>LR SURGICAL PATHOLOGY REPORT</title>
-    <text>Date Spec taken: Aug 09, 2000        Pathologist:SEETHA SURYAPRASAD MD
+    <text>Date Spec taken: Aug 09, 2000        Pathologist:Ava TESTsmith MD
 Date Spec rec'd: Aug 09, 2000 16:14  Resident: 
 Date  completed: Aug 10, 2000        Accession #: SP 00 1982
-Submitted by: MARK MAZUR MD          Practitioner:MARK MAZUR DPM
+Submitted by: MARK TESTjohnson MD          Practitioner:MARK TESTjohnson DPM
 -------------------------------------------------------------------------------
 Specimen: 
 OLD HARDWARE LEFT FOOT X2
