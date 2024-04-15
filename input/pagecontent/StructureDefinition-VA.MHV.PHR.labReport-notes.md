@@ -44,7 +44,7 @@
     - Pathology -> LOINC#11526-1 "Pathology study" -> ? v2-0074#
       - SP - Surgical Pathology -> ? v2-0074#SP
       - CY - Cytology --- I have no mock data -> ? v2-0074#CP
-      - EM - Electron Microscopy  --- I have no mock data -> ? v2-0074#
+      - EM - Electron Microscopy  --- I have no mock data -> ? v2-0074#OTH -- 73512001 "Electron microsopic study (procedure)"
     - MI -> LOINC#18725-2 "Microbiology studies (set)"  -> ? v2-0074#MB
   - no performer, possibly the Organization is in result.labSiteId - e.g., `<labSiteId>989</labSiteId>`
   - schema values but no examples: author, caseNumber, comment, facility 

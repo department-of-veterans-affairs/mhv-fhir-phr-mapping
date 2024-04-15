@@ -10,6 +10,10 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
+- notes
+  - Notes backend will now populate .date with timestamp when it includes a time, but otherwise will use the signature timestamp.
+  - May need to extract admit/discharge date from text body
+
 ### 0.3.5
 
 - Better path links to FHIR, and US-Core

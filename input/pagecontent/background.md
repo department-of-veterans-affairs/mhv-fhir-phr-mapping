@@ -181,7 +181,8 @@ General Pattern
 </figure>
 <br clear="all">
 
-1. We do updates based on the .identifier. HAPI will find that resource, compare what it has with what we put in the bundle, and NOT do an update if there is no change. Thus we rely on HAPI to properly detect changes, so MHV code does not have to.
+- We do updates based on the .identifier. HAPI will find that resource, compare what it has with what we put in the bundle, and NOT do an update if there is no change. Thus we rely on HAPI to properly detect changes, so MHV code does not have to.
+- The current/historic list could be used to place the current id on entries with the given identifier, these entries can be then marked as conditional update. Where as today it is a conditional update based on a lookup on the .identifier. This will improve the performance of the HAPI server as it will remove an indirect lookup. We can also know which entries are NEW, so we can mark them as create. **MHV-54038**
 
 ## Entered-in-Error
 

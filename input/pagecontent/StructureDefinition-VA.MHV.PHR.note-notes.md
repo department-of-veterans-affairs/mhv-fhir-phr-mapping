@@ -63,7 +63,8 @@
 
 #### TODO
 
-- discharge summary may have a `period`. This has not been seen in sample fhir output yet.
-- `timestamp` must to go into `.content.attachment.creation` because sometimes it is just a date without time [see mock example 3](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/note3.xml)
-- if `timestamp` is missing the time (just a date) then populate `.date` with `procTimestamp` **MHV-54034**
-- The current/historic list could be used to place the current id on entries with the given identifier, these entries can be then marked as conditional update. Where as today it is a conditional update based on a lookup on the .identifier. This will improve the performance of the HAPI server as it will remove an indirect lookup. We can also know which entries are NEW, so we can mark them as create. **MHV-54038**
+- discharge summary may have a `period`. The  `NoteTO/dischargeTimestamp` or `NoteTO/admitTimestamp` have not been seen in sample notes feed.
+  - These values do exist in the discharge feed, but that feed does not include id values so we have no way to de-duplicate them. Further the discharge feed I have has no text body, so suspect these are not realistic.
+  - The notes feed does have `DS` but does not populate the `NoteTO/dischargeTimestamp` or `NoteTO/admitTimestamp`, but does have well behaved TEXT elements with a DATE (no time) "DATE OF ADMISSION: {date}", and "DATE OF DISCHARGE: {date}" that could be used if the xml does not give them to us.
+  - MHV-57063
+
