@@ -53,9 +53,11 @@
 
 #### Business Rules
 
-- do not convert any NoteTO.status that is not `completed` or `COMPLETED` or `AMENDED`.
-- do not convert any NoteTO that is not signed
-- do not convert any NoteTO.type other than `PN`, `DS`, and `CR`
+- Ignore any without a facility
+- Ignore any without an id
+- Ignore any NoteTO.status that is not `completed` or `COMPLETED` or `AMENDED`.
+- Ignore any NoteTO that is not signed
+- Ignore any NoteTO.type other than `PN`, `DS`, and `CR`
 - if the standard title contains the string `C & P `, then this note is **held for 30 days past the signature date/time**
   - Compensation and Pension
   - Many sub-titles but all have "C & P EXAMINATION CONSULT" (e.g. PODIATRY C & P EXAMINATION CONSULT)
@@ -66,5 +68,6 @@
 - discharge summary may have a `period`. The  `NoteTO/dischargeTimestamp` or `NoteTO/admitTimestamp` have not been seen in sample notes feed.
   - These values do exist in the discharge feed, but that feed does not include id values so we have no way to de-duplicate them. Further the discharge feed I have has no text body, so suspect these are not realistic.
   - The notes feed does have `DS` but does not populate the `NoteTO/dischargeTimestamp` or `NoteTO/admitTimestamp`, but does have well behaved TEXT elements with a DATE (no time) "DATE OF ADMISSION: {date}", and "DATE OF DISCHARGE: {date}" that could be used if the xml does not give them to us.
+  - Note that there is a sample `PN` that has an embedded `DS` with the strings (id=62846416)
   - MHV-57063
 

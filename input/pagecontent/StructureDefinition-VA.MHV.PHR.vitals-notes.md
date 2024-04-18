@@ -121,6 +121,12 @@ also:
 - should add conversion of ucum to [fixed ucum codes](utility.html#ucum-code)
 - Pain is now an valueInteger
 
+#### Business Rules
+
+- Ignore those without a facility
+- Ignore those without an id
+- no hold
+
 #### TODO
 
 there is KBS work on how to process the qualifiers. This work is not done, so no code change recommendation at this time.

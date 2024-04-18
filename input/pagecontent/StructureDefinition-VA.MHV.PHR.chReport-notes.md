@@ -43,7 +43,8 @@ rules interpreted from ChemistryTransformer.java
 
 - Ignore anything not `CH`
 - Ignore anything without a stationNumber
-- Ignore less than 48 hour (INCREMENTAL_GRACE_PERIOD) -- later is a 36 hour hold  ???
+- Ignore hold calculated from reportCompleteDate
+  - DiagnosticReport.issued
 - no hold date for reports that have been amended (status of `C`)
 - no hold date for covid
   

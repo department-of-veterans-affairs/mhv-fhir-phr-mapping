@@ -35,3 +35,9 @@
 - do not map `drugClass`
 - confirmed vs unconfirmed
   - Vista has a "VERIFIED" but this does not come thru HDR.
+
+#### Business Rules
+
+- Ignore those without a facility
+- Ignore those without an id
+- no hold period

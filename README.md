@@ -13,6 +13,12 @@ The notes below for each release. Archive of [released packages](https://github.
 - notes
   - Notes backend will now populate .date with timestamp when it includes a time, but otherwise will use the signature timestamp.
   - May need to extract admit/discharge date from text body
+- using "About" rather than "Downloads" as that page has more than just downloads.
+  - added to this page the listing of all valueSet and codeSystem that are used
+- allergy
+  - make clear there is no onset value
+- all
+  - added business logic sections, specifically with hold detail
 
 ### 0.3.5
 

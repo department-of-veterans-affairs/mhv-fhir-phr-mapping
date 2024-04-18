@@ -6,18 +6,26 @@ You can download:
 
 The source code for this Implementation Guide can be found on Department of Veterans Affairs GitHub [https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping).
 
-#### Cross Version Analysis
+### Cross Version Analysis
 
 {% include cross-version-analysis.xhtml %}
 
-#### Dependency Table
+### Dependency Table
 
 {% include dependency-table.xhtml %}
 
-#### Globals Table
+### Globals Table
 
 {% include globals-table.xhtml %}
 
-#### IP Statements
+### IP Statements
 
 {% include ip-statements.xhtml %}
+
+### valueSet used
+
+{% include valueset-ref-all-list.xhtml %}
+
+### codeSystem used
+
+{% include codesystem-ref-all-list.xhtml %}

@@ -47,11 +47,6 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * extension contains AllergyObservedHistoric named observedHistoric 0..1 MS
 
 // reaction.manifestation is either VUID or SNOMED
-* reaction.substance 0..0
-* reaction.description 0..0
-* reaction.onset 0..0
-* reaction.severity 0..0
-* reaction.note 0..0
 * note 0..* MS
 * note.text 1..1 MS
 * note.time 0..1 MS
@@ -66,8 +61,7 @@ A profile on the AllergyIntolerance resource for MHV PHR exposing Allergies usin
 * reaction.severity 0..0
 * reaction.exposureRoute 0..0
 * reaction.note 0..0
-
-* onsetDateTime 0..0
+* onset[x] 0..0
 
 ValueSet: AllergyCategoryVS
 Title: "Subset of allergy intolerance category"

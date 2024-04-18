@@ -9,6 +9,11 @@
 - `type` is LOINC#18748-4 `Diagnostic imaging study`
 - Order and Encounter are not converted into FHIR resources, but rather we save the original id into the Reference.identifier encoding.
 
+#### Business Rules
+
+- Ignore if no facility
+- hold is calculated from the "Date Verified:" text found in the report body
+
 #### Mapping Concerns
 
 - some schema elements found in VIA_v4.0.7_uat.wsdl are not mapped here because I can't tell what is in them. Most of them likely have a place to go in the FHIR model, but I need to know more about them.

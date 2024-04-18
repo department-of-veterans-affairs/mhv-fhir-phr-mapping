@@ -84,9 +84,12 @@
 
 #### Business Rule
 
+- Ignore those without a facility
+- Ignore those without an id
 - all conditions are **held for 36 hours past the release date/time**
-  - 36 hour hold based on `timestamp` - skip those with no timestamp or bad timestamp
-- filter out non-active, deleted are filtered out by VIA
+  - 36 hour hold based on `timestamp` 
+  - skip those with no timestamp or bad timestamp
+- Ignore non-active, deleted are filtered out by VIA
 
 #### Mapping Concerns
 

@@ -33,8 +33,10 @@
   - if "STATUS:" is found and not "COMPLETE", then ignore
   - if "DATE COMPLETED:" is found, consider it complete and don't ignore
   - ignore all those with no "Date  completed:" in the text body
+  - hold is calculated off of the "completeDate" text from the report body
 - Micro
   - ignore with no "FINAL REPORT =>" in the text body, and when the date given is malformed or less than the hold
+  - hold date calculated off of the "FinalReport" text from the report body
 
 #### Mapping Concerns
 
@@ -50,6 +52,7 @@
   - schema values but no examples: author, caseNumber, comment, facility 
 - KBS has a question outstanding with micro. FHIR modeling seems to be from lab perspective, not from EHR.  FHIR-44631
 - Need to determine what happens with deleted/entered-in-error
+- microbiology, searches out "FinalReport" from the report text, and uses this for hold. But does not preserve it
 
 ### Mapping
 
@@ -75,7 +78,8 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    | labReportTO/text {specimen}                  | specimen                        |                       | Specimen.type.text                  | Not sure why parsed out of the text, vs using specimen/name |
 |   |    | labReportTO/text {date obtained:}            | collectedDateTime[x]            |                       | Specimen.collectedDateTime          | Not sure why parsed out of the text, vs using specimen/collectionDate
 |   |    | labReportTO/text {signed}                    | completedDateTime[x]            |                       | DiagnosticReport.issued             | signed is used for date if it exists
-|   |    | labReportTO/text {date completed:}           | completedDateTime[x]            | completedDateTime[x]  | DiagnosticReport.issued             | used in **hold** |
+|   |    | labReportTO/text {date completed:}           | completedDateTime[x]            | completedDateTime[x]  | DiagnosticReport.issued             | used in **hold** for Path |
+|   |    | labReportTO/text {finalreport}               |                                 |                       |                                     | used in **hold** for Micro |
 |   |    | labReportTO/text {test(s) ordered:}          |                                 | orderedTest           |                                     | no mock examples |
 |   |    | labReportTO/text {provider:}                 |                                 | orderingProvider      | DiagnosticReport.performer(Pra).display | only have string |
 |   |    | labReportTO/text {site/specimen:}            |                                 | specimenSource        | Specimen.collection.bodySite        | location? KBS/TODO |
@@ -109,3 +113,6 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    |                                              |                                 |                       | Observation[m].effectiveDate={DiagnosticReport.effectiveDate} |  |
 |   |    | schema has other elements
 {: .grid}
+
+
+

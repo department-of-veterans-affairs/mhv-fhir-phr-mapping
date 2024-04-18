@@ -13,7 +13,7 @@ The main sections of this IG are:
 - [Vista Mapping](background.html)
 - [Artifacts](artifacts.html)
 - [TestPlan](testplan.html)
-- [Downloads](downloads.html)
+- [About](downloads.html)
 
 All MHV profiles are based on [HL7 FHIR US-Core]({{site.data.fhir.hl7fhiruscore}}/index.html) implementation guide, which provides guidance to the USA marketplace that VHA participates within.  Deeper explanation is provided in the US-Core specification.
 
