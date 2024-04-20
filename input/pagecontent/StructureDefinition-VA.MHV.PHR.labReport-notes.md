@@ -24,6 +24,7 @@
 - VIA will stop sending us entries. so
   - Thus we will be using [Index-Update-and-Delete](background.html#entered-in-error)
 - There is no data available to fill out a ServiceRequest
+- Note that recommendation on pathology is to just keep the overall presented form, and not bother with the observations.
 
 ### Business rules
 
@@ -32,27 +33,34 @@
 - Pathology
   - if "STATUS:" is found and not "COMPLETE", then ignore
   - if "DATE COMPLETED:" is found, consider it complete and don't ignore
-  - ignore all those with no "Date  completed:" in the text body
-  - hold is calculated off of the "completeDate" text from the report body
+    - ignore all those with no "Date  completed:" in the text body
+    - hold is calculated off of this (if no time is given, midnight on this day is presumed)
+    - DiagnosticReport.issued
 - Micro
-  - ignore with no "FINAL REPORT =>" in the text body, and when the date given is malformed or less than the hold
-  - hold date calculated off of the "FinalReport" text from the report body
+  - ignore with no "FINAL REPORT =>" in the text body, and when the date given is malformed
+    - hold is calculated off of this (if no time is given, midnight on this day is presumed)
+    - DiagnosticReport.issued
+
+#### Needed examples
+
+- need more examples
+  - Need to determine what happens with deleted/entered-in-error
+  - Need to better understand body site vs sample identification - labs for blood or Urine tests.
+  - schema values but no examples: author, caseNumber, comment, facility
 
 #### Mapping Concerns
 
-- Text - "Site/Specimen: " or "Collection sample:". 
-- The labReportTO
-  - type
-    - Pathology -> LOINC#11526-1 "Pathology study" -> ? v2-0074#
-      - SP - Surgical Pathology -> ? v2-0074#SP
-      - CY - Cytology --- I have no mock data -> ? v2-0074#CP
-      - EM - Electron Microscopy  --- I have no mock data -> ? v2-0074#OTH -- 73512001 "Electron microsopic study (procedure)"
-    - MI -> LOINC#18725-2 "Microbiology studies (set)"  -> ? v2-0074#MB
-  - no performer, possibly the Organization is in result.labSiteId - e.g., `<labSiteId>989</labSiteId>`
-  - schema values but no examples: author, caseNumber, comment, facility 
+- how to handle specimen bodySite vs sample - "Site/Specimen: " or "Collection sample:". from KBS: in vista there is a "collection sample" 60/300 that identifies the sample, "topography" 61/.01 covers where the data came from. historic vista data is not well behaved.
+  - TODO: Don't change until we get better data (Blood and urine)
+- The labReportTO/type
+  - Pathology -> todo: code=LOINC#11526-1 "Pathology study"
+    - SP - Surgical Pathology -> TODO category=v2-0074#SP
+    - CY - Cytology --- I have no mock data -> TODO category=v2-0074#CP
+    - EM - Electron Microscopy  --- I have no mock data -> TODO category=v2-0074#OTH -- 73512001 "Electron microsopic study (procedure)"
+  - MI -> todo: code=LOINC#18725-2 "Microbiology studies (set)"  -> TODO category=v2-0074#MB
+- no performer, possibly the Organization is in result.labSiteId - e.g., `<labSiteId>989</labSiteId>`
 - KBS has a question outstanding with micro. FHIR modeling seems to be from lab perspective, not from EHR.  FHIR-44631
-- Need to determine what happens with deleted/entered-in-error
-- microbiology, searches out "FinalReport" from the report text, and uses this for hold. But does not preserve it
+- TODO update fhir mapping from table updates
 
 ### Mapping
 
@@ -79,7 +87,6 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    | labReportTO/text {date obtained:}            | collectedDateTime[x]            |                       | Specimen.collectedDateTime          | Not sure why parsed out of the text, vs using specimen/collectionDate
 |   |    | labReportTO/text {signed}                    | completedDateTime[x]            |                       | DiagnosticReport.issued             | signed is used for date if it exists
 |   |    | labReportTO/text {date completed:}           | completedDateTime[x]            | completedDateTime[x]  | DiagnosticReport.issued             | used in **hold** for Path |
-|   |    | labReportTO/text {finalreport}               |                                 |                       |                                     | used in **hold** for Micro |
 |   |    | labReportTO/text {test(s) ordered:}          |                                 | orderedTest           |                                     | no mock examples |
 |   |    | labReportTO/text {provider:}                 |                                 | orderingProvider      | DiagnosticReport.performer(Pra).display | only have string |
 |   |    | labReportTO/text {site/specimen:}            |                                 | specimenSource        | Specimen.collection.bodySite        | location? KBS/TODO |
@@ -96,7 +103,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    | labReportTO/specimen/name                    |                                 |                       | Specimen.type.text                  | not done this way today |
 |   |    | labReportTO/specimen/collectionDate          |                                 |                       | Specimen.collectedDateTime          | not done this way today |
 |   |    | labReportTO/specimen/accessionNum            |                                 |                       | Specimen.accessionIdentifier        |  |
-|   |    | labReportTO/specimen/id                      |                                 |                       | Specimen.identifier                 |  |
+|   |    | labReportTO/specimen/id                      |                                 |                       | Specimen.identifier                 | might not be an identifier |
 |   |    | labReportTO/timestamp                        |                                 |                       | DiagnosticReport.issued             | no mock examples |
 |   |    | labReportTO/result/timestamp                 |                                 |                       | DiagnosticReport.issued             |  |
 |   |    | labReportTO/result/labSiteId                 |                                 |                       | DiagnosticReport.performer(Org)     | |

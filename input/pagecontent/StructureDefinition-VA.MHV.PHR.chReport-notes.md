@@ -26,16 +26,16 @@
 
 #### Mapping Concerns
 
-- KBS? Should we derive DiagnosticReport.status from the ObservationStatus? Yes, mostly the least of the values
-- KBS? Should DiagnosticReport.status be set to `entered-in-error` if `ORDER CANCELLED`? or is that distinct from entered-in-error which won't come as a status?
-- KBS? Should ServiceRequest.status have a value other than unknown?
+- KBS? Should we derive DiagnosticReport.status from the ObservationStatus? TODO: Yes, mostly the least of the values
+- KBS? Should DiagnosticReport.status be set to `entered-in-error` if `ORDER CANCELLED`? or is that distinct from entered-in-error which won't come as a status? TODO: set to final, preliminary, or handle deleted/entered-in-error.
+- KBS? Should ServiceRequest.status have a value other than unknown? TODO: no.
 - would like to have vista field mapping, but so far few fields are sure
   - are trying to find older data that might be more traceable
   - have gotten a mapping table from HDR but it is to HL7v2, so not helpful
-- Need data 
+- Need data
   - different status
   - deleted/entered-in-error
-- .category[1]  -> ? v2-0074#CH
+- TODO: set .category[1]  -> v2-0074#CH
 
 #### Business Rules
 
@@ -43,7 +43,7 @@ rules interpreted from ChemistryTransformer.java
 
 - Ignore anything not `CH`
 - Ignore anything without a stationNumber
-- Ignore hold calculated from reportCompleteDate
+- hold calculated from reportCompleteDate, (midnight on this day is presumed)
   - DiagnosticReport.issued
 - no hold date for reports that have been amended (status of `C`)
 - no hold date for covid

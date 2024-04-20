@@ -87,7 +87,7 @@
 - Ignore those without a facility
 - Ignore those without an id
 - all conditions are **held for 36 hours past the release date/time**
-  - 36 hour hold based on `timestamp` 
+  - 36 hour hold based on `timestamp`, (if no time is given, midnight on this day is presumed)
   - skip those with no timestamp or bad timestamp
 - Ignore non-active, deleted are filtered out by VIA
 
@@ -97,6 +97,6 @@
 
 ##### Source-Code review
 
-There is no prototype implementation. So the whole resource needs to be written
-- MHV seems to be adding midnight time to dates that don't have a time.
+- MHV seems to be adding midnight time to dates that don't have a time. - `timestamp`, `recordedDate`, and `resolvedDate`
+  - Note `timestamp` does need to be processed as if it was midnight for the hold date calculation, but this should NOT affect how the data goes into FHIR.
 - MHV does not handle when only a year is given - e.g. <onsetDate>2990000</onsetDate> -> "1999", no month, day, or time.

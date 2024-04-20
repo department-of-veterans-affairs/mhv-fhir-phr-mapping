@@ -32,3 +32,7 @@
   - Not yet confirmed: 78478, 78990
   - unclear what other codes may come to us from Vista
   - see [zulip chat with terminology](https://chat.fhir.org/#narrow/stream/179202-terminology/topic/CPT.20code.20not.20found)
+- Should we use DiagnosticReport, this is what OH uses.
+
+TODO: Change to DiagnosticReport. Look at jp systems IG for advise. There are known mapping and vocabulary problems.
+
