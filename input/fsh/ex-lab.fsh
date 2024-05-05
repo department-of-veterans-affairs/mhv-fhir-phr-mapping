@@ -58,7 +58,7 @@ Usage: #inline
 * subject = Reference(Patient/ex-MHV-patient-1)
 
 Instance: ex-MHV-labReport-1
-InstanceOf: VA.MHV.PHR.labReport 
+InstanceOf: VA.MHV.PHR.MBlabReport 
 Title: "Example 1 of an MHV labReport"
 Usage: #example
 Description: """
@@ -67,6 +67,7 @@ Example from a mock labReportTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[MBLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#MB
 * code.text = "LR MICROBIOLOGY REPORT"
 * code = LOINC#18725-2
 * subject = Reference(Patient/ex-MHV-patient-1)
@@ -215,7 +216,7 @@ Usage: #inline
 
 
 Instance: ex-MHV-labReport-2
-InstanceOf: VA.MHV.PHR.labReport 
+InstanceOf: VA.MHV.PHR.MBlabReport 
 Title: "Example 2 of an MHV labReport"
 Usage: #example
 Description: """
@@ -224,6 +225,7 @@ Example from a mock labReportTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[MBLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#MB
 * code.text = "LR MICROBIOLOGY REPORT"
 * code.coding = LOINC#18725-2
 * subject = Reference(Patient/ex-MHV-patient-1)
@@ -378,7 +380,7 @@ Usage: #inline
 
 
 Instance: ex-MHV-labReport-3
-InstanceOf: VA.MHV.PHR.labReport 
+InstanceOf: VA.MHV.PHR.MBlabReport 
 Title: "Example 3 of an MHV labReport"
 Usage: #example
 Description: """
@@ -387,6 +389,7 @@ Example from a mock labReportTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[MBLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#MB
 * code.text = "LR MICROBIOLOGY REPORT"
 * code.coding = LOINC#18725-2
 * subject = Reference(Patient/ex-MHV-patient-1)
@@ -444,7 +447,7 @@ Usage: #inline
 
 
 Instance: ex-MHV-labReport-4
-InstanceOf: VA.MHV.PHR.labReport 
+InstanceOf: VA.MHV.PHR.SPlabReport 
 Title: "Example 4 of an MHV labReport"
 Usage: #example
 Description: """
@@ -453,6 +456,7 @@ Example from a mock labReportTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[SPLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#SP
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)
@@ -517,7 +521,7 @@ Usage: #inline
 
 
 Instance: ex-MHV-labReport-5
-InstanceOf: VA.MHV.PHR.labReport 
+InstanceOf: VA.MHV.PHR.SPlabReport 
 Title: "Example 5 of an MHV labReport"
 Usage: #example
 Description: """
@@ -526,6 +530,7 @@ Example from a mock labReportTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[SPLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#SP
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)
@@ -611,7 +616,7 @@ Usage: #inline
 
 
 Instance: ex-MHV-labReport-6
-InstanceOf: VA.MHV.PHR.labReport 
+InstanceOf: VA.MHV.PHR.SPlabReport 
 Title: "Example 6 of an MHV labReport"
 Usage: #example
 Description: """
@@ -620,6 +625,7 @@ Example from a mock labReportTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[SPLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#SP
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)
@@ -683,7 +689,7 @@ Usage: #inline
 
 
 Instance: ex-MHV-labReport-7
-InstanceOf: VA.MHV.PHR.labReport 
+InstanceOf: VA.MHV.PHR.SPlabReport 
 Title: "Example 7 of an MHV labReport"
 Usage: #example
 Description: """
@@ -692,6 +698,7 @@ Example from a mock labReportTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[SPLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#SP
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)
@@ -743,7 +750,7 @@ Usage: #inline
 
 
 Instance: ex-MHV-labReport-8
-InstanceOf: VA.MHV.PHR.labReport 
+InstanceOf: VA.MHV.PHR.SPlabReport 
 Title: "Example 8 of an MHV labReport"
 Usage: #example
 Description: """
@@ -752,6 +759,7 @@ Example from a mock labReportTO
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[SPLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#SP
 * code.text = "LR SURGICAL PATHOLOGY REPORT"
 * code.coding = LOINC#11526-1
 * subject = Reference(Patient/ex-MHV-patient-1)

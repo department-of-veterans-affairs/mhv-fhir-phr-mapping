@@ -59,7 +59,8 @@ Usage: #definition
     * type = #DiagnosticReport
     * supportedProfile[+] = Canonical(VA.MHV.PHR.diagnosticReport)
     * supportedProfile[+] = Canonical(VA.MHV.PHR.chReport)
-    * supportedProfile[+] = Canonical(VA.MHV.PHR.labReport)
+    * supportedProfile[+] = Canonical(VA.MHV.PHR.SPlabReport)
+    * supportedProfile[+] = Canonical(VA.MHV.PHR.MBlabReport)
     * documentation = "MHV [PHR use](index.html)"
     * interaction[+].code = #search-type
     * interaction[+].code = #read

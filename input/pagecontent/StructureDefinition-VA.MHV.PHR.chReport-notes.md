@@ -23,19 +23,18 @@
 - note to API use, the Observations here are lab results and thus would include: Blood Sugar, Cholesterol, and INR
 - See [99VA code system conversion](utility.html#code-lookup) (i.e., `99VA60` = `http://va.gov/terminology/vistaDefinedTerms/60`)
 - ChemistryResult ObservationStatus translated to Observation.status using [concept map translation](ConceptMap-VF-ChemistryResult-ObservationStatus.html)
+- DiagnosticReport.status is set to `final` if all Observations are final; and `preliminary` if any Observations are not final.
+- DiagnosticReport.status could be set to `entered-in-error` if `ORDER CANCELED` or deleted
+- ServiceRequest.status is always `unknown` as we are creating a contained resource for this
 
 #### Mapping Concerns
 
-- KBS? Should we derive DiagnosticReport.status from the ObservationStatus? TODO: Yes, mostly the least of the values
-- KBS? Should DiagnosticReport.status be set to `entered-in-error` if `ORDER CANCELLED`? or is that distinct from entered-in-error which won't come as a status? TODO: set to final, preliminary, or handle deleted/entered-in-error.
-- KBS? Should ServiceRequest.status have a value other than unknown? TODO: no.
 - would like to have vista field mapping, but so far few fields are sure
   - are trying to find older data that might be more traceable
   - have gotten a mapping table from HDR but it is to HL7v2, so not helpful
 - Need data
   - different status
   - deleted/entered-in-error
-- TODO: set .category[1]  -> v2-0074#CH
 
 #### Business Rules
 
@@ -43,10 +42,10 @@ rules interpreted from ChemistryTransformer.java
 
 - Ignore anything not `CH`
 - Ignore anything without a stationNumber
-- hold calculated from reportCompleteDate, (midnight on this day is presumed)
+- hold is calculated from reportCompleteDate, (midnight on this day is presumed)
   - DiagnosticReport.issued
 - no hold date for reports that have been amended (status of `C`)
-- no hold date for covid
+- no hold date for COVID
   
 #### Mapping
 
@@ -87,6 +86,7 @@ MHV eVault has one object definition that gets replicated for each portion (Lab,
 |   |    |  ""                                                | reportCompleteDateImprecise     |                                     |  |
 |   |    | reportCompleteDate                                 | reportCompleteDatePrecise       | Observation[*].issued               |  |
 |   |    |                                                    |                                 | DiagnosticReport.category=`LAB`     | also all chTest code |
+|   |    |                                                    |                                 | DiagnosticReport.category=`v2-0074#CH` |  |
 |   |    |                                                    |                                 | DiagnosticReport.status             | based on all Observation.status. So `final` or `preliminary` |
 |   |    |                                                    |                                 | Specimen.status=`available`         |  |
 |   |    |                                                    |                                 | Specimen.request = {ServiceRequest} | multiple |
@@ -102,19 +102,19 @@ MHV eVault has one object definition that gets replicated for each portion (Lab,
 
 ##### observationStatus code
 
-FHIR mapping
+FHIR mapping. Same as [concept map translation](ConceptMap-VF-ChemistryResult-ObservationStatus.html)
 
-| code | meaning                | MHV PHR     |  FHIR Observation
-|-----|-------------------------|-------------|----------------|
-| C   | CORRECTED RESULTS       | AMENDED     | corrected |
-| F   | FINAL RESULTS           | FINAL       | final |
-| Y   | NO ORDER ON RECORD      | UNKNOWN     | unknown |
+| code | meaning                | MHV PHR     |  FHIR Observation.status |
+|-----|-------------------------|-------------|-------------|
+| C   | CORRECTED RESULTS       | AMENDED     | corrected   |
+| F   | FINAL RESULTS           | FINAL       | final       |
+| Y   | NO ORDER ON RECORD      | UNKNOWN     | unknown     |
 | R   | NOT VERIFIED            | UNKNOWN     | preliminary |
-| X   | ORDER CANCELED          | CANCELLED   | cancelled |
-| O   | ORDER RECEIVED          | UNKNOWN     | registered |
+| X   | ORDER CANCELED          | CANCELLED   | cancelled   |
+| O   | ORDER RECEIVED          | UNKNOWN     | registered  |
 | P   | PRELIMINARY             | UNKNOWN     | preliminary |
-| S   | PROCEDURE SCHEDULED     | UNKNOWN     | registered |
-| A   | SOME RESULTS AVAILABLE  | UNKNOWN     | unknown |
+| S   | PROCEDURE SCHEDULED     | UNKNOWN     | registered  |
+| A   | SOME RESULTS AVAILABLE  | UNKNOWN     | unknown     |
 | I   | SPECIMEN RECEIVED       | PRELIMINARY | preliminary |
 {: .grid}
 

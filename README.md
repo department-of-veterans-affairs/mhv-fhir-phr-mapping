@@ -19,6 +19,15 @@ The notes below for each release. Archive of [released packages](https://github.
   - make clear there is no onset value
 - all
   - added business logic sections, specifically with hold detail
+- Chem-Hem
+  - category also needs `http://terminology.hl7.org/CodeSystem/v2-0074#CH`
+  - DiagnosticReport.status is set to `final` if all Observations are final; and `preliminary` if any Observations are not final.
+  - DiagnosticReport.status could be set to `entered-in-error` if `ORDER CANCLLED` or deleted
+  - ServiceRequest.status is always `unknown` as we are creating a contained resource for this
+- Pathology
+  - defined additional category for the kinds of pathology
+- Microbiology
+  - defined additional category for microbiology
 
 ### 0.3.5
 

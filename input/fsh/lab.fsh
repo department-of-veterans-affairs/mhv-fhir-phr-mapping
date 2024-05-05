@@ -61,13 +61,13 @@ Title: "VIA to mhv-fhir-phr"
 * collection.collectedDateTime -> "ConvertDate(LabSpecimenTO.collectionDate)"
 
 
-Profile: MHVlabReport
+Profile: MHVSPlabReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 //Parent: DiagnosticReport
-Id: VA.MHV.PHR.labReport
-Title: "VA MHV PHR Lab Report"
+Id: VA.MHV.PHR.SPlabReport
+Title: "VA MHV PHR SP Lab Report"
 Description: """
-A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.
+A profile showing how SP LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.
 """
 * ^extension[$fmm].valueInteger = 2
 * identifier 1..
@@ -84,16 +84,65 @@ A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observ
 * code 1..1 MS
 * code.text 1..1 MS
 * code.coding ..1 MS
-* code.coding from LabReportVS (preferred)
-/*
-* category MS
-* category 1..
-* category ^slicing.discriminator.type = #pattern
-* category ^slicing.discriminator.path = "$this"
-* category ^slicing.rules = #open
-* category contains LaboratorySlice 1..1
-* category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
-*/
+* code.coding = LOINC#11526-1
+* category contains SPLabSlice 1..1
+* category[SPLabSlice].coding 1..1
+* category[SPLabSlice].coding = http://terminology.hl7.org/CodeSystem/v2-0074#SP
+* effectiveDateTime MS
+* issued MS
+* presentedForm MS
+* presentedForm.contentType = #text/plain
+* presentedForm.language 0..0
+* presentedForm.data 1..1
+* presentedForm.url 0..0
+* presentedForm.size 0..0
+* presentedForm.hash 0..0
+* presentedForm.title 0..0
+* presentedForm.creation 0..0
+* specimen MS
+* specimen ^type.aggregation = #contained
+* specimen only Reference(MHVlabSpecimen)
+* result MS
+* result ^type.aggregation = #contained
+* result only Reference(MHVlabTest)
+* performer MS
+* performer ^short = "LabReportTO.facility"
+* performer only Reference(MHVorganization)
+* encounter 0..0
+* resultsInterpreter 0..0
+* imagingStudy 0..0
+* media 0..0
+* conclusionCode 0..0
+* conclusion 0..0
+* basedOn 0..0
+
+Profile: MHVMBlabReport
+Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
+//Parent: DiagnosticReport
+Id: VA.MHV.PHR.MBlabReport
+Title: "VA MHV PHR MB Lab Report"
+Description: """
+A profile showing how MB LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.
+"""
+* ^extension[$fmm].valueInteger = 2
+* identifier 1..
+* identifier ^slicing.discriminator.type = #pattern
+* identifier ^slicing.discriminator.path = "use"
+* identifier ^slicing.rules = #open
+* identifier contains
+  TOid 1..1
+* identifier[TOid].use = #usual
+* identifier[TOid].system obeys TOid-startswithoid
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`LabReportTO` | `.` | {LabReportTO.id}"
+* subject 1..1
+* code 1..1 MS
+* code.text 1..1 MS
+* code.coding ..1 MS
+* code.coding = LOINC#18725-2
+* category contains MBLabSlice 1..1
+* category[MBLabSlice].coding 1..1
+* category[MBLabSlice].coding = http://terminology.hl7.org/CodeSystem/v2-0074#MB
 * effectiveDateTime MS
 * issued MS
 * presentedForm MS
@@ -129,13 +178,47 @@ Description: "Lab Report types"
 * LOINC#18725-2 "Microbiology studies (set)"
 * LOINC#11526-1 "Pathology study"
 
+ValueSet: KindLabReportVS
+Title: "Kind of Lab Report"
+Description: "Specific kind of Pathology or Microbiology mapped from labReportTO/type"
+* ^experimental = false
+* http://terminology.hl7.org/CodeSystem/v2-0074#SP
+* http://terminology.hl7.org/CodeSystem/v2-0074#CP
+* http://terminology.hl7.org/CodeSystem/v2-0074#OTH
+* SCT#73512001 "Electron microsopic study (procedure)"
+* http://terminology.hl7.org/CodeSystem/v2-0074#MB
 
-Mapping: Lab-Mapping-LabReportTO
-Source:	MHVlabReport
+Mapping: Lab-Mapping-SPLabReportTO
+Source:	MHVSPlabReport
 Target: "LabReportTO"
 Title: "VIA to mhv-fhir-phr"
 * -> "LabReportTO"
 * category -> "`LAB`"
+* category -> "kind of lab"
+* category -> "plus all Observation codes"
+* status -> "`final`"
+* subject -> "patient"
+* result -> "Contained Observation(LabResultTO)"
+* performer -> "GetPractitioner(LabReportTO.author)"
+* basedOn.identifier -> "LabReportTO.caseNumber"
+* presentedForm.data -> "base64(LabReportTO.text)"
+* presentedForm.contentType -> "`text/plain`"
+* performer -> "GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)"
+* identifier -> "{StationNbr} and {LabReportTO.id}"
+* specimen -> "Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])"
+* effectiveDateTime -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
+* issued -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
+* code.text -> "LabReportTO.title"
+* code.coding -> "LabReportTO.type -> LOINC"
+
+Mapping: Lab-Mapping-MBLabReportTO
+Source:	MHVMBlabReport
+Target: "LabReportTO"
+Title: "VIA to mhv-fhir-phr"
+* -> "LabReportTO"
+* category -> "`LAB`"
+* category -> "kind of lab"
+* category -> "plus all Observation codes"
 * status -> "`final`"
 * subject -> "patient"
 * result -> "Contained Observation(LabResultTO)"

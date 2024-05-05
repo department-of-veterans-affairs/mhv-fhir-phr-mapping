@@ -80,12 +80,23 @@ This section is dedicated to instructions on how MHV will transition the data we
 - [Mapping from VIA - ImmunizationTO](StructureDefinition-VA.MHV.PHR.immunization-mappings.html#mappings-for-via-to-mhv-fhir-phr-immunizationto)
 - [Examples](StructureDefinition-VA.MHV.PHR.immunization-examples.html)
 
-#### LabReport
+#### Pathology LabReport
 
-[LabReport](StructureDefinition-VA.MHV.PHR.labReport.html#notes) including Microbiology and Pathology Mapping Notes
+[LabReport](StructureDefinition-VA.MHV.PHR.SPlabReport.html#notes)  Pathology Mapping Notes
 
-- [Mapping from VIA - LabReportTO +](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto)
-  - [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
+- [Mapping from VIA - SP LabReportTO +](StructureDefinition-VA.MHV.PHR.SPlabReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.SPlabReport-examples.html)
+- Contained [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html)
+  - Mapping from [VIA LabSpecimen](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-via-to-mhv-fhir-phr-labspecimen)
+- Contained [Observation](StructureDefinition-VA.MHV.PHR.labTest.html)
+  - Mapping from [VIA LabTestTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-via-to-mhv-fhir-phr-labtestto)
+
+#### Microbiology LabReport
+
+[LabReport](StructureDefinition-VA.MHV.PHR.MBlabReport.html#notes) Microbiology Mapping Notes
+
+- [Mapping from VIA - MB LabReportTO +](StructureDefinition-VA.MHV.PHR.MBlabReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.MBlabReport-examples.html)
 - Contained [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html)
   - Mapping from [VIA LabSpecimen](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-via-to-mhv-fhir-phr-labspecimen)
 - Contained [Observation](StructureDefinition-VA.MHV.PHR.labTest.html)

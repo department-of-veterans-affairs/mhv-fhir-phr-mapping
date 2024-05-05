@@ -36,14 +36,14 @@ No code provided, and a code should be provided from the value set 'ReligiousAff
 No code provided, and a code should be provided from the value set 'MaritalStatus' (http://hl7.org/fhir/ValueSet/marital-status|4.0.1)
 
 # example Chem-Hem has extra codes outside the slices defined by us-core
-INFORMATION: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
 INFORMATION: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.category[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
-INFORMATION: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
-INFORMATION: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
-INFORMATION: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
-INFORMATION: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
-INFORMATION: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
-INFORMATION: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.category[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
+INFORMATION: DiagnosticReport/ex-MHV-chReport-1: DiagnosticReport.category[3]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
+INFORMATION: DiagnosticReport/ex-MHV-chReport-1103030001: DiagnosticReport.category[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
+INFORMATION: DiagnosticReport/ex-MHV-chReport-1103030002: DiagnosticReport.category[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
+INFORMATION: DiagnosticReport/ex-MHV-chReport-1190370002: DiagnosticReport.category[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
+INFORMATION: DiagnosticReport/ex-MHV-chReport-1190530001: DiagnosticReport.category[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
+INFORMATION: DiagnosticReport/ex-MHV-chReport-1190530002: DiagnosticReport.category[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
+INFORMATION: DiagnosticReport/ex-MHV-chReport-1190740001: DiagnosticReport.category[2]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport%
 
 
 # some allergies have a code, but not system
@@ -67,11 +67,7 @@ WARNING: StructureDefinition.where(url = 'https://department-of-veterans-affairs
 INFORMATION: StructureDefinition.where(url = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.immunizationReaction'): The Implementation Guide contains no explicitly linked examples for this profile
 
 # info messages when using draft resources, like valueSets from THO 
-Reference to draft CodeSystem http://hl7.org/fhir/allergy-intolerance-category|4.0.1
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-ver-status|1.0.0
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/condition-category|0.5.0
-Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/observation-category|0.1.0
-Reference to draft ValueSet http://hl7.org/fhir/ValueSet/servicerequest-category|4.0.1
+MSG_DRAFT
 
 # Organization, Practitioner, and Location are now contained, so there is no examples formally recognized by validator
 The Implementation Guide contains no explicitly linked examples for this profile
@@ -86,12 +82,15 @@ CONCEPTMAP_GROUP_TARGET_INCOMPLETE
 # Patient-0 is fully populated, therefore uses extensions beyond us-core
 INFORMATION: Patient/ex-VIA-patient-0: Patient.extension[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|5.0.1
 INFORMATION: Patient/ex-VIA-patient-0: Patient.extension[2]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient|5.0.1
+WARNING: Patient/ex-VIA-patient-0: Patient.extension[0].value.ofType(CodeableConcept): No code provided, and a code should be provided from the value set 'ReligiousAffiliation' (http://terminology.hl7.org/ValueSet/v3-ReligiousAffiliation|3.0.0)
 
 # Minimally populated Observation that is contained. I have no details more.
 
 
 # Jay checked these. Were valid, but are now retired. Do we just accept validation errors, or do we put defensive code into MHV to not use the code, but just use the old display?
 # old codes that the current CPT valueSet does not include as deprecated codes
+Terminology_TX_NoValid_1_CC
+
 # 71020 - Deleted -- https://www.aapc.com/codes/cpt_code/deleted_cpt_code/71020
 Code '71020' not found in CPT 
 Unknown code '71020' in the CodeSystem 'http://www.ama-assn.org/go/cpt' version '2023'

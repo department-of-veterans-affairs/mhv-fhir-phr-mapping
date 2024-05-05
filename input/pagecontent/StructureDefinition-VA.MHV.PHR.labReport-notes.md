@@ -1,8 +1,10 @@
 
 - The [mock example 1](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/labs.xml)
 - maps to [LabReportTO, LabTestTO, LabResultTO and LabSpecimenTO](https://github.com/department-of-veterans-affairs/mhv-np-via-wsclient/blob/development/src/main/resources/VIA_v4.0.7_uat.wsdl) schema.
-- [Mapping from VIA - LabReportTO +](StructureDefinition-VA.MHV.PHR.labReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto)
-- [Examples](StructureDefinition-VA.MHV.PHR.labReport-examples.html)
+- [Mapping from VIA - Pathology LabReportTO +](StructureDefinition-VA.MHV.PHR.SPlabReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.SPlabReport-examples.html)
+- [Mapping from VIA - Microbiology LabReportTO +](StructureDefinition-VA.MHV.PHR.MBlabReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto)
+  - [Examples](StructureDefinition-VA.MHV.PHR.MBlabReport-examples.html)
 - This profile is based on:
   - [US-Core DiagnosticReport profile for Laboratory Results Reporting]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-diagnosticreport-lab.html) and 
   - [US Core Laboratory Result Observation Profile]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-observation-lab.html) and
@@ -10,16 +12,20 @@
 - The LabTestTO plus LabResultTO are combined and mapped onto a FHIR [Observation for laboratory result](StructureDefinition-VA.MHV.PHR.labTest.html) that is contained in the DiagnosticReport. The map to [VIA LabTestTO and LabResultTO](StructureDefinition-VA.MHV.PHR.labTest-mappings.html#mappings-for-via-to-mhv-fhir-phr-labtestto).
 - The LabSpecimen is mapped into a [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html) resource that is contained in the DiagnosticReport. The map to [VIA LabSpecimenTO](StructureDefinition-VA.MHV.PHR.LabSpecimen-mappings.html#mappings-for-via-to-mhv-fhir-phr-labspecimen).
 - The use of contained means that we do not need to de-duplicate the lab tests or specimen. Note that means that the specimen and observations are no individually findable or referenceable.
-- should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport` to indicate the intent to be compliant with this profile
+- should have `meta.profile` set to indicate the intent to be compliant with this profile
 - `code.text` contains the original `labReportTO.title`
   - `code.coding` also includes the type in LOINC
     - Pathology -> LOINC#11526-1 "Pathology study"
-      - SP - Surgical Pathology
-      - CY - Cytology
-      - EM - Electron Microscopy
-    - MI -> LOINC#18725-2 "Microbiology studies (set)"
+    - Microbiology -> LOINC#18725-2 "Microbiology studies (set)"
   - `coding` may have a supplied loinc
 - `category` must be `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`
+  - `category` indicates the kind of pathology / microbiology
+    - SP - Surgical Pathology -> `category`=v2-0074#SP
+    - CY - Cytology -> `category`=v2-0074#CP
+    - EM - Electron Microscopy
+      - `category`=v2-0074#OTH
+      - `category`=SNOMED#73512001 "Electron microsopic study (procedure)"
+    - MI -> `category`=v2-0074#MB
   - `category` also holds 0..* codes from the contained Observation.code
 - VIA will stop sending us entries. so
   - Thus we will be using [Index-Update-and-Delete](background.html#entered-in-error)
@@ -47,20 +53,17 @@
   - Need to determine what happens with deleted/entered-in-error
   - Need to better understand body site vs sample identification - labs for blood or Urine tests.
   - schema values but no examples: author, caseNumber, comment, facility
+- Need mock data for CY and EM
 
 #### Mapping Concerns
 
 - how to handle specimen bodySite vs sample - "Site/Specimen: " or "Collection sample:". from KBS: in vista there is a "collection sample" 60/300 that identifies the sample, "topography" 61/.01 covers where the data came from. historic vista data is not well behaved.
-  - TODO: Don't change until we get better data (Blood and urine)
-- The labReportTO/type
-  - Pathology -> todo: code=LOINC#11526-1 "Pathology study"
-    - SP - Surgical Pathology -> TODO category=v2-0074#SP
-    - CY - Cytology --- I have no mock data -> TODO category=v2-0074#CP
-    - EM - Electron Microscopy  --- I have no mock data -> TODO category=v2-0074#OTH -- 73512001 "Electron microsopic study (procedure)"
-  - MI -> todo: code=LOINC#18725-2 "Microbiology studies (set)"  -> TODO category=v2-0074#MB
+  - KBS: Don't change until we get better data (Blood and urine)
 - no performer, possibly the Organization is in result.labSiteId - e.g., `<labSiteId>989</labSiteId>`
 - KBS has a question outstanding with micro. FHIR modeling seems to be from lab perspective, not from EHR.  FHIR-44631
 - TODO update fhir mapping from table updates
+- TODO SPlit into Path and Micro
+- TODO update DiagnosticReport
 
 ### Mapping
 
@@ -80,6 +83,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    |   ""                                         |                                 | orderingLocation      |  |  |
 |   |    |   ""                                         |                                 | performingLocation    |  |  |
 |   |    | labReportTO/type                             | typeOfReport                    |                       | DiagnosticReport.code.coding        | CY/Cytology, SP/Surgical Pathology, EM/Electron Microscopy
+|   |    |   ""                                         |                                 |                       | DiagnosticReport.category           | CY/Cytology, SP/Surgical Pathology, EM/Electron Microscopy
 |   |    | labReportTO/facility                         | performingLocation              |                       | DiagnosticReport.performer(Org)     | |
 |   |    | labReportTO/text                             | reportText                      | reportText            | DiagnosticReport.presentedForm.data | base64 with contentType=text/plain |
 |   |    | labReportTO/text {status:}                   |                                 |                       |                                     | ignore all that are not COMPLETED |
@@ -120,6 +124,3 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    |                                              |                                 |                       | Observation[m].effectiveDate={DiagnosticReport.effectiveDate} |  |
 |   |    | schema has other elements
 {: .grid}
-
-
-

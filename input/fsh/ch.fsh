@@ -83,15 +83,8 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 * code.text 1..1 MS
 * code.text = "CH"
 * code.coding 0..0
-/*
-* category MS
-* category 1..
-* category ^slicing.discriminator.type = #pattern
-* category ^slicing.discriminator.path = "$this"
-* category ^slicing.rules = #open
-* category contains LaboratorySlice 1..1
-* category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
-*/
+* category contains ChSlice 1..1
+* category[ChSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#CH
 * effectiveDateTime 1..1 MS
 * issued 1..1 MS
 * extension contains Notes named note 0..* MS
@@ -124,6 +117,7 @@ Target: "labTestPromises"
 Title: "HDR to mhv-fhir-phr"
 * -> "HDR labTestPromises"
 * category -> "`LAB`"
+* category -> "`http://terminology.hl7.org/CodeSystem/v2-0074#CH`"
 * category -> "all codes from contained labTests"
 * status -> "`final` or `corrected` or `preliminary or `cancelled`"
 * subject -> "patient"

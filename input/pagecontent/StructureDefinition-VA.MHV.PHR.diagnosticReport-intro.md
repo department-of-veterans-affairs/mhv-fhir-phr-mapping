@@ -19,6 +19,7 @@ DiagnosticReport:
 - `result` are the lab result details as contained Observation
 - Chem-Hem
   - `code.text` = `CH`
+  - `category` is `http://terminology.hl7.org/CodeSystem/v2-0074#CH` for Chem-Hem lab results
   - `extension[note]` is the lab report comments
   - `basedOn` is the lab order as contained ServiceRequest
 - Pathology or Microbiology
@@ -43,7 +44,8 @@ More detailed profiling, including the `ServiceRequest`, `Specimen`, and `Observ
 
 ### Lab Report
 
-[LabReport for Microbiology and Pathology](StructureDefinition-VA.MHV.PHR.labReport.html)
+- [LabReport for Pathology](StructureDefinition-VA.MHV.PHR.SPlabReport.html)
+- [LabReport for Microbiology](StructureDefinition-VA.MHV.PHR.MBlabReport.html)
 
 <figure>
 {%include lab.svg%}

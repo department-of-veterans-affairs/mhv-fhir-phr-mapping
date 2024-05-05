@@ -340,6 +340,7 @@ Example from a mock labTestPromises (1110200002)
 * identifier[Rid].use = #usual
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[ChSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#CH
 * code.text = "CH"
 * subject = Reference(Patient/ex-MHV-patient-942104)
 * effectiveDateTime = 2021-01-21T11:32:47-05:00
@@ -356,7 +357,7 @@ Example from a mock labTestPromises (1110200002)
 * basedOn[+] = Reference(ex-MHV-chOrder-1a)
 * contained[+] = ex-MHV-chTest-1a
 * result[+] = Reference(ex-MHV-chTest-1a)
-* category[1].coding.code = #2823-3
+* category[2].coding.code = #2823-3
 * category[=].text = "POTASSIUM:SCNC:PT:SER/PLAS:QN:"
 * category[=].coding.system = LOINC
 * category[=].coding.version = "2.68"

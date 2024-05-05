@@ -72,6 +72,7 @@ Example from a mock labTestPromises (1190530002)
 * identifier[Rid].use = #usual
 * status = #final
 * category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[ChSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#CH
 * code.text = "CH"
 * subject = Reference(Patient/ex-MHV-patient-942104)
 * effectiveDateTime = 2019-02-22T21:12:57-05:00
@@ -86,7 +87,7 @@ Example from a mock labTestPromises (1190530002)
 * basedOn[+] = Reference(ex-MHV-chOrder-1190530002a)
 * contained[+] = ex-MHV-chTest-1190530002a
 * result[+] = Reference(ex-MHV-chTest-1190530002a)
-* category[1].coding.code = #2345-7
+* category[2].coding.code = #2345-7
 * category[=].text = "GLUCOSE:MCNC:PT:SER/PLAS:QN:"
 * category[=].coding.system = LOINC
 * category[=].coding.version = "2.64"
