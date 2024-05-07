@@ -82,7 +82,7 @@ This section is dedicated to instructions on how MHV will transition the data we
 
 #### Pathology LabReport
 
-[LabReport](StructureDefinition-VA.MHV.PHR.SPlabReport.html#notes)  Pathology Mapping Notes
+[Pathology LabReport](StructureDefinition-VA.MHV.PHR.SPlabReport.html#notes)  Mapping Notes
 
 - [Mapping from VIA - SP LabReportTO +](StructureDefinition-VA.MHV.PHR.SPlabReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto)
   - [Examples](StructureDefinition-VA.MHV.PHR.SPlabReport-examples.html)
@@ -93,7 +93,7 @@ This section is dedicated to instructions on how MHV will transition the data we
 
 #### Microbiology LabReport
 
-[LabReport](StructureDefinition-VA.MHV.PHR.MBlabReport.html#notes) Microbiology Mapping Notes
+[Microbiology LabReport](StructureDefinition-VA.MHV.PHR.MBlabReport.html#notes) Mapping Notes
 
 - [Mapping from VIA - MB LabReportTO +](StructureDefinition-VA.MHV.PHR.MBlabReport-mappings.html#mappings-for-via-to-mhv-fhir-phr-labreportto)
   - [Examples](StructureDefinition-VA.MHV.PHR.MBlabReport-examples.html)

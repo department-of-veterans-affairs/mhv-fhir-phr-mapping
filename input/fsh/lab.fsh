@@ -86,8 +86,8 @@ A profile showing how SP LabReportTO is mapped into a FHIR DiagnosticReport, Obs
 * code.coding ..1 MS
 * code.coding = LOINC#11526-1
 * category contains SPLabSlice 1..1
-* category[SPLabSlice].coding 1..1
-* category[SPLabSlice].coding = http://terminology.hl7.org/CodeSystem/v2-0074#SP
+* category[SPLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#SP
+* category[SPLabSlice] 1..1
 * effectiveDateTime MS
 * issued MS
 * presentedForm MS
@@ -141,8 +141,8 @@ A profile showing how MB LabReportTO is mapped into a FHIR DiagnosticReport, Obs
 * code.coding ..1 MS
 * code.coding = LOINC#18725-2
 * category contains MBLabSlice 1..1
-* category[MBLabSlice].coding 1..1
-* category[MBLabSlice].coding = http://terminology.hl7.org/CodeSystem/v2-0074#MB
+* category[MBLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#MB
+* category[MBLabSlice] 1..1
 * effectiveDateTime MS
 * issued MS
 * presentedForm MS

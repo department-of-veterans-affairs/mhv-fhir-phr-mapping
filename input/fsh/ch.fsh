@@ -85,6 +85,7 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 * code.coding 0..0
 * category contains ChSlice 1..1
 * category[ChSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#CH
+* category[ChSlice] 1..1
 * effectiveDateTime 1..1 MS
 * issued 1..1 MS
 * extension contains Notes named note 0..* MS
