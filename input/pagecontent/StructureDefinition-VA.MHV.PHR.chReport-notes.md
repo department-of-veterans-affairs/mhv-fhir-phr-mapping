@@ -29,9 +29,6 @@
 
 #### Mapping Concerns
 
-- valueInterpreation of "L", "LL", "H", and "HH"... should all four be converted to that code as found in Observation.interpetation bound valueSet? (asked KBS)
-  - Yes. TODO: Also "L*" and "H*" might come thru and should be treated as "LL" and "HH"
-  - TODO backend code should convert the code more specifically. Today it presumes we only get the four values, so it just uses that string.
 - would like to have vista field mapping, but so far few fields are sure
   - are trying to find older data that might be more traceable
   - have gotten a mapping table from HDR but it is to HL7v2, so not helpful
@@ -70,7 +67,7 @@ MHV eVault has one object definition that gets replicated for each portion (Lab,
 | 63.04-10 |  | labTests[n]/chemistryResults[m]/observationStatus  | status                          | Observation[m].status          | see table below |
 |   |    | labTests[n]/chemistryResults[m]/observationValue   | result                          | Observation[m].value[x]             |  |
 |   |    | labTests[n]/chemistryResults[m]/observationUnits   | units                           | Observation[m].valueQuantity.units  |  |
-|   |    | labTests[n]/chemistryResults[m]/valueInterpretation | resultIndicator                | Observation[m].interpretation       | L->Low, LL->Critical Low, H->High, HH->Critical High |
+|   |    | labTests[n]/chemistryResults[m]/valueInterpretation | resultIndicator                | Observation[m].interpretation       | see translation |
 |   |    | labTests[n]/chemistryResults[m]/referenceRange     | referenceRange                  | Observation[m].referenceRange.text  |  |
 |   |    | labTests[n]/chemistryResults[m]/labCommentEvents   | interpretation                  | Observation[m].note.text            | multiple |
 |   |    | labTests[n]/chemistryResults[m]/performingOrganization/ | performingLocation={location} | Observation[m].performer[org]    |  |
@@ -165,6 +162,7 @@ FHIR mapping. Same as [concept map translation](ConceptMap-VF-ChemistryResult-va
 | H    | High        | H
 | HH   | Very High   | HH
 | H*   | Very High   | HH
+| A    | Abnormal    | A
 {: .grid}
 
 All other codes do NOT translate into a code.

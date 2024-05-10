@@ -248,7 +248,7 @@ One Observation holds one `labTests.chemistryResults`
 * interpretation.text MS
 * interpretation.text ^short = "valueInterpreation"
 * interpretation.coding MS
-* interpretation.coding ^short = "`L`, `LL`, `H`, or `HH`"
+* interpretation.coding ^short = "`.L`, `LL`, `H`, `HH`, or `A`"
 * status MS
 * status ^short = "observationStatus"
 * performer MS
@@ -296,7 +296,7 @@ Title: "HDR labTests to mhv-fhir-phr"
 * status -> "~observationStatus map with VF-ChemistryResult-ObservationStatus()"
 * interpretation.text -> "valueInterpretation"
 * interpretation.coding.system -> "`http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation`"
-* interpretation.coding.code -> "`L`, `LL`, `H`, or `HH`"
+* interpretation.coding.code -> "`.L`, `LL`, `H`, `HH`, or `A`"
 * valueQuantity -> "observatonValue when quantity"
 * valueString -> "observationValue when string"
 * referenceRange -> "referenceRange"
@@ -410,6 +410,9 @@ Usage: #definition
 * group.element[+].code = #H*
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #HH
+* group.element[+].code = #A
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #A
 
 
 /* Lab.xsd
