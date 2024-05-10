@@ -45,10 +45,8 @@
 
 - how to handle specimen bodySite vs sample - "Site/Specimen: " or "Collection sample:". from KBS: in vista there is a "collection sample" 60/300 that identifies the sample, "topography" 61/.01 covers where the data came from. historic vista data is not well behaved.
   - KBS: Don't change until we get better data (Blood and urine)
-- no performer, possibly the Organization is in result.labSiteId - e.g., `<labSiteId>989</labSiteId>`
 - KBS has a question outstanding with micro. FHIR modeling seems to be from lab perspective, not from EHR.  FHIR-44631
 - TODO update fhir mapping from table updates
-- TODO SPlit into Path and Micro
 - TODO update DiagnosticReport
 
 ### Mapping

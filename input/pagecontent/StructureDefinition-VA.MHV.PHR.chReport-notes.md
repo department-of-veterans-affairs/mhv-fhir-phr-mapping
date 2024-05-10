@@ -29,6 +29,9 @@
 
 #### Mapping Concerns
 
+- valueInterpreation of "L", "LL", "H", and "HH"... should all four be converted to that code as found in Observation.interpetation bound valueSet? (asked KBS)
+  - Yes. TODO: Also "L*" and "H*" might come thru and should be treated as "LL" and "HH"
+  - TODO backend code should convert the code more specifically. Today it presumes we only get the four values, so it just uses that string.
 - would like to have vista field mapping, but so far few fields are sure
   - are trying to find older data that might be more traceable
   - have gotten a mapping table from HDR but it is to HL7v2, so not helpful
@@ -148,3 +151,20 @@ becomes:
 * identifier[Rid].system = "urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR"
 ```
 
+##### valueInterpretation - Observation.interpretation.coding
+
+The string we are given in valueInterpretation always goes into Observation.interpretation.text
+
+TODO make concept map
+
+| code | meaning     |  FHIR Observation.intepretation.coding |
+|------|-------------|---------------------------|
+| L    | Low         | L 
+| LL   | Very Low    | LL
+| L*   | Very Low    | LL
+| H    | High        | H
+| HH   | Very High   | HH
+| H*   | Very High   | HH
+{: .grid}
+
+All other codes do NOT translate into a code.

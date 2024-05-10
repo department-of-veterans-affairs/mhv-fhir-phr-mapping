@@ -221,9 +221,6 @@ One Observation holds one `labTests.chemistryResults`
 	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`
 - `.subject` must be the patient from the DiagnosticReport
 - `valueInterpretation` -> `.interpretation` 
-  - `L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L
-  - 'H' -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H
-- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)
 - `testIdentifier` -> `.code` -- where LN is Loinc
 - `referenceRange` -> `.referenceRange.text` -- dont try to break out further as there is little use of this value
 - `labCommentEvents` -> `.note.text`
@@ -250,6 +247,8 @@ One Observation holds one `labTests.chemistryResults`
 * interpretation MS
 * interpretation.text MS
 * interpretation.text ^short = "valueInterpreation"
+* interpretation.coding MS
+* interpretation.coding ^short = "`L`, `LL`, `H`, or `HH`"
 * status MS
 * status ^short = "observationStatus"
 * performer MS
@@ -296,8 +295,8 @@ Title: "HDR labTests to mhv-fhir-phr"
 * code.coding -> "testIdentifier.code"
 * status -> "~observationStatus map with VF-ChemistryResult-ObservationStatus()"
 * interpretation.text -> "valueInterpretation"
-* interpretation.coding -> "`L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L"
-* interpretation.coding -> "`H` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H"
+* interpretation.coding.system -> "`http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation`"
+* interpretation.coding.code -> "`L`, `LL`, `H`, or `HH`"
 * valueQuantity -> "observatonValue when quantity"
 * valueString -> "observationValue when string"
 * referenceRange -> "referenceRange"

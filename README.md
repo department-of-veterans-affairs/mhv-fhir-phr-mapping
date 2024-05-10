@@ -24,6 +24,7 @@ The notes below for each release. Archive of [released packages](https://github.
   - DiagnosticReport.status is set to `final` if all Observations are final; and `preliminary` if any Observations are not final.
   - DiagnosticReport.status could be set to `entered-in-error` if `ORDER CANCLLED` or deleted
   - ServiceRequest.status is always `unknown` as we are creating a contained resource for this
+  - clarify valueInterpretation is recorded in .text and converted robustly to coding of `L`, `LL`, `H`, or `HH` 
 - Pathology
   - defined additional category for the kinds of pathology
 - Microbiology
