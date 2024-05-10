@@ -155,7 +155,7 @@ becomes:
 
 The string we are given in valueInterpretation always goes into Observation.interpretation.text
 
-TODO make concept map
+FHIR mapping. Same as [concept map translation](ConceptMap-VF-ChemistryResult-valueInterpretation.html)
 
 | code | meaning     |  FHIR Observation.intepretation.coding |
 |------|-------------|---------------------------|

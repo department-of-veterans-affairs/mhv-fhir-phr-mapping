@@ -376,6 +376,42 @@ Usage: #definition
 * group.element[=].target.code = #preliminary
 * group.element[=].target.display = "Preliminary"
 
+Instance:   VF-ChemistryResult-valueInterpretation
+InstanceOf: ConceptMap
+Title:      "Map between ChemistryResult valueInterpretation to FHIR Observation.interpretation codes"
+Description: "Map between ChemistryResult.valueInterpretation and FHIR Observation.interpretation.coding."
+Usage: #definition
+* url = "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-ChemistryResult-valueInterpretation"
+* name =  "VF_ChemistryResult_valueInterpretation"
+* title = "ChemistryResult.valueInterpretation to Observation.interpretation"
+* experimental = false
+* status = #active
+* date = 2024-05-10
+* publisher = "VA KBS"
+* description = "Map between ChemistryResult.valueInterpretation and FHIR Observation.interpretation.coding."
+* purpose = "VF_ChemistryResult_valueInterpretation"
+//* group.source = "VA"
+* group.target = "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+* group.element[+].code = #L
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #L
+* group.element[+].code = #LL
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #LL
+* group.element[+].code = #L*
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #LL
+* group.element[+].code = #H
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #H
+* group.element[+].code = #HH
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #HH
+* group.element[+].code = #H*
+* group.element[=].target.equivalence = #equal
+* group.element[=].target.code = #HH
+
+
 /* Lab.xsd
 
 <?xml version="1.0" encoding="UTF-8"?>
