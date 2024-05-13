@@ -10,9 +10,9 @@ The MHV FHIR Server would have a similar [CapabilityStatement](CapabilityStateme
 - [Conditions](StructureDefinition-VA.MHV.PHR.condition.html)
   - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
 - [DiagnosticReport](StructureDefinition-VA.MHV.PHR.diagnosticReport.html) shows all of the DiagnosticReport. Including Microbiology, Pathology, and Chem-Hem.
+  - [Chem-Hem Examples](StructureDefinition-VA.MHV.PHR.chReport-examples.html)
   - [Microbiology Examples](StructureDefinition-VA.MHV.PHR.MBlabReport-examples.html)
   - [Pathology Examples](StructureDefinition-VA.MHV.PHR.SPlabReport-examples.html)
-  - [Chem-Hem Examples](StructureDefinition-VA.MHV.PHR.chReport-examples.html)
 - [DocumentReference](StructureDefinition-VA.MHV.PHR.documentReference.html) shows all uses of DocumentReference. Including Notes, Discharge Summary, EKG, and Imaging.
   - [Note Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
     - Clinical Notes, Discharge Summary

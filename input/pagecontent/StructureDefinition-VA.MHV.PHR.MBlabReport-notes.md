@@ -88,6 +88,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    |                                              |                         | Specimen.status=`available`         |  |
 |   |    | labReportTO/specimen/name                    |                         | Specimen.type.text                  | not done this way today |
 |   |    | labReportTO/specimen/collectionDate          |                         | Specimen.collectedDateTime          | not done this way today |
+|   |    |    ""                                        |                         | DiagnosticReport.effectiveDateTime  | use specimen collection date |
 |   |    | labReportTO/specimen/accessionNum            |                         | Specimen.accessionIdentifier        |  |
 |   |    | labReportTO/specimen/id                      |                         | Specimen.identifier                 | might not be an identifier |
 |   |    | labReportTO/timestamp                        |                         | DiagnosticReport.issued             | no mock examples |

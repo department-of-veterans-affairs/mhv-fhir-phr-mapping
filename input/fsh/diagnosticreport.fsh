@@ -14,7 +14,7 @@ This defines the use for Chem-Hem and
 * identifier 1..
 * subject 1..1
 * code 1..1 MS
-* code.coding ..1 MS
+* code.coding MS
 * code.coding from LabReportVS (preferred)
 * category MS
 * category 1..

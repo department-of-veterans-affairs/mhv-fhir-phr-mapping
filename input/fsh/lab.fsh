@@ -87,6 +87,7 @@ A profile showing how SP LabReportTO is mapped into a FHIR DiagnosticReport, Obs
 * code.coding = LOINC#11526-1
 * category contains SPLabSlice 1..1
 * category[SPLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#SP
+// should be KindLabReportVS, but don't yet have examples and this binding is more clear
 * category[SPLabSlice] 1..1
 * effectiveDateTime MS
 * issued MS
@@ -206,7 +207,7 @@ Title: "VIA to mhv-fhir-phr"
 * performer -> "GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)"
 * identifier -> "{StationNbr} and {LabReportTO.id}"
 * specimen -> "Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])"
-* effectiveDateTime -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
+* effectiveDateTime -> "ConvertDate(specimen/collectionDate)"
 * issued -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
 * code.text -> "LabReportTO.title"
 * code.coding -> "LabReportTO.type -> LOINC"
@@ -229,7 +230,7 @@ Title: "VIA to mhv-fhir-phr"
 * performer -> "GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)"
 * identifier -> "{StationNbr} and {LabReportTO.id}"
 * specimen -> "Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])"
-* effectiveDateTime -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
+* effectiveDateTime -> "ConvertDate(specimen/collectionDate)"
 * issued -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
 * code.text -> "LabReportTO.title"
 * code.coding -> "LabReportTO.type -> LOINC"
