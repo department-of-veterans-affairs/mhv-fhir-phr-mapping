@@ -162,7 +162,7 @@ One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedT
 * intent = #order
 * subject 1..1 MS
 * requester ^short = "labTestPromises.labTestRequest.author"
-//* requester only Reference(Practitioner)
+* requester only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner) // TODO: Should we harmonize this? Not clear how.
 * performer ^short = "labTestPromises.labTestRequest.orderingFacilityIdentifier"
 * performer only Reference(MHVorganization)
 * specimen 0..0

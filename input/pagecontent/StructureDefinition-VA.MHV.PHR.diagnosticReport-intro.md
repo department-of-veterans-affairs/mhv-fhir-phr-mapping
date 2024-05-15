@@ -39,7 +39,11 @@ More detailed profiling, including the `ServiceRequest`, `Specimen`, and `Observ
 
 ### Chem-Hem
 
-[Chem-Hem (CH) Diagnostic Report](StructureDefinition-VA.MHV.PHR.chReport.html)
+- [Chem-Hem (CH) Diagnostic Report](StructureDefinition-VA.MHV.PHR.chReport.html) most common:
+  - Basic Metabolic Panel or BMP
+  - Comprehensive Metabolic Panel or CMP
+  - CBC (complete blood count)
+  - Hemoglobin A1C
 
 <figure>
 {%include chLab.svg%}
@@ -49,8 +53,21 @@ More detailed profiling, including the `ServiceRequest`, `Specimen`, and `Observ
 
 ### Lab Report
 
-- [LabReport for Pathology](StructureDefinition-VA.MHV.PHR.SPlabReport.html)
-- [LabReport for Microbiology](StructureDefinition-VA.MHV.PHR.MBlabReport.html)
+- [LabReport for Pathology](StructureDefinition-VA.MHV.PHR.SPlabReport.html) most common:
+  - PATHOLOGY SURGICAL TISSUE REQUEST
+  - CYTOLOGY REQUEST (this one is cytology)
+  - SURGICAL PATHOLOGY EXAM
+  - PATHOLOGY SURGICAL REQUEST
+  - SURGICAL TISSUE EXAM
+  - SURGICAL PATHOLOGY
+- [LabReport for Microbiology](StructureDefinition-VA.MHV.PHR.MBlabReport.html) most common:
+  - Gram Stain
+  - Anaerobic Culture
+  - Vibrio Culture
+  - Spinal Culture
+  - Blood Culture
+  - Stool Culture
+  - Campylobacter Culture
 
 <figure>
 {%include lab.svg%}

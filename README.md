@@ -22,13 +22,19 @@ The notes below for each release. Archive of [released packages](https://github.
 - Chem-Hem
   - category also needs `http://terminology.hl7.org/CodeSystem/v2-0074#CH`
   - DiagnosticReport.status is set to `final` if all Observations are final; and `preliminary` if any Observations are not final.
-  - DiagnosticReport.status could be set to `entered-in-error` if `ORDER CANCLLED` or deleted
+  - DiagnosticReport.status could be set to `entered-in-error` if `ORDER CANCELLED` or deleted
   - ServiceRequest.status is always `unknown` as we are creating a contained resource for this
-  - clarify valueInterpretation is recorded in .text and converted robustly to coding of `L`, `LL`, `H`, or `HH` 
+  - clarify valueInterpretation is recorded in .text and converted robustly to coding of `L`, `LL`, `H`, `HH`, or `A`
+  - make more clear the need to translate the ucum codes we get from Vista to formal codes
+  - add list of most common chem-hem diagnostic reports
 - Pathology
+  - split from Microbiology
   - defined additional category for the kinds of pathology
+  - added list of most common pathology diagnostic reports
 - Microbiology
+  - split from Pathology
   - defined additional category for microbiology
+  - added list of most common microbiology reports
 
 ### 0.3.5
 
