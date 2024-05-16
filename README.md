@@ -35,6 +35,8 @@ The notes below for each release. Archive of [released packages](https://github.
   - split from Pathology
   - defined additional category for microbiology
   - added list of most common microbiology reports
+- Conditions
+  - Moved to FMM 4 to represent being in phase 0 production
 
 ### 0.3.5
 

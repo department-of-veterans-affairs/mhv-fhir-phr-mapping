@@ -2,10 +2,12 @@
 - Chem-Hem comes from HDR (not VIA), thus is different schema than the others.
 - The given labTestPromise example aligns with the [CDS WSClient](https://github.com/department-of-veterans-affairs/mhv-np-cds-wsclient/tree/development/src/main/resources/xsd/templates/MHVLabChemHemRead1) `Lab.xsd` schema.
 - A profile showing how `labTestPromise` is mapped into a FHIR `DiagnosticReport`, `ServiceRequest`, `Observation`, and `Specimen`. Where the `labTestPromise` only has `labSubscript` of `CH` (Chem-Hem).
-- The [mock example](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/hdr_lab_sample.xml)
+- The mock data examples
+  - [mock example 1](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/hdr_lab_sample.xml)
+  - [mock example 2](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/1012669926V770142_ChemHem.xml)
 - This profile is based on:
   - [US-Core DiagnosticReport profile for Laboratory Results Reporting]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-diagnosticreport-lab.html) and 
-  - [US Core ServiceRequest Profile]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-servicerequest.html)
+  - [US Core ServiceRequest Profile]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-servicerequest.html) and
   - [US Core Laboratory Result Observation Profile]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-observation-lab.html) and
   - [FHIR Specimen as US Core didn't profile]({{site.data.fhir.path}}specimen.html)
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport` to indicate the intent to be compliant with this profile
@@ -25,7 +27,7 @@
 - ChemistryResult ObservationStatus translated to Observation.status using [concept map translation](ConceptMap-VF-ChemistryResult-ObservationStatus.html)
 - ChemistryResult ObservationValue Quantity should normalize the UCUM code using [concept map ucum translation](ConceptMap-LabUcumCodes.html) as explained on the [UCUM code](utility.html#ucum-code) section
 - DiagnosticReport.status is set to `final` if all Observations are final; and `preliminary` if any Observations are not final.
-- DiagnosticReport.status could be set to `entered-in-error` if `ORDER CANCELED` or deleted
+- DiagnosticReport.status could be set to `entered-in-error` if `ORDER CANCELLED` or deleted
 - ServiceRequest.status is always `unknown` as we are creating a contained resource for this
 
 #### Mapping Concerns
@@ -111,7 +113,7 @@ FHIR mapping. Same as [concept map translation](ConceptMap-VF-ChemistryResult-Ob
 | F   | FINAL RESULTS           | FINAL       | final       |
 | Y   | NO ORDER ON RECORD      | UNKNOWN     | unknown     |
 | R   | NOT VERIFIED            | UNKNOWN     | preliminary |
-| X   | ORDER CANCELED          | CANCELLED   | cancelled   |
+| X   | ORDER CANCELLED         | CANCELLED   | cancelled   |
 | O   | ORDER RECEIVED          | UNKNOWN     | registered  |
 | P   | PRELIMINARY             | UNKNOWN     | preliminary |
 | S   | PROCEDURE SCHEDULED     | UNKNOWN     | registered  |

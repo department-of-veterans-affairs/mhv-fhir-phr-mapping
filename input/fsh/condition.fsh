@@ -9,7 +9,7 @@ Title:          "VA MHV PHR problems"
 Description:    """
 A profile on the Condition resource for MHV PHR exposing Problems using FHIR API.
 """
-* ^extension[$fmm].valueInteger = 3
+* ^extension[$fmm].valueInteger = 4
 * identifier 1..
 * identifier ^slicing.discriminator.type = #pattern
 * identifier ^slicing.discriminator.path = "use"

@@ -298,7 +298,7 @@ Title: "HDR labTests to mhv-fhir-phr"
 * interpretation.coding.system -> "`http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation`"
 * interpretation.coding.code -> "`.L`, `LL`, `H`, `HH`, or `A`"
 * valueQuantity -> "observatonValue when quantity"
-* valueString -> "observationValue when string"
+* valueString -> "observationValue when string or no units"
 * referenceRange -> "referenceRange"
 * performer -> "GetOrganization(performingOrganization)"
 * category -> "`laboratory`"
@@ -346,7 +346,7 @@ Usage: #definition
 * group.element[=].target.code = #preliminary
 * group.element[=].target.display = "Preliminary"
 * group.element[+].code = #X
-* group.element[=].display = "ORDER CANCELED"
+* group.element[=].display = "ORDER CANCELLED"
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #cancelled
 * group.element[=].target.display = "Cancelled"

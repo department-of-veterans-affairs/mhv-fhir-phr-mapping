@@ -107,10 +107,10 @@ A failure to find a ConceptMap can be recorded simply as the given string. These
 
 Some of the codes used in Vista are not proper codes.
 
-- [Drug](ConceptMap-DrugUcumCodes.html)
-  - From [KBS provided DrugUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/DrugUcum.csv)
-- [Lab](ConceptMap-LabUcumCodes.html)
-  - From [KBS provided LabUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/LabUcum.csv)
+- [Drug ConceptMap](ConceptMap-DrugUcumCodes.html)
+  - From [KBS provided DrugUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/d3d7f9a099534bbb5c4bce882ae2e18069b822ac/mocks/DrugUcum.csv)
+- [Lab ConceptMap](ConceptMap-LabUcumCodes.html)
+  - From [KBS provided LabUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/d3d7f9a099534bbb5c4bce882ae2e18069b822ac/mocks/labUcum.csv)
 - Other - likely VIA returns SI units that the above ConceptMaps do not include
 
 ##### UCUM SI codes

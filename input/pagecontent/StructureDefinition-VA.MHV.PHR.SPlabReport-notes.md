@@ -92,7 +92,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    | labReportTO/specimen/accessionNum            |                                 |  Specimen.accessionIdentifier        |  |
 |   |    | labReportTO/specimen/id                      |                                 |  Specimen.identifier                 | might not be an identifier |
 |   |    | labReportTO/timestamp                        |                                 |  DiagnosticReport.issued             | no mock examples |
-|   |    | labReportTO/result/timestamp                 |                                 |  DiagnosticReport.issued             |  |
+|   |    | labReportTO/result/timestamp                 |                                 |  Observation[m].issued             |  |
 |   |    | labReportTO/result/labSiteId                 |                                 |  DiagnosticReport.performer(Org)     | |
 |   |    | labReportTO/caseNumber                       |                                 |  DiagnosticReport.basedOn.identifier | no mock examples |
 |   |    | labReportTO/tests/labTestTO[m]/result/value  |                                 |  Observation[m].valueString          | samples all valueString |

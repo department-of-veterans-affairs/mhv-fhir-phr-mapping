@@ -11,27 +11,32 @@ DiagnosticReport:
 - `category` is `http://terminology.hl7.org/CodeSystem/v2-0074#LAB`
   - `category` may also holds codes from the contained Observation.code
 - `identifier` will have cross reference to original source
-- `status` is `final` or `preliminary`
+- `status` is `final` or `preliminary` or `entered-in-error`
 - `effectiveDateTime` when the specimen was captured
 - `issued` is the lab report complete timestamp
 - `performer` is the lab report author as contained Organization and/or Practitioner
-- `specimen` are the specimen details as contained Specimen
-- `result` are the lab result details as contained Observation
 - Chem-Hem
   - `code.text` = `CH`
   - `category` is `http://terminology.hl7.org/CodeSystem/v2-0074#CH` for Chem-Hem lab results
   - `extension[note]` is the lab report comments
-  - `basedOn` is the lab order as contained ServiceRequest
+  - `basedOn` is the lab order as contained Orders [ServiceRequest(s)](StructureDefinition-VA.MHV.PHR.chOrder.html)
+  - `specimen` are the contained [Specimen](StructureDefinition-VA.MHV.PHR.chSpecimen.html)
+  - `results` are the contained [Observation(s)](StructureDefinition-VA.MHV.PHR.chTest.html)
 - Microbiology
   - `code.text` = report `title`
   - `code.coding` is `http://terminology.hl7.org/CodeSystem/v2-0074#MB` for Microbiology lab results
-  - `basedOn.identifier` may be the caseNumber
   - `presentedForm` is the lab report text
+  - `basedOn.identifier` may be the caseNumber
+  - `specimen` are the contained [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html)
+  - `results` are the contained [Observation](StructureDefinition-VA.MHV.PHR.labTest.html)
 - Pathology
   - `code.text` = report `title`
   - `code.coding` is `http://terminology.hl7.org/CodeSystem/v2-0074#SP` for Surgical Pathology lab results
-  - `basedOn.identifier` may be the caseNumber
   - `presentedForm` is the lab report text
+  - `basedOn.identifier` may be the caseNumber
+  - `specimen` are the contained [Specimen](StructureDefinition-VA.MHV.PHR.LabSpecimen.html)
+  - `results` are the contained [Observation](StructureDefinition-VA.MHV.PHR.labTest.html)
+- Note that `specimen` and `observation` are different between Chem-Hem and Microbiology/Pathology.
 - Note the use of contained `ServiceRequest`, `Specimen`, and `Observation` means that they are not individually findable or referenceable. To find Observations, look for the Observation code in the DiagnosticReport.category, then look for the contained Observation with that code.
 - no other elements are populated
 

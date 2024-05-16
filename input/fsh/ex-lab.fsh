@@ -17,8 +17,18 @@ Usage: #inline
     <accessionNum>PARAS 95 264</accessionNum>
 </specimen>
 */
+/*
+Accession [UID]: PARAS 95 264 []            Received: Aug 01, 1995@11:02
+Collection sample: STOOL               Collection date: Jul 30, 1995
+Site/Specimen: FECES
+Provider: MANGAS,PHYLLIS A
+                                                        
+* PARASITOLOGY FINAL REPORT => Aug 03, 1995   TECH CODE: 1003
+Parasitology Remark(s):
+NO OVA OR PARASITES FOUND
+*/
 * status = #available
-* type.text = "FECES"
+* type.text = "STOOL"
 * collection.collectedDateTime = 1995-07-30
 * identifier[TOid].value = "LabSpecimenTO.6Y100" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
@@ -26,6 +36,7 @@ Usage: #inline
 * accessionIdentifier.value = "PARAS 95 264"
 * accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
+* collection.bodySite.text = "FECES"
 
 Instance: ex-MHV-labTest-1
 InstanceOf: VA.MHV.PHR.labTest 
@@ -53,7 +64,8 @@ Usage: #inline
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].use = #usual
 * valueString = "NO OVA OR PARASITES FOUND"
-* effectiveDateTime = 1995-08-03T14:49:00Z
+* issued = 1995-08-03T14:49:00Z
+* effectiveDateTime = 1995-07-30
 * performer = Reference(Organization/ex-MHV-organization-989)
 * subject = Reference(Patient/ex-MHV-patient-1)
 
