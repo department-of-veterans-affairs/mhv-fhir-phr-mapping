@@ -1,0 +1,254 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9972> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "9972"] ; # 
+  fhir:meta [
+     fhir:versionId [ fhir:v "20" ] ;
+     fhir:lastUpdated [ fhir:v "2024-05-16T18:08:59.215-04:00"^^xsd:dateTime ] ;
+     fhir:source [ fhir:v "#reWo6V0WdeyFTR19"^^xsd:anyURI ] ;
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 CH}\">Chemistry</span>, <span title=\"Codes: {http://loinc.org 2093-3}\">CHOLESTEROL:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: usual))</td></tr><tr><td>When For</td><td>2018-05-03 10:38:04-0400</td></tr><tr><td>Reported</td><td>2018-05-03 10:38:37-0400</td></tr><tr><td>Identifier:</td><td> <code>urn:fdc:TEST.DAYTON.MED.VA.GOV:LR</code>/1181230002 (use: usual)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>When For</b></td></tr><tr><td colspan=\"4\"><i>This Observation could not be resolved</i></td></tr></table></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Specimen ;
+     fhir:id [ fhir:v "Specimen-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chSpecimen"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chSpecimen>
+       ] )
+     ] ;
+     fhir:status [ fhir:v "available" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0487"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "SER" ] ;
+         fhir:display [ fhir:v "Serum" ]
+       ] [
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/61"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "5.2" ] ;
+         fhir:code [ fhir:v "72" ] ;
+         fhir:display [ fhir:v "SERUM" ]
+       ] ) ;
+       fhir:text [ fhir:v "SERUM" ]
+     ] ;
+     fhir:request ( [
+       fhir:reference [ fhir:v "#ServiceRequest-1" ]
+     ] ) ;
+     fhir:collection [
+       fhir:collected [ fhir:v "2018-05-03T10:38:04-04:00"^^xsd:dateTime ]
+     ]
+  ] [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "Provider-1" ] ;
+     fhir:identifier ( [
+       fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/4"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "14934-VA552" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:family [ fhir:v "HALL" ] ;
+       fhir:given ( [ fhir:v "LISA" ] [ fhir:v "A" ] )
+     ] )
+  ] [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "Organization-552" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:type [
+         fhir:text [ fhir:v "FI" ]
+       ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "552" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:name [ fhir:v "DAYTON, OH VAMC" ] ;
+     fhir:address ( [
+       fhir:line ( [ fhir:v "4100 W. THIRD STREET" ] ) ;
+       fhir:city [ fhir:v "DAYTON" ] ;
+       fhir:state [ fhir:v "OH" ] ;
+       fhir:postalCode [ fhir:v "45428" ] ;
+       fhir:country [ fhir:v "USA" ]
+     ] )
+  ] [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "OrgPerformer-989" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "989" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:name [ fhir:v "DAYT29.FO-BAYPINES.MED.VA.GOV" ]
+  ] [
+     a fhir:ServiceRequest ;
+     fhir:id [ fhir:v "ServiceRequest-1" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder>
+       ] )
+     ] ;
+     fhir:status [ fhir:v "unknown" ] ;
+     fhir:intent [ fhir:v "order" ] ;
+     fhir:category ( [
+       fhir:coding ( [
+         a sct:108252007 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "108252007" ] ;
+         fhir:display [ fhir:v "Laboratory procedure" ]
+       ] )
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/64"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "82466.0000" ]
+       ] [
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/60"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "183" ] ;
+         fhir:display [ fhir:v "CHOLESTEROL" ]
+       ] ) ;
+       fhir:text [ fhir:v "Cholesterol Total" ]
+     ] ;
+     fhir:subject [
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-942104> ;
+       fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
+     ] ;
+     fhir:requester [
+       fhir:reference [ fhir:v "#Provider-1" ]
+     ] ;
+     fhir:performer ( [
+       fhir:reference [ fhir:v "#Organization-552" ]
+     ] )
+  ] [
+     a fhir:Observation ;
+     fhir:id [ fhir:v "ChemistryResult-1.1" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest>
+       ] )
+     ] ;
+     fhir:basedOn ( [
+       fhir:reference [ fhir:v "#ServiceRequest-1" ]
+     ] ) ;
+     fhir:status [ fhir:v "final" ] ;
+     fhir:category ( [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/observation-category"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "laboratory" ]
+       ] )
+     ] ) ;
+     fhir:code [
+       fhir:coding ( [
+         a loinc:2093-3 ;
+         fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "2.61" ] ;
+         fhir:code [ fhir:v "2093-3" ]
+       ] [
+         fhir:system [ fhir:v "http://va.gov/terminology/vistaDefinedTerms/95.3"^^xsd:anyURI ] ;
+         fhir:version [ fhir:v "2.61" ] ;
+         fhir:code [ fhir:v "4662777" ]
+       ] ) ;
+       fhir:text [ fhir:v "CHOLESTEROL" ]
+     ] ;
+     fhir:subject [
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-942104> ;
+       fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
+     ] ;
+     fhir:effective [ fhir:v "2018-05-03T10:38:04-04:00"^^xsd:dateTime ] ;
+     fhir:performer ( [
+       fhir:reference [ fhir:v "#Organization-552" ]
+     ] ) ;
+     fhir:value [
+       a fhir:Quantity ;
+       fhir:value [ fhir:v "142"^^xsd:decimal ] ;
+       fhir:unit [ fhir:v "mg/dl" ] ;
+       fhir:system [ fhir:v "http://unitsofmeasure.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "mg/dl" ]
+     ] ;
+     fhir:specimen [
+       fhir:reference [ fhir:v "#Specimen-0" ]
+     ] ;
+     fhir:referenceRange ( [
+       fhir:text [ fhir:v "107-200" ]
+     ] )
+  ] ) ; # 
+  fhir:extension ( [
+     fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Test 5/3/18" ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:fdc:TEST.DAYTON.MED.VA.GOV:LR"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "1181230002" ]
+  ] ) ; # 
+  fhir:basedOn ( [
+     fhir:reference [ fhir:v "#ServiceRequest-1" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0074"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "LAB" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0074"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "CH" ]
+     ] )
+  ] [
+     fhir:coding ( [
+       a loinc:2093-3 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:version [ fhir:v "2.61" ] ;
+       fhir:code [ fhir:v "2093-3" ]
+     ] ) ;
+     fhir:text [ fhir:v "CHOLESTEROL:MCNC:PT:SER/PLAS:QN:" ]
+  ] ) ; # 
+  fhir:code [
+     fhir:text [ fhir:v "CH" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-942104> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-942104" ]
+  ] ; # 
+  fhir:effective [ fhir:v "2018-05-03T10:38:04-04:00"^^xsd:dateTime] ; # 
+  fhir:issued [ fhir:v "2018-05-03T10:38:37.000-04:00"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:reference [ fhir:v "#OrgPerformer-989" ]
+  ] ) ; # 
+  fhir:specimen ( [
+     fhir:reference [ fhir:v "#Specimen-0" ]
+  ] ) ; # 
+  fhir:result ( [
+     fhir:reference [ fhir:v "#ChemistryResult-1.1" ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

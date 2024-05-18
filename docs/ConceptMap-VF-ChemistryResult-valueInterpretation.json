@@ -1,0 +1,138 @@
+{
+  "resourceType" : "ConceptMap",
+  "id" : "VF-ChemistryResult-valueInterpretation",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2024-05-10 by VA Digital Services  (VA Digital Services: <a href=\"http://va.gov\">http://va.gov</a>, John Moehrke (himself): <a href=\"mailto:John.Moehrke@va.gov\">John.Moehrke@va.gov</a>). </p><div><p>Map between ChemistryResult.valueInterpretation and FHIR Observation.interpretation.coding.</p>\n</div><br/><p><b>Group 1 </b>Mapping from <code>unspecified code system</code> to <a href=\"http://terminology.hl7.org/5.5.0/CodeSystem-v3-ObservationInterpretation.html\">ObservationInterpretation</a></p><table class=\"grid\"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>L</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>L (Low)</td></tr><tr><td>LL</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>LL (Critical low)</td></tr><tr><td>L*</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>LL (Critical low)</td></tr><tr><td>H</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>H (High)</td></tr><tr><td>HH</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>HH (Critical high)</td></tr><tr><td>H*</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>HH (Critical high)</td></tr><tr><td>A</td><td><a href=\"http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\" title=\"equal\">is equal to</a></td><td>A (Abnormal)</td></tr></table></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 1,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  }],
+  "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-ChemistryResult-valueInterpretation",
+  "version" : "0.3.6",
+  "name" : "VF_ChemistryResult_valueInterpretation",
+  "title" : "ChemistryResult.valueInterpretation to Observation.interpretation",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2024-05-10",
+  "publisher" : "VA Digital Services",
+  "contact" : [{
+    "name" : "VA Digital Services",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://va.gov"
+    }]
+  },
+  {
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "John.Moehrke@va.gov"
+    }]
+  }],
+  "description" : "Map between ChemistryResult.valueInterpretation and FHIR Observation.interpretation.coding.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "purpose" : "VF_ChemistryResult_valueInterpretation",
+  "group" : [{
+    "target" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+    "element" : [{
+      "code" : "L",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "L",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "LL",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "LL",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "L*",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "LL",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "H",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "H",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "HH",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "HH",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "H*",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "HH",
+        "equivalence" : "equal"
+      }]
+    },
+    {
+      "code" : "A",
+      "target" : [{
+        "modifierExtension" : [{
+          "url" : "http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence",
+          "valueCode" : "equal"
+        }],
+        "code" : "A",
+        "equivalence" : "equal"
+      }]
+    }]
+  }]
+}

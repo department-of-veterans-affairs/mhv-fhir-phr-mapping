@@ -35,8 +35,8 @@
       "uses" : {
       },
       "ValueSet-DocumentReferenceTypeVS.html" : "Known DocumentReference types",
-      "ValueSet-LabReportVS.html" : "Known Lab Report types",
       "ConceptMap-VF-VitalsCodes.html" : "Vital Sign ObservationTypeTO.name to Loinc Code",
+      "ValueSet-LabReportVS.html" : "Known Lab Report types",
       "ValueSet-NoteTypeVS.html" : "Known Note types"
     },
     {
@@ -49,15 +49,16 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
-      "ConceptMap-VF-VitalsSite.html" : "Vitals Site used to SNOMED code",
+      "ConceptMap-VF-VitalsMethod.html" : "Vitals Method used to SNOMED code",
       "ConceptMap-VF-VitalsLaterality.html" : "Vitals Laterality used to SNOMED code",
-      "ConceptMap-VF-VitalsPosition.html" : "Vitals Position used to SNOMED code",
+      "ValueSet-KindLabReportVS.html" : "Kind of Lab Report",
       "ConceptMap-VF-VitalsDevice.html" : "Vitals Device used to SNOMED code",
-      "ConceptMap-VF-VitalsMethod.html" : "Vitals Method used to SNOMED code"
+      "ConceptMap-VF-VitalsPosition.html" : "Vitals Position used to SNOMED code",
+      "ConceptMap-VF-VitalsSite.html" : "Vitals Site used to SNOMED code"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
-      "version" : "2.0.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "ConditionClinicalStatusCodes",
       "title" : "Condition Clinical Status Codes",
@@ -69,7 +70,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-      "version" : "1.0.0",
+      "version" : "2.0.0",
       "status" : "draft",
       "name" : "ConditionVerificationStatus",
       "title" : "ConditionVerificationStatus",
@@ -78,6 +79,30 @@
       "uses" : {
       },
       "ValueSet-ConditionVerificationVS.html" : "Subset of condition verification status"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "version" : "2.5.0",
+      "status" : "active",
+      "name" : "DiagnosticServiceSectionId",
+      "title" : "diagnosticServiceSectionId",
+      "description" : "HL7-defined code system of concepts which specify a section of a diagnostic service where the observation may be performed.  Used in HL7 Version 2.x messaging in the OBR and OM4 segments.",
+      "oids" : ["2.16.840.1.113883.18.29"],
+      "uses" : {
+      },
+      "ValueSet-KindLabReportVS.html" : "Kind of Lab Report"
+    },
+    {
+      "url" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+      "version" : "3.0.0",
+      "status" : "active",
+      "name" : "ObservationInterpretation",
+      "title" : "ObservationInterpretation",
+      "description" : "One or more codes providing a rough qualitative interpretation of the observation, such as \"normal\" / \"abnormal\", \"low\" / \"high\", \"better\" / \"worse\", \"resistant\" / \"susceptible\", \"expected\" / \"not expected\". The value set is intended to be for ANY use where coded representation of an interpretation is needed.",
+      "oids" : ["2.16.840.1.113883.5.83"],
+      "uses" : {
+      },
+      "ConceptMap-VF-ChemistryResult-valueInterpretation.html" : "ChemistryResult.valueInterpretation to Observation.interpretation"
     },
     {
       "url" : "http://unitsofmeasure.org",
@@ -89,13 +114,12 @@
       "oids" : ["2.16.840.1.113883.6.8"],
       "uses" : {
       },
-      "ConceptMap-LabUcumCodes.html" : "Mapping from Vista used lab units string to formal UCUM codes",
       "ConceptMap-DrugUcumCodes.html" : "Mapping from Vista used drug units string to formal UCUM codes",
       "ConceptMap-VF-VitalsUnits.html" : "Vitals qualifier Units used"
     },
     {
       "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS",
-      "version" : "0.3.5",
+      "version" : "0.3.6",
       "status" : "active",
       "name" : "AllergyObservedHistoricCS",
       "title" : "Allergy Observed vs Historic CodeSystem",

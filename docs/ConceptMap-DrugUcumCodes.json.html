@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Mapping from Vista used drug units string to formal UCUM codes - JSON Representation - MyHealtheVet PHR FHIR API v0.3.5</title>
+    <title>Mapping from Vista used drug units string to formal UCUM codes - JSON Representation - MyHealtheVet PHR FHIR API v0.3.6</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -44,8 +44,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.42"}
-    h3,h4,h5,h6{--heading-prefix:"10.42"}</style>
+    <style type="text/css">h2{--heading-prefix:"10.45"}
+    h3,h4,h5,h6{--heading-prefix:"10.45"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -59,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.5 - trial-use
+            <span style="display:inline-block;">0.3.6 - trial-use
 
 
 
@@ -120,7 +120,10 @@
         <a href="background.html#immunization">Immunization</a>
       </li>
       <li>
-        <a href="background.html#labreport">LabReport</a>
+        <a href="background.html#pathology-labreport">Pathology</a>
+      </li>
+      <li>
+        <a href="background.html#microbiology-labreport">Microbioloy</a>
       </li>
       <li>
         <a href="background.html#notes">Notes</a>
@@ -149,7 +152,7 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="downloads.html">Downloads</a>
+    <a href="downloads.html">About</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -186,7 +189,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.6) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -260,7 +263,7 @@
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.id">id</a>" : "DrugUcumCodes",
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Mapping from (not specified) to (not specified)&lt;/p&gt;&lt;p&gt;ACTIVE. Published on 2023-12-15 by VA Digital Services (VA Digital Services: &lt;a href=\&quot;http://va.gov\&quot;&gt;http://va.gov&lt;/a&gt;, John Moehrke (himself): &lt;a href=\&quot;mailto:John.Moehrke@va.gov\&quot;&gt;John.Moehrke@va.gov&lt;/a&gt;). &lt;/p&gt;&lt;div&gt;&lt;p&gt;Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/div&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Group 1&lt;/b&gt;Mapping from &lt;code&gt;urn:oid:2.16.840.1.113883.6.233&lt;/code&gt; to &lt;a href=\&quot;http://terminology.hl7.org/5.0.0/CodeSystem-v3-ucum.html\&quot;&gt;Unified Code for Units of Measure (UCUM)&lt;/a&gt;&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335551 (%)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;% (percent)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335489 (GM)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;g (gram)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335633 (MCG)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ug (microgram)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5336101 (MCG/24HR)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ug/(24.h) (microgram per 24 hour)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5336003 (MCG/HR)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ug/h (microgram per hour)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335497 (MCG/ML)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ug/mL (microgram per milliliter)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335647 (MEQ)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;meq (milliequivalent)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335503 (MG)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg (milligram)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335869 (MG/24HRS)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/(24.h) (milligram per 24 hour)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335895 (MG/DAY)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/d (milligram per day)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335677 (MG/GM)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/g (milligram per gram)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5336057 (MG/HR)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/h (milligram per hour)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335505 (MG/ML)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/mL (milligram per milliliter)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Mapping from (not specified) to (not specified)&lt;/p&gt;&lt;p&gt;ACTIVE. Published on 2023-12-15 by VA Digital Services  (VA Digital Services: &lt;a href=\&quot;http://va.gov\&quot;&gt;http://va.gov&lt;/a&gt;, John Moehrke (himself): &lt;a href=\&quot;mailto:John.Moehrke@va.gov\&quot;&gt;John.Moehrke@va.gov&lt;/a&gt;). &lt;/p&gt;&lt;div&gt;&lt;p&gt;Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.&lt;/p&gt;\n&lt;ul&gt;\n&lt;li&gt;DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325&lt;/li&gt;\n&lt;/ul&gt;\n&lt;/div&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Group 1 &lt;/b&gt;Mapping from &lt;code&gt;urn:oid:2.16.840.1.113883.6.233&lt;/code&gt; to &lt;a href=\&quot;http://terminology.hl7.org/5.0.0/CodeSystem-v3-ucum.html\&quot;&gt;Unified Code for Units of Measure (UCUM)&lt;/a&gt;&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335551 (%)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;% (percent)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335489 (GM)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;g (gram)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335633 (MCG)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ug (microgram)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5336101 (MCG/24HR)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ug/(24.h) (microgram per 24 hour)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5336003 (MCG/HR)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ug/h (microgram per hour)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335497 (MCG/ML)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;ug/mL (microgram per milliliter)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335647 (MEQ)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;meq (milliequivalent)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335503 (MG)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg (milligram)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335869 (MG/24HRS)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/(24.h) (milligram per 24 hour)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335895 (MG/DAY)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/d (milligram per day)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335677 (MG/GM)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/g (milligram per gram)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5336057 (MG/HR)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/h (milligram per hour)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5335505 (MG/ML)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;mg/mL (milligram per milliliter)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
   },
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.extension">extension</a>" : [
     {
@@ -289,7 +292,7 @@
     }
   ],
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.url">url</a>" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/DrugUcumCodes",
-  "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.version">version</a>" : "0.3.5",
+  "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.version">version</a>" : "0.3.6",
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.name">name</a>" : "DrugTOucumCodes",
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.title">title</a>" : "Mapping from Vista used drug units string to formal UCUM codes",
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.status">status</a>" : "active",
@@ -574,13 +577,7 @@
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -609,7 +606,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 18, 2024 11:51-0500">2024-05-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -636,26 +633,8 @@
   <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
-
   <!-- Analytics Below
   ================================================== -->
   </body>

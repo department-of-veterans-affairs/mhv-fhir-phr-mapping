@@ -125,7 +125,7 @@ Mapping: Lab-Mapping-MBLabSpecimenTO
 Source: MHVlabSpecimen
 Target: "LabSpecimen"
 Title: "VIA to mhv-fhir-phr"
-* -> "LabSpecimenTO Microbiology "
+* -> "LabSpecimenTO Microbiology"
 * identifier -> "{StationNbr} and {labReportTO/specimen/id}"
 * accessionIdentifier -> "{StationNbr} and {labReportTO/specimen/accessionNum}"
 * status -> "`available`"

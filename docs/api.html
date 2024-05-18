@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>API - MyHealtheVet PHR FHIR API v0.3.5</title>
+    <title>API - MyHealtheVet PHR FHIR API v0.3.6</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.5 - trial-use
+            <span style="display:inline-block;">0.3.6 - trial-use
 
 
 
@@ -118,7 +118,10 @@
         <a href="background.html#immunization">Immunization</a>
       </li>
       <li>
-        <a href="background.html#labreport">LabReport</a>
+        <a href="background.html#pathology-labreport">Pathology</a>
+      </li>
+      <li>
+        <a href="background.html#microbiology-labreport">Microbioloy</a>
       </li>
       <li>
         <a href="background.html#notes">Notes</a>
@@ -147,7 +150,7 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="downloads.html">Downloads</a>
+    <a href="downloads.html">About</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -191,7 +194,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.6) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>API</h2>
   
 
@@ -242,8 +245,9 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.diagnosticReport.html">DiagnosticReport</a> shows all of the DiagnosticReport. Including Microbiology, Pathology, and Chem-Hem.
     <ul>
-      <li><a href="StructureDefinition-VA.MHV.PHR.labReport-examples.html">Microbiology and Pathology Examples</a></li>
       <li><a href="StructureDefinition-VA.MHV.PHR.chReport-examples.html">Chem-Hem Examples</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.MBlabReport-examples.html">Microbiology Examples</a></li>
+      <li><a href="StructureDefinition-VA.MHV.PHR.SPlabReport-examples.html">Pathology Examples</a></li>
     </ul>
   </li>
   <li><a href="StructureDefinition-VA.MHV.PHR.documentReference.html">DocumentReference</a> shows all uses of DocumentReference. Including Notes, Discharge Summary, EKG, and Imaging.
@@ -302,13 +306,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -337,7 +335,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 18, 2024 11:51-0500">2024-05-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -364,26 +362,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
   <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
-
   <!-- Analytics Below
   ================================================== -->
   </body>

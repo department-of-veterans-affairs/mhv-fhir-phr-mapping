@@ -3,10 +3,10 @@
 <DiagnosticReport xmlns="http://hl7.org/fhir">
   <id value="ex-MHV-labReport-6"/>
   <meta>
-    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 11526-1}">LR SURGICAL PATHOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Reported</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7009190 (use: USUAL)</td></tr></table><p><b>Report Details</b></p></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 11526-1}">LR SURGICAL PATHOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 SP}">Surgical Pathology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: usual))</td></tr><tr><td>When For</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Reported</td><td>1999-08-11 16:09:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.SP;7009190 (use: usual)</td></tr></table><p><b>Report Details</b></p></div>
   </text>
   <contained>
     <Specimen>
@@ -57,6 +57,12 @@
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
       <code value="LAB"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="SP"/>
     </coding>
   </category>
   <code>

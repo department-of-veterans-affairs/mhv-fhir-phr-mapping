@@ -1,0 +1,225 @@
+{
+  "resourceType" : "DiagnosticReport",
+  "id" : "9981",
+  "meta" : {
+    "versionId" : "21",
+    "lastUpdated" : "2024-05-16T18:08:59.215-04:00",
+    "source" : "#reWo6V0WdeyFTR19",
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: \">CH</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 CH}\">Chemistry</span>, <span title=\"Codes: {http://loinc.org 2078-4}\">CHLORIDE:SCNC:PT:URINE:QN:</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104\u00a0(use:\u00a0usual))</td></tr><tr><td>When For</td><td>2019-03-15 16:59:44-0500</td></tr><tr><td>Reported</td><td>2019-03-15 17:00:42-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR</code>/1190740002\u00a0(use:\u00a0usual)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>When For</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Specimen",
+    "id" : "Specimen-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chSpecimen"]
+    },
+    "status" : "available",
+    "type" : {
+      "coding" : [{
+        "system" : "http://snomed.info",
+        "version" : "20180901",
+        "code" : "78014005",
+        "display" : "Urine (substance)"
+      },
+      {
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0487",
+        "code" : "UR",
+        "display" : "Urine"
+      }],
+      "text" : "URINE"
+    },
+    "request" : [{
+      "reference" : "#ServiceRequest-1"
+    }],
+    "collection" : {
+      "collectedDateTime" : "2019-03-15T16:59:44-05:00"
+    }
+  },
+  {
+    "resourceType" : "Practitioner",
+    "id" : "Provider-1",
+    "identifier" : [{
+      "system" : "http://va.gov/terminology/vistaDefinedTerms/4",
+      "value" : "59845-VA660"
+    }],
+    "name" : [{
+      "family" : "HALL",
+      "given" : ["LISA"]
+    }]
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "Organization-660",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "type" : {
+        "text" : "FI"
+      },
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "660"
+    }],
+    "active" : true,
+    "name" : "VA SALT LAKE CITY HEALTH CARE SYSTEM (660)",
+    "address" : [{
+      "line" : ["500 FOOTHILL BLVD."],
+      "city" : "SALT LAKE CITY",
+      "state" : "UT",
+      "postalCode" : "84148",
+      "country" : "USA"
+    }]
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "OrgPerformer-979",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349",
+      "value" : "979"
+    }],
+    "active" : true,
+    "name" : "SLC10.FO-BAYPINES.MED.VA.GOV"
+  },
+  {
+    "resourceType" : "ServiceRequest",
+    "id" : "ServiceRequest-1",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"]
+    },
+    "status" : "unknown",
+    "intent" : "order",
+    "category" : [{
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "108252007",
+        "display" : "Laboratory procedure"
+      }]
+    }],
+    "code" : {
+      "coding" : [{
+        "system" : "http://va.gov/terminology/vistaDefinedTerms/64",
+        "code" : "82435.0000"
+      },
+      {
+        "system" : "http://va.gov/terminology/vistaDefinedTerms/60",
+        "code" : "178",
+        "display" : "CHLORIDE"
+      }],
+      "text" : "Chloride"
+    },
+    "subject" : {
+      "reference" : "Patient/ex-MHV-patient-942104"
+    },
+    "requester" : {
+      "reference" : "#Provider-1"
+    },
+    "performer" : [{
+      "reference" : "#Organization-660"
+    }]
+  },
+  {
+    "resourceType" : "Observation",
+    "id" : "ChemistryResult-1.1",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest"]
+    },
+    "basedOn" : [{
+      "reference" : "#ServiceRequest-1"
+    }],
+    "status" : "final",
+    "category" : [{
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/observation-category",
+        "code" : "laboratory"
+      }]
+    }],
+    "code" : {
+      "coding" : [{
+        "system" : "http://loinc.org",
+        "version" : "2.64",
+        "code" : "2078-4"
+      },
+      {
+        "system" : "http://va.gov/terminology/vistaDefinedTerms/95.3",
+        "version" : "2.64",
+        "code" : "4662617"
+      }],
+      "text" : "CHLORIDE"
+    },
+    "subject" : {
+      "reference" : "Patient/ex-MHV-patient-942104"
+    },
+    "effectiveDateTime" : "2019-03-15T16:59:44-05:00",
+    "performer" : [{
+      "reference" : "#Organization-660"
+    }],
+    "valueQuantity" : {
+      "value" : 99,
+      "unit" : "mmol/L",
+      "system" : "http://unitsofmeasure.org",
+      "code" : "mmol/L"
+    },
+    "specimen" : {
+      "reference" : "#Specimen-0"
+    }
+  }],
+  "extension" : [{
+    "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes",
+    "valueString" : "Test 3/15/19"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR",
+    "value" : "1190740002"
+  }],
+  "basedOn" : [{
+    "reference" : "#ServiceRequest-1"
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "code" : "LAB"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "code" : "CH"
+    }]
+  },
+  {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "version" : "2.64",
+      "code" : "2078-4"
+    }],
+    "text" : "CHLORIDE:SCNC:PT:URINE:QN:"
+  }],
+  "code" : {
+    "text" : "CH"
+  },
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-942104"
+  },
+  "effectiveDateTime" : "2019-03-15T16:59:44-05:00",
+  "issued" : "2019-03-15T17:00:42.000-05:00",
+  "performer" : [{
+    "reference" : "#OrgPerformer-979"
+  }],
+  "specimen" : [{
+    "reference" : "#Specimen-0"
+  }],
+  "result" : [{
+    "reference" : "#ChemistryResult-1.1"
+  }]
+}

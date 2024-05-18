@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="VF-ChemistryResult-valueInterpretation"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p>Mapping from (not specified) to (not specified)</p><p>ACTIVE. Published on 2024-05-10 by VA Digital Services  (VA Digital Services: <a href="http://va.gov">http://va.gov</a>, John Moehrke (himself): <a href="mailto:John.Moehrke@va.gov">John.Moehrke@va.gov</a>). </p><div><p>Map between ChemistryResult.valueInterpretation and FHIR Observation.interpretation.coding.</p>
+</div><br/><p><b>Group 1 </b>Mapping from <code>unspecified code system</code> to <a href="http://terminology.hl7.org/5.5.0/CodeSystem-v3-ObservationInterpretation.html">ObservationInterpretation</a></p><table class="grid"><tr><td><b>Source Code</b></td><td><b>Relationship</b></td><td><b>Target Code</b></td></tr><tr><td>L</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>L (Low)</td></tr><tr><td>LL</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>LL (Critical low)</td></tr><tr><td>L*</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>LL (Critical low)</td></tr><tr><td>H</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>H (High)</td></tr><tr><td>HH</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>HH (Critical high)</td></tr><tr><td>H*</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>HH (Critical high)</td></tr><tr><td>A</td><td><a href="http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal" title="equal">is equal to</a></td><td>A (Abnormal)</td></tr></table></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="1">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueInteger>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom">
+        <valueCanonical value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"/>
+      </extension>
+    </valueCode>
+  </extension>
+  <url value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-ChemistryResult-valueInterpretation"/>
+  <version value="0.3.6"/>
+  <name value="VF_ChemistryResult_valueInterpretation"/>
+  <title value="ChemistryResult.valueInterpretation to Observation.interpretation"/>
+  <status value="active"/>
+  <experimental value="false"/>
+  <date value="2024-05-10"/>
+  <publisher value="VA Digital Services"/>
+  <contact>
+    <name value="VA Digital Services"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://va.gov"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="John.Moehrke@va.gov"/>
+    </telecom>
+  </contact>
+  <description value="Map between ChemistryResult.valueInterpretation and FHIR Observation.interpretation.coding."/>
+  <jurisdiction>
+    <coding>
+      <system value="urn:iso:std:iso:3166"/>
+      <code value="US"/>
+    </coding>
+  </jurisdiction>
+  <purpose value="VF_ChemistryResult_valueInterpretation"/>
+  <group>
+    <target value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+    <element>
+      <code value="L"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="L"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="LL"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="LL"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="L*"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="LL"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="H"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="H"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="HH"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="HH"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="H*"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="HH"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+    <element>
+      <code value="A"/>
+      <target>
+        <modifierExtension url="http://hl7.org/fhir/1.0/StructureDefinition/extension-ConceptMap.element.target.equivalence">
+          <valueCode value="equal"/>
+        </modifierExtension>
+        <code value="A"/>
+        <equivalence value="equal"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

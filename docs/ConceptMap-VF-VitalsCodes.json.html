@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Map between Vital Sign ObservationTypeTO.name to Loinc Code - JSON Representation - MyHealtheVet PHR FHIR API v0.3.5</title>
+    <title>Map between Vital Sign ObservationTypeTO.name to Loinc Code - JSON Representation - MyHealtheVet PHR FHIR API v0.3.6</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -44,8 +44,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.41"}
-    h3,h4,h5,h6{--heading-prefix:"10.41"}</style>
+    <style type="text/css">h2{--heading-prefix:"10.44"}
+    h3,h4,h5,h6{--heading-prefix:"10.44"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -59,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.5 - trial-use
+            <span style="display:inline-block;">0.3.6 - trial-use
 
 
 
@@ -120,7 +120,10 @@
         <a href="background.html#immunization">Immunization</a>
       </li>
       <li>
-        <a href="background.html#labreport">LabReport</a>
+        <a href="background.html#pathology-labreport">Pathology</a>
+      </li>
+      <li>
+        <a href="background.html#microbiology-labreport">Microbioloy</a>
       </li>
       <li>
         <a href="background.html#notes">Notes</a>
@@ -149,7 +152,7 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="downloads.html">Downloads</a>
+    <a href="downloads.html">About</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -186,7 +189,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 8" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.6) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -260,7 +263,7 @@
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.id">id</a>" : "VF-VitalsCodes",
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.text">text</a>" : {
     "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a>" : "extensions",
-    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Mapping from (not specified) to (not specified)&lt;/p&gt;&lt;p&gt;ACTIVE. Published on 2023-10-05 by VA Digital Services (VA Digital Services: &lt;a href=\&quot;http://va.gov\&quot;&gt;http://va.gov&lt;/a&gt;, John Moehrke (himself): &lt;a href=\&quot;mailto:John.Moehrke@va.gov\&quot;&gt;John.Moehrke@va.gov&lt;/a&gt;). &lt;/p&gt;&lt;div&gt;&lt;p&gt;Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code.&lt;/p&gt;\n&lt;/div&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Group 1&lt;/b&gt;Mapping from &lt;code&gt;urn:oid:2.16.840.1.113883.6.233&lt;/code&gt; to &lt;a href=\&quot;http://terminology.hl7.org/5.3.0/CodeSystem-v3-loinc.html\&quot;&gt;Logical Observation Identifiers, Names and Codes (LOINC)&lt;/a&gt;&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688718 (AUDIOMETRY)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;28615-3 (Audiology study)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500634 (BLOOD PRESSURE)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;85354-9 (Blood pressure panel with all children optional)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500638 (TEMPERATURE)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;8310-5 (Body temperature)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688719 (CENTRAL VENOUS PRESSURE)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;8591-0 (Central venous pressure (CVP) Mean)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688720 (CIRCUMFERENCE%2FGIRTH)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;9844-2 (Body region Circumference)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688721 (FETAL HEART TONES)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;11616-0 (Fetal Heart Narrative Activity US)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688722 (FUNDAL HEIGHT)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;11881-0 (Uterus Fundal height Tape measure)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688723 (HEARING)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;32437-6 (Physical findings of Hearing)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688724 (HEIGHT)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;8302-2 (Body height)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500635 (PAIN)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;72514-3 (Pain severity - 0-10 verbal numeric rating [Score] - Reported)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500637 (PULSE OXIMETRY)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;2708-6 (Oxygen saturation in Arterial blood)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500636 (PULSE)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;8867-4 (Heart rate)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688725 (RESPIRATION)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;9279-1 (Respiratory Rate)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688726 (TONOMETRY)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;28630-2 (Tonometry study)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688727 (VISION CORRECTED)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;70936-0 (Vision testing Narrative)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688728 (VISION UNCORRECTED)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;70936-0 (Vision testing Narrative)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500639 (WEIGHT)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;29463-7 (Body weight)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unknown (ABDMONAL GIRTH)&lt;/td&gt;&lt;td colspan=\&quot;2\&quot; style=\&quot;background-color: #efefef\&quot;&gt;(not mapped)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unknown (HEAD CIRCUMFERENCE)&lt;/td&gt;&lt;td colspan=\&quot;2\&quot; style=\&quot;background-color: #efefef\&quot;&gt;(not mapped)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
+    "<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.div">div</a>" : "&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;Mapping from (not specified) to (not specified)&lt;/p&gt;&lt;p&gt;ACTIVE. Published on 2023-10-05 by VA Digital Services  (VA Digital Services: &lt;a href=\&quot;http://va.gov\&quot;&gt;http://va.gov&lt;/a&gt;, John Moehrke (himself): &lt;a href=\&quot;mailto:John.Moehrke@va.gov\&quot;&gt;John.Moehrke@va.gov&lt;/a&gt;). &lt;/p&gt;&lt;div&gt;&lt;p&gt;Map between VitalSignTO.type(ObservationTypeTO.name) VUID/string and LOINC code.&lt;/p&gt;\n&lt;/div&gt;&lt;br/&gt;&lt;p&gt;&lt;b&gt;Group 1 &lt;/b&gt;Mapping from &lt;code&gt;urn:oid:2.16.840.1.113883.6.233&lt;/code&gt; to &lt;a href=\&quot;http://terminology.hl7.org/5.5.0/CodeSystem-v3-loinc.html\&quot;&gt;Logical Observation Identifiers, Names and Codes (LOINC)&lt;/a&gt;&lt;/p&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Source Code&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Relationship&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Target Code&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688718 (AUDIOMETRY)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;28615-3 (Audiology study)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500634 (BLOOD PRESSURE)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;85354-9 (Blood pressure panel with all children optional)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500638 (TEMPERATURE)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;8310-5 (Body temperature)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688719 (CENTRAL VENOUS PRESSURE)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;8591-0 (Central venous pressure (CVP) Mean)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688720 (CIRCUMFERENCE%2FGIRTH)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;9844-2 (Body region Circumference)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688721 (FETAL HEART TONES)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;11616-0 (Fetal Heart Narrative Activity US)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688722 (FUNDAL HEIGHT)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;11881-0 (Uterus Fundal height Tape measure)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688723 (HEARING)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;32437-6 (Physical findings of Hearing)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688724 (HEIGHT)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;8302-2 (Body height)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500635 (PAIN)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;72514-3 (Pain severity - 0-10 verbal numeric rating [Score] - Reported)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500637 (PULSE OXIMETRY)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;2708-6 (Oxygen saturation in Arterial blood)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500636 (PULSE)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;8867-4 (Heart rate)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688725 (RESPIRATION)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;9279-1 (Respiratory Rate)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688726 (TONOMETRY)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;28630-2 (Tonometry study)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688727 (VISION CORRECTED)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;70936-0 (Vision testing Narrative)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4688728 (VISION UNCORRECTED)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;70936-0 (Vision testing Narrative)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4500639 (WEIGHT)&lt;/td&gt;&lt;td&gt;&lt;a href=\&quot;http://hl7.org/fhir/R4/codesystem-concept-map-equivalence.html#equal\&quot; title=\&quot;equal\&quot;&gt;is equal to&lt;/a&gt;&lt;/td&gt;&lt;td&gt;29463-7 (Body weight)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unknown (ABDMONAL GIRTH)&lt;/td&gt;&lt;td colspan=\&quot;2\&quot; style=\&quot;background-color: #efefef\&quot;&gt;(not mapped)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;unknown (HEAD CIRCUMFERENCE)&lt;/td&gt;&lt;td colspan=\&quot;2\&quot; style=\&quot;background-color: #efefef\&quot;&gt;(not mapped)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;"<a name="end-xhtml"></a>
   },
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.extension">extension</a>" : [
     {
@@ -289,7 +292,7 @@
     }
   ],
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.url">url</a>" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsCodes",
-  "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.version">version</a>" : "0.3.5",
+  "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.version">version</a>" : "0.3.6",
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.name">name</a>" : "VF_VitalsCodes",
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.title">title</a>" : "Vital Sign ObservationTypeTO.name to Loinc Code",
   "<a href="http://hl7.org/fhir/R4/conceptmap.html#ConceptMap.status">status</a>" : "active",
@@ -660,13 +663,7 @@
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -695,7 +692,7 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 18, 2024 11:51-0500">2024-05-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -722,26 +719,8 @@
   <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
-
   <!-- Analytics Below
   ================================================== -->
   </body>

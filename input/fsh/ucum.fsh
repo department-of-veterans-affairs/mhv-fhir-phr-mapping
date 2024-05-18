@@ -103,6 +103,7 @@ Vista units are close but often not exactly correct. This map gives the proper f
 * group.element[=].target.code = #mg/mL
 * group.element[=].target.display =  "milligram per milliliter"
 
+/*  Not going to make a ConceptMap out of this as it changes too much, and the CSV is easier to use than a FHIR ConceptMap
 
 Instance:   LabUcumCodes
 InstanceOf: ConceptMap
@@ -1155,3 +1156,5 @@ Vista units are close but often not exactly correct. This map gives the proper f
 * group.element[=].target.equivalence = #equal
 * group.element[=].target.code = #10*3/uL
 * group.element[=].target.display  = "thousand per microliter"
+
+*/

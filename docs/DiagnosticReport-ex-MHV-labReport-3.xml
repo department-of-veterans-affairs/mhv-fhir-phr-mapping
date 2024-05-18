@@ -3,10 +3,10 @@
 <DiagnosticReport xmlns="http://hl7.org/fhir">
   <id value="ex-MHV-labReport-3"/>
   <meta>
-    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"/>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.MBlabReport"/>
   </meta>
   <text>
-    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 18725-2}">LR MICROBIOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: USUAL))</td></tr><tr><td>When For</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Reported</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.MI;7049271 (use: USUAL)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>When For</b></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr></table></div>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: {http://loinc.org 18725-2}">LR MICROBIOLOGY REPORT</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 MB}">Microbiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: usual))</td></tr><tr><td>When For</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Reported</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.MI;7049271 (use: usual)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>When For</b></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr><tr><td colspan="3"><i>This Observation could not be resolved</i></td></tr></table></div>
   </text>
   <contained>
     <Observation>
@@ -119,10 +119,13 @@
       </accessionIdentifier>
       <status value="available"/>
       <type>
-        <text value="FECES"/>
+        <text value="STOOL"/>
       </type>
       <collection>
         <collectedDateTime value="1995-07-28"/>
+        <bodySite>
+          <text value="FECES"/>
+        </bodySite>
       </collection>
     </Specimen>
   </contained>
@@ -155,6 +158,12 @@
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
       <code value="LAB"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="MB"/>
     </coding>
   </category>
   <code>

@@ -62,8 +62,14 @@
       <sch:assert test="count(f:duration) &lt;= 0">duration: maximum cardinality of 'duration' is 0</sch:assert>
       <sch:assert test="count(f:quantity) &lt;= 0">quantity: maximum cardinality of 'quantity' is 0</sch:assert>
       <sch:assert test="count(f:method) &lt;= 0">method: maximum cardinality of 'method' is 0</sch:assert>
-      <sch:assert test="count(f:bodySite) &lt;= 0">bodySite: maximum cardinality of 'bodySite' is 0</sch:assert>
       <sch:assert test="count(f:fastingStatus[x]) &lt;= 0">fastingStatus[x]: maximum cardinality of 'fastingStatus[x]' is 0</sch:assert>
+    </sch:rule>
+  </sch:pattern>
+  <sch:pattern>
+    <sch:title>f:Specimen/f:collection/f:bodySite</sch:title>
+    <sch:rule context="f:Specimen/f:collection/f:bodySite">
+      <sch:assert test="count(f:id) &lt;= 1">id: maximum cardinality of 'id' is 1</sch:assert>
+      <sch:assert test="count(f:text) &lt;= 1">text: maximum cardinality of 'text' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

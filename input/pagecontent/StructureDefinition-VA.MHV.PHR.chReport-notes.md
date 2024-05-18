@@ -25,7 +25,7 @@
 - note to API use, the Observations here are lab results and thus would include: Blood Sugar, Cholesterol, and INR
 - See [99VA code system conversion](utility.html#code-lookup) (i.e., `99VA60` = `http://va.gov/terminology/vistaDefinedTerms/60`)
 - ChemistryResult ObservationStatus translated to Observation.status using [concept map translation](ConceptMap-VF-ChemistryResult-ObservationStatus.html)
-- ChemistryResult ObservationValue Quantity should normalize the UCUM code using [concept map ucum translation](ConceptMap-LabUcumCodes.html) as explained on the [UCUM code](utility.html#ucum-code) section
+- ChemistryResult ObservationValue Quantity should normalize the UCUM code as explained on the [UCUM code](utility.html#ucum-code) section
 - DiagnosticReport.status is set to `final` if all Observations are final; and `preliminary` if any Observations are not final.
 - DiagnosticReport.status could be set to `entered-in-error` if `ORDER CANCELLED` or deleted
 - ServiceRequest.status is always `unknown` as we are creating a contained resource for this

@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.3.5</title>
+    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.3.6</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.5 - trial-use
+            <span style="display:inline-block;">0.3.6 - trial-use
 
 
 
@@ -118,7 +118,10 @@
         <a href="background.html#immunization">Immunization</a>
       </li>
       <li>
-        <a href="background.html#labreport">LabReport</a>
+        <a href="background.html#pathology-labreport">Pathology</a>
+      </li>
+      <li>
+        <a href="background.html#microbiology-labreport">Microbioloy</a>
       </li>
       <li>
         <a href="background.html#notes">Notes</a>
@@ -147,7 +150,7 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="downloads.html">Downloads</a>
+    <a href="downloads.html">About</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -191,7 +194,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.6) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -296,13 +299,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     </ul>
   </li>
   <li><code class="language-plaintext highlighter-rouge">.subject</code> must be the patient from the DiagnosticReport</li>
-  <li><code class="language-plaintext highlighter-rouge">valueInterpretation</code> -&gt; <code class="language-plaintext highlighter-rouge">.interpretation</code>
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">L</code> -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L</li>
-      <li>‘H’ -&gt; http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H</li>
-    </ul>
-  </li>
-  <li><code class="language-plaintext highlighter-rouge">observedStatus</code> (mock data has <code class="language-plaintext highlighter-rouge">F</code>, <code class="language-plaintext highlighter-rouge">C</code>, ) (? final vs preliminary ?)</li>
+  <li><code class="language-plaintext highlighter-rouge">valueInterpretation</code> -&gt; <code class="language-plaintext highlighter-rouge">.interpretation</code></li>
   <li><code class="language-plaintext highlighter-rouge">testIdentifier</code> -&gt; <code class="language-plaintext highlighter-rouge">.code</code> – where LN is Loinc</li>
   <li><code class="language-plaintext highlighter-rouge">referenceRange</code> -&gt; <code class="language-plaintext highlighter-rouge">.referenceRange.text</code> – dont try to break out further as there is little use of this value</li>
   <li><code class="language-plaintext highlighter-rouge">labCommentEvents</code> -&gt; <code class="language-plaintext highlighter-rouge">.note.text</code></li>
@@ -412,37 +409,11 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="StructureDefinition-VA.MHV.PHR.labReport.html"
-                  title="StructureDefinition/VA.MHV.PHR.labReport">VA MHV PHR Lab Report</a>
-            </td>
-            <td>
-<p>A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="StructureDefinition-VA.MHV.PHR.LabSpecimen.html"
                   title="StructureDefinition/VA.MHV.PHR.LabSpecimen">VA MHV PHR Lab Specimen</a>
             </td>
             <td>
-<p>A profile showing how the <code class="language-plaintext highlighter-rouge">LabSpecimenTO</code> is mapped into a FHIR Specimen.</p>
-
-<ul>
-  <li>This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances</li>
-  <li>must have a type
-    <ul>
-      <li><code class="language-plaintext highlighter-rouge">Specimen.type.text</code> &lt;- <code class="language-plaintext highlighter-rouge">LabSpecimenTO.name</code></li>
-      <li>type should be a code derived from LabSpecimenTO.name</li>
-    </ul>
-  </li>
-  <li>should have a <code class="language-plaintext highlighter-rouge">collectedDateTime</code> derived from <code class="language-plaintext highlighter-rouge">LabSpecimenTO.collectionDate</code></li>
-  <li>may have an <code class="language-plaintext highlighter-rouge">identifier</code> - <code class="language-plaintext highlighter-rouge">Specimen.identifier</code> &lt;- <code class="language-plaintext highlighter-rouge">LabSpecimenTO.id</code>
-    <ul>
-      <li>if no <code class="language-plaintext highlighter-rouge">LabSpecimenTO.id</code> is given, then the Specimen resource must be contained</li>
-    </ul>
-  </li>
-  <li>should have an <code class="language-plaintext highlighter-rouge">accessionIdentifier</code> derived from <code class="language-plaintext highlighter-rouge">LabSpecimenTO.accessionNum</code></li>
-</ul>
+<p>A profile showing how the Microbiology and Pathology <code class="language-plaintext highlighter-rouge">LabSpecimenTO</code> is mapped into a FHIR Specimen.</p>
 </td>
          </tr>
          <tr>
@@ -465,6 +436,15 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 </ul>
 
 <p>NOT USING Mapping to <a href="StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-fhir-phr-hospitallocationto">VIA HospitalLocationTO</a>.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-VA.MHV.PHR.MBlabReport.html"
+                  title="StructureDefinition/VA.MHV.PHR.MBlabReport">VA MHV PHR MB Lab Report</a>
+            </td>
+            <td>
+<p>A profile showing how Microbiology LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.</p>
 </td>
          </tr>
          <tr>
@@ -611,6 +591,15 @@ populate the Organization.name with the value from that table (when it is availa
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="StructureDefinition-VA.MHV.PHR.SPlabReport.html"
+                  title="StructureDefinition/VA.MHV.PHR.SPlabReport">VA MHV PHR SP Lab Report</a>
+            </td>
+            <td>
+<p>A profile showing how SP LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="StructureDefinition-VA.MHV.PHR.vitals.html"
                   title="StructureDefinition/VA.MHV.PHR.vitals">VA MHV PHR Vital-Signs</a>
             </td>
@@ -644,10 +633,10 @@ populate the Organization.name with the value from that table (when it is availa
                   title="StructureDefinition/VA.MHV.PHR.labTest">VA MHV PHR labTest</a>
             </td>
             <td>
-<p>A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.</p>
+<p>A profile showing how Microbiology and Pathology LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.</p>
 
 <ul>
-  <li>This profile is based on US-Core Lab</li>
+  <li>This profile is based on US-Core Lab Observation</li>
 </ul>
 </td>
          </tr>
@@ -746,6 +735,14 @@ RECORD INDEXES:  AHDR (#482)</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ValueSet-KindLabReportVS.html" title="ValueSet/KindLabReportVS">Kind of Lab Report</a>
+            </td>
+            <td>
+<p>Specific kind of Pathology or Microbiology mapped from labReportTO/type</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ValueSet-DocumentReferenceTypeVS.html"
                   title="ValueSet/DocumentReferenceTypeVS">Known DocumentReference types</a>
             </td>
@@ -832,6 +829,15 @@ RECORD INDEXES:  AHDR (#482)</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="ConceptMap-VF-ChemistryResult-valueInterpretation.html"
+                  title="ConceptMap/VF-ChemistryResult-valueInterpretation">Map between ChemistryResult valueInterpretation to FHIR Observation.interpretation codes</a>
+            </td>
+            <td>
+<p>Map between ChemistryResult.valueInterpretation and FHIR Observation.interpretation.coding.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="ConceptMap-VF-VitalsCodes.html" title="ConceptMap/VF-VitalsCodes">Map between Vital Sign ObservationTypeTO.name to Loinc Code</a>
             </td>
             <td>
@@ -848,14 +854,6 @@ RECORD INDEXES:  AHDR (#482)</p>
 <ul>
   <li>DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325</li>
 </ul>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="ConceptMap-LabUcumCodes.html" title="ConceptMap/LabUcumCodes">Mapping from Vista used lab units string to formal UCUM codes</a>
-            </td>
-            <td>
-<p>Vista units are close but often not exactly correct.</p>
 </td>
          </tr>
          <tr>
@@ -918,6 +916,302 @@ RECORD INDEXES:  AHDR (#482)</p>
 <table class="grid">
       <col style="width:20%"/>
       <tbody>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9952.html" title="DiagnosticReport/9952">9952</a>
+            </td>
+            <td>
+<p>ChemHem mock 9952</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9953.html" title="DiagnosticReport/9953">9953</a>
+            </td>
+            <td>
+<p>ChemHem mock 9953</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9954.html" title="DiagnosticReport/9954">9954</a>
+            </td>
+            <td>
+<p>ChemHem mock 9954</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9955.html" title="DiagnosticReport/9955">9955</a>
+            </td>
+            <td>
+<p>ChemHem mock 9955</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9956.html" title="DiagnosticReport/9956">9956</a>
+            </td>
+            <td>
+<p>ChemHem mock 9956</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9957.html" title="DiagnosticReport/9957">9957</a>
+            </td>
+            <td>
+<p>ChemHem mock 9957</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9958.html" title="DiagnosticReport/9958">9958</a>
+            </td>
+            <td>
+<p>ChemHem mock 9958</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9959.html" title="DiagnosticReport/9959">9959</a>
+            </td>
+            <td>
+<p>ChemHem mock 9959</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9960.html" title="DiagnosticReport/9960">9960</a>
+            </td>
+            <td>
+<p>ChemHem mock 9960</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9961.html" title="DiagnosticReport/9961">9961</a>
+            </td>
+            <td>
+<p>ChemHem mock 9961</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9962.html" title="DiagnosticReport/9962">9962</a>
+            </td>
+            <td>
+<p>ChemHem mock 9962</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9963.html" title="DiagnosticReport/9963">9963</a>
+            </td>
+            <td>
+<p>ChemHem mock 9963</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9964.html" title="DiagnosticReport/9964">9964</a>
+            </td>
+            <td>
+<p>ChemHem mock 9964</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9965.html" title="DiagnosticReport/9965">9965</a>
+            </td>
+            <td>
+<p>ChemHem mock 9965</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9966.html" title="DiagnosticReport/9966">9966</a>
+            </td>
+            <td>
+<p>ChemHem mock 9966</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9967.html" title="DiagnosticReport/9967">9967</a>
+            </td>
+            <td>
+<p>ChemHem mock 9967</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9968.html" title="DiagnosticReport/9968">9968</a>
+            </td>
+            <td>
+<p>ChemHem mock 9968</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9969.html" title="DiagnosticReport/9969">9969</a>
+            </td>
+            <td>
+<p>ChemHem mock 9969</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9970.html" title="DiagnosticReport/9970">9970</a>
+            </td>
+            <td>
+<p>ChemHem mock 9970</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9971.html" title="DiagnosticReport/9971">9971</a>
+            </td>
+            <td>
+<p>ChemHem mock 9971</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9972.html" title="DiagnosticReport/9972">9972</a>
+            </td>
+            <td>
+<p>ChemHem mock 9972</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9973.html" title="DiagnosticReport/9973">9973</a>
+            </td>
+            <td>
+<p>ChemHem mock 9973</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9974.html" title="DiagnosticReport/9974">9974</a>
+            </td>
+            <td>
+<p>ChemHem mock 9974</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9975.html" title="DiagnosticReport/9975">9975</a>
+            </td>
+            <td>
+<p>ChemHem mock 9975</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9976.html" title="DiagnosticReport/9976">9976</a>
+            </td>
+            <td>
+<p>ChemHem mock 9976</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9977.html" title="DiagnosticReport/9977">9977</a>
+            </td>
+            <td>
+<p>ChemHem mock 9977</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9978.html" title="DiagnosticReport/9978">9978</a>
+            </td>
+            <td>
+<p>ChemHem mock 9978</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9979.html" title="DiagnosticReport/9979">9979</a>
+            </td>
+            <td>
+<p>ChemHem mock 9979</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9980.html" title="DiagnosticReport/9980">9980</a>
+            </td>
+            <td>
+<p>ChemHem mock 9980</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9981.html" title="DiagnosticReport/9981">9981</a>
+            </td>
+            <td>
+<p>ChemHem mock 9981</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9982.html" title="DiagnosticReport/9982">9982</a>
+            </td>
+            <td>
+<p>ChemHem mock 9982</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9983.html" title="DiagnosticReport/9983">9983</a>
+            </td>
+            <td>
+<p>ChemHem mock 9983</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9984.html" title="DiagnosticReport/9984">9984</a>
+            </td>
+            <td>
+<p>ChemHem mock 9984</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9985.html" title="DiagnosticReport/9985">9985</a>
+            </td>
+            <td>
+<p>ChemHem mock 9985</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9986.html" title="DiagnosticReport/9986">9986</a>
+            </td>
+            <td>
+<p>ChemHem mock 9986</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9987.html" title="DiagnosticReport/9987">9987</a>
+            </td>
+            <td>
+<p>ChemHem mock 9987</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9988.html" title="DiagnosticReport/9988">9988</a>
+            </td>
+            <td>
+<p>ChemHem mock 9988</p>
+</td>
+         </tr>
          <tr>
             <td style="column-width:30%">
                <a href="Observation-00c13a47-333e-4f69-a764-ebd7e609cfa7.html"
@@ -4107,13 +4401,7 @@ RECORD INDEXES:  AHDR (#482)</p>
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -4142,7 +4430,7 @@ RECORD INDEXES:  AHDR (#482)</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 18, 2024 11:51-0500">2024-05-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -4169,26 +4457,8 @@ RECORD INDEXES:  AHDR (#482)</p>
   <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
-
   <!-- Analytics Below
   ================================================== -->
   </body>

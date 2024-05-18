@@ -20,11 +20,11 @@
      fhir:value [ fhir:v "1"^^xsd:integer ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.3.5"] ; # 
+  fhir:version [ fhir:v "0.3.6"] ; # 
   fhir:name [ fhir:v "VAMHVFHIRPHR"] ; # 
   fhir:title [ fhir:v "MyHealtheVet PHR FHIR API"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-03-29T15:35:14-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-05-18T11:51:10-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -60,7 +60,7 @@
        fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
      ] ;
      fhir:packageId [ fhir:v "hl7.terminology.r4" ] ;
-     fhir:version [ fhir:v "5.3.0" ]
+     fhir:version [ fhir:v "5.5.0" ]
   ] [
      fhir:id [ fhir:v "hl7fhiruscore" ] ;
      fhir:uri [
@@ -732,6 +732,561 @@
        fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"^^xsd:anyURI ]
      ] ) ;
      fhir:resource ( [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9952> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9952" ]
+       ] ;
+       fhir:name [ fhir:v "9952" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9952" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9953> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9953" ]
+       ] ;
+       fhir:name [ fhir:v "9953" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9953" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9954> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9954" ]
+       ] ;
+       fhir:name [ fhir:v "9954" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9954" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9955> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9955" ]
+       ] ;
+       fhir:name [ fhir:v "9955" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9955" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9956> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9956" ]
+       ] ;
+       fhir:name [ fhir:v "9956" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9956" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9957> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9957" ]
+       ] ;
+       fhir:name [ fhir:v "9957" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9957" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9958> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9958" ]
+       ] ;
+       fhir:name [ fhir:v "9958" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9958" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9959> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9959" ]
+       ] ;
+       fhir:name [ fhir:v "9959" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9959" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9960> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9960" ]
+       ] ;
+       fhir:name [ fhir:v "9960" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9960" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9961> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9961" ]
+       ] ;
+       fhir:name [ fhir:v "9961" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9961" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9962> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9962" ]
+       ] ;
+       fhir:name [ fhir:v "9962" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9962" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9963> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9963" ]
+       ] ;
+       fhir:name [ fhir:v "9963" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9963" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9964> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9964" ]
+       ] ;
+       fhir:name [ fhir:v "9964" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9964" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9965> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9965" ]
+       ] ;
+       fhir:name [ fhir:v "9965" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9965" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9966> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9966" ]
+       ] ;
+       fhir:name [ fhir:v "9966" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9966" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9967> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9967" ]
+       ] ;
+       fhir:name [ fhir:v "9967" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9967" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9968> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9968" ]
+       ] ;
+       fhir:name [ fhir:v "9968" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9968" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9969> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9969" ]
+       ] ;
+       fhir:name [ fhir:v "9969" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9969" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9970> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9970" ]
+       ] ;
+       fhir:name [ fhir:v "9970" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9970" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9971> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9971" ]
+       ] ;
+       fhir:name [ fhir:v "9971" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9971" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9972> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9972" ]
+       ] ;
+       fhir:name [ fhir:v "9972" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9972" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9973> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9973" ]
+       ] ;
+       fhir:name [ fhir:v "9973" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9973" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9974> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9974" ]
+       ] ;
+       fhir:name [ fhir:v "9974" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9974" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9975> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9975" ]
+       ] ;
+       fhir:name [ fhir:v "9975" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9975" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9976> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9976" ]
+       ] ;
+       fhir:name [ fhir:v "9976" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9976" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9977> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9977" ]
+       ] ;
+       fhir:name [ fhir:v "9977" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9977" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9978> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9978" ]
+       ] ;
+       fhir:name [ fhir:v "9978" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9978" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9979> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9979" ]
+       ] ;
+       fhir:name [ fhir:v "9979" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9979" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9980> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9980" ]
+       ] ;
+       fhir:name [ fhir:v "9980" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9980" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9981> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9981" ]
+       ] ;
+       fhir:name [ fhir:v "9981" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9981" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9982> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9982" ]
+       ] ;
+       fhir:name [ fhir:v "9982" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9982" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9983> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9983" ]
+       ] ;
+       fhir:name [ fhir:v "9983" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9983" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9984> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9984" ]
+       ] ;
+       fhir:name [ fhir:v "9984" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9984" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9985> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9985" ]
+       ] ;
+       fhir:name [ fhir:v "9985" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9985" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9986> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9986" ]
+       ] ;
+       fhir:name [ fhir:v "9986" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9986" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9987> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9987" ]
+       ] ;
+       fhir:name [ fhir:v "9987" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9987" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "DiagnosticReport" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/9988> ;
+         fhir:reference [ fhir:v "DiagnosticReport/9988" ]
+       ] ;
+       fhir:name [ fhir:v "9988" ] ;
+       fhir:description [ fhir:v "ChemHem mock 9988" ] ;
+       fhir:example [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport>
+       ]
+     ] [
        fhir:extension ( [
          fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
          fhir:value [ fhir:v "StructureDefinition:extension" ]
@@ -2081,8 +2636,8 @@
        fhir:name [ fhir:v "Example 1 of an MHV labReport" ] ;
        fhir:description [ fhir:v "Example from a mock labReportTO" ] ;
        fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.MBlabReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.MBlabReport>
        ]
      ] [
        fhir:extension ( [
@@ -2336,8 +2891,8 @@
        fhir:name [ fhir:v "Example 2 of an MHV labReport" ] ;
        fhir:description [ fhir:v "Example from a mock labReportTO" ] ;
        fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.MBlabReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.MBlabReport>
        ]
      ] [
        fhir:extension ( [
@@ -2381,8 +2936,8 @@
        fhir:name [ fhir:v "Example 3 of an MHV labReport" ] ;
        fhir:description [ fhir:v "Example from a mock labReportTO" ] ;
        fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.MBlabReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.MBlabReport>
        ]
      ] [
        fhir:extension ( [
@@ -2441,8 +2996,8 @@
        fhir:name [ fhir:v "Example 4 of an MHV labReport" ] ;
        fhir:description [ fhir:v "Example from a mock labReportTO" ] ;
        fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport>
        ]
      ] [
        fhir:extension ( [
@@ -2501,8 +3056,8 @@
        fhir:name [ fhir:v "Example 5 of an MHV labReport" ] ;
        fhir:description [ fhir:v "Example from a mock labReportTO" ] ;
        fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport>
        ]
      ] [
        fhir:extension ( [
@@ -2546,8 +3101,8 @@
        fhir:name [ fhir:v "Example 6 of an MHV labReport" ] ;
        fhir:description [ fhir:v "Example from a mock labReportTO" ] ;
        fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport>
        ]
      ] [
        fhir:extension ( [
@@ -2576,8 +3131,8 @@
        fhir:name [ fhir:v "Example 7 of an MHV labReport" ] ;
        fhir:description [ fhir:v "Example from a mock labReportTO" ] ;
        fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport>
        ]
      ] [
        fhir:extension ( [
@@ -2606,8 +3161,8 @@
        fhir:name [ fhir:v "Example 8 of an MHV labReport" ] ;
        fhir:description [ fhir:v "Example from a mock labReportTO" ] ;
        fhir:example [
-         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport"^^xsd:anyURI ;
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport>
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport>
        ]
      ] [
        fhir:extension ( [
@@ -3197,6 +3752,18 @@
          fhir:value [ fhir:v "ValueSet" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/KindLabReportVS> ;
+         fhir:reference [ fhir:v "ValueSet/KindLabReportVS" ]
+       ] ;
+       fhir:name [ fhir:v "Kind of Lab Report" ] ;
+       fhir:description [ fhir:v "Specific kind of Pathology or Microbiology mapped from labReportTO/type" ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ValueSet" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/DocumentReferenceTypeVS> ;
          fhir:reference [ fhir:v "ValueSet/DocumentReferenceTypeVS" ]
        ] ;
@@ -3245,6 +3812,18 @@
          fhir:value [ fhir:v "ConceptMap" ]
        ] ) ;
        fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-ChemistryResult-valueInterpretation> ;
+         fhir:reference [ fhir:v "ConceptMap/VF-ChemistryResult-valueInterpretation" ]
+       ] ;
+       fhir:name [ fhir:v "Map between ChemistryResult valueInterpretation to FHIR Observation.interpretation codes" ] ;
+       fhir:description [ fhir:v "Map between ChemistryResult.valueInterpretation and FHIR Observation.interpretation.coding." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "ConceptMap" ]
+       ] ) ;
+       fhir:reference [
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/VF-VitalsCodes> ;
          fhir:reference [ fhir:v "ConceptMap/VF-VitalsCodes" ]
        ] ;
@@ -3262,18 +3841,6 @@
        ] ;
        fhir:name [ fhir:v "Mapping from Vista used drug units string to formal UCUM codes" ] ;
        fhir:description [ fhir:v "Vista units are close but often not exactly correct. This map gives the proper formal UCUM code.\n\n- DrugUcum.csv - 11/08/2021, vhaislstewar, VHAT 325" ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "ConceptMap" ]
-       ] ) ;
-       fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ConceptMap/LabUcumCodes> ;
-         fhir:reference [ fhir:v "ConceptMap/LabUcumCodes" ]
-       ] ;
-       fhir:name [ fhir:v "Mapping from Vista used lab units string to formal UCUM codes" ] ;
-       fhir:description [ fhir:v "Vista units are close but often not exactly correct." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -5916,7 +6483,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.chTest" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR CH labTest.chemistryResults" ] ;
-       fhir:description [ fhir:v "A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests.chemistryResults`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n- `.subject` must be the patient from the DiagnosticReport\n- `valueInterpretation` -> `.interpretation` \n  - `L` -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#L\n  - 'H' -> http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation#H\n- `observedStatus` (mock data has `F`, `C`, ) (? final vs preliminary ?)\n- `testIdentifier` -> `.code` -- where LN is Loinc\n- `referenceRange` -> `.referenceRange.text` -- dont try to break out further as there is little use of this value\n- `labCommentEvents` -> `.note.text`\n- value[x] either String or Quantity with units\n- `observationValue` -> `.valueQuantity.value`\n- `observationUnits.unit` -> `.valueQuantity.unit`\n- `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n- `observationUnits.codingSystem` -> `.valueQuantity.system`\n- `performingOrganization` -> `.performer`\n- `labCommentEvents` -> '.note`\n- `effective[x]` is same as the DiagnosticReport\n- `issued` is same as the DiagnosticReport\n- `specimen` = specimen\n- `basedOn` = ServiceRequest\n- `ObservationStatus' -> [concept map translation](ConceptMap-VF-ChemistryResult-ObservationStatus.html) -> `.status`" ] ;
+       fhir:description [ fhir:v "A profile showing how HDR labTests.chemistryResults will be exposed using FHIR API to MyHealtheVet PHR.\n\nOne Observation holds one `labTests.chemistryResults`\n- This profile is based on [US-Core Lab](https://hl7.org/fhir/us/core/StructureDefinition-us-core-observation-lab.html)\n	- category must have `http://terminology.hl7.org/CodeSystem/observation-category#laboratory`\n- `.subject` must be the patient from the DiagnosticReport\n- `valueInterpretation` -> `.interpretation` \n- `testIdentifier` -> `.code` -- where LN is Loinc\n- `referenceRange` -> `.referenceRange.text` -- dont try to break out further as there is little use of this value\n- `labCommentEvents` -> `.note.text`\n- value[x] either String or Quantity with units\n- `observationValue` -> `.valueQuantity.value`\n- `observationUnits.unit` -> `.valueQuantity.unit`\n- `observationUnits.code` -> `.valueQuantity.code` - likely need to adjust some\n- `observationUnits.codingSystem` -> `.valueQuantity.system`\n- `performingOrganization` -> `.performer`\n- `labCommentEvents` -> '.note`\n- `effective[x]` is same as the DiagnosticReport\n- `issued` is same as the DiagnosticReport\n- `specimen` = specimen\n- `basedOn` = ServiceRequest\n- `ObservationStatus' -> [concept map translation](ConceptMap-VF-ChemistryResult-ObservationStatus.html) -> `.status`" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -5996,23 +6563,11 @@
          fhir:value [ fhir:v "StructureDefinition:resource" ]
        ] ) ;
        fhir:reference [
-         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.labReport> ;
-         fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.labReport" ]
-       ] ;
-       fhir:name [ fhir:v "VA MHV PHR Lab Report" ] ;
-       fhir:description [ fhir:v "A profile showing how LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen." ] ;
-       fhir:example [ fhir:v "false"^^xsd:boolean ]
-     ] [
-       fhir:extension ( [
-         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
-         fhir:value [ fhir:v "StructureDefinition:resource" ]
-       ] ) ;
-       fhir:reference [
          fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.LabSpecimen> ;
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.LabSpecimen" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Lab Specimen" ] ;
-       fhir:description [ fhir:v "A profile showing how the `LabSpecimenTO` is mapped into a FHIR Specimen.\n\n- This is a contained resource, contained in the Lab Report or the Lab Test. The use of contained is for simplicity sake and to limit the need to manage Specimen resource instances\n- must have a type \n  - `Specimen.type.text` <- `LabSpecimenTO.name`\n  - type should be a code derived from LabSpecimenTO.name\n- should have a `collectedDateTime` derived from `LabSpecimenTO.collectionDate`\n- may have an `identifier` - `Specimen.identifier` <- `LabSpecimenTO.id`\n  - if no `LabSpecimenTO.id` is given, then the Specimen resource must be contained\n- should have an `accessionIdentifier` derived from `LabSpecimenTO.accessionNum`" ] ;
+       fhir:description [ fhir:v "A profile showing how the Microbiology and Pathology `LabSpecimenTO` is mapped into a FHIR Specimen." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -6024,7 +6579,7 @@
          fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.labTest" ]
        ] ;
        fhir:name [ fhir:v "VA MHV PHR labTest" ] ;
-       fhir:description [ fhir:v "A profile showing how LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.\n\n- This profile is based on US-Core Lab" ] ;
+       fhir:description [ fhir:v "A profile showing how Microbiology and Pathology LabTestTO and LabResultTO will be exposed using FHIR API to MyHealtheVet PHR.\n\n- This profile is based on US-Core Lab Observation" ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -6037,6 +6592,18 @@
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Location" ] ;
        fhir:description [ fhir:v "A profile on the Location resource for MHV PHR exposing Location using FHIR API.\n\n- based on US-Core for Location\n- `identifier`\n  - system = urn:oid:2.16.840.1.113883.4.349\n- `name` is the name as known\n- always a contained resource, so not exposed RESTfully\n\nNOT USING Mapping to [VIA HospitalLocationTO](StructureDefinition-VA.MHV.PHR.location-mappings.html#mappings-for-via-to-mhv-fhir-phr-hospitallocationto)." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.MBlabReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.MBlabReport" ]
+       ] ;
+       fhir:name [ fhir:v "VA MHV PHR MB Lab Report" ] ;
+       fhir:description [ fhir:v "A profile showing how Microbiology LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -6157,6 +6724,18 @@
        ] ;
        fhir:name [ fhir:v "VA MHV PHR Radiology" ] ;
        fhir:description [ fhir:v "A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API." ] ;
+       fhir:example [ fhir:v "false"^^xsd:boolean ]
+     ] [
+       fhir:extension ( [
+         fhir:url [ fhir:v "http://hl7.org/fhir/tools/StructureDefinition/resource-information"^^xsd:anyURI ] ;
+         fhir:value [ fhir:v "StructureDefinition:resource" ]
+       ] ) ;
+       fhir:reference [
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.SPlabReport> ;
+         fhir:reference [ fhir:v "StructureDefinition/VA.MHV.PHR.SPlabReport" ]
+       ] ;
+       fhir:name [ fhir:v "VA MHV PHR SP Lab Report" ] ;
+       fhir:description [ fhir:v "A profile showing how SP LabReportTO is mapped into a FHIR DiagnosticReport, Observation, and Specimen." ] ;
        fhir:example [ fhir:v "false"^^xsd:boolean ]
      ] [
        fhir:extension ( [
@@ -6721,7 +7300,7 @@
            fhir:value [ fhir:v "downloads.html"^^xsd:anyURI ]
          ] ) ;
          fhir:name [ fhir:v "downloads.html"^^xsd:anyURI ] ;
-         fhir:title [ fhir:v "Downloads" ] ;
+         fhir:title [ fhir:v "About" ] ;
          fhir:generation [ fhir:v "markdown" ]
        ] [
          fhir:extension ( [

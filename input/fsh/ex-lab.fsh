@@ -125,8 +125,20 @@ Usage: #inline
     <accessionNum>PARAS 95 263</accessionNum>
 </specimen>
 */
+/*
+Accession [UID]: PARAS 95 263 []            Received: Aug 01, 1995@11:02
+Collection sample: STOOL               Collection date: Jul 29, 1995 07:00
+Site/Specimen: FECES
+Provider: MANGAS,PHYLLIS A
+                                                        
+* PARASITOLOGY FINAL REPORT => Aug 03, 1995   TECH CODE: 1003
+Parasitology Remark(s):
+NO OVA OR PARASITES FOUND 
+MODERATE WBC'S SEEN 
+MODERATE YEAST
+*/
 * status = #available
-* type.text = "FECES"
+* type.text = "STOOL"
 * collection.collectedDateTime = 1995-07-29T07:00:00Z
 * identifier[TOid].value = "LabSpecimenTO.6Y100" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
@@ -134,6 +146,7 @@ Usage: #inline
 * accessionIdentifier.value = "PARAS 95 263"
 * accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
+* collection.bodySite.text = "FECES"
 
 Instance: ex-MHV-labTest-2
 InstanceOf: VA.MHV.PHR.labTest 
@@ -289,8 +302,18 @@ Usage: #inline
     <accessionNum>PARAS 95 262</accessionNum>
 </specimen>
 */
+/*
+Accession [UID]: PARAS 95 262 []            Received: Aug 01, 1995@11:00
+Collection sample: STOOL               Collection date: Jul 28, 1995
+Site/Specimen: FECES
+Provider: MANGAS,PHYLLIS A
+                                                        
+* PARASITOLOGY FINAL REPORT => Aug 01, 1995   TECH CODE: 420
+Parasitology Remark(s):
+REJECTED=LEAKED
+*/
 * status = #available
-* type.text = "FECES"
+* type.text = "STOOL"
 * collection.collectedDateTime = 1995-07-28
 * identifier[TOid].value = "LabSpecimenTO.6Y100" 
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
@@ -298,6 +321,7 @@ Usage: #inline
 * accessionIdentifier.value = "PARAS 95 262"
 * accessionIdentifier.system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * accessionIdentifier.use = #usual
+* collection.bodySite.text = "FECES"
 
 Instance: ex-MHV-labTest-5
 InstanceOf: VA.MHV.PHR.labTest 

@@ -109,7 +109,7 @@ Some of the codes used in Vista are not proper codes.
 
 - [Drug ConceptMap](ConceptMap-DrugUcumCodes.html)
   - From [KBS provided DrugUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/d3d7f9a099534bbb5c4bce882ae2e18069b822ac/mocks/DrugUcum.csv)
-- [Lab ConceptMap](ConceptMap-LabUcumCodes.html)
+- Lab (no ConceptMap is created as it is too hard to keep up to date and the csv is considered easier)
   - From [KBS provided LabUcum.csv](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/d3d7f9a099534bbb5c4bce882ae2e18069b822ac/mocks/labUcum.csv)
 - Other - likely VIA returns SI units that the above ConceptMaps do not include
 

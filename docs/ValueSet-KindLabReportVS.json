@@ -1,0 +1,81 @@
+{
+  "resourceType" : "ValueSet",
+  "id" : "KindLabReportVS",
+  "text" : {
+    "status" : "extensions",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This value set includes codes based on the following rules:</p><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0074.html\"><code>http://terminology.hl7.org/CodeSystem/v2-0074</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0074.html#v2-0074-SP\">SP</a></td><td style=\"color: #cccccc\">Surgical Pathology</td><td>Surgical Pathology</td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0074.html#v2-0074-CP\">CP</a></td><td style=\"color: #cccccc\">Cytopathology</td><td>Cytopathology</td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0074.html#v2-0074-OTH\">OTH</a></td><td style=\"color: #cccccc\">Other</td><td>Other</td></tr><tr><td><a href=\"http://terminology.hl7.org/5.0.0/CodeSystem-v2-0074.html#v2-0074-MB\">MB</a></td><td style=\"color: #cccccc\">Microbiology</td><td>Microbiology</td></tr></table></li><li>Include these codes as defined in <a href=\"http://www.snomed.org/\"><code>http://snomed.info/sct</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td><a href=\"http://snomed.info/id/73512001\">73512001</a></td><td>Electron microsopic study (procedure)</td></tr></table></li></ul></div>"
+  },
+  "extension" : [{
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm",
+    "valueInteger" : 1,
+    "_valueInteger" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  },
+  {
+    "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+    "valueCode" : "trial-use",
+    "_valueCode" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-conformance-derivedFrom",
+        "valueCanonical" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ImplementationGuide/va.mhv.fhir.phr"
+      }]
+    }
+  }],
+  "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/ValueSet/KindLabReportVS",
+  "version" : "0.3.6",
+  "name" : "KindLabReportVS",
+  "title" : "Kind of Lab Report",
+  "status" : "active",
+  "experimental" : false,
+  "date" : "2024-05-18T11:51:10-05:00",
+  "publisher" : "VA Digital Services",
+  "contact" : [{
+    "name" : "VA Digital Services",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://va.gov"
+    }]
+  },
+  {
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "John.Moehrke@va.gov"
+    }]
+  }],
+  "description" : "Specific kind of Pathology or Microbiology mapped from labReportTO/type",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "urn:iso:std:iso:3166",
+      "code" : "US"
+    }]
+  }],
+  "compose" : {
+    "include" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v2-0074",
+      "concept" : [{
+        "code" : "SP"
+      },
+      {
+        "code" : "CP"
+      },
+      {
+        "code" : "OTH"
+      },
+      {
+        "code" : "MB"
+      }]
+    },
+    {
+      "system" : "http://snomed.info/sct",
+      "concept" : [{
+        "code" : "73512001",
+        "display" : "Electron microsopic study (procedure)"
+      }]
+    }]
+  }
+}

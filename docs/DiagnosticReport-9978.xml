@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="9978"/>
+  <meta>
+    <versionId value="22"/>
+    <lastUpdated value="2024-05-16T18:08:59.215-04:00"/>
+    <source value="#reWo6V0WdeyFTR19"/>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 CH}">Chemistry</span>, <span title="Codes: {http://loinc.org 2282-2}">FOLATE:MCNC:PT:BLD:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: usual))</td></tr><tr><td>When For</td><td>2019-02-20 17:50:33-0500</td></tr><tr><td>Reported</td><td>2019-02-20 17:51:57-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:fdc:TEST.DAYTON.MED.VA.GOV:LR</code>/5290510001 (use: usual)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td><td><b>Note</b></td><td><b>When For</b></td></tr><tr><td colspan="6"><i>This Observation could not be resolved</i></td></tr></table></div>
+  </text>
+  <contained>
+    <Specimen>
+      <id value="Specimen-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chSpecimen"/>
+      </meta>
+      <status value="available"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0487"/>
+          <code value="BLD"/>
+          <display value="Whole blood"/>
+        </coding>
+        <coding>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/61"/>
+          <version value="5.2"/>
+          <code value="70"/>
+          <display value="BLOOD"/>
+        </coding>
+        <text value="BLOOD"/>
+      </type>
+      <request>
+        <reference value="#ServiceRequest-1"/>
+      </request>
+      <collection>
+        <collectedDateTime value="2019-02-20T17:50:33-05:00"/>
+      </collection>
+    </Specimen>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="Provider-1"/>
+      <identifier>
+        <system value="http://va.gov/terminology/vistaDefinedTerms/4"/>
+        <value value="14934-VA552"/>
+      </identifier>
+      <name>
+        <family value="HALL"/>
+        <given value="LISA"/>
+        <given value="A"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="Organization-552"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <text value="FI"/>
+        </type>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="552"/>
+      </identifier>
+      <active value="true"/>
+      <name value="DAYTON, OH VAMC"/>
+      <address>
+        <line value="4100 W. THIRD STREET"/>
+        <city value="DAYTON"/>
+        <state value="OH"/>
+        <postalCode value="45428"/>
+        <country value="USA"/>
+      </address>
+    </Organization>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="OrgPerformer-989"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="989"/>
+      </identifier>
+      <active value="true"/>
+      <name value="DAYT29.FO-BAYPINES.MED.VA.GOV"/>
+    </Organization>
+  </contained>
+  <contained>
+    <ServiceRequest>
+      <id value="ServiceRequest-1"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"/>
+      </meta>
+      <status value="unknown"/>
+      <intent value="order"/>
+      <category>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="108252007"/>
+          <display value="Laboratory procedure"/>
+        </coding>
+      </category>
+      <code>
+        <coding>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/64"/>
+          <code value="81159.0000"/>
+        </coding>
+        <coding>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/60"/>
+          <code value="1396"/>
+          <display value="FOLATE(WHOLE BLOOD)"/>
+        </coding>
+        <text value="Folate, RBC"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-942104"/>
+      </subject>
+      <requester>
+        <reference value="#Provider-1"/>
+      </requester>
+      <performer>
+        <reference value="#Organization-552"/>
+      </performer>
+    </ServiceRequest>
+  </contained>
+  <contained>
+    <Observation>
+      <id value="ChemistryResult-1.1"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest"/>
+      </meta>
+      <basedOn>
+        <reference value="#ServiceRequest-1"/>
+      </basedOn>
+      <status value="final"/>
+      <category>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="laboratory"/>
+        </coding>
+      </category>
+      <code>
+        <coding>
+          <system value="http://loinc.org"/>
+          <version value="2.64"/>
+          <code value="2282-2"/>
+        </coding>
+        <coding>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/95.3"/>
+          <version value="2.64"/>
+          <code value="4664780"/>
+        </coding>
+        <text value="FOLATE(WHOLE BLOOD)"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-942104"/>
+      </subject>
+      <effectiveDateTime value="2019-02-20T17:50:33-05:00"/>
+      <performer>
+        <reference value="#Organization-552"/>
+      </performer>
+      <valueQuantity>
+        <value value="12"/>
+        <unit value="ng/ml cell"/>
+        <system value="http://unitsofmeasure.org"/>
+      </valueQuantity>
+      <interpretation>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+          <code value="L"/>
+        </coding>
+        <text value="L"/>
+      </interpretation>
+      <note>
+        <text value="Reference range prior to 10/31/00 was 150-600 ng/ml"/>
+      </note>
+      <specimen>
+        <reference value="#Specimen-0"/>
+      </specimen>
+      <referenceRange>
+        <text value="342-786"/>
+      </referenceRange>
+    </Observation>
+  </contained>
+  <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes">
+    <valueString value="Lisa's AWS TEst"/>
+  </extension>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:fdc:TEST.DAYTON.MED.VA.GOV:LR"/>
+    <value value="5290510001"/>
+  </identifier>
+  <basedOn>
+    <reference value="#ServiceRequest-1"/>
+  </basedOn>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="LAB"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="CH"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <version value="2.64"/>
+      <code value="2282-2"/>
+    </coding>
+    <text value="FOLATE:MCNC:PT:BLD:QN:"/>
+  </category>
+  <code>
+    <text value="CH"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-942104"/>
+  </subject>
+  <effectiveDateTime value="2019-02-20T17:50:33-05:00"/>
+  <issued value="2019-02-20T17:51:57.000-05:00"/>
+  <performer>
+    <reference value="#OrgPerformer-989"/>
+  </performer>
+  <specimen>
+    <reference value="#Specimen-0"/>
+  </specimen>
+  <result>
+    <reference value="#ChemistryResult-1.1"/>
+  </result>
+</DiagnosticReport>

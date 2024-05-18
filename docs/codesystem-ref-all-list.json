@@ -262,8 +262,8 @@
       "oids" : ["2.16.840.1.113883.4.642.4.401"],
       "uses" : {
       },
-      "ConceptMap-VF-ChemistryResult-ObservationStatus.html" : "ChemistryResult.ObservationStatus to Observation.status",
-      "http://hl7.org/fhir/R4/valueset-observation-status.html" : "ObservationStatus"
+      "http://hl7.org/fhir/R4/valueset-observation-status.html" : "ObservationStatus",
+      "ConceptMap-VF-ChemistryResult-ObservationStatus.html" : "ChemistryResult.ObservationStatus to Observation.status"
     },
     {
       "url" : "http://hl7.org/fhir/quantity-comparator",
@@ -427,15 +427,15 @@
       "oids" : ["2.16.840.1.113883.6.1"],
       "uses" : {
       },
-      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-diagnosticreport-lab-codes.html" : "US Core Diagnostic Report Laboratory Codes",
       "ValueSet-DocumentReferenceTypeVS.html" : "Known DocumentReference types",
-      "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes",
-      "ValueSet-LabReportVS.html" : "Known Lab Report types",
-      "http://hl7.org/fhir/R4/valueset-document-classcodes.html" : "Document Class Value Set",
-      "ConceptMap-VF-VitalsCodes.html" : "Vital Sign ObservationTypeTO.name to Loinc Code",
-      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-vital-signs.html" : "US Core Vital Signs ValueSet",
-      "ValueSet-NoteTypeVS.html" : "Known Note types",
       "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-documentreference-type.html" : "US Core DocumentReference Type",
+      "ConceptMap-VF-VitalsCodes.html" : "Vital Sign ObservationTypeTO.name to Loinc Code",
+      "http://hl7.org/fhir/R4/valueset-document-classcodes.html" : "Document Class Value Set",
+      "ValueSet-LabReportVS.html" : "Known Lab Report types",
+      "ValueSet-NoteTypeVS.html" : "Known Note types",
+      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-diagnosticreport-lab-codes.html" : "US Core Diagnostic Report Laboratory Codes",
+      "http://hl7.org/fhir/R4/valueset-observation-codes.html" : "LOINC Codes",
+      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-vital-signs.html" : "US Core Vital Signs ValueSet",
       "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-procedure-code.html" : "US Core Procedure Codes",
       "http://hl7.org/fhir/R4/valueset-report-codes.html" : "LOINC Diagnostic Report Codes"
     },
@@ -449,44 +449,45 @@
       "oids" : ["2.16.840.1.113883.6.96"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-condition-stage-type.html" : "Condition Stage Type",
       "http://hl7.org/fhir/R4/valueset-route-codes.html" : "SNOMED CT Route Codes",
-      "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes",
-      "http://hl7.org/fhir/R4/valueset-procedure-reason.html" : "Procedure Reason Codes",
-      "http://hl7.org/fhir/R4/valueset-c80-practice-codes.html" : "Practice Setting Code Value Set",
-      "http://hl7.org/fhir/R4/valueset-participant-role.html" : "Participant Roles",
-      "http://hl7.org/fhir/R4/valueset-clinical-findings.html" : "SNOMED CT Clinical Findings",
-      "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
-      "http://hl7.org/fhir/R4/valueset-manifestation-or-symptom.html" : "Manifestation and Symptom Codes",
-      "http://hl7.org/fhir/R4/valueset-servicerequest-orderdetail.html" : "Service Request Order Details Codes",
-      "ConceptMap-VF-VitalsSite.html" : "Vitals Site used to SNOMED code",
-      "http://hl7.org/fhir/R4/valueset-immunization-target-disease.html" : "Immunization Target Disease Codes",
-      "ConceptMap-VF-VitalsLaterality.html" : "Vitals Laterality used to SNOMED code",
-      "ConceptMap-VF-VitalsDevice.html" : "Vitals Device used to SNOMED code",
-      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-condition-code.html" : "US Core Condition Codes",
-      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-procedure-code.html" : "US Core Procedure Codes",
-      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-servicerequest-category.html" : "US Core ServiceRequest Category Codes",
-      "http://hl7.org/fhir/R4/valueset-condition-severity.html" : "Condition/Diagnosis Severity",
-      "http://hl7.org/fhir/R4/valueset-substance-code.html" : "Substance Code",
-      "http://hl7.org/fhir/R4/valueset-servicerequest-category.html" : "Service Request Category Codes",
-      "http://hl7.org/fhir/R4/valueset-condition-stage.html" : "Condition Stage",
-      "http://hl7.org/fhir/R4/valueset-specimen-collection-method.html" : "FHIR Specimen Collection Method",
-      "http://hl7.org/fhir/R4/valueset-supply-item.html" : "SNOMED CT Supply Item",
-      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
       "http://hl7.org/fhir/R4/valueset-performer-role.html" : "Procedure Performer Role Codes",
-      "http://hl7.org/fhir/R4/valueset-c80-facilitycodes.html" : "Facility Type Code Value Set",
-      "http://hl7.org/fhir/R4/valueset-immunization-reason.html" : "Immunization Reason Codes",
-      "http://hl7.org/fhir/R4/valueset-specimen-container-type.html" : "Specimen Container Type",
+      "http://hl7.org/fhir/R4/valueset-specimen-collection-method.html" : "FHIR Specimen Collection Method",
+      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-procedure-code.html" : "US Core Procedure Codes",
+      "ConceptMap-VF-VitalsDevice.html" : "Vitals Device used to SNOMED code",
       "http://hl7.org/fhir/R4/valueset-body-site.html" : "SNOMED CT Body Structures",
-      "http://hl7.org/fhir/R4/valueset-immunization-status-reason.html" : "Immunization Status Reason Codes",
-      "ConceptMap-VF-VitalsPosition.html" : "Vitals Position used to SNOMED code",
+      "http://hl7.org/fhir/R4/valueset-condition-severity.html" : "Condition/Diagnosis Severity",
+      "http://hl7.org/fhir/R4/valueset-condition-stage-type.html" : "Condition Stage Type",
+      "http://hl7.org/fhir/R4/valueset-c80-practice-codes.html" : "Practice Setting Code Value Set",
+      "ConceptMap-VF-VitalsLaterality.html" : "Vitals Laterality used to SNOMED code",
+      "http://hl7.org/fhir/R4/valueset-c80-facilitycodes.html" : "Facility Type Code Value Set",
+      "http://hl7.org/fhir/R4/valueset-procedure-reason.html" : "Procedure Reason Codes",
+      "http://hl7.org/fhir/R4/valueset-participant-role.html" : "Participant Roles",
+      "http://hl7.org/fhir/R4/valueset-immunization-reason.html" : "Immunization Reason Codes",
       "http://hl7.org/fhir/R4/valueset-medication-as-needed-reason.html" : "SNOMED CT Medication As Needed Reason Codes",
+      "http://hl7.org/fhir/R4/valueset-referencerange-appliesto.html" : "Observation Reference Range Applies To Codes",
+      "http://hl7.org/fhir/R4/valueset-clinical-findings.html" : "SNOMED CT Clinical Findings",
+      "ConceptMap-VF-VitalsSite.html" : "Vitals Site used to SNOMED code",
+      "http://hl7.org/fhir/R4/valueset-condition-code.html" : "Condition/Problem/Diagnosis Codes",
       "ConceptMap-VF-VitalsMethod.html" : "Vitals Method used to SNOMED code",
-      "http://hl7.org/fhir/R4/valueset-medication-codes.html" : "SNOMED CT Medication Codes"
+      "http://hl7.org/fhir/R4/valueset-manifestation-or-symptom.html" : "Manifestation and Symptom Codes",
+      "http://hl7.org/fhir/R4/valueset-substance-code.html" : "Substance Code",
+      "http://hl7.org/fhir/R4/valueset-medication-codes.html" : "SNOMED CT Medication Codes",
+      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-servicerequest-category.html" : "US Core ServiceRequest Category Codes",
+      "http://hl7.org/fhir/R4/valueset-immunization-target-disease.html" : "Immunization Target Disease Codes",
+      "http://hl7.org/fhir/R4/valueset-specimen-container-type.html" : "Specimen Container Type",
+      "ValueSet-KindLabReportVS.html" : "Kind of Lab Report",
+      "http://hl7.org/fhir/R4/valueset-immunization-status-reason.html" : "Immunization Status Reason Codes",
+      "http://hl7.org/fhir/R4/valueset-servicerequest-orderdetail.html" : "Service Request Order Details Codes",
+      "http://hl7.org/fhir/R4/valueset-servicerequest-category.html" : "Service Request Category Codes",
+      "ConceptMap-VF-VitalsPosition.html" : "Vitals Position used to SNOMED code",
+      "http://hl7.org/fhir/R4/valueset-observation-methods.html" : "Observation Methods",
+      "http://hl7.org/fhir/R4/valueset-supply-item.html" : "SNOMED CT Supply Item",
+      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-condition-code.html" : "US Core Condition Codes",
+      "http://hl7.org/fhir/R4/valueset-condition-stage.html" : "Condition Stage"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
-      "version" : "0.5.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "AllergyIntoleranceClinicalStatusCodes",
       "title" : "AllergyIntolerance Clinical Status Codes",
@@ -498,7 +499,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
-      "version" : "0.5.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "AllergyIntoleranceVerificationStatus",
       "title" : "AllergyIntolerance Verification Status",
@@ -510,7 +511,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/condition-category",
-      "version" : "0.5.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "ConditionCategoryCodes",
       "title" : "Condition Category Codes",
@@ -518,12 +519,12 @@
       "oids" : ["2.16.840.1.113883.4.642.1.1073"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-condition-category.html" : "Condition Category Codes",
-      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-problem-or-health-concern.html" : "US Core Problem or Health Concern"
+      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-problem-or-health-concern.html" : "US Core Problem or Health Concern",
+      "http://hl7.org/fhir/R4/valueset-condition-category.html" : "Condition Category Codes"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/condition-clinical",
-      "version" : "2.0.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "ConditionClinicalStatusCodes",
       "title" : "Condition Clinical Status Codes",
@@ -535,7 +536,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/condition-ver-status",
-      "version" : "1.0.0",
+      "version" : "2.0.0",
       "status" : "draft",
       "name" : "ConditionVerificationStatus",
       "title" : "ConditionVerificationStatus",
@@ -547,7 +548,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/contactentity-type",
-      "version" : "0.5.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "ContactEntityType",
       "title" : "Contact entity type",
@@ -559,7 +560,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/data-absent-reason",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "active",
       "name" : "DataAbsentReason",
       "title" : "DataAbsentReason",
@@ -571,7 +572,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/immunization-funding-source",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "ImmunizationFundingSource",
       "title" : "Immunization Funding Source",
@@ -583,7 +584,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/immunization-origin",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "ImmunizationOriginCodes",
       "title" : "Immunization Origin Codes",
@@ -595,7 +596,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/immunization-program-eligibility",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "ImmunizationProgramEligibility",
       "title" : "Immunization Program Eligibility",
@@ -607,7 +608,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "ImmunizationSubpotentReason",
       "title" : "Immunization Subpotent Reason",
@@ -619,7 +620,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/location-physical-type",
-      "version" : "1.0.0",
+      "version" : "2.0.0",
       "status" : "draft",
       "name" : "LocationType",
       "title" : "Location type",
@@ -631,7 +632,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "MedicationDispensePerformerFunctionCodes",
       "title" : "MedicationDispense Performer Function Codes",
@@ -655,7 +656,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/medicationrequest-category",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "MedicationRequestCategoryCodes",
       "title" : "MedicationRequest Category Codes",
@@ -667,7 +668,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "MedicationRequestCourseOfTherapyCodes",
       "title" : "MedicationRequest Course of Therapy Codes",
@@ -679,7 +680,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "MedicationRequestStatusReasonCodes",
       "title" : "MedicationRequest Status Reason Codes",
@@ -691,7 +692,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/observation-category",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "ObservationCategoryCodes",
       "title" : "Observation Category Codes",
@@ -703,7 +704,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/organization-type",
-      "version" : "0.1.0",
+      "version" : "2.0.0",
       "status" : "draft",
       "name" : "OrganizationType",
       "title" : "Organization type",
@@ -715,7 +716,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/referencerange-meaning",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "ObservationReferenceRangeMeaningCodes",
       "title" : "Observation Reference Range Meaning Codes",
@@ -727,7 +728,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/supply-item-type",
-      "version" : "0.1.0",
+      "version" : "1.0.0",
       "status" : "draft",
       "name" : "SupplyItemType",
       "title" : "Supply Item Type",
@@ -747,7 +748,8 @@
       "oids" : ["2.16.840.1.113883.18.29"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" : "Diagnostic Service Section Codes"
+      "http://hl7.org/fhir/R4/valueset-diagnostic-service-sections.html" : "Diagnostic Service Section Codes",
+      "ValueSet-KindLabReportVS.html" : "Kind of Lab Report"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v2-0116",
@@ -775,7 +777,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v2-0203",
-      "version" : "3.0.0",
+      "version" : "4.0.0",
       "status" : "active",
       "name" : "IdentifierType",
       "title" : "identifierType",
@@ -859,7 +861,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-ActCode",
-      "version" : "8.0.1",
+      "version" : "9.0.0",
       "status" : "active",
       "name" : "ActCode",
       "title" : "ActCode",
@@ -867,12 +869,12 @@
       "oids" : ["2.16.840.1.113883.5.4"],
       "uses" : {
       },
-      "http://terminology.hl7.org/5.0.0/ValueSet-v3-ActCode.html" : "v3 Code System ActCode",
-      "http://terminology.hl7.org/5.0.0/ValueSet-v3-ActPharmacySupplyType.html" : "ActPharmacySupplyType"
+      "http://terminology.hl7.org/5.5.0/ValueSet-v3-ActPharmacySupplyType.html" : "ActPharmacySupplyType",
+      "http://terminology.hl7.org/5.5.0/ValueSet-v3-ActCode.html" : "v3 Code System ActCode"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
-      "version" : "2.1.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "ActReason",
       "title" : "ActReason",
@@ -881,11 +883,11 @@
       "uses" : {
       },
       "http://hl7.org/fhir/R4/valueset-immunization-status-reason.html" : "Immunization Status Reason Codes",
-      "http://terminology.hl7.org/5.0.0/ValueSet-v3-SubstanceAdminSubstitutionReason.html" : "SubstanceAdminSubstitutionReason"
+      "http://terminology.hl7.org/5.5.0/ValueSet-v3-SubstanceAdminSubstitutionReason.html" : "SubstanceAdminSubstitutionReason"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-ActSite",
-      "version" : "2.1.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "ActSite",
       "title" : "ActSite",
@@ -897,7 +899,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-MaritalStatus",
-      "version" : "2.1.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "MaritalStatus",
       "title" : "MaritalStatus",
@@ -909,7 +911,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-NullFlavor",
-      "version" : "2.1.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "NullFlavor",
       "title" : "NullFlavor",
@@ -917,12 +919,12 @@
       "oids" : ["2.16.840.1.113883.5.1008"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-marital-status.html" : "MaritalStatus",
-      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-documentreference-type.html" : "US Core DocumentReference Type"
+      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-documentreference-type.html" : "US Core DocumentReference Type",
+      "http://hl7.org/fhir/R4/valueset-marital-status.html" : "MaritalStatus"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-      "version" : "2.1.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "ObservationInterpretation",
       "title" : "ObservationInterpretation",
@@ -930,11 +932,12 @@
       "oids" : ["2.16.840.1.113883.5.83"],
       "uses" : {
       },
-      "http://hl7.org/fhir/R4/valueset-observation-interpretation.html" : "Observation Interpretation Codes"
+      "http://hl7.org/fhir/R4/valueset-observation-interpretation.html" : "Observation Interpretation Codes",
+      "ConceptMap-VF-ChemistryResult-valueInterpretation.html" : "ChemistryResult.valueInterpretation to Observation.interpretation"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-RoleCode",
-      "version" : "2.2.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "RoleCode",
       "title" : "RoleCode",
@@ -942,11 +945,11 @@
       "oids" : ["2.16.840.1.113883.5.111"],
       "uses" : {
       },
-      "http://terminology.hl7.org/5.0.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html" : "ServiceDeliveryLocationRoleType"
+      "http://terminology.hl7.org/5.5.0/ValueSet-v3-ServiceDeliveryLocationRoleType.html" : "ServiceDeliveryLocationRoleType"
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration",
-      "version" : "2.1.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "RouteOfAdministration",
       "title" : "RouteOfAdministration",
@@ -958,7 +961,7 @@
     },
     {
       "url" : "http://terminology.hl7.org/CodeSystem/v3-substanceAdminSubstitution",
-      "version" : "2.1.0",
+      "version" : "3.0.0",
       "status" : "active",
       "name" : "SubstanceAdminSubstitution",
       "title" : "Substance Admin Substitution",
@@ -966,7 +969,7 @@
       "oids" : ["2.16.840.1.113883.5.1070"],
       "uses" : {
       },
-      "http://terminology.hl7.org/5.0.0/ValueSet-v3-ActSubstanceAdminSubstitutionCode.html" : "ActSubstanceAdminSubstitutionCode"
+      "http://terminology.hl7.org/5.5.0/ValueSet-v3-ActSubstanceAdminSubstitutionCode.html" : "ActSubstanceAdminSubstitutionCode"
     },
     {
       "url" : "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category",
@@ -1002,10 +1005,9 @@
       "oids" : ["2.16.840.1.113883.6.8"],
       "uses" : {
       },
-      "ConceptMap-LabUcumCodes.html" : "Mapping from Vista used lab units string to formal UCUM codes",
       "ConceptMap-DrugUcumCodes.html" : "Mapping from Vista used drug units string to formal UCUM codes",
-      "ConceptMap-VF-VitalsUnits.html" : "Vitals qualifier Units used",
-      "http://hl7.org/fhir/R4/valueset-ucum-vitals-common.html" : "Vital Signs Units"
+      "http://hl7.org/fhir/R4/valueset-ucum-vitals-common.html" : "Vital Signs Units",
+      "ConceptMap-VF-VitalsUnits.html" : "Vitals qualifier Units used"
     },
     {
       "url" : "http://www.ada.org/cdt",
@@ -1032,6 +1034,18 @@
       "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-procedure-code.html" : "US Core Procedure Codes"
     },
     {
+      "url" : "http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets",
+      "version" : "1.0.2",
+      "status" : "active",
+      "name" : "HCPCSLevelII",
+      "title" : "Healthcare Common Procedure Coding System (HCPCS) level II alphanumeric codes",
+      "description" : "The Level II HCPCS codes, which are established by CMS's Alpha-Numeric Editorial Panel, primarily represent items and supplies and non-physician services not covered by the American Medical Association's Current Procedural Terminology-4 (CPT-4) codes; Medicare, Medicaid, and private health insurers use HCPCS procedure and modifier codes for claims processing.  Level II alphanumeric procedure and modifier codes comprise the A to V range.",
+      "oids" : ["2.16.840.1.113883.6.285"],
+      "uses" : {
+      },
+      "http://hl7.org/fhir/us/core/STU5.0.1/ValueSet-us-core-procedure-code.html" : "US Core Procedure Codes"
+    },
+    {
       "url" : "http://www.cms.gov/Medicare/Coding/ICD10",
       "version" : "20201001",
       "status" : "active",
@@ -1045,7 +1059,7 @@
     },
     {
       "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/CodeSystem/AllergyObservedHistoricCS",
-      "version" : "0.3.5",
+      "version" : "0.3.6",
       "status" : "active",
       "name" : "AllergyObservedHistoricCS",
       "title" : "Allergy Observed vs Historic CodeSystem",

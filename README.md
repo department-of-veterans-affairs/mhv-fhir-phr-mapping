@@ -10,6 +10,8 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
+### 0.3.6
+
 - notes
   - Notes backend will now populate .date with timestamp when it includes a time, but otherwise will use the signature timestamp.
   - May need to extract admit/discharge date from text body
@@ -27,6 +29,7 @@ The notes below for each release. Archive of [released packages](https://github.
   - clarify valueInterpretation is recorded in .text and converted robustly to coding of `L`, `LL`, `H`, `HH`, or `A`
   - make more clear the need to translate the ucum codes we get from Vista to formal codes
   - add list of most common chem-hem diagnostic reports
+  - add more mock data covering realistic Chem-Hem labs
 - Pathology
   - split from Microbiology
   - defined additional category for the kinds of pathology
@@ -37,6 +40,9 @@ The notes below for each release. Archive of [released packages](https://github.
   - added list of most common microbiology reports
 - Conditions
   - Moved to FMM 4 to represent being in phase 0 production
+- UCUM
+  - Removed the lab ConceptMap as it is easier to use the CSV
+  - updated to the proper Vista Lab ucum translation CSV
 
 ### 0.3.5
 

@@ -15,6 +15,7 @@
       <sch:assert test="count(f:extension[@url = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric']) &lt;= 1">extension with URL = 'https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/allergyObservedHistoric': maximum cardinality of 'extension' is 1</sch:assert>
       <sch:assert test="count(f:criticality) &lt;= 0">criticality: maximum cardinality of 'criticality' is 0</sch:assert>
       <sch:assert test="count(f:encounter) &lt;= 0">encounter: maximum cardinality of 'encounter' is 0</sch:assert>
+      <sch:assert test="count(f:onset[x]) &lt;= 0">onset[x]: maximum cardinality of 'onset[x]' is 0</sch:assert>
       <sch:assert test="count(f:asserter) &lt;= 0">asserter: maximum cardinality of 'asserter' is 0</sch:assert>
       <sch:assert test="count(f:lastOccurrence) &lt;= 0">lastOccurrence: maximum cardinality of 'lastOccurrence' is 0</sch:assert>
     </sch:rule>

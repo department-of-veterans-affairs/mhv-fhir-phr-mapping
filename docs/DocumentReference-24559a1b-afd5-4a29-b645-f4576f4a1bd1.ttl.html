@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>PN Note: 17521574 - TTL Representation - MyHealtheVet PHR FHIR API v0.3.5</title>
+    <title>PN Note: 17521574 - TTL Representation - MyHealtheVet PHR FHIR API v0.3.6</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -44,8 +44,8 @@
 
 	  <script src="assets/js/prism.js"></script>
 
-    <style type="text/css">h2{--heading-prefix:"10.248"}
-    h3,h4,h5,h6{--heading-prefix:"10.248"}</style>
+    <style type="text/css">h2{--heading-prefix:"10.287"}
+    h3,h4,h5,h6{--heading-prefix:"10.287"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
         <!-- Placeholder for child template header declarations -->
@@ -59,7 +59,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.5 - trial-use
+            <span style="display:inline-block;">0.3.6 - trial-use
 
 
 
@@ -120,7 +120,10 @@
         <a href="background.html#immunization">Immunization</a>
       </li>
       <li>
-        <a href="background.html#labreport">LabReport</a>
+        <a href="background.html#pathology-labreport">Pathology</a>
+      </li>
+      <li>
+        <a href="background.html#microbiology-labreport">Microbioloy</a>
       </li>
       <li>
         <a href="background.html#notes">Notes</a>
@@ -149,7 +152,7 @@
     <a href="artifacts.html">Artifacts</a>
   </li>
   <li>
-    <a href="downloads.html">Downloads</a>
+    <a href="downloads.html">About</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -186,7 +189,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.5) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.6) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -268,7 +271,7 @@
   ] ; # 
   <a href="http://hl7.org/fhir/R4/documentreference.html#DocumentReference.text">fhir:text</a> [
 <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:v</a> &quot;generated&quot; ] ;
-fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: DocumentReference&lt;/b&gt;&lt;a name=\&quot;24559a1b-afd5-4a29-b645-f4576f4a1bd1\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hc24559a1b-afd5-4a29-b645-f4576f4a1bd1\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource DocumentReference &amp;quot;24559a1b-afd5-4a29-b645-f4576f4a1bd1&amp;quot; &lt;/p&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-VA.MHV.PHR.note.html\&quot;&gt;VA MHV PHR Notes&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/NoteTO.17521574 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: current&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: MHV DIALOG NOTE &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;https://loinc.org/\&quot;&gt;LOINC&lt;/a&gt;#11506-3)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Clinical Note &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\&quot;&gt;US Core DocumentReferences Category Codes&lt;/a&gt;#clinical-note)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-ex-MHV-patient-0.html\&quot;&gt;Patient/ex-MHV-patient-0&lt;/a&gt; &amp;quot; MHVLISAONE&amp;quot;&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: Apr 1, 2009, 5:24:01 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;author&lt;/b&gt;: &lt;a name=\&quot;hcauthor-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p/&gt;&lt;p&gt;&lt;a name=\&quot;author-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a name=\&quot;hcauthor-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/AuthorTO.11059 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PENNINGTON,ANNA L&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;authenticator&lt;/b&gt;: &lt;a name=\&quot;hcapprovedBy-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p/&gt;&lt;p&gt;&lt;a name=\&quot;approvedBy-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a name=\&quot;hcapprovedBy-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/AuthorTO.11059 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PENNINGTON,ANNA L&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;content&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Attachments&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;ContentType&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Data&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Title&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Creation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;text/plain&lt;/td&gt;&lt;td&gt;(base64 data - 1484 bytes)&lt;/td&gt;&lt;td&gt;SECURE MESSAGING&lt;/td&gt;&lt;td&gt;2009-04-01 22:24:01+0000&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;h3&gt;Contexts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Related&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;&lt;a name=\&quot;hclocation-0\&quot;&gt; &lt;/a&gt;&lt;blockquote&gt;&lt;p/&gt;&lt;p&gt;&lt;a name=\&quot;location-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a name=\&quot;hclocation-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/LocationTO.648 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PORTLAND VA MEDICAL CENTER&lt;/p&gt;&lt;/blockquote&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Practitioner #author-0&lt;/b&gt;&lt;a name=\&quot;author-0\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcauthor-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/AuthorTO.11059 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PENNINGTON,ANNA L&lt;/p&gt;&lt;/blockquote&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Practitioner #approvedBy-0&lt;/b&gt;&lt;a name=\&quot;approvedBy-0\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcapprovedBy-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/AuthorTO.11059 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PENNINGTON,ANNA L&lt;/p&gt;&lt;/blockquote&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Location #location-0&lt;/b&gt;&lt;a name=\&quot;location-0\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hclocation-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/LocationTO.648 (use: USUAL)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PORTLAND VA MEDICAL CENTER&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
+fhir:div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: DocumentReference&lt;/b&gt;&lt;a name=\&quot;24559a1b-afd5-4a29-b645-f4576f4a1bd1\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hc24559a1b-afd5-4a29-b645-f4576f4a1bd1\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;ResourceDocumentReference &amp;quot;24559a1b-afd5-4a29-b645-f4576f4a1bd1&amp;quot; &lt;/p&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Profile: &lt;a href=\&quot;StructureDefinition-VA.MHV.PHR.note.html\&quot;&gt;VA MHV PHR Notes&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/NoteTO.17521574 (use: usual)&lt;/p&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: current&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: MHV DIALOG NOTE &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;https://loinc.org/\&quot;&gt;LOINC&lt;/a&gt;#11506-3)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Clinical Note &lt;span style=\&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\&quot;&gt; (&lt;a href=\&quot;http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\&quot;&gt;US Core DocumentReferences Category Codes&lt;/a&gt;#clinical-note)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;subject&lt;/b&gt;: &lt;a href=\&quot;Patient-ex-MHV-patient-0.html\&quot;&gt;Patient/ex-MHV-patient-0&lt;/a&gt; &amp;quot; MHVLISAONE&amp;quot;&lt;/p&gt;&lt;p&gt;&lt;b&gt;date&lt;/b&gt;: Apr 1, 2009, 5:24:01 PM&lt;/p&gt;&lt;p&gt;&lt;b&gt;author&lt;/b&gt;: &lt;a name=\&quot;hcauthor-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p/&gt;&lt;p&gt;&lt;a name=\&quot;author-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a name=\&quot;hcauthor-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/AuthorTO.11059 (use: usual)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PENNINGTON,ANNA L&lt;/p&gt;&lt;/blockquote&gt;&lt;p&gt;&lt;b&gt;authenticator&lt;/b&gt;: &lt;a name=\&quot;hcapprovedBy-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;blockquote&gt;&lt;p/&gt;&lt;p&gt;&lt;a name=\&quot;approvedBy-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a name=\&quot;hcapprovedBy-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/AuthorTO.11059 (use: usual)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PENNINGTON,ANNA L&lt;/p&gt;&lt;/blockquote&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;content&lt;/b&gt;&lt;/p&gt;&lt;h3&gt;Attachments&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;ContentType&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Data&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Title&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Creation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;text/plain&lt;/td&gt;&lt;td&gt;(base64 data - 1484 bytes)&lt;/td&gt;&lt;td&gt;SECURE MESSAGING&lt;/td&gt;&lt;td&gt;2009-04-01 22:24:01+0000&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;h3&gt;Contexts&lt;/h3&gt;&lt;table class=\&quot;grid\&quot;&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Related&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=\&quot;display: none\&quot;&gt;*&lt;/td&gt;&lt;td&gt;&lt;a name=\&quot;hclocation-0\&quot;&gt; &lt;/a&gt;&lt;blockquote&gt;&lt;p/&gt;&lt;p&gt;&lt;a name=\&quot;location-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a name=\&quot;hclocation-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/LocationTO.648 (use: usual)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PORTLAND VA MEDICAL CENTER&lt;/p&gt;&lt;/blockquote&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Practitioner #author-0&lt;/b&gt;&lt;a name=\&quot;author-0\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcauthor-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/AuthorTO.11059 (use: usual)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PENNINGTON,ANNA L&lt;/p&gt;&lt;/blockquote&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Practitioner #approvedBy-0&lt;/b&gt;&lt;a name=\&quot;approvedBy-0\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcapprovedBy-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/AuthorTO.11059 (use: usual)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PENNINGTON,ANNA L&lt;/p&gt;&lt;/blockquote&gt;&lt;hr/&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;Generated Narrative: Location #location-0&lt;/b&gt;&lt;a name=\&quot;location-0\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hclocation-0\&quot;&gt; &lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;identifier&lt;/b&gt;: &lt;code&gt;urn:oid:2.16.840.1.113883.4.349.4.989&lt;/code&gt;/LocationTO.648 (use: usual)&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: PORTLAND VA MEDICAL CENTER&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;&quot;
   ] ; # 
   <a href="http://hl7.org/fhir/R4/practitioner.html#Practitioner">fhir:contained</a> ( [
 <a href="http://hl7.org/fhir/R4/practitioner.html">a</a> fhir:Practitioner ;
@@ -372,13 +375,7 @@ a loinc:11506-3 ;
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -407,7 +404,7 @@ a loinc:11506-3 ;
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.5 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Mar 29, 2024 15:35-0500">2024-03-29</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 18, 2024 11:51-0500">2024-05-18</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
@@ -434,26 +431,8 @@ a loinc:11506-3 ;
   <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
-
   <!-- Analytics Below
   ================================================== -->
   </body>

@@ -176,10 +176,10 @@ WARNING: DocumentReference/ex-MHV-note-6: DocumentReference.authenticator: Found
 WARNING: DocumentReference/ex-MHV-note-6: DocumentReference.context.related[0]: Found multiple matching profiles for #ex-MHV-location-984 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
 
 # the pain example also includes the original code (VUID)
-This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain%
+INFORMATION: Observation/ex-MHV-pain-1: Observation.code.coding[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.3.5 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # vitals can have .component that carry vista qualifiers. The following are confirmed to be legitimate
-This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx%
+INFORMATION: Observation/ex-MHV-oximetry-1: Observation.component[0]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.3.5 (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # these are matching a code but still complaining
 Terminology_TX_NoValid_3_CC
@@ -227,3 +227,28 @@ WARNING: ConceptMap/VF-ChemistryResult-ObservationStatus: ConceptMap.group[0]: N
 # unclear why not but I don't care 
 Target Code System http://loinc.org is only supported on the terminology server, so the target codes are not validated for performance reasons
 Target Code System http://snomed.info/sct is only supported on the terminology server, so the target codes are not validated for performance reasons
+
+# ChemHem does not have a code
+Terminology_TX_Code_ValueSet_Ext
+
+# ChemHem has extra category codes 
+This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport|0.3.6 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# VA codeSystem 
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/60' could not be found, so the code cannot be validated
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/61' version '5.2' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/64' could not be found, so the code cannot be validated
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/95.3' version '2.52' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/95.3' version '2.14' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/95.3' version '2.65' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/95.3' version '2.63' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/95.3' version '2.68' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/95.3' version '2.64' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/95.3' version '2.61' could not be found, so the code cannot be validated%
+
+# ChemHem seems to use this version of snomed
+A definition for CodeSystem 'http://snomed.info' version '20170901' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://snomed.info' version '20180301' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://snomed.info' version '20200901' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://snomed.info' version '20200731' could not be found, so the code cannot be validated%
+A definition for CodeSystem 'http://snomed.info' version '20180901' could not be found, so the code cannot be validated%

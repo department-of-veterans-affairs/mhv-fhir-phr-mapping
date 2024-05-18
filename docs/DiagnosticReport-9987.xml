@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="9987"/>
+  <meta>
+    <versionId value="23"/>
+    <lastUpdated value="2024-05-16T18:08:59.215-04:00"/>
+    <source value="#reWo6V0WdeyFTR19"/>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes: ">CH</span> (<span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}">Laboratory</span>, <span title="Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 CH}">Chemistry</span>, <span title="Codes: {http://loinc.org 2160-0}">CREATININE:MCNC:PT:SER/PLAS:QN:</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>L MHVSYSTEST </b> unknown, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/942104 (use: usual))</td></tr><tr><td>When For</td><td>2019-02-22 11:10:05-0500</td></tr><tr><td>Reported</td><td>2019-02-22 11:11:33-0500</td></tr><tr><td>Identifier:</td><td> <code>urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR</code>/1190530001 (use: usual)</td></tr></table><p><b>Report Details</b></p><table class="grid"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>Reference Range</b></td><td><b>Flags</b></td><td><b>When For</b></td></tr><tr><td colspan="5"><i>This Observation could not be resolved</i></td></tr></table></div>
+  </text>
+  <contained>
+    <Specimen>
+      <id value="Specimen-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chSpecimen"/>
+      </meta>
+      <status value="available"/>
+      <type>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v2-0487"/>
+          <code value="PLAS"/>
+          <display value="Plasma"/>
+        </coding>
+        <coding>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/61"/>
+          <version value="5.2"/>
+          <code value="73"/>
+          <display value="PLASMA"/>
+        </coding>
+        <text value="PLASMA"/>
+      </type>
+      <request>
+        <reference value="#ServiceRequest-1"/>
+      </request>
+      <collection>
+        <collectedDateTime value="2019-02-22T11:10:05-05:00"/>
+      </collection>
+    </Specimen>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="Provider-1"/>
+      <identifier>
+        <system value="http://va.gov/terminology/vistaDefinedTerms/4"/>
+        <value value="59845-VA660"/>
+      </identifier>
+      <name>
+        <family value="HALL"/>
+        <given value="LISA"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="Organization-660"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <text value="FI"/>
+        </type>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="660"/>
+      </identifier>
+      <active value="true"/>
+      <name value="VA SALT LAKE CITY HEALTH CARE SYSTEM (660)"/>
+      <address>
+        <line value="500 FOOTHILL BLVD."/>
+        <city value="SALT LAKE CITY"/>
+        <state value="UT"/>
+        <postalCode value="84148"/>
+        <country value="USA"/>
+      </address>
+    </Organization>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="OrgPerformer-979"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="979"/>
+      </identifier>
+      <active value="true"/>
+      <name value="SLC10.FO-BAYPINES.MED.VA.GOV"/>
+    </Organization>
+  </contained>
+  <contained>
+    <ServiceRequest>
+      <id value="ServiceRequest-1"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"/>
+      </meta>
+      <status value="unknown"/>
+      <intent value="order"/>
+      <category>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="108252007"/>
+          <display value="Laboratory procedure"/>
+        </coding>
+      </category>
+      <code>
+        <coding>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/64"/>
+          <code value="82565.0000"/>
+        </coding>
+        <coding>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/60"/>
+          <code value="173"/>
+          <display value="CREATININE"/>
+        </coding>
+        <text value="Creatinine"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-942104"/>
+      </subject>
+      <requester>
+        <reference value="#Provider-1"/>
+      </requester>
+      <performer>
+        <reference value="#Organization-660"/>
+      </performer>
+    </ServiceRequest>
+  </contained>
+  <contained>
+    <Observation>
+      <id value="ChemistryResult-1.1"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chTest"/>
+      </meta>
+      <basedOn>
+        <reference value="#ServiceRequest-1"/>
+      </basedOn>
+      <status value="final"/>
+      <category>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+          <code value="laboratory"/>
+        </coding>
+      </category>
+      <code>
+        <coding>
+          <system value="http://loinc.org"/>
+          <version value="2.64"/>
+          <code value="2160-0"/>
+        </coding>
+        <coding>
+          <system value="http://va.gov/terminology/vistaDefinedTerms/95.3"/>
+          <version value="2.64"/>
+          <code value="4663483"/>
+        </coding>
+        <text value="CREATININE"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-942104"/>
+      </subject>
+      <effectiveDateTime value="2019-02-22T11:10:05-05:00"/>
+      <performer>
+        <reference value="#Organization-660"/>
+      </performer>
+      <valueQuantity>
+        <value value="29"/>
+        <unit value="mg/dL"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="mg/dL"/>
+      </valueQuantity>
+      <interpretation>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"/>
+          <code value="H"/>
+        </coding>
+        <text value="H"/>
+      </interpretation>
+      <specimen>
+        <reference value="#Specimen-0"/>
+      </specimen>
+      <referenceRange>
+        <text value="0.6-1.3"/>
+      </referenceRange>
+    </Observation>
+  </contained>
+  <extension url="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/Notes">
+    <valueString value="Lisa's Test 2/22/19"/>
+  </extension>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:fdc:TEST.SALT-LAKE.MED.VA.GOV:LR"/>
+    <value value="1190530001"/>
+  </identifier>
+  <basedOn>
+    <reference value="#ServiceRequest-1"/>
+  </basedOn>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="LAB"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/v2-0074"/>
+      <code value="CH"/>
+    </coding>
+  </category>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <version value="2.64"/>
+      <code value="2160-0"/>
+    </coding>
+    <text value="CREATININE:MCNC:PT:SER/PLAS:QN:"/>
+  </category>
+  <code>
+    <text value="CH"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-942104"/>
+  </subject>
+  <effectiveDateTime value="2019-02-22T11:10:05-05:00"/>
+  <issued value="2019-02-22T11:11:33.000-05:00"/>
+  <performer>
+    <reference value="#OrgPerformer-979"/>
+  </performer>
+  <specimen>
+    <reference value="#Specimen-0"/>
+  </specimen>
+  <result>
+    <reference value="#ChemistryResult-1.1"/>
+  </result>
+</DiagnosticReport>
