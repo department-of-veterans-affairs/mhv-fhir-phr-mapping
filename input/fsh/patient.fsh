@@ -59,7 +59,7 @@ mapping concerns - TODO
 * identifier[PatientId].system ^short = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[PatientId].value ^short = "{eVault PatientID}"
 * name 1..1
-* name.given 1..1
+* name.given 1..
 * name.family 1..1
 * gender 1..1
 * birthDate 1..1

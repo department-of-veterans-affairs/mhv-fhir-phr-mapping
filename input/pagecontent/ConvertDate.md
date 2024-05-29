@@ -12,6 +12,10 @@ Future might be different
 - We do have algorithm in MHV that is used in Appointments, but it is not clear that this fully supports all the timestamps outside of the scope of Appointments. So this would need to be made more robust. Including that this does not yet support fileman format, or proper HL7 v2 format
 - We could implement time conversion as a service. Concern would be on how performant that is.
 
+<div markdown="1" class="stu-note">
+The examples in this publication have not been adjusted to proper timezones with this logic. Thus most of the times will be "Z" time.  
+</div>
+
 ### Fileman Date
 
 Input: Fileman Date

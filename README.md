@@ -10,6 +10,10 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI-Build
 
+- notes
+  - added two new C & P notes
+  - added caution note that the examples are notional and may not have timezones, and may have different Patient, Practitioner, and Location resources as all examples are hand converted and I don't always convert the elements that are not critical to the prime resource use.
+
 ### 0.3.6
 
 - notes

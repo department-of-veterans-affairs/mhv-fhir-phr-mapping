@@ -387,3 +387,41 @@ Usage: #example
 * identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
 * identifier[PatientId].value = "4"
 * identifier[PatientId].use = #usual
+
+/*
+                <patientTO>
+                  <name>MHVZZVISNTWENTY,TEST PATIENTR</name>
+                  <patientName>MHVZZVISNTWENTY,TEST PATIENTR</patientName>
+                  <mpiPid>1015746490</mpiPid>
+                  <mpiChecksum>634341</mpiChecksum>
+                  <localPid>3080549</localPid>
+                  <confidentiality>
+                    <tag>0</tag>
+                  </confidentiality>
+                  <patientFlags>
+                    <count>0</count>
+                  </patientFlags>
+                </patientTO>
+*/
+Instance: ex-MHV-patient-1015746490
+InstanceOf: MHVpatient
+Title: "Example MHVZZVISNTWENTY,TEST PATIENTR"
+Description: """
+This example is derived off of a mock PatientTO
+"""
+Usage: #example
+* name[+].family = "MHVZZVISNTWENTY"
+* name[=].given[+] = "TEST"
+* name[=].given[+] = "PATIENTRRAN"
+
+* gender = #unknown
+* birthDate = "1000-01-01"
+//* identifier[+].use = #official
+//* identifier[=].system = "http://va.gov/systems/mpiPID"
+//* identifier[=].value = "1013699421"
+//* identifier[+].use = #secondary
+//* identifier[=].system = "http://va.gov/systems/localPID"
+//* identifier[=].value = "1013699421"
+* identifier[PatientId].system = "urn:oid:2.16.840.1.113883.4.349"
+* identifier[PatientId].value = "1015746490"
+* identifier[PatientId].use = #usual
