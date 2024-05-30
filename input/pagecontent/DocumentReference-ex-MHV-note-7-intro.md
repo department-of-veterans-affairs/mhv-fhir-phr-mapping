@@ -4,9 +4,9 @@ Derived from the following mock NoteTO:
 
 ```xml
                 <noteTO>
-                  <id>43296940</id>
-                  <timestamp>3160113.0835</timestamp>
-                  <localTitle>C&amp;P GENERAL MEDICAL</localTitle>
+                  <id>35006015</id>
+                  <timestamp>3140211.13</timestamp>
+                  <localTitle>C&amp;P MENTAL DISORDERS</localTitle>
                   <standardTitle>C &amp; P EXAMINATION NOTE</standardTitle>
                   <author>
                     <id>2926</id>
@@ -17,214 +17,198 @@ Derived from the following mock NoteTO:
                     <name>PORTLAND VA MEDICAL CENTER</name>
                   </location>
                   <text>
- LOCAL TITLE: C&amp;P GENERAL MEDICAL                                
+ LOCAL TITLE: C&amp;P MENTAL DISORDERS                               
 STANDARD TITLE: C &amp; P EXAMINATION NOTE                          
-DATE OF NOTE: JAN 13, 2016@08:35     ENTRY DATE: JAN 13, 2016@08:35:40      
+DATE OF NOTE: FEB 11, 2014@13:00     ENTRY DATE: MAR 06, 2014@14:27:39      
       AUTHOR: DOUGLAS,DAVID M      EXP COSIGNER:                           
      URGENCY:                            STATUS: COMPLETED                     
 
-Ionizing Radiation 
-(related issues: leukemia, lymphoma (except Hodgekin's disease), multiple
-myeloma, cancers of the bile ducts, bone, brain, breast, colon, esophagus,
-gall bladder, lung, pancreas, pharynx, ovary, salivary gland, small intestine,
-stomach, thyroid, urinary tract).
- 
+COMPENSATION AND PENSION EXAMINATION
+MENTAL DISORDERS (EXCEPT PTSD AND EATING DISORDERS)
+===================================================
 
 
--------------------------------------------------
+MEDICAL HISTORY
+===============
+  IS THIS EXAMINATION FOR REVIEW OF AN ALREADY SERVICE-CONNECTED MENTAL DISORDER?
+  Yes
 
-HPI (including complaints Veteran related to the in-service exposure): 
-test
+PAST MEDICAL HISTORY
 
+--------------------
 
-Past Medical History:
-test
+  TREATMENT
+  ---------
+    WAS THERE OUTPATIENT TREATMENT FOR A MD DISORDER: No
 
+  HOSPITALIZATION(S)
+  ------------------
+    WERE THERE ONE/MORE HOSPITALIZATIONS FOR A MD DISORDER: No
 
-Family History (to include any birth defects):
-test
+PRESENT MEDICAL HISTORY
+-----------------------
+  ARE THERE MEDICAL AND/OR PSYCHIATRIC SYMPTOMS (OTHER THEN PTSD) PRESENT DURING
+  PAST YEAR? Yes
+  IS THERE CURRENT TREATMENT FOR A MENTAL DISORDER? No
+  FREQUENCY, SEVERITY, AND DURATION OF NON-PTSD PSYCHIATRIC/MEDICAL SYMPTOMS:
+    this is only a test
 
+PSYCH EXAM
+==========
+  GENERAL APPEARANCE:
+    Neatly groomed
 
- Habits:  test
+  PSYCHOMOTOR ACTIVITY:
+    Repetitive Acts
 
- Smoking: test
- 
- Alcohol: test
+  SPEECH:
+    Rapid
 
- Substances: test
+  ATTITUDE TOWARD EXAMINER:
+    Attentive
 
-====================================
+  AFFECT:
+    Inappropriate
 
-REVIEW OF SYSTEMS: (if yes, describe)
+  MOOD:
+Happy, Expansive
 
-====================================
+  ATTENTION:
+    Attention Disturbance (Easily Distracted)
+      ABLE TO DO SERIAL 7'S? Yes
+      ABLE TO SPELL A WORD FORWARD AND BACKWARD? Yes
 
-General (weight change, fever, fatigue, bleeding, swollen 
-glands,night sweats, unexplained lumps/masses)
-YES 
+  ORIENTATION:
+    INTACT TO PERSON: Yes
 
-Endocrine (DM, thyroid disease, hot/cold intoleranc, 
-polyuria/dipsia)
-NO 
+    INTACT TO TIME: Yes
 
-Eye (vision problem, pain, itching, redness of eyes)
-YES 
+    INTACT TO PLACE: Yes
 
-Ear (ear pain, drainage, hearing loss, tinnitus)
-NO 
+  THOUGHT PROCESS:
+    Paucity of ideas
 
-Nose/sinus (nosebleeds, congestion, sinus pain, drainage)
-YES 
+  THOUGHT CONTENT:
+    Phobias
 
-Throat (soreness, hoarseness, problems with chewing, 
-swallowing or speech)
-NO 
+  DELUSIONS:
+    Nihilistic delusions (part of body is missing)
+      ARE DELUSIONS PERSISTENT? Yes
 
-Neck (pain, mass, swelling, goiter)
-YES 
+  JUDGMENT: Does not understand outcome of behavior
 
-Skin (rash, sore, painful scar, itching)
-NO 
+  INTELLIGENCE: Average
 
-Lung (cough, wheezing, SOB, hemoptysis, sleep, apnea, TB) 
-YES 
+  INSIGHT: Patient partially understands that he/she has a problem.
 
-GI (abd pain, heartburn, N&amp;V, bowel complaint, pancreas, 
-liver, or GB disease, hemorrhoids, hernia)
-NO 
+  DOES THE PATIENT HAVE SLEEP IMPAIRMENT? Yes
 
-GU (UTI, stones, STD, hematuria, urinary complaints, ED, 
-prostate disease) 
-YES 
+TYPE OF HALLUCINATIONS:
+    Olfactory
+      ARE HALLUCINATIONS PERSISTENT? Yes
 
-Mental (depression, mental complaint, sleep complaint, 
-substance abuse)
-NO 
+  DOES THE PATIENT HAVE INAPPROPRIATE BEHAVIOR? No
 
-MS (pain, stiffness of feet, hands, joints, neck, back)
-YES 
+  INTERPRETS PROVERBS APPROPRIATELY? No
 
-Breast (pain, lump, drainage)
-NO 
+  DOES THE PATIENT HAVE OBSESSIVE/RITUALISTIC BEHAVIOR? Yes
 
-====================================
+  DOES THE PATIENT HAVE PANIC ATTACKS? Yes
 
-PHYSICAL EXAM
+  IS THERE PRESENCE OF SUICIDAL THOUGHTS? Yes
 
-====================================
+  EXTENT OF IMPULSE CONTROL: Fair
+  EPISODES OF VIOLENCE: Yes
 
-VITAL SIGNS 
+  ABILITY TO MAINTAIN MINIMUM PERSONAL HYGIENE? No
 
------------
+  IS THERE PROBLEM WITH ACTIVITIES OF DAILY LIVING: No
 
-  PULSE:  BPM
+  MEMORY
+  ------
+      REMOTE MEMORY: Normal
+      RECENT MEMORY: Mildly Impaired
+      IMMEDIATE MEMORY: Normal
+        EXAMPLE(S) OF MEMORY DISORDER:
+          this is only a test
+
+
+TESTS
+=====
+  PSYCHOLOGICAL TESTING
+  ---------------------
+    NAME(S) OF PSYCHOLOGICAL TESTING CARRIED OUT AND DESCRIPTION OF RESULTS:
+      rohrschach
+    COMMENT ON VALIDITY OF TEST RESULTS:
+      Valid
+    WERE RESULTS OF TESTING TAKEN INTO ACCOUNT IN THE EXAMINATION REPORT? Yes
+
+  SOCIAL WORK SURVEY
+  ------------------
+    WERE SOCIAL WORK SURVEY RESULTS TAKEN INTO CONSIDERATION IN THE
+    DIAGNOSIS/ASSESSMENT? Yes
+      COMMENTS ON SOCIAL WORK SURVEY:
+        this is only a test
+    WERE ALL TESTS RESULTS INCLUDED ON THE EXAM REPORT? Yes
+    
+
+DIAGNOSIS
+=========
+
+  MENTAL DISORDER: MENTAL COMPETENCY
+  ----------------------------------
+    DOES THE VETERAN KNOW THE AMOUNT OF THEIR BENEFIT PAYMENT? No
+    DOES THE VETERAN KNOW THE AMOUNTS OF MONTHLY BILLS? No
+    DOES THE VETERAN PRUDENTLY HANDLE PAYMENTS? No
+    DOES THE VETERAN PERSONALLY HANDLE MONEY AND PAYS BILLS? No
+
+    IS THE VETERAN CAPABLE OF MANAGING FINANCIAL AFFAIRS? No
+
+    IS A SOCIAL WORK ASSESSMENT NECESSARY TO RENDER AN OPINION? No
+
+  MENTAL DISORDER: EMPLOYMENT HISTORY
+  --------------------------------
+    USUAL OCCUPATION:
+      farmer
+    IS THE VETERAN CURRENTLY EMPLOYED? No
+    IS VETERAN RETIRED? No
+    IS VETERAN UNEMPLOYED BUT NOT RETIRED? Unsure
+    AXIS I: ptsd
+    AXIS II: none
+    AXIS III: hypertension
+    AXIS IV: unemployed
+    AXIS V: GLOBAL ASSESSMENT OF FUNCTIONING
+    ----------------------------------------
+      SCORE: 86 TIME FRAME:
+    OTHER COMMENTS:
+    this is only a test
+
+    DOES EACH DIAGNOSIS OF MENTAL DISORDER MEET THE DSM-IV DIAGNOSTIC CRITERIA?
+    Yes
+
+    RESOLUTION OF DIAGNOSIS:
+      A new clinical condition
+
+PSYCH SUMMARY
+=============
+
+  EFFECTS OF MENTAL DISORDER ON OCCUPATIONAL AND SOCIAL FUNCTIONING
+  -----------------------------------------------------------------
+    IS THERE TOTAL OCCUPATIONAL AND SOCIAL IMPAIRMENT DUE TO MENTAL DISORDER
+    SIGNS AND SYMPTOMS? Yes
+      EXAMPLES AND PERTINENT SYMPTOMS, INCLUDING THOSE ALREADY REPORTED:
+        this is only a test
+
+  WAS A MEDICAL OPINION REQUESTED?
+  No
+  
+  
+  
 
-  BP #1: /
-
- 
-  T: 
-
-  R: 
-
-
- 
-GENERAL APPEARANCE: 
- test
-
-
-  HEIGHT: 
-
-  WEIGHT:  POUNDS 
-
-  WEIGHT CHANGE: 
-
-
-
-PHYSICAL EXAM: (If abnormal, describe)
-
-  GENERAL (Lymph nodes, edema, bleeding or bruising)
-  Normal
- 
-
-  SKIN (Skin, scalp, hair, nails) 
-  Abnormal
- 
-
-  HEENT (External eye, pupils, EOMs.  External ear, canal, TM, gross hearing 
-  acuity, nose, septum, sinus, tongue, palate, pharynx, teeth/gums)
-  Abnormal
- 
-
-  NECK (Cervical nodes, carotid pulses/auscultation, thyroid gland)
-  Normal
- 
-
-  CHEST (Chest shape/deformities, respiratory distress, auscultation and 
-  percussion of lungs)
-  Abnormal
- 
-
-  CARDIOVASCULAR (Rate, rhythm, heart sounds; murmurs, gallops, clicks or rubs
-  jugular venous distention) 
-  Normal
- 
-
-   ABDOMEN (Inspection, palpation, auscultation of abdomen, presence of 
-   hepatosplenomegaly or hernias)
-  Abnormal
- 
-
-   GU (Testicles, epididymis, spermatic cord, seminal vesicles, anus, rectum, 
-   prostate, presence of hernias)
-  Normal
- 
-
-   EXTREMITIES (Presence of cyanosis, clubbing, edema, trophic changes, 
-   ulcers, varicose veins)
-   Abnormal
- 
-
-   NEUROLOGIC (Mental status, speech, coordination, motor and sensory 
-   testing in all four extremities, cranial nerves, deep tendon reflexes,
-   babinski)
-  Normal
- 
-
-   PSYCHIATRIC (Mood, behavior, and comprehension, ability to follow 
-directions, 
-   presence of any abnormal behavior or hallucinations)
- 
- 
-
-   BREAST (Presence of masses, abnormal nodularity, nipple abnormalities, 
-gynecomastia, 
-   residuals of breast surgery. 
- 
- 
-
-  Labs:
- 
- 
-  Diagnosis: 
- test
-
-
- Letter sent to Veteran summarizing examination, Registry forms filled in and 
-sent for inclusion in registry, Contact information given for Veteran to 
-request care at VA
-
-
-
-
-
-
-
-
- 
  
 /es/ DAVID M. DOUGLAS MD
 CHIEF HEALTH INFORMATICS OFFICER/ATTENDING PSYCHIATRIST
-Signed: 01/13/2016 08:37
+Signed: 03/06/2014 14:27
 </text>
                   <approvedBy>
                     <id>2926</id>
@@ -233,7 +217,7 @@ Signed: 01/13/2016 08:37
                   </approvedBy>
                   <status>completed</status>
                   <type>PN</type>
-                  <procTimestamp>3160113.083752</procTimestamp>
+                  <procTimestamp>3140306.142739</procTimestamp>
                 </noteTO>
 
 ```
