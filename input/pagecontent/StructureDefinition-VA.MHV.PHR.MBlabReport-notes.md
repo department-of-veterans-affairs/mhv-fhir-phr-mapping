@@ -41,6 +41,18 @@
   - schema values but no examples: author, caseNumber, comment, facility
 - Need mock data for CY and EM
 
+#### Most common types of Microbiology Labs
+
+bacteriology is going to be the most common type of microbiology
+
+- Gram Stain
+- Anaerobic Culture
+- Vibrio Culture
+- Spinal Culture
+- Blood Culture
+- Stool Culture
+- Campylobacter Culture
+
 #### Mapping Concerns
 
 - how to handle specimen bodySite vs sample - "Site/Specimen: " or "Collection sample:". from KBS: in vista there is a "collection sample" 60/300 that identifies the sample, "topography" 61/.01 covers where the data came from. historic vista data is not well behaved.
@@ -50,6 +62,8 @@
 - The mock data I have does give me equivalent or better values in the XML. For example I get a date and time in the xml, but only a date in the text. Should we only use the parsed text if we don't have a value in the XML?
 - TODO update fhir mapping from table updates
 - TODO update DiagnosticReport
+- labSiteId ? is this an Organization or Location?
+- va.gov would like to have the location where the sample was given. Historically this has been the interpretation of the Vista Site, which is really the vista site where the data resides. 
 
 ### Mapping
 
@@ -65,7 +79,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |---|----|----------------------------------------------|-------------------------|-------------------------------------|------------|
 |   |    | labReportTO/id                               |   id                    | DiagnosticReport.identifier[TOid]   |  |
 |   |    |                                              |   icn={icn}             | DiagnosticReport.subject            |  |
-|   |    | taggedLabReportArray/tag                     |   stationNumber         | DiagnosticReport.performer[org]     |  |
+|   |    | taggedLabReportArray/tag                     |   stationNumber         | ??? extension ???     |  |
 |   |    |   ""                                         |  orderingLocation       |  |  |
 |   |    |   ""                                         |   performingLocation    |  |  |
 |   |    |   ""                                         |                         | Observation[m].performer={DiagnosticReport.performer(Org)} | |
@@ -76,7 +90,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    | labReportTO/text {status:}                   |                         |                                     | ignore all that are not COMPLETED |
 |   |    | labReportTO/text {date completed:}           |  completedDateTime[x]   | DiagnosticReport.issued             | |
 |   |    | labReportTO/text {test(s) ordered:}          | orderedTest             |                                     | no mock examples |
-|   |    | labReportTO/text {provider:}                 |  orderingProvider       | DiagnosticReport.performer(Pra).display | only have string |
+|   |    | labReportTO/text {provider:}                 |  orderingProvider       | DiagnosticReport.performer(Pra) | only have string |
 |   |    | labReportTO/text {site/specimen:}            |  specimenSource         | Specimen.collection.bodySite        | location? KBS/TODO |
 |   |    | labReportTO/text {collection sample:}        |  collectionSample       | Specimen.type.text                  | |
 |   |    | labReportTO/text {collection date:}          |  collectedDateTime[x]   | Specimen.collectedDateTime          | Not sure why parsed out of the text, vs using specimen/collectionDate
@@ -96,7 +110,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    | labReportTO/timestamp                        |                         | DiagnosticReport.issued             | no mock examples |
 |   |    | labReportTO/result/timestamp                 |                         | Observation[m].issued             |  |
 |   |    | labReportTO/result/labSiteId                 |                         | DiagnosticReport.performer(Org)     | |
-|   |    | labReportTO/caseNumber                       |                         | DiagnosticReport.basedOn.identifier | no mock examples |
+|   |    | labReportTO/caseNumber                       |                         | DiagnosticReport.identifier[casenum] | no mock examples |
 |   |    | labReportTO/tests/labTestTO[m]/result/value  |                         | Observation[m].valueString          | samples all valueString |
 |   |    | labReportTO/tests/labTestTO[m]/id            |                         | Observation[m].identifier[TOid]     | |
 |   |    | labReportTO/tests/labTestTO[m]/name          |                         | Observation[m].code.text            | |

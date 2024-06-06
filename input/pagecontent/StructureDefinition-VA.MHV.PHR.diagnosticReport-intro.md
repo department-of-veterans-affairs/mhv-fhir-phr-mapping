@@ -1,4 +1,6 @@
 
+Laboratory Diagnostic Report
+
 - This profile is based on:
   - [US-Core DiagnosticReport profile for Laboratory Results Reporting]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-diagnosticreport-lab.html) and 
   - [US Core ServiceRequest Profile]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-servicerequest.html)

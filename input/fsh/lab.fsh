@@ -7,11 +7,16 @@ RuleSet: CommonLabProfile
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
 * identifier contains
-  TOid 1..1
+  TOid 1..1 and
+  casenum 0..*
 * identifier[TOid].use = #usual
 * identifier[TOid].system obeys TOid-startswithoid
 * identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
 * identifier[TOid].value ^short = "`LabReportTO` | `.` | {LabReportTO.id}"
+* identifier[casenum].use = #secondary
+* identifier[casenum].system obeys TOid-startswithoid
+* identifier[casenum].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[casenum].value ^short = "`CaseNum` | `.` | {LabReportTO.casenum}"
 * subject 1..1
 * code 1..1 MS
 * code.text 1..1 MS
@@ -34,11 +39,9 @@ RuleSet: CommonLabProfile
 * result ^type.aggregation = #contained
 * result only Reference(MHVlabTest)
 * performer MS
-* performer ^short = "LabReportTO.facility"
-* performer only Reference(MHVorganization)
-* basedOn 0..* MS
-* basedOn.identifier MS 
-* basedOn.identifier ^short = "caseNumber"
+* performer ^type.aggregation = #contained
+* performer.display 0..0
+* basedOn 0..0
 * basedOn.reference 0..0
 * encounter 0..0
 * resultsInterpreter 0..0
@@ -61,6 +64,7 @@ A profile showing how Microbiology LabReportTO is mapped into a FHIR DiagnosticR
 * category contains MBLabSlice 0..1
 * category[MBLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#MB
 * category[MBLabSlice] 1..1
+* performer only Reference(MHVorganization or http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
 
 Profile: MHVSPlabReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
@@ -76,7 +80,7 @@ A profile showing how SP LabReportTO is mapped into a FHIR DiagnosticReport, Obs
 * category[SPLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#SP
 // should be KindLabReportVS, but don't yet have examples and this binding is more clear
 * category[SPLabSlice] 1..1
-
+* performer only Reference(MHVorganization)
 
 ValueSet: LabReportVS
 Title: "Known Lab Report types"
@@ -106,13 +110,12 @@ Title: "VIA to mhv-fhir-phr"
 * status -> "`final`"
 * subject -> "patient"
 * result -> "Contained Observation(LabResultTO)"
-* performer -> "GetPractitioner(LabReportTO.author)"
-* basedOn.identifier -> "LabReportTO.caseNumber"
+* performer -> "labReportTO/text {provider:}"
+* identifier[casenum] -> "LabReportTO.caseNumber"
 * presentedForm.data -> "base64(LabReportTO.text)"
 * presentedForm.contentType -> "`text/plain`"
-* performer -> "GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)"
-* performer.display -> "labReportTO/text {provider:}"
-* identifier -> "{StationNbr} and {LabReportTO.id}"
+* performer -> "GetOrganization(LabReportTO.facility or LabReportTO.result.labSiteId)"
+* identifier[TOid] -> "{StationNbr} and {LabReportTO.id}"
 * specimen -> "Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])"
 * effectiveDateTime -> "ConvertDate(specimen/collectionDate)"
 * issued -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"
@@ -243,7 +246,7 @@ Title: "VIA to mhv-fhir-phr"
 * issued -> "{DiagnosticReport.issued}"
 * issued -> "labReportTO/result/timestamp"
 * valueString -> "LabResultTO.value"
-* performer -> "{DiagnosticReport.performer}"
+* performer -> "GetPractitioner(DiagnosticReport.performer)"
 * status -> "`final`"
 * category -> "`laboratory`"
 
@@ -259,12 +262,11 @@ Title: "VIA to mhv-fhir-phr"
 * status -> "`final`"
 * subject -> "patient"
 * result -> "Contained Observation(LabResultTO)"
-* performer -> "GetPractitioner(LabReportTO.author)"
-* basedOn.identifier -> "LabReportTO.caseNumber"
+* identifier[casenum] -> "LabReportTO.caseNumber"
 * presentedForm.data -> "base64(LabReportTO.text)"
 * presentedForm.contentType -> "`text/plain`"
 * performer -> "GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)"
-* identifier -> "{StationNbr} and {LabReportTO.id}"
+* identifier[TOid] -> "{StationNbr} and {LabReportTO.id}"
 * specimen -> "Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])"
 * effectiveDateTime -> "ConvertDate(specimen/collectionDate)"
 * issued -> "ConvertDate(LabReportTO.timestamp | LabReportTO.result.timestamp)"

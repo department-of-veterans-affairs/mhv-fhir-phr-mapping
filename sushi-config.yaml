@@ -69,7 +69,7 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/C
 resources:
   Bundle/images:
     name: Bundle of Radiology results from mock data
-    description: An example of a transaction Bundle with many image reports as DocumentReference. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/radiology.xml) MHV receives.
+    description: An example of a transaction Bundle with many image reports as DiagnosticReport. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/radiology.xml) MHV receives.
     exampleBoolean: true
 #  Bundle/vitals:
 #    name: Bundle of Vitals from mock data
@@ -121,7 +121,7 @@ menu:
     "Pathology": background.html#pathology-labreport
     "Microbioloy": background.html#microbiology-labreport
     "Notes": background.html#notes
-    "Radiology": background.html#radiology
+    "Radiology": background.html#imaging-reports
     "Vital-Sign": background.html#vital-sign
     "Utility" : utility.html
     "ConvertDate" : ConvertDate.html

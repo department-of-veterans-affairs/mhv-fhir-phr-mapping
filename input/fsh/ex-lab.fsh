@@ -94,7 +94,8 @@ Example from a mock labReportTO
 * specimen[+] = Reference(ex-MHV-specimen-1)
 * contained[+] = ex-MHV-organization-989
 * performer[+] = Reference(Organization/ex-MHV-organization-989)
-* performer[+].display = "MANGAS,PHYLLIS A"
+* contained[+] = ex-MHV-practitioner-mangas
+* performer[+] = Reference(ex-MHV-practitioner-mangas)
 * presentedForm.contentType = #text/plain
 * presentedForm.data = """
 QWNjZXNzaW9uIFtVSURdOiBQQVJBUyA5NSAyNjQgW10gICAgICAgICAgICBSZWNlaXZlZDogQXVnIDAxLCAxOTk1QDExOjAyCkNvbGxlY3Rpb24gc2FtcGxlOiBTVE9PTCAgICAgICAgICAgICAgIENvbGxlY3Rpb24gZGF0ZTogSnVsIDMwLCAxOTk1ClNpdGUvU3BlY2ltZW46IEZFQ0VTClByb3ZpZGVyOiBNQU5HQVMsUEhZTExJUyBBCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiogUEFSQVNJVE9MT0dZIEZJTkFMIFJFUE9SVCA9PiBBdWcgMDMsIDE5OTUgICBURUNIIENPREU6IDEwMDMKUGFyYXNpdG9sb2d5IFJlbWFyayhzKToKTk8gT1ZBIE9SIFBBUkFTSVRFUyBGT1VORAo=
@@ -269,7 +270,8 @@ Example from a mock labReportTO
 * specimen[+] = Reference(ex-MHV-specimen-2)
 * contained[+] = ex-MHV-organization-989
 * performer[+] = Reference(Organization/ex-MHV-organization-989)
-* performer[+].display = "MANGAS,PHYLLIS A"
+* contained[+] = ex-MHV-practitioner-mangas
+* performer[+] = Reference(ex-MHV-practitioner-mangas)
 * presentedForm.contentType = #text/plain
 * presentedForm.data = """
 QWNjZXNzaW9uIFtVSURdOiBQQVJBUyA5NSAyNjMgW10gICAgICAgICAgICBSZWNlaXZlZDogQXVnIDAxLCAxOTk1QDExOjAyCkNvbGxlY3Rpb24gc2FtcGxlOiBTVE9PTCAgICAgICAgICAgICAgIENvbGxlY3Rpb24gZGF0ZTogSnVsIDI5LCAxOTk1IDA3OjAwClNpdGUvU3BlY2ltZW46IEZFQ0VTClByb3ZpZGVyOiBNQU5HQVMsUEhZTExJUyBBCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiogUEFSQVNJVE9MT0dZIEZJTkFMIFJFUE9SVCA9PiBBdWcgMDMsIDE5OTUgICBURUNIIENPREU6IDEwMDMKUGFyYXNpdG9sb2d5IFJlbWFyayhzKToKTk8gT1ZBIE9SIFBBUkFTSVRFUyBGT1VORCAKTU9ERVJBVEUgV0JDJ1MgU0VFTiAKTU9ERVJBVEUgWUVBU1QK
@@ -444,7 +446,8 @@ Example from a mock labReportTO
 * specimen[+] = Reference(ex-MHV-specimen-3)
 * contained[+] = ex-MHV-organization-989
 * performer[+] = Reference(Organization/ex-MHV-organization-989)
-* performer[+].display = "MANGAS,PHYLLIS A"
+* contained[+] = ex-MHV-practitioner-mangas
+* performer[+] = Reference(ex-MHV-practitioner-mangas)
 * presentedForm.contentType = #text/plain
 * presentedForm.data = """
 QWNjZXNzaW9uIFtVSURdOiBQQVJBUyA5NSAyNjIgW10gICAgICAgICAgICBSZWNlaXZlZDogQXVnIDAxLCAxOTk1QDExOjAwCkNvbGxlY3Rpb24gc2FtcGxlOiBTVE9PTCAgICAgICAgICAgICAgIENvbGxlY3Rpb24gZGF0ZTogSnVsIDI4LCAxOTk1ClNpdGUvU3BlY2ltZW46IEZFQ0VTClByb3ZpZGVyOiBNQU5HQVMsUEhZTExJUyBBCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiogUEFSQVNJVE9MT0dZIEZJTkFMIFJFUE9SVCA9PiBBdWcgMDEsIDE5OTUgICBURUNIIENPREU6IDQyMApQYXJhc2l0b2xvZ3kgUmVtYXJrKHMpOgpSRUpFQ1RFRD1MRUFLRUQK
@@ -821,3 +824,14 @@ Submitted by: DEBRA K LATTA MD       Practitioner:DEBRA K LATTA
 Specimen: 
 BONE FRAGMENTS, LEFT FOOT
 */
+
+
+Instance: ex-MHV-practitioner-mangas
+InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+Title: "MANGAS,PHYLLIS A"
+Description: "Practitioner MANGAS,PHYLLIS A from Labs"
+Usage: #inline
+* identifier.value = "unknown"
+* identifier.system = "urn:oid:2.16.840.1.113883.4.349"
+* name.text = "MANGAS,PHYLLIS A"
+* name.family = "MANGAS"

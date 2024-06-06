@@ -39,6 +39,13 @@
   - different status
   - deleted/entered-in-error
 
+#### Most common types of Chem-Hem Labs
+
+- Basic Metabolic Panel or BMP
+- Comprehensive Metabolic Panel or CMP
+- CBC (complete blood count)
+- Hemoglobin A1C
+
 #### Business Rules
 
 rules interpreted from ChemistryTransformer.java

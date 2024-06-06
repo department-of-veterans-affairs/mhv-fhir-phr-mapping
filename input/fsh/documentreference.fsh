@@ -3,7 +3,7 @@ Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-document
 Id:             VA.MHV.PHR.documentReference
 Title:          "VA MHV All DocumentReference"
 Description:    """
-A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. This includes Physician Notes, Discharge Summary, ECG/EKG, and Imaging reports.
+A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. This includes Physician Notes, Discharge Summary, and ECG/EKG reports.
 """
 * ^extension[$fmm].valueInteger = 4
 //* meta.extension contains http://hl7.org/fhir/StructureDefinition/lastSourceSync named lastSourceSync 0..1 MS
@@ -28,7 +28,6 @@ A profile on the DocumentReference resource that covers all uses of FHIR Documen
 * authenticator only Reference(MHVpractitioner or Practitioner)
 * authenticator.extension contains NoteAuthenticatedWhen named when 0..1 MS
 
-* custodian MS
 * context.related MS
 * context.related ^type.aggregation = #contained
 * context.related only Reference(MHVlocation or Location)
@@ -39,7 +38,6 @@ A profile on the DocumentReference resource that covers all uses of FHIR Documen
 * content.attachment.data MS
 * content.attachment.title MS
 * content.attachment.creation MS
-* description MS
 
 * masterIdentifier 0..0
 * docStatus 0..0
@@ -54,6 +52,8 @@ A profile on the DocumentReference resource that covers all uses of FHIR Documen
 * context.facilityType 0..0
 * context.practiceSetting 0..0
 * context.sourcePatientInfo 0..0
+* custodian 0..0
+* description 0..0
 
 
 ValueSet: DocumentReferenceTypeVS
@@ -64,8 +64,6 @@ Description: "DocumentReference types"
 * codes from valueset NoteTypeVS
 // ECG
 * LOINC#11524-6
-// imaging
-* LOINC#18748-4
 
 Extension: NoteAuthenticatedWhen
 Id: noteAuthenticatedWhen

@@ -73,6 +73,14 @@ This section is dedicated to instructions on how MHV will transition the data we
 - [Mapping from VIA - ClinicalProcedureTO](StructureDefinition-VA.MHV.PHR.ecg-mappings.html#mappings-for-via-to-mhv-fhir-phr-clinicalprocedureto)
 - [Examples](StructureDefinition-VA.MHV.PHR.ecg-examples.html)
 
+#### Imaging Reports
+
+[Imaging Reports](StructureDefinition-VA.MHV.PHR.imaging.html#notes) Mapping Notes
+
+- [Mapping from VIA - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-via-to-mhv-fhir-phr-imagingexamto)
+- [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
+- [Example Bundle with all image reports](Bundle-images.html), and thus not individually exposed.
+
 #### Immunization
 
 [Immunization](StructureDefinition-VA.MHV.PHR.immunization.html#notes) Mapping Notes
@@ -108,14 +116,6 @@ This section is dedicated to instructions on how MHV will transition the data we
 
 - [Mapping from VIA - NoteTO](StructureDefinition-VA.MHV.PHR.note-mappings.html#mappings-for-via-to-mhv-fhir-phr-noteto)
 - [Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
-
-#### Radiology
-
-[Radiology](StructureDefinition-VA.MHV.PHR.imaging.html#notes) Mapping Notes
-
-- [Mapping from VIA - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-via-to-mhv-fhir-phr-imagingexamto)
-- [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
-- [Example Bundle with all image reports](Bundle-images.html), and thus not individually exposed.
 
 #### Vital-Sign
 

@@ -128,8 +128,8 @@ Title: "HDR to mhv-fhir-phr"
 * extension[note] -> "labTestPromises.labCommentEvents.comments"
 * performer -> "GetOrganization(labTestPromises.recordSource)"
 * result -> "Contained Observation(labTestPromises.labTests)"
-* specimen -> "Contained Specimen (labTestPromises.specimen)"
-* basedOn -> "Contained ServiceRequest (labTestPromises.orderedTestCode)"
+* specimen -> "Contained Specimen(labTestPromises.specimen)"
+* basedOn -> "Contained ServiceRequest(labTestPromises.orderedTestCode)"
 //* meta.lastUpdated -> "ConvertDate(labTestPromises.recordUpdateTime)"
 
 
@@ -150,6 +150,8 @@ One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedT
 - specimen = specimen
 - not populating US-Core must support as we dont have the values
 	- occurrence[x], authoredOn
+- requester is the requesting provider
+- facility is the requesting facility
 - no other elements are populated
 """
 * code 1..1 MS

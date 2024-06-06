@@ -20,6 +20,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
             <xsl:value-of select="current-dateTime()"/>
         </xsl:attribute>
     </timestamp>
+    <xsl:variable name="site" select="soap:Envelope/soap:Body/ns2:getDataResponse/ns2:PatientMedicalRecordTO/imagingExams/arrays/taggedImagingExamArray/tag"/>
     <!-- TODO: should find a FHIR Patient given the PatientTO details GetPatient() -->
       <xsl:for-each select="soap:Envelope/soap:Body/ns2:getDataResponse/ns2:PatientMedicalRecordTO/imagingExams/arrays/taggedImagingExamArray/imagingExams/imagingExamTO">
         <entry>
@@ -30,7 +31,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </xsl:attribute>
             </fullUrl>
             <resource>
-                <DocumentReference>
+                <DiagnosticReport>
                 <id>
                   <xsl:attribute name="value">
                     <xsl:value-of select="$fullUrl"/>                  
@@ -40,12 +41,133 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 <meta>
                     <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
                 </meta>
+
+                <contained>
+                    <Practitioner>
+                        <id value="provider-0"/>
+                        <identifier>
+                            <use value="usual"/>
+                            <system>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="concat('urn:oid:2.16.840.1.113883.4.349.4.', $site)" />
+                                </xsl:attribute>
+                            </system>
+                            <value value="unknown"/>
+                        </identifier>
+                        <name>
+                            <text>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="provider/name" />
+                                </xsl:attribute>     
+                            </text>
+                            <family>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="provider/name"/>
+                                </xsl:attribute>     
+                            </family>
+                        </name>
+                    </Practitioner>
+                </contained>
+                <contained>
+                    <Organization>
+                    <id value="organization-0"/>
+                    <meta>
+                        <profile
+                                value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+                    </meta>
+                    <xsl:if test="boolean(imagingLocation/id)">
+                        <identifier>
+                            <use value="usual"/>
+                            <system>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="concat('urn:oid:2.16.840.1.113883.4.349.4.', $site)"/>
+                                </xsl:attribute>
+                            </system>
+                            <value>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="concat('OrganizationTO.',imagingLocation/id)" />
+                                </xsl:attribute>
+                            </value>
+                        </identifier>
+                    </xsl:if>
+                    <active value="true"/>
+                    <xsl:if test="boolean(imagingLocation/name)">
+                        <name>
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="imagingLocation/name"/>
+                            </xsl:attribute>
+                        </name>
+                    </xsl:if>
+                    </Organization>
+                </contained>
+
+                <xsl:if test="boolean(order)">
+                <contained>
+                    <ServiceRequest>
+                    <id value="order-0"/>
+                    <meta>
+                        <profile
+                                value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"/>
+                    </meta>
+                    <xsl:if test="boolean(order/id)">
+                        <identifier>
+                            <use value="usual"/>
+                            <system>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="concat('urn:oid:2.16.840.1.113883.4.349.4.', $site)"/>
+                                </xsl:attribute>
+                            </system>
+                            <value>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="concat('OrderTO.',order/id)" />
+                                </xsl:attribute>
+                            </value>
+                        </identifier>
+                    </xsl:if>
+                    <status value="unknown"/>
+                    <intent value="order"/>
+                    <category>
+                        <coding>
+                          <system value="http://snomed.info/sct"/>
+                          <code value="363679005"/>
+                          <display value="Imaging"/>
+                        </coding>
+                    </category>
+                    <code>
+                        <text>
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="order/type/name1"/>
+                        </xsl:attribute>
+                        </text>
+                    </code>
+                    <subject>
+                        <reference value="Patient/ex-MHV-patient-0"/>  <!-- TODO: patient should come from patient lookup -->
+                    </subject>
+                    <encounter>
+                        <identifier>
+                        <value>
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="encounterId"/>
+                            </xsl:attribute>                            
+                        </value>
+                        </identifier>
+                    </encounter>
+                    <requester>
+                        <reference value="#provider-0"/>
+                    </requester>
+                    <performer>
+                        <reference value="#organization-0"/>
+                    </performer>
+                    </ServiceRequest>
+                </contained>
+                </xsl:if>
+
 <!-- The following two extensions are used to enable the conversion to FSH resources - see mock-images.fsh -->
-<!--
+<!-- 
 <extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
     <valueString>
         <xsl:attribute name="value">
-            <xsl:value-of select="concat('Radiology: ',id)" />
+            <xsl:value-of select="concat('Imaging Report: ',id)" />
         </xsl:attribute>
     </valueString>
 </extension>
@@ -56,7 +178,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
         </xsl:attribute>
     </valueMarkdown>
 </extension>
--->
+ -->
                 <identifier>
                     <use value="usual"/>
                     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>   <!-- TODO: should be derived from Vista site, using 989 -->
@@ -81,7 +203,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     </xsl:attribute>
                     </value>
                 </identifier>
-                    <identifier>
+                <identifier>
                     <use value="secondary"/>
                     <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>    <!-- TODO: should be derived from Vista site, using 989 -->
                     <value>
@@ -90,39 +212,56 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     </xsl:attribute>
                     </value>
                 </identifier>
-                <status value="current"/>
-                <type>
-                    <coding>
-                    <system value="http://loinc.org"/>
-                    <code value="18748-4"/>
-                    </coding>
-
-                    <xsl:if test="type">
-                        <coding>
-                        <system value="http://www.ama-assn.org/go/cpt"/>
-                        <code>
-                        <xsl:attribute name="value">
-                            <xsl:value-of select="type/id" />
-                        </xsl:attribute>
-                        </code>
-                        <display>
-                        <xsl:attribute name="value">
-                            <xsl:value-of select="type/name" />
-                        </xsl:attribute>
-                        </display>
-                        </coding>
-                    </xsl:if>
-                </type>
+                <xsl:if test="boolean(order)">
+                    <basedOn>
+                        <reference value="#order-0"/>                    
+                    </basedOn>
+                </xsl:if>
+                <status value="final"/>
                 <category>
                     <coding>
-                    <system value="http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"/>
-                    <code value="clinical-note"/>
+                    <system value="http://loinc.org"/>
+                    <code value="LP29684-5"/>
+                    <display value="Radiology"/>
                     </coding>
                 </category>
+                <code>
+                    <xsl:if test="boolean(type)">
+                        <coding>
+                            <system value="http://www.ama-assn.org/go/cpt"/>
+                            <code>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="type/id" />
+                                </xsl:attribute>
+                            </code>
+                            <display>
+                                <xsl:attribute name="value">
+                                    <xsl:value-of select="type/name" />
+                                </xsl:attribute>
+                            </display>
+                        </coding>
+                    </xsl:if>
+                    <text>
+                        <xsl:attribute name="value">
+                            <xsl:value-of select="imagingType" />
+                        </xsl:attribute>
+                    </text>
+                </code>
                 <subject>
                     <reference value="Patient/ex-MHV-patient-0"/>  <!-- TODO: patient should come from patient lookup -->
                 </subject>
-                <date>
+                <xsl:if test="boolean(encounterId)">
+                    <encounter>
+                        <identifier>
+                            <value>
+                            <xsl:attribute name="value">
+                                <xsl:value-of select="encounterId"/>
+                            </xsl:attribute>                            
+                            </value>
+                        </identifier>
+                    </encounter>
+                </xsl:if>
+                <effectiveDateTime>
                   <xsl:attribute name="value">
                     <xsl:variable name="datetime">
                       <xsl:call-template name="fileman-to-datetime">
@@ -131,51 +270,22 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     </xsl:variable>
                     <xsl:value-of select="$datetime" /> 
                   </xsl:attribute>
-                </date>
-                <author>
-                    <display>
-                    <xsl:attribute name="value">
-                        <xsl:value-of select="provider/name" /> <!-- TODO GetPractitioner() -->
-                    </xsl:attribute>
-                    </display>
-                </author>
-                <author>
-                    <identifier>
-                    <value>
-                        <xsl:attribute name="value">
-                            <xsl:value-of select="radiologyReportTO/facility/tag" /> <!-- TODO GetLocation() -->
-                        </xsl:attribute>
-                    </value>
-                    </identifier>
-                    <display>
-                    <xsl:attribute name="value">
-                        <xsl:value-of select="radiologyReportTO/facility/text" />
-                    </xsl:attribute>
-                    </display>
-                </author>
-                <custodian>
-                    <identifier>
-                        <value>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="imagingLocation/id" /> <!-- TODO GetLocation() -->
-                            </xsl:attribute>              
-                        </value>
-                    </identifier>
-                        <display>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="imagingLocation/name" />
-                            </xsl:attribute>              
-                        </display>
-                </custodian>
+                </effectiveDateTime>
+                <performer>
+                    <reference value="#organization-0"/>
+                </performer>
+                <resultsInterpreter>
+                    <reference value="#provider-0"/>
+                </resultsInterpreter>
+
                 <xsl:if test="boolean(interpretation)">
-                  <description>
+                  <conclusion>
                       <xsl:attribute name="value">
                           <xsl:value-of select="interpretation" />
                       </xsl:attribute>        
-                  </description>
+                    </conclusion>
                 </xsl:if>
-                <content>
-                    <attachment>
+                <presentedForm>
                         <contentType value="text/plain"/>      
                         <xsl:variable name="blob" select="radiologyReportTO/text"/>
                         <xsl:variable name="bblob" select="saxon:string-to-base64Binary($blob, 'UTF8')" /> 
@@ -202,45 +312,13 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                             </xsl:attribute>
                         </creation>
 
-                    </attachment>
-                </content>
-                <xsl:if test="boolean(encounterId) or boolean(order/id)">
-                <context>
-                  <xsl:if test="boolean(encounterId)">
-                    <encounter>
-                        <identifier>
-                            <value>
-                                <xsl:attribute name="value">
-                                <xsl:value-of select="encounterId" /> 
-                                </xsl:attribute>                
-                            </value>
-                        </identifier>
-                    </encounter>
-                  </xsl:if>
-                  <xsl:if test="boolean(order/id)">
-                    <related>
-                        <identifier>
-                            <value>
-                                <xsl:attribute name="value">
-                                <xsl:value-of select="order/id" />
-                                </xsl:attribute>                 
-                            </value>
-                        </identifier>
-                        <display>
-                            <xsl:attribute name="value">
-                                <xsl:value-of select="order/type/name1" />
-                            </xsl:attribute>                 
-                        </display>
-                    </related>
-                  </xsl:if>
-                </context>
-                  </xsl:if>
+                </presentedForm>
 
-                </DocumentReference>
+                </DiagnosticReport>
             </resource>
             <request>
                 <method value="POST"/>
-                <url value="DocumentReference"/>
+                <url value="DiagnosticReport"/>
             </request>
         </entry>  
       </xsl:for-each>

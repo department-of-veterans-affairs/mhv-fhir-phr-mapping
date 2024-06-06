@@ -211,10 +211,10 @@ WARNING: DocumentReference/ex-MHV-note-8: DocumentReference.authenticator: Found
 WARNING: DocumentReference/ex-MHV-note-8: DocumentReference.context.related[0]: Found multiple matching profiles for #location-648 among choices: http://hl7.org/fhir/StructureDefinition/Location, https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location
 
 # the pain example also includes the original code (VUID)
-INFORMATION: Observation/ex-MHV-pain-1: Observation.code.coding[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.3.5 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/ex-MHV-pain-1: Observation.code.coding[1]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsPain|0.3.7-current (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # vitals can have .component that carry vista qualifiers. The following are confirmed to be legitimate
-INFORMATION: Observation/ex-MHV-oximetry-1: Observation.component[0]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.3.5 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: Observation/ex-MHV-oximetry-1: Observation.component[0]: This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.vitalsOx|0.3.7-current (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # these are matching a code but still complaining
 Terminology_TX_NoValid_3_CC
@@ -267,7 +267,7 @@ Target Code System http://snomed.info/sct is only supported on the terminology s
 Terminology_TX_Code_ValueSet_Ext
 
 # ChemHem has extra category codes 
-This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport|0.3.6 (this may not be a problem, but you should check that it's not intended to match a slice)
+This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chReport|0.3.7-current (this may not be a problem, but you should check that it's not intended to match a slice)
 
 # VA codeSystem 
 A definition for CodeSystem 'http://va.gov/terminology/vistaDefinedTerms/60' could not be found, so the code cannot be validated
@@ -287,3 +287,12 @@ A definition for CodeSystem 'http://snomed.info' version '20180301' could not be
 A definition for CodeSystem 'http://snomed.info' version '20200901' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'http://snomed.info' version '20200731' could not be found, so the code cannot be validated%
 A definition for CodeSystem 'http://snomed.info' version '20180901' could not be found, so the code cannot be validated%
+
+# US-Core Practitioner requires an identifier, and allows anything. But that doesn't match the NPI slice
+INFORMATION: DiagnosticReport/ex-MHV-imaging-0: DiagnosticReport.contained[1]/*Practitioner/ex-MHV-practitioner-image0*/.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|5.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: DiagnosticReport/ex-MHV-labReport-1: DiagnosticReport.contained[3]/*Practitioner/ex-MHV-practitioner-mangas*/.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|5.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: DiagnosticReport/ex-MHV-labReport-2: DiagnosticReport.contained[5]/*Practitioner/ex-MHV-practitioner-mangas*/.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|5.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: DiagnosticReport/ex-MHV-labReport-3: DiagnosticReport.contained[5]/*Practitioner/ex-MHV-practitioner-mangas*/.identifier[0]: This element does not match any known slice defined in the profile http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner|5.0.1 (this may not be a problem, but you should check that it's not intended to match a slice)
+
+# imaging report has some okay info
+This element does not match any known slice defined in the profile https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization|0.3.7-current (this may not be a problem, but you should check that it's not intended to match a slice)
