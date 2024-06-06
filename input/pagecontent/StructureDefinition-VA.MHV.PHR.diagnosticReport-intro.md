@@ -84,5 +84,7 @@ More detailed profiling, including the `ServiceRequest`, `Specimen`, and `Observ
 
 ### Search Consideration
 
-Should search for entries that do **not** have `status=entered-in-error` (i.e., `&status:not=entered-in-error`)
-> GET {path}/DiagnosticReport?patient={patient}&status:not=entered-in-error
+- Should search for entries that do **not** have `status=entered-in-error` (i.e., `&status:not=entered-in-error`)
+- Should search for entries with category of Lab to get only lab DiagnosticReport resources
+
+> GET {path}/DiagnosticReport?patient={patient}&status:not=entered-in-error&category=http://terminology.hl7.org/CodeSystem/v2-0074#LAB

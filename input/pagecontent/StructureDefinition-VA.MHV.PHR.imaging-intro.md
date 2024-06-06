@@ -22,3 +22,10 @@ Radiology Diagnostic Report
 - `presentedForm.contentType` will be `text/plain`
 - `presentedForm.data` will hold the base64 encoded radiology report
 - Note there are no Observations or Specimen with a radiology report
+
+### Search Consideration
+
+- Should search for entries that do **not** have `status=entered-in-error` (i.e., `&status:not=entered-in-error`)
+- Should search for entries with category of Radiology to get only Radiology DiagnosticReport resources
+
+> GET {path}/DiagnosticReport?patient={patient}&status:not=entered-in-error&category=http://loinc.org#LP29684-5

@@ -1,9 +1,9 @@
 Profile:        MHVimagingExam
 Parent:         http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-note
 Id:             VA.MHV.PHR.imaging
-Title:          "VA MHV PHR Radiology note"
+Title:          "VA MHV PHR Imaging Report"
 Description:    """
-A profile on the DiagnosticReport resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.
+A profile on the DiagnosticReport resource for MHV PHR exposing Imaging Report (ImagingExamTO) using FHIR API.
 """
 * ^extension[$fmm].valueInteger = 1
 /* us-core requires

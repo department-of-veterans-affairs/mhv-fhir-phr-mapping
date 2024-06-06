@@ -13,11 +13,12 @@ The MHV FHIR Server would have a similar [CapabilityStatement](CapabilityStateme
   - [Examples](StructureDefinition-VA.MHV.PHR.allergyIntolerance-examples.html)
 - [Conditions](StructureDefinition-VA.MHV.PHR.condition.html)
   - [Examples](StructureDefinition-VA.MHV.PHR.condition-examples.html)
-- [DiagnosticReport](StructureDefinition-VA.MHV.PHR.diagnosticReport.html) shows all of the DiagnosticReport. Including Microbiology, Pathology, Chem-Hem, and Imaging Reports.
+- [DiagnosticReport for Imaging Report](StructureDefinition-VA.MHV.PHR.imaging.html)
+  - [Imaging Reports Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
+- [DiagnosticReport for Labs](StructureDefinition-VA.MHV.PHR.diagnosticReport.html), including Microbiology, Pathology, and Chem-Hem.
   - [Chem-Hem Examples](StructureDefinition-VA.MHV.PHR.chReport-examples.html)
   - [Microbiology Examples](StructureDefinition-VA.MHV.PHR.MBlabReport-examples.html)
   - [Pathology Examples](StructureDefinition-VA.MHV.PHR.SPlabReport-examples.html)
-  - [Imaging Reports Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
 - [DocumentReference](StructureDefinition-VA.MHV.PHR.documentReference.html) shows all uses of DocumentReference. Including Notes, Discharge Summary, and EKG.
   - [Note Examples](StructureDefinition-VA.MHV.PHR.note-examples.html)
     - Clinical Notes, Discharge Summary
