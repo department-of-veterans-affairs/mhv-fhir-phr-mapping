@@ -1,7 +1,7 @@
 
 Instance:   ex-MHV-allergy-1
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 1 of an MHV allergy or intolerance"
+Title: "Allergy 1"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 53495 from a mock ProblemTO
@@ -28,7 +28,7 @@ IntoleranceCondition record identity 53495 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-1-deleted
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 1 of an MHV allergy or intolerance - deleted"
+Title: "Allergy 1 of an MHV allergy or intolerance - deleted"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 53495 from a mock ProblemTO
@@ -55,7 +55,7 @@ IntoleranceCondition record identity 53495 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-2
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 2 of an MHV allergy or intolerance"
+Title: "Allergy 2"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 67933 from a mock ProblemTO
@@ -83,7 +83,7 @@ IntoleranceCondition record identity 67933 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-3
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 3 of an MHV allergy or intolerance"
+Title: "Allergy 3"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 67934 from a mock ProblemTO
@@ -109,7 +109,7 @@ IntoleranceCondition record identity 67934 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-4
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 4 of an MHV allergy or intolerance"
+Title: "Allergy 4"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69066 from a mock ProblemTO
@@ -138,7 +138,7 @@ IntoleranceCondition record identity 69066 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-5
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 5 of an MHV allergy or intolerance"
+Title: "Allergy 5"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69067 from a mock ProblemTO
@@ -166,7 +166,7 @@ IntoleranceCondition record identity 69067 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-6
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 6 of an MHV allergy or intolerance"
+Title: "Allergy 6"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69071 from a mock ProblemTO
@@ -193,7 +193,7 @@ IntoleranceCondition record identity 69071 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-7
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 7 of an MHV allergy or intolerance"
+Title: "Allergy 7"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69072 from a mock ProblemTO
@@ -225,7 +225,7 @@ IntoleranceCondition record identity 69072 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-8
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 8 of an MHV allergy or intolerance"
+Title: "Allergy 8"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69073 from a mock ProblemTO
@@ -255,7 +255,7 @@ IntoleranceCondition record identity 69073 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-9
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 9 of an MHV allergy or intolerance"
+Title: "Allergy 9"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69074 from a mock ProblemTO
@@ -288,7 +288,7 @@ IntoleranceCondition record identity 69074 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-10
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 10 of an MHV allergy or intolerance"
+Title: "Allergy 10"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69075 from a mock ProblemTO
@@ -316,7 +316,7 @@ IntoleranceCondition record identity 69075 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-11
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 11 of an MHV allergy or intolerance"
+Title: "Allergy 11"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69092 from a mock ProblemTO
@@ -347,7 +347,7 @@ IntoleranceCondition record identity 69092 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-12
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 12 of an MHV allergy or intolerance"
+Title: "Allergy 12"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69093 from a mock ProblemTO
@@ -378,7 +378,7 @@ IntoleranceCondition record identity 69093 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-13
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 13 of an MHV allergy or intolerance"
+Title: "Allergy 13"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69123 from a mock ProblemTO
@@ -405,7 +405,7 @@ IntoleranceCondition record identity 69123 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-14
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 14 of an MHV allergy or intolerance"
+Title: "Allergy 14"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69124 from a mock ProblemTO
@@ -436,7 +436,7 @@ IntoleranceCondition record identity 69124 from a mock ProblemTO
 
 Instance:   ex-MHV-allergy-15
 InstanceOf: VA.MHV.PHR.allergyIntolerance
-Title: "Example 15 of an MHV allergy or intolerance"
+Title: "Allergy 15"
 Usage: #example
 Description:      """
 IntoleranceCondition record identity 69129 from a mock ProblemTO

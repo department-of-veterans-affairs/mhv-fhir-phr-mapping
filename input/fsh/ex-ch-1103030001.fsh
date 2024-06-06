@@ -59,7 +59,7 @@ Usage: #inline
 
 Instance: ex-MHV-chReport-1103030001
 InstanceOf: VA.MHV.PHR.chReport 
-Title: "Example 1103030001 of an MHV chReport"
+Title: "ChemHem 1103030001"
 Usage: #example
 Description: """
 Example from a mock labTestPromises (1103030001)

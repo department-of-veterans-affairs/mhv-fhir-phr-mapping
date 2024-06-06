@@ -1,7 +1,7 @@
 
 Instance: ex-MHV-patient-0
 InstanceOf: MHVpatient
-Title: "Example of MHV MHVLISAONE"
+Title: "Patient of MHV MHVLISAONE"
 Description: "Only values from eVault"
 Usage: #example
 * name[+].family = "MHVLISAONE"
@@ -18,7 +18,7 @@ Usage: #example
 
 Instance: ex-VIA-patient-0
 InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient
-Title: "Example MHVLISAONE from PatientTO"
+Title: "Patient MHVLISAONE"
 Description: """
 This example is derived off of a mock PatientTO. It shows where everything that could be in a VIA PatientTO could go. This is not an example of what MHV will populate the Patient like.
 """
@@ -105,7 +105,7 @@ Usage: #example
 */
 Instance: ex-MHV-patient-1
 InstanceOf: MHVpatient
-Title: "Example DAYSHR from PatientTO"
+Title: "Patient DAYSHR"
 Description: """
 This example is derived off of a mock PatientTO
 """
@@ -144,7 +144,7 @@ Usage: #example
 */
 Instance: ex-MHV-patient-2
 InstanceOf: MHVpatient
-Title: "Example ROBERT from PatientTO"
+Title: "Patient ROBERT"
 Description: """
 This example is derived off of a mock PatientTO
 """
@@ -328,7 +328,7 @@ used in test data
 */
 Instance: ex-MHV-patient-3
 InstanceOf: MHVpatient
-Title: "Example DAYSHR from PatientTO"
+Title: "Patient DAYSHR"
 Description: """
 This example is derived off of a mock PatientTO
 """
@@ -368,7 +368,7 @@ used in test data
 */
 Instance: ex-MHV-patient-4
 InstanceOf: MHVpatient
-Title: "Example VETERAN CASEY"
+Title: "Patient VETERAN CASEY"
 Description: """
 This example is derived off of a mock PatientTO
 """
@@ -405,7 +405,7 @@ Usage: #example
 */
 Instance: ex-MHV-patient-1015746490
 InstanceOf: MHVpatient
-Title: "Example MHVZZVISNTWENTY,TEST PATIENTR"
+Title: "Patient MHVZZVISNTWENTY,TEST PATIENTR"
 Description: """
 This example is derived off of a mock PatientTO
 """

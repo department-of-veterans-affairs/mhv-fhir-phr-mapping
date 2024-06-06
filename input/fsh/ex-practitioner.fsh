@@ -1,6 +1,6 @@
 Instance:   ex-MHV-practitioner
 InstanceOf: MHVpractitioner
-Title: "Example Practitioner"
+Title: "Practitioner"
 Description:      "holding typical values"
 Usage: #inline
 * name.family = "Practitioner"
@@ -23,7 +23,7 @@ Usage: #inline
 */
 Instance: ex-MHV-practitioner-37569
 InstanceOf: MHVpractitioner
-Title: "Example Practitoner 37569"
+Title: "Practitioner 37569"
 Description: "Muazzam Khan"
 Usage: #inline
 * name.text = "KHAN,MUAZZAM"
@@ -41,7 +41,7 @@ Usage: #inline
 */
 Instance: ex-MHV-practitioner-36556
 InstanceOf: MHVpractitioner
-Title: "Example Practitoner 36556"
+Title: "Practitioner 36556"
 Description: "Maruf Ahmed"
 Usage: #inline
 * name.text = "AHMED,MARUF"
@@ -60,7 +60,7 @@ Usage: #inline
 */
 Instance: ex-MHV-practitioner-110
 InstanceOf: MHVpractitioner
-Title: "Example Practitoner 110"
+Title: "Practitioner 110"
 Description: "Phyllis Mangas"
 Usage: #inline
 * name.text = "MANGAS,PHYLLIS A"
@@ -80,7 +80,7 @@ Usage: #inline
 */
 Instance: ex-MHV-practitioner-4262
 InstanceOf: MHVpractitioner
-Title: "Example Practitoner 4262"
+Title: "Practitioner 4262"
 Description: "Phyllis Mangas"
 Usage: #inline
 * name.text = "PATIL,SARASWATI"
@@ -99,7 +99,7 @@ Usage: #inline
 */
 Instance: ex-MHV-practitioner-6051
 InstanceOf: MHVpractitioner
-Title: "Example Practitoner 6051"
+Title: "Practitioner 6051"
 Description: "Phyllis Mangas"
 Usage: #inline
 * name.text = "BASHIR,CHOWDRY MUJAHID"
@@ -119,7 +119,7 @@ Usage: #inline
 */
 Instance: ex-MHV-practitioner-22572
 InstanceOf: MHVpractitioner
-Title: "Example Practitoner 22572"
+Title: "Practitioner 22572"
 Description: "Phyllis Mangas"
 Usage: #inline
 * name.text = "FELKLEY,KENNETH E"
@@ -147,7 +147,7 @@ Usage: #inline
 */
 Instance: ex-MHV-practitioner-14934-VA552
 InstanceOf: Practitioner
-Title: "Example Practitoner 14934-VA552"
+Title: "Practitioner 14934-VA552"
 Description: "Lisa A Hall"
 Usage: #inline
 * name.family = "HALL"
@@ -173,7 +173,7 @@ Usage: #inline
 */
 Instance: ex-MHV-practitioner-59845-VA660
 InstanceOf: Practitioner
-Title: "Example Practitoner 59845-VA660"
+Title: "Practitioner 59845-VA660"
 Description: "Lisa A Hall"
 Usage: #inline
 * name.family = "HALL"
@@ -184,7 +184,7 @@ Usage: #inline
 
 Instance: ex-MHV-practitioner-37524
 InstanceOf: VA.MHV.PHR.practitioner
-Title: "Example Practitioner 37524"
+Title: "Practitioner 37524"
 Description: "MARCUS OPURUM,MAUREEN N"
 Usage: #inline
 * identifier[TOid].use = #usual
@@ -195,7 +195,7 @@ Usage: #inline
 
 Instance: ex-MHV-practitioner-2926
 InstanceOf: VA.MHV.PHR.practitioner
-Title: "Example Practitioner 372926524"
+Title: "Practitioner 372926524"
 Description: "DOUGLAS,DAVID M"
 Usage: #inline
 * identifier[TOid].use = #usual

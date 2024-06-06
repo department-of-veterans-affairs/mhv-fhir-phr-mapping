@@ -17,6 +17,7 @@ The notes below for each release. Archive of [released packages](https://github.
 - Add list of most common labs for Chem-Hem, Microbiology, and Pathology. Data we need to see
 - Microbiology
   - clarify the DiagnosticReport.performer. Especially in the examples which were using .display
+- adjust example titles to be consistent.
 
 ### 0.3.6
 

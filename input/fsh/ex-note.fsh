@@ -2,7 +2,7 @@
 
 Instance: ex-MHV-note-0
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 0 of a MHV Note"
+Title: "Note 0"
 Usage: #example
 Description: """
 Derived from the a mock NoteTO:
@@ -28,7 +28,7 @@ Derived from the a mock NoteTO:
 
 Instance: ex-MHV-note-1
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 1 of a MHV Note"
+Title: "Note 1"
 Usage: #example
 Description: """
 Derived from the a mock NoteTO:
@@ -55,7 +55,7 @@ Derived from the a mock NoteTO:
 
 Instance: ex-MHV-note-deleted-1
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 1 of a MHV Note - marked as entered-in-error"
+Title: "Note 1 of a MHV Note - marked as entered-in-error"
 Usage: #example
 Description: """
 Derived from the a mock NoteTO:
@@ -86,7 +86,7 @@ This is replicated from ex-MHV-note-1, with change of identifier (NoteTO.5), and
 
 Instance: ex-MHV-note-2
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 2 of a MHV Note"
+Title: "Note 2"
 Usage: #example
 Description: """
 Derived from the a mock NoteTO:
@@ -111,7 +111,7 @@ Derived from the a mock NoteTO:
 
 Instance: ex-MHV-note-3
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 3 of a MHV Note"
+Title: "Note 3"
 Usage: #example
 Description: """
 Derived from the a mock NoteTO:
@@ -137,7 +137,7 @@ Derived from the a mock NoteTO:
 
 Instance: ex-MHV-note-4
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 4 of a MHV Note"
+Title: "Note 4"
 Usage: #example
 Description: """
 Derived from the a mock NoteTO:
@@ -167,7 +167,7 @@ Note dropped cosigner
 
 Instance: ex-MHV-note-5
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 5 of a MHV Note"
+Title: "Note 5"
 Usage: #example
 Description: """
 Derived from the a mock NoteTO:
@@ -196,7 +196,7 @@ Note has an unsigned addenda
 
 Instance: ex-MHV-note-6
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 6 of a MHV Note"
+Title: "Note 6"
 Usage: #example
 Description: """
 Derived from the a mock NoteTO:
@@ -225,7 +225,7 @@ Note has a signed addenda
 
 Instance: ex-MHV-note-7
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 7 of a MHV Note"
+Title: "Note 7"
 Usage: #example
 Description: """
 This is a sample of a "Compensation and Pension Examination" (aka, "C & P") note.  These notes will be held by [notes business rules](StructureDefinition-VA.MHV.PHR.note.html#business-rules) for 30 days past the signature.
@@ -252,7 +252,7 @@ This is a sample of a "Compensation and Pension Examination" (aka, "C & P") note
 
 Instance: ex-MHV-note-8
 InstanceOf: VA.MHV.PHR.note
-Title: "Example 8 of a MHV Note"
+Title: "Note 8"
 Usage: #example
 Description: """
 This is a sample of a "Compensation and Pension Examination" (aka, "C & P") note.  These notes will be held by [notes business rules](StructureDefinition-VA.MHV.PHR.note.html#business-rules) for 30 days past the signature.

@@ -71,7 +71,7 @@ Usage: #inline
 
 Instance: ex-MHV-labReport-1
 InstanceOf: VA.MHV.PHR.MBlabReport 
-Title: "Example 1 of an MHV labReport"
+Title: "Lab 1"
 Usage: #example
 Description: """
 Example from a mock labReportTO
@@ -243,7 +243,7 @@ Usage: #inline
 
 Instance: ex-MHV-labReport-2
 InstanceOf: VA.MHV.PHR.MBlabReport 
-Title: "Example 2 of an MHV labReport"
+Title: "Lab 2"
 Usage: #example
 Description: """
 Example from a mock labReportTO
@@ -419,7 +419,7 @@ Usage: #inline
 
 Instance: ex-MHV-labReport-3
 InstanceOf: VA.MHV.PHR.MBlabReport 
-Title: "Example 3 of an MHV labReport"
+Title: "Lab 3"
 Usage: #example
 Description: """
 Example from a mock labReportTO
@@ -487,7 +487,7 @@ Usage: #inline
 
 Instance: ex-MHV-labReport-4
 InstanceOf: VA.MHV.PHR.SPlabReport 
-Title: "Example 4 of an MHV labReport"
+Title: "Lab 4"
 Usage: #example
 Description: """
 Example from a mock labReportTO
@@ -561,7 +561,7 @@ Usage: #inline
 
 Instance: ex-MHV-labReport-5
 InstanceOf: VA.MHV.PHR.SPlabReport 
-Title: "Example 5 of an MHV labReport"
+Title: "Lab 5"
 Usage: #example
 Description: """
 Example from a mock labReportTO
@@ -656,7 +656,7 @@ Usage: #inline
 
 Instance: ex-MHV-labReport-6
 InstanceOf: VA.MHV.PHR.SPlabReport 
-Title: "Example 6 of an MHV labReport"
+Title: "Lab 6"
 Usage: #example
 Description: """
 Example from a mock labReportTO
@@ -729,7 +729,7 @@ Usage: #inline
 
 Instance: ex-MHV-labReport-7
 InstanceOf: VA.MHV.PHR.SPlabReport 
-Title: "Example 7 of an MHV labReport"
+Title: "Lab 7"
 Usage: #example
 Description: """
 Example from a mock labReportTO
@@ -790,7 +790,7 @@ Usage: #inline
 
 Instance: ex-MHV-labReport-8
 InstanceOf: VA.MHV.PHR.SPlabReport 
-Title: "Example 8 of an MHV labReport"
+Title: "Lab 8"
 Usage: #example
 Description: """
 Example from a mock labReportTO

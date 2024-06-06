@@ -3,7 +3,7 @@
 Instance:   ex-MHV-vitals-1
 InstanceOf: VA.MHV.PHR.vitalsBP
 Usage: #example
-Title: "Example 1 of an MHV vital-sign"
+Title: "Vitals 1"
 Description: """
 Example from a mock VitalSignTO
 """
@@ -50,7 +50,7 @@ Example from a mock VitalSignTO
 Instance:   ex-MHV-vitals-deleted-1
 InstanceOf: VA.MHV.PHR.vitalsBP
 Usage: #example
-Title: "Example 1 of an MHV vital-sign, but with a different identifier, and marked as entered-in-error"
+Title: "Vitals 1 of an MHV vital-sign, but with a different identifier, and marked as entered-in-error"
 Description: """
 Example from a mock VitalSignTO
 """
@@ -97,7 +97,7 @@ Example from a mock VitalSignTO
 
 Instance:   ex-MHV-pain-1
 InstanceOf: VA.MHV.PHR.vitalsPain
-Title: "Example of a MHV pain R4 observation of 10"
+Title: "Vitals of a MHV pain R4 observation of 10"
 Description:      "holding typical values"
 /*
 <vitalSignTO>
@@ -135,7 +135,7 @@ Description:      "holding typical values"
 
 Instance:   ex-MHV-heartRate-1
 InstanceOf: VA.MHV.PHR.vitals
-Title: "Example of an MHV heartRate R4 observation"
+Title: "Vitals of an MHV heartRate R4 observation"
 Description:      "Heart Rate holding typical values"
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 /*
@@ -174,7 +174,7 @@ Description:      "Heart Rate holding typical values"
 
 Instance:   ex-MHV-oximetry-1
 InstanceOf: VA.MHV.PHR.vitalsOx
-Title: "Example of an MHV heartRate R4 observation"
+Title: "Vitals of an MHV heartRate R4 observation"
 Description:      "Heart Rate holding typical values"
 //* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 /*

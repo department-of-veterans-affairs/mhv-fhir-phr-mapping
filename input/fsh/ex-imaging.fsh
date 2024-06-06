@@ -1,7 +1,7 @@
 
 Instance: ex-MHV-imaging-0
 InstanceOf: VA.MHV.PHR.imaging
-Title: "Example 0 of a MHV Radiology (Imaging Exam)"
+Title: "Imaging Report 0"
 Usage: #example
 Description: """
 Derived from the a mock ImagingExamTO:

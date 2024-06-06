@@ -1,7 +1,7 @@
 
 Instance: ex-MHV-ecg-0
 InstanceOf: VA.MHV.PHR.ecg
-Title: "Example 0 of a MHV ECG"
+Title: "ECG 0"
 Usage: #example
 Description: """
 Derived from the a mock ClinicalProcedureTO:
@@ -25,7 +25,7 @@ Derived from the a mock ClinicalProcedureTO:
 
 Instance: ex-MHV-ecg-1
 InstanceOf: VA.MHV.PHR.ecg
-Title: "Example 1 of a MHV ECG"
+Title: "ECG 1"
 Usage: #example
 Description: """
 Derived from the a mock ClinicalProcedureTO:
@@ -50,7 +50,7 @@ Derived from the a mock ClinicalProcedureTO:
 
 Instance: ex-MHV-ecg-2
 InstanceOf: VA.MHV.PHR.ecg
-Title: "Example 2 of a MHV ECG"
+Title: "ECG 2"
 Usage: #example
 Description: """
 Derived from the a mock ClinicalProcedureTO:
@@ -75,7 +75,7 @@ Derived from the a mock ClinicalProcedureTO:
 
 Instance: ex-MHV-ecg-3
 InstanceOf: VA.MHV.PHR.ecg
-Title: "Example 3 of a MHV ECG"
+Title: "ECG 3"
 Usage: #example
 Description: """
 Derived from the a mock ClinicalProcedureTO:
@@ -99,7 +99,7 @@ Derived from the a mock ClinicalProcedureTO:
 
 Instance: ex-MHV-ecg-4
 InstanceOf: VA.MHV.PHR.ecg
-Title: "Example 4 of a MHV ECG"
+Title: "ECG 4"
 Usage: #example
 Description: """
 Derived from the a mock ClinicalProcedureTO:
@@ -124,7 +124,7 @@ Derived from the a mock ClinicalProcedureTO:
 
 Instance: ex-MHV-ecg-5
 InstanceOf: VA.MHV.PHR.ecg
-Title: "Example 5 of a MHV ECG"
+Title: "ECG 5"
 Usage: #example
 Description: """
 Derived from the a mock ClinicalProcedureTO:

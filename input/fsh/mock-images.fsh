@@ -11,7 +11,7 @@ Note that Grahame has said he has a backlog to do this automatically in the IG p
 
 These examples come from 
 1. mocks/images.xml
-2. transformed with mocks/imagessxslt.xslt (with extensions populating an artifact-title and artifact-description extension)
+2. transformed with mocks/imagessxslt.xslt (with extensions populating an instance-name and instance-description extension)
 3. that bundle built into the IG so that the IG build creates the json equivilant
 3. Put the json equvilant bundle into "FSH Online" to convert to FSH - https://fshschool.org/FSHOnline/#/
 5. put the result into this FSH file
@@ -25,12 +25,28 @@ These examples come from
 15. build the bundle the normal way to show a transaction Bundle in the IG
 12. change contained (author, approvedBy, and location) references to .reference = "#author-0" -- https://chat.fhir.org/#narrow/stream/215610-shorthand/topic/FSHOnline.20contained.20resources
 
+13. convert the title and description extensions to sushi title and description
+14. Move the Title and Description to the top
+
+search:
+Usage: #example\n([\s\S]*?)(?=\nTitle:)
+Title: (.*)
+Description: (.*)
+
+replace:
+Title: $2
+Description: $3
+Usage: #example 
+$1
+
 */
 
 
 Instance: 17a6982d-9890-43aa-98fe-603fbe11cf8a
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6959075.8874-1"
+Description: "SPINE LUMBOSACRAL MIN 2 VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -60,10 +76,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "5886199"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6959075.8874-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "SPINE LUMBOSACRAL MIN 2 VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6959075.8874-1"
@@ -91,7 +103,9 @@ Usage: #example
 
 Instance: 28fbd313-2087-46c9-9581-66cf1f70c973
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6979076.8862-1"
+Description: "CHEST 2 VIEWS PA&LAT"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -121,10 +135,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "4183065"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6979076.8862-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "CHEST 2 VIEWS PA&LAT"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6979076.8862-1"
@@ -152,7 +162,9 @@ Usage: #example
 
 Instance: 45b08f3a-50c7-4832-bf85-167efc4c9e5d
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6979076.8862-2"
+Description: "SPINE LUMBOSACRAL MIN 2 VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -182,10 +194,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "4183065"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6979076.8862-2"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "SPINE LUMBOSACRAL MIN 2 VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6979076.8862-2"
@@ -213,7 +221,9 @@ Usage: #example
 
 Instance: 845ebc9d-fab1-4646-9198-4fc128aa79a6
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-1"
+Description: "MYOCARDIAL PERFUSION (SPECT), EX/REDIST, W/ W/O PHARM INTER"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -243,10 +253,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "MYOCARDIAL PERFUSION (SPECT), EX/REDIST, W/ W/O PHARM INTER"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-1"
@@ -274,7 +280,9 @@ Usage: #example
 
 Instance: e8429618-da5d-4e9f-9041-c16614b1c4f9
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-10"
+Description: "J1245 DIPYRIDAMOLE INJECTION"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -304,10 +312,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-10"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-10"
@@ -334,7 +338,9 @@ Usage: #example
 
 Instance: d2503a4a-690e-4fd4-92e1-fcd73941719e
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-11"
+Description: "J1245 DIPYRIDAMOLE INJECTION"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -364,10 +370,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-11"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-11"
@@ -394,7 +396,9 @@ Usage: #example
 
 Instance: 120fb1ef-d0b3-4c87-b1da-2e4da713be56
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-12"
+Description: "CARDIOVASCULAR STRESS TEST (TECH)"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -424,10 +428,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-12"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "CARDIOVASCULAR STRESS TEST (TECH)"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-12"
@@ -455,7 +455,9 @@ Usage: #example
 
 Instance: 4cbed92e-233e-4783-8d4d-d0fc578f3e68
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-2"
+Description: "#PROVISION OF DIAGNOSTIC RADIONUCLIDES"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -485,10 +487,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-2"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "#PROVISION OF DIAGNOSTIC RADIONUCLIDES"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-2"
@@ -516,7 +514,9 @@ Usage: #example
 
 Instance: b47e0e4a-7bbd-4d6b-8ca9-a5ce31489429
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-3"
+Description: "MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -546,10 +546,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-3"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-3"
@@ -577,7 +573,9 @@ Usage: #example
 
 Instance: 4644ab95-a028-47f9-a47f-dd0d1e6f88bc
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-4"
+Description: "J1245 DIPYRIDAMOLE INJECTION"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -607,10 +605,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-4"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-4"
@@ -637,7 +631,9 @@ Usage: #example
 
 Instance: a41c31ae-f5e2-48a2-90fe-e3e25bb0fc98
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-5"
+Description: "A9505 THALLOUS CHLORIDE TL 201/MCI"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -667,10 +663,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-5"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "A9505 THALLOUS CHLORIDE TL 201/MCI"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-5"
@@ -697,7 +689,9 @@ Usage: #example
 
 Instance: 87e778a9-aa89-4834-b536-fd76ed712d73
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-6"
+Description: "A9505 THALLOUS CHLORIDE TL 201/MCI"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -727,10 +721,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-6"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "A9505 THALLOUS CHLORIDE TL 201/MCI"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-6"
@@ -757,7 +747,9 @@ Usage: #example
 
 Instance: 6a4ec7b7-30ce-495b-bc8c-05056f7cd2b5
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-7"
+Description: "A9505 THALLOUS CHLORIDE TL 201/MCI"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -787,10 +779,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-7"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "A9505 THALLOUS CHLORIDE TL 201/MCI"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-7"
@@ -817,7 +805,9 @@ Usage: #example
 
 Instance: db557446-899f-401e-aa5f-7958a210b115
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-8"
+Description: "MYOCARDIAL PERFUSION STUDY WITH WALL MOTION"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -847,10 +837,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-8"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "MYOCARDIAL PERFUSION STUDY WITH WALL MOTION"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-8"
@@ -878,7 +864,9 @@ Usage: #example
 
 Instance: aeb8d42e-6689-4946-a6a6-e17d055984ec
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6989573.8892-9"
+Description: "J1245 DIPYRIDAMOLE INJECTION"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -908,10 +896,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3278625"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6989573.8892-9"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "J1245 DIPYRIDAMOLE INJECTION"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6989573.8892-9"
@@ -938,7 +922,9 @@ Usage: #example
 
 Instance: e597c961-9cd3-4930-b3af-234493d497e7
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6998785.915-1"
+Description: "CHEST 2 VIEWS PA&LAT"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -968,10 +954,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "3067104"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6998785.915-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "CHEST 2 VIEWS PA&LAT"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6998785.915-1"
@@ -999,7 +981,9 @@ Usage: #example
 
 Instance: 3153b831-5ae4-4f07-b73d-4d26151675de
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6999170.9165-1"
+Description: "CT THORAX W/CONT"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1029,10 +1013,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "2896312"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6999170.9165-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "CT THORAX W/CONT"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6999170.9165-1"
@@ -1061,7 +1041,9 @@ Usage: #example
 
 Instance: d1440e44-95b0-40d8-9533-1c92cc122f69
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6999190.8674-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1091,10 +1073,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "2878642"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6999190.8674-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6999190.8674-1"
@@ -1122,7 +1100,9 @@ Usage: #example
 
 Instance: f66cfaf6-b014-469b-9499-16ccae420d1e
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6999268.8371-1"
+Description: "CHEST 2 VIEWS PA&LAT"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1152,10 +1132,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "2853075"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6999268.8371-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "CHEST 2 VIEWS PA&LAT"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6999268.8371-1"
@@ -1183,7 +1159,9 @@ Usage: #example
 
 Instance: 7a0a7ed2-d090-4337-b662-fce031194b8e
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 6999281.8373-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1213,10 +1191,6 @@ Usage: #example
 * contained[=].encounter.identifier.value = "2836334"
 * contained[=].requester.reference = "#provider-0"
 * contained[=].performer.reference = "#organization-0"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 6999281.8373-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.6999281.8373-1"
@@ -1244,7 +1218,9 @@ Usage: #example
 
 Instance: 9695631c-3fd4-4435-ac03-dea9f065a42f
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7019591.848-1"
+Description: "RIBS BILAT+CHEST 4 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1260,10 +1236,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7019591.848-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "RIBS BILAT+CHEST 4 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7019591.848-1"
@@ -1290,7 +1262,9 @@ Usage: #example
 
 Instance: 246bb52c-09be-4db1-9324-c293e5c3d514
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7028984.8645-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1306,10 +1280,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7028984.8645-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7028984.8645-1"
@@ -1336,7 +1306,9 @@ Usage: #example
 
 Instance: 2a768135-d516-4329-8f14-fb7158d2a26f
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029077.8866-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1352,10 +1324,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029077.8866-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029077.8866-1"
@@ -1382,7 +1350,9 @@ Usage: #example
 
 Instance: e8bf99a7-39cc-40d6-9444-3b663e5f11b6
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029091.8957-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1398,10 +1368,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029091.8957-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029091.8957-1"
@@ -1428,7 +1394,9 @@ Usage: #example
 
 Instance: 0994d06f-7817-4c02-acf4-3564bb82636a
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029096.8499-1"
+Description: "CHEST 2 VIEWS PA&LAT"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1444,10 +1412,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029096.8499-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "CHEST 2 VIEWS PA&LAT"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029096.8499-1"
@@ -1474,7 +1438,9 @@ Usage: #example
 
 Instance: 4439b27f-d11a-4676-9483-9004c38d0e07
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029096.8499-2"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1490,10 +1456,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029096.8499-2"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029096.8499-2"
@@ -1520,7 +1482,9 @@ Usage: #example
 
 Instance: fdfb3f04-44f2-450d-9b75-01515c0c0625
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029188.8771-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1536,10 +1500,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029188.8771-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029188.8771-1"
@@ -1566,7 +1526,9 @@ Usage: #example
 
 Instance: da3474c3-ed7b-4fb5-882c-a01ebb450b91
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029283.914-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1582,10 +1544,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029283.914-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029283.914-1"
@@ -1612,7 +1570,9 @@ Usage: #example
 
 Instance: e51e6c01-6648-434a-9783-28a20e838f22
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029376.8548-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1628,10 +1588,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029376.8548-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029376.8548-1"
@@ -1658,7 +1614,9 @@ Usage: #example
 
 Instance: 9ae60270-ada2-4321-b5b3-3cf6c73c3ec1
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029487.8991-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1674,10 +1632,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029487.8991-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029487.8991-1"
@@ -1704,7 +1658,9 @@ Usage: #example
 
 Instance: 3d6f5b1b-7a21-4784-b1cf-d75e04ed5d98
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029492.8485-1"
+Description: "CHEST 2 VIEWS PA&LAT"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1720,10 +1676,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029492.8485-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "CHEST 2 VIEWS PA&LAT"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029492.8485-1"
@@ -1750,7 +1702,9 @@ Usage: #example
 
 Instance: e5e4d36a-f31e-4d87-80a7-63f56810a50f
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7029578.8663-1"
+Description: "FOOT 3 OR MORE VIEWS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1766,10 +1720,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.2267"
 * contained[=].active = true
 * contained[=].name = "RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7029578.8663-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "FOOT 3 OR MORE VIEWS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7029578.8663-1"
@@ -1796,7 +1746,9 @@ Usage: #example
 
 Instance: a66187be-5cf2-4911-9b62-cc1e7c811711
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7059298.8462-1"
+Description: "CHEST 2 VIEWS PA&LAT"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1812,10 +1764,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.704"
 * contained[=].active = true
 * contained[=].name = "INPATIENT RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7059298.8462-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "CHEST 2 VIEWS PA&LAT"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7059298.8462-1"
@@ -1841,7 +1789,9 @@ Usage: #example
 
 Instance: 05500f5e-0ca0-49c1-99e6-4c8e6de85285
 InstanceOf: VA.MHV.PHR.imaging
-Usage: #example
+Title: "Imaging Report: 7078984.8943-1"
+Description: "UROGRAM IV W NEPHROTOMOGRAMS"
+Usage: #example 
 * contained[0].resourceType = "Practitioner"
 * contained[=].id = "provider-0"
 * contained[=].identifier.use = #usual
@@ -1857,10 +1807,6 @@ Usage: #example
 * contained[=].identifier.value = "OrganizationTO.704"
 * contained[=].active = true
 * contained[=].name = "INPATIENT RADIOLOGY"
-* extension[0].url = "http://hl7.org/fhir/StructureDefinition/artifact-title"
-* extension[=].valueString = "Imaging Report: 7078984.8943-1"
-* extension[+].url = "http://hl7.org/fhir/StructureDefinition/artifact-description"
-* extension[=].valueMarkdown = "UROGRAM IV W NEPHROTOMOGRAMS"
 * identifier[TOid].use = #usual
 * identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
 * identifier[TOid].value = "ImagingExamTO.7078984.8943-1"
