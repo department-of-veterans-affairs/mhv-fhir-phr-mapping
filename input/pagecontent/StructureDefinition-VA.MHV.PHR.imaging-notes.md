@@ -43,5 +43,3 @@ Look thru legacy code to see what is preserved.
 - does it preserver hasImages?
 - is there a link between reports and images?
 - is HDR the only source? Or do we also get some from CVIX?
-  
-  look at cerner to see if they ever use Observations.

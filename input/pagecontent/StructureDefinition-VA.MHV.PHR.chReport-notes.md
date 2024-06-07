@@ -29,7 +29,7 @@
 - DiagnosticReport.status is set to `final` if all Observations are final; and `preliminary` if any Observations are not final.
 - DiagnosticReport.status could be set to `entered-in-error` if `ORDER CANCELLED` or deleted
 - ServiceRequest.status is always `unknown` as we are creating a contained resource for this
-- added an alternative identifier handling, as we have seen in the realworld different recordIdentifier formats that use as the identity a degenerate identifier that CDW calls a shortAccessionNumber. These numbers are reused, so would not be unique within that station. Thus we must add the specimen dateTime. added [an example variant of ex-MHV-chReport-1 beta](DiagnosticReport-ex-MHV-chReport-1-secondary.html)
+- added an alternative identifier handling, as we have seen in the realworld different recordIdentifier formats that use as the identity a degenerate identifier that CDW calls a shortAccessionNumber. These numbers are reused, so would not be unique within that station. Thus we must add the specimen dateTime. added [an example variant of ex-MHV-chReport-1 secondary](DiagnosticReport-ex-MHV-chReport-1-secondary.html)
 
 #### Mapping Concerns
 
