@@ -4,7 +4,7 @@
   - This was transformed using the included XSLT below
   - from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/radiology.xml) MHV receives.
 - [mapping to VIA](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-via-to-mhv-fhir-phr-imagingexamto)
-- based on US-Core for Report and Note Exchange
+- based on [US-Core for Report and Note Exchange]({{site.data.fhir.hl7fhiruscore}}StructureDefinition-us-core-diagnosticreport-note.html)
 - should have `meta.profile` set to `https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging` to indicate the intent to be compliant with this profile
 - category[us-core] = LOINC#LP29684-5 "Radiology"
 - Order and Encounter are not converted into FHIR resources, but just the identifiers (TODO this should be contained resources)
@@ -35,3 +35,13 @@
 - status
   - radiologyReportTO.status -- always "Verified" in our mock data. not clear what else it might be. Might this be the signature status on the report?
   - imagingExamTO.status -- always "COMPLETE" in our mock data. not clear what else it might be
+- effectiveDateTime should be the time of the event, not the report. issued should be used, but that is an Instant datatype which I might not be able to fill.
+
+### TODO
+
+Look thru legacy code to see what is preserved.
+- does it preserver hasImages?
+- is there a link between reports and images?
+- is HDR the only source? Or do we also get some from CVIX?
+  
+  look at cerner to see if they ever use Observations.

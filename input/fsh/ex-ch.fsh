@@ -343,7 +343,71 @@ Example from a mock labTestPromises (1110200002)
 * category[ChSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#CH
 * code.text = "CH"
 * subject = Reference(Patient/ex-MHV-patient-942104)
-* effectiveDateTime = 2021-01-21T11:32:47-05:00
+* issued = 2021-01-21T11:32:47-05:00
+* extension[note][+].valueString = "Lisa's Test 1/20/2021 - Second lab"
+* extension[note][+].valueString = "Added Potassium test"
+
+* contained[+] = ex-MHV-organization-552
+* contained[+] = ex-MHV-practitioner-14934-VA552
+* contained[+] = ex-MHV-organization-989
+* performer[+] = Reference(Organization/ex-MHV-organization-989)
+
+* contained[+] = ex-MHV-chOrder-1a
+* basedOn[+] = Reference(ex-MHV-chOrder-1a)
+* contained[+] = ex-MHV-chTest-1a
+* result[+] = Reference(ex-MHV-chTest-1a)
+* category[2].coding.code = #2823-3
+* category[=].text = "POTASSIUM:SCNC:PT:SER/PLAS:QN:"
+* category[=].coding.system = LOINC
+* category[=].coding.version = "2.68"
+
+* contained[+] = ex-MHV-chOrder-1b
+* basedOn[+] = Reference(ex-MHV-chOrder-1b)
+* contained[+] = ex-MHV-chTest-1b
+* result[+] = Reference(ex-MHV-chTest-1b)
+* category[+].coding.code = #2951-2
+* category[=].text = "SODIUM:SCNC:PT:SER/PLAS:QN:"
+* category[=].coding.system = LOINC
+* category[=].coding.version = "2.68"
+
+* contained[+] = ex-MHV-chSpecimen-1
+* specimen[+] = Reference(ex-MHV-chSpecimen-1)
+* effectiveDateTime = 2021-01-20T16:38:59-05:00
+
+
+Instance: ex-MHV-chReport-1-secondary
+InstanceOf: VA.MHV.PHR.chReport 
+Title: "ChemHem 1 secondary identifier"
+Usage: #example
+Description: """
+Example from a mock labTestPromises (1110200002)
+
+This example is exactly as chReport-1, except that it shows a simulation of a `recordIdentifier` that is of a differrent format as seen in the real-world. The alternative format is sometimes referred to as shortAccessionNumber. Unfortunately the shortAccessionNumber is not globally unique, and duplicates are found within a given vista instance. Thus we must add to the value given the specimen dateTime to have a site unique value. Using the specimen dateTime as that will not change with revisions of the report.
+
+This recordIdentifier is detected as it will not have a `universalId` or `universalIdType` that is found in the other examples. Note also that the identity has spaces. Note that in Vista there is a different identifier, but we don't get that identifier, so it is not helpful (but we could ask HDR to change?
+
+``` xml
+
+         <recordIdentifier>
+            <identity>LR 0703 10</identity>
+            <namespaceId>LR</namespaceId>
+         </recordIdentifier>
+```
+
+Thus 
+1. The system value we use the classic TOid, which uses the VA oid and adds the station.
+2. The value value we use the <identity> plus, replace the spaces with dash, and add the specimen dateTime
+3. Although this is similarly formatted as TOid, it will be indicated as a `secondary` use.
+"""
+//* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* identifier[TOid].value = "LR-0703-10/2021-01-20T16:38:59-05:00" 
+* identifier[TOid].system = "urn:oid:2.16.840.1.113883.4.349.4.989"
+* identifier[TOid].use = #secondary
+* status = #final
+* category[LaboratorySlice] = http://terminology.hl7.org/CodeSystem/v2-0074#LAB
+* category[ChSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#CH
+* code.text = "CH"
+* subject = Reference(Patient/ex-MHV-patient-942104)
 * issued = 2021-01-21T11:32:47-05:00
 * extension[note][+].valueString = "Lisa's Test 1/20/2021 - Second lab"
 * extension[note][+].valueString = "Added Potassium test"

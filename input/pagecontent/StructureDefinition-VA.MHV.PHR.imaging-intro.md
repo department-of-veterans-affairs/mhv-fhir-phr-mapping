@@ -1,7 +1,7 @@
 Radiology Diagnostic Report
 
 - This profile is based on:
-  - [US-Core DiagnosticReport profile for Laboratory Results Reporting]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-diagnosticreport-note.html)
+  - [US-Core DiagnosticReport profile for Report and Note Exchange]({{site.data.fhir.hl7fhiruscore}}/StructureDefinition-us-core-diagnosticreport-note.html)
 - `subject` is a reference to this patient
 - `category` = LOINC#LP29684-5
 - `code.coding` may hold CPT code from ImagingExamTO.type

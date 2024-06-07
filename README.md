@@ -19,6 +19,7 @@ The notes below for each release. Archive of [released packages](https://github.
   - Add list of most common labs for Chem-Hem, Microbiology, and Pathology. Data we need to see
   - Microbiology clarify the DiagnosticReport.performer. Especially in the examples which were using .display
   - Add clarification on searching MUST include category of Lab to get only Lab (and not Radiology Reports)
+  - Add to ChemHem an alternative identifier type, given that realworld experience shows shortAccessionNumber formatted identifiers.
 - adjust example titles to be consistent.
 
 ### 0.3.6

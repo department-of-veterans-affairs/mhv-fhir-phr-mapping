@@ -74,10 +74,15 @@ Profile on DiagnosticReport for Chem-Hem lab report.
 * identifier ^slicing.discriminator.path = "use"
 * identifier ^slicing.rules = #open
 * identifier contains
-  Rid 1..1
+  Rid 0..1 and 
+  TOid 0..1
 * identifier[Rid].use = #usual
 * identifier[Rid].system ^short = "DNS universalIdType: `urn:fdc:` + {universalID} + `:` + {namespaceId}"
 * identifier[Rid].value ^short = "{labTestPromises.recordIdentifier.identity}"
+* identifier[TOid].use = #secondary
+* identifier[TOid].system obeys TOid-startswithoid
+* identifier[TOid].system ^short = "urn:oid:2.16.840.1.113883.4.349.4.{stationNbr}"
+* identifier[TOid].value ^short = "`recordIdentifier.identifier` | `/` | {specimentTakenDate.literal}"
 * status MS
 * subject 1..1
 * code.text 1..1 MS

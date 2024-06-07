@@ -78,8 +78,9 @@ This section is dedicated to instructions on how MHV will transition the data we
 [Imaging Reports](StructureDefinition-VA.MHV.PHR.imaging.html#notes) Mapping Notes
 
 - [Mapping from VIA - ImagingExamTO](StructureDefinition-VA.MHV.PHR.imaging-mappings.html#mappings-for-via-to-mhv-fhir-phr-imagingexamto)
-- [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
-- [Example Bundle with all image reports](Bundle-images.html), and thus not individually exposed.
+  - [Examples](StructureDefinition-VA.MHV.PHR.imaging-examples.html)
+  - [Example Bundle with all image reports](Bundle-images.html), and thus not individually exposed.
+- Contained [ServiceRequest](StructureDefinition-VA.MHV.PHR.irOrder.html)
 
 #### Immunization
 
