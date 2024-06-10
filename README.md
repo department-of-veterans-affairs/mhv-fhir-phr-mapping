@@ -8,19 +8,22 @@ The [latest formal publication](https://department-of-veterans-affairs.github.io
 
 The notes below for each release. Archive of [released packages](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/tree/main/packages)
 
-### CI-Build
+### 0.3.7
 
 - notes
   - added two new C & P notes
   - added caution note that the examples are notional and may not have timezones, and may have different Patient, Practitioner, and Location resources as all examples are hand converted and I don't always convert the elements that are not critical to the prime resource use.
 - Move Radiology Report (aka imaging report) to DiagnosticReport to better align with OH
   - Independent use of DiagnosticReport
+  - add ServiceRequest to DiagnosticReport for order
+  - add table of VIA elements to legacy MHV, and FHIR
 - Labs
   - Add list of most common labs for Chem-Hem, Microbiology, and Pathology. Data we need to see
   - Microbiology clarify the DiagnosticReport.performer. Especially in the examples which were using .display
   - Add clarification on searching MUST include category of Lab to get only Lab (and not Radiology Reports)
   - Add to ChemHem an alternative identifier type, given that realworld experience shows shortAccessionNumber formatted identifiers.
 - adjust example titles to be consistent.
+- removed the Bundle example as it doesn't add sufficient clarity at this point.
 
 ### 0.3.6
 

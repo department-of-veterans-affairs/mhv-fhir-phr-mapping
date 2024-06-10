@@ -9,13 +9,12 @@ The mock vitals bundle is nice, but it does not allow the user of the IG to see 
 
 These examples come from 
 1. mocks/1013699421V762086_Vitals.xml. This set of examples have qualifiers and pulse-ox
-2. transformed with mocks/vitalsxslt.xslt (with extensions populating an artifact-title and artifact-description extension)
+2. transformed with mocks/vitalsxslt.xslt (with extensions populating an resource-instance-name and resource-instance-description extension)
 3. that bundle built into the IG so that the IG build creates the json equivilant
 3. Put the json equvilant bundle into "FSH Online" to convert to FSH - https://fshschool.org/FSHOnline/#/
 5. put the result into this FSH file
 6. Remove the bundle
 7. change inline to example
-8. convert extension for description and title 
 9. move meta.profile into InstanceOf:
 10. use slices on identifier - TOid
 11. replace the FSH Online contained with #inline Location resources, with references

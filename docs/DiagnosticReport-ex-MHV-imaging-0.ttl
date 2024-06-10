@@ -1,0 +1,153 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/ex-MHV-imaging-0> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-imaging-0"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes:{http://www.ama-assn.org/go/cpt 72100}\">GENERAL RADIOLOGY</span> (<span title=\"Codes:{http://loinc.org LP29684-5}\">Radiology</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>2004-09-24 11:25:00+0000</td></tr><tr><td>Reported</td><td>2004-09-24 11:25:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6959075.8874-1 (use: usual) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/Accession.092404-1582 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.1582 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:ServiceRequest ;
+     fhir:id [ fhir:v "ex-MHV-irOrder-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:value [ fhir:v "12248947" ]
+     ] ) ;
+     fhir:status [ fhir:v "unknown" ] ;
+     fhir:intent [ fhir:v "order" ] ;
+     fhir:category ( [
+       fhir:coding ( [
+         a sct:363679005 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "363679005" ] ;
+         fhir:display [ fhir:v "Imaging" ]
+       ] )
+     ] ) ;
+     fhir:code [
+       fhir:text [ fhir:v "SPINE LUMBOSACRAL MIN 2 VIEWS" ]
+     ] ;
+     fhir:subject [
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+       fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+     ] ;
+     fhir:requester [
+       fhir:reference [ fhir:v "#ex-MHV-practitioner-image0" ]
+     ] ;
+     fhir:performer ( [
+       fhir:reference [ fhir:v "#ex-MHV-organization-image0" ]
+     ] )
+  ] [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "ex-MHV-practitioner-image0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "unknown" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "GARFUNKEL,FELIX" ] ;
+       fhir:family [ fhir:v "GARFUNKEL" ]
+     ] )
+  ] [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "ex-MHV-organization-image0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:type [
+         fhir:text [ fhir:v "FI" ]
+       ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "2267" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:name [ fhir:v "RADIOLOGY" ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ImagingExamTO.6959075.8874-1" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Accession.092404-1582" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "CaseNum.1582" ]
+  ] ) ; # 
+  fhir:basedOn ( [
+     fhir:reference [ fhir:v "#ex-MHV-irOrder-0" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a loinc:LP29684-5 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "LP29684-5" ] ;
+       fhir:display [ fhir:v "Radiology" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "72100" ] ;
+       fhir:display [ fhir:v "RADIOLOGIC EXAMINATION, SPINE, LUMBOSACRAL; 2 OR 3 VIEWS" ]
+     ] ) ;
+     fhir:text [ fhir:v "GENERAL RADIOLOGY" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:identifier [
+       fhir:value [ fhir:v "5886199" ]
+     ]
+  ] ; # 
+  fhir:effective [ fhir:v "2004-09-24T11:25:00Z"^^xsd:dateTime] ; # 
+  fhir:issued [ fhir:v "2004-09-24T11:25:00Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:reference [ fhir:v "#ex-MHV-organization-image0" ]
+  ] ) ; # 
+  fhir:resultsInterpreter ( [
+     fhir:reference [ fhir:v "#ex-MHV-practitioner-image0" ]
+  ] ) ; # 
+  fhir:presentedForm ( [
+     fhir:contentType [ fhir:v "text/plain" ] ;
+     fhir:data [ fhir:v "U1BJTkUgTFVNQk9TQUNSQUwgTUlOIDIgVklFV1MKICAgCkV4bSBEYXRlOiBTRVAgMjQsIDIwMDRAMTE6MjUKUmVxIFBoeXM6IEZFTEtMRVksS0VOTkVUSCBFICAgICAgICAgICAgICBQYXQgTG9jOiBQQ1RfTyBQQVRJTCAoRi9VKSAoUmVxJ2cgTG9jKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEltZyBMb2M6IFJBRElPTE9HWQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNlcnZpY2U6IFVua25vd24KCiAKCihDYXNlIDE1ODIgQ09NUExFVEUpIFNQSU5FIExVTUJPU0FDUkFMIE1JTiAyIFZJRVdTICAgIChSQUQgIERldGFpbGVkKSBDUFQ6NzIxMDAKICAgICBQcm9jIE1vZGlmaWVycyA6IEJJTEFURVJBTCBFWEFNCgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgaGF2aW5nIDMgd2Vla3Mgb2YgYmFjayBwYWlucyBuZWVkIHRvIHJlLWV2YWwgZm9yIGFyaHJpdGlzIG9yIGFueSAKICAgICAgd29yc25laW5nIGRpc2Mgc3BhY2VzIGV0Yy4gCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogU0VQIDI3LCAyMDA0CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBTRVAgMjgsIDIwMDQKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9UaG9uZyBELiBOZ3V5ZW4sIE0uRC4KCiAgICBSZXBvcnQ6CiAgICAgIFRocmVlIHZpZXdzIG9mIHRoZSBsdW1ib3NhY3JhbCBzcGluZSBhcmUgY29tcGFyZWQgd2l0aCBhIHByZXZpb3VzIAogICAgICBleGFtaW5hdGlvbiBvZiA5LzIzLzAyLiAgCiAgICAgICAKICAgICAgVGhlcmUgaGFzIGJlZW4gYSBwYXJ0aWFsIGNvbGxhcHNlIG9mIEwyIHdoaWNoIGlzIHNpbWlsYXIgaW4KICAgICAgYXBwZWFyYW5jZSBhbmQgZGVncmVlIHRvIHRoZSBwcmV2aW91cyBleGFtaW5hdGlvbiBvZiBTZXB0ZW1iZXIKICAgICAgMjAwMi4gIFRoZXJlIGlzIGFsc28gY29sbGFwc2Ugb2YgdGhlIGJvZHkgb2YgVDEyIHdoaWNoIGFwcGFyZW50bHkKICAgICAgaXMgbmV3IHNpbmNlIHRoZSBwcmV2aW91cyBleGFtIGFuZCB0aGUgY29sbGFwc2UgaGFzIGJlZW4KICAgICAgZXN0aW1hdGVkIGFib3ZlIDc1IHRvIDgwJSBvZiB0aGUgaGVpZ2h0IG9mIHRoZSB2ZXJ0ZWJyYWwgYm9keS4gIAogICAgICAgCiAgICAgIFRoZXJlIGlzIG1pbGQgbWFyZ2luYWwgc3B1cnJpbmcgb2YgdGhlIHVwcGVyIGFudGVyaW9yIGFzcGVjdCBvZgogICAgICBMNC4gIFRoZXJlIGFyZSBhcnRlcmlvc2NsZXJvdGljIGNhbGNpZmljYXRpb25zIGluIHRoZSBhYmRvbWluYWwKICAgICAgYW9ydGEgYW5kIGJyYW5jaGVzLiAgCiAgICAgICAKICAgICAgVGhlIGludGVydmVydGVicmFsIGRpc2Mgc3BhY2VzIGFyZSBwcmVzZXJ2ZWQuICAKCiAgICBJbXByZXNzaW9uOgogICAgICAxLiAgT2xkIGNvbXByZXNzaW9uIGZyYWN0dXJlIG9mIEwyIHdpdGggYW50ZXJpb3IgbWFyZ2luYWwKICAgICAgc3B1cnJpbmcgYW5kIGFwcGFyZW50IGFua3lsb3NpcyBMMS1MMi4gIAogICAgICAgCiAgICAgIDIuICBDb2xsYXBzZSBvciBjb21wcmVzc2lvbiBmcmFjdHVyZSBvZiB0aGUgYm9keSBvZiBUMTIgd2hpY2ggaXMKICAgICAgbmV3IHNpbmNlIHRoZSBwcmV2aW91cyBleGFtaW5hdGlvbiBpbiAyMDAyIGFuZCBpbnZvbHZlcyBsb3NzIG9mCiAgICAgIGhlaWdodCBvZiB0aGF0IHZlcnRlYnJhbCBib2R5IGJ5IGFib3V0IDcwJS4gIEFydGVyaW9zY2xlcm90aWMKICAgICAgY2FsY2lmaWNhdGlvbnMgb2YgdGhlIGFvcnRhLiAgCgogICAgUHJpbWFyeSBEaWFnbm9zdGljIENvZGU6IAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgRkVMSVggR0FSRlVOS0VMLCBTdGFmZiBQaHlzaWNpYW4KVkVSSUZJRUQgQlk6CiAgVEhPTkcgTkdVWUVOLCBSYWRpb2xvZ2lzdC9DaGllZgoKL0dFRw=="^^xsd:base64Binary ] ;
+     fhir:title [ fhir:v "SPINE LUMBOSACRAL MIN 2 VIEWS" ] ;
+     fhir:creation [ fhir:v "2004-09-24T11:25:00Z"^^xsd:dateTime ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

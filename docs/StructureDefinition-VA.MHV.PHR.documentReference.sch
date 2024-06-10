@@ -14,7 +14,9 @@
     <sch:rule context="f:DocumentReference">
       <sch:assert test="count(f:masterIdentifier) &lt;= 0">masterIdentifier: maximum cardinality of 'masterIdentifier' is 0</sch:assert>
       <sch:assert test="count(f:docStatus) &lt;= 0">docStatus: maximum cardinality of 'docStatus' is 0</sch:assert>
+      <sch:assert test="count(f:custodian) &lt;= 0">custodian: maximum cardinality of 'custodian' is 0</sch:assert>
       <sch:assert test="count(f:relatesTo) &lt;= 0">relatesTo: maximum cardinality of 'relatesTo' is 0</sch:assert>
+      <sch:assert test="count(f:description) &lt;= 0">description: maximum cardinality of 'description' is 0</sch:assert>
       <sch:assert test="count(f:securityLabel) &lt;= 0">securityLabel: maximum cardinality of 'securityLabel' is 0</sch:assert>
       <sch:assert test="count(f:content) &lt;= 1">content: maximum cardinality of 'content' is 1</sch:assert>
     </sch:rule>

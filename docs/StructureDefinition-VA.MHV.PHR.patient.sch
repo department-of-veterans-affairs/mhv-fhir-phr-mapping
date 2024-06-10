@@ -42,7 +42,6 @@
     <sch:rule context="f:Patient/f:name">
       <sch:assert test="count(f:family) &gt;= 1">family: minimum cardinality of 'family' is 1</sch:assert>
       <sch:assert test="count(f:given) &gt;= 1">given: minimum cardinality of 'given' is 1</sch:assert>
-      <sch:assert test="count(f:given) &lt;= 1">given: maximum cardinality of 'given' is 1</sch:assert>
     </sch:rule>
   </sch:pattern>
 </sch:schema>

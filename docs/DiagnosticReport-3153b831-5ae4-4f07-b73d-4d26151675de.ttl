@@ -1,0 +1,159 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/3153b831-5ae4-4f07-b73d-4d26151675de> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "3153b831-5ae4-4f07-b73d-4d26151675de"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes:{http://www.ama-assn.org/go/cpt 71260}\">CT SCAN</span> (<span title=\"Codes:{http://loinc.org LP29684-5}\">Radiology</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>2000-08-29 08:34:00+0000</td></tr><tr><td>Reported</td><td>2000-08-29 08:34:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6999170.9165-1 (use: usual) Accession ID/Accession.082900-372 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.372 (use: secondary)</td></tr></table><p><b>Report Details</b></p><p>ABNORMAL</p></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "provider-0" ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "unknown" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "BAUMANN,BERTA H" ] ;
+       fhir:family [ fhir:v "BAUMANN,BERTA H" ]
+     ] )
+  ] [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "organization-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "OrganizationTO.718" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:name [ fhir:v "CT RADIOLOGY" ]
+  ] [
+     a fhir:ServiceRequest ;
+     fhir:id [ fhir:v "order-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "OrderTO.6659371" ]
+     ] ) ;
+     fhir:status [ fhir:v "unknown" ] ;
+     fhir:intent [ fhir:v "order" ] ;
+     fhir:category ( [
+       fhir:coding ( [
+         a sct:363679005 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "363679005" ] ;
+         fhir:display [ fhir:v "Imaging" ]
+       ] )
+     ] ) ;
+     fhir:code [
+       fhir:text [ fhir:v "CT THORAX W/CONT" ]
+     ] ;
+     fhir:subject [
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+       fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+     ] ;
+     fhir:encounter [
+       fhir:identifier [
+         fhir:value [ fhir:v "2896312" ]
+       ]
+     ] ;
+     fhir:requester [
+       fhir:reference [ fhir:v "#provider-0" ]
+     ] ;
+     fhir:performer ( [
+       fhir:reference [ fhir:v "#organization-0" ]
+     ] )
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ImagingExamTO.6999170.9165-1" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ACSN" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Accession.082900-372" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "CaseNum.372" ]
+  ] ) ; # 
+  fhir:basedOn ( [
+     fhir:reference [ fhir:v "#order-0" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a loinc:LP29684-5 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "LP29684-5" ] ;
+       fhir:display [ fhir:v "Radiology" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "71260" ] ;
+       fhir:display [ fhir:v "COMPUTED TOMOGRAPHY, THORAX, DIAGNOSTIC; WITH CONTRAST MATERIAL(S)" ]
+     ] ) ;
+     fhir:text [ fhir:v "CT SCAN" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:identifier [
+       fhir:value [ fhir:v "2896312" ]
+     ]
+  ] ; # 
+  fhir:effective [ fhir:v "2000-08-29T08:34:00Z"^^xsd:dateTime] ; # 
+  fhir:issued [ fhir:v "2000-08-29T08:34:00Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:reference [ fhir:v "#organization-0" ]
+  ] ) ; # 
+  fhir:resultsInterpreter ( [
+     fhir:reference [ fhir:v "#provider-0" ]
+  ] ) ; # 
+  fhir:conclusion [ fhir:v "ABNORMAL"] ; # 
+  fhir:presentedForm ( [
+     fhir:contentType [ fhir:v "text/plain" ] ;
+     fhir:data [ fhir:v "Q1QgVEhPUkFYIFcvQ09OVAogICAKRXhtIERhdGU6IEFVRyAyOSwgMjAwMEAwODozNApSZXEgUGh5czogTE9ESEksQUJEVUwgICAgICAgICAgICAgICAgICAgIFBhdCBMb2M6IFpaWkhFTUFUT0xPR1kgSUkgKFJlcSdnIExvYykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBDVCBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAzNzIgQ09NUExFVEUpICBDVCBUSE9SQVggVy9DT05UICAgICAgICAgICAgICAgICAoQ1QgICBEZXRhaWxlZCkgQ1BUOjcxMjYwCgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgSC9PIE9GIE1BU1MgT04gVEhFIENYUiBXSElDSCBXQVMgRE9ORSBBUyBBIFBSRS1PUCBTVFVEWSBGT1IgRk9PVAogICAgICBTVVJHRVJZLiAgCiAgICAgICBIL08gVEIgLTYwIFlSUyBCQUNLLiAgCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogQVVHIDI5LCAyMDAwCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBBVUcgMzAsIDIwMDAKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9CLkguQmF1bWFubixNRC4KCiAgICBSZXBvcnQ6CiAgICAgIENUIE9GIFRIRSBDSEVTVDogCiAgICAgICAKICAgICAgSW5mb3JtZWQgY29uc2VudCB3aGljaCBhY2NvbXBhbmllZCB0aGUgcGF0aWVudCB0byB0aGUgQ1Qgc2NhbgogICAgICBzdWl0ZSBpcyBhcmNoaXZlZCBpbiBSYWRpb2xvZ3kgc2VydmljZSBhbmQgYXZhaWxhYmxlIGZvciByZXZpZXcKICAgICAgYXMgZGVzaXJlZC4gIAogICAgICAgCiAgICAgIEFsdGhvdWdoIHRoZXJlIGFyZSBubyBwcmlvciBDVCBzY2FucywgcGxhaW4gZmlsbXMgb2YgdGhlIHRob3JheAogICAgICBkaWQgaW4gMTk5NCwgMTk5NywgYW5kIDE5OTggYW5kIG1vc3QgcmVjZW50bHkgNy8zMS8wMCBhcmUKICAgICAgcmV2aWV3ZWQuICBBbGwgcHJpb3IgZmlsbXMgZGVtb25zdHJhdGUgYmloaWxhciBldmFsYXRpb24gYW5kCiAgICAgIHBhdGNoeSBjZW50cmFsIGFwaWNhbCBpbmZpbHRyYXRlcyB3aXRoIHByZWRvbWluYXRlbHkgbm9kdWxhcgogICAgICBwYXR0ZXJuIGFzIHdlbGwgYXMgdmFyaWFibGUgZXh0ZW5zaW9ucyBvZiB0aGUgY2x1c3RlcmVkIHNvZnQKICAgICAgdGlzc3VlcyB0b3dhcmQgdGhlIHRoaWNrZW5lZCBhcGljYWwgcGxldXJhLiAKICAgICAgIAogICAgICBTbWFsbCBub2R1bGFyIGRlbnNpdGllIGFyZSBzdWdnZXN0ZWQgZWxzZXdoZXJlIHRocm91Z2hvdXQgdGhlCiAgICAgIGx1bmdzIGFsdGhvdWdoIGxlc3MgcHJvbWluZW50IHRoYW4gaW4gdGhlIGFwaWNlcy4gIEludGVyc3RpdGl1bQogICAgICBpcyBkaWZmdXNlbHkgdGhpY2tlbmVkLiAKICAgICAgIAogICAgICBDVCBzY2FuIGRlbW9uc3RyYXRlcyBmaW5kaW5ncyBjb25zaXN0ZW50IHdpdGggdGhlIHBsYWluIGZpbG0gCiAgICAgIGFibm9ybWFsaXRpZXMuICBUaGVyZSBhcmUgaXJyZWd1bGFybHkgc2hhcGVkIGNlbnRyYWwgdXBwZXIKICAgICAgdGhvcmFjaWMvYXBpY2FsIHNvZnQgdGlzc3VlIGRlbnNpdGllcyBzZWVuIGNlbnRyYWxseSBleHRlbmRpbmcKICAgICAgdmFyaWFibHkgdG8gdGhlIHBlcmlwaGVyYWwgcGxldXJhLiAgVGhlIGNlcGhhbGFkIGhpbGFyIG1hcmdpbnMKICAgICAgYXJlIGVsZXZhdGVkIHRvd2FyZCB0aGUgYXBpY2VzIGFuZCB0aGVyZSBhcmUgc29mdCB0aXN1ZSBkZW5zaXRpZXMKICAgICAgd2l0aGluIHRoZSBtZWRpYXN0aW51bSBhbmQgdGhlIGhpbGEgYmlsYXRlcmFsbHkgY29uc2lzdGVudCBieQogICAgICBzaXplIGFuZCBjb25maWd1cmF0aW9uIHdpdGggbHltcGggbm9kZXMtLXNvbWUgd2l0aCBhc3NvY2lhdGVkCiAgICAgIGNhbGNpZmljYXRpb25zLiAgVGhlIGxhcmdlc3QgbWVkaWFzdGluYWwvaGlsYXIgc3VzcGVjdCBub2R1bGFyCiAgICAgIG1hc3MgaXMgaW4gdGhlIHJpZ2h0IGhpbHVtIGFuZCBtZWFzdXJlcyAxLjUgYnkgMmNtLiBhbG9uZyB0aGUgCiAgICAgIHZlbnRyYWwgbGF0ZXJhbCBtYXJnaW4gb2YgdGhlIHJpZ2h0IG1haW4gc3RlbSBicm9uY2h1cy4gIAogICAgICAgCiAgICAgIFNtYWxsIG5vZHVsYXIgZGVuc2l0aWVzIGFyZSBzZWVuIHdpdGhpbiB0aGUgbHVuZyBhcGljZXMgYXMgd2VsbAogICAgICBhcyBleHRlbmRpbmcgdG8gdGhlIGxvd2VyIGx1bmdzLiAgT2NjYXNpb25pYWwgZGVuc2UgY2FsY2lmaWNhdGlvbgogICAgICBpcyBwcmVzZW50IHdpdGhpbiB0aGUgbm9kdWxlcyBhbHRob3VnaCBtb3N0IGFyZSBub25jYWxjaWZpZWQuIAogICAgICAgCiAgICAgIE5vIGRvbWluYW50IG5vZHVsZXMgYXJlIGlkZW50aWZpZWQgbW9zdCBtZWF1c3VybmlnIDVtbS4gb3IgbGVzcy4gCiAgICAgICAKICAgICAgSW1hZ2luZyBpbnRvIHRoZSB1cHBlciBhYmRvbWVuIGRlbW9uc3RyYXRlcyBubyBmb2NhbCBsZXNpb25zIG9mCiAgICAgIGVpdGhlciBsaXZlciBvciBzcGxlZW4gaW4gdGhlaXIgY2VwaGFsYWQgZXh0ZW50LiAgVGhlIGNlbnRyYWwKICAgICAgcmVuYWwgY3lzdHMgYXJlIG5vdGVkIHNwbGF5aW5nIHRoZSB1cHBlciBjb2xsZWN0aW5nIHN5c3RlbXMgb2YKICAgICAgdGhlIGtpZG5leXMgc3ltbWV0cmljYWxseS4gIFJlbmFsIGZ1bmN0aW9uIGFwcGVhcnMKICAgICAgc3ltbWV0cmljL2dvb2QuICAKCiAgICBJbXByZXNzaW9uOgogICAgICBDVCBzY2FuIGZpbmRpbmdzIGNvcnJlbGF0ZSB3ZWxsIHdpdGggdGhlIGFuYXRvbWljIGFibm9ybWFsaXRpZXMKICAgICAgb2YgcHJpb3IgY2hlc3QgcmFkaW9ncmFwaHMuICBGaXJzdCByYWRpb2dyYXBoaWMgZGlmZmVyZW50aWFsCiAgICAgIGRpYWdub3NpcyBpcyBncmFudWxvbWF0b3VzIGRpc2Vhc2UgYWx0aG91Z2ggYWN0aXZlIGRpc2Vhc2UgY2FuCiAgICAgIG5vdCBiZSBhYnNvbHV0ZWx5IGV4Y2x1ZGVkLiAgCiAgICAgICAKICAgICAgQ2FuIG5vdCBleGNsdWRlIHRoZSBwb3NzaWJpbGl0eSBvZiBpbnRlcnZhbCBkZXZlbG9wbWVudCBvZiBhCiAgICAgIHNtYWxsIG5vbmNhbGNpZmllZCBub2R1bGFyIGRlbnNpdHkgY29uY29taXRhbnRseTsgaWYgdGhlcmUgaXMKICAgICAgc3Ryb25nIGNsaW5pY2FsIGNvbmNlcm4tIGFkZGl0aW9uYWwgY2hhcmFjdGVyaXphdGlvbiBtYXkgYmUKICAgICAgd2FycmFudGVkLiAKCiAgICBQcmltYXJ5IERpYWdub3N0aWMgQ29kZTogQUJOT1JNQUxJVFksIEFUVE4uIE5FRURFRAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgQkVSVEEgSCBCQVVNQU5OLCBSYWRpb2xvZ2lzdCAoVmVyaWZpZXIpCi9KR0I="^^xsd:base64Binary ] ;
+     fhir:title [ fhir:v "CT THORAX W/CONT" ] ;
+     fhir:creation [ fhir:v "2000-08-29T08:34:00Z"^^xsd:dateTime ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

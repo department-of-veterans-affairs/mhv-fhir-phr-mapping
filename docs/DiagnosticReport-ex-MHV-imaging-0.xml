@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="ex-MHV-imaging-0"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes:{http://www.ama-assn.org/go/cpt 72100}">GENERAL RADIOLOGY</span> (<span title="Codes:{http://loinc.org LP29684-5}">Radiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>2004-09-24 11:25:00+0000</td></tr><tr><td>Reported</td><td>2004-09-24 11:25:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6959075.8874-1 (use: usual) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/Accession.092404-1582 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.1582 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>
+  </text>
+  <contained>
+    <ServiceRequest>
+      <id value="ex-MHV-irOrder-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"/>
+      </meta>
+      <identifier>
+        <value value="12248947"/>
+      </identifier>
+      <status value="unknown"/>
+      <intent value="order"/>
+      <category>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="363679005"/>
+          <display value="Imaging"/>
+        </coding>
+      </category>
+      <code>
+        <text value="SPINE LUMBOSACRAL MIN 2 VIEWS"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-0"/>
+      </subject>
+      <requester>
+        <reference value="#ex-MHV-practitioner-image0"/>
+      </requester>
+      <performer>
+        <reference value="#ex-MHV-organization-image0"/>
+      </performer>
+    </ServiceRequest>
+  </contained>
+  <contained>
+    <Practitioner>
+      <id value="ex-MHV-practitioner-image0"/>
+      <meta>
+        <profile value="http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"/>
+      </meta>
+      <identifier>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="unknown"/>
+      </identifier>
+      <name>
+        <text value="GARFUNKEL,FELIX"/>
+        <family value="GARFUNKEL"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="ex-MHV-organization-image0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <type>
+          <text value="FI"/>
+        </type>
+        <system value="urn:oid:2.16.840.1.113883.4.349"/>
+        <value value="2267"/>
+      </identifier>
+      <active value="true"/>
+      <name value="RADIOLOGY"/>
+    </Organization>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.6959075.8874-1"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession.092404-1582"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.1582"/>
+  </identifier>
+  <basedOn>
+    <reference value="#ex-MHV-irOrder-0"/>
+  </basedOn>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LP29684-5"/>
+      <display value="Radiology"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="72100"/>
+      <display value="RADIOLOGIC EXAMINATION, SPINE, LUMBOSACRAL; 2 OR 3 VIEWS"/>
+    </coding>
+    <text value="GENERAL RADIOLOGY"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <encounter>
+    <identifier>
+      <value value="5886199"/>
+    </identifier>
+  </encounter>
+  <effectiveDateTime value="2004-09-24T11:25:00Z"/>
+  <issued value="2004-09-24T11:25:00Z"/>
+  <performer>
+    <reference value="#ex-MHV-organization-image0"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="#ex-MHV-practitioner-image0"/>
+  </resultsInterpreter>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="U1BJTkUgTFVNQk9TQUNSQUwgTUlOIDIgVklFV1MKICAgCkV4bSBEYXRlOiBTRVAgMjQsIDIwMDRAMTE6MjUKUmVxIFBoeXM6IEZFTEtMRVksS0VOTkVUSCBFICAgICAgICAgICAgICBQYXQgTG9jOiBQQ1RfTyBQQVRJTCAoRi9VKSAoUmVxJ2cgTG9jKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEltZyBMb2M6IFJBRElPTE9HWQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNlcnZpY2U6IFVua25vd24KCiAKCihDYXNlIDE1ODIgQ09NUExFVEUpIFNQSU5FIExVTUJPU0FDUkFMIE1JTiAyIFZJRVdTICAgIChSQUQgIERldGFpbGVkKSBDUFQ6NzIxMDAKICAgICBQcm9jIE1vZGlmaWVycyA6IEJJTEFURVJBTCBFWEFNCgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgaGF2aW5nIDMgd2Vla3Mgb2YgYmFjayBwYWlucyBuZWVkIHRvIHJlLWV2YWwgZm9yIGFyaHJpdGlzIG9yIGFueSAKICAgICAgd29yc25laW5nIGRpc2Mgc3BhY2VzIGV0Yy4gCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogU0VQIDI3LCAyMDA0CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBTRVAgMjgsIDIwMDQKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9UaG9uZyBELiBOZ3V5ZW4sIE0uRC4KCiAgICBSZXBvcnQ6CiAgICAgIFRocmVlIHZpZXdzIG9mIHRoZSBsdW1ib3NhY3JhbCBzcGluZSBhcmUgY29tcGFyZWQgd2l0aCBhIHByZXZpb3VzIAogICAgICBleGFtaW5hdGlvbiBvZiA5LzIzLzAyLiAgCiAgICAgICAKICAgICAgVGhlcmUgaGFzIGJlZW4gYSBwYXJ0aWFsIGNvbGxhcHNlIG9mIEwyIHdoaWNoIGlzIHNpbWlsYXIgaW4KICAgICAgYXBwZWFyYW5jZSBhbmQgZGVncmVlIHRvIHRoZSBwcmV2aW91cyBleGFtaW5hdGlvbiBvZiBTZXB0ZW1iZXIKICAgICAgMjAwMi4gIFRoZXJlIGlzIGFsc28gY29sbGFwc2Ugb2YgdGhlIGJvZHkgb2YgVDEyIHdoaWNoIGFwcGFyZW50bHkKICAgICAgaXMgbmV3IHNpbmNlIHRoZSBwcmV2aW91cyBleGFtIGFuZCB0aGUgY29sbGFwc2UgaGFzIGJlZW4KICAgICAgZXN0aW1hdGVkIGFib3ZlIDc1IHRvIDgwJSBvZiB0aGUgaGVpZ2h0IG9mIHRoZSB2ZXJ0ZWJyYWwgYm9keS4gIAogICAgICAgCiAgICAgIFRoZXJlIGlzIG1pbGQgbWFyZ2luYWwgc3B1cnJpbmcgb2YgdGhlIHVwcGVyIGFudGVyaW9yIGFzcGVjdCBvZgogICAgICBMNC4gIFRoZXJlIGFyZSBhcnRlcmlvc2NsZXJvdGljIGNhbGNpZmljYXRpb25zIGluIHRoZSBhYmRvbWluYWwKICAgICAgYW9ydGEgYW5kIGJyYW5jaGVzLiAgCiAgICAgICAKICAgICAgVGhlIGludGVydmVydGVicmFsIGRpc2Mgc3BhY2VzIGFyZSBwcmVzZXJ2ZWQuICAKCiAgICBJbXByZXNzaW9uOgogICAgICAxLiAgT2xkIGNvbXByZXNzaW9uIGZyYWN0dXJlIG9mIEwyIHdpdGggYW50ZXJpb3IgbWFyZ2luYWwKICAgICAgc3B1cnJpbmcgYW5kIGFwcGFyZW50IGFua3lsb3NpcyBMMS1MMi4gIAogICAgICAgCiAgICAgIDIuICBDb2xsYXBzZSBvciBjb21wcmVzc2lvbiBmcmFjdHVyZSBvZiB0aGUgYm9keSBvZiBUMTIgd2hpY2ggaXMKICAgICAgbmV3IHNpbmNlIHRoZSBwcmV2aW91cyBleGFtaW5hdGlvbiBpbiAyMDAyIGFuZCBpbnZvbHZlcyBsb3NzIG9mCiAgICAgIGhlaWdodCBvZiB0aGF0IHZlcnRlYnJhbCBib2R5IGJ5IGFib3V0IDcwJS4gIEFydGVyaW9zY2xlcm90aWMKICAgICAgY2FsY2lmaWNhdGlvbnMgb2YgdGhlIGFvcnRhLiAgCgogICAgUHJpbWFyeSBEaWFnbm9zdGljIENvZGU6IAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgRkVMSVggR0FSRlVOS0VMLCBTdGFmZiBQaHlzaWNpYW4KVkVSSUZJRUQgQlk6CiAgVEhPTkcgTkdVWUVOLCBSYWRpb2xvZ2lzdC9DaGllZgoKL0dFRw=="/>
+    <title value="SPINE LUMBOSACRAL MIN 2 VIEWS"/>
+    <creation value="2004-09-24T11:25:00Z"/>
+  </presentedForm>
+</DiagnosticReport>

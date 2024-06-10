@@ -26,11 +26,11 @@
     }
   }],
   "url" : "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder",
-  "version" : "0.3.6",
+  "version" : "0.3.7",
   "name" : "MHVchOrder",
   "title" : "VA MHV PHR CH labTests.orderedTestCode",
   "status" : "active",
-  "date" : "2024-05-18T11:51:10-05:00",
+  "date" : "2024-06-10T12:47:52-05:00",
   "publisher" : "VA Digital Services",
   "contact" : [{
     "name" : "VA Digital Services",
@@ -46,7 +46,7 @@
       "value" : "John.Moehrke@va.gov"
     }]
   }],
-  "description" : "A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.\n\nOne ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.\n- `.subject` must be the patient from the DiagnosticReport\n- code = {labTests.orderedTestCode}\n- status = `unknown` -- as we dont know - TODO\n- intent = `order`\n- category = SCT#108252007 Laboratory procedure\n- specimen = specimen\n- not populating US-Core must support as we dont have the values\n\t- occurrence[x], authoredOn\n- no other elements are populated",
+  "description" : "A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.\n\nOne ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.\n- `.subject` must be the patient from the DiagnosticReport\n- code = {labTests.orderedTestCode}\n- status = `unknown` \n- intent = `order`\n- category = SCT#108252007 Laboratory procedure\n- specimen = specimen\n- not populating US-Core must support as we dont have the values\n\t- occurrence[x], authoredOn\n- requester is the requesting provider\n- facility is the requesting facility\n- no other elements are populated",
   "jurisdiction" : [{
     "coding" : [{
       "system" : "urn:iso:std:iso:3166",

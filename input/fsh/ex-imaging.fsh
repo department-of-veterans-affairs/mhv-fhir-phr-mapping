@@ -23,6 +23,7 @@ Derived from the a mock ImagingExamTO:
 * contained[+] = ex-MHV-irOrder-0
 * basedOn = Reference(ex-MHV-irOrder-0)
 * effectiveDateTime = 2004-09-24T11:25:00Z
+* issued = 2004-09-24T11:25:00Z
 * presentedForm.creation = 2004-09-24T11:25:00Z
 * code = CPT#72100 "RADIOLOGIC EXAMINATION, SPINE, LUMBOSACRAL; 2 OR 3 VIEWS"
 * code.text = "GENERAL RADIOLOGY"

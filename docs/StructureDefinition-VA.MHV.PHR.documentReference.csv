@@ -143,7 +143,7 @@ Reference is intended to point to a structure that can potentially be expressed 
 "DocumentReference.authenticator.display","DocumentReference.authenticator.display","","","",0,1,"","","Y","string {[]} {[]}
 ","Text alternative for the resource","Plain text narrative that identifies the resource in addition to the resource reference.","This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.","","","","","","","","",,,,,"",,,,"Reference.display",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","N/A"
-"DocumentReference.custodian","DocumentReference.custodian","","","",0,1,"Y","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
+"DocumentReference.custodian","DocumentReference.custodian","","","",0,0,"","","","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/Organization]]}
 ","Organization which maintains the document","Identifies the organization or group who is responsible for ongoing maintenance of and access to the document.","Identifies the logical organization (software system, vendor, or department) to go to find the current version, where to report issues, etc. This is different from the physical location (URL, disk drive, or server) of the document, which is the technical location of the document, which host may be delegated to the management of some other organization.","","","","","","","","",,,,,"",,,,"DocumentReference.custodian",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Event.performer.actor","Composition.custodian",".participation[typeCode=""RCV""].role[classCode=""CUST""].scoper[classCode=""ORG"" and determinerCode=""INST""]"
 "DocumentReference.relatesTo","DocumentReference.relatesTo","","","",0,0,"","","Y","BackboneElement {[]} {[]}
@@ -167,7 +167,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 "DocumentReference.relatesTo.target","DocumentReference.relatesTo.target","","","",1,1,"","","Y","Reference {[]} {[CanonicalType[http://hl7.org/fhir/StructureDefinition/DocumentReference]]}
 ","Target of the relationship","The target document of this relationship.","","","","","","","","","",,,,,"",,,,"DocumentReference.relatesTo.target",1,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","Composition.relatesTo.target",".target[classCode=""DOC"", moodCode=""EVN""].id","DocumentEntry Associations reference"
-"DocumentReference.description","DocumentReference.description","","","",0,1,"Y","","Y","string {[]} {[]}
+"DocumentReference.description","DocumentReference.description","","","",0,0,"","","Y","string {[]} {[]}
 ","Human-readable description","Human-readable description of the source document.","What the document is about,  a terse summary of the document.","Helps humans to assess whether the document is of interest.","","","","","","","",,,,,"",,,,"DocumentReference.description",0,1,"","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ",".outboundRelationship[typeCode=""SUBJ""].target.text","TXA-25","DocumentEntry.comments"
 "DocumentReference.securityLabel","DocumentReference.securityLabel","","","",0,0,"","","Y","CodeableConcept {[]} {[]}

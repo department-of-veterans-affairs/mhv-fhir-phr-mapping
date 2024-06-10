@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="3153b831-5ae4-4f07-b73d-4d26151675de"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes:{http://www.ama-assn.org/go/cpt 71260}">CT SCAN</span> (<span title="Codes:{http://loinc.org LP29684-5}">Radiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>2000-08-29 08:34:00+0000</td></tr><tr><td>Reported</td><td>2000-08-29 08:34:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6999170.9165-1 (use: usual) Accession ID/Accession.082900-372 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.372 (use: secondary)</td></tr></table><p><b>Report Details</b></p><p>ABNORMAL</p></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="provider-0"/>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="unknown"/>
+      </identifier>
+      <name>
+        <text value="BAUMANN,BERTA H"/>
+        <family value="BAUMANN,BERTA H"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="organization-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrganizationTO.718"/>
+      </identifier>
+      <active value="true"/>
+      <name value="CT RADIOLOGY"/>
+    </Organization>
+  </contained>
+  <contained>
+    <ServiceRequest>
+      <id value="order-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrderTO.6659371"/>
+      </identifier>
+      <status value="unknown"/>
+      <intent value="order"/>
+      <category>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="363679005"/>
+          <display value="Imaging"/>
+        </coding>
+      </category>
+      <code>
+        <text value="CT THORAX W/CONT"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-0"/>
+      </subject>
+      <encounter>
+        <identifier>
+          <value value="2896312"/>
+        </identifier>
+      </encounter>
+      <requester>
+        <reference value="#provider-0"/>
+      </requester>
+      <performer>
+        <reference value="#organization-0"/>
+      </performer>
+    </ServiceRequest>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.6999170.9165-1"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession.082900-372"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.372"/>
+  </identifier>
+  <basedOn>
+    <reference value="#order-0"/>
+  </basedOn>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LP29684-5"/>
+      <display value="Radiology"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="71260"/>
+      <display value="COMPUTED TOMOGRAPHY, THORAX, DIAGNOSTIC; WITH CONTRAST MATERIAL(S)"/>
+    </coding>
+    <text value="CT SCAN"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <encounter>
+    <identifier>
+      <value value="2896312"/>
+    </identifier>
+  </encounter>
+  <effectiveDateTime value="2000-08-29T08:34:00Z"/>
+  <issued value="2000-08-29T08:34:00Z"/>
+  <performer>
+    <reference value="#organization-0"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="#provider-0"/>
+  </resultsInterpreter>
+  <conclusion value="ABNORMAL"/>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="Q1QgVEhPUkFYIFcvQ09OVAogICAKRXhtIERhdGU6IEFVRyAyOSwgMjAwMEAwODozNApSZXEgUGh5czogTE9ESEksQUJEVUwgICAgICAgICAgICAgICAgICAgIFBhdCBMb2M6IFpaWkhFTUFUT0xPR1kgSUkgKFJlcSdnIExvYykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBDVCBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAzNzIgQ09NUExFVEUpICBDVCBUSE9SQVggVy9DT05UICAgICAgICAgICAgICAgICAoQ1QgICBEZXRhaWxlZCkgQ1BUOjcxMjYwCgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgSC9PIE9GIE1BU1MgT04gVEhFIENYUiBXSElDSCBXQVMgRE9ORSBBUyBBIFBSRS1PUCBTVFVEWSBGT1IgRk9PVAogICAgICBTVVJHRVJZLiAgCiAgICAgICBIL08gVEIgLTYwIFlSUyBCQUNLLiAgCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogQVVHIDI5LCAyMDAwCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBBVUcgMzAsIDIwMDAKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9CLkguQmF1bWFubixNRC4KCiAgICBSZXBvcnQ6CiAgICAgIENUIE9GIFRIRSBDSEVTVDogCiAgICAgICAKICAgICAgSW5mb3JtZWQgY29uc2VudCB3aGljaCBhY2NvbXBhbmllZCB0aGUgcGF0aWVudCB0byB0aGUgQ1Qgc2NhbgogICAgICBzdWl0ZSBpcyBhcmNoaXZlZCBpbiBSYWRpb2xvZ3kgc2VydmljZSBhbmQgYXZhaWxhYmxlIGZvciByZXZpZXcKICAgICAgYXMgZGVzaXJlZC4gIAogICAgICAgCiAgICAgIEFsdGhvdWdoIHRoZXJlIGFyZSBubyBwcmlvciBDVCBzY2FucywgcGxhaW4gZmlsbXMgb2YgdGhlIHRob3JheAogICAgICBkaWQgaW4gMTk5NCwgMTk5NywgYW5kIDE5OTggYW5kIG1vc3QgcmVjZW50bHkgNy8zMS8wMCBhcmUKICAgICAgcmV2aWV3ZWQuICBBbGwgcHJpb3IgZmlsbXMgZGVtb25zdHJhdGUgYmloaWxhciBldmFsYXRpb24gYW5kCiAgICAgIHBhdGNoeSBjZW50cmFsIGFwaWNhbCBpbmZpbHRyYXRlcyB3aXRoIHByZWRvbWluYXRlbHkgbm9kdWxhcgogICAgICBwYXR0ZXJuIGFzIHdlbGwgYXMgdmFyaWFibGUgZXh0ZW5zaW9ucyBvZiB0aGUgY2x1c3RlcmVkIHNvZnQKICAgICAgdGlzc3VlcyB0b3dhcmQgdGhlIHRoaWNrZW5lZCBhcGljYWwgcGxldXJhLiAKICAgICAgIAogICAgICBTbWFsbCBub2R1bGFyIGRlbnNpdGllIGFyZSBzdWdnZXN0ZWQgZWxzZXdoZXJlIHRocm91Z2hvdXQgdGhlCiAgICAgIGx1bmdzIGFsdGhvdWdoIGxlc3MgcHJvbWluZW50IHRoYW4gaW4gdGhlIGFwaWNlcy4gIEludGVyc3RpdGl1bQogICAgICBpcyBkaWZmdXNlbHkgdGhpY2tlbmVkLiAKICAgICAgIAogICAgICBDVCBzY2FuIGRlbW9uc3RyYXRlcyBmaW5kaW5ncyBjb25zaXN0ZW50IHdpdGggdGhlIHBsYWluIGZpbG0gCiAgICAgIGFibm9ybWFsaXRpZXMuICBUaGVyZSBhcmUgaXJyZWd1bGFybHkgc2hhcGVkIGNlbnRyYWwgdXBwZXIKICAgICAgdGhvcmFjaWMvYXBpY2FsIHNvZnQgdGlzc3VlIGRlbnNpdGllcyBzZWVuIGNlbnRyYWxseSBleHRlbmRpbmcKICAgICAgdmFyaWFibHkgdG8gdGhlIHBlcmlwaGVyYWwgcGxldXJhLiAgVGhlIGNlcGhhbGFkIGhpbGFyIG1hcmdpbnMKICAgICAgYXJlIGVsZXZhdGVkIHRvd2FyZCB0aGUgYXBpY2VzIGFuZCB0aGVyZSBhcmUgc29mdCB0aXN1ZSBkZW5zaXRpZXMKICAgICAgd2l0aGluIHRoZSBtZWRpYXN0aW51bSBhbmQgdGhlIGhpbGEgYmlsYXRlcmFsbHkgY29uc2lzdGVudCBieQogICAgICBzaXplIGFuZCBjb25maWd1cmF0aW9uIHdpdGggbHltcGggbm9kZXMtLXNvbWUgd2l0aCBhc3NvY2lhdGVkCiAgICAgIGNhbGNpZmljYXRpb25zLiAgVGhlIGxhcmdlc3QgbWVkaWFzdGluYWwvaGlsYXIgc3VzcGVjdCBub2R1bGFyCiAgICAgIG1hc3MgaXMgaW4gdGhlIHJpZ2h0IGhpbHVtIGFuZCBtZWFzdXJlcyAxLjUgYnkgMmNtLiBhbG9uZyB0aGUgCiAgICAgIHZlbnRyYWwgbGF0ZXJhbCBtYXJnaW4gb2YgdGhlIHJpZ2h0IG1haW4gc3RlbSBicm9uY2h1cy4gIAogICAgICAgCiAgICAgIFNtYWxsIG5vZHVsYXIgZGVuc2l0aWVzIGFyZSBzZWVuIHdpdGhpbiB0aGUgbHVuZyBhcGljZXMgYXMgd2VsbAogICAgICBhcyBleHRlbmRpbmcgdG8gdGhlIGxvd2VyIGx1bmdzLiAgT2NjYXNpb25pYWwgZGVuc2UgY2FsY2lmaWNhdGlvbgogICAgICBpcyBwcmVzZW50IHdpdGhpbiB0aGUgbm9kdWxlcyBhbHRob3VnaCBtb3N0IGFyZSBub25jYWxjaWZpZWQuIAogICAgICAgCiAgICAgIE5vIGRvbWluYW50IG5vZHVsZXMgYXJlIGlkZW50aWZpZWQgbW9zdCBtZWF1c3VybmlnIDVtbS4gb3IgbGVzcy4gCiAgICAgICAKICAgICAgSW1hZ2luZyBpbnRvIHRoZSB1cHBlciBhYmRvbWVuIGRlbW9uc3RyYXRlcyBubyBmb2NhbCBsZXNpb25zIG9mCiAgICAgIGVpdGhlciBsaXZlciBvciBzcGxlZW4gaW4gdGhlaXIgY2VwaGFsYWQgZXh0ZW50LiAgVGhlIGNlbnRyYWwKICAgICAgcmVuYWwgY3lzdHMgYXJlIG5vdGVkIHNwbGF5aW5nIHRoZSB1cHBlciBjb2xsZWN0aW5nIHN5c3RlbXMgb2YKICAgICAgdGhlIGtpZG5leXMgc3ltbWV0cmljYWxseS4gIFJlbmFsIGZ1bmN0aW9uIGFwcGVhcnMKICAgICAgc3ltbWV0cmljL2dvb2QuICAKCiAgICBJbXByZXNzaW9uOgogICAgICBDVCBzY2FuIGZpbmRpbmdzIGNvcnJlbGF0ZSB3ZWxsIHdpdGggdGhlIGFuYXRvbWljIGFibm9ybWFsaXRpZXMKICAgICAgb2YgcHJpb3IgY2hlc3QgcmFkaW9ncmFwaHMuICBGaXJzdCByYWRpb2dyYXBoaWMgZGlmZmVyZW50aWFsCiAgICAgIGRpYWdub3NpcyBpcyBncmFudWxvbWF0b3VzIGRpc2Vhc2UgYWx0aG91Z2ggYWN0aXZlIGRpc2Vhc2UgY2FuCiAgICAgIG5vdCBiZSBhYnNvbHV0ZWx5IGV4Y2x1ZGVkLiAgCiAgICAgICAKICAgICAgQ2FuIG5vdCBleGNsdWRlIHRoZSBwb3NzaWJpbGl0eSBvZiBpbnRlcnZhbCBkZXZlbG9wbWVudCBvZiBhCiAgICAgIHNtYWxsIG5vbmNhbGNpZmllZCBub2R1bGFyIGRlbnNpdHkgY29uY29taXRhbnRseTsgaWYgdGhlcmUgaXMKICAgICAgc3Ryb25nIGNsaW5pY2FsIGNvbmNlcm4tIGFkZGl0aW9uYWwgY2hhcmFjdGVyaXphdGlvbiBtYXkgYmUKICAgICAgd2FycmFudGVkLiAKCiAgICBQcmltYXJ5IERpYWdub3N0aWMgQ29kZTogQUJOT1JNQUxJVFksIEFUVE4uIE5FRURFRAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgQkVSVEEgSCBCQVVNQU5OLCBSYWRpb2xvZ2lzdCAoVmVyaWZpZXIpCi9KR0I="/>
+    <title value="CT THORAX W/CONT"/>
+    <creation value="2000-08-29T08:34:00Z"/>
+  </presentedForm>
+</DiagnosticReport>

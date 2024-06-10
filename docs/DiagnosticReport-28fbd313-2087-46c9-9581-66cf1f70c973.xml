@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="28fbd313-2087-46c9-9581-66cf1f70c973"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes:{http://www.ama-assn.org/go/cpt 71020}">GENERAL RADIOLOGY</span> (<span title="Codes:{http://loinc.org LP29684-5}">Radiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>2002-09-23 11:37:00+0000</td></tr><tr><td>Reported</td><td>2002-09-23 11:37:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6979076.8862-1 (use: usual) Accession ID/Accession.092302-360 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.360 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="provider-0"/>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="unknown"/>
+      </identifier>
+      <name>
+        <text value="SUTTON,JOSEPH"/>
+        <family value="SUTTON,JOSEPH"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="organization-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrganizationTO.2267"/>
+      </identifier>
+      <active value="true"/>
+      <name value="RADIOLOGY"/>
+    </Organization>
+  </contained>
+  <contained>
+    <ServiceRequest>
+      <id value="order-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrderTO.9343144"/>
+      </identifier>
+      <status value="unknown"/>
+      <intent value="order"/>
+      <category>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="363679005"/>
+          <display value="Imaging"/>
+        </coding>
+      </category>
+      <code>
+        <text value="CHEST 2 VIEWS PA&amp;LAT"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-0"/>
+      </subject>
+      <encounter>
+        <identifier>
+          <value value="4183065"/>
+        </identifier>
+      </encounter>
+      <requester>
+        <reference value="#provider-0"/>
+      </requester>
+      <performer>
+        <reference value="#organization-0"/>
+      </performer>
+    </ServiceRequest>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.6979076.8862-1"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession.092302-360"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.360"/>
+  </identifier>
+  <basedOn>
+    <reference value="#order-0"/>
+  </basedOn>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LP29684-5"/>
+      <display value="Radiology"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="71020"/>
+      <display value="RADIOLOGIC EXAMINATION, CHEST, 2 VIEWS, FRONTAL AND LATERAL;"/>
+    </coding>
+    <text value="GENERAL RADIOLOGY"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <encounter>
+    <identifier>
+      <value value="4183065"/>
+    </identifier>
+  </encounter>
+  <effectiveDateTime value="2002-09-23T11:37:00Z"/>
+  <issued value="2002-09-23T11:37:00Z"/>
+  <performer>
+    <reference value="#organization-0"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="#provider-0"/>
+  </resultsInterpreter>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="Q0hFU1QgMiBWSUVXUyBQQSZMQVQKICAgCkV4bSBEYXRlOiBTRVAgMjMsIDIwMDJAMTE6MzcKUmVxIFBoeXM6IFBBVElMLFNBUkFTV0FUSSAgICAgICAgICAgICAgICBQYXQgTG9jOiBQQ1RfTyBQQVRJTCAoRi9VKSAoUmVxJ2cgTG9jKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEltZyBMb2M6IFJBRElPTE9HWQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNlcnZpY2U6IFVua25vd24KCiAKCihDYXNlIDM2MCBDT01QTEVURSkgIENIRVNUIDIgVklFV1MgUEEmTEFUICAgICAgICAgICAgIChSQUQgIERldGFpbGVkKSBDUFQ6NzEwMjAKCiAgICBDbGluaWNhbCBIaXN0b3J5OgogICAgICBwdCBjL28gY291Z2ggZm9yIHdrcyAsbm90IGNsZWFyaW5nLiAgci9vIGluZmlsdHJhdGUuICAKCiAgICBSZXBvcnQgU3RhdHVzOiBWZXJpZmllZCAgICAgICAgICAgICAgICAgICBEYXRlIFJlcG9ydGVkOiBTRVAgMjUsIDIwMDIKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGUgVmVyaWZpZWQ6IFNFUCAyNiwgMjAwMgogICAgVmVyaWZpZXIgRS1TaWc6L0VTL0ouRS4gU3V0dG9uLCBNLkQuCgogICAgUmVwb3J0OgogICAgICBQQSBhbmQgbGF0ZXJhbCBvZiB0aGUgY2hlc3QgYXJlIGNvbXBhcmVkIHRvIGFuIGVhcmxpZXIKICAgICAgZXhhbWluYXRpb24gZGF0ZWQgMTIvNC8wMC4gIE9uY2UgYWdhaW4sIHdlIHNlZSBjaHJvbmljCiAgICAgIG9ic3RydWN0aXZlIHB1bG1vbmFyeSBkaXNlYXNlLiAgVGhlIGFwaWNlcyBvZiBib3RoIGx1bmdzIHNob3cKICAgICAgZmlicm9jYWxjaWZpYyBjaGFuZ2VzIGNvbXBhdGlibGUgd2l0aCBvbGQgZ3JhbnVsb21hdG91cyBkaXNlYXNlLiAKICAgICAgVGhlIGhpbGFyIHJlZ2lvbnMgaGF2ZSBiZWVuIHJldHJhY3RlZCBjZXBoYWxhZC4gIFNldmVyYWwKICAgICAgZGVmb3JtaXRpZXMgZnJvbSBvbGQgaGVhbGVkIHJpYiBmcmFjdHVyZXMgYXJlIHNlZW4gb24gdGhlIHJpZ2h0LiAgCiAgICAgICAKICAgICAgQSBjb21wYXJpc29uIHdpdGggdGhlIGVhcmxpZXIgZXhhbWluYXRpb24gc2hvd3Mgbm8gaW50ZXJ2YWwKICAgICAgY2hhbmdlLiAgCgogICAgSW1wcmVzc2lvbjoKICAgICAgMS4gIENPUEQuICBPbGQgZ3JhbnVsb21hdG91cyBkaXNlYXNlLiAgCgogICAgUHJpbWFyeSBEaWFnbm9zdGljIENvZGU6IAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgSk9TRVBIIFNVVFRPTiwgUmFkaW9sb2dpc3QgKFZlcmlmaWVyKQovR0VH"/>
+    <title value="CHEST 2 VIEWS PA&amp;LAT"/>
+    <creation value="2002-09-23T11:37:00Z"/>
+  </presentedForm>
+</DiagnosticReport>

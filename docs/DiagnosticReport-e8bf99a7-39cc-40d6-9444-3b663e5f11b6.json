@@ -1,0 +1,97 @@
+{
+  "resourceType" : "DiagnosticReport",
+  "id" : "e8bf99a7-39cc-40d6-9444-3b663e5f11b6",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes:{http://www.ama-assn.org/go/cpt 73630}\">GENERAL RADIOLOGY</span> (<span title=\"Codes:{http://loinc.org LP29684-5}\">Radiology</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0\u00a0(use:\u00a0usual))</td></tr><tr><td>When For</td><td>1997-09-08 10:42:00+0000</td></tr><tr><td>Reported</td><td>1997-09-08 10:42:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.7029091.8957-1\u00a0(use:\u00a0usual) Accession ID/Accession.090897-207\u00a0(use:\u00a0official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.207\u00a0(use:\u00a0secondary)</td></tr></table><p><b>Report Details</b></p></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "provider-0",
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "unknown"
+    }],
+    "name" : [{
+      "text" : "SUTTON,JOSEPH",
+      "family" : "SUTTON,JOSEPH"
+    }]
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "organization-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "OrganizationTO.2267"
+    }],
+    "active" : true,
+    "name" : "RADIOLOGY"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "ImagingExamTO.7029091.8957-1"
+  },
+  {
+    "use" : "official",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "ACSN"
+      }]
+    },
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "Accession.090897-207"
+  },
+  {
+    "use" : "secondary",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "CaseNum.207"
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "LP29684-5",
+      "display" : "Radiology"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://www.ama-assn.org/go/cpt",
+      "code" : "73630",
+      "display" : "RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS"
+    }],
+    "text" : "GENERAL RADIOLOGY"
+  },
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "encounter" : {
+    "identifier" : {
+      "value" : "631158"
+    }
+  },
+  "effectiveDateTime" : "1997-09-08T10:42:00Z",
+  "issued" : "1997-09-08T10:42:00Z",
+  "performer" : [{
+    "reference" : "#organization-0"
+  }],
+  "resultsInterpreter" : [{
+    "reference" : "#provider-0"
+  }],
+  "presentedForm" : [{
+    "contentType" : "text/plain",
+    "data" : "Rk9PVCAzIE9SIE1PUkUgVklFV1MKICAgClByb2MgT3JkOiBVbmtub3duCkV4bSBEYXRlOiBTRVAgMDgsIDE5OTdAMTA6NDIKUmVxIFBoeXM6IEhPTEdBRE8sUk9OQUxEICAgICAgICAgICAgICAgICBQYXQgTG9jOiBPUCBVbmtub3duLzA5LTA3LTIwMjJAMTY6MTQKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAyMDcgQ09NUExFVEUpICBGT09UIDMgT1IgTU9SRSBWSUVXUyAgICAgICAgICAgICAoUkFEICBEZXRhaWxlZCkgQ1BUOjczNjMwCiAgICAgUHJvYyBNb2RpZmllcnMgOiBQT1JUQUJMRSBFWEFNLCBSSUdIVAoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIFMvUCBSSUdIVCBCVU5JT05FQ1RPTVkgKioqKioqKioqKioqKiBQVCBJTiBQQUNVLCBXSUxMIFBBR0UgV0hFTgogICAgICBQVCBBUlJJVkVTICAqKioqKioqKioqKioqODggCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogU0VQIDEwLCAxOTk3CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBTRVAgMTEsIDE5OTcKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9KLkUuU1VUVE9OLE0uRC4KCiAgICBSZXBvcnQ6CiAgICAgIFJJR0hUIEZPT1Q6IAogICAgICAgCiAgICAgIFRocmVlIHZpZXdzIG9mIHRoZSByaWdodCBmb290IHNob3cgcG9zdCBzdXJnaWNhbCBjaGFuZ2VzCiAgICAgIGludm9sdmluZyB0aGUgZGlzdGFsIGZpcnN0IG1ldGF0YXJzYWwgaW4gaXRzIG1lZGlhbCBhc3BlY3QuICBBCiAgICAgIGJvbmUgc2NyZXcgaXMgaW4gcGxhY2UuICBUaGUgdmFsZ3VzIGRldmlhdGlvbiBoYXMgYmVlbiBjb3JyZWN0ZWQuICAKCiAgICBJbXByZXNzaW9uOgogICAgICBQb3N0IHN1cmdpY2FsIGNoYW5nZXMuIAoKICAgIFByaW1hcnkgRGlhZ25vc3RpYyBDb2RlOiAKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIEpPU0VQSCBTVVRUT04sIFJhZGlvbG9naXN0IChWZXJpZmllcikKL0pHQg==",
+    "title" : "FOOT 3 OR MORE VIEWS",
+    "creation" : "1997-09-08T10:42:00Z"
+  }]
+}

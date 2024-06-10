@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="05500f5e-0ca0-49c1-99e6-4c8e6de85285"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes:{http://www.ama-assn.org/go/cpt 74415}">GENERAL RADIOLOGY</span> (<span title="Codes:{http://loinc.org LP29684-5}">Radiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>1992-10-15 10:56:00+0000</td></tr><tr><td>Reported</td><td>1992-10-15 10:56:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.7078984.8943-1 (use: usual) Accession ID/Accession.101592-1172 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.1172 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="provider-0"/>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="unknown"/>
+      </identifier>
+      <name>
+        <text value="BAUMANN,BERTA H"/>
+        <family value="BAUMANN,BERTA H"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="organization-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrganizationTO.704"/>
+      </identifier>
+      <active value="true"/>
+      <name value="INPATIENT RADIOLOGY"/>
+    </Organization>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.7078984.8943-1"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession.101592-1172"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.1172"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LP29684-5"/>
+      <display value="Radiology"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="74415"/>
+      <display value="UROGRAPHY, INFUSION, DRIP TECHNIQUE AND/OR BOLUS TECHNIQUE; WITH NEPHROTOMOGRAPHY"/>
+    </coding>
+    <text value="GENERAL RADIOLOGY"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <effectiveDateTime value="1992-10-15T10:56:00Z"/>
+  <issued value="1992-10-15T10:56:00Z"/>
+  <performer>
+    <reference value="#organization-0"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="#provider-0"/>
+  </resultsInterpreter>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="VVJPR1JBTSBJViBXIE5FUEhST1RPTU9HUkFNUwogICAKUHJvYyBPcmQ6IFVua25vd24KRXhtIERhdGU6IE9DVCAxNSwgMTk5MkAxMDo1NgpSZXEgUGh5czogQkFTVVJBWSxCSVNXQSBOQVRIICAgICAgICAgICAgIFBhdCBMb2M6IE9QIFVua25vd24vMDktMDctMjAyMkAxNjoxNAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEltZyBMb2M6IElOUEFUSUVOVCBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAxMTcyIENPTVBMRVRFKSBVUk9HUkFNIElWIFcgTkVQSFJPVE9NT0dSQU1TICAgICAoUkFEICBEZXRhaWxlZCkgQ1BUOjc0NDE1CgogICAgQ2xpbmljYWwgSGlzdG9yeToKCiAgICBSZXBvcnQgU3RhdHVzOiBWZXJpZmllZCAgICAgICAgICAgICAgICAgICBEYXRlIFJlcG9ydGVkOiBPQ1QgMTYsIDE5OTIKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGUgVmVyaWZpZWQ6IE5PViAwNCwgMTk5MgogICAgVmVyaWZpZXIgRS1TaWc6CgogICAgUmVwb3J0OgoKICAgIEltcHJlc3Npb246CiAgICAgIDEuICBTcGxheWluZyBvZiBpbmZ1bmRpYnVsYSBkaWZmdXNlbHkgYmlsYXRlcmFsbHktc3VnZ2VzdCByZW5hbAogICAgICBwZWx2aWMgbGlwb21vdG9zaXMgYXMgbW9zdCBjb21tb24gZXRpb2xvZ3ktbm8gZXZpZGVuY2Ugb2YKICAgICAgb2JzdHJ1Y3Rpb24uICAKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIEJFUlRBIEggQkFVTUFOTiwgUmFkaW9sb2dpc3QKICAgICAgICAgIFZlcmlmaWVkIGJ5IHRyYW5zY3JpcHRpb25pc3QgZm9yIEJFUlRBIEggQkFVTUFOTgovSkdC"/>
+    <title value="UROGRAM IV W NEPHROTOMOGRAMS"/>
+    <creation value="1992-10-15T10:56:00Z"/>
+  </presentedForm>
+</DiagnosticReport>

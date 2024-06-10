@@ -1,0 +1,106 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DocumentReference/ex-MHV-note-8> a fhir:DocumentReference ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "ex-MHV-note-8"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.note>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative: DocumentReference </b><a name=\"ex-MHV-note-8\"> </a><a name=\"hcex-MHV-note-8\"> </a></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">ResourceDocumentReference &quot;ex-MHV-note-8&quot; </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-VA.MHV.PHR.note.html\">VA MHV PHR Notes</a></p></div><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/NoteTO.43296940 (use: usual)</p><p><b>status</b>: current</p><p><b>type</b>: C &amp; P EXAMINATION NOTE <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#11506-3 &quot;Progress note&quot;)</span></p><p><b>category</b>: Clinical Note <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/us/core/STU5.0.1/CodeSystem-us-core-documentreference-category.html\">US Core DocumentReferences Category Codes</a>#clinical-note)</span></p><p><b>subject</b>: <a href=\"Patient-ex-MHV-patient-1015746490.html\">Patient/ex-MHV-patient-1015746490</a> &quot; MHVZZVISNTWENTY&quot;</p><p><b>date</b>: Jan 13, 2016, 2:35:00 AM</p><p><b>author</b>: <a name=\"hcex-MHV-practitioner-2926\"> </a></p><blockquote><p/><p><a name=\"ex-MHV-practitioner-2926\"> </a></p><p><a name=\"hcex-MHV-practitioner-2926\"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.984</code>/AuthorTO.2926 (use: usual)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><p><b>authenticator</b>: <a name=\"hcex-MHV-practitioner-2926\"> </a></p><blockquote><p/><p><a name=\"ex-MHV-practitioner-2926\"> </a></p><p><a name=\"hcex-MHV-practitioner-2926\"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.984</code>/AuthorTO.2926 (use: usual)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td>(base64 data - 4009 bytes)</td><td>C&amp;P GENERAL MEDICAL</td></tr></table></blockquote><h3>Contexts</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>Related</b></td></tr><tr><td style=\"display: none\">*</td><td><a name=\"hclocation-648\"> </a><blockquote><p/><p><a name=\"location-648\"> </a></p><p><a name=\"hclocation-648\"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/HospitalLocationTO.648 (use: usual)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></td></tr></table><hr/><blockquote><p><b>Generated Narrative: Practitioner  #ex-MHV-practitioner-2926</b><a name=\"ex-MHV-practitioner-2926\"> </a><a name=\"hcex-MHV-practitioner-2926\"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.984</code>/AuthorTO.2926 (use: usual)</p><p><b>name</b>: DOUGLAS,DAVID M</p></blockquote><hr/><blockquote><p><b>Generated Narrative: Location  #location-648</b><a name=\"location-648\"> </a><a name=\"hclocation-648\"> </a></p><p><b>identifier</b>: <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/HospitalLocationTO.648 (use: usual)</p><p><b>name</b>: PORTLAND VA MEDICAL CENTER</p></blockquote></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "ex-MHV-practitioner-2926" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.984"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "AuthorTO.2926" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "DOUGLAS,DAVID M" ] ;
+       fhir:family [ fhir:v "DOUGLAS,DAVID M" ]
+     ] )
+  ] [
+     a fhir:Location ;
+     fhir:id [ fhir:v "location-648" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.location>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "HospitalLocationTO.648" ]
+     ] ) ;
+     fhir:name [ fhir:v "PORTLAND VA MEDICAL CENTER" ]
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "NoteTO.43296940" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "current"] ; # 
+  fhir:type [
+     fhir:coding ( [
+       a loinc:11506-3 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "11506-3" ] ;
+       fhir:display [ fhir:v "Progress note" ]
+     ] ) ;
+     fhir:text [ fhir:v "C & P EXAMINATION NOTE" ]
+  ] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://hl7.org/fhir/us/core/CodeSystem/us-core-documentreference-category"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "clinical-note" ]
+     ] )
+  ] ) ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-1015746490> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-1015746490" ]
+  ] ; # 
+  fhir:date [ fhir:v "2016-01-13T08:35:00Z"^^xsd:dateTime] ; # 
+  fhir:author ( [
+     fhir:reference [ fhir:v "#ex-MHV-practitioner-2926" ]
+  ] ) ; # 
+  fhir:authenticator [
+     fhir:extension ( [
+       fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/noteAuthenticatedWhen"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "2016-01-13T08:37:52Z"^^xsd:dateTime ]
+     ] ) ;
+     fhir:reference [ fhir:v "#ex-MHV-practitioner-2926" ]
+  ] ; # 
+  fhir:content ( [
+     fhir:attachment [
+       fhir:contentType [ fhir:v "text/plain" ] ;
+       fhir:data [ fhir:v "IExPQ0FMIFRJVExFOiBDJlAgR0VORVJBTCBNRURJQ0FMICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKU1RBTkRBUkQgVElUTEU6IEMgJiBQIEVYQU1JTkFUSU9OIE5PVEUgICAgICAgICAgICAgICAgICAgICAgICAgIApEQVRFIE9GIE5PVEU6IEpBTiAxMywgMjAxNkAwODozNSAgICAgRU5UUlkgREFURTogSkFOIDEzLCAyMDE2QDA4OjM1OjQwICAgICAgCiAgICAgIEFVVEhPUjogRE9VR0xBUyxEQVZJRCBNICAgICAgRVhQIENPU0lHTkVSOiAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgIFVSR0VOQ1k6ICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNUQVRVUzogQ09NUExFVEVEICAgICAgICAgICAgICAgICAgICAgCgpJb25pemluZyBSYWRpYXRpb24gCihyZWxhdGVkIGlzc3VlczogbGV1a2VtaWEsIGx5bXBob21hIChleGNlcHQgSG9kZ2VraW4ncyBkaXNlYXNlKSwgbXVsdGlwbGUKbXllbG9tYSwgY2FuY2VycyBvZiB0aGUgYmlsZSBkdWN0cywgYm9uZSwgYnJhaW4sIGJyZWFzdCwgY29sb24sIGVzb3BoYWd1cywKZ2FsbCBibGFkZGVyLCBsdW5nLCBwYW5jcmVhcywgcGhhcnlueCwgb3ZhcnksIHNhbGl2YXJ5IGdsYW5kLCBzbWFsbCBpbnRlc3RpbmUsCnN0b21hY2gsIHRoeXJvaWQsIHVyaW5hcnkgdHJhY3QpLgogCgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQoKSFBJIChpbmNsdWRpbmcgY29tcGxhaW50cyBWZXRlcmFuIHJlbGF0ZWQgdG8gdGhlIGluLXNlcnZpY2UgZXhwb3N1cmUpOiAKdGVzdAoKClBhc3QgTWVkaWNhbCBIaXN0b3J5Ogp0ZXN0CgoKRmFtaWx5IEhpc3RvcnkgKHRvIGluY2x1ZGUgYW55IGJpcnRoIGRlZmVjdHMpOgp0ZXN0CgoKIEhhYml0czogIHRlc3QKCiBTbW9raW5nOiB0ZXN0CiAKIEFsY29ob2w6IHRlc3QKCiBTdWJzdGFuY2VzOiB0ZXN0Cgo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KClJFVklFVyBPRiBTWVNURU1TOiAoaWYgeWVzLCBkZXNjcmliZSkKCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQoKR2VuZXJhbCAod2VpZ2h0IGNoYW5nZSwgZmV2ZXIsIGZhdGlndWUsIGJsZWVkaW5nLCBzd29sbGVuIApnbGFuZHMsbmlnaHQgc3dlYXRzLCB1bmV4cGxhaW5lZCBsdW1wcy9tYXNzZXMpCllFUyAKCkVuZG9jcmluZSAoRE0sIHRoeXJvaWQgZGlzZWFzZSwgaG90L2NvbGQgaW50b2xlcmFuYywgCnBvbHl1cmlhL2RpcHNpYSkKTk8gCgpFeWUgKHZpc2lvbiBwcm9ibGVtLCBwYWluLCBpdGNoaW5nLCByZWRuZXNzIG9mIGV5ZXMpCllFUyAKCkVhciAoZWFyIHBhaW4sIGRyYWluYWdlLCBoZWFyaW5nIGxvc3MsIHRpbm5pdHVzKQpOTyAKCk5vc2Uvc2ludXMgKG5vc2VibGVlZHMsIGNvbmdlc3Rpb24sIHNpbnVzIHBhaW4sIGRyYWluYWdlKQpZRVMgCgpUaHJvYXQgKHNvcmVuZXNzLCBob2Fyc2VuZXNzLCBwcm9ibGVtcyB3aXRoIGNoZXdpbmcsIApzd2FsbG93aW5nIG9yIHNwZWVjaCkKTk8gCgpOZWNrIChwYWluLCBtYXNzLCBzd2VsbGluZywgZ29pdGVyKQpZRVMgCgpTa2luIChyYXNoLCBzb3JlLCBwYWluZnVsIHNjYXIsIGl0Y2hpbmcpCk5PIAoKTHVuZyAoY291Z2gsIHdoZWV6aW5nLCBTT0IsIGhlbW9wdHlzaXMsIHNsZWVwLCBhcG5lYSwgVEIpIApZRVMgCgpHSSAoYWJkIHBhaW4sIGhlYXJ0YnVybiwgTiZWLCBib3dlbCBjb21wbGFpbnQsIHBhbmNyZWFzLCAKbGl2ZXIsIG9yIEdCIGRpc2Vhc2UsIGhlbW9ycmhvaWRzLCBoZXJuaWEpCk5PIAoKR1UgKFVUSSwgc3RvbmVzLCBTVEQsIGhlbWF0dXJpYSwgdXJpbmFyeSBjb21wbGFpbnRzLCBFRCwgCnByb3N0YXRlIGRpc2Vhc2UpIApZRVMgCgpNZW50YWwgKGRlcHJlc3Npb24sIG1lbnRhbCBjb21wbGFpbnQsIHNsZWVwIGNvbXBsYWludCwgCnN1YnN0YW5jZSBhYnVzZSkKTk8gCgpNUyAocGFpbiwgc3RpZmZuZXNzIG9mIGZlZXQsIGhhbmRzLCBqb2ludHMsIG5lY2ssIGJhY2spCllFUyAKCkJyZWFzdCAocGFpbiwgbHVtcCwgZHJhaW5hZ2UpCk5PIAoKPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CgpQSFlTSUNBTCBFWEFNCgo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KClZJVEFMIFNJR05TIAoKLS0tLS0tLS0tLS0KCiAgUFVMU0U6ICBCUE0KCiAgQlAgIzE6IC8KCiAKICBUOiAKCiAgUjogCgoKIApHRU5FUkFMIEFQUEVBUkFOQ0U6IAogdGVzdAoKCiAgSEVJR0hUOiAKCiAgV0VJR0hUOiAgUE9VTkRTIAoKICBXRUlHSFQgQ0hBTkdFOiAKCgoKUEhZU0lDQUwgRVhBTTogKElmIGFibm9ybWFsLCBkZXNjcmliZSkKCiAgR0VORVJBTCAoTHltcGggbm9kZXMsIGVkZW1hLCBibGVlZGluZyBvciBicnVpc2luZykKICBOb3JtYWwKIAoKICBTS0lOIChTa2luLCBzY2FscCwgaGFpciwgbmFpbHMpIAogIEFibm9ybWFsCiAKCiAgSEVFTlQgKEV4dGVybmFsIGV5ZSwgcHVwaWxzLCBFT01zLiAgRXh0ZXJuYWwgZWFyLCBjYW5hbCwgVE0sIGdyb3NzIGhlYXJpbmcgCiAgYWN1aXR5LCBub3NlLCBzZXB0dW0sIHNpbnVzLCB0b25ndWUsIHBhbGF0ZSwgcGhhcnlueCwgdGVldGgvZ3VtcykKICBBYm5vcm1hbAogCgogIE5FQ0sgKENlcnZpY2FsIG5vZGVzLCBjYXJvdGlkIHB1bHNlcy9hdXNjdWx0YXRpb24sIHRoeXJvaWQgZ2xhbmQpCiAgTm9ybWFsCiAKCiAgQ0hFU1QgKENoZXN0IHNoYXBlL2RlZm9ybWl0aWVzLCByZXNwaXJhdG9yeSBkaXN0cmVzcywgYXVzY3VsdGF0aW9uIGFuZCAKICBwZXJjdXNzaW9uIG9mIGx1bmdzKQogIEFibm9ybWFsCiAKCiAgQ0FSRElPVkFTQ1VMQVIgKFJhdGUsIHJoeXRobSwgaGVhcnQgc291bmRzOyBtdXJtdXJzLCBnYWxsb3BzLCBjbGlja3Mgb3IgcnVicwogIGp1Z3VsYXIgdmVub3VzIGRpc3RlbnRpb24pIAogIE5vcm1hbAogCgogICBBQkRPTUVOIChJbnNwZWN0aW9uLCBwYWxwYXRpb24sIGF1c2N1bHRhdGlvbiBvZiBhYmRvbWVuLCBwcmVzZW5jZSBvZiAKICAgaGVwYXRvc3BsZW5vbWVnYWx5IG9yIGhlcm5pYXMpCiAgQWJub3JtYWwKIAoKICAgR1UgKFRlc3RpY2xlcywgZXBpZGlkeW1pcywgc3Blcm1hdGljIGNvcmQsIHNlbWluYWwgdmVzaWNsZXMsIGFudXMsIHJlY3R1bSwgCiAgIHByb3N0YXRlLCBwcmVzZW5jZSBvZiBoZXJuaWFzKQogIE5vcm1hbAogCgogICBFWFRSRU1JVElFUyAoUHJlc2VuY2Ugb2YgY3lhbm9zaXMsIGNsdWJiaW5nLCBlZGVtYSwgdHJvcGhpYyBjaGFuZ2VzLCAKICAgdWxjZXJzLCB2YXJpY29zZSB2ZWlucykKICAgQWJub3JtYWwKIAoKICAgTkVVUk9MT0dJQyAoTWVudGFsIHN0YXR1cywgc3BlZWNoLCBjb29yZGluYXRpb24sIG1vdG9yIGFuZCBzZW5zb3J5IAogICB0ZXN0aW5nIGluIGFsbCBmb3VyIGV4dHJlbWl0aWVzLCBjcmFuaWFsIG5lcnZlcywgZGVlcCB0ZW5kb24gcmVmbGV4ZXMsCiAgIGJhYmluc2tpKQogIE5vcm1hbAogCgogICBQU1lDSElBVFJJQyAoTW9vZCwgYmVoYXZpb3IsIGFuZCBjb21wcmVoZW5zaW9uLCBhYmlsaXR5IHRvIGZvbGxvdyAKZGlyZWN0aW9ucywgCiAgIHByZXNlbmNlIG9mIGFueSBhYm5vcm1hbCBiZWhhdmlvciBvciBoYWxsdWNpbmF0aW9ucykKIAogCgogICBCUkVBU1QgKFByZXNlbmNlIG9mIG1hc3NlcywgYWJub3JtYWwgbm9kdWxhcml0eSwgbmlwcGxlIGFibm9ybWFsaXRpZXMsIApneW5lY29tYXN0aWEsIAogICByZXNpZHVhbHMgb2YgYnJlYXN0IHN1cmdlcnkuIAogCiAKCiAgTGFiczoKIAogCiAgRGlhZ25vc2lzOiAKIHRlc3QKCgogTGV0dGVyIHNlbnQgdG8gVmV0ZXJhbiBzdW1tYXJpemluZyBleGFtaW5hdGlvbiwgUmVnaXN0cnkgZm9ybXMgZmlsbGVkIGluIGFuZCAKc2VudCBmb3IgaW5jbHVzaW9uIGluIHJlZ2lzdHJ5LCBDb250YWN0IGluZm9ybWF0aW9uIGdpdmVuIGZvciBWZXRlcmFuIHRvIApyZXF1ZXN0IGNhcmUgYXQgVkEKCgoKCgoKCgogCiAKL2VzLyBEQVZJRCBNLiBET1VHTEFTIE1ECkNISUVGIEhFQUxUSCBJTkZPUk1BVElDUyBPRkZJQ0VSL0FUVEVORElORyBQU1lDSElBVFJJU1QKU2lnbmVkOiAwMS8xMy8yMDE2IDA4OjM3Cg=="^^xsd:base64Binary ] ;
+       fhir:title [ fhir:v "C&P GENERAL MEDICAL" ]
+     ]
+  ] ) ; # 
+  fhir:context [
+     fhir:related ( [
+       fhir:reference [ fhir:v "#location-648" ]
+     ] )
+  ] . # 
+
+# -------------------------------------------------------------------------------------
+

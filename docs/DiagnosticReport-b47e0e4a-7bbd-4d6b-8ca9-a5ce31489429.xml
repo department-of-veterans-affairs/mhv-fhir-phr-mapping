@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="b47e0e4a-7bbd-4d6b-8ca9-a5ce31489429"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes:{http://www.ama-assn.org/go/cpt 78480}">NUCLEAR MEDICINE</span> (<span title="Codes:{http://loinc.org LP29684-5}">Radiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>2001-04-26 11:07:00+0000</td></tr><tr><td>Reported</td><td>2001-04-26 11:07:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6989573.8892-3 (use: usual) Accession ID/Accession.042601-1520 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.1520 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="provider-0"/>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="unknown"/>
+      </identifier>
+      <name>
+        <text value="KATZ,NEIL"/>
+        <family value="KATZ,NEIL"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="organization-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrganizationTO.273"/>
+      </identifier>
+      <active value="true"/>
+      <name value="NUCLEAR MEDICINE"/>
+    </Organization>
+  </contained>
+  <contained>
+    <ServiceRequest>
+      <id value="order-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrderTO.7379950"/>
+      </identifier>
+      <status value="unknown"/>
+      <intent value="order"/>
+      <category>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="363679005"/>
+          <display value="Imaging"/>
+        </coding>
+      </category>
+      <code>
+        <text value="MYOCARDIAL PERFUSION, PHARMACOLOGICAL STRESS P/D"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-0"/>
+      </subject>
+      <encounter>
+        <identifier>
+          <value value="3278625"/>
+        </identifier>
+      </encounter>
+      <requester>
+        <reference value="#provider-0"/>
+      </requester>
+      <performer>
+        <reference value="#organization-0"/>
+      </performer>
+    </ServiceRequest>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.6989573.8892-3"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession.042601-1520"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.1520"/>
+  </identifier>
+  <basedOn>
+    <reference value="#order-0"/>
+  </basedOn>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LP29684-5"/>
+      <display value="Radiology"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="78480"/>
+      <display value="MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION (LIST SEPARATELY IN ADDITION TO CODE FOR PRIMARY PROCEDURE)"/>
+    </coding>
+    <text value="NUCLEAR MEDICINE"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <encounter>
+    <identifier>
+      <value value="3278625"/>
+    </identifier>
+  </encounter>
+  <effectiveDateTime value="2001-04-26T11:07:00Z"/>
+  <issued value="2001-04-26T11:07:00Z"/>
+  <performer>
+    <reference value="#organization-0"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="#provider-0"/>
+  </resultsInterpreter>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="TVlPQ0FSRElBTCBQRVJGVVNJT04gU1RVRFkgV0lUSCBFSkVDVElPTiBGUkFDVElPTgogICAKUHJvYyBPcmQ6IE1ZT0NBUkRJQUwgUEVSRlVTSU9OLCBQSEFSTUFDT0xPR0lDQUwgU1RSRVNTIFAvRApFeG0gRGF0ZTogQVBSIDI2LCAyMDAxQDExOjA3ClJlcSBQaHlzOiBQQVRJTCxTQVJBU1dBVEkgICAgICAgICAgICAgICAgUGF0IExvYzogUENUX08gUEFUSUwgKEYvVSkgKFJlcSdnIExvYykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBOVUNMRUFSIE1FRElDSU5FCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU2VydmljZTogVW5rbm93bgoKIAoKKENhc2UgMTUxNiBDT01QTEVURSkgTVlPQ0FSRElBTCBQRVJGVVNJT04gKFNQRUNUKSwgRVgvKE5NICAgRGV0YWlsZWQpIENQVDo3ODQ2NQoKKENhc2UgMTUxOSBDT01QTEVURSkgI1BST1ZJU0lPTiBPRiBESUFHTk9TVElDIFJBRElPTlVDKE5NICAgRGV0YWlsZWQpIENQVDo3ODk5MAoKKENhc2UgMTUyMCBDT01QTEVURSkgTVlPQ0FSRElBTCBQRVJGVVNJT04gU1RVRFkgV0lUSCBFKE5NICAgRGV0YWlsZWQpIENQVDo3ODQ4MAoKKCAgICAgICA0eCAgICAgICAgICkgSjEyNDUgRElQWVJJREFNT0xFIElOSkVDVElPTiAgICAgKE5NICAgRGV0YWlsZWQpIENQVDpKMTI0NQoKKCAgICAgICAzeCAgICAgICAgICkgQTk1MDUgVEhBTExPVVMgQ0hMT1JJREUgVEwgMjAxL01DKE5NICAgRGV0YWlsZWQpIENQVDpBOTUwNQoKKENhc2UgMTUzNiBDT01QTEVURSkgTVlPQ0FSRElBTCBQRVJGVVNJT04gU1RVRFkgV0lUSCBXKE5NICAgRGV0YWlsZWQpIENQVDo3ODQ3OAoKKENhc2UgMTU0NCBDT01QTEVURSkgQ0FSRElPVkFTQ1VMQVIgU1RSRVNTIFRFU1QgKFRFQ0gpKE5NICAgRGV0YWlsZWQpIENQVDo5MzAxNQoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIFBUIEMvTyBDLlAgT04gJiBPRkYsT0xEIE1JLCBGQU1JTFkgSC9PIEhFQVJUIEFUVEFDSy4gIFIvTyBDQUQgCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogQVBSIDI2LCAyMDAxCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBBUFIgMjcsIDIwMDEKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9ORUlMIEtBVFosIE1ECgogICAgUmVwb3J0OgogICAgICBSRVBPUlQ6ICA0LzI2LzAxICBBTlRSQVMsIEouICM2MjY3ICA0MS40IG1nIERpcHlyaWRhbW9sZSBJVgogICAgICBpbmplY3RlZCBpbiByaWdodCBhcm0gYXQgMDk1OC0xMDAyIGhvdXJzIGJ5IERyLiBLYXR6LiAgMy4xNiBtQ2kKICAgICAgVGwuMjAxIENobG9yaWRlIGluamVjdGVkIElWIGluIHJpZ2h0IGFybSBhdCAxMDA1IGhvdXJzIGJ5IEEuCiAgICAgIEJlbmRlci4gIAogICAgICAgCiAgICAgICAKICAgICAgSU5UUkFWRU5PVVMgRElQWVJJREFNT0xFIFNUUkVTUyBUSEFMTElVTSBNWU9DQVJESUFMIFNDQU4tU1BFQ1Q6IAogICAgICAgCiAgICAgIFRoZSBkaXB5cmlkYW1vbGUgc3RyZXNzIHRlc3Qgd2FzIHBlcmZvcm1lZCBpbiB0aGUgTk1TLiAKICAgICAgIAogICAgICBCb3RoIHN0cmVzcyBhbmQgcmVzdCBpbWFnZXMgcmV2ZWFsIG1pbGQgZGVjcmVhc2VkIGFjdGl2aXR5IGluIHRoZQogICAgICBpbmZlcmlvciB3YWxsLiAgSG93ZXZlciwgZ2F0ZWQgaW1hZ2VzIHJldmVhbCBub3JtYWwgd2FsbCBtb3Rpb24KICAgICAgaW4gdGhpcyBhcmVhLiAgCiAgICAgICAKICAgICAgVGhlcmUgaXMgYSBwb3N0LURpcHlyaWRhbW9sZSB0aGFsbGl1bSBsZWZ0IHZlbnRyaWN1bGFyIGVqZWN0aW9uCiAgICAgIGZyYWN0aW9uIG9mIDczJS4gICAgICAKCiAgICBJbXByZXNzaW9uOgogICAgICBObyBldmlkZW5jZSBmb3IgcmV2ZXJzaWJsZSBpc2NoZW1pYS4gIFRoZSBtaWxkIHBlcnNpc3RlbnQKICAgICAgZGVjcmVhc2VkIGFjdGl2aXR5IGluIHRoZSBpbmZlcmlvciB3YWxsIG1heSBiZSBzZWNvbmRhcnkgdG8gc29mdAogICAgICB0aXNzdWUgYXR0ZW51YXRpb24sIGVzcGVjaWFsbHkgc2luY2UgdGhlIHdhbGwgbW90aW9uIGlzIG5vcm1hbCBpbgogICAgICB0aGlzIGFyZWEuICAKCiAgICBQcmltYXJ5IERpYWdub3N0aWMgQ29kZTogCgpQcmltYXJ5IEludGVycHJldGluZyBTdGFmZjoKICBORUlMIEtBVFosIENISUVGLCBOTVMgKFZlcmlmaWVyKQovTUFD"/>
+    <title value="MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION"/>
+    <creation value="2001-04-26T11:07:00Z"/>
+  </presentedForm>
+</DiagnosticReport>

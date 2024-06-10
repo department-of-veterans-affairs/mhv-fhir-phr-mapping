@@ -140,7 +140,7 @@ ext-1:Must have either extensions or value[x], not both {extension.exists() != v
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./part[partType = FAM]","XPN.1/FN.1"
 "Patient.name.given","Patient.name.given","","first name
-middle name","",1,1,"Y","","Y","string {[]} {[]}
+middle name","",1,*,"Y","","Y","string {[]} {[]}
 ","Given names (not always 'first'). Includes middle names","Given name.","If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called ""first name"" since given names do not always come first.","","","","","","","","",,,,,"",,,,"HumanName.given",0,*,"us-core-6
 ","ele-1:All FHIR elements must have a @value or children {hasValue() or (children().count() > id.count())}
 ","./part[partType = GIV]","XPN.2 + XPN.3"

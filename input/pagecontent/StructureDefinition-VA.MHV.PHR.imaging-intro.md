@@ -11,16 +11,23 @@ Radiology Diagnostic Report
   - will hold the unique identifier of this report
   - may hold case number
   - may hold accession number
-- `performer` may point at the imaging study location
+- `performer` may point at the imaging study organization
 - `resultsInterpreter` will point at the provider
-- `effectiveDateTime` will point at the date of the report
+- `issued` will be the date of the report Verified
+- `effectiveDateTime` will be the date of the Exam
 - `encounter.identifier` may hold the encounter identifier
-- `basedOn` may point at a the order [ServiceRequest(s)](StructureDefinition-VA.MHV.PHR.irOrder.html)
 - `conclusion` will hold the interpretation
 - `presentedForm.title` will hold the title of the radiology report
 - `presentedForm.creation` will hold the timestamp on the report
 - `presentedForm.contentType` will be `text/plain`
 - `presentedForm.data` will hold the base64 encoded radiology report
+- `basedOn` may point at a the order [ServiceRequest](StructureDefinition-VA.MHV.PHR.irOrder.html)
+  - `ServiceRequest.code.text` will be the name of the order
+  - `ServiceRequest.identifier` will be the identifier of the order
+  - `ServiceRequest.category` will be Imaging
+  - `ServiceRequest.intent` will be `order`
+  - `ServiceRequest.requester` may be the Requesting Physician
+  - `ServiceRequest.performer` may be the imaging center organization
 - Note there are no Observations or Specimen with a radiology report
 
 ### Search Consideration

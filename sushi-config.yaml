@@ -8,13 +8,13 @@ name: VAMHVFHIRPHR
 title: "MyHealtheVet PHR FHIR API"
 description: "MyHealtheVet exposing PHR using FHIR and Testing Plan."
 status: active
-version: 0.3.7-current
+version: 0.3.7
 fhirVersion: 4.0.1
 copyrightyear: '2022+'
 #date: 2022-04-14
-releaselabel: ci-build
+#releaselabel: ci-build
 #releaselabel: ballot
-#releaselabel: trial-use
+releaselabel: trial-use
 publisher:
   name: VA Digital Services
   url: http://va.gov
@@ -66,11 +66,11 @@ parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/C
     - http://va.gov/systems/localPID
     - http://va.gov/terminology/vistaDefinedTerms/61
 
-resources:
-  Bundle/images:
-    name: Bundle of Radiology results from mock data
-    description: An example of a transaction Bundle with many image reports as DiagnosticReport. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/radiology.xml) MHV receives.
-    exampleBoolean: true
+#resources:
+#  Bundle/images:
+#    name: Bundle of Radiology results from mock data
+#    description: An example of a transaction Bundle with many image reports as DiagnosticReport. This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.imaging.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/radiology.xml) MHV receives.
+#    exampleBoolean: true
 #  Bundle/vitals:
 #    name: Bundle of Vitals from mock data
 #    description: An example of a transaction Bundle with many vitals reports as Observation This was [transformed using the included XSLT](StructureDefinition-VA.MHV.PHR.vitals.html#notes) from the [mock sample SOAP message](https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml) MHV receives.

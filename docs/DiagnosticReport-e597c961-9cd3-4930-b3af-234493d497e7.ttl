@@ -1,0 +1,158 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <https://loinc.org/rdf/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sct: <http://snomed.info/id/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/DiagnosticReport/e597c961-9cd3-4930-b3af-234493d497e7> a fhir:DiagnosticReport ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:id [ fhir:v "e597c961-9cd3-4930-b3af-234493d497e7"] ; # 
+  fhir:meta [
+     fhir:profile ( [
+       fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"^^xsd:anyURI ;
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging>
+     ] )
+  ] ; # 
+  fhir:text [
+     fhir:status [ fhir:v "generated" ] ;
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes:{http://www.ama-assn.org/go/cpt 71020}\">GENERAL RADIOLOGY</span> (<span title=\"Codes:{http://loinc.org LP29684-5}\">Radiology</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>2000-12-14 08:49:00+0000</td></tr><tr><td>Reported</td><td>2000-12-14 08:49:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6998785.915-1 (use: usual) Accession ID/Accession.121400-767 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.767 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>"
+  ] ; # 
+  fhir:contained ( [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "provider-0" ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "unknown" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "MCVEIGH,MICHAEL" ] ;
+       fhir:family [ fhir:v "MCVEIGH,MICHAEL" ]
+     ] )
+  ] [
+     a fhir:Organization ;
+     fhir:id [ fhir:v "organization-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "OrganizationTO.2267" ]
+     ] ) ;
+     fhir:active [ fhir:v "true"^^xsd:boolean ] ;
+     fhir:name [ fhir:v "RADIOLOGY" ]
+  ] [
+     a fhir:ServiceRequest ;
+     fhir:id [ fhir:v "order-0" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"^^xsd:anyURI ;
+         fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:use [ fhir:v "usual" ] ;
+       fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "OrderTO.6749838" ]
+     ] ) ;
+     fhir:status [ fhir:v "unknown" ] ;
+     fhir:intent [ fhir:v "order" ] ;
+     fhir:category ( [
+       fhir:coding ( [
+         a sct:363679005 ;
+         fhir:system [ fhir:v "http://snomed.info/sct"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "363679005" ] ;
+         fhir:display [ fhir:v "Imaging" ]
+       ] )
+     ] ) ;
+     fhir:code [
+       fhir:text [ fhir:v "CHEST 2 VIEWS PA&LAT" ]
+     ] ;
+     fhir:subject [
+       fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+       fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+     ] ;
+     fhir:encounter [
+       fhir:identifier [
+         fhir:value [ fhir:v "3067104" ]
+       ]
+     ] ;
+     fhir:requester [
+       fhir:reference [ fhir:v "#provider-0" ]
+     ] ;
+     fhir:performer ( [
+       fhir:reference [ fhir:v "#organization-0" ]
+     ] )
+  ] ) ; # 
+  fhir:identifier ( [
+     fhir:use [ fhir:v "usual" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "ImagingExamTO.6998785.915-1" ]
+  ] [
+     fhir:use [ fhir:v "official" ] ;
+     fhir:type [
+       fhir:coding ( [
+         fhir:system [ fhir:v "http://terminology.hl7.org/CodeSystem/v2-0203"^^xsd:anyURI ] ;
+         fhir:code [ fhir:v "ACSN" ]
+       ] )
+     ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "Accession.121400-767" ]
+  ] [
+     fhir:use [ fhir:v "secondary" ] ;
+     fhir:system [ fhir:v "urn:oid:2.16.840.1.113883.4.349.4.989"^^xsd:anyURI ] ;
+     fhir:value [ fhir:v "CaseNum.767" ]
+  ] ) ; # 
+  fhir:basedOn ( [
+     fhir:reference [ fhir:v "#order-0" ]
+  ] ) ; # 
+  fhir:status [ fhir:v "final"] ; # 
+  fhir:category ( [
+     fhir:coding ( [
+       a loinc:LP29684-5 ;
+       fhir:system [ fhir:v "http://loinc.org"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "LP29684-5" ] ;
+       fhir:display [ fhir:v "Radiology" ]
+     ] )
+  ] ) ; # 
+  fhir:code [
+     fhir:coding ( [
+       fhir:system [ fhir:v "http://www.ama-assn.org/go/cpt"^^xsd:anyURI ] ;
+       fhir:code [ fhir:v "71020" ] ;
+       fhir:display [ fhir:v "RADIOLOGIC EXAMINATION, CHEST, 2 VIEWS, FRONTAL AND LATERAL;" ]
+     ] ) ;
+     fhir:text [ fhir:v "GENERAL RADIOLOGY" ]
+  ] ; # 
+  fhir:subject [
+     fhir:link <https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/Patient/ex-MHV-patient-0> ;
+     fhir:reference [ fhir:v "Patient/ex-MHV-patient-0" ]
+  ] ; # 
+  fhir:encounter [
+     fhir:identifier [
+       fhir:value [ fhir:v "3067104" ]
+     ]
+  ] ; # 
+  fhir:effective [ fhir:v "2000-12-14T08:49:00Z"^^xsd:dateTime] ; # 
+  fhir:issued [ fhir:v "2000-12-14T08:49:00Z"^^xsd:dateTime] ; # 
+  fhir:performer ( [
+     fhir:reference [ fhir:v "#organization-0" ]
+  ] ) ; # 
+  fhir:resultsInterpreter ( [
+     fhir:reference [ fhir:v "#provider-0" ]
+  ] ) ; # 
+  fhir:presentedForm ( [
+     fhir:contentType [ fhir:v "text/plain" ] ;
+     fhir:data [ fhir:v "Q0hFU1QgMiBWSUVXUyBQQSZMQVQKICAgCkV4bSBEYXRlOiBERUMgMTQsIDIwMDBAMDg6NDkKUmVxIFBoeXM6IFBBQ0hFQ08sSkFJTUUgICAgICAgICAgICAgICAgICBQYXQgTG9jOiBaWlpIRU1BVE9MT0dZIElJIChSZXEnZyBMb2MpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgSW1nIExvYzogUkFESU9MT0dZCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU2VydmljZTogVW5rbm93bgoKIAoKKENhc2UgNzY3IENPTVBMRVRFKSAgQ0hFU1QgMiBWSUVXUyBQQSZMQVQgICAgICAgICAgICAgKFJBRCAgRGV0YWlsZWQpIENQVDo3MTAyMAogICAgIFByb2MgTW9kaWZpZXJzIDogTEVGVAoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIGdyYW51bG9tYXRhPyAKCiAgICBSZXBvcnQgU3RhdHVzOiBWZXJpZmllZCAgICAgICAgICAgICAgICAgICBEYXRlIFJlcG9ydGVkOiBERUMgMTQsIDIwMDAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGUgVmVyaWZpZWQ6IERFQyAxOCwgMjAwMAogICAgVmVyaWZpZXIgRS1TaWc6L0VTL01pY2hhZWwgTWNWZWlnaCBNRAoKICAgIFJlcG9ydDoKICAgICAgUEEgQU5EIExBVEVSQUwgQ0hFU1Q6ICAxMi0xNC0wMDogIAogICAgICAgCiAgICAgIFRoZSBzdHVkeSB3YXMgY29tcGFyZWQgdG8gdGhhdCBvZiA3LTMxLTAwLiAgCiAgICAgICAKICAgICAgRXhhbWluYXRpb24gcmV2ZWFscyByZXRyYWN0aW9uIG9mIGJvdGggaGlsYSBzdXBlcmlvcmx5IHdpdGggCiAgICAgIHBsZXVyb3BhcmVuY2h5bWFsIHNjYXJyaW5nLiAgVGhlcmUgYXJlIHNjYXR0ZXJlZCBmaWJyb25vZHVsYXIKICAgICAgY2hhbmdlcyBpbiB0aGUgbGVmdCB1cHBlciBsb2JlIHBhcnRpY3VsYXJseSBidXQgYWxzbyBpbiB0aGUgcmlnaHQKICAgICAgdXBwZXIgbG9iZSBidXQgdGhlcmUgaXMgYWdhaW4gbm8gc2lnbmlmaWNhbnQgaW50ZXJ2YWwgY2hhbmdlIGZyb20KICAgICAgdGhlIHByZXZpb3VzIHN0dWR5LiAgU2V2ZXJhbCBvbGQgcmliIGZyYWN0dXJlcyBhcmUgbm90ZWQgb24gdGhlCiAgICAgIHJpZ2h0IGFuZCB0aGVyZSBpcyBhIGdlbmVyYWxpemVkIGJvbnkgZGVtaW5lcmFsaXphdGlvbiBjb25zaXN0ZW50CiAgICAgIHdpdGggb3N0ZW9wb3Jvc2lzLiAgCiAgICAgICAKICAgICAgVGhlcmUgaXMgbWlsZCBjb21wcmVzc2lvbiBvZiBzZXZlcmFsIG1pZCB0aG9yYWNpYyB2ZXJ0ZWJyYWwKICAgICAgYm9kaWVzIGVzc2VudGlhbGx5IHVuY2hhbmdlZCBmcm9tIHRoYXQgb2YgdGhlIHByZXZpb3VzIHN0dWR5LiAgCgogICAgSW1wcmVzc2lvbjoKICAgICAgVGhlcmUgaXMgZXZpZGVuY2UgZm9yIENPUEQgYW5kIHJldHJhY3Rpb24gb2YgdGhlIGhpbGEgYmlsYXRlcmFsbHkKICAgICAgd2hpY2ggbW9zdCBsaWtlbHkgcmVwcmVzZW50cyBvbGQgaGVhbGVkIGdyYW51bG9tYXRvdXMgaW5mZWN0aW9uLiAKICAgICAgVGhlc2UgZmluZGluZ3MgYXJlIHVuY2hhbmdlZCBmcm9tIHRoZSBwcmV2aW91cyBzdHVkeS4gIAoKICAgIFByaW1hcnkgRGlhZ25vc3RpYyBDb2RlOiAKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIE1JQ0hBRUwgTUNWRUlHSCwgQ0hJRUYsUkFESU9MT0dZIFNFUlZJQ0UgKFZlcmlmaWVyKQovUlND"^^xsd:base64Binary ] ;
+     fhir:title [ fhir:v "CHEST 2 VIEWS PA&LAT" ] ;
+     fhir:creation [ fhir:v "2000-12-14T08:49:00Z"^^xsd:dateTime ]
+  ] ) . # 
+
+# -------------------------------------------------------------------------------------
+

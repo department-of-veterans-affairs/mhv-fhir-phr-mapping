@@ -3,7 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.3.6</title>
+    <title>Artifacts Summary - MyHealtheVet PHR FHIR API v0.3.7</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -57,7 +57,7 @@
         <div id="ig-status">
           <p><span style="font-size:12pt;font-weight:bold">MyHealtheVet PHR FHIR API</span>
             <br/>
-            <span style="display:inline-block;">0.3.6 - trial-use
+            <span style="display:inline-block;">0.3.7 - trial-use
 
 
 
@@ -127,7 +127,7 @@
         <a href="background.html#notes">Notes</a>
       </li>
       <li>
-        <a href="background.html#radiology">Radiology</a>
+        <a href="background.html#imaging-reports">Radiology</a>
       </li>
       <li>
         <a href="background.html#vital-sign">Vital-Sign</a>
@@ -194,7 +194,7 @@ h5:before{color:silver;counter-increment:detail;content:var(--heading-prefix) ".
 h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefix) "." counter(sub-section) "." counter(composite) "." counter(detail) "." counter(more-detail)" ";}
 </style>
 <div class="col-12">
-  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.6) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+  <!--ReleaseHeader--><p id="publish-box">MyHealtheVet PHR FHIR API - Local Development build (v0.3.7) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
   <h2>Artifacts Summary</h2>
   
   
@@ -261,7 +261,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
                   title="StructureDefinition/VA.MHV.PHR.documentReference">VA MHV All DocumentReference</a>
             </td>
             <td>
-<p>A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. This includes Physician Notes, Discharge Summary, ECG/EKG, and Imaging reports.</p>
+<p>A profile on the DocumentReference resource that covers all uses of FHIR DocumentReference in the MyHealtheVet FHIR API. This includes Physician Notes, Discharge Summary, and ECG/EKG reports.</p>
 </td>
          </tr>
          <tr>
@@ -330,7 +330,7 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
 <ul>
   <li><code class="language-plaintext highlighter-rouge">.subject</code> must be the patient from the DiagnosticReport</li>
   <li>code = {labTests.orderedTestCode}</li>
-  <li>status = <code class="language-plaintext highlighter-rouge">unknown</code> – as we dont know - TODO</li>
+  <li>status = <code class="language-plaintext highlighter-rouge">unknown</code></li>
   <li>intent = <code class="language-plaintext highlighter-rouge">order</code></li>
   <li>category = SCT#108252007 Laboratory procedure</li>
   <li>specimen = specimen</li>
@@ -339,6 +339,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
       <li>occurrence[x], authoredOn</li>
     </ul>
   </li>
+  <li>requester is the requesting provider</li>
+  <li>facility is the requesting facility</li>
   <li>no other elements are populated</li>
 </ul>
 </td>
@@ -378,6 +380,41 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
             </td>
             <td>
 <p>Profile on DiagnosticReport for Chem-Hem lab report.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-VA.MHV.PHR.imaging.html"
+                  title="StructureDefinition/VA.MHV.PHR.imaging">VA MHV PHR Imaging Report</a>
+            </td>
+            <td>
+<p>A profile on the DiagnosticReport resource for MHV PHR exposing Imaging Report (ImagingExamTO) using FHIR API.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="StructureDefinition-VA.MHV.PHR.irOrder.html"
+                  title="StructureDefinition/VA.MHV.PHR.irOrder">VA MHV PHR ImagingExamTO.order</a>
+            </td>
+            <td>
+<p>A profile showing how ImagingExamTO.order (Order) using FHIR API to MyHealtheVet PHR.</p>
+
+<p>One ServiceRequest holds one <code class="language-plaintext highlighter-rouge">ImagingExamTO.order</code>. Where multiple order elements exist, multiple ServiceRequest are used.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">.subject</code> must be the patient from the DiagnosticReport</li>
+  <li>code.text = {imagingExamTO.order.type.name1}</li>
+  <li>status = <code class="language-plaintext highlighter-rouge">unknown</code></li>
+  <li>intent = <code class="language-plaintext highlighter-rouge">order</code></li>
+  <li>category = SCT#363679005 Imaging</li>
+  <li>not populating US-Core must support as we dont have the values
+    <ul>
+      <li>occurrence[x], authoredOn</li>
+    </ul>
+  </li>
+  <li>requester is the requesting provider</li>
+  <li>facility is the requesting facility</li>
+  <li>no other elements are populated</li>
+</ul>
 </td>
          </tr>
          <tr>
@@ -578,15 +615,6 @@ populate the Organization.name with the value from that table (when it is availa
 <p>A profile on the Observation resource for MHV PHR exposing Pluse Oximetry Vital-Signs using FHIR API.</p>
 
 <p>Note that VIA does not provide us the supplemental O2 concentration or flowrate</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="StructureDefinition-VA.MHV.PHR.imaging.html"
-                  title="StructureDefinition/VA.MHV.PHR.imaging">VA MHV PHR Radiology</a>
-            </td>
-            <td>
-<p>A profile on the DocumentReference resource for MHV PHR exposing Radiology note (ImagingExamTO) using FHIR API.</p>
 </td>
          </tr>
          <tr>
@@ -918,298 +946,146 @@ RECORD INDEXES:  AHDR (#482)</p>
       <tbody>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9952.html" title="DiagnosticReport/9952">9952</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-1.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-1">Allergy 1</a>
             </td>
             <td>
-<p>ChemHem mock 9952</p>
+<p>IntoleranceCondition record identity 53495 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9953.html" title="DiagnosticReport/9953">9953</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-1-deleted.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-1-deleted">Allergy 1 of an MHV allergy or intolerance - deleted</a>
             </td>
             <td>
-<p>ChemHem mock 9953</p>
+<p>IntoleranceCondition record identity 53495 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9954.html" title="DiagnosticReport/9954">9954</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-10.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-10">Allergy 10</a>
             </td>
             <td>
-<p>ChemHem mock 9954</p>
+<p>IntoleranceCondition record identity 69075 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9955.html" title="DiagnosticReport/9955">9955</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-11.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-11">Allergy 11</a>
             </td>
             <td>
-<p>ChemHem mock 9955</p>
+<p>IntoleranceCondition record identity 69092 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9956.html" title="DiagnosticReport/9956">9956</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-12.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-12">Allergy 12</a>
             </td>
             <td>
-<p>ChemHem mock 9956</p>
+<p>IntoleranceCondition record identity 69093 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9957.html" title="DiagnosticReport/9957">9957</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-13.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-13">Allergy 13</a>
             </td>
             <td>
-<p>ChemHem mock 9957</p>
+<p>IntoleranceCondition record identity 69123 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9958.html" title="DiagnosticReport/9958">9958</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-14.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-14">Allergy 14</a>
             </td>
             <td>
-<p>ChemHem mock 9958</p>
+<p>IntoleranceCondition record identity 69124 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9959.html" title="DiagnosticReport/9959">9959</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-15.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-15">Allergy 15</a>
             </td>
             <td>
-<p>ChemHem mock 9959</p>
+<p>IntoleranceCondition record identity 69129 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9960.html" title="DiagnosticReport/9960">9960</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-2.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-2">Allergy 2</a>
             </td>
             <td>
-<p>ChemHem mock 9960</p>
+<p>IntoleranceCondition record identity 67933 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9961.html" title="DiagnosticReport/9961">9961</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-3.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-3">Allergy 3</a>
             </td>
             <td>
-<p>ChemHem mock 9961</p>
+<p>IntoleranceCondition record identity 67934 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9962.html" title="DiagnosticReport/9962">9962</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-4.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-4">Allergy 4</a>
             </td>
             <td>
-<p>ChemHem mock 9962</p>
+<p>IntoleranceCondition record identity 69066 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9963.html" title="DiagnosticReport/9963">9963</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-5.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-5">Allergy 5</a>
             </td>
             <td>
-<p>ChemHem mock 9963</p>
+<p>IntoleranceCondition record identity 69067 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9964.html" title="DiagnosticReport/9964">9964</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-6.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-6">Allergy 6</a>
             </td>
             <td>
-<p>ChemHem mock 9964</p>
+<p>IntoleranceCondition record identity 69071 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9965.html" title="DiagnosticReport/9965">9965</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-7.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-7">Allergy 7</a>
             </td>
             <td>
-<p>ChemHem mock 9965</p>
+<p>IntoleranceCondition record identity 69072 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9966.html" title="DiagnosticReport/9966">9966</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-8.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-8">Allergy 8</a>
             </td>
             <td>
-<p>ChemHem mock 9966</p>
+<p>IntoleranceCondition record identity 69073 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="DiagnosticReport-9967.html" title="DiagnosticReport/9967">9967</a>
+               <a href="AllergyIntolerance-ex-MHV-allergy-9.html"
+                  title="AllergyIntolerance/ex-MHV-allergy-9">Allergy 9</a>
             </td>
             <td>
-<p>ChemHem mock 9967</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9968.html" title="DiagnosticReport/9968">9968</a>
-            </td>
-            <td>
-<p>ChemHem mock 9968</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9969.html" title="DiagnosticReport/9969">9969</a>
-            </td>
-            <td>
-<p>ChemHem mock 9969</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9970.html" title="DiagnosticReport/9970">9970</a>
-            </td>
-            <td>
-<p>ChemHem mock 9970</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9971.html" title="DiagnosticReport/9971">9971</a>
-            </td>
-            <td>
-<p>ChemHem mock 9971</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9972.html" title="DiagnosticReport/9972">9972</a>
-            </td>
-            <td>
-<p>ChemHem mock 9972</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9973.html" title="DiagnosticReport/9973">9973</a>
-            </td>
-            <td>
-<p>ChemHem mock 9973</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9974.html" title="DiagnosticReport/9974">9974</a>
-            </td>
-            <td>
-<p>ChemHem mock 9974</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9975.html" title="DiagnosticReport/9975">9975</a>
-            </td>
-            <td>
-<p>ChemHem mock 9975</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9976.html" title="DiagnosticReport/9976">9976</a>
-            </td>
-            <td>
-<p>ChemHem mock 9976</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9977.html" title="DiagnosticReport/9977">9977</a>
-            </td>
-            <td>
-<p>ChemHem mock 9977</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9978.html" title="DiagnosticReport/9978">9978</a>
-            </td>
-            <td>
-<p>ChemHem mock 9978</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9979.html" title="DiagnosticReport/9979">9979</a>
-            </td>
-            <td>
-<p>ChemHem mock 9979</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9980.html" title="DiagnosticReport/9980">9980</a>
-            </td>
-            <td>
-<p>ChemHem mock 9980</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9981.html" title="DiagnosticReport/9981">9981</a>
-            </td>
-            <td>
-<p>ChemHem mock 9981</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9982.html" title="DiagnosticReport/9982">9982</a>
-            </td>
-            <td>
-<p>ChemHem mock 9982</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9983.html" title="DiagnosticReport/9983">9983</a>
-            </td>
-            <td>
-<p>ChemHem mock 9983</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9984.html" title="DiagnosticReport/9984">9984</a>
-            </td>
-            <td>
-<p>ChemHem mock 9984</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9985.html" title="DiagnosticReport/9985">9985</a>
-            </td>
-            <td>
-<p>ChemHem mock 9985</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9986.html" title="DiagnosticReport/9986">9986</a>
-            </td>
-            <td>
-<p>ChemHem mock 9986</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9987.html" title="DiagnosticReport/9987">9987</a>
-            </td>
-            <td>
-<p>ChemHem mock 9987</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-9988.html" title="DiagnosticReport/9988">9988</a>
-            </td>
-            <td>
-<p>ChemHem mock 9988</p>
+<p>IntoleranceCondition record identity 69074 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
@@ -1475,14 +1351,6 @@ RECORD INDEXES:  AHDR (#482)</p>
          </tr>
          <tr>
             <td style="column-width:30%">
-               <a href="Bundle-images.html" title="Bundle/images">Bundle of Radiology results from mock data</a>
-            </td>
-            <td>
-<p>An example of a transaction Bundle with many image reports as DocumentReference. This was <a href="StructureDefinition-VA.MHV.PHR.imaging.html#notes">transformed using the included XSLT</a> from the <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/radiology.xml">mock sample SOAP message</a> MHV receives.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
                <a href="Observation-04d6e474-aa2f-476d-a525-be1395b9fb81.html"
                   title="Observation/04d6e474-aa2f-476d-a525-be1395b9fb81">CENTRAL VENOUS PRESSURE</a>
             </td>
@@ -1605,6 +1473,374 @@ RECORD INDEXES:  AHDR (#482)</p>
             </td>
             <td>
 <p>CARDIOLOGY - E-CONSULT</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-chReport-1.html"
+                  title="DiagnosticReport/ex-MHV-chReport-1">ChemHem 1</a>
+            </td>
+            <td>
+<p>Example from a mock labTestPromises (1110200002)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-chReport-1-secondary.html"
+                  title="DiagnosticReport/ex-MHV-chReport-1-secondary">ChemHem 1 secondary identifier</a>
+            </td>
+            <td>
+<p>Example from a mock labTestPromises (1110200002) with a secondary kind of identifier</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-chReport-1103030001.html"
+                  title="DiagnosticReport/ex-MHV-chReport-1103030001">ChemHem 1103030001</a>
+            </td>
+            <td>
+<p>Example from a mock labTestPromises (1103030001)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-chReport-1103030002.html"
+                  title="DiagnosticReport/ex-MHV-chReport-1103030002">ChemHem 1103030002</a>
+            </td>
+            <td>
+<p>Example from a mock labTestPromises (1103030002)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-chReport-1190370002.html"
+                  title="DiagnosticReport/ex-MHV-chReport-1190370002">ChemHem 1190370002</a>
+            </td>
+            <td>
+<p>Example from a mock labTestPromises (1190370002)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-chReport-1190530001.html"
+                  title="DiagnosticReport/ex-MHV-chReport-1190530001">ChemHem 1190530001</a>
+            </td>
+            <td>
+<p>Example from a mock labTestPromises (1190530001)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-chReport-1190530002.html"
+                  title="DiagnosticReport/ex-MHV-chReport-1190530002">ChemHem 1190530002</a>
+            </td>
+            <td>
+<p>Example from a mock labTestPromises (1190530002)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-chReport-1190740001.html"
+                  title="DiagnosticReport/ex-MHV-chReport-1190740001">ChemHem 1190740001</a>
+            </td>
+            <td>
+<p>Example from a mock labTestPromises (1190740001)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9952.html" title="DiagnosticReport/9952">ChemHem 9952</a>
+            </td>
+            <td>
+<p>ChemHem mock 9952</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9953.html" title="DiagnosticReport/9953">ChemHem 9953</a>
+            </td>
+            <td>
+<p>ChemHem mock 9953</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9954.html" title="DiagnosticReport/9954">ChemHem 9954</a>
+            </td>
+            <td>
+<p>ChemHem mock 9954</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9955.html" title="DiagnosticReport/9955">ChemHem 9955</a>
+            </td>
+            <td>
+<p>ChemHem mock 9955</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9956.html" title="DiagnosticReport/9956">ChemHem 9956</a>
+            </td>
+            <td>
+<p>ChemHem mock 9956</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9957.html" title="DiagnosticReport/9957">ChemHem 9957</a>
+            </td>
+            <td>
+<p>ChemHem mock 9957</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9958.html" title="DiagnosticReport/9958">ChemHem 9958</a>
+            </td>
+            <td>
+<p>ChemHem mock 9958</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9959.html" title="DiagnosticReport/9959">ChemHem 9959</a>
+            </td>
+            <td>
+<p>ChemHem mock 9959</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9960.html" title="DiagnosticReport/9960">ChemHem 9960</a>
+            </td>
+            <td>
+<p>ChemHem mock 9960</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9961.html" title="DiagnosticReport/9961">ChemHem 9961</a>
+            </td>
+            <td>
+<p>ChemHem mock 9961</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9962.html" title="DiagnosticReport/9962">ChemHem 9962</a>
+            </td>
+            <td>
+<p>ChemHem mock 9962</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9963.html" title="DiagnosticReport/9963">ChemHem 9963</a>
+            </td>
+            <td>
+<p>ChemHem mock 9963</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9964.html" title="DiagnosticReport/9964">ChemHem 9964</a>
+            </td>
+            <td>
+<p>ChemHem mock 9964</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9965.html" title="DiagnosticReport/9965">ChemHem 9965</a>
+            </td>
+            <td>
+<p>ChemHem mock 9965</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9966.html" title="DiagnosticReport/9966">ChemHem 9966</a>
+            </td>
+            <td>
+<p>ChemHem mock 9966</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9967.html" title="DiagnosticReport/9967">ChemHem 9967</a>
+            </td>
+            <td>
+<p>ChemHem mock 9967</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9968.html" title="DiagnosticReport/9968">ChemHem 9968</a>
+            </td>
+            <td>
+<p>ChemHem mock 9968</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9969.html" title="DiagnosticReport/9969">ChemHem 9969</a>
+            </td>
+            <td>
+<p>ChemHem mock 9969</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9970.html" title="DiagnosticReport/9970">ChemHem 9970</a>
+            </td>
+            <td>
+<p>ChemHem mock 9970</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9971.html" title="DiagnosticReport/9971">ChemHem 9971</a>
+            </td>
+            <td>
+<p>ChemHem mock 9971</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9972.html" title="DiagnosticReport/9972">ChemHem 9972</a>
+            </td>
+            <td>
+<p>ChemHem mock 9972</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9973.html" title="DiagnosticReport/9973">ChemHem 9973</a>
+            </td>
+            <td>
+<p>ChemHem mock 9973</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9974.html" title="DiagnosticReport/9974">ChemHem 9974</a>
+            </td>
+            <td>
+<p>ChemHem mock 9974</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9975.html" title="DiagnosticReport/9975">ChemHem 9975</a>
+            </td>
+            <td>
+<p>ChemHem mock 9975</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9976.html" title="DiagnosticReport/9976">ChemHem 9976</a>
+            </td>
+            <td>
+<p>ChemHem mock 9976</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9977.html" title="DiagnosticReport/9977">ChemHem 9977</a>
+            </td>
+            <td>
+<p>ChemHem mock 9977</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9978.html" title="DiagnosticReport/9978">ChemHem 9978</a>
+            </td>
+            <td>
+<p>ChemHem mock 9978</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9979.html" title="DiagnosticReport/9979">ChemHem 9979</a>
+            </td>
+            <td>
+<p>ChemHem mock 9979</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9980.html" title="DiagnosticReport/9980">ChemHem 9980</a>
+            </td>
+            <td>
+<p>ChemHem mock 9980</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9981.html" title="DiagnosticReport/9981">ChemHem 9981</a>
+            </td>
+            <td>
+<p>ChemHem mock 9981</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9982.html" title="DiagnosticReport/9982">ChemHem 9982</a>
+            </td>
+            <td>
+<p>ChemHem mock 9982</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9983.html" title="DiagnosticReport/9983">ChemHem 9983</a>
+            </td>
+            <td>
+<p>ChemHem mock 9983</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9984.html" title="DiagnosticReport/9984">ChemHem 9984</a>
+            </td>
+            <td>
+<p>ChemHem mock 9984</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9985.html" title="DiagnosticReport/9985">ChemHem 9985</a>
+            </td>
+            <td>
+<p>ChemHem mock 9985</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9986.html" title="DiagnosticReport/9986">ChemHem 9986</a>
+            </td>
+            <td>
+<p>ChemHem mock 9986</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9987.html" title="DiagnosticReport/9987">ChemHem 9987</a>
+            </td>
+            <td>
+<p>ChemHem mock 9987</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9988.html" title="DiagnosticReport/9988">ChemHem 9988</a>
+            </td>
+            <td>
+<p>ChemHem mock 9988</p>
 </td>
          </tr>
          <tr>
@@ -1925,488 +2161,55 @@ RECORD INDEXES:  AHDR (#482)</p>
          <tr>
             <td style="column-width:30%">
                <a href="DocumentReference-ex-MHV-ecg-0.html"
-                  title="DocumentReference/ex-MHV-ecg-0">Example 0 of a MHV ECG</a>
+                  title="DocumentReference/ex-MHV-ecg-0">ECG 0</a>
             </td>
             <td>
 <p>Derived from the a mock ClinicalProcedureTO:</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-ex-MHV-imaging-0.html"
-                  title="DocumentReference/ex-MHV-imaging-0">Example 0 of a MHV Radiology (Imaging Exam)</a>
-            </td>
-            <td>
-<p>Derived from the a mock ImagingExamTO:</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="DocumentReference-ex-MHV-ecg-1.html"
-                  title="DocumentReference/ex-MHV-ecg-1">Example 1 of a MHV ECG</a>
+                  title="DocumentReference/ex-MHV-ecg-1">ECG 1</a>
             </td>
             <td>
 <p>Derived from the a mock ClinicalProcedureTO:</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-ex-MHV-note-1.html"
-                  title="DocumentReference/ex-MHV-note-1">Example 1 of a MHV Note</a>
-            </td>
-            <td>
-<p>Derived from the a mock NoteTO:</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-ex-MHV-note-deleted-1.html"
-                  title="DocumentReference/ex-MHV-note-deleted-1">Example 1 of a MHV Note - marked as entered-in-error</a>
-            </td>
-            <td>
-<p>Derived from the a mock NoteTO:</p>
-
-<p>This is replicated from ex-MHV-note-1, with change of identifier (NoteTO.5), and marked as entered-in-error</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-1.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-1">Example 1 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 53495 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-1-deleted.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-1-deleted">Example 1 of an MHV allergy or intolerance - deleted</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 53495 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-chReport-1.html"
-                  title="DiagnosticReport/ex-MHV-chReport-1">Example 1 of an MHV chReport</a>
-            </td>
-            <td>
-<p>Example from a mock labTestPromises (1110200002)</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-labReport-1.html"
-                  title="DiagnosticReport/ex-MHV-labReport-1">Example 1 of an MHV labReport</a>
-            </td>
-            <td>
-<p>Example from a mock labReportTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Observation-ex-MHV-vitals-1.html"
-                  title="Observation/ex-MHV-vitals-1">Example 1 of an MHV vital-sign</a>
-            </td>
-            <td>
-<p>Example from a mock VitalSignTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Observation-ex-MHV-vitals-deleted-1.html"
-                  title="Observation/ex-MHV-vitals-deleted-1">Example 1 of an MHV vital-sign, but with a different identifier, and marked as entered-in-error</a>
-            </td>
-            <td>
-<p>Example from a mock VitalSignTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-10.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-10">Example 10 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69075 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-11.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-11">Example 11 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69092 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-chReport-1103030001.html"
-                  title="DiagnosticReport/ex-MHV-chReport-1103030001">Example 1103030001 of an MHV chReport</a>
-            </td>
-            <td>
-<p>Example from a mock labTestPromises (1103030001)</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-chReport-1103030002.html"
-                  title="DiagnosticReport/ex-MHV-chReport-1103030002">Example 1103030002 of an MHV chReport</a>
-            </td>
-            <td>
-<p>Example from a mock labTestPromises (1103030002)</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-chReport-1190370002.html"
-                  title="DiagnosticReport/ex-MHV-chReport-1190370002">Example 1190370002 of an MHV chReport</a>
-            </td>
-            <td>
-<p>Example from a mock labTestPromises (1190370002)</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-chReport-1190530001.html"
-                  title="DiagnosticReport/ex-MHV-chReport-1190530001">Example 1190530001 of an MHV chReport</a>
-            </td>
-            <td>
-<p>Example from a mock labTestPromises (1190530001)</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-chReport-1190530002.html"
-                  title="DiagnosticReport/ex-MHV-chReport-1190530002">Example 1190530002 of an MHV chReport</a>
-            </td>
-            <td>
-<p>Example from a mock labTestPromises (1190530002)</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-chReport-1190740001.html"
-                  title="DiagnosticReport/ex-MHV-chReport-1190740001">Example 1190740001 of an MHV chReport</a>
-            </td>
-            <td>
-<p>Example from a mock labTestPromises (1190740001)</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-12.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-12">Example 12 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69093 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-13.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-13">Example 13 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69123 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-14.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-14">Example 14 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69124 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-15.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-15">Example 15 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69129 from a mock ProblemTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="DocumentReference-ex-MHV-ecg-2.html"
-                  title="DocumentReference/ex-MHV-ecg-2">Example 2 of a MHV ECG</a>
+                  title="DocumentReference/ex-MHV-ecg-2">ECG 2</a>
             </td>
             <td>
 <p>Derived from the a mock ClinicalProcedureTO:</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-2.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-2">Example 2 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 67933 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-labReport-2.html"
-                  title="DiagnosticReport/ex-MHV-labReport-2">Example 2 of an MHV labReport</a>
-            </td>
-            <td>
-<p>Example from a mock labReportTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="DocumentReference-ex-MHV-ecg-3.html"
-                  title="DocumentReference/ex-MHV-ecg-3">Example 3 of a MHV ECG</a>
+                  title="DocumentReference/ex-MHV-ecg-3">ECG 3</a>
             </td>
             <td>
 <p>Derived from the a mock ClinicalProcedureTO:</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-3.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-3">Example 3 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 67934 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-labReport-3.html"
-                  title="DiagnosticReport/ex-MHV-labReport-3">Example 3 of an MHV labReport</a>
-            </td>
-            <td>
-<p>Example from a mock labReportTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="DocumentReference-ex-MHV-ecg-4.html"
-                  title="DocumentReference/ex-MHV-ecg-4">Example 4 of a MHV ECG</a>
+                  title="DocumentReference/ex-MHV-ecg-4">ECG 4</a>
             </td>
             <td>
 <p>Derived from the a mock ClinicalProcedureTO:</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-ex-MHV-note-4.html"
-                  title="DocumentReference/ex-MHV-note-4">Example 4 of a MHV Note</a>
-            </td>
-            <td>
-<p>Derived from the a mock NoteTO:</p>
-
-<p>Note dropped cosigner</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-4.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-4">Example 4 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69066 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-labReport-4.html"
-                  title="DiagnosticReport/ex-MHV-labReport-4">Example 4 of an MHV labReport</a>
-            </td>
-            <td>
-<p>Example from a mock labReportTO</p>
 </td>
          </tr>
          <tr>
             <td style="column-width:30%">
                <a href="DocumentReference-ex-MHV-ecg-5.html"
-                  title="DocumentReference/ex-MHV-ecg-5">Example 5 of a MHV ECG</a>
+                  title="DocumentReference/ex-MHV-ecg-5">ECG 5</a>
             </td>
             <td>
 <p>Derived from the a mock ClinicalProcedureTO:</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-ex-MHV-note-5.html"
-                  title="DocumentReference/ex-MHV-note-5">Example 5 of a MHV Note</a>
-            </td>
-            <td>
-<p>Derived from the a mock NoteTO:</p>
-
-<p>Note has an unsigned addenda</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-5.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-5">Example 5 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69067 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-labReport-5.html"
-                  title="DiagnosticReport/ex-MHV-labReport-5">Example 5 of an MHV labReport</a>
-            </td>
-            <td>
-<p>Example from a mock labReportTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-ex-MHV-note-6.html"
-                  title="DocumentReference/ex-MHV-note-6">Example 6 of a MHV Note</a>
-            </td>
-            <td>
-<p>Derived from the a mock NoteTO:</p>
-
-<p>Note has a signed addenda</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-6.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-6">Example 6 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69071 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-labReport-6.html"
-                  title="DiagnosticReport/ex-MHV-labReport-6">Example 6 of an MHV labReport</a>
-            </td>
-            <td>
-<p>Example from a mock labReportTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-7.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-7">Example 7 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69072 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-labReport-7.html"
-                  title="DiagnosticReport/ex-MHV-labReport-7">Example 7 of an MHV labReport</a>
-            </td>
-            <td>
-<p>Example from a mock labReportTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-8.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-8">Example 8 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69073 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DiagnosticReport-ex-MHV-labReport-8.html"
-                  title="DiagnosticReport/ex-MHV-labReport-8">Example 8 of an MHV labReport</a>
-            </td>
-            <td>
-<p>Example from a mock labReportTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="AllergyIntolerance-ex-MHV-allergy-9.html"
-                  title="AllergyIntolerance/ex-MHV-allergy-9">Example 9 of an MHV allergy or intolerance</a>
-            </td>
-            <td>
-<p>IntoleranceCondition record identity 69074 from a mock ProblemTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-ex-MHV-patient-1.html" title="Patient/ex-MHV-patient-1">Example DAYSHR from PatientTO</a>
-            </td>
-            <td>
-<p>This example is derived off of a mock PatientTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-ex-MHV-patient-3.html" title="Patient/ex-MHV-patient-3">Example DAYSHR from PatientTO</a>
-            </td>
-            <td>
-<p>This example is derived off of a mock PatientTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-ex-VIA-patient-0.html" title="Patient/ex-VIA-patient-0">Example MHVLISAONE from PatientTO</a>
-            </td>
-            <td>
-<p>This example is derived off of a mock PatientTO. It shows where everything that could be in a VIA PatientTO could go. This is not an example of what MHV will populate the Patient like.</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-ex-MHV-patient-2.html" title="Patient/ex-MHV-patient-2">Example ROBERT from PatientTO</a>
-            </td>
-            <td>
-<p>This example is derived off of a mock PatientTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-ex-MHV-patient-4.html" title="Patient/ex-MHV-patient-4">Example VETERAN CASEY</a>
-            </td>
-            <td>
-<p>This example is derived off of a mock PatientTO</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Patient-ex-MHV-patient-0.html" title="Patient/ex-MHV-patient-0">Example of MHV MHVLISAONE</a>
-            </td>
-            <td>
-<p>Only values from eVault</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Observation-ex-MHV-pain-1.html" title="Observation/ex-MHV-pain-1">Example of a MHV pain R4 observation of 10</a>
-            </td>
-            <td>
-<p>holding typical values</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Observation-ex-MHV-heartRate-1.html"
-                  title="Observation/ex-MHV-heartRate-1">Example of an MHV heartRate R4 observation</a>
-            </td>
-            <td>
-<p>Heart Rate holding typical values</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="Observation-ex-MHV-oximetry-1.html"
-                  title="Observation/ex-MHV-oximetry-1">Example of an MHV heartRate R4 observation</a>
-            </td>
-            <td>
-<p>Heart Rate holding typical values</p>
 </td>
          </tr>
          <tr>
@@ -2546,6 +2349,321 @@ RECORD INDEXES:  AHDR (#482)</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-imaging-0.html"
+                  title="DiagnosticReport/ex-MHV-imaging-0">Imaging Report 0</a>
+            </td>
+            <td>
+<p>Derived from the a mock ImagingExamTO:</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-17a6982d-9890-43aa-98fe-603fbe11cf8a.html"
+                  title="DiagnosticReport/17a6982d-9890-43aa-98fe-603fbe11cf8a">Imaging Report: 6959075.8874-1</a>
+            </td>
+            <td>
+<p>SPINE LUMBOSACRAL MIN 2 VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-28fbd313-2087-46c9-9581-66cf1f70c973.html"
+                  title="DiagnosticReport/28fbd313-2087-46c9-9581-66cf1f70c973">Imaging Report: 6979076.8862-1</a>
+            </td>
+            <td>
+<p>CHEST 2 VIEWS PA&amp;LAT</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-45b08f3a-50c7-4832-bf85-167efc4c9e5d.html"
+                  title="DiagnosticReport/45b08f3a-50c7-4832-bf85-167efc4c9e5d">Imaging Report: 6979076.8862-2</a>
+            </td>
+            <td>
+<p>SPINE LUMBOSACRAL MIN 2 VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-845ebc9d-fab1-4646-9198-4fc128aa79a6.html"
+                  title="DiagnosticReport/845ebc9d-fab1-4646-9198-4fc128aa79a6">Imaging Report: 6989573.8892-1</a>
+            </td>
+            <td>
+<p>MYOCARDIAL PERFUSION (SPECT), EX/REDIST, W/ W/O PHARM INTER</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-e8429618-da5d-4e9f-9041-c16614b1c4f9.html"
+                  title="DiagnosticReport/e8429618-da5d-4e9f-9041-c16614b1c4f9">Imaging Report: 6989573.8892-10</a>
+            </td>
+            <td>
+<p>J1245 DIPYRIDAMOLE INJECTION</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-d2503a4a-690e-4fd4-92e1-fcd73941719e.html"
+                  title="DiagnosticReport/d2503a4a-690e-4fd4-92e1-fcd73941719e">Imaging Report: 6989573.8892-11</a>
+            </td>
+            <td>
+<p>J1245 DIPYRIDAMOLE INJECTION</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-120fb1ef-d0b3-4c87-b1da-2e4da713be56.html"
+                  title="DiagnosticReport/120fb1ef-d0b3-4c87-b1da-2e4da713be56">Imaging Report: 6989573.8892-12</a>
+            </td>
+            <td>
+<p>CARDIOVASCULAR STRESS TEST (TECH)</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-4cbed92e-233e-4783-8d4d-d0fc578f3e68.html"
+                  title="DiagnosticReport/4cbed92e-233e-4783-8d4d-d0fc578f3e68">Imaging Report: 6989573.8892-2</a>
+            </td>
+            <td>
+<p>#PROVISION OF DIAGNOSTIC RADIONUCLIDES</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-b47e0e4a-7bbd-4d6b-8ca9-a5ce31489429.html"
+                  title="DiagnosticReport/b47e0e4a-7bbd-4d6b-8ca9-a5ce31489429">Imaging Report: 6989573.8892-3</a>
+            </td>
+            <td>
+<p>MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-4644ab95-a028-47f9-a47f-dd0d1e6f88bc.html"
+                  title="DiagnosticReport/4644ab95-a028-47f9-a47f-dd0d1e6f88bc">Imaging Report: 6989573.8892-4</a>
+            </td>
+            <td>
+<p>J1245 DIPYRIDAMOLE INJECTION</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-a41c31ae-f5e2-48a2-90fe-e3e25bb0fc98.html"
+                  title="DiagnosticReport/a41c31ae-f5e2-48a2-90fe-e3e25bb0fc98">Imaging Report: 6989573.8892-5</a>
+            </td>
+            <td>
+<p>A9505 THALLOUS CHLORIDE TL 201/MCI</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-87e778a9-aa89-4834-b536-fd76ed712d73.html"
+                  title="DiagnosticReport/87e778a9-aa89-4834-b536-fd76ed712d73">Imaging Report: 6989573.8892-6</a>
+            </td>
+            <td>
+<p>A9505 THALLOUS CHLORIDE TL 201/MCI</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-6a4ec7b7-30ce-495b-bc8c-05056f7cd2b5.html"
+                  title="DiagnosticReport/6a4ec7b7-30ce-495b-bc8c-05056f7cd2b5">Imaging Report: 6989573.8892-7</a>
+            </td>
+            <td>
+<p>A9505 THALLOUS CHLORIDE TL 201/MCI</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-db557446-899f-401e-aa5f-7958a210b115.html"
+                  title="DiagnosticReport/db557446-899f-401e-aa5f-7958a210b115">Imaging Report: 6989573.8892-8</a>
+            </td>
+            <td>
+<p>MYOCARDIAL PERFUSION STUDY WITH WALL MOTION</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-aeb8d42e-6689-4946-a6a6-e17d055984ec.html"
+                  title="DiagnosticReport/aeb8d42e-6689-4946-a6a6-e17d055984ec">Imaging Report: 6989573.8892-9</a>
+            </td>
+            <td>
+<p>J1245 DIPYRIDAMOLE INJECTION</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-e597c961-9cd3-4930-b3af-234493d497e7.html"
+                  title="DiagnosticReport/e597c961-9cd3-4930-b3af-234493d497e7">Imaging Report: 6998785.915-1</a>
+            </td>
+            <td>
+<p>CHEST 2 VIEWS PA&amp;LAT</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-3153b831-5ae4-4f07-b73d-4d26151675de.html"
+                  title="DiagnosticReport/3153b831-5ae4-4f07-b73d-4d26151675de">Imaging Report: 6999170.9165-1</a>
+            </td>
+            <td>
+<p>CT THORAX W/CONT</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-d1440e44-95b0-40d8-9533-1c92cc122f69.html"
+                  title="DiagnosticReport/d1440e44-95b0-40d8-9533-1c92cc122f69">Imaging Report: 6999190.8674-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-f66cfaf6-b014-469b-9499-16ccae420d1e.html"
+                  title="DiagnosticReport/f66cfaf6-b014-469b-9499-16ccae420d1e">Imaging Report: 6999268.8371-1</a>
+            </td>
+            <td>
+<p>CHEST 2 VIEWS PA&amp;LAT</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-7a0a7ed2-d090-4337-b662-fce031194b8e.html"
+                  title="DiagnosticReport/7a0a7ed2-d090-4337-b662-fce031194b8e">Imaging Report: 6999281.8373-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9695631c-3fd4-4435-ac03-dea9f065a42f.html"
+                  title="DiagnosticReport/9695631c-3fd4-4435-ac03-dea9f065a42f">Imaging Report: 7019591.848-1</a>
+            </td>
+            <td>
+<p>RIBS BILAT+CHEST 4 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-246bb52c-09be-4db1-9324-c293e5c3d514.html"
+                  title="DiagnosticReport/246bb52c-09be-4db1-9324-c293e5c3d514">Imaging Report: 7028984.8645-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-2a768135-d516-4329-8f14-fb7158d2a26f.html"
+                  title="DiagnosticReport/2a768135-d516-4329-8f14-fb7158d2a26f">Imaging Report: 7029077.8866-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-e8bf99a7-39cc-40d6-9444-3b663e5f11b6.html"
+                  title="DiagnosticReport/e8bf99a7-39cc-40d6-9444-3b663e5f11b6">Imaging Report: 7029091.8957-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-0994d06f-7817-4c02-acf4-3564bb82636a.html"
+                  title="DiagnosticReport/0994d06f-7817-4c02-acf4-3564bb82636a">Imaging Report: 7029096.8499-1</a>
+            </td>
+            <td>
+<p>CHEST 2 VIEWS PA&amp;LAT</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-4439b27f-d11a-4676-9483-9004c38d0e07.html"
+                  title="DiagnosticReport/4439b27f-d11a-4676-9483-9004c38d0e07">Imaging Report: 7029096.8499-2</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-fdfb3f04-44f2-450d-9b75-01515c0c0625.html"
+                  title="DiagnosticReport/fdfb3f04-44f2-450d-9b75-01515c0c0625">Imaging Report: 7029188.8771-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-da3474c3-ed7b-4fb5-882c-a01ebb450b91.html"
+                  title="DiagnosticReport/da3474c3-ed7b-4fb5-882c-a01ebb450b91">Imaging Report: 7029283.914-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-e51e6c01-6648-434a-9783-28a20e838f22.html"
+                  title="DiagnosticReport/e51e6c01-6648-434a-9783-28a20e838f22">Imaging Report: 7029376.8548-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-9ae60270-ada2-4321-b5b3-3cf6c73c3ec1.html"
+                  title="DiagnosticReport/9ae60270-ada2-4321-b5b3-3cf6c73c3ec1">Imaging Report: 7029487.8991-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-3d6f5b1b-7a21-4784-b1cf-d75e04ed5d98.html"
+                  title="DiagnosticReport/3d6f5b1b-7a21-4784-b1cf-d75e04ed5d98">Imaging Report: 7029492.8485-1</a>
+            </td>
+            <td>
+<p>CHEST 2 VIEWS PA&amp;LAT</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-e5e4d36a-f31e-4d87-80a7-63f56810a50f.html"
+                  title="DiagnosticReport/e5e4d36a-f31e-4d87-80a7-63f56810a50f">Imaging Report: 7029578.8663-1</a>
+            </td>
+            <td>
+<p>FOOT 3 OR MORE VIEWS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-a66187be-5cf2-4911-9b62-cc1e7c811711.html"
+                  title="DiagnosticReport/a66187be-5cf2-4911-9b62-cc1e7c811711">Imaging Report: 7059298.8462-1</a>
+            </td>
+            <td>
+<p>CHEST 2 VIEWS PA&amp;LAT</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-05500f5e-0ca0-49c1-99e6-4c8e6de85285.html"
+                  title="DiagnosticReport/05500f5e-0ca0-49c1-99e6-4c8e6de85285">Imaging Report: 7078984.8943-1</a>
+            </td>
+            <td>
+<p>UROGRAM IV W NEPHROTOMOGRAMS</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Immunization-27653.html" title="Immunization/27653">Immunication 27653</a>
             </td>
             <td>
@@ -2660,6 +2778,149 @@ RECORD INDEXES:  AHDR (#482)</p>
             </td>
             <td>
 <p>Immunization given in 2012-01-02</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-labReport-1.html"
+                  title="DiagnosticReport/ex-MHV-labReport-1">Lab 1</a>
+            </td>
+            <td>
+<p>Example from a mock labReportTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-labReport-2.html"
+                  title="DiagnosticReport/ex-MHV-labReport-2">Lab 2</a>
+            </td>
+            <td>
+<p>Example from a mock labReportTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-labReport-3.html"
+                  title="DiagnosticReport/ex-MHV-labReport-3">Lab 3</a>
+            </td>
+            <td>
+<p>Example from a mock labReportTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-labReport-4.html"
+                  title="DiagnosticReport/ex-MHV-labReport-4">Lab 4</a>
+            </td>
+            <td>
+<p>Example from a mock labReportTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-labReport-5.html"
+                  title="DiagnosticReport/ex-MHV-labReport-5">Lab 5</a>
+            </td>
+            <td>
+<p>Example from a mock labReportTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-labReport-6.html"
+                  title="DiagnosticReport/ex-MHV-labReport-6">Lab 6</a>
+            </td>
+            <td>
+<p>Example from a mock labReportTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-labReport-7.html"
+                  title="DiagnosticReport/ex-MHV-labReport-7">Lab 7</a>
+            </td>
+            <td>
+<p>Example from a mock labReportTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DiagnosticReport-ex-MHV-labReport-8.html"
+                  title="DiagnosticReport/ex-MHV-labReport-8">Lab 8</a>
+            </td>
+            <td>
+<p>Example from a mock labReportTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-ex-MHV-note-1.html"
+                  title="DocumentReference/ex-MHV-note-1">Note 1</a>
+            </td>
+            <td>
+<p>Derived from the a mock NoteTO:</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-ex-MHV-note-deleted-1.html"
+                  title="DocumentReference/ex-MHV-note-deleted-1">Note 1 of a MHV Note - marked as entered-in-error</a>
+            </td>
+            <td>
+<p>Derived from the a mock NoteTO:</p>
+
+<p>This is replicated from ex-MHV-note-1, with change of identifier (NoteTO.5), and marked as entered-in-error</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-ex-MHV-note-4.html"
+                  title="DocumentReference/ex-MHV-note-4">Note 4</a>
+            </td>
+            <td>
+<p>Derived from the a mock NoteTO:</p>
+
+<p>Note dropped cosigner</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-ex-MHV-note-5.html"
+                  title="DocumentReference/ex-MHV-note-5">Note 5</a>
+            </td>
+            <td>
+<p>Derived from the a mock NoteTO:</p>
+
+<p>Note has an unsigned addenda</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-ex-MHV-note-6.html"
+                  title="DocumentReference/ex-MHV-note-6">Note 6</a>
+            </td>
+            <td>
+<p>Derived from the a mock NoteTO:</p>
+
+<p>Note has a signed addenda</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-ex-MHV-note-7.html"
+                  title="DocumentReference/ex-MHV-note-7">Note 7</a>
+            </td>
+            <td>
+<p>This is a sample of a “Compensation and Pension Examination” (aka, “C &amp; P”) note.  These notes will be held by <a href="StructureDefinition-VA.MHV.PHR.note.html#business-rules">notes business rules</a> for 30 days past the signature.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="DocumentReference-ex-MHV-note-8.html"
+                  title="DocumentReference/ex-MHV-note-8">Note 8</a>
+            </td>
+            <td>
+<p>This is a sample of a “Compensation and Pension Examination” (aka, “C &amp; P”) note.  These notes will be held by <a href="StructureDefinition-VA.MHV.PHR.note.html#business-rules">notes business rules</a> for 30 days past the signature.</p>
 </td>
          </tr>
          <tr>
@@ -3537,11 +3798,52 @@ RECORD INDEXES:  AHDR (#482)</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Patient-ex-MHV-patient-1.html" title="Patient/ex-MHV-patient-1">Patient DAYSHR</a>
+            </td>
+            <td>
+<p>This example is derived off of a mock PatientTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-ex-MHV-patient-3.html" title="Patient/ex-MHV-patient-3">Patient DAYSHR</a>
+            </td>
+            <td>
+<p>This example is derived off of a mock PatientTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Patient-ex-MHV-patient-89486.html"
                   title="Patient/ex-MHV-patient-89486">Patient MHVASPXXI</a>
             </td>
             <td>
 <p>This example is derived off of a mock patient</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-ex-VIA-patient-0.html" title="Patient/ex-VIA-patient-0">Patient MHVLISAONE</a>
+            </td>
+            <td>
+<p>This example is derived off of a mock PatientTO. It shows where everything that could be in a VIA PatientTO could go. This is not an example of what MHV will populate the Patient like.</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-ex-MHV-patient-1015746490.html"
+                  title="Patient/ex-MHV-patient-1015746490">Patient MHVZZVISNTWENTY,TEST PATIENTR</a>
+            </td>
+            <td>
+<p>This example is derived off of a mock PatientTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-ex-MHV-patient-2.html" title="Patient/ex-MHV-patient-2">Patient ROBERT</a>
+            </td>
+            <td>
+<p>This example is derived off of a mock PatientTO</p>
 </td>
          </tr>
          <tr>
@@ -3564,10 +3866,26 @@ RECORD INDEXES:  AHDR (#482)</p>
          </tr>
          <tr>
             <td style="column-width:30%">
+               <a href="Patient-ex-MHV-patient-4.html" title="Patient/ex-MHV-patient-4">Patient VETERAN CASEY</a>
+            </td>
+            <td>
+<p>This example is derived off of a mock PatientTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
                <a href="Patient-27659.html" title="Patient/27659">Patient for testing environment</a>
             </td>
             <td>
 <p>Used in testing environment</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Patient-ex-MHV-patient-0.html" title="Patient/ex-MHV-patient-0">Patient of MHV MHVLISAONE</a>
+            </td>
+            <td>
+<p>Only values from eVault</p>
 </td>
          </tr>
          <tr>
@@ -3684,312 +4002,6 @@ RECORD INDEXES:  AHDR (#482)</p>
             </td>
             <td>
 <p>Example translated from <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/1013699421V762086_Vitals.xml">mock 2 example</a> from id=6544218</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-64351f25-4b7e-4e30-aa6c-e2eb3c58307b.html"
-                  title="DocumentReference/64351f25-4b7e-4e30-aa6c-e2eb3c58307b">Radiology: 6959075.8874-1</a>
-            </td>
-            <td>
-<p>SPINE LUMBOSACRAL MIN 2 VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-828d6ccc-8ab5-44f9-be82-47e1d06f176e.html"
-                  title="DocumentReference/828d6ccc-8ab5-44f9-be82-47e1d06f176e">Radiology: 6979076.8862-1</a>
-            </td>
-            <td>
-<p>CHEST 2 VIEWS PA&amp;LAT</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-d95de482-750f-468b-b37e-c80f2dd96886.html"
-                  title="DocumentReference/d95de482-750f-468b-b37e-c80f2dd96886">Radiology: 6979076.8862-2</a>
-            </td>
-            <td>
-<p>SPINE LUMBOSACRAL MIN 2 VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-b9c5c786-821a-44d7-8c84-e6c156cbc735.html"
-                  title="DocumentReference/b9c5c786-821a-44d7-8c84-e6c156cbc735">Radiology: 6989573.8892-1</a>
-            </td>
-            <td>
-<p>MYOCARDIAL PERFUSION (SPECT), EX/REDIST, W/ W/O PHARM INTER</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-24413117-8428-490c-97b5-118fe4b60de8.html"
-                  title="DocumentReference/24413117-8428-490c-97b5-118fe4b60de8">Radiology: 6989573.8892-10</a>
-            </td>
-            <td>
-<p>J1245 DIPYRIDAMOLE INJECTION</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-9ea4cf04-f50f-4b20-ba2e-0f138b5ae655.html"
-                  title="DocumentReference/9ea4cf04-f50f-4b20-ba2e-0f138b5ae655">Radiology: 6989573.8892-11</a>
-            </td>
-            <td>
-<p>J1245 DIPYRIDAMOLE INJECTION</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-a949e9a7-ec32-4615-b169-e78b86497029.html"
-                  title="DocumentReference/a949e9a7-ec32-4615-b169-e78b86497029">Radiology: 6989573.8892-12</a>
-            </td>
-            <td>
-<p>CARDIOVASCULAR STRESS TEST (TECH)</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-d05d1272-ac49-4642-9d57-f67c69e88af4.html"
-                  title="DocumentReference/d05d1272-ac49-4642-9d57-f67c69e88af4">Radiology: 6989573.8892-2</a>
-            </td>
-            <td>
-<p>#PROVISION OF DIAGNOSTIC RADIONUCLIDES</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-ad1af2d1-fed2-4b86-a4ac-8c539751f97f.html"
-                  title="DocumentReference/ad1af2d1-fed2-4b86-a4ac-8c539751f97f">Radiology: 6989573.8892-3</a>
-            </td>
-            <td>
-<p>MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-0ff1ab63-b77c-4bc6-93d8-b244dc8d0714.html"
-                  title="DocumentReference/0ff1ab63-b77c-4bc6-93d8-b244dc8d0714">Radiology: 6989573.8892-4</a>
-            </td>
-            <td>
-<p>J1245 DIPYRIDAMOLE INJECTION</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-91080083-437d-4a75-a3b5-1d3b0832bbff.html"
-                  title="DocumentReference/91080083-437d-4a75-a3b5-1d3b0832bbff">Radiology: 6989573.8892-5</a>
-            </td>
-            <td>
-<p>A9505 THALLOUS CHLORIDE TL 201/MCI</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-66defcc9-e3ce-4a5e-82b7-9cc777eb5452.html"
-                  title="DocumentReference/66defcc9-e3ce-4a5e-82b7-9cc777eb5452">Radiology: 6989573.8892-6</a>
-            </td>
-            <td>
-<p>A9505 THALLOUS CHLORIDE TL 201/MCI</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-6a5e8341-97f5-4648-9931-a396254939fd.html"
-                  title="DocumentReference/6a5e8341-97f5-4648-9931-a396254939fd">Radiology: 6989573.8892-7</a>
-            </td>
-            <td>
-<p>A9505 THALLOUS CHLORIDE TL 201/MCI</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-a3d90e25-2e32-4068-baaf-2a43662d8daa.html"
-                  title="DocumentReference/a3d90e25-2e32-4068-baaf-2a43662d8daa">Radiology: 6989573.8892-8</a>
-            </td>
-            <td>
-<p>MYOCARDIAL PERFUSION STUDY WITH WALL MOTION</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-47fec6ad-83c2-4880-b115-7f1fd3c9d60a.html"
-                  title="DocumentReference/47fec6ad-83c2-4880-b115-7f1fd3c9d60a">Radiology: 6989573.8892-9</a>
-            </td>
-            <td>
-<p>J1245 DIPYRIDAMOLE INJECTION</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-4a7d9e99-33ac-424f-b7c3-3a718742c0b3.html"
-                  title="DocumentReference/4a7d9e99-33ac-424f-b7c3-3a718742c0b3">Radiology: 6998785.915-1</a>
-            </td>
-            <td>
-<p>CHEST 2 VIEWS PA&amp;LAT</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-b3ca7ce3-4f9a-4afc-ba9d-2d80f46486cf.html"
-                  title="DocumentReference/b3ca7ce3-4f9a-4afc-ba9d-2d80f46486cf">Radiology: 6999170.9165-1</a>
-            </td>
-            <td>
-<p>CT THORAX W/CONT</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-5bbff23c-a76c-4551-97f1-e8ba94059e1c.html"
-                  title="DocumentReference/5bbff23c-a76c-4551-97f1-e8ba94059e1c">Radiology: 6999190.8674-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-99ac5692-707b-45d1-8bd4-d23254521768.html"
-                  title="DocumentReference/99ac5692-707b-45d1-8bd4-d23254521768">Radiology: 6999268.8371-1</a>
-            </td>
-            <td>
-<p>CHEST 2 VIEWS PA&amp;LAT</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-3d54b4ae-256d-4a60-85a1-77a78b5adf55.html"
-                  title="DocumentReference/3d54b4ae-256d-4a60-85a1-77a78b5adf55">Radiology: 6999281.8373-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-7620d5d9-aea5-47a2-9187-b6bd65f0404d.html"
-                  title="DocumentReference/7620d5d9-aea5-47a2-9187-b6bd65f0404d">Radiology: 7019591.848-1</a>
-            </td>
-            <td>
-<p>RIBS BILAT+CHEST 4 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-1f9f5378-6e14-42df-a469-8834c0fd8a0e.html"
-                  title="DocumentReference/1f9f5378-6e14-42df-a469-8834c0fd8a0e">Radiology: 7028984.8645-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-7ca116e2-2ee3-4371-8f31-081428fec23d.html"
-                  title="DocumentReference/7ca116e2-2ee3-4371-8f31-081428fec23d">Radiology: 7029077.8866-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-afcf3a0b-d3d4-420b-9a3c-535664b3a229.html"
-                  title="DocumentReference/afcf3a0b-d3d4-420b-9a3c-535664b3a229">Radiology: 7029091.8957-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-8176517b-62e8-4a62-9aba-608d3343fed6.html"
-                  title="DocumentReference/8176517b-62e8-4a62-9aba-608d3343fed6">Radiology: 7029096.8499-1</a>
-            </td>
-            <td>
-<p>CHEST 2 VIEWS PA&amp;LAT</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-64f9042b-3826-44f0-abdd-a8fa51733425.html"
-                  title="DocumentReference/64f9042b-3826-44f0-abdd-a8fa51733425">Radiology: 7029096.8499-2</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-fe96e785-bf91-4f76-9ece-d55c6ac1d406.html"
-                  title="DocumentReference/fe96e785-bf91-4f76-9ece-d55c6ac1d406">Radiology: 7029188.8771-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-19d80a62-7b8a-4fe7-8538-4605f44475e8.html"
-                  title="DocumentReference/19d80a62-7b8a-4fe7-8538-4605f44475e8">Radiology: 7029283.914-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-fc7dfeab-b2ec-42e3-ac13-07bd5bf82f2d.html"
-                  title="DocumentReference/fc7dfeab-b2ec-42e3-ac13-07bd5bf82f2d">Radiology: 7029376.8548-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-0db241b4-0449-4f2c-a860-dcc83b48e614.html"
-                  title="DocumentReference/0db241b4-0449-4f2c-a860-dcc83b48e614">Radiology: 7029487.8991-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-be1f4f1e-fa11-4a03-8db8-ea1e0c9cbab2.html"
-                  title="DocumentReference/be1f4f1e-fa11-4a03-8db8-ea1e0c9cbab2">Radiology: 7029492.8485-1</a>
-            </td>
-            <td>
-<p>CHEST 2 VIEWS PA&amp;LAT</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-ac3b7e34-86fc-456f-a402-2bcf3fb7e67d.html"
-                  title="DocumentReference/ac3b7e34-86fc-456f-a402-2bcf3fb7e67d">Radiology: 7029578.8663-1</a>
-            </td>
-            <td>
-<p>FOOT 3 OR MORE VIEWS</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-e5fe089a-da1a-4324-b60a-fb836e8d7199.html"
-                  title="DocumentReference/e5fe089a-da1a-4324-b60a-fb836e8d7199">Radiology: 7059298.8462-1</a>
-            </td>
-            <td>
-<p>CHEST 2 VIEWS PA&amp;LAT</p>
-</td>
-         </tr>
-         <tr>
-            <td style="column-width:30%">
-               <a href="DocumentReference-11bf4f24-c0c6-4463-ae4b-8655dc860bc6.html"
-                  title="DocumentReference/11bf4f24-c0c6-4463-ae4b-8655dc860bc6">Radiology: 7078984.8943-1</a>
-            </td>
-            <td>
-<p>UROGRAM IV W NEPHROTOMOGRAMS</p>
 </td>
          </tr>
          <tr>
@@ -4179,6 +4191,50 @@ RECORD INDEXES:  AHDR (#482)</p>
             </td>
             <td>
 <p>Example translated from <a href="https://github.com/department-of-veterans-affairs/mhv-fhir-phr-mapping/blob/main/mocks/vitals.xml">mock 1 example</a> from id=3303290</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-ex-MHV-vitals-1.html"
+                  title="Observation/ex-MHV-vitals-1">Vitals 1</a>
+            </td>
+            <td>
+<p>Example from a mock VitalSignTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-ex-MHV-vitals-deleted-1.html"
+                  title="Observation/ex-MHV-vitals-deleted-1">Vitals 1 of an MHV vital-sign, but with a different identifier, and marked as entered-in-error</a>
+            </td>
+            <td>
+<p>Example from a mock VitalSignTO</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-ex-MHV-pain-1.html" title="Observation/ex-MHV-pain-1">Vitals of a MHV pain R4 observation of 10</a>
+            </td>
+            <td>
+<p>holding typical values</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-ex-MHV-heartRate-1.html"
+                  title="Observation/ex-MHV-heartRate-1">Vitals of an MHV heartRate R4 observation</a>
+            </td>
+            <td>
+<p>Heart Rate holding typical values</p>
+</td>
+         </tr>
+         <tr>
+            <td style="column-width:30%">
+               <a href="Observation-ex-MHV-oximetry-1.html"
+                  title="Observation/ex-MHV-oximetry-1">Vitals of an MHV heartRate R4 observation</a>
+            </td>
+            <td>
+<p>Heart Rate holding typical values</p>
 </td>
          </tr>
          <tr>
@@ -4430,7 +4486,7 @@ RECORD INDEXES:  AHDR (#482)</p>
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.6 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Sat, May 18, 2024 11:51-0500">2024-05-18</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://va.gov">VA Digital Services</a>.  Package va.mhv.fhir.phr#0.3.7 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Mon, Jun 10, 2024 12:47-0500">2024-06-10</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

@@ -50,6 +50,7 @@ A profile on the DiagnosticReport resource for MHV PHR exposing Imaging Report (
 * resultsInterpreter ^type.aggregation = #contained
 * resultsInterpreter only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
 * effectiveDateTime 1..1 MS 
+* issued 1..1 MS
 * encounter.reference 0..0
 * encounter.identifier MS
 * basedOn MS
@@ -62,7 +63,6 @@ A profile on the DiagnosticReport resource for MHV PHR exposing Imaging Report (
 * presentedForm.creation MS 
 * presentedForm.contentType MS 
 * presentedForm.data MS
-* issued 0..0
 * specimen 0..0
 * result 0..0
 * imagingStudy 0..0
@@ -85,10 +85,11 @@ Title: "VIA to mhv-fhir-phr"
 * identifier[accessionNumber] -> "ImagingExamTO.accessionNum"
 * identifier[casenum] -> "ImagingExamTO.casenum"
 * effectiveDateTime -> "ConvertDate(ImagingExamTO.timestamp)"
+* issued -> "text {Date Verified}"
 * encounter.identifier -> "identifier.value = ImagingExamTO.encounterId"
 * basedOn -> "Contained ServiceRequest(ImagingExamTO.order)"
-* presentedForm.title -> "ImagingExamTO.name or ImagingExamTO.radiologyReportTo.title"
-* presentedForm.creation -> "ConvertDate(ImagingExamTO.radiologyReportTO.timestamp)"
+* presentedForm.title -> "ImagingExamTO.radiologyReportTo.title"
+* presentedForm.creation -> "text {Date Reported}"
 * presentedForm.contentType -> "`text/plain`"
 * presentedForm.data -> "Base64Encode(ImagingStudyTO.radiologyReportTo.text)"
 * conclusion -> "ImagingStudyTO.interpretation"
@@ -105,7 +106,7 @@ A profile showing how ImagingExamTO.order (Order) using FHIR API to MyHealtheVet
 One ServiceRequest holds one `ImagingExamTO.order`. Where multiple order elements exist, multiple ServiceRequest are used.
 - `.subject` must be the patient from the DiagnosticReport
 - code.text = {imagingExamTO.order.type.name1}
-- status = `unknown` -- as we dont know - TODO
+- status = `unknown` 
 - intent = `order`
 - category = SCT#363679005 Imaging
 - not populating US-Core must support as we dont have the values
@@ -115,7 +116,7 @@ One ServiceRequest holds one `ImagingExamTO.order`. Where multiple order element
 - no other elements are populated
 """
 * code 1..1 MS
-* code.text ^short = "imagingExamTO.type.name1"
+* code.text ^short = "imagingExamTO.order.type.name1"
 * category[us-core] = SCT#363679005 "Imaging"
 * identifier ^short = "imagingExamTO.order.id"
 * identifier 1..1
@@ -124,7 +125,7 @@ One ServiceRequest holds one `ImagingExamTO.order`. Where multiple order element
 * subject 1..1 MS
 * requester ^short = "imagingExamTO.provider"
 * requester only Reference(http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner) // TODO: Should we harmonize this? Not clear how.
-* performer ^short = "imagingExamTO.facility"
+* performer ^short = "imagingExamTO.report.facility"
 * performer only Reference(MHVorganization)
 * encounter MS
 * specimen 0..0
@@ -165,8 +166,8 @@ Title: "VIA imagingExamTO Order to mhv-fhir-phr"
 * status -> "`unknown`"
 * intent -> "`order`"
 * subject -> "patient"
-* requester -> "GetPractitioner(imagingExamTO.provider)"
-* performer -> "GetOrganization(imagingExamTO.facility)"
+* requester -> "text {Req Phys} or GetPractitioner(imagingExamTO.provider)"
+* performer -> "GetOrganization(imagingExamTO.report.facility)"
 
 
 
@@ -218,5 +219,35 @@ Title: "VIA imagingExamTO Order to mhv-fhir-phr"
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+
+  <xs:complexType name="orderTO">
+    <xs:complexContent>
+      <xs:extension base="tns:abstractTO">
+        <xs:sequence>
+          <xs:element form="unqualified" minOccurs="0" name="id" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="timestamp" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="orderingServiceName" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="treatingSpecialty" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="startDate" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="stopDate" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="status" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="sigStatus" type="tns:signatureStatusTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="dateSigned" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="verifyingNurse" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="dateVerified" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="verifyingClerk" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="chartReviewer" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="dateReviewed" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="provider" type="tns:userTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="text" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="detail" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="errMsg" type="xs:string"/>
+          <xs:element form="unqualified" minOccurs="0" name="flag" type="xs:boolean"/>
+          <xs:element form="unqualified" minOccurs="0" name="type" type="tns:orderTypeTO"/>
+          <xs:element form="unqualified" minOccurs="0" name="location" type="tns:hospitalLocationTO"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 
 */

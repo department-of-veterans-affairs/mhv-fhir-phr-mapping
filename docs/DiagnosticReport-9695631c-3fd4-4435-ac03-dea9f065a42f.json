@@ -1,0 +1,97 @@
+{
+  "resourceType" : "DiagnosticReport",
+  "id" : "9695631c-3fd4-4435-ac03-dea9f065a42f",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes:{http://www.ama-assn.org/go/cpt 71111}\">GENERAL RADIOLOGY</span> (<span title=\"Codes:{http://loinc.org LP29684-5}\">Radiology</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0\u00a0(use:\u00a0usual))</td></tr><tr><td>When For</td><td>1998-04-08 15:19:00+0000</td></tr><tr><td>Reported</td><td>1998-04-08 15:19:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.7019591.848-1\u00a0(use:\u00a0usual) Accession ID/Accession.040898-1235\u00a0(use:\u00a0official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.1235\u00a0(use:\u00a0secondary)</td></tr></table><p><b>Report Details</b></p></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "provider-0",
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "unknown"
+    }],
+    "name" : [{
+      "text" : "BAUMANN,BERTA H",
+      "family" : "BAUMANN,BERTA H"
+    }]
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "organization-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "OrganizationTO.2267"
+    }],
+    "active" : true,
+    "name" : "RADIOLOGY"
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "ImagingExamTO.7019591.848-1"
+  },
+  {
+    "use" : "official",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "ACSN"
+      }]
+    },
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "Accession.040898-1235"
+  },
+  {
+    "use" : "secondary",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "CaseNum.1235"
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "LP29684-5",
+      "display" : "Radiology"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://www.ama-assn.org/go/cpt",
+      "code" : "71111",
+      "display" : "RADIOLOGIC EXAMINATION, RIBS, BILATERAL; INCLUDING POSTEROANTERIOR CHEST, MINIMUM OF 4 VIEWS"
+    }],
+    "text" : "GENERAL RADIOLOGY"
+  },
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "encounter" : {
+    "identifier" : {
+      "value" : "1298095"
+    }
+  },
+  "effectiveDateTime" : "1998-04-08T15:19:00Z",
+  "issued" : "1998-04-08T15:19:00Z",
+  "performer" : [{
+    "reference" : "#organization-0"
+  }],
+  "resultsInterpreter" : [{
+    "reference" : "#provider-0"
+  }],
+  "presentedForm" : [{
+    "contentType" : "text/plain",
+    "data" : "UklCUyBCSUxBVCtDSEVTVCA0IE9SIE1PUkUgVklFV1MKICAgClByb2MgT3JkOiBVbmtub3duCkV4bSBEYXRlOiBBUFIgMDgsIDE5OThAMTU6MTkKUmVxIFBoeXM6IEFMTEVOLE1BUklMWU4gICAgICAgICAgICAgICAgICBQYXQgTG9jOiBPUCBVbmtub3duLzA5LTA3LTIwMjJAMTY6MTQKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAxMjM1IENPTVBMRVRFKSBSSUJTIEJJTEFUK0NIRVNUIDQgT1IgTU9SRSBWSUVXUyAoUkFEICBTZXJpZXMgICkgQ1BUOjcxMTExCiAgICAgUHJvYyBNb2RpZmllcnMgOiBCSUxBVEVSQUwgRVhBTQoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIFZFVCBGRUxMIEZMQVQgT04gQkFDSyBPTiA0LTUtOTgsIFRSSVBQRUQgT1ZFUiBET0csIFNQRUNJQUwgQVRUTgogICAgICBUTyBSVCBQT1NUIFJJQlMgCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogQVBSIDA5LCAxOTk4CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBBUFIgMTAsIDE5OTgKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9CLkguQmF1bWFubixNRC4KCiAgICBSZXBvcnQ6CiAgICAgIENIRVNUIEFORCBSSUJTOiAgMDQvMDgvOTg6IAogICAgICAgCiAgICAgIE5vIGNvbnZpbmNpbmdseSBzdXNwZWN0IGFjdXRlIHJpYiBmcmFjdHVyZXMgYXJlIHNlZW4uICBUaGVyZSBpcwogICAgICBkZWZvcm1pdHkgb2YgdGhlIHBvc3RlcmlvciBsYXRlcmFsIGFzcGVjdCB0byB0aGUgcmlnaHQgNnRoIHJpYgogICAgICBhbmQgdGhlIHBvc3RlcmlvciBsYXRlcmFsIGxlZnQgNHRoIGFuZCA2dGggcmlicyBjb25zaXN0ZW50IHdpdGgKICAgICAgcmVtb3RlbHkgaGVhbGVkIGZyYWN0dXJlcy4gCiAgICAgICAKICAgICAgSWYgdGhlcmUgaXMgc3Ryb25nIGNsaW5pY2FsIGNvbmNlcm4gb2YgcG90ZW50aWFsbHkgdW5kZXRlY3RlZCAKICAgICAgbm9uLWRpc3BsYWNlZCBmcmFjdHVyZS0tYWRkaXRpb25hbCBpbWFnaW5nIG1heSBiZSBkZXNpcmVkLiAgCiAgICAgICAKICAgICAgVGhlcmUgaXMgbm8gY2hhbmdlIHdpdGhpbiB0aGUgdGhvcmF4IHRvIHN1Z2dlc3QgcG90ZW50aWFsCiAgICAgIHVuZGV0ZWN0ZWQgcmliIGZyYWN0dXJlLiAgCiAgICAgICAKICAgICAgVGhlcmUgY29udGludWUgdG8gYmUgY29hcnNlIHRyYWJlY3VsYXIgbm9kdWxlIGFjY2VudHVhdGlvbiBvZiB0aGUgCiAgICAgIGludGVyc3RpdGl1bSBkaWZmdXNlbHkgd2l0aCBjb25zb2xpZGF0aW9uIG9mIG5vZHVsYXIgaW50ZXJzdGl0aWFsIAogICAgICBpbmZpbHRyYXRlIGluIGJvdGggbHVuZyBhcGljZXMgYXMgYmVmb3JlLiAgCgogICAgSW1wcmVzc2lvbjoKICAgICAgbm8gYWN1dGUgZnJhY3R1cmUgaWRlbnRpZmllZCAKCiAgICBQcmltYXJ5IERpYWdub3N0aWMgQ29kZTogCgpQcmltYXJ5IEludGVycHJldGluZyBTdGFmZjoKICBCRVJUQSBIIEJBVU1BTk4sIFJhZGlvbG9naXN0IChWZXJpZmllcikKL0dFRw==",
+    "title" : "RIBS BILAT+CHEST 4 OR MORE VIEWS",
+    "creation" : "1998-04-08T15:19:00Z"
+  }]
+}

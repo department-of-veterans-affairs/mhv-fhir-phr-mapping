@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="4cbed92e-233e-4783-8d4d-d0fc578f3e68"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes:{http://www.ama-assn.org/go/cpt 78990}">NUCLEAR MEDICINE</span> (<span title="Codes:{http://loinc.org LP29684-5}">Radiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>2001-04-26 11:07:00+0000</td></tr><tr><td>Reported</td><td>2001-04-26 11:07:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6989573.8892-2 (use: usual) Accession ID/Accession.042601-1519 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.1519 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="provider-0"/>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="unknown"/>
+      </identifier>
+      <name>
+        <text value="KATZ,NEIL"/>
+        <family value="KATZ,NEIL"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="organization-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrganizationTO.273"/>
+      </identifier>
+      <active value="true"/>
+      <name value="NUCLEAR MEDICINE"/>
+    </Organization>
+  </contained>
+  <contained>
+    <ServiceRequest>
+      <id value="order-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrderTO.7379950"/>
+      </identifier>
+      <status value="unknown"/>
+      <intent value="order"/>
+      <category>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="363679005"/>
+          <display value="Imaging"/>
+        </coding>
+      </category>
+      <code>
+        <text value="MYOCARDIAL PERFUSION, PHARMACOLOGICAL STRESS P/D"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-0"/>
+      </subject>
+      <encounter>
+        <identifier>
+          <value value="3278625"/>
+        </identifier>
+      </encounter>
+      <requester>
+        <reference value="#provider-0"/>
+      </requester>
+      <performer>
+        <reference value="#organization-0"/>
+      </performer>
+    </ServiceRequest>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.6989573.8892-2"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession.042601-1519"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.1519"/>
+  </identifier>
+  <basedOn>
+    <reference value="#order-0"/>
+  </basedOn>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LP29684-5"/>
+      <display value="Radiology"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="78990"/>
+      <display value="PROVISION OF DIAGNOSTIC RADIOPHARMACEUTICAL(S)"/>
+    </coding>
+    <text value="NUCLEAR MEDICINE"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <encounter>
+    <identifier>
+      <value value="3278625"/>
+    </identifier>
+  </encounter>
+  <effectiveDateTime value="2001-04-26T11:07:00Z"/>
+  <issued value="2001-04-26T11:07:00Z"/>
+  <performer>
+    <reference value="#organization-0"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="#provider-0"/>
+  </resultsInterpreter>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="I1BST1ZJU0lPTiBPRiBESUFHTk9TVElDIFJBRElPTlVDTElERVMKICAgClByb2MgT3JkOiBNWU9DQVJESUFMIFBFUkZVU0lPTiwgUEhBUk1BQ09MT0dJQ0FMIFNUUkVTUyBQL0QKRXhtIERhdGU6IEFQUiAyNiwgMjAwMUAxMTowNwpSZXEgUGh5czogUEFUSUwsU0FSQVNXQVRJICAgICAgICAgICAgICAgIFBhdCBMb2M6IFBDVF9PIFBBVElMIChGL1UpIChSZXEnZyBMb2MpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgSW1nIExvYzogTlVDTEVBUiBNRURJQ0lORQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFNlcnZpY2U6IFVua25vd24KCiAKCihDYXNlIDE1MTYgQ09NUExFVEUpIE1ZT0NBUkRJQUwgUEVSRlVTSU9OIChTUEVDVCksIEVYLyhOTSAgIERldGFpbGVkKSBDUFQ6Nzg0NjUKCihDYXNlIDE1MTkgQ09NUExFVEUpICNQUk9WSVNJT04gT0YgRElBR05PU1RJQyBSQURJT05VQyhOTSAgIERldGFpbGVkKSBDUFQ6Nzg5OTAKCihDYXNlIDE1MjAgQ09NUExFVEUpIE1ZT0NBUkRJQUwgUEVSRlVTSU9OIFNUVURZIFdJVEggRShOTSAgIERldGFpbGVkKSBDUFQ6Nzg0ODAKCiggICAgICAgNHggICAgICAgICApIEoxMjQ1IERJUFlSSURBTU9MRSBJTkpFQ1RJT04gICAgIChOTSAgIERldGFpbGVkKSBDUFQ6SjEyNDUKCiggICAgICAgM3ggICAgICAgICApIEE5NTA1IFRIQUxMT1VTIENITE9SSURFIFRMIDIwMS9NQyhOTSAgIERldGFpbGVkKSBDUFQ6QTk1MDUKCihDYXNlIDE1MzYgQ09NUExFVEUpIE1ZT0NBUkRJQUwgUEVSRlVTSU9OIFNUVURZIFdJVEggVyhOTSAgIERldGFpbGVkKSBDUFQ6Nzg0NzgKCihDYXNlIDE1NDQgQ09NUExFVEUpIENBUkRJT1ZBU0NVTEFSIFNUUkVTUyBURVNUIChURUNIKShOTSAgIERldGFpbGVkKSBDUFQ6OTMwMTUKCiAgICBDbGluaWNhbCBIaXN0b3J5OgogICAgICBQVCBDL08gQy5QIE9OICYgT0ZGLE9MRCBNSSwgRkFNSUxZIEgvTyBIRUFSVCBBVFRBQ0suICBSL08gQ0FEIAoKICAgIFJlcG9ydCBTdGF0dXM6IFZlcmlmaWVkICAgICAgICAgICAgICAgICAgIERhdGUgUmVwb3J0ZWQ6IEFQUiAyNiwgMjAwMQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgRGF0ZSBWZXJpZmllZDogQVBSIDI3LCAyMDAxCiAgICBWZXJpZmllciBFLVNpZzovRVMvTkVJTCBLQVRaLCBNRAoKICAgIFJlcG9ydDoKICAgICAgUkVQT1JUOiAgNC8yNi8wMSAgQU5UUkFTLCBKLiAjNjI2NyAgNDEuNCBtZyBEaXB5cmlkYW1vbGUgSVYKICAgICAgaW5qZWN0ZWQgaW4gcmlnaHQgYXJtIGF0IDA5NTgtMTAwMiBob3VycyBieSBEci4gS2F0ei4gIDMuMTYgbUNpCiAgICAgIFRsLjIwMSBDaGxvcmlkZSBpbmplY3RlZCBJViBpbiByaWdodCBhcm0gYXQgMTAwNSBob3VycyBieSBBLgogICAgICBCZW5kZXIuICAKICAgICAgIAogICAgICAgCiAgICAgIElOVFJBVkVOT1VTIERJUFlSSURBTU9MRSBTVFJFU1MgVEhBTExJVU0gTVlPQ0FSRElBTCBTQ0FOLVNQRUNUOiAKICAgICAgIAogICAgICBUaGUgZGlweXJpZGFtb2xlIHN0cmVzcyB0ZXN0IHdhcyBwZXJmb3JtZWQgaW4gdGhlIE5NUy4gCiAgICAgICAKICAgICAgQm90aCBzdHJlc3MgYW5kIHJlc3QgaW1hZ2VzIHJldmVhbCBtaWxkIGRlY3JlYXNlZCBhY3Rpdml0eSBpbiB0aGUKICAgICAgaW5mZXJpb3Igd2FsbC4gIEhvd2V2ZXIsIGdhdGVkIGltYWdlcyByZXZlYWwgbm9ybWFsIHdhbGwgbW90aW9uCiAgICAgIGluIHRoaXMgYXJlYS4gIAogICAgICAgCiAgICAgIFRoZXJlIGlzIGEgcG9zdC1EaXB5cmlkYW1vbGUgdGhhbGxpdW0gbGVmdCB2ZW50cmljdWxhciBlamVjdGlvbgogICAgICBmcmFjdGlvbiBvZiA3MyUuICAgICAgCgogICAgSW1wcmVzc2lvbjoKICAgICAgTm8gZXZpZGVuY2UgZm9yIHJldmVyc2libGUgaXNjaGVtaWEuICBUaGUgbWlsZCBwZXJzaXN0ZW50CiAgICAgIGRlY3JlYXNlZCBhY3Rpdml0eSBpbiB0aGUgaW5mZXJpb3Igd2FsbCBtYXkgYmUgc2Vjb25kYXJ5IHRvIHNvZnQKICAgICAgdGlzc3VlIGF0dGVudWF0aW9uLCBlc3BlY2lhbGx5IHNpbmNlIHRoZSB3YWxsIG1vdGlvbiBpcyBub3JtYWwgaW4KICAgICAgdGhpcyBhcmVhLiAgCgogICAgUHJpbWFyeSBEaWFnbm9zdGljIENvZGU6IAoKUHJpbWFyeSBJbnRlcnByZXRpbmcgU3RhZmY6CiAgTkVJTCBLQVRaLCBDSElFRiwgTk1TIChWZXJpZmllcikKL01BQw=="/>
+    <title value="#PROVISION OF DIAGNOSTIC RADIONUCLIDES"/>
+    <creation value="2001-04-26T11:07:00Z"/>
+  </presentedForm>
+</DiagnosticReport>

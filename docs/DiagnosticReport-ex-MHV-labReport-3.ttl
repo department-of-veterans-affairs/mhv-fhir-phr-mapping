@@ -17,7 +17,7 @@
   ] ; # 
   fhir:text [
      fhir:status [ fhir:v "generated" ] ;
-     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes: {http://loinc.org 18725-2}\">LR MICROBIOLOGY REPORT</span> (<span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/v2-0074 MB}\">Microbiology</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: usual))</td></tr><tr><td>When For</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Reported</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.MI;7049271 (use: usual)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>When For</b></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr><tr><td colspan=\"3\"><i>This Observation could not be resolved</i></td></tr></table></div>"
+     fhir:div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes:{http://loinc.org 18725-2}\">LR MICROBIOLOGY REPORT</span> (<span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 LAB}\">Laboratory</span>, <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v2-0074 MB}\">Microbiology</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>MTPZEROTWO DAYTSHR </b> male, DoB: 1000-01-01 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/1 (use: usual))</td></tr><tr><td>When For</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Reported</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td>Identifier:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/LabReportTO.MI;7049271 (use: usual)</td></tr></table><p><b>Report Details</b></p><table class=\"grid\"><tr><td><b>Code</b></td><td><b>Value</b></td><td><b>When For</b></td></tr><tr><td><a href=\"#ex-MHV-labTest-5\"><span title=\"Codes:\">Parasitology Remark(s)</span></a></td><td>REJECTED=LEAKED</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td><a href=\"#ex-MHV-labTest-6\"><span title=\"Codes:\">Parasitology Remark(s)</span></a></td><td>MODERATE WBC'S SEEN</td><td>1995-08-01 11:07:00+0000</td></tr><tr><td><a href=\"#ex-MHV-labTest-7\"><span title=\"Codes:\">Parasitology Remark(s)</span></a></td><td>MODERATE YEAST</td><td>1995-08-01 11:07:00+0000</td></tr></table></div>"
   ] ; # 
   fhir:contained ( [
      a fhir:Observation ;
@@ -166,6 +166,23 @@
      ] ) ;
      fhir:active [ fhir:v "true"^^xsd:boolean ] ;
      fhir:name [ fhir:v "Lab Site 989" ]
+  ] [
+     a fhir:Practitioner ;
+     fhir:id [ fhir:v "ex-MHV-practitioner-mangas" ] ;
+     fhir:meta [
+       fhir:profile ( [
+         fhir:v "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"^^xsd:anyURI ;
+         fhir:link <http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner>
+       ] )
+     ] ;
+     fhir:identifier ( [
+       fhir:system [ fhir:v "http://nowhere.com/nope"^^xsd:anyURI ] ;
+       fhir:value [ fhir:v "unknown" ]
+     ] ) ;
+     fhir:name ( [
+       fhir:text [ fhir:v "MANGAS,PHYLLIS A" ] ;
+       fhir:family [ fhir:v "MANGAS" ]
+     ] )
   ] ) ; # 
   fhir:identifier ( [
      fhir:use [ fhir:v "usual" ] ;
@@ -201,7 +218,7 @@
   fhir:performer ( [
      fhir:reference [ fhir:v "#ex-MHV-organization-989" ]
   ] [
-     fhir:display [ fhir:v "MANGAS,PHYLLIS A" ]
+     fhir:reference [ fhir:v "#ex-MHV-practitioner-mangas" ]
   ] ) ; # 
   fhir:specimen ( [
      fhir:reference [ fhir:v "#ex-MHV-specimen-3" ]

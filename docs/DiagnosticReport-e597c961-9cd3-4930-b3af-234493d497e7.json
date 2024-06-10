@@ -1,0 +1,138 @@
+{
+  "resourceType" : "DiagnosticReport",
+  "id" : "e597c961-9cd3-4930-b3af-234493d497e7",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes:{http://www.ama-assn.org/go/cpt 71020}\">GENERAL RADIOLOGY</span> (<span title=\"Codes:{http://loinc.org LP29684-5}\">Radiology</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0\u00a0(use:\u00a0usual))</td></tr><tr><td>When For</td><td>2000-12-14 08:49:00+0000</td></tr><tr><td>Reported</td><td>2000-12-14 08:49:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6998785.915-1\u00a0(use:\u00a0usual) Accession ID/Accession.121400-767\u00a0(use:\u00a0official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.767\u00a0(use:\u00a0secondary)</td></tr></table><p><b>Report Details</b></p></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "provider-0",
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "unknown"
+    }],
+    "name" : [{
+      "text" : "MCVEIGH,MICHAEL",
+      "family" : "MCVEIGH,MICHAEL"
+    }]
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "organization-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "OrganizationTO.2267"
+    }],
+    "active" : true,
+    "name" : "RADIOLOGY"
+  },
+  {
+    "resourceType" : "ServiceRequest",
+    "id" : "order-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "OrderTO.6749838"
+    }],
+    "status" : "unknown",
+    "intent" : "order",
+    "category" : [{
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "363679005",
+        "display" : "Imaging"
+      }]
+    }],
+    "code" : {
+      "text" : "CHEST 2 VIEWS PA&LAT"
+    },
+    "subject" : {
+      "reference" : "Patient/ex-MHV-patient-0"
+    },
+    "encounter" : {
+      "identifier" : {
+        "value" : "3067104"
+      }
+    },
+    "requester" : {
+      "reference" : "#provider-0"
+    },
+    "performer" : [{
+      "reference" : "#organization-0"
+    }]
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "ImagingExamTO.6998785.915-1"
+  },
+  {
+    "use" : "official",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "ACSN"
+      }]
+    },
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "Accession.121400-767"
+  },
+  {
+    "use" : "secondary",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "CaseNum.767"
+  }],
+  "basedOn" : [{
+    "reference" : "#order-0"
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "LP29684-5",
+      "display" : "Radiology"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://www.ama-assn.org/go/cpt",
+      "code" : "71020",
+      "display" : "RADIOLOGIC EXAMINATION, CHEST, 2 VIEWS, FRONTAL AND LATERAL;"
+    }],
+    "text" : "GENERAL RADIOLOGY"
+  },
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "encounter" : {
+    "identifier" : {
+      "value" : "3067104"
+    }
+  },
+  "effectiveDateTime" : "2000-12-14T08:49:00Z",
+  "issued" : "2000-12-14T08:49:00Z",
+  "performer" : [{
+    "reference" : "#organization-0"
+  }],
+  "resultsInterpreter" : [{
+    "reference" : "#provider-0"
+  }],
+  "presentedForm" : [{
+    "contentType" : "text/plain",
+    "data" : "Q0hFU1QgMiBWSUVXUyBQQSZMQVQKICAgCkV4bSBEYXRlOiBERUMgMTQsIDIwMDBAMDg6NDkKUmVxIFBoeXM6IFBBQ0hFQ08sSkFJTUUgICAgICAgICAgICAgICAgICBQYXQgTG9jOiBaWlpIRU1BVE9MT0dZIElJIChSZXEnZyBMb2MpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgSW1nIExvYzogUkFESU9MT0dZCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU2VydmljZTogVW5rbm93bgoKIAoKKENhc2UgNzY3IENPTVBMRVRFKSAgQ0hFU1QgMiBWSUVXUyBQQSZMQVQgICAgICAgICAgICAgKFJBRCAgRGV0YWlsZWQpIENQVDo3MTAyMAogICAgIFByb2MgTW9kaWZpZXJzIDogTEVGVAoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIGdyYW51bG9tYXRhPyAKCiAgICBSZXBvcnQgU3RhdHVzOiBWZXJpZmllZCAgICAgICAgICAgICAgICAgICBEYXRlIFJlcG9ydGVkOiBERUMgMTQsIDIwMDAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGUgVmVyaWZpZWQ6IERFQyAxOCwgMjAwMAogICAgVmVyaWZpZXIgRS1TaWc6L0VTL01pY2hhZWwgTWNWZWlnaCBNRAoKICAgIFJlcG9ydDoKICAgICAgUEEgQU5EIExBVEVSQUwgQ0hFU1Q6ICAxMi0xNC0wMDogIAogICAgICAgCiAgICAgIFRoZSBzdHVkeSB3YXMgY29tcGFyZWQgdG8gdGhhdCBvZiA3LTMxLTAwLiAgCiAgICAgICAKICAgICAgRXhhbWluYXRpb24gcmV2ZWFscyByZXRyYWN0aW9uIG9mIGJvdGggaGlsYSBzdXBlcmlvcmx5IHdpdGggCiAgICAgIHBsZXVyb3BhcmVuY2h5bWFsIHNjYXJyaW5nLiAgVGhlcmUgYXJlIHNjYXR0ZXJlZCBmaWJyb25vZHVsYXIKICAgICAgY2hhbmdlcyBpbiB0aGUgbGVmdCB1cHBlciBsb2JlIHBhcnRpY3VsYXJseSBidXQgYWxzbyBpbiB0aGUgcmlnaHQKICAgICAgdXBwZXIgbG9iZSBidXQgdGhlcmUgaXMgYWdhaW4gbm8gc2lnbmlmaWNhbnQgaW50ZXJ2YWwgY2hhbmdlIGZyb20KICAgICAgdGhlIHByZXZpb3VzIHN0dWR5LiAgU2V2ZXJhbCBvbGQgcmliIGZyYWN0dXJlcyBhcmUgbm90ZWQgb24gdGhlCiAgICAgIHJpZ2h0IGFuZCB0aGVyZSBpcyBhIGdlbmVyYWxpemVkIGJvbnkgZGVtaW5lcmFsaXphdGlvbiBjb25zaXN0ZW50CiAgICAgIHdpdGggb3N0ZW9wb3Jvc2lzLiAgCiAgICAgICAKICAgICAgVGhlcmUgaXMgbWlsZCBjb21wcmVzc2lvbiBvZiBzZXZlcmFsIG1pZCB0aG9yYWNpYyB2ZXJ0ZWJyYWwKICAgICAgYm9kaWVzIGVzc2VudGlhbGx5IHVuY2hhbmdlZCBmcm9tIHRoYXQgb2YgdGhlIHByZXZpb3VzIHN0dWR5LiAgCgogICAgSW1wcmVzc2lvbjoKICAgICAgVGhlcmUgaXMgZXZpZGVuY2UgZm9yIENPUEQgYW5kIHJldHJhY3Rpb24gb2YgdGhlIGhpbGEgYmlsYXRlcmFsbHkKICAgICAgd2hpY2ggbW9zdCBsaWtlbHkgcmVwcmVzZW50cyBvbGQgaGVhbGVkIGdyYW51bG9tYXRvdXMgaW5mZWN0aW9uLiAKICAgICAgVGhlc2UgZmluZGluZ3MgYXJlIHVuY2hhbmdlZCBmcm9tIHRoZSBwcmV2aW91cyBzdHVkeS4gIAoKICAgIFByaW1hcnkgRGlhZ25vc3RpYyBDb2RlOiAKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIE1JQ0hBRUwgTUNWRUlHSCwgQ0hJRUYsUkFESU9MT0dZIFNFUlZJQ0UgKFZlcmlmaWVyKQovUlND",
+    "title" : "CHEST 2 VIEWS PA&LAT",
+    "creation" : "2000-12-14T08:49:00Z"
+  }]
+}

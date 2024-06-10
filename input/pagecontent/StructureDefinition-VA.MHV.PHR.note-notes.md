@@ -63,7 +63,7 @@
   - Many sub-titles but all have "C & P EXAMINATION CONSULT" (e.g. PODIATRY C & P EXAMINATION CONSULT)
 - all other notes, labs, and conditions are **held for 36 hours past the signature date/time**
 
-#### TODO
+#### Mapping Concerns
 
 - discharge summary may have a `period`. The  `NoteTO/dischargeTimestamp` or `NoteTO/admitTimestamp` have not been seen in sample notes feed.
   - These values do exist in the discharge feed, but that feed does not include id values so we have no way to de-duplicate them. Further the discharge feed I have has no text body, so suspect these are not realistic.

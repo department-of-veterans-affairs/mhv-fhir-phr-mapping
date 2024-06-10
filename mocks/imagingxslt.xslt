@@ -21,7 +21,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
         </xsl:attribute>
     </timestamp>
     <xsl:variable name="site" select="soap:Envelope/soap:Body/ns2:getDataResponse/ns2:PatientMedicalRecordTO/imagingExams/arrays/taggedImagingExamArray/tag"/>
-    <!-- TODO: should find a FHIR Patient given the PatientTO details GetPatient() -->
+    <!--  should find a FHIR Patient given the PatientTO details GetPatient() -->
       <xsl:for-each select="soap:Envelope/soap:Body/ns2:getDataResponse/ns2:PatientMedicalRecordTO/imagingExams/arrays/taggedImagingExamArray/imagingExams/imagingExamTO">
         <entry>
            <xsl:variable name="fullUrl" select="uuid:randomUUID()"/>
@@ -141,7 +141,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                         </text>
                     </code>
                     <subject>
-                        <reference value="Patient/ex-MHV-patient-0"/>  <!-- TODO: patient should come from patient lookup -->
+                        <reference value="Patient/ex-MHV-patient-0"/>  <!--  patient should come from patient lookup -->
                     </subject>
                     <encounter>
                         <identifier>
@@ -163,25 +163,25 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </xsl:if>
 
 <!-- The following two extensions are used to enable the conversion to FSH resources - see mock-images.fsh -->
-<!-- 
-<extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
+            <!-- -->
+<extension url="http://hl7.org/fhir/StructureDefinition/resource-name">
     <valueString>
         <xsl:attribute name="value">
             <xsl:value-of select="concat('Imaging Report: ',id)" />
         </xsl:attribute>
     </valueString>
 </extension>
-<extension url="http://hl7.org/fhir/StructureDefinition/artifact-description">
+<extension url="http://hl7.org/fhir/StructureDefinition/resource-description">
     <valueMarkdown>
         <xsl:attribute name="value">
             <xsl:value-of select="name" /> 
         </xsl:attribute>
     </valueMarkdown>
 </extension>
- -->
+<!-- -->
                 <identifier>
                     <use value="usual"/>
-                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>   <!-- TODO: should be derived from Vista site, using 989 -->
+                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>   <!--  should be derived from Vista site, using 989 -->
                     <value>
                     <xsl:attribute name="value">
                         <xsl:value-of select="concat('ImagingExamTO.',id)" />
@@ -196,7 +196,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                             <code value="ACSN"/>
                         </coding>
                     </type>
-                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!-- TODO: should be derived from Vista site, using 989 -->
+                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>  <!--  should be derived from Vista site, using 989 -->
                     <value>
                     <xsl:attribute name="value">
                         <xsl:value-of select="concat('Accession.', radiologyReportTO/accessionNumber)" />
@@ -205,7 +205,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </identifier>
                 <identifier>
                     <use value="secondary"/>
-                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>    <!-- TODO: should be derived from Vista site, using 989 -->
+                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>    <!--  should be derived from Vista site, using 989 -->
                     <value>
                     <xsl:attribute name="value">
                         <xsl:value-of select="concat('CaseNum.', casenum)" />
@@ -248,7 +248,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     </text>
                 </code>
                 <subject>
-                    <reference value="Patient/ex-MHV-patient-0"/>  <!-- TODO: patient should come from patient lookup -->
+                    <reference value="Patient/ex-MHV-patient-0"/>  <!--  patient should come from patient lookup -->
                 </subject>
                 <xsl:if test="boolean(encounterId)">
                     <encounter>

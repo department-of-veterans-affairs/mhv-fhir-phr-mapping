@@ -1,7 +1,6 @@
 
 - This profile is **not* based on US-Core profile as they did not profile MedicationDispense.
 - `subject` is a reference to this patient
-- TODO
 
 More detailed profiling:
 

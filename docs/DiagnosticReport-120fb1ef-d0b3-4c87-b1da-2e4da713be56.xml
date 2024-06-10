@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="120fb1ef-d0b3-4c87-b1da-2e4da713be56"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes:{http://www.ama-assn.org/go/cpt 93015}">NUCLEAR MEDICINE</span> (<span title="Codes:{http://loinc.org LP29684-5}">Radiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>2001-04-26 11:07:00+0000</td></tr><tr><td>Reported</td><td>2001-04-26 11:07:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6989573.8892-12 (use: usual) Accession ID/Accession.042601-1544 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.1544 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="provider-0"/>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="unknown"/>
+      </identifier>
+      <name>
+        <text value="KATZ,NEIL"/>
+        <family value="KATZ,NEIL"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="organization-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrganizationTO.273"/>
+      </identifier>
+      <active value="true"/>
+      <name value="NUCLEAR MEDICINE"/>
+    </Organization>
+  </contained>
+  <contained>
+    <ServiceRequest>
+      <id value="order-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrderTO.7379950"/>
+      </identifier>
+      <status value="unknown"/>
+      <intent value="order"/>
+      <category>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="363679005"/>
+          <display value="Imaging"/>
+        </coding>
+      </category>
+      <code>
+        <text value="MYOCARDIAL PERFUSION, PHARMACOLOGICAL STRESS P/D"/>
+      </code>
+      <subject>
+        <reference value="Patient/ex-MHV-patient-0"/>
+      </subject>
+      <encounter>
+        <identifier>
+          <value value="3278625"/>
+        </identifier>
+      </encounter>
+      <requester>
+        <reference value="#provider-0"/>
+      </requester>
+      <performer>
+        <reference value="#organization-0"/>
+      </performer>
+    </ServiceRequest>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.6989573.8892-12"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession.042601-1544"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.1544"/>
+  </identifier>
+  <basedOn>
+    <reference value="#order-0"/>
+  </basedOn>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LP29684-5"/>
+      <display value="Radiology"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="93015"/>
+      <display value="CARDIOVASCULAR STRESS TEST USING MAXIMAL OR SUBMAXIMAL TREADMILL OR BICYCLE EXERCISE, CONTINUOUS ELECTROCARDIOGRAPHIC MONITORING, AND/OR PHARMACOLOGICAL STRESS; WITH SUPERVISION, INTERPRETATION AND REPORT"/>
+    </coding>
+    <text value="NUCLEAR MEDICINE"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <encounter>
+    <identifier>
+      <value value="3278625"/>
+    </identifier>
+  </encounter>
+  <effectiveDateTime value="2001-04-26T11:07:00Z"/>
+  <issued value="2001-04-26T11:07:00Z"/>
+  <performer>
+    <reference value="#organization-0"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="#provider-0"/>
+  </resultsInterpreter>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="Q0FSRElPVkFTQ1VMQVIgU1RSRVNTIFRFU1QgKFRFQ0gpCiAgIApQcm9jIE9yZDogTVlPQ0FSRElBTCBQRVJGVVNJT04sIFBIQVJNQUNPTE9HSUNBTCBTVFJFU1MgUC9ECkV4bSBEYXRlOiBBUFIgMjYsIDIwMDFAMTE6MDcKUmVxIFBoeXM6IFBBVElMLFNBUkFTV0FUSSAgICAgICAgICAgICAgICBQYXQgTG9jOiBQQ1RfTyBQQVRJTCAoRi9VKSAoUmVxJ2cgTG9jKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEltZyBMb2M6IE5VQ0xFQVIgTUVESUNJTkUKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAxNTE2IENPTVBMRVRFKSBNWU9DQVJESUFMIFBFUkZVU0lPTiAoU1BFQ1QpLCBFWC8oTk0gICBEZXRhaWxlZCkgQ1BUOjc4NDY1CgooQ2FzZSAxNTE5IENPTVBMRVRFKSAjUFJPVklTSU9OIE9GIERJQUdOT1NUSUMgUkFESU9OVUMoTk0gICBEZXRhaWxlZCkgQ1BUOjc4OTkwCgooQ2FzZSAxNTIwIENPTVBMRVRFKSBNWU9DQVJESUFMIFBFUkZVU0lPTiBTVFVEWSBXSVRIIEUoTk0gICBEZXRhaWxlZCkgQ1BUOjc4NDgwCgooICAgICAgIDR4ICAgICAgICAgKSBKMTI0NSBESVBZUklEQU1PTEUgSU5KRUNUSU9OICAgICAoTk0gICBEZXRhaWxlZCkgQ1BUOkoxMjQ1CgooICAgICAgIDN4ICAgICAgICAgKSBBOTUwNSBUSEFMTE9VUyBDSExPUklERSBUTCAyMDEvTUMoTk0gICBEZXRhaWxlZCkgQ1BUOkE5NTA1CgooQ2FzZSAxNTM2IENPTVBMRVRFKSBNWU9DQVJESUFMIFBFUkZVU0lPTiBTVFVEWSBXSVRIIFcoTk0gICBEZXRhaWxlZCkgQ1BUOjc4NDc4CgooQ2FzZSAxNTQ0IENPTVBMRVRFKSBDQVJESU9WQVNDVUxBUiBTVFJFU1MgVEVTVCAoVEVDSCkoTk0gICBEZXRhaWxlZCkgQ1BUOjkzMDE1CgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgUFQgQy9PIEMuUCBPTiAmIE9GRixPTEQgTUksIEZBTUlMWSBIL08gSEVBUlQgQVRUQUNLLiAgUi9PIENBRCAKCiAgICBSZXBvcnQgU3RhdHVzOiBWZXJpZmllZCAgICAgICAgICAgICAgICAgICBEYXRlIFJlcG9ydGVkOiBBUFIgMjYsIDIwMDEKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGUgVmVyaWZpZWQ6IEFQUiAyNywgMjAwMQogICAgVmVyaWZpZXIgRS1TaWc6L0VTL05FSUwgS0FUWiwgTUQKCiAgICBSZXBvcnQ6CiAgICAgIFJFUE9SVDogIDQvMjYvMDEgIEFOVFJBUywgSi4gIzYyNjcgIDQxLjQgbWcgRGlweXJpZGFtb2xlIElWCiAgICAgIGluamVjdGVkIGluIHJpZ2h0IGFybSBhdCAwOTU4LTEwMDIgaG91cnMgYnkgRHIuIEthdHouICAzLjE2IG1DaQogICAgICBUbC4yMDEgQ2hsb3JpZGUgaW5qZWN0ZWQgSVYgaW4gcmlnaHQgYXJtIGF0IDEwMDUgaG91cnMgYnkgQS4KICAgICAgQmVuZGVyLiAgCiAgICAgICAKICAgICAgIAogICAgICBJTlRSQVZFTk9VUyBESVBZUklEQU1PTEUgU1RSRVNTIFRIQUxMSVVNIE1ZT0NBUkRJQUwgU0NBTi1TUEVDVDogCiAgICAgICAKICAgICAgVGhlIGRpcHlyaWRhbW9sZSBzdHJlc3MgdGVzdCB3YXMgcGVyZm9ybWVkIGluIHRoZSBOTVMuIAogICAgICAgCiAgICAgIEJvdGggc3RyZXNzIGFuZCByZXN0IGltYWdlcyByZXZlYWwgbWlsZCBkZWNyZWFzZWQgYWN0aXZpdHkgaW4gdGhlCiAgICAgIGluZmVyaW9yIHdhbGwuICBIb3dldmVyLCBnYXRlZCBpbWFnZXMgcmV2ZWFsIG5vcm1hbCB3YWxsIG1vdGlvbgogICAgICBpbiB0aGlzIGFyZWEuICAKICAgICAgIAogICAgICBUaGVyZSBpcyBhIHBvc3QtRGlweXJpZGFtb2xlIHRoYWxsaXVtIGxlZnQgdmVudHJpY3VsYXIgZWplY3Rpb24KICAgICAgZnJhY3Rpb24gb2YgNzMlLiAgICAgIAoKICAgIEltcHJlc3Npb246CiAgICAgIE5vIGV2aWRlbmNlIGZvciByZXZlcnNpYmxlIGlzY2hlbWlhLiAgVGhlIG1pbGQgcGVyc2lzdGVudAogICAgICBkZWNyZWFzZWQgYWN0aXZpdHkgaW4gdGhlIGluZmVyaW9yIHdhbGwgbWF5IGJlIHNlY29uZGFyeSB0byBzb2Z0CiAgICAgIHRpc3N1ZSBhdHRlbnVhdGlvbiwgZXNwZWNpYWxseSBzaW5jZSB0aGUgd2FsbCBtb3Rpb24gaXMgbm9ybWFsIGluCiAgICAgIHRoaXMgYXJlYS4gIAoKICAgIFByaW1hcnkgRGlhZ25vc3RpYyBDb2RlOiAKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIE5FSUwgS0FUWiwgQ0hJRUYsIE5NUyAoVmVyaWZpZXIpCi9NQUM="/>
+    <title value="CARDIOVASCULAR STRESS TEST (TECH)"/>
+    <creation value="2001-04-26T11:07:00Z"/>
+  </presentedForm>
+</DiagnosticReport>

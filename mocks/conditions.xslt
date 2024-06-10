@@ -23,7 +23,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
         </xsl:attribute>
     </timestamp>
 
-    <!-- TODO: should find a FHIR Patient given the PatientTO details GetPatient() -->
+    <!--  should find a FHIR Patient given the PatientTO details GetPatient() -->
       <xsl:for-each select="soap:Envelope/soap:Body/ns2:getDataResponse/ns2:PatientMedicalRecordTO/problems/arrays/taggedProblemArray/problems/problemTO">
         <entry>
            <xsl:variable name="fullUrl" select="uuid:randomUUID()"/>
@@ -108,14 +108,14 @@ exclude-result-prefixes="soap ns2 uuid saxon"
 
 <!-- The following two extensions are used to enable the conversion to FSH resources - see mock-notes.fsh -->
 <!-- -->
-<extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
+<extension url="http://hl7.org/fhir/StructureDefinition/resource-instance-name">
     <valueString>
         <xsl:attribute name="value">
             <xsl:value-of select="concat('Condition: ',id)" />
         </xsl:attribute>
     </valueString>                
 </extension>
-<extension url="http://hl7.org/fhir/StructureDefinition/artifact-description">
+<extension url="http://hl7.org/fhir/StructureDefinition/resource-instance-description">
     <valueMarkdown>
         <xsl:attribute name="value">
             <xsl:value-of select="type/name" /> 
@@ -190,7 +190,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </code>
 
                 <subject>
-                    <reference value="Patient/ex-MHV-patient-0"/>  <!-- TODO: patient should come from patient lookup -->
+                    <reference value="Patient/ex-MHV-patient-0"/>  <!--  patient should come from patient lookup -->
                 </subject>
 
                 <xsl:if test="boolean(onsetDate)">

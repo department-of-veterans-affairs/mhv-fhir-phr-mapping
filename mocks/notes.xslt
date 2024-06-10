@@ -20,7 +20,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
             <xsl:value-of select="current-dateTime()"/>
         </xsl:attribute>
     </timestamp>
-    <!-- TODO: should find a FHIR Patient given the PatientTO details GetPatient() -->
+    <!--  should find a FHIR Patient given the PatientTO details GetPatient() -->
       <xsl:for-each select="soap:Envelope/soap:Body/ns2:getDataResponse/ns2:PatientMedicalRecordTO/notes/arrays/taggedNoteArray/notes/noteTO">
         <entry>
            <xsl:variable name="fullUrl" select="uuid:randomUUID()"/>
@@ -39,7 +39,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
 
 <!-- The following two extensions are used to enable the conversion to FSH resources - see mock-notes.fsh -->
 <!-- -->
-<extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
+<extension url="http://hl7.org/fhir/StructureDefinition/resource-instance-name">
     <xsl:choose>
         <!-- this is a subset of values known to be in initial data -->
         <xsl:when test="type = 'DS'">
@@ -65,7 +65,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
         </xsl:when>
     </xsl:choose>                   
 </extension>
-<extension url="http://hl7.org/fhir/StructureDefinition/artifact-description">
+<extension url="http://hl7.org/fhir/StructureDefinition/resource-instance-description">
     <valueMarkdown>
         <xsl:attribute name="value">
             <xsl:value-of select="localTitle" /> 
@@ -174,7 +174,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
 
                 <identifier>
                     <use value="usual"/>
-                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>   <!-- TODO: should be derived from Vista site, using 989 -->
+                    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>   
                     <value>
                     <xsl:attribute name="value">
                         <xsl:value-of select="concat('NoteTO.',id)" />
@@ -220,7 +220,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                     </coding>
                 </category>
                 <subject>
-                    <reference value="Patient/ex-MHV-patient-0"/>  <!-- TODO: patient should come from patient lookup -->
+                    <reference value="Patient/ex-MHV-patient-0"/>  <!-- patient should come from patient lookup -->
                 </subject>
                 <date>
                   <xsl:attribute name="value">

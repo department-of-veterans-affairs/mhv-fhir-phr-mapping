@@ -10,13 +10,12 @@ Note that Grahame has said he has a backlog to do this automatically in the IG p
 
 These examples come from 
 1. mocks/vitals.xml
-2. transformed with mocks/vitalsxslt.xslt (with extensions populating an artifact-title and artifact-description extension)
+2. transformed with mocks/vitalsxslt.xslt (with extensions populating an resource-instance-name and resource-instance-description extension)
 3. that bundle built into the IG so that the IG build creates the json equivilant
 3. Put the json equvilant bundle into "FSH Online" to convert to FSH - https://fshschool.org/FSHOnline/#/
 5. put the result into this FSH file
 6. Remove the bundle
 7. change inline to example
-8. convert extension for description and title 
 9. move meta.profile into InstanceOf:
 10. use slices on identifier - TOid
 11. replace the FSH Online contained with #inline Location resources, with references

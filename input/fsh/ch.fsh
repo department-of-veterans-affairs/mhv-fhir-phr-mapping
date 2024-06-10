@@ -149,7 +149,7 @@ A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyH
 One ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.
 - `.subject` must be the patient from the DiagnosticReport
 - code = {labTests.orderedTestCode}
-- status = `unknown` -- as we dont know - TODO
+- status = `unknown` 
 - intent = `order`
 - category = SCT#108252007 Laboratory procedure
 - specimen = specimen

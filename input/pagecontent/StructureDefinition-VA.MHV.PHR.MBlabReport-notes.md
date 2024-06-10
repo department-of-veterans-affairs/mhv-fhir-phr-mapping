@@ -60,8 +60,6 @@ bacteriology is going to be the most common type of microbiology
   - Note that the current MHV method of parsing the text body does give opposite results as the VIA xml.
 - KBS has a question outstanding with micro. FHIR modeling seems to be from lab perspective, not from EHR.  FHIR-44631
 - The mock data I have does give me equivalent or better values in the XML. For example I get a date and time in the xml, but only a date in the text. Should we only use the parsed text if we don't have a value in the XML?
-- TODO update fhir mapping from table updates
-- TODO update DiagnosticReport
 - labSiteId ? is this an Organization or Location?
 - va.gov would like to have the location where the sample was given. Historically this has been the interpretation of the Vista Site, which is really the vista site where the data resides. 
 
@@ -91,7 +89,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    | labReportTO/text {date completed:}           |  completedDateTime[x]   | DiagnosticReport.issued             | |
 |   |    | labReportTO/text {test(s) ordered:}          | orderedTest             |                                     | no mock examples |
 |   |    | labReportTO/text {provider:}                 |  orderingProvider       | DiagnosticReport.performer(Pra) | only have string |
-|   |    | labReportTO/text {site/specimen:}            |  specimenSource         | Specimen.collection.bodySite        | location? KBS/TODO |
+|   |    | labReportTO/text {site/specimen:}            |  specimenSource         | Specimen.collection.bodySite        | location? KBS |
 |   |    | labReportTO/text {collection sample:}        |  collectionSample       | Specimen.type.text                  | |
 |   |    | labReportTO/text {collection date:}          |  collectedDateTime[x]   | Specimen.collectedDateTime          | Not sure why parsed out of the text, vs using specimen/collectionDate
 |   |    | labReportTO/text {final report =>}           |                         | DiagnosticReport.issued             | used in **hold** |

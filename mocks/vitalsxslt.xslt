@@ -20,7 +20,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
             <xsl:value-of select="current-dateTime()"/>
         </xsl:attribute>
     </timestamp>
-    <!-- TODO: should find a FHIR Patient given the PatientTO details GetPatient() -->
+    <!--  should find a FHIR Patient given the PatientTO details GetPatient() -->
       <xsl:for-each select="soap:Envelope/soap:Body/ns2:getDataResponse/ns2:PatientMedicalRecordTO/vitals/arrays/taggedVitalSignArray/vitals/vitalSignTO">
         <xsl:if test="boolean(type/id) and boolean(value1)">  <!-- ignore those that have no id or value1, which should just be the fractional BP -->
         <entry>
@@ -79,14 +79,14 @@ exclude-result-prefixes="soap ns2 uuid saxon"
 
 <!-- The following two extensions are used to enable the conversion to FSH resources - see mock-images.fsh -->
 <!-- 
-<extension url="http://hl7.org/fhir/StructureDefinition/artifact-title">
+<extension url="http://hl7.org/fhir/StructureDefinition/resource-instance-name">
 <valueString>
   <xsl:attribute name="value">
     <xsl:value-of select="type/name" />
   </xsl:attribute>
 </valueString>
 </extension>
-<extension url="http://hl7.org/fhir/StructureDefinition/artifact-description">
+<extension url="http://hl7.org/fhir/StructureDefinition/resource-instance-description">
 <valueMarkdown>
   <xsl:attribute name="value">
       <xsl:value-of select="type/id" />
@@ -182,7 +182,7 @@ exclude-result-prefixes="soap ns2 uuid saxon"
                 </code>
 
                 <subject>
-                    <reference value="Patient/ex-MHV-patient-2"/>  <!-- TODO: patient should come from patient lookup -->
+                    <reference value="Patient/ex-MHV-patient-2"/>  <!--  patient should come from patient lookup -->
                 </subject>
 
                 <effectiveDateTime>

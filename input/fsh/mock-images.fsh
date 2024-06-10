@@ -94,6 +94,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "5886199"
 * effectiveDateTime = "2004-09-24T11:25:00Z"
+* issued = "2004-09-24T11:25:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -153,6 +154,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "4183065"
 * effectiveDateTime = "2002-09-23T11:37:00Z"
+* issued = "2002-09-23T11:37:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -212,6 +214,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "4183065"
 * effectiveDateTime = "2002-09-23T11:37:00Z"
+* issued = "2002-09-23T11:37:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -271,6 +274,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -329,6 +333,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -387,6 +392,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -446,6 +452,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -505,6 +512,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -564,6 +572,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -622,6 +631,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -680,6 +690,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -738,6 +749,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -796,6 +808,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -855,6 +868,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -913,6 +927,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3278625"
 * effectiveDateTime = "2001-04-26T11:07:00Z"
+* issued = "2001-04-26T11:07:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -972,6 +987,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "3067104"
 * effectiveDateTime = "2000-12-14T08:49:00Z"
+* issued = "2000-12-14T08:49:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1031,6 +1047,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "2896312"
 * effectiveDateTime = "2000-08-29T08:34:00Z"
+* issued = "2000-08-29T08:34:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * conclusion = "ABNORMAL"
@@ -1091,6 +1108,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "2878642"
 * effectiveDateTime = "2000-08-09T13:25:00Z"
+* issued = "2000-08-09T13:25:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1150,6 +1168,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "2853075"
 * effectiveDateTime = "2000-07-31T16:28:00Z"
+* issued = "2000-07-31T16:28:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1209,6 +1228,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "2836334"
 * effectiveDateTime = "2000-07-18T16:26:00Z"
+* issued = "2000-07-18T16:26:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1253,6 +1273,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "1298095"
 * effectiveDateTime = "1998-04-08T15:19:00Z"
+* issued = "1998-04-08T15:19:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1297,6 +1318,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "983040"
 * effectiveDateTime = "1997-10-15T13:54:00Z"
+* issued = "1997-10-15T13:54:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1341,6 +1363,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "650040"
 * effectiveDateTime = "1997-09-22T11:33:00Z"
+* issued = "1997-09-22T11:33:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1385,6 +1408,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "631158"
 * effectiveDateTime = "1997-09-08T10:42:00Z"
+* issued = "1997-09-08T10:42:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1429,6 +1453,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "622090"
 * effectiveDateTime = "1997-09-03T15:00:00Z"
+* issued = "1997-09-03T15:00:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1473,6 +1498,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "622090"
 * effectiveDateTime = "1997-09-03T15:00:00Z"
+* issued = "1997-09-03T15:00:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1517,6 +1543,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "600682"
 * effectiveDateTime = "1997-08-11T12:28:00Z"
+* issued = "1997-08-11T12:28:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1561,6 +1588,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "555776"
 * effectiveDateTime = "1997-07-16T08:59:00Z"
+* issued = "1997-07-16T08:59:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1605,6 +1633,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "520709"
 * effectiveDateTime = "1997-06-23T14:51:00Z"
+* issued = "1997-06-23T14:51:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1649,6 +1678,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "478351"
 * effectiveDateTime = "1997-05-12T10:08:00Z"
+* issued = "1997-05-12T10:08:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1693,6 +1723,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "449867"
 * effectiveDateTime = "1997-05-07T15:14:00Z"
+* issued = "1997-05-07T15:14:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1737,6 +1768,7 @@ Usage: #example
 * subject = Reference(Patient/ex-MHV-patient-0)
 * encounter.identifier.value = "422109"
 * effectiveDateTime = "1997-04-21T13:36:00Z"
+* issued = "1997-04-21T13:36:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1780,6 +1812,7 @@ Usage: #example
 * code.text = "GENERAL RADIOLOGY"
 * subject = Reference(Patient/ex-MHV-patient-0)
 * effectiveDateTime = "1994-07-01T15:37:00Z"
+* issued = "1994-07-01T15:37:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain
@@ -1823,6 +1856,7 @@ Usage: #example
 * code.text = "GENERAL RADIOLOGY"
 * subject = Reference(Patient/ex-MHV-patient-0)
 * effectiveDateTime = "1992-10-15T10:56:00Z"
+* issued = "1992-10-15T10:56:00Z"
 * performer.reference = "#organization-0"
 * resultsInterpreter.reference = "#provider-0"
 * presentedForm.contentType = #text/plain

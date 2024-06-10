@@ -6,13 +6,12 @@ Note that Grahame has said he has a backlog to do this automatically in the IG p
 
 These examples come from 
 1. mocks/notes.xml
-2. transformed with mocks/notes.xslt (with extensions populating an artifact-title and artifact-description extension)
+2. transformed with mocks/notes.xslt (with extensions populating an resource-instance-name and resource-instance-description extension)
 3. that bundle built into the IG so that the IG build creates the json equivilant (sushi fails if these are bigger than 3500 lines or 29 entries)
 3. Put the json equvilant bundle into "FSH Online" to convert to FSH - https://fshschool.org/FSHOnline/#/  
 5. put the result into this FSH file
 6. Remove the bundle
 7. change inline to example
-8. convert extension for description and title 
 9. move meta.profile into InstanceOf:
 10. use slices on identifier - TOid
 12. change contained (author, approvedBy, and location) references to .reference = "#author-0" -- https://chat.fhir.org/#narrow/stream/215610-shorthand/topic/FSHOnline.20contained.20resources

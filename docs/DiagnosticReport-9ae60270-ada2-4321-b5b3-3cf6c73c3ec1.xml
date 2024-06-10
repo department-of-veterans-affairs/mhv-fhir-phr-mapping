@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="9ae60270-ada2-4321-b5b3-3cf6c73c3ec1"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes:{http://www.ama-assn.org/go/cpt 73630}">GENERAL RADIOLOGY</span> (<span title="Codes:{http://loinc.org LP29684-5}">Radiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>1997-05-12 10:08:00+0000</td></tr><tr><td>Reported</td><td>1997-05-12 10:08:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.7029487.8991-1 (use: usual) Accession ID/Accession.051297-238 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.238 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="provider-0"/>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="unknown"/>
+      </identifier>
+      <name>
+        <text value="SINGER,JOHN"/>
+        <family value="SINGER,JOHN"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="organization-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrganizationTO.2267"/>
+      </identifier>
+      <active value="true"/>
+      <name value="RADIOLOGY"/>
+    </Organization>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.7029487.8991-1"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession.051297-238"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.238"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LP29684-5"/>
+      <display value="Radiology"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="73630"/>
+      <display value="RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS"/>
+    </coding>
+    <text value="GENERAL RADIOLOGY"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <encounter>
+    <identifier>
+      <value value="478351"/>
+    </identifier>
+  </encounter>
+  <effectiveDateTime value="1997-05-12T10:08:00Z"/>
+  <issued value="1997-05-12T10:08:00Z"/>
+  <performer>
+    <reference value="#organization-0"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="#provider-0"/>
+  </resultsInterpreter>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="Rk9PVCAzIE9SIE1PUkUgVklFV1MKICAgClByb2MgT3JkOiBVbmtub3duCkV4bSBEYXRlOiBNQVkgMTIsIDE5OTdAMTA6MDgKUmVxIFBoeXM6IEhPTEdBRE8sUk9OQUxEICAgICAgICAgICAgICAgICBQYXQgTG9jOiBPUCBVbmtub3duLzA5LTA3LTIwMjJAMTY6MTQKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAyMzggQ09NUExFVEUpICBGT09UIDMgT1IgTU9SRSBWSUVXUyAgICAgICAgICAgICAoUkFEICBEZXRhaWxlZCkgQ1BUOjczNjMwCiAgICAgUHJvYyBNb2RpZmllcnMgOiBQT1JUQUJMRSBFWEFNLCBMRUZUCgogICAgQ2xpbmljYWwgSGlzdG9yeToKICAgICAgUy9QIEFSVEhST1BMQVNUWSBPRiAyTkQgRElHSVQgT0YgTFQgRk9PVCAKICAgICAgIAogICAgICAhISEhISEhISEhISEhICBQVCBJTiBQQUNVICBXSUxMIENBTEwgNzM3IFdIRU4gUFQgQVJSSVZFUy4gCiAgICAgICEhISEhISEhISEhISAKCiAgICBSZXBvcnQgU3RhdHVzOiBWZXJpZmllZCAgICAgICAgICAgICAgICAgICBEYXRlIFJlcG9ydGVkOiBNQVkgMTQsIDE5OTcKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIERhdGUgVmVyaWZpZWQ6IE1BWSAyOSwgMTk5NwogICAgVmVyaWZpZXIgRS1TaWc6L0VTL0IuSC5CYXVtYW5uLE1ELgoKICAgIFJlcG9ydDoKICAgICAgTEVGVCBGT09UIFRIUk9VR0ggUExBU1RFUiBDQVNUOiAgNS0xMi05NzogIAogICAgICAgCiAgICAgIENvbXBhcmlzb24gaXMgbWFkZSB3aXRoIFgtUmF5cyBvZiA0LTIxLTk3LiAgCiAgICAgICAKICAgICAgUG9zdG9wZXJhdGl2ZSBjaGFuZ2VzIGFyZSBub3RlZCBpbiB0aGUgZmlyc3QgZGlnaXQgY29uc2lzdGluZyBvZgogICAgICBhbiBvc3Rlb3RvbXkgaW4gdGhlIHByb3hpbWFsIHBvcnRpb24gb2YgdGhlIGZpcnN0IG1ldGF0YXJzYWwKICAgICAgd2hpY2ggaGFzIGJlZW4gc3RhYmlsaXplZCBieSB0d28gYm9uZSBzY3Jld3MgYW5kIG9uZSB3aXJlLiAgQWxzbywKICAgICAgdGhlcmUgaXMgYW4gYWRkaXRpb25hbCBsb25naXR1ZGluYWwgd2lyZSBleHRlbmRpbmcgdGhyb3VnaCB0aGUKICAgICAgcmVtYWluaW5nIGxlbmd0aCBvZiB0aGUgZmlyc3QgbWV0YXRhcnNhbCBwbHVzIGEgc2luZ2xlIHNtYWxsCiAgICAgIHNjcmV3IGluIHRoZSBuZWNrIG9mIHRoZSBmaXJzdCBtZXRhdGFyc2FsLiAgVGhlcmUgaXMgaW1wcm92ZW1lbnQKICAgICAgaW4gaGFsbHV4IHZhbGd1cywgaG93ZXZlciwgb25lIGRvZXMgbm90ZSB0aGUgcHJlc2VuY2Ugb2Ygc29tZQogICAgICBkZWdyZWUgb2YgaGFtbWVyIHRvZSBkZWZvcm1pdHkgaW52b2x2aW5nIHRoZSBzZWNvbmQsIHRoaXJkLCBhbmQgCiAgICAgIGZvdXJ0aCwgYW5kIHBlcmhhcHMgYWxzbyB0aGUgZmlmdGggdG9lcy4gIAoKICAgIEltcHJlc3Npb246CiAgICAgIFNhdGlzZmFjdG9yeSBhcHBlYXJhbmNlIG9mIHBvc3Qtc3VyZ2ljYWwgcmVzaWR1YWxzIG9mIGhhbGx1eAogICAgICB2YWxndXMsIGFzIGRlc2NyaWJlZC4gIAoKICAgIFByaW1hcnkgRGlhZ25vc3RpYyBDb2RlOiBNQUpPUiBBQk5PUk1BTElUWSwgTk8gQVRUTi4gTkVFREVECgpQcmltYXJ5IEludGVycHJldGluZyBTdGFmZjoKICBKT0hOIFNJTkdFUiwgU3RhZmYgUGh5c2ljaWFuClZFUklGSUVEIEJZOgogIEJFUlRBIEggQkFVTUFOTiwgUmFkaW9sb2dpc3QKCi9SU0M="/>
+    <title value="FOOT 3 OR MORE VIEWS"/>
+    <creation value="1997-05-12T10:08:00Z"/>
+  </presentedForm>
+</DiagnosticReport>

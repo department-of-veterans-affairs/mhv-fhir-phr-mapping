@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DiagnosticReport xmlns="http://hl7.org/fhir">
+  <id value="246bb52c-09be-4db1-9324-c293e5c3d514"/>
+  <meta>
+    <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"/>
+  </meta>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><h2><span title="Codes:{http://www.ama-assn.org/go/cpt 73630}">GENERAL RADIOLOGY</span> (<span title="Codes:{http://loinc.org LP29684-5}">Radiology</span>) </h2><table class="grid"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0 (use: usual))</td></tr><tr><td>When For</td><td>1997-10-15 13:54:00+0000</td></tr><tr><td>Reported</td><td>1997-10-15 13:54:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.7028984.8645-1 (use: usual) Accession ID/Accession.101597-1019 (use: official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.1019 (use: secondary)</td></tr></table><p><b>Report Details</b></p></div>
+  </text>
+  <contained>
+    <Practitioner>
+      <id value="provider-0"/>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="unknown"/>
+      </identifier>
+      <name>
+        <text value="BELLAS,RICHARD C"/>
+        <family value="BELLAS,RICHARD C"/>
+      </name>
+    </Practitioner>
+  </contained>
+  <contained>
+    <Organization>
+      <id value="organization-0"/>
+      <meta>
+        <profile value="https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"/>
+      </meta>
+      <identifier>
+        <use value="usual"/>
+        <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+        <value value="OrganizationTO.2267"/>
+      </identifier>
+      <active value="true"/>
+      <name value="RADIOLOGY"/>
+    </Organization>
+  </contained>
+  <identifier>
+    <use value="usual"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="ImagingExamTO.7028984.8645-1"/>
+  </identifier>
+  <identifier>
+    <use value="official"/>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="ACSN"/>
+      </coding>
+    </type>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="Accession.101597-1019"/>
+  </identifier>
+  <identifier>
+    <use value="secondary"/>
+    <system value="urn:oid:2.16.840.1.113883.4.349.4.989"/>
+    <value value="CaseNum.1019"/>
+  </identifier>
+  <status value="final"/>
+  <category>
+    <coding>
+      <system value="http://loinc.org"/>
+      <code value="LP29684-5"/>
+      <display value="Radiology"/>
+    </coding>
+  </category>
+  <code>
+    <coding>
+      <system value="http://www.ama-assn.org/go/cpt"/>
+      <code value="73630"/>
+      <display value="RADIOLOGIC EXAMINATION, FOOT; COMPLETE, MINIMUM OF 3 VIEWS"/>
+    </coding>
+    <text value="GENERAL RADIOLOGY"/>
+  </code>
+  <subject>
+    <reference value="Patient/ex-MHV-patient-0"/>
+  </subject>
+  <encounter>
+    <identifier>
+      <value value="983040"/>
+    </identifier>
+  </encounter>
+  <effectiveDateTime value="1997-10-15T13:54:00Z"/>
+  <issued value="1997-10-15T13:54:00Z"/>
+  <performer>
+    <reference value="#organization-0"/>
+  </performer>
+  <resultsInterpreter>
+    <reference value="#provider-0"/>
+  </resultsInterpreter>
+  <presentedForm>
+    <contentType value="text/plain"/>
+    <data value="Rk9PVCAzIE9SIE1PUkUgVklFV1MKICAgClByb2MgT3JkOiBVbmtub3duCkV4bSBEYXRlOiBPQ1QgMTUsIDE5OTdAMTM6NTQKUmVxIFBoeXM6IEhPTEdBRE8sUk9OQUxEICAgICAgICAgICAgICAgICBQYXQgTG9jOiBPUCBVbmtub3duLzA5LTA3LTIwMjJAMTY6MTQKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBSQURJT0xPR1kKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTZXJ2aWNlOiBVbmtub3duCgogCgooQ2FzZSAxMDE5IENPTVBMRVRFKSBGT09UIDMgT1IgTU9SRSBWSUVXUyAgICAgICAgICAgICAoUkFEICBEZXRhaWxlZCkgQ1BUOjczNjMwCiAgICAgUHJvYyBNb2RpZmllcnMgOiBSSUdIVAoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIDMgVklFV1MgUklHSFQgRk9PVCBTL1AgNiBXS1MgUExFQVNFIFNUQVRFIFBST0dSRVNTSU9OIE9GIEhFQUxJTkcKICAgICAgT0YgMVNUIE1FVEFUQVJTQUwgCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogT0NUIDE2LCAxOTk3CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBPQ1QgMTgsIDE5OTcKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9SSUNIQVJEIEMuIEJFTExBUywgTS5ELgoKICAgIFJlcG9ydDoKICAgICAgUklHSFQgRk9PVDogIDEwLTE1LTk3OiAgCiAgICAgICAKICAgICAgUm91dGluZSB2aWV3cyBvZiB0aGUgcmlnaHQgZm9vdCBzaG93IHRoZSBwcmVzZW5jZSBvZiBhIHNtYWxsCiAgICAgIGNhbGliZXIgc2NyZXcgcHJvamVjdGluZyBmcm9tIHRoZSBkb3JzYWwgdG8gdGhlIHZlbnRyYWwgc3VyZmFjZQogICAgICBvZiB0aGUgZGlzdGFsIG1ldGFwaHlzaXMgb2YgdGhlIGZpcnN0IG1ldGF0YXJzYWwgYm9uZS4gIFRoZXJlIGlzCiAgICAgIGFic2VuY2Ugb2YgdGhlIG1lZGlhbCBzdXJmYWNlIG9mIHRoZSBkaXN0YWwgZXBpcGh5c2lzIGFuZAogICAgICBtZXRhcGh5c2lzIG9mIHRoZSBmaXJzdCBtZXRhdGFyc2FsIGNvbXBhdGlibGUgd2l0aCBwcmV2aW91cwogICAgICBidW5pb25lY3RvbXkuICBUaGUgc2Vjb25kIHRocm91Z2ggdGhlIGZpZnRoIG1ldGF0YXJzYWxzIGFwcGVhcgogICAgICBub3JtYWwuICAKCiAgICBJbXByZXNzaW9uOgogICAgICBFdmlkZW5jZSBvZiBwcmV2aW91cyBidW5pb25lY3RvbXkgaW52b2x2aW5nIHRoZSBmaXJzdCBtZXRhdGFyc2FsLiAKICAgICAgIAogICAgICBGaXhhdGlvbiBzY3JldyBkZXZpY2UgcHJvamVjdGluZyBmcm9tIHRoZSBkb3JzYWwgdG8gdGhlIHZlbnRyYWwKICAgICAgc3VyZmFjZXMgb2YgdGhlIGRpc3RhbCBlbmQgb2YgdGhlIHNoYWZ0IG9mIHRoZSBmaXJzdCBtZXRhdGFyc2FsLiAKCiAgICBQcmltYXJ5IERpYWdub3N0aWMgQ29kZTogTUlOT1IgQUJOT1JNQUxJVFkKClByaW1hcnkgSW50ZXJwcmV0aW5nIFN0YWZmOgogIFJJQ0hBUkQgQyBCRUxMQVMsIFNUQUZGIFJBRElPTE9HSVNUIChWZXJpZmllcikKL1JTQw=="/>
+    <title value="FOOT 3 OR MORE VIEWS"/>
+    <creation value="1997-10-15T13:54:00Z"/>
+  </presentedForm>
+</DiagnosticReport>

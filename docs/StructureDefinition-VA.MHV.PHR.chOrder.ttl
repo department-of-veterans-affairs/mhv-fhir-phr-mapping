@@ -38,11 +38,11 @@
      ]
   ] ) ; # 
   fhir:url [ fhir:v "https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.chOrder"^^xsd:anyURI] ; # 
-  fhir:version [ fhir:v "0.3.6"] ; # 
+  fhir:version [ fhir:v "0.3.7"] ; # 
   fhir:name [ fhir:v "MHVchOrder"] ; # 
   fhir:title [ fhir:v "VA MHV PHR CH labTests.orderedTestCode"] ; # 
   fhir:status [ fhir:v "active"] ; # 
-  fhir:date [ fhir:v "2024-05-18T11:51:10-05:00"^^xsd:dateTime] ; # 
+  fhir:date [ fhir:v "2024-06-10T12:47:52-05:00"^^xsd:dateTime] ; # 
   fhir:publisher [ fhir:v "VA Digital Services"] ; # 
   fhir:contact ( [
      fhir:name [ fhir:v "VA Digital Services" ] ;
@@ -57,7 +57,7 @@
        fhir:value [ fhir:v "John.Moehrke@va.gov" ]
      ] )
   ] ) ; # 
-  fhir:description [ fhir:v "A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.\n\nOne ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.\n- `.subject` must be the patient from the DiagnosticReport\n- code = {labTests.orderedTestCode}\n- status = `unknown` -- as we dont know - TODO\n- intent = `order`\n- category = SCT#108252007 Laboratory procedure\n- specimen = specimen\n- not populating US-Core must support as we dont have the values\n	- occurrence[x], authoredOn\n- no other elements are populated"] ; # 
+  fhir:description [ fhir:v "A profile showing how HDR labTests.orderedTestCode (Order) using FHIR API to MyHealtheVet PHR.\n\nOne ServiceRequest holds one `labTests.orderedTestCode`. Where multiple orderedTestCode elements exist, multiple ServiceRequest are used.\n- `.subject` must be the patient from the DiagnosticReport\n- code = {labTests.orderedTestCode}\n- status = `unknown` \n- intent = `order`\n- category = SCT#108252007 Laboratory procedure\n- specimen = specimen\n- not populating US-Core must support as we dont have the values\n	- occurrence[x], authoredOn\n- requester is the requesting provider\n- facility is the requesting facility\n- no other elements are populated"] ; # 
   fhir:jurisdiction ( [
      fhir:coding ( [
        fhir:system [ fhir:v "urn:iso:std:iso:3166"^^xsd:anyURI ] ;

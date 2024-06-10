@@ -1,0 +1,138 @@
+{
+  "resourceType" : "DiagnosticReport",
+  "id" : "b47e0e4a-7bbd-4d6b-8ca9-a5ce31489429",
+  "meta" : {
+    "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.imaging"]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2><span title=\"Codes:{http://www.ama-assn.org/go/cpt 78480}\">NUCLEAR MEDICINE</span> (<span title=\"Codes:{http://loinc.org LP29684-5}\">Radiology</span>) </h2><table class=\"grid\"><tr><td>Subject</td><td><b>ROBERT MHVLISAONE </b> male, DoB: 1962-08-09 ( <code>urn:oid:2.16.840.1.113883.4.349</code>/0\u00a0(use:\u00a0usual))</td></tr><tr><td>When For</td><td>2001-04-26 11:07:00+0000</td></tr><tr><td>Reported</td><td>2001-04-26 11:07:00+0000</td></tr><tr><td>Identifiers:</td><td> <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/ImagingExamTO.6989573.8892-3\u00a0(use:\u00a0usual) Accession ID/Accession.042601-1520\u00a0(use:\u00a0official) <code>urn:oid:2.16.840.1.113883.4.349.4.989</code>/CaseNum.1520\u00a0(use:\u00a0secondary)</td></tr></table><p><b>Report Details</b></p></div>"
+  },
+  "contained" : [{
+    "resourceType" : "Practitioner",
+    "id" : "provider-0",
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "unknown"
+    }],
+    "name" : [{
+      "text" : "KATZ,NEIL",
+      "family" : "KATZ,NEIL"
+    }]
+  },
+  {
+    "resourceType" : "Organization",
+    "id" : "organization-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.organization"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "OrganizationTO.273"
+    }],
+    "active" : true,
+    "name" : "NUCLEAR MEDICINE"
+  },
+  {
+    "resourceType" : "ServiceRequest",
+    "id" : "order-0",
+    "meta" : {
+      "profile" : ["https://department-of-veterans-affairs.github.io/mhv-fhir-phr-mapping/StructureDefinition/VA.MHV.PHR.irOrder"]
+    },
+    "identifier" : [{
+      "use" : "usual",
+      "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+      "value" : "OrderTO.7379950"
+    }],
+    "status" : "unknown",
+    "intent" : "order",
+    "category" : [{
+      "coding" : [{
+        "system" : "http://snomed.info/sct",
+        "code" : "363679005",
+        "display" : "Imaging"
+      }]
+    }],
+    "code" : {
+      "text" : "MYOCARDIAL PERFUSION, PHARMACOLOGICAL STRESS P/D"
+    },
+    "subject" : {
+      "reference" : "Patient/ex-MHV-patient-0"
+    },
+    "encounter" : {
+      "identifier" : {
+        "value" : "3278625"
+      }
+    },
+    "requester" : {
+      "reference" : "#provider-0"
+    },
+    "performer" : [{
+      "reference" : "#organization-0"
+    }]
+  }],
+  "identifier" : [{
+    "use" : "usual",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "ImagingExamTO.6989573.8892-3"
+  },
+  {
+    "use" : "official",
+    "type" : {
+      "coding" : [{
+        "system" : "http://terminology.hl7.org/CodeSystem/v2-0203",
+        "code" : "ACSN"
+      }]
+    },
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "Accession.042601-1520"
+  },
+  {
+    "use" : "secondary",
+    "system" : "urn:oid:2.16.840.1.113883.4.349.4.989",
+    "value" : "CaseNum.1520"
+  }],
+  "basedOn" : [{
+    "reference" : "#order-0"
+  }],
+  "status" : "final",
+  "category" : [{
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "LP29684-5",
+      "display" : "Radiology"
+    }]
+  }],
+  "code" : {
+    "coding" : [{
+      "system" : "http://www.ama-assn.org/go/cpt",
+      "code" : "78480",
+      "display" : "MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION (LIST SEPARATELY IN ADDITION TO CODE FOR PRIMARY PROCEDURE)"
+    }],
+    "text" : "NUCLEAR MEDICINE"
+  },
+  "subject" : {
+    "reference" : "Patient/ex-MHV-patient-0"
+  },
+  "encounter" : {
+    "identifier" : {
+      "value" : "3278625"
+    }
+  },
+  "effectiveDateTime" : "2001-04-26T11:07:00Z",
+  "issued" : "2001-04-26T11:07:00Z",
+  "performer" : [{
+    "reference" : "#organization-0"
+  }],
+  "resultsInterpreter" : [{
+    "reference" : "#provider-0"
+  }],
+  "presentedForm" : [{
+    "contentType" : "text/plain",
+    "data" : "TVlPQ0FSRElBTCBQRVJGVVNJT04gU1RVRFkgV0lUSCBFSkVDVElPTiBGUkFDVElPTgogICAKUHJvYyBPcmQ6IE1ZT0NBUkRJQUwgUEVSRlVTSU9OLCBQSEFSTUFDT0xPR0lDQUwgU1RSRVNTIFAvRApFeG0gRGF0ZTogQVBSIDI2LCAyMDAxQDExOjA3ClJlcSBQaHlzOiBQQVRJTCxTQVJBU1dBVEkgICAgICAgICAgICAgICAgUGF0IExvYzogUENUX08gUEFUSUwgKEYvVSkgKFJlcSdnIExvYykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBJbWcgTG9jOiBOVUNMRUFSIE1FRElDSU5FCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgU2VydmljZTogVW5rbm93bgoKIAoKKENhc2UgMTUxNiBDT01QTEVURSkgTVlPQ0FSRElBTCBQRVJGVVNJT04gKFNQRUNUKSwgRVgvKE5NICAgRGV0YWlsZWQpIENQVDo3ODQ2NQoKKENhc2UgMTUxOSBDT01QTEVURSkgI1BST1ZJU0lPTiBPRiBESUFHTk9TVElDIFJBRElPTlVDKE5NICAgRGV0YWlsZWQpIENQVDo3ODk5MAoKKENhc2UgMTUyMCBDT01QTEVURSkgTVlPQ0FSRElBTCBQRVJGVVNJT04gU1RVRFkgV0lUSCBFKE5NICAgRGV0YWlsZWQpIENQVDo3ODQ4MAoKKCAgICAgICA0eCAgICAgICAgICkgSjEyNDUgRElQWVJJREFNT0xFIElOSkVDVElPTiAgICAgKE5NICAgRGV0YWlsZWQpIENQVDpKMTI0NQoKKCAgICAgICAzeCAgICAgICAgICkgQTk1MDUgVEhBTExPVVMgQ0hMT1JJREUgVEwgMjAxL01DKE5NICAgRGV0YWlsZWQpIENQVDpBOTUwNQoKKENhc2UgMTUzNiBDT01QTEVURSkgTVlPQ0FSRElBTCBQRVJGVVNJT04gU1RVRFkgV0lUSCBXKE5NICAgRGV0YWlsZWQpIENQVDo3ODQ3OAoKKENhc2UgMTU0NCBDT01QTEVURSkgQ0FSRElPVkFTQ1VMQVIgU1RSRVNTIFRFU1QgKFRFQ0gpKE5NICAgRGV0YWlsZWQpIENQVDo5MzAxNQoKICAgIENsaW5pY2FsIEhpc3Rvcnk6CiAgICAgIFBUIEMvTyBDLlAgT04gJiBPRkYsT0xEIE1JLCBGQU1JTFkgSC9PIEhFQVJUIEFUVEFDSy4gIFIvTyBDQUQgCgogICAgUmVwb3J0IFN0YXR1czogVmVyaWZpZWQgICAgICAgICAgICAgICAgICAgRGF0ZSBSZXBvcnRlZDogQVBSIDI2LCAyMDAxCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBEYXRlIFZlcmlmaWVkOiBBUFIgMjcsIDIwMDEKICAgIFZlcmlmaWVyIEUtU2lnOi9FUy9ORUlMIEtBVFosIE1ECgogICAgUmVwb3J0OgogICAgICBSRVBPUlQ6ICA0LzI2LzAxICBBTlRSQVMsIEouICM2MjY3ICA0MS40IG1nIERpcHlyaWRhbW9sZSBJVgogICAgICBpbmplY3RlZCBpbiByaWdodCBhcm0gYXQgMDk1OC0xMDAyIGhvdXJzIGJ5IERyLiBLYXR6LiAgMy4xNiBtQ2kKICAgICAgVGwuMjAxIENobG9yaWRlIGluamVjdGVkIElWIGluIHJpZ2h0IGFybSBhdCAxMDA1IGhvdXJzIGJ5IEEuCiAgICAgIEJlbmRlci4gIAogICAgICAgCiAgICAgICAKICAgICAgSU5UUkFWRU5PVVMgRElQWVJJREFNT0xFIFNUUkVTUyBUSEFMTElVTSBNWU9DQVJESUFMIFNDQU4tU1BFQ1Q6IAogICAgICAgCiAgICAgIFRoZSBkaXB5cmlkYW1vbGUgc3RyZXNzIHRlc3Qgd2FzIHBlcmZvcm1lZCBpbiB0aGUgTk1TLiAKICAgICAgIAogICAgICBCb3RoIHN0cmVzcyBhbmQgcmVzdCBpbWFnZXMgcmV2ZWFsIG1pbGQgZGVjcmVhc2VkIGFjdGl2aXR5IGluIHRoZQogICAgICBpbmZlcmlvciB3YWxsLiAgSG93ZXZlciwgZ2F0ZWQgaW1hZ2VzIHJldmVhbCBub3JtYWwgd2FsbCBtb3Rpb24KICAgICAgaW4gdGhpcyBhcmVhLiAgCiAgICAgICAKICAgICAgVGhlcmUgaXMgYSBwb3N0LURpcHlyaWRhbW9sZSB0aGFsbGl1bSBsZWZ0IHZlbnRyaWN1bGFyIGVqZWN0aW9uCiAgICAgIGZyYWN0aW9uIG9mIDczJS4gICAgICAKCiAgICBJbXByZXNzaW9uOgogICAgICBObyBldmlkZW5jZSBmb3IgcmV2ZXJzaWJsZSBpc2NoZW1pYS4gIFRoZSBtaWxkIHBlcnNpc3RlbnQKICAgICAgZGVjcmVhc2VkIGFjdGl2aXR5IGluIHRoZSBpbmZlcmlvciB3YWxsIG1heSBiZSBzZWNvbmRhcnkgdG8gc29mdAogICAgICB0aXNzdWUgYXR0ZW51YXRpb24sIGVzcGVjaWFsbHkgc2luY2UgdGhlIHdhbGwgbW90aW9uIGlzIG5vcm1hbCBpbgogICAgICB0aGlzIGFyZWEuICAKCiAgICBQcmltYXJ5IERpYWdub3N0aWMgQ29kZTogCgpQcmltYXJ5IEludGVycHJldGluZyBTdGFmZjoKICBORUlMIEtBVFosIENISUVGLCBOTVMgKFZlcmlmaWVyKQovTUFD",
+    "title" : "MYOCARDIAL PERFUSION STUDY WITH EJECTION FRACTION",
+    "creation" : "2001-04-26T11:07:00Z"
+  }]
+}
