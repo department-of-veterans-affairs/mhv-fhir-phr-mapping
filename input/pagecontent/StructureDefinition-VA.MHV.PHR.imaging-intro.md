@@ -35,4 +35,4 @@ Radiology Diagnostic Report
 - Should search for entries that do **not** have `status=entered-in-error` (i.e., `&status:not=entered-in-error`)
 - Should search for entries with category of Radiology to get only Radiology DiagnosticReport resources
 
-> GET {path}/DiagnosticReport?patient={patient}&status:not=entered-in-error&category=http://loinc.org#LP29684-5
+> GET {path}/DiagnosticReport?patient={patient}&status:not=entered-in-error&category=http://loinc.org|LP29684-5
