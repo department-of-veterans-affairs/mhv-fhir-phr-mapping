@@ -65,7 +65,7 @@ A profile showing how Microbiology LabReportTO is mapped into a FHIR DiagnosticR
 * category[MBLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#MB
 * category[MBLabSlice] 1..1
 * performer only Reference(MHVorganization or http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
-
+* performer ^comment = "Lab as Organization, Ordering Provider as Practitiner"
 Profile: MHVSPlabReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 //Parent: DiagnosticReport
@@ -80,7 +80,8 @@ A profile showing how SP LabReportTO is mapped into a FHIR DiagnosticReport, Obs
 * category[SPLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#SP
 // should be KindLabReportVS, but don't yet have examples and this binding is more clear
 * category[SPLabSlice] 1..1
-* performer only Reference(MHVorganization)
+* performer only Reference(MHVorganization or http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
+* performer ^comment = "Lab as Organization, Pathologist as Practitioner"
 
 ValueSet: LabReportVS
 Title: "Known Lab Report types"
@@ -266,6 +267,7 @@ Title: "VIA to mhv-fhir-phr"
 * presentedForm.data -> "base64(LabReportTO.text)"
 * presentedForm.contentType -> "`text/plain`"
 * performer -> "GetLocation(LabReportTO.facility or LabReportTO.result.labSiteId)"
+* performer -> "{Pathologist}"
 * identifier[TOid] -> "{StationNbr} and {LabReportTO.id}"
 * specimen -> "Contained Specimen (LabReportTO.specimen.[LabSpecimenTO])"
 * effectiveDateTime -> "ConvertDate(specimen/collectionDate)"

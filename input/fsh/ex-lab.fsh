@@ -507,7 +507,9 @@ Example from a mock labReportTO
 * contained[+] = ex-MHV-specimen-4
 * specimen[+] = Reference(ex-MHV-specimen-4)
 * contained[+] = ex-MHV-organization-989
-* performer = Reference(Organization/ex-MHV-organization-989)
+* performer[+] = Reference(Organization/ex-MHV-organization-989)
+* contained[+] = ex-MHV-practitioner-seetha
+* performer[+] = Reference(Practitioner/ex-MHV-practitioner-seetha)
 * presentedForm.contentType = #text/plain
 * presentedForm.data = """
 RGF0ZSBTcGVjIHRha2VuOiBBdWcgMDksIDIwMDAgICAgICAgIFBhdGhvbG9naXN0OlNFRVRIQSBTVVJZQVBSQVNBRCBNRApEYXRlIFNwZWMgcmVjJ2Q6IEF1ZyAwOSwgMjAwMCAxNjoxNCAgUmVzaWRlbnQ6IApEYXRlICBjb21wbGV0ZWQ6IEF1ZyAxMCwgMjAwMCAgICAgICAgQWNjZXNzaW9uICM6IFNQIDAwIDE5ODIKU3VibWl0dGVkIGJ5OiBNQVJLIE1BWlVSIE1EICAgICAgICAgIFByYWN0aXRpb25lcjpNQVJLIE1BWlVSIERQTQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClNwZWNpbWVuOiAKT0xEIEhBUkRXQVJFIExFRlQgRk9PVCBYMgpCcmllZiBDbGluaWNhbCBIaXN0b3J5OgpUaGlzIDcxIHkvbyB3bSBwcmVzZW50cyB3aXRoIHBhaW5mdWwgaGFyZHdhcmUgTCAxc3QgbWV0YXRhcnNhbCBoZWFkLiBUaGUKcGlucyB3ZXJlIGluc2VydGVkIDMgeWVhcnMgYWdvIGZvciBhIGJ1bmlvbiBwcm9jZWR1cmUuIFRoZSBCdW5pb25wcm9jZWR1cmUKaXMgd2VsbCBoZWFsZWQgYW5kIHB0IGlzIG5vdyB3YW50aW5nIHRoZSBwaW4gcmVtb3ZlZC4gV2lsbCBwcm9iYWJseSBuZWVkCmstd2lyZSBkcml2ZXIgYW5kIHBvd2VyIGZvciB0aGlzIGNhc2UuClByZW9wZXJhdGl2ZSBEaWFnbm9zaXM6ClBBSU5GVUwgSEFSRFdBUkUgTEVGVCBGSVJTVCBNRVRBVEFSU0FMIApQb3N0b3BlcmF0aXZlIERpYWdub3NpczoKUEFJTkZVTCBIQVJEV0FSRSBMRUZUIEZJUlNUIE1FVEFUQVJTQUwgCkdyb3NzIGRlc2NyaXB0aW9uOgpSRUNFSVZFRCBVTkZJWEVEIEFORCBMQUJFTEVEICJPTEQgSEFSRFdBUkUgTEVGVCBGT09UIFggMiIgQ09OU0lTVFMgT0YgVFdPCjEuNyBDTSBBTkQgMi41IENNIExPTkcgMSBNTSBXSURFIE1FVEFMTElDIFBJTlMuCnxUQUJ8fE5PV1JBUHwKRElBR05PU0lTOiBIQVJEV0FSRSAoQ0xJTklDQUxMWSBGUk9NIExFRlQgRk9PVCkK
@@ -676,7 +678,9 @@ Example from a mock labReportTO
 * contained[+] = ex-MHV-specimen-6
 * specimen[+] = Reference(ex-MHV-specimen-6)
 * contained[+] = ex-MHV-organization-989
-* performer = Reference(Organization/ex-MHV-organization-989)
+* performer[+] = Reference(Organization/ex-MHV-organization-989)
+* contained[+] = ex-MHV-practitioner-seetha
+* performer[+] = Reference(Practitioner/ex-MHV-practitioner-seetha)
 * presentedForm.contentType = #text/plain
 * presentedForm.data = """
 RGF0ZSBTcGVjIHRha2VuOiBBdWcgMDksIDE5OTkgICAgICAgIFBhdGhvbG9naXN0OlNFRVRIQSBTVVJZQVBSQVNBRCBNRApEYXRlIFNwZWMgcmVjJ2Q6IEF1ZyAxMCwgMTk5OSAxMzoyNyAgUmVzaWRlbnQ6IApEYXRlICBjb21wbGV0ZWQ6IEF1ZyAxMSwgMTk5OSAgICAgICAgQWNjZXNzaW9uICM6IFNQIDk5IDE4MDQKU3VibWl0dGVkIGJ5OiBLQVRITEVFTiBNQVJJRSBXT0xORVIgIFByYWN0aXRpb25lcjpLQVRITEVFTiBNQVJJRSBXT0xORVIgTUQKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpTcGVjaW1lbjogClBPTFlQIEAgMTJDTQpCcmllZiBDbGluaWNhbCBIaXN0b3J5Ogo3MCBZRUFSIE9MRCBNQUxFIEZPUiBTQ1JFRU5JTkcgRVhBTS4gIApPcGVyYXRpdmUgRmluZGluZ3M6ClNNT09USCBCUk9BRCBCQVNFRCBQT0xZUApQb3N0b3BlcmF0aXZlIERpYWdub3NpczoKUFJPQkFCTEUgQkVOSUdOIFBPTFlQCkdyb3NzIGRlc2NyaXB0aW9uOgpSRUNFSVZFRCBJTiBGT1JNQUxJTiBBTkQgTEFCRUxFRCAiUE9MWVAiICBDT05TSVNUUyBPRiBUV08gMSBNTSBGUkFHTUVOVFMKT0YgUElOSyBUSVNTVUUuICBTVUJNSVRURUQgSU4gVE9UQUwgSU4gT05FIEJMT0NLLgpNaWNyb3Njb3BpYyBkZXNjcmlwdGlvbjogKERhdGUgU3BlYyB0YWtlbjogQXVnIDA5LCAxOTk5KQp8VEFCfHxCTEFOSygzKXwKRElBR05PU0lTOgpQT0xZUCBBVCAxMiBDTS4gVFVCVUxBUiBBREVOT01BLgo=
@@ -810,7 +814,9 @@ Example from a mock labReportTO
 * contained[+] = ex-MHV-specimen-8
 * specimen[+] = Reference(ex-MHV-specimen-8)
 * contained[+] = ex-MHV-organization-989
-* performer = Reference(Organization/ex-MHV-organization-989)
+* performer[+] = Reference(Organization/ex-MHV-organization-989)
+* contained[+] = ex-MHV-practitioner-seetha
+* performer[+] = Reference(Practitioner/ex-MHV-practitioner-seetha)
 * presentedForm.contentType = #text/plain
 * presentedForm.data = """
 RGF0ZSBTcGVjIHRha2VuOiBNYXkgMTIsIDE5OTcgICAgICAgIFBhdGhvbG9naXN0OlNFRVRIQSBTVVJZQVBSQVNBRCBNRApEYXRlIFNwZWMgcmVjJ2Q6IE1heSAxMiwgMTk5NyAxNDowMCAgUmVzaWRlbnQ6IApEYXRlICBjb21wbGV0ZWQ6IE1heSAxMywgMTk5NyAgICAgICAgQWNjZXNzaW9uICM6IFNQIDk3IDEwOTkKU3VibWl0dGVkIGJ5OiBERUJSQSBLIExBVFRBIE1EICAgICAgIFByYWN0aXRpb25lcjpERUJSQSBLIExBVFRBCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KU3BlY2ltZW46IApCT05FIEZSQUdNRU5UUywgTEVGVCBGT09UCg==
@@ -835,3 +841,13 @@ Usage: #inline
 * identifier.system = "http://nowhere.com/nope"
 * name.text = "MANGAS,PHYLLIS A"
 * name.family = "MANGAS"
+
+Instance: ex-MHV-practitioner-seetha
+InstanceOf: http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner
+Title: "SEETHA SURYAPRASAD MD"
+Description: "Practitioner SEETHA SURYAPRASAD MD from Labs"
+Usage: #inline
+* identifier.value = "unknown"
+* identifier.system = "http://nowhere.com/nope"
+* name.text = "SEETHA SURYAPRASAD MD"
+* name.family = "SEETHA"

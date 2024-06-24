@@ -91,6 +91,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    | labReportTO/text {date obtained:}            | collectedDateTime[x]            |  Specimen.collectedDateTime          | Not sure why parsed out of the text, vs using specimen/collectionDate
 |   |    | labReportTO/text {signed}                    | completedDateTime[x]            |  DiagnosticReport.issued             | signed is used for date if it exists
 |   |    | labReportTO/text {date completed:}           | completedDateTime[x]            |  DiagnosticReport.issued             | used in **hold** for Path |
+|   |    | labReportTO/text {pathologist}               |                                 |  DiagnosticReport.performer(Pra)     | not collected in eVault
 |   |    | labReportTO/title                            |                                 |  DiagnosticReport.code.text          | |
 |   |    |                                              |                                 |  DiagnosticReport.category=`LAB`     | also all chTest code |
 |   |    |                                              |                                 |  DiagnosticReport.status=`final`     |  |

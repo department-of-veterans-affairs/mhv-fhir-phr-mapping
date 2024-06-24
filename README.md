@@ -10,6 +10,8 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI
 
+- Add to Pathology profile that the DiagnosticReport.provider may also be the Pathologist as extracted from the text body
+
 ### 0.3.7
 
 - notes
