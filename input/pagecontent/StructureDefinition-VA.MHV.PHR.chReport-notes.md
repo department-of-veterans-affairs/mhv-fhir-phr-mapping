@@ -42,7 +42,6 @@
 - have seen in real-world identifiers such as "HE 0301 33". That is found to be duplicated in real-world data. So, combine with the specimen date to get a unique value.
 - jira ticket for encoding problems - MHV-59253  [github PR 145](https://github.com/department-of-veterans-affairs/mhv-np-phr-api-v2/pull/145)
 
-
 #### Most common types of Chem-Hem Labs
 
 - Basic Metabolic Panel or BMP
@@ -74,19 +73,19 @@ MHV eVault has one object definition that gets replicated for each portion (Lab,
 | V | Vn | HDR labTestPromises                                |   MHV eVault                    | FHIR                                | Note |
 |---|----|--------------------------------------------------- |---------------------------------|-------------------------------------|------------|
 |   |    |                                                    |  icn={icn}                      | DiagnosticReport.subject            |  |
-|   |    | recordSource/                                      |  stationNumber={namespaceId}    | DiagnosticReport.performer[org]     |  |
+|   |    | recordSource/                                      |  stationNumber={namespaceId}    | DiagnosticReport.performer[org1]     |  |
 |   |    | (labTestRequest, specimen, labTests)               | recordSubType                   |                                     | `LAB` / `PANEL` / `TEST` |
 | 63.07-3 |  | labTests[n]/orderedTestCode/                   | orderedTest = {displayText}     | ServiceRequest[n].code              |  |
 |   |    | labTests[n]/chemistryResults[m]/testIdentifier/    | labTestName={originalText}      | Observation[m].code                 |  |
-| 63.04-10 |  | labTests[n]/chemistryResults[m]/observationStatus  | status                          | Observation[m].status          | see table below |
+| 63.04-10 |  | labTests[n]/chemistryResults[m]/observationStatus  | status                     | Observation[m].status          | see table below |
 |   |    | labTests[n]/chemistryResults[m]/observationValue   | result                          | Observation[m].value[x]             |  |
 |   |    | labTests[n]/chemistryResults[m]/observationUnits   | units                           | Observation[m].valueQuantity.units  |  |
 |   |    | labTests[n]/chemistryResults[m]/valueInterpretation | resultIndicator                | Observation[m].interpretation       | see translation |
 |   |    | labTests[n]/chemistryResults[m]/referenceRange     | referenceRange                  | Observation[m].referenceRange.text  |  |
 |   |    | labTests[n]/chemistryResults[m]/labCommentEvents   | interpretation                  | Observation[m].note.text            | multiple |
-|   |    | labTests[n]/chemistryResults[m]/performingOrganization/ | performingLocation={location} | Observation[m].performer[org]    |  |
+|   |    | labTests[n]/chemistryResults[m]/performingOrganization/ | performingLocation={location} | Observation[m].performer[org2]    |  |
 |   |    |   ""                                               | performingLocationName={name}   |                                     |  |
-|   |    | labTestRequest/author/                             | orderingProvider={name}         | ServiceRequest.author               |  |
+|   |    | labTestRequest/author/                             | orderingProvider={name}         | ServiceRequest[n].requester            |  |
 |   |    | labCommentEvents                                   | comments                        | DiagnosticReport.extension[notes]   | multiple |
 |   |    | labSubscript                                       | labType                         | DiagnosticReport.code.text          | `CH` |
 |   |    | specimen/specimenTakenDate                         | collectedOnDatePrecise          | Specimen.collectedDateTime          |  |
@@ -95,7 +94,7 @@ MHV eVault has one object definition that gets replicated for each portion (Lab,
 |   |    |  ""                                                |                                 | Observation[*].effectiveDateTime    |  |
 |   |    | recordIdentifier                                   | recordId                        | DiagnosticReport.identifier[Rid]    |  |
 |   |    | specimen/specimenSource/                           | specimenSource={displayText}    | Specimen.type                       |  |
-|   |    | labTestRequest/orderingFacilityIdentifier/         | orderingLocation={name}         | ServiceRequest.performer[location]  |  |
+|   |    | labTestRequest/orderingFacilityIdentifier/         | orderingLocation={name}         | ServiceRequest[n].performer[org3]  |  |
 |   |    | reportCompleteDate                                 | reportCompleteDatePrecise       | DiagnosticReport.issued             |  |
 |   |    |  ""                                                | reportCompleteDateImprecise     |                                     |  |
 |   |    | reportCompleteDate                                 | reportCompleteDatePrecise       | Observation[*].issued               |  |

@@ -11,6 +11,12 @@ The notes below for each release. Archive of [released packages](https://github.
 ### CI
 
 - Add to Pathology profile that the DiagnosticReport.provider may also be the Pathologist as extracted from the text body
+- correct example search that were using `#` for terms, when token type uses `|`
+- ChemHen
+  - Clarify that there would be three Organizations. (at least three)
+    - DiagnosticReport.performer comes from the `recordSource` (aka stationNumber)
+    - ServiceRequest.performer comes from the `labTestRequest/orderingFacility`
+    - each Observation.performer comes from that `chemistryResult/performingOrganization`
 
 ### 0.3.7
 

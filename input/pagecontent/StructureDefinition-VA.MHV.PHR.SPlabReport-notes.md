@@ -82,8 +82,8 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    |                                              |  icn={icn}                      |  DiagnosticReport.subject            |  |
 |   |    | taggedLabReportArray/tag                     |  stationNumber={namespaceId}    |  ??? extension ???     |  |
 |   |    |   ""                                         |                                 |  Observation[m].performer={DiagnosticReport.performer(Org)} | |
-|   |    | labReportTO/type                             | typeOfReport                    |  DiagnosticReport.code.coding        | CY/Cytology, SP/Surgical Pathology, EM/Electron Microscopy
-|   |    |   ""                                         |                                 |  DiagnosticReport.category           | CY/Cytology, SP/Surgical Pathology, EM/Electron Microscopy
+|   |    | labReportTO/type                             | typeOfReport                    |  DiagnosticReport.category.coding    | `http://terminology.hl7.org/CodeSystem/v2-0074#SP` |
+|   |    |   ""                                         |                                 |  DiagnosticReport.code.coding        | `LOINC#11526-1` |
 |   |    | labReportTO/facility                         | performingLocation              |  DiagnosticReport.performer(Org)     | |
 |   |    | labReportTO/text                             | reportText                      |  DiagnosticReport.presentedForm.data | base64 with contentType=text/plain |
 |   |    | labReportTO/text {status:}                   |                                 |                                      | ignore all that are not COMPLETED |

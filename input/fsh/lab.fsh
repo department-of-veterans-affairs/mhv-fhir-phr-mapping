@@ -61,11 +61,12 @@ A profile showing how Microbiology LabReportTO is mapped into a FHIR DiagnosticR
 """
 * insert CommonLabProfile
 * code.coding = LOINC#18725-2
-* category contains MBLabSlice 0..1
+* category contains MBLabSlice 1..1
 * category[MBLabSlice] = http://terminology.hl7.org/CodeSystem/v2-0074#MB
 * category[MBLabSlice] 1..1
 * performer only Reference(MHVorganization or http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner)
 * performer ^comment = "Lab as Organization, Ordering Provider as Practitiner"
+
 Profile: MHVSPlabReport
 Parent: http://hl7.org/fhir/us/core/StructureDefinition/us-core-diagnosticreport-lab
 //Parent: DiagnosticReport

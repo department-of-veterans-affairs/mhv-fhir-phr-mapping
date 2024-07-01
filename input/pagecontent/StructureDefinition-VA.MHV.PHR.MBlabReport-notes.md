@@ -81,8 +81,8 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    |   ""                                         |  orderingLocation       |  |  |
 |   |    |   ""                                         |   performingLocation    |  |  |
 |   |    |   ""                                         |                         | Observation[m].performer={DiagnosticReport.performer(Org)} | |
-|   |    | labReportTO/type                             |                         | DiagnosticReport.code.coding        | CY/Cytology, SP/Surgical Pathology, EM/Electron Microscopy
-|   |    |   ""                                         |                         | DiagnosticReport.category           | CY/Cytology, SP/Surgical Pathology, EM/Electron Microscopy
+|   |    | labReportTO/type                             |                         | DiagnosticReport.code.coding        | `LOINC#18725-2` |
+|   |    |   ""                                         |                         | DiagnosticReport.category.coding    | `http://terminology.hl7.org/CodeSystem/v2-0074#MB` |
 |   |    | labReportTO/facility                         |                         | DiagnosticReport.performer(Org)     | |
 |   |    | labReportTO/text                             |  reportText             | DiagnosticReport.presentedForm.data | base64 with contentType=text/plain |
 |   |    | labReportTO/text {status:}                   |                         |                                     | ignore all that are not COMPLETED |
@@ -106,7 +106,7 @@ Pathology and MicroBiology are processed differently. The `text` report is proce
 |   |    | labReportTO/specimen/accessionNum            |                         | Specimen.accessionIdentifier        |  |
 |   |    | labReportTO/specimen/id                      |                         | Specimen.identifier                 | might not be an identifier |
 |   |    | labReportTO/timestamp                        |                         | DiagnosticReport.issued             | no mock examples |
-|   |    | labReportTO/result/timestamp                 |                         | Observation[m].issued             |  |
+|   |    | labReportTO/result/timestamp                 |                         | Observation[m].issued               | use if exists, else {collectedDate} |
 |   |    | labReportTO/result/labSiteId                 |                         | DiagnosticReport.performer(Org)     | |
 |   |    | labReportTO/caseNumber                       |                         | DiagnosticReport.identifier[casenum] | no mock examples |
 |   |    | labReportTO/tests/labTestTO[m]/result/value  |                         | Observation[m].valueString          | samples all valueString |
