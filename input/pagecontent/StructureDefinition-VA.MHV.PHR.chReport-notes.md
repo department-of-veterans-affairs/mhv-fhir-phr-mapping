@@ -40,6 +40,8 @@
   - different status
   - deleted/entered-in-error
 - have seen in real-world identifiers such as "HE 0301 33". That is found to be duplicated in real-world data. So, combine with the specimen date to get a unique value.
+- jira ticket for encoding problems - MHV-59253  [github PR 145](https://github.com/department-of-veterans-affairs/mhv-np-phr-api-v2/pull/145)
+
 
 #### Most common types of Chem-Hem Labs
 
