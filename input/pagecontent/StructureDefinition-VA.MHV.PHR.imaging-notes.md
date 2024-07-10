@@ -59,7 +59,7 @@ VIA sends
 |   |    | imagingExamTO.interpretation         |                               | DiagnosticReport.conclusion 
 |   |    | imagingExamTO.imagingLocation        |                               | DiagnosticReport.performer [Org] 
 |   |    | imagingExamTO.modifiers              |                               |                                       | no data
-|   |    | imagingExamTO.name                   |                               | DiagnosticReport.title
+|   |    | imagingExamTO.name                   |                               | 
 |   |    | imagingExamTO.order [OrderTO]        |                               | DiagnosticReport.basedOn = ServiceRequest
 |   |    | imagingExamTO.provider               | provider                      | DiagnosticReport.resultsInterpreter
 |   |    |   """                                |                               | ServiceRequest.requester
