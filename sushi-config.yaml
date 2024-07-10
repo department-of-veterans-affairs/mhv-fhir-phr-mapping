@@ -35,7 +35,7 @@ dependencies:
   hl7.fhir.us.core: 
     version: 5.0.x
     id: hl7fhiruscore
-  hl7.fhir.uv.extensions: 1.0.x
+  hl7.fhir.uv.extensions.r4: 1.0.x
 
 parameters:  # see http://build.fhir.org/ig/FHIR/fhir-tools-ig/branches/master/CodeSystem-ig-parameters.html
   path-resource:
@@ -106,6 +106,9 @@ pages:
   maturity.md:
     title: Maturity Definitions
     generation: markdown
+  oh.md:
+    title: Oracle Health Comparison
+    generation: markdown
 
 
 menu:
@@ -126,6 +129,7 @@ menu:
     "Utility" : utility.html
     "ConvertDate" : ConvertDate.html
     "Id vs Identifier" : identifier.html
+  Oracle Health: oh.html
   Test Plan: testplan.html
   Artifacts: artifacts.html
   About: downloads.html

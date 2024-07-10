@@ -11,6 +11,7 @@ The main sections of this IG are:
 
 - [API](api.html)
 - [Vista Mapping](background.html)
+- [Oracle Health Comparison](oh.html)
 - [Artifacts](artifacts.html)
 - [TestPlan](testplan.html)
 - [About](downloads.html)

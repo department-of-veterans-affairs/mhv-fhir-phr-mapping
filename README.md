@@ -17,6 +17,9 @@ The notes below for each release. Archive of [released packages](https://github.
     - DiagnosticReport.performer comes from the `recordSource` (aka stationNumber)
     - ServiceRequest.performer comes from the `labTestRequest/orderingFacility`
     - each Observation.performer comes from that `chemistryResult/performingOrganization`
+- api
+  - remove ECG/EKG from the api page (it will not be exposed, or would be exposed as a DiagnosticReport in the future)
+- add the Oracle Health Comparison page
 
 ### 0.3.7
 
