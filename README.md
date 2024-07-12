@@ -10,6 +10,8 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI
 
+### 0.3.8
+
 - Add to Pathology profile that the DiagnosticReport.provider may also be the Pathologist as extracted from the text body
 - correct example search that were using `#` for terms, when token type uses `|`
 - ChemHen

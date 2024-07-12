@@ -109,6 +109,7 @@ MHV eVault has one object definition that gets replicated for each portion (Lab,
 |   |    |                                                    |                                 | Observation[m].category=`laboratory` |  |
 |   |    |                                                    |                                 | Observation[m].specimen = {Specimen} |  |
 |   |    |                                                    |                                 | Observation[m].basedOn = {ServiceRequest}  |  |
+|   |    |                                                    |                                 | DiagnosticReport.result={Observation} |  |
 |   |    | recordVersion | | | |
 |   |    | recordUpdateTime/ | | | |
 {: .grid}
