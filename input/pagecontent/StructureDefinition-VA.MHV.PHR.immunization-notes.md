@@ -22,7 +22,7 @@
   - KBS indicates that there is a very small fragment that have this set.
   - KBS discussion, we will follow the definition of the element.  Meaning we presume tha the immunization was given. This could be recorded as a FHIR Immunization with `.status=not-done`.
     - Thus we ignore this element.
-  - Some in KBS discussion were pointing out that medically something 'contraindicated' would not be executed. But this understanding does not seem to align with recording an Immunization and indicating contraindicated, but would be recorded as a stopping of the order to give immunization.
+  - Some in KBS discussion were pointing out that medically something `contraindicated` would not be executed. But this understanding does not seem to align with recording an Immunization and indicating contraindicated, but would be recorded as a stopping of the order to give immunization.
 - Not mapped due to lack of clarity on what the value is and if it will ever be populated
   - `shortName`
   - `encounterProvider`

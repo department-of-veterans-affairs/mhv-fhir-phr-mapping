@@ -206,7 +206,7 @@ Note 2: OH example
 | timestamp           | date                                        | date / sortByDate / dateEntered | date                           | date                                                                        |
 | author/dictator     | author                                      | writtenBy                       | author                         | author                                                                      |
 | signed by           | authenticator                               | signedBy                        |                                | authenticator                                                               |
-| release date/time   | authenticator.extension[when]               | dateSigned                      |                                |                                                                             |
+| release date/time   | authenticator.extension[when]               | dateSigned                      |                                | lastUpdated                                                                 | 2024-07-19 - OH told us to use lastUpdated for the signature date/time         |
 |                     | custodian                                   |                                 |                                | custodian                                                                   |
 |                     | description                                 |                                 |                                |                                                                             |
 |                     | content (1..1)                              |                                 | content (1..*)                 | content (1..*)                                                              | Note Cerner often has many formats of the document including CDA, PDF, and Text |
@@ -247,7 +247,7 @@ may have a CPT code
 
 #### Notes on OH
 
-- will not have a signed date/time
+- will not have a signed date/time, OH says to use the lastUpdated date/time
 - not likely able to find the attending in the text body
 - discharge summary may not be as transparent? 
 - unclear if $docref operation might be useful
@@ -293,15 +293,11 @@ FHIR us-core has constrained Vitals very well, so the difference is not much. Al
   - WEIGHT = '29463-7' # Weight
 - should search on vital-signs category
 
-### Labs (DiagnosticReport)
-
-DiagnosticReport is used in very complex ways, so the following comparison is possibly less clear. The MHV FHIR column includes not just DiagnosticReport, but also Observation, ServiceRequest, and Specimen as contained resources.
-
-#### Chem-Hem
+### Chem-Hem Labs
 
 Chem-Hem is handled very differently between MHV FHIR and OH FHIR. Where MHV FHIR is organized around a DiagnosticReport, OH has no DiagnosticReport. The MHV FHIR use of DiagnosticReport reflects the way the data are organized in Vista and the way they are organized as they are passed to MHV, where the only clear identifier MHV has is the DiagnosticReport identifier. Thus MHV FHIR has Observations, but they are contained in the DiagnosticReport as that is all we can track and de-duplicate based on. This is not surprising as with Chem-Hem there is no presentedForm, so there is no overall report text. 
 
-##### MHV FHIR
+#### MHV FHIR
 
 | MHV PHR                       | MHV FHIR                                           | va.gov UI                       | FHIR us-core       |
 | ----------------------------- | -------------------------------------------------- | ------------------------------- | ------------------ |
@@ -341,19 +337,19 @@ Chem-Hem is handled very differently between MHV FHIR and OH FHIR. Where MHV FHI
 |                               |                                                    | category=`Chemistry/Hematology` |
 {: .grid}
 
-##### chem-hem va.gov notes
+#### chem-hem va.gov notes
 
 - today only handle Observation.valueQuantity. Where you might get valueString and with OH get valueCodeableConcept. 
 - seem to be concat all the elements of the Observation into one string.
 
-##### chem-hem OH Notes
+#### chem-hem OH Notes
 
 It does not appear that OH uses a DiagnosticReport for Chem-Hem results (e.g. any labs not Pathology, Microbiology, Radiology, or Cardiology). Might be handled purely by searching on Observations of type `laboratory`.
 
 - What is the recommended way to find all Observations that are related to non pathology or microbiology labs?
 - OH does not support the Specimen resource. How are specimen tracked? Specifically tracking when the specimen is obtained.
 
-#### Microbiology
+### Microbiology Labs
 
 Microbiology is not yet implemented in va.gov
 
@@ -403,11 +399,13 @@ Microbiology is not yet implemented in va.gov
 |                                                           |                                                                                     |                   |                    | .encounter                |
 {: .grid}
 
-##### Microbiology OH
+#### Microbiology OH
 
-OH does not itemize Microbiology, so presume it is like Pathology.
+B1930 has DiagnosticReport for Microbiology, but response from OH seems to indicate that this would not be the case. Might just be a miscommunication, that OH was just stressing that Microbiology also uses Observations.
 
-#### Pathology
+Grouped orders can be recognized with the same ServiceRequest in the Observation.basedOn
+
+### Pathology Labs
 
 Pathology is not yet implemented in va.gov
 
@@ -456,6 +454,7 @@ Pathology is not yet implemented in va.gov
 The pattern on the general OH FHIR site is general for Labs. Unclear yet how this is specialized in the real-world for pathology.
 
 - OH use encounter and ServiceRequest.
+- .conclusionCode, if populated, would be the normalcy code (codeset 52) on the clinical event table (e.g. normal, abnormal, high, critcal, etc)
 
 ### Radiology Reports (DiagnosticReport)
 
@@ -496,9 +495,12 @@ The pattern on the general OH FHIR site is general for Labs. Unclear yet how thi
 - With a Radiology Report, will the .result ever hold Observations? (us-core MS) None seen in B1930 examples.
 - With a Radiology Report, will the .media.link ever be filled? (us-core MS) None seen in B1930 examples.
 - With a Radiology Report, how is .conclusionCode used? None seen in B1930 examples.
+- B1930 has some DiagnosticReport and some DocumentReference
 
 ### Cardiology Reports (DiagnosticReport)
 
 Today MHV/FHIR map these to DocumentReference, but also does not get these reports anymore. OH uses DiagnosticReport.
 
 DiagnosticReport.category = LOINC#LP29708-2 "Cardiology"
+
+- B1930 has some DiagnosticReport and some DocumentReference

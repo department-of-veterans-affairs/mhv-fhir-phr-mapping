@@ -10,6 +10,9 @@ The notes below for each release. Archive of [released packages](https://github.
 
 ### CI
 
+- removed HL7v2 feed and thus medications from the diagram since this IG is not covering medications.
+- removed all profiling and notes on medications
+
 ### 0.3.8
 
 - Add to Pathology profile that the DiagnosticReport.provider may also be the Pathologist as extracted from the text body

@@ -4,7 +4,6 @@ skinparam svgDimensionStyle false
 package source {
     class source.HDR
     class source.VIA
-    class source.HL7v2
 }
 
 package fhir {
@@ -44,13 +43,7 @@ MHV Patient
         - RESPIRATION 
         - TEMPERATURE 
     }
-    class fhir.MedicationRequest
-    class fhir.MedicationDispense
 }
-
-source.HL7v2 -[#blue]down-> fhir.MedicationRequest
-source.HL7v2 -[#blue]down-> fhir.MedicationDispense
-source.HL7v2 ..[#blue]down. fhir.util.Patient
 
 source.VIA ..[#red]down. fhir.util.Patient
 source.VIA -[#red]down-> fhir.util.Practitioner

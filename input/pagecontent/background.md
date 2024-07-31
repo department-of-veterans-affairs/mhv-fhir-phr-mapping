@@ -131,21 +131,6 @@ General [Vital-Signs](StructureDefinition-VA.MHV.PHR.vitals.html#notes) Mapping 
 
 ### potential
 
-#### medication
-
-No longer being developed here.
-
-- Medications
-  - See [Medication Request notes](StructureDefinition-VA.MHV.PHR.medicationRequest.html#notes)
-  - support API for current feature where VA prescribed medications are displayed and where online dispensing is avail the veteran can request dispense
-  - Note that this is not defined yet what is the source or goal.
-  - I understand that the interface will be using HL7 v2 feed, and CMOP. I note that VIA does have a schema for a MedicationTO.
-  - I have heard that there are questions on how to best fit the FHIR medication concept domain.
-  - Should support Cerner in the future.
-  - non-VA meds is not in scope
-  - PGHD meds is not in scope
-- Enforcement of Business rules: Today this is enforced as data comes into the PHR, the data that should not be seen is not persisted. This works as the PHR is refreshed often. But with FHIR server we are persisting, and thus the business rule such as a timeframe to wait before showing the patient would need to be enforced on the FHIR API, not on the data feed.
-
 #### other
 
 - Eventually this same API would support data from Cerner. Thus the same API providing comprehensive data from Vista and/or Cerner where ever it is.
