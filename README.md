@@ -12,6 +12,7 @@ The notes below for each release. Archive of [released packages](https://github.
 
 - removed HL7v2 feed and thus medications from the diagram since this IG is not covering medications.
 - removed all profiling and notes on medications
+- add note on testplan page about synthea and flexporter
 
 ### 0.3.8
 

@@ -5,6 +5,8 @@ All FHIR Resources created/updated should include the profile intended in the `.
 
 The Examples listed in [Example Instances](artifacts.html#example-example-instances) are example instances that are conformant to the MHV profiles.
 
+One might use a tool like [Synthea](https://synthea.mitre.org/) to generate data. There is a [Flexporter](https://github.com/synthetichealth/synthea/wiki/Flexporter) available to customize the generated FHIR resources. Unclear how helpful these would be.
+
 See the Test Plan for each Profile to understand the specific expectations for each good, odd, and bad example.
 
 #### Cucumber Actions
